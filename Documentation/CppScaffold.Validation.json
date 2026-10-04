@@ -1,0 +1,104 @@
+{
+  "documentType": "CppScaffoldValidation",
+  "date": "2026-10-04",
+  "engineVersion": "5.8.3",
+  "changelist": 58210709,
+  "scope": "C++ host and plugin scaffold only",
+  "EditorDevelopmentBuild": true,
+  "GameDevelopmentBuild": true,
+  "IDEProjectGeneration": true,
+  "EditorNormalStartup": "Verified by current project DX12 SM6 initialization and module logs",
+  "editorStartupMap": "/Game/NPR/Maps/L_TwoStyle_CharacterProbe",
+  "smokeStatus": "Passed",
+  "checks": [
+    {
+      "name": "ReflectedClassesConstructible",
+      "passed": true
+    },
+    {
+      "name": "ExplicitZeroRoundTrip",
+      "passed": true
+    },
+    {
+      "name": "PackageDefaultsNotAccepted",
+      "passed": true
+    },
+    {
+      "name": "BothSavedStyleParentsLoad",
+      "passed": true
+    },
+    {
+      "name": "ApplyPreloadedBundle",
+      "passed": true
+    },
+    {
+      "name": "BindingCreatedMID",
+      "passed": true
+    },
+    {
+      "name": "UpdateExistingScalar",
+      "passed": true
+    },
+    {
+      "name": "MissingScalarRejected",
+      "passed": true
+    },
+    {
+      "name": "InvalidBundleRejectedAtomically",
+      "passed": true
+    },
+    {
+      "name": "DuplicateSlotRejectedAtomically",
+      "passed": true
+    },
+    {
+      "name": "SwitchToSecondBundle",
+      "passed": true
+    },
+    {
+      "name": "RestoreOriginalMaterial",
+      "passed": true
+    },
+    {
+      "name": "PreserveExternalMaterialChange",
+      "passed": true
+    },
+    {
+      "name": "DefaultMapLoaded",
+      "passed": true
+    },
+    {
+      "name": "BothControlledCharactersInMap",
+      "passed": true
+    }
+  ],
+  "smokeRHI": "NullRHI; no rendering acceptance",
+  "runtimeDependencies": [
+    "Core",
+    "CoreUObject",
+    "Engine"
+  ],
+  "editorOnlyModule": "NPREditor",
+  "pending": [
+    "Semantic Resolver and hard-domain validation",
+    "S58 Backend Adapter and calibration",
+    "Asynchronous bundle preload and PSO/Cook validation",
+    "Face/Hair models",
+    "Formal 30 lighting acceptance tests"
+  ],
+  "toolchain": {
+    "visualStudio": "2026",
+    "msvc": "14.51.36256",
+    "windowsSDK": "10.0.22621.0",
+    "preferenceWarning": "Installed MSVC is newer than Epic preferred 14.50.35717; builds succeeded"
+  },
+  "evidence": [
+    "Saved/Logs/NPR-Cpp-EditorBuild.log",
+    "Saved/Logs/NPR-Cpp-GameBuild.log",
+    "Saved/Logs/NPR-Cpp-ProjectFiles.log",
+    "Saved/Logs/NPR-Cpp-Smoke.log",
+    "Saved/Logs/NPR-Cpp-LoadSmoke.json",
+    "Saved/Logs/PrincipledNPR.log"
+  ],
+  "sharing": "Build logs, binaries, IDE files and caches remain local and ignored"
+}

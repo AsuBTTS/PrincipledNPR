@@ -1,6 +1,6 @@
 # Principled NPR 初步语义骨架
 
-状态：**Draft / 未标定 / 未连接 Shader**。这些版本化 JSON 是语义契约草案；尚未实现 UDataAsset、Resolver、Backend Adapter 或 Runtime Style Switch。JSON 不参与引擎着色，不等于 ToonProfile，也不证明渲染测试通过。
+状态：**Draft / 未标定 / 未连接 Shader**。这些版本化 JSON 是语义契约草案；2026-10-04 已添加 C++ 宿主、NPRRuntime / NPREditor、基础 UDataAsset 类型和显式预制材质绑定组件，详见 `C++骨架.md` 与 `CppScaffold.Validation.json`。完整 Resolver、Backend Adapter 和语义驱动 Runtime Style Switch 尚未实现。JSON 不参与引擎着色，不等于 ToonProfile，也不证明渲染测试通过。
 
 ## 文件
 

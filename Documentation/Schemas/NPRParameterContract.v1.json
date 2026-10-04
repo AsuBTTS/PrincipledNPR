@@ -5,7 +5,7 @@
   "status": "Draft",
   "calibrationStatus": "Uncalibrated",
   "shaderConnectionStatus": "NotConnected",
-  "unrealAssetStatus": "NoUDataAssetImplementation",
+  "unrealAssetStatus": "PartialUDataAssetScaffold_NoResolverOrAdapter",
   "source": {
     "reportFilename": "Principled_NPR_技术设计报告_V1.0.md",
     "sha256": "81be77fb2c15350af9804e487323d6dcc6442ee384a73647ec100cf06eadd516",

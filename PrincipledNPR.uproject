@@ -3,7 +3,13 @@
   "EngineAssociation": "5.8",
   "Category": "Rendering",
   "Description": "Principled NPR semantic framework - Substrate Toon backend evaluation",
-  "Modules": [],
+  "Modules": [
+    {
+      "Name": "PrincipledNPR",
+      "Type": "Runtime",
+      "LoadingPhase": "Default"
+    }
+  ],
   "Plugins": [
     {
       "Enabled": true,
@@ -28,7 +34,10 @@
     },
     {
       "Name": "PrincipledNPR",
-      "Enabled": true
+      "Enabled": true,
+      "SupportedTargetPlatforms": [
+        "Win64"
+      ]
     }
   ]
 }

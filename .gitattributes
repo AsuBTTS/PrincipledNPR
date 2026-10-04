@@ -4,6 +4,10 @@
 *.md text eol=lf
 *.py text eol=lf
 *.ps1 text eol=lf
+*.h text eol=lf
+*.cpp text eol=lf
+*.cs text eol=lf
+*.uplugin text eol=lf
 Config/*.ini filter=npr-config
 *.uproject text eol=lf filter=npr-config
 Documentation/**/*.json text eol=lf filter=npr-record

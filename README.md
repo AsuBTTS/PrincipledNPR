@@ -16,7 +16,7 @@ The canonical surface, material and style semantics remain independent of the re
 
 UE 5.8.3 installation has completed. The real non-partitioned probe map, two native ToonProfiles, two Toon materials and two physical Slab materials have been generated and saved by UE 5.8. See `Documentation/ProjectCreation.json` for setup and reopen verification.
 
-The native A/B profiles are shadow inclusion diagnostics. `Documentation/Styles/` contains two separate uncalibrated semantic style drafts. No C++ Runtime/Editor modules, Face or Hair model implementation are claimed.
+The native A/B profiles are shadow inclusion diagnostics. `Documentation/Styles/` contains two separate uncalibrated semantic style drafts. The project now has a C++ host plus `NPRRuntime` / `NPREditor` plugin modules, semantic Data Asset types and a minimal prebuilt-material binding component. Resolver, backend calibration and Face/Hair models remain unfinished. See [C++ structure and build workflow](Documentation/C++骨架.md) and `Documentation/CppScaffold.Validation.json` for actual build/load verification.
 
 Open the project with `Tools/Open-PrincipledNPR.ps1`. The editor startup map is `/Game/NPR/Maps/L_TwoStyle_CharacterProbe`; the game default and isolated lighting baseline remain `/Game/NPR/Maps/L_S58_ToonProbe`.
 

@@ -22,6 +22,18 @@ git lfs pull
 git lfs fsck
 ```
 
+This is now a C++ project. Install a compatible Visual Studio C++ toolchain and
+Windows SDK, then build the local Editor modules before opening the project:
+
+```powershell
+./Tools/Build-PrincipledNPR.ps1 -EngineRoot '<your UE 5.8 installation>' -GenerateProjectFiles
+./Tools/Build-PrincipledNPR.ps1 -EngineRoot '<your UE 5.8 installation>'
+```
+
+Source, Build.cs and Target.cs files are shared; compiled modules and generated
+IDE files remain local. See `C++骨架.md` and `CppScaffold.Validation.json` for
+the architecture and verified build/load scope.
+
 Open `PrincipledNPR.uproject`. The shared EngineAssociation is `5.8`. On another
 machine, select the installed UE 5.8 engine using Switch Unreal Engine Version if
 needed. The PowerShell launch helper accepts `-EngineRoot` or the `UE58_ENGINE_ROOT`

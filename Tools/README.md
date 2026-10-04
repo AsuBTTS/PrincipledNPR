@@ -44,3 +44,5 @@ python Tools/configure_git_backup.py
 `fix_probe_transforms.py`、`save_wanderer_skeleton.py`、`set_character_front_view.py` 和 `save_project_for_github.py` 已完成本次修复或保存任务，其必要逻辑已有正式工具或 UE 原生操作承接，因此从当前项目移除。历史实现可从 Git 历史查看，不在当前工具目录另存一份。
 
 `Open-PrincipledNPR.ps1` 是可选启动助手；也可直接打开 `.uproject`。
+
+`Build-PrincipledNPR.ps1` 是 C++ 构建 / IDE 工程生成入口，接收自己的 UE 安装目录；不参与运行时渲染。构建前保存并关闭编辑器，详见 `Documentation/C++骨架.md`。

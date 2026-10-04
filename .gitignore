@@ -4,6 +4,8 @@ Intermediate/
 Saved/
 .vs/
 *.sln
+*.slnx
+.vscode/
 *.suo
 *.VC.db
 Plugins/*/Binaries/
@@ -17,3 +19,4 @@ Content/Collections/
 outputs/
 work/
 *.log
+.vsconfig
