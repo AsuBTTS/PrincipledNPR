@@ -51,7 +51,7 @@
 
 - `Tools/audit_character_assets.py`：重新扫描并只读审计迁入资源。
 - `Tools/create_character_asset_probe.py`：创建或复用自有诊断材质、实例及关卡；不覆盖已完成 Actor 的后续编辑。
-- `Tools/set_character_front_view.py`：明确的正面观察设置工具，只操作自有关卡的相机和方向光。
+- 正面镜头与正确朝向已纳入 `Tools/create_character_asset_probe.py`；本次使用的一次性镜头修正脚本已从当前工具目录移除。
 - `Documentation/Assets/NPRCharacterBinding.ChenQianyu.v1.draft.json`：Face/Hair/Head Frame 的未校准绑定草案。
 - `Documentation/Assets/ChenQianyu.UE58.audit.json`：完整骨骼名称、材质槽、纹理设置及有效材质参数。
 - `Documentation/Assets/ChenQianyu.ProbeCreation.json`：本次新建资产、Actor、材质槽策略和编译请求记录。

@@ -26,6 +26,8 @@ Run the native Toon probe against the acceptance matrix. In particular, test sha
 
 See `Documentation/` for the full design and test record.
 
+Developer scripts are optional asset creation, validation and Git collaboration tools. They do not run when opening the project or during rendering. See [tool roles and reconstruction workflow](Tools/README.md); use the editor's Save All for ordinary saves.
+
 ## Character fixture
 
 Chen Qianyu has passed resource loading/dependency audit and is visible with generic native S58 component material overrides. The external source project remains preserved; dirty migrated packages were explicitly saved with UE 5.8 for this backup (see Documentation/GitHubBackup.ProjectSave.json). See `Documentation/Assets/` for the audit, slot mapping, uncalibrated Head/Face/Hair binding and actual creation record. Specialized Face/Hair response and the formal pipeline tests remain unfinished. Wanderer is imported with 26 material slots, 427 bones, 65 vertex morph targets and seven PNG textures; default material bindings are saved to the owned new mesh. The two-character map has passed save/reload and generic lit display checks. Third-party character assets are local research fixtures, not plugin distribution content.
