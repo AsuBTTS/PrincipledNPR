@@ -1,0 +1,450 @@
+{
+  "title": "Principled NPR 数学参考模型数值验证",
+  "report_date": "2026-10-04",
+  "schema_version": 1,
+  "status": "PASS",
+  "scope": "Python 标准库双精度标量模型的可复现数值抽查；不是 UE / HLSL / GPU / 视觉或感知实验。",
+  "not_tested": [
+    "UE 材质编译",
+    "真实动态阴影",
+    "GPU 性能",
+    "float32/half 数值误差",
+    "纹理采样与压缩",
+    "fwidth/AA/TSR",
+    "感知正交性",
+    "受控角色资产"
+  ],
+  "reproduction": {
+    "command": "python Tools/verify_reference_math.py",
+    "seed": 20261003,
+    "python_version_used": "3.12.14",
+    "dependencies": "Python standard library only",
+    "script_sha256": "8004c5652d1d2cc8350b711776cbfa478ce9b2acf62eb9b3aa6c2ca19e12f12d"
+  },
+  "checks_passed": 16,
+  "checks_total": 16,
+  "checks": [
+    {
+      "name": "GGX_valid_HWHM_NDF_ratio_error",
+      "measured": 1.776911950912563e-13,
+      "relation": "<=",
+      "acceptance_limit": 1e-10,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "GGX_critical_alpha_grazing_half_peak",
+      "measured": 1.1102230246251565e-16,
+      "relation": "<=",
+      "acceptance_limit": 1e-14,
+      "passed": true,
+      "note": "Equality alpha=2^(-1/4) has beta=90 degrees at the hemisphere boundary."
+    },
+    {
+      "name": "GGX_above_critical_no_half_peak_min_ratio",
+      "measured": 0.5220062499999999,
+      "relation": ">=",
+      "acceptance_limit": 0.5,
+      "passed": true,
+      "note": "For 0<alpha<=1, the NDF ratio is minimal at grazing; alpha=1 is constant."
+    },
+    {
+      "name": "angle_specular_reference_midpoint_error",
+      "measured": 2.220446049250313e-16,
+      "relation": "<=",
+      "acceptance_limit": 1e-12,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "hair_a0_isotropic_angular_identity_error_rad",
+      "measured": 1.1515677300621974e-11,
+      "relation": "<=",
+      "acceptance_limit": 2e-10,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "hair_a1_KK_inspired_band_identity_error_rad",
+      "measured": 0.0,
+      "relation": "<=",
+      "acceptance_limit": 1e-14,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "hair_shifted_frame_orthonormal_error",
+      "measured": 1.1102230246251565e-16,
+      "relation": "<=",
+      "acceptance_limit": 1e-14,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "hair_primary_section_midpoint_error",
+      "measured": 4.440892098500626e-15,
+      "relation": "<=",
+      "acceptance_limit": 1e-11,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "hair_anisotropy_max_negative_raw_response_growth",
+      "measured": 0.0,
+      "relation": "<=",
+      "acceptance_limit": 1e-13,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "hair_cross_section_finite_half_width_angle_error_rad",
+      "measured": 5.551115123125783e-17,
+      "relation": "<=",
+      "acceptance_limit": 1e-13,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "face_full_yaw_periodic_closure_error",
+      "measured": 0.0,
+      "relation": "<=",
+      "acceptance_limit": 1e-12,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "face_horizontal_front_back_endpoint_error",
+      "measured": 0.0,
+      "relation": "<=",
+      "acceptance_limit": 1e-12,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "face_same_rotation_invariance_error",
+      "measured": 1.4099832412739488e-14,
+      "relation": "<=",
+      "acceptance_limit": 1e-11,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "face_pole_azimuth_and_endpoint_error_inside_fallback_zone",
+      "measured": 1.444447458290427e-32,
+      "relation": "<=",
+      "acceptance_limit": 1e-12,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "face_pole_fade_boundary_small_step_response_difference",
+      "measured": 2.99998026420667e-10,
+      "relation": "<=",
+      "acceptance_limit": 1e-07,
+      "passed": true,
+      "note": "Finite sampling supports continuity; analytical smoothstep composition supplies the proof."
+    },
+    {
+      "name": "face_yaw_refinement_max_step_ratio",
+      "measured": 0.1253506967665713,
+      "relation": "<=",
+      "acceptance_limit": 0.15,
+      "passed": true,
+      "note": "For a fixed nonzero 0.02 threshold-domain half-width, eightfold angular refinement reduces step change."
+    }
+  ],
+  "details": {
+    "ggx": {
+      "critical_alpha": 0.8408964152537145,
+      "valid_domain_samples": [
+        {
+          "alpha": 0.01,
+          "beta_degrees": 0.3687733292369742,
+          "NDF_ratio": 0.4999999999998223,
+          "absolute_half_peak_error": 1.776911950912563e-13
+        },
+        {
+          "alpha": 0.05,
+          "beta_degrees": 1.8463903123165804,
+          "NDF_ratio": 0.49999999999995204,
+          "absolute_half_peak_error": 4.796163466380676e-14
+        },
+        {
+          "alpha": 0.1,
+          "beta_degrees": 3.708689753085014,
+          "NDF_ratio": 0.5000000000000057,
+          "absolute_half_peak_error": 5.662137425588298e-15
+        },
+        {
+          "alpha": 0.3,
+          "beta_degrees": 11.677399898804264,
+          "NDF_ratio": 0.5,
+          "absolute_half_peak_error": 0.0
+        },
+        {
+          "alpha": 0.5,
+          "beta_degrees": 21.813050755382047,
+          "NDF_ratio": 0.5000000000000001,
+          "absolute_half_peak_error": 1.1102230246251565e-16
+        },
+        {
+          "alpha": 0.7,
+          "beta_degrees": 39.112754811607594,
+          "NDF_ratio": 0.4999999999999998,
+          "absolute_half_peak_error": 2.220446049250313e-16
+        },
+        {
+          "alpha": 0.83,
+          "beta_degrees": 73.28031708474418,
+          "NDF_ratio": 0.5000000000000001,
+          "absolute_half_peak_error": 1.1102230246251565e-16
+        }
+      ],
+      "above_critical_samples": [
+        {
+          "alpha": 0.85,
+          "minimum_hemisphere_ratio": 0.5220062499999999
+        },
+        {
+          "alpha": 0.9,
+          "minimum_hemisphere_ratio": 0.6561
+        },
+        {
+          "alpha": 0.99,
+          "minimum_hemisphere_ratio": 0.96059601
+        },
+        {
+          "alpha": 1.0,
+          "minimum_hemisphere_ratio": 1.0
+        }
+      ],
+      "boundary_beta_degrees": 90.0,
+      "limitation": "Tests NDF shape only, not full BRDF including Fresnel and Smith G."
+    },
+    "specular": {
+      "max_angle_midpoint_error": 2.220446049250313e-16,
+      "cosine_domain_drift_example": {
+        "beta_degrees": 35,
+        "softness": 1.0,
+        "cosine_smoothstep_midpoint_degrees": 46.76081331433551,
+        "midpoint_drift_degrees": 11.760813314335513
+      },
+      "limitation": "Raw lobe only; intensity, gates, Fresnel, projection and pixel AA are excluded."
+    },
+    "hair": {
+      "endpoint_direction_samples": 9664,
+      "primary_section_samples": 375,
+      "monotonic_response_samples": 76500,
+      "finite_cross_section_samples": 21,
+      "max_a0_error_radians": 1.1515677300621974e-11,
+      "max_a1_error_radians": 0.0,
+      "limitation": "Half-width identities refer to raw lobe; final half-hemisphere gates can truncate it. No pixel fwidth was simulated."
+    },
+    "face": {
+      "closure_conditions": 675,
+      "same_rotation_trials": 1000,
+      "synthetic_field": "A(u,v)=0.12+0.70*(0.60*u+0.40*v), A_minus=A(1-u,v)",
+      "side_blend": "smoothstep(-sin(2deg),sin(2deg),lr/max(h,1e-6)), matching final report",
+      "pole_sweep": [
+        {
+          "pole_sign": -1,
+          "horizontal_length": 0.2,
+          "azimuth_spread": 1.0,
+          "max_endpoint_deviation": 1.0
+        },
+        {
+          "pole_sign": -1,
+          "horizontal_length": 0.15,
+          "azimuth_spread": 1.0,
+          "max_endpoint_deviation": 1.0
+        },
+        {
+          "pole_sign": -1,
+          "horizontal_length": 0.1,
+          "azimuth_spread": 0.5000000000000003,
+          "max_endpoint_deviation": 0.5000000000000003
+        },
+        {
+          "pole_sign": -1,
+          "horizontal_length": 0.051,
+          "azimuth_spread": 0.0002979999999999964,
+          "max_endpoint_deviation": 0.0002979999999999964
+        },
+        {
+          "pole_sign": -1,
+          "horizontal_length": 0.05,
+          "azimuth_spread": 1.444447458290427e-32,
+          "max_endpoint_deviation": 1.444447458290427e-32
+        },
+        {
+          "pole_sign": -1,
+          "horizontal_length": 0.049,
+          "azimuth_spread": 0.0,
+          "max_endpoint_deviation": 0.0
+        },
+        {
+          "pole_sign": -1,
+          "horizontal_length": 0.01,
+          "azimuth_spread": 0.0,
+          "max_endpoint_deviation": 0.0
+        },
+        {
+          "pole_sign": -1,
+          "horizontal_length": 1e-06,
+          "azimuth_spread": 0.0,
+          "max_endpoint_deviation": 0.0
+        },
+        {
+          "pole_sign": -1,
+          "horizontal_length": 0.0,
+          "azimuth_spread": 0.0,
+          "max_endpoint_deviation": 0.0
+        },
+        {
+          "pole_sign": 1,
+          "horizontal_length": 0.2,
+          "azimuth_spread": 1.0,
+          "max_endpoint_deviation": 1.0
+        },
+        {
+          "pole_sign": 1,
+          "horizontal_length": 0.15,
+          "azimuth_spread": 1.0,
+          "max_endpoint_deviation": 1.0
+        },
+        {
+          "pole_sign": 1,
+          "horizontal_length": 0.1,
+          "azimuth_spread": 0.5000000000000003,
+          "max_endpoint_deviation": 0.5000000000000003
+        },
+        {
+          "pole_sign": 1,
+          "horizontal_length": 0.051,
+          "azimuth_spread": 0.00029800000000002047,
+          "max_endpoint_deviation": 0.00029800000000002047
+        },
+        {
+          "pole_sign": 1,
+          "horizontal_length": 0.05,
+          "azimuth_spread": 0.0,
+          "max_endpoint_deviation": 0.0
+        },
+        {
+          "pole_sign": 1,
+          "horizontal_length": 0.049,
+          "azimuth_spread": 0.0,
+          "max_endpoint_deviation": 0.0
+        },
+        {
+          "pole_sign": 1,
+          "horizontal_length": 0.01,
+          "azimuth_spread": 0.0,
+          "max_endpoint_deviation": 0.0
+        },
+        {
+          "pole_sign": 1,
+          "horizontal_length": 1e-06,
+          "azimuth_spread": 0.0,
+          "max_endpoint_deviation": 0.0
+        },
+        {
+          "pole_sign": 1,
+          "horizontal_length": 0.0,
+          "azimuth_spread": 0.0,
+          "max_endpoint_deviation": 0.0
+        }
+      ],
+      "pole_boundary_refinement": [
+        {
+          "horizontal_fade_boundary": 0.05,
+          "symmetric_step": 0.001,
+          "max_response_difference": 0.00029800000000002047
+        },
+        {
+          "horizontal_fade_boundary": 0.05,
+          "symmetric_step": 0.0001,
+          "max_response_difference": 2.9980000000318086e-06
+        },
+        {
+          "horizontal_fade_boundary": 0.05,
+          "symmetric_step": 1e-05,
+          "max_response_difference": 2.999800000006001e-08
+        },
+        {
+          "horizontal_fade_boundary": 0.05,
+          "symmetric_step": 1e-06,
+          "max_response_difference": 2.99998026420667e-10
+        },
+        {
+          "horizontal_fade_boundary": 0.15,
+          "symmetric_step": 0.001,
+          "max_response_difference": 0.00029800000000002047
+        },
+        {
+          "horizontal_fade_boundary": 0.15,
+          "symmetric_step": 0.0001,
+          "max_response_difference": 2.9979999999207863e-06
+        },
+        {
+          "horizontal_fade_boundary": 0.15,
+          "symmetric_step": 1e-05,
+          "max_response_difference": 2.9997999972941614e-08
+        },
+        {
+          "horizontal_fade_boundary": 0.15,
+          "symmetric_step": 1e-06,
+          "max_response_difference": 2.99998026420667e-10
+        }
+      ],
+      "horizontal_yaw_refinement": [
+        {
+          "full_yaw_steps": 720,
+          "max_adjacent_response_change": 0.10387161351165941
+        },
+        {
+          "full_yaw_steps": 1440,
+          "max_adjacent_response_change": 0.05206239819101477
+        },
+        {
+          "full_yaw_steps": 2880,
+          "max_adjacent_response_change": 0.02603542081940563
+        },
+        {
+          "full_yaw_steps": 5760,
+          "max_adjacent_response_change": 0.013020379127954507
+        }
+      ],
+      "limitation": "No real Face asset, UV seams, texture compression/mips, head-bone runtime update, UE shadows or temporal AA were tested."
+    },
+    "review_counterexamples": {
+      "product_vs_min_visibility": {
+        "Dface": 0.5,
+        "visibility": 0.5,
+        "product_lit": 0.25,
+        "min_lit": 0.5,
+        "product_shadow": 0.75,
+        "min_shadow": 0.5,
+        "conclusion": "For soft masks, product visibility is <= min, so product makes the combined shadow stronger; for binary masks they agree."
+      },
+      "side_blend_pitch_dependence": [
+        {
+          "horizontal_length": 1.0,
+          "effective_yaw_half_width_degrees": 2.0
+        },
+        {
+          "horizontal_length": 0.5,
+          "effective_yaw_half_width_degrees": 4.002442149699807
+        },
+        {
+          "horizontal_length": 0.15,
+          "effective_yaw_half_width_degrees": 13.453922898407408
+        }
+      ],
+      "half_hemisphere_filter": {
+        "Band_at_zero_with_zero_art_width": 0.5,
+        "note": "Centered filtered gates are 0.5 at the boundary; raw-lobe width identities must not be attributed unchanged to the final gated response."
+      }
+    }
+  }
+}

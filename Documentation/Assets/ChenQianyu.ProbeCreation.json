@@ -1,0 +1,240 @@
+{
+  "status": "Saved_GenericDisplayObserved_FormalValidationNotRun",
+  "map": "/Game/NPR/Maps/L_ChenQianyu_AssetProbe",
+  "backend": "S58_NativeGeneric_Diagnostic",
+  "face_model": "NotImplemented",
+  "hair_model": "NotImplemented",
+  "style_adapter": "NotImplemented",
+  "formal_lighting_tests": "NotRun",
+  "assets": [
+    {
+      "path": "/Game/NPR/Characters/ChenQianyu/Materials/M_S58_CharacterGeneric_A.M_S58_CharacterGeneric_A",
+      "created": false
+    },
+    {
+      "path": "/Game/NPR/Characters/ChenQianyu/Materials/M_S58_CharacterGeneric_B.M_S58_CharacterGeneric_B",
+      "created": false
+    },
+    {
+      "path": "/Game/NPR/Characters/ChenQianyu/Materials/M_ExcludedSourceProxy.M_ExcludedSourceProxy",
+      "created": false
+    },
+    {
+      "path": "/Game/NPR/Characters/ChenQianyu/Materials/MI_Chen_Slot00_A.MI_Chen_Slot00_A",
+      "created": false
+    },
+    {
+      "path": "/Game/NPR/Characters/ChenQianyu/Materials/MI_Chen_Slot00_B.MI_Chen_Slot00_B",
+      "created": true
+    },
+    {
+      "path": "/Game/NPR/Characters/ChenQianyu/Materials/MI_Chen_Slot01_A.MI_Chen_Slot01_A",
+      "created": true
+    },
+    {
+      "path": "/Game/NPR/Characters/ChenQianyu/Materials/MI_Chen_Slot01_B.MI_Chen_Slot01_B",
+      "created": true
+    },
+    {
+      "path": "/Game/NPR/Characters/ChenQianyu/Materials/MI_Chen_Slot02_A.MI_Chen_Slot02_A",
+      "created": true
+    },
+    {
+      "path": "/Game/NPR/Characters/ChenQianyu/Materials/MI_Chen_Slot02_B.MI_Chen_Slot02_B",
+      "created": true
+    },
+    {
+      "path": "/Game/NPR/Characters/ChenQianyu/Materials/MI_Chen_Slot04_A.MI_Chen_Slot04_A",
+      "created": true
+    },
+    {
+      "path": "/Game/NPR/Characters/ChenQianyu/Materials/MI_Chen_Slot04_B.MI_Chen_Slot04_B",
+      "created": true
+    },
+    {
+      "path": "/Game/NPR/Characters/ChenQianyu/Materials/MI_Chen_Slot06_A.MI_Chen_Slot06_A",
+      "created": true
+    },
+    {
+      "path": "/Game/NPR/Characters/ChenQianyu/Materials/MI_Chen_Slot06_B.MI_Chen_Slot06_B",
+      "created": true
+    },
+    {
+      "path": "/Game/NPR/Characters/ChenQianyu/Materials/MI_Chen_Slot07_A.MI_Chen_Slot07_A",
+      "created": true
+    },
+    {
+      "path": "/Game/NPR/Characters/ChenQianyu/Materials/MI_Chen_Slot07_B.MI_Chen_Slot07_B",
+      "created": true
+    },
+    {
+      "path": "/Game/NPR/Characters/ChenQianyu/Materials/MI_Chen_Slot08_A.MI_Chen_Slot08_A",
+      "created": true
+    },
+    {
+      "path": "/Game/NPR/Characters/ChenQianyu/Materials/MI_Chen_Slot08_B.MI_Chen_Slot08_B",
+      "created": true
+    },
+    {
+      "path": "/Game/NPR/Characters/ChenQianyu/Materials/MI_Chen_Slot09_A.MI_Chen_Slot09_A",
+      "created": true
+    },
+    {
+      "path": "/Game/NPR/Characters/ChenQianyu/Materials/MI_Chen_Slot09_B.MI_Chen_Slot09_B",
+      "created": true
+    }
+  ],
+  "actors": [
+    {
+      "key": "ChenQianyu_S58_A",
+      "path": "/Game/NPR/Maps/L_ChenQianyu_AssetProbe.L_ChenQianyu_AssetProbe:PersistentLevel.SkeletalMeshActor_0"
+    },
+    {
+      "key": "ChenQianyu_S58_B",
+      "path": "/Game/NPR/Maps/L_ChenQianyu_AssetProbe.L_ChenQianyu_AssetProbe:PersistentLevel.SkeletalMeshActor_1"
+    },
+    {
+      "key": "CharacterProbe_Floor",
+      "path": "/Game/NPR/Maps/L_ChenQianyu_AssetProbe.L_ChenQianyu_AssetProbe:PersistentLevel.StaticMeshActor_0"
+    },
+    {
+      "key": "CharacterProbe_Key",
+      "path": "/Game/NPR/Maps/L_ChenQianyu_AssetProbe.L_ChenQianyu_AssetProbe:PersistentLevel.DirectionalLight_0"
+    },
+    {
+      "key": "CharacterProbe_Sky",
+      "path": "/Game/NPR/Maps/L_ChenQianyu_AssetProbe.L_ChenQianyu_AssetProbe:PersistentLevel.SkyLight_0"
+    },
+    {
+      "key": "CharacterProbe_FixedExposure",
+      "path": "/Game/NPR/Maps/L_ChenQianyu_AssetProbe.L_ChenQianyu_AssetProbe:PersistentLevel.PostProcessVolume_0"
+    },
+    {
+      "key": "CharacterProbe_Camera",
+      "path": "/Game/NPR/Maps/L_ChenQianyu_AssetProbe.L_ChenQianyu_AssetProbe:PersistentLevel.CameraActor_0"
+    }
+  ],
+  "slots": [
+    {
+      "index": 0,
+      "name": "M_actor_chen_body_01_001",
+      "source_material": "/Game/EndfieldRender/Character/Qianyu/Materials/MI_Qianyu_Skin.MI_Qianyu_Skin",
+      "base_color_texture": "/Game/EndfieldRender/Character/Qianyu/Tex/T_actor_chen_body_01_D.T_actor_chen_body_01_D",
+      "texture_evidence": "Effective T_Base_Color parameter",
+      "probe_policy": "GenericToonOnly",
+      "specialized_model": "NotImplemented"
+    },
+    {
+      "index": 1,
+      "name": "M_actor_chen_body_01_002",
+      "source_material": "/Game/EndfieldRender/Character/Qianyu/Materials/MI_Chen_Face_Inst.MI_Chen_Face_Inst",
+      "base_color_texture": "/Game/EndfieldRender/Character/Qianyu/Tex/T_actor_chen_body_01_D.T_actor_chen_body_01_D",
+      "texture_evidence": "Effective T_Base_Color parameter",
+      "probe_policy": "GenericToonOnly",
+      "specialized_model": "NotImplemented"
+    },
+    {
+      "index": 2,
+      "name": "M_actor_chen_cloth_01",
+      "source_material": "/Game/EndfieldRender/Character/Qianyu/Materials/MI_Qianyu_Cloth_01.MI_Qianyu_Cloth_01",
+      "base_color_texture": "/Game/EndfieldRender/Character/Qianyu/Tex/T_actor_chen_cloth_01_D.T_actor_chen_cloth_01_D",
+      "texture_evidence": "Effective T_Base_Color parameter",
+      "probe_policy": "GenericToonOnly",
+      "specialized_model": "NotImplemented"
+    },
+    {
+      "index": 3,
+      "name": "Chen_cloth_outline",
+      "probe_policy": "Excluded",
+      "reason": "Embedded source outline"
+    },
+    {
+      "index": 4,
+      "name": "M_actor_chen_cloth_01_001",
+      "source_material": "/Engine/EngineMaterials/WorldGridMaterial.WorldGridMaterial",
+      "base_color_texture": "/Game/EndfieldRender/Character/Qianyu/Tex/T_actor_chen_cloth_01_D.T_actor_chen_cloth_01_D",
+      "texture_evidence": "Explicit cloth fallback; needs visual verification",
+      "probe_policy": "GenericToonOnly",
+      "specialized_model": "NotImplemented"
+    },
+    {
+      "index": 5,
+      "name": "M_eyeshadow_common_01",
+      "probe_policy": "Excluded",
+      "reason": "Eye shadow proxy"
+    },
+    {
+      "index": 6,
+      "name": "M_actor_chen_face_01_002",
+      "source_material": "/Game/EndfieldRender/Character/Qianyu/Materials/MI_Chen_Face.MI_Chen_Face",
+      "base_color_texture": "/Game/EndfieldRender/Character/Qianyu/Tex/T_Face.T_Face",
+      "texture_evidence": "Effective T_Base_Color parameter",
+      "probe_policy": "GenericToonOnly",
+      "specialized_model": "NotImplemented"
+    },
+    {
+      "index": 7,
+      "name": "M_actor_chen_brow_01_002",
+      "source_material": "/Game/EndfieldRender/Character/Qianyu/Materials/MI_Eyebrow.MI_Eyebrow",
+      "base_color_texture": "/Game/EndfieldRender/Character/Qianyu/Tex/T_actor_chen_face_01_D.T_actor_chen_face_01_D",
+      "texture_evidence": "Effective T_Base_Color parameter",
+      "probe_policy": "GenericToonOnly",
+      "specialized_model": "NotImplemented"
+    },
+    {
+      "index": 8,
+      "name": "M_actor_chen_iris_01_002",
+      "source_material": "/Game/EndfieldRender/Character/Qianyu/Materials/MI_Chen_Eye.MI_Chen_Eye",
+      "base_color_texture": "/Game/EndfieldRender/Character/Qianyu/Tex/T_actor_chen_iris_01_D.T_actor_chen_iris_01_D",
+      "texture_evidence": "Effective T_Base_Color parameter",
+      "probe_policy": "GenericToonOnly",
+      "specialized_model": "NotImplemented"
+    },
+    {
+      "index": 9,
+      "name": "M_actor_chen_hair_01_001",
+      "source_material": "/Game/EndfieldRender/Character/Qianyu/Materials/MI_Chen_Hair.MI_Chen_Hair",
+      "base_color_texture": "/Game/EndfieldRender/Character/Qianyu/Tex/T_actor_chen_hair_01_D.T_actor_chen_hair_01_D",
+      "texture_evidence": "Effective T_Base_Color parameter",
+      "probe_policy": "GenericToonOnly",
+      "specialized_model": "NotImplemented"
+    },
+    {
+      "index": 10,
+      "name": "M_hairshadow_common_03_001",
+      "probe_policy": "Excluded",
+      "reason": "Hair shadow proxy"
+    }
+  ],
+  "compile_requests": [],
+  "completed_utc": "2026-10-03T21:07:24.545180+00:00",
+  "camera": {
+    "location_cm": [
+      0,
+      280,
+      140
+    ],
+    "pitch_yaw_roll_deg": [
+      -10,
+      -90,
+      0
+    ]
+  },
+  "key_light_pitch_yaw_roll_deg": [
+    -35,
+    -100,
+    0
+  ],
+  "model_forward_component_axis": "+Y observed; head-bone local axes still uncalibrated",
+  "visual_smoke_observation": {
+    "status": "Observed",
+    "time_utc": "2026-10-03T21:14:15.365678+00:00",
+    "screenshot": "Documentation/角色资产_陈千语S58测试场景.png",
+    "observations": [
+      "Two front-facing textured characters visible",
+      "Native generic Toon responses visible",
+      "Ground silhouettes visible"
+    ],
+    "scope": "Asset/component material smoke observation only; formal lighting acceptance remains NotRun"
+  }
+}

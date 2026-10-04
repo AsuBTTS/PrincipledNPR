@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-03T21:59:08.663255+00:00",
+  "status": "DefaultCorrespondenceSaved_InitialDiffuseSeedsUncalibrated",
+  "source_of_assignment": "User: Chen Qianyu and Wanderer correspond to the two style directions",
+  "project": "PrincipledNPR.uproject",
+  "map": "/Game/NPR/Maps/L_TwoStyle_CharacterProbe",
+  "architecture": "CharacterBinding -> canonical NPR StyleProfile -> S58 backend representation",
+  "coupling_policy": "Default assignment only. Material profile and style remain independent; cross-character styles are permitted.",
+  "bindings": [
+    {
+      "character_id": "ChenQianyu",
+      "display_name": "陈千语",
+      "default_style_id": "SemiPBRStylized",
+      "reference_direction": "EndfieldLike",
+      "reference_direction_label": "终末地方向",
+      "mesh": "/Game/EndfieldRender/Character/Qianyu/SKM_Chen.SKM_Chen",
+      "actor": "PNPR_ChenQianyu_EndfieldLike",
+      "character_binding": "Documentation/Assets/NPRCharacterBinding.ChenQianyu.v1.draft.json",
+      "instance_material_directory": "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized"
+    },
+    {
+      "character_id": "Wanderer",
+      "display_name": "流浪者",
+      "default_style_id": "AnimeFlat",
+      "reference_direction": "GenshinLike",
+      "reference_direction_label": "原神方向",
+      "mesh": "/Game/NPR/Characters/Wanderer/Meshes/SKM_Wanderer",
+      "actor": "PNPR_Wanderer_GenshinLike",
+      "character_binding": "Documentation/Assets/NPRCharacterBinding.Wanderer.v1.draft.json",
+      "instance_material_directory": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat"
+    }
+  ],
+  "backend_bundles": [
+    {
+      "semantic_style_id": "SemiPBRStylized",
+      "reference_direction": "EndfieldLike",
+      "semantic_style_file": "Documentation/Styles/SemiPBRStylized.v1.draft.json",
+      "semantic_source_sha256": "0a8613a500a69ad6217a48874c6bac00ad3989d5528bdd7e1556fa005f973a06",
+      "toon_profile": "/Game/NPR/Styles/SemiPBRStylized/Profiles/TP_S58_InitialDiffuseSeed.TP_S58_InitialDiffuseSeed",
+      "diffuse_curve": "/Game/NPR/Styles/SemiPBRStylized/Curves/C_Diffuse_Initial.C_Diffuse_Initial",
+      "diffuse_mapping": {
+        "signed_dot_center": 0,
+        "signed_dot_half_width": 0.2,
+        "shadow_multiplier": 0.18,
+        "readback_samples": [
+          0.18000000715255737,
+          0.18000000715255737,
+          0.5899999737739563,
+          1.0,
+          1.0
+        ],
+        "mapping_grade": "Approximate after native LUT sampling; artistic shadow multiplier authored here"
+      },
+      "unmapped_contracts": [
+        "AngularSpecular",
+        "MacroNormal",
+        "FaceCriticalAzimuth",
+        "HairAngularLobe",
+        "Rim",
+        "Outline"
+      ],
+      "status": "InitialDiffuseSeed_Uncalibrated",
+      "runtime_profile_mutation": "NotUsed",
+      "semantic_source_hash_normalization": "UTF8_LF"
+    },
+    {
+      "semantic_style_id": "AnimeFlat",
+      "reference_direction": "GenshinLike",
+      "semantic_style_file": "Documentation/Styles/AnimeFlat.v1.draft.json",
+      "semantic_source_sha256": "b2de4b54ccfcd1b54f02671eeecf8e77e3121e996b9fe89d905b03781b15b916",
+      "toon_profile": "/Game/NPR/Styles/AnimeFlat/Profiles/TP_S58_InitialDiffuseSeed.TP_S58_InitialDiffuseSeed",
+      "diffuse_curve": "/Game/NPR/Styles/AnimeFlat/Curves/C_Diffuse_Initial.C_Diffuse_Initial",
+      "diffuse_mapping": {
+        "signed_dot_center": 0,
+        "signed_dot_half_width": 0.02,
+        "shadow_multiplier": 0.28,
+        "readback_samples": [
+          0.2800000011920929,
+          0.2800000011920929,
+          0.6399999856948853,
+          1.0,
+          1.0
+        ],
+        "mapping_grade": "Approximate after native LUT sampling; artistic shadow multiplier authored here"
+      },
+      "unmapped_contracts": [
+        "AngularSpecular",
+        "MacroNormal",
+        "FaceCriticalAzimuth",
+        "HairAngularLobe",
+        "Rim",
+        "Outline"
+      ],
+      "status": "InitialDiffuseSeed_Uncalibrated",
+      "runtime_profile_mutation": "NotUsed",
+      "semantic_source_hash_normalization": "UTF8_LF"
+    }
+  ],
+  "calibration": "Uncalibrated: diffuse seed and native default specular, no claim of commercial game reproduction",
+  "runtime_switching": "NotImplementedOrTested",
+  "missing_models": [
+    "Face Critical Azimuth Field",
+    "Hair anisotropic angular response",
+    "Normal abstraction",
+    "Rim",
+    "Outline"
+  ],
+  "formal_pipeline_acceptance": "NotRun"
+}

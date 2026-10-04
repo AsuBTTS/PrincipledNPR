@@ -1,0 +1,34 @@
+{
+  "FileVersion": 3,
+  "EngineAssociation": "5.8",
+  "Category": "Rendering",
+  "Description": "Principled NPR semantic framework - Substrate Toon backend evaluation",
+  "Modules": [],
+  "Plugins": [
+    {
+      "Enabled": true,
+      "TargetAllowList": [
+        "Editor"
+      ],
+      "Name": "ModelingToolsEditorMode"
+    },
+    {
+      "Enabled": true,
+      "TargetAllowList": [
+        "Editor"
+      ],
+      "Name": "PythonScriptPlugin"
+    },
+    {
+      "Enabled": true,
+      "TargetAllowList": [
+        "Editor"
+      ],
+      "Name": "EditorScriptingUtilities"
+    },
+    {
+      "Name": "PrincipledNPR",
+      "Enabled": true
+    }
+  ]
+}

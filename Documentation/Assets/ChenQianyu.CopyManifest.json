@@ -1,0 +1,764 @@
+{
+  "status": "CopiedAndSHA256Verified",
+  "source": "ExternalSource/ChenQianyu/Content/EndfieldRender",
+  "sourceEngine": "5.6",
+  "destination": "Content/EndfieldRender",
+  "packageRoot": "/Game/EndfieldRender",
+  "copiedAt": "2026-10-04T04:53:52.9413435+08:00",
+  "fileCount": 150,
+  "totalBytes": 97391373.0,
+  "records": [
+    {
+      "relativePath": "LS_Main.uasset",
+      "bytes": 19556,
+      "sha256": "D957C7F90720597A73377B909AAD16A28EC459BA4B33DAA9F6FBD7388A83C774"
+    },
+    {
+      "relativePath": "LS_Show.uasset",
+      "bytes": 40761,
+      "sha256": "B8E94DBD6781FD9C8486E306FAAD9738FF9C8E350204105651BE67DA28890087"
+    },
+    {
+      "relativePath": "Character\\BP_Render_Show.uasset",
+      "bytes": 66569,
+      "sha256": "B812329264FD1047F2E85018483881EB1CFB7C5CD6FEC23CAAA4566ADC5EC187"
+    },
+    {
+      "relativePath": "Character\\Blueprints\\BP_PointLight.uasset",
+      "bytes": 43017,
+      "sha256": "6867C9FD0C2351863D6E253C810F073C86F9DA20FCA707BDC82C995FDBB4D00C"
+    },
+    {
+      "relativePath": "Character\\Common\\Materials\\M_Backface_Outline.uasset",
+      "bytes": 26247,
+      "sha256": "F611B2F554EBD410D9D74819815035BA2B2298BA1561CE5EF1376E9C43AB6EC7"
+    },
+    {
+      "relativePath": "Character\\Common\\Materials\\M_Common_Cloth.uasset",
+      "bytes": 144418,
+      "sha256": "97BDB4A197DB067B0951DFDCA598599E9B0259AD28DA8F862FB259BCDD4DE29B"
+    },
+    {
+      "relativePath": "Character\\Common\\Materials\\M_Common_Eye.uasset",
+      "bytes": 55468,
+      "sha256": "3EC544266C81AE97322E505C175E56E00AA44076E926F2F1089FAB13819BE4F1"
+    },
+    {
+      "relativePath": "Character\\Common\\Materials\\M_Common_Eyebrow.uasset",
+      "bytes": 24283,
+      "sha256": "67FE9800B27F4629AC301357653812DAF6DC92F4879B346325653DB89515FB38"
+    },
+    {
+      "relativePath": "Character\\Common\\Materials\\M_Common_Face.uasset",
+      "bytes": 109422,
+      "sha256": "4A2C9AF686CE095079A8FB8603B57B766D2554281BDAE4AA6479074A819D6426"
+    },
+    {
+      "relativePath": "Character\\Common\\Materials\\M_Common_Hair.uasset",
+      "bytes": 163171,
+      "sha256": "CB138BA77826687382E4CC26E18D5F3976DCB48978B31E63DBF006B1FD932AAE"
+    },
+    {
+      "relativePath": "Character\\Common\\Materials\\M_Common_Skin.uasset",
+      "bytes": 59685,
+      "sha256": "DF4E80904E6DFC998055E695AD321812EF393DDD3A03546D32BEA55CC0375AB1"
+    },
+    {
+      "relativePath": "Character\\Common\\Materials\\M_Ground_Inst.uasset",
+      "bytes": 11893,
+      "sha256": "303C7078F2F727532376DE30DDFD7DA48F950A7F679D655BD1D61E28AD79A9FA"
+    },
+    {
+      "relativePath": "Character\\Common\\Materials\\M_Ground.uasset",
+      "bytes": 25553,
+      "sha256": "3220E0D62385CD6894EDC21D23C3769DB3E2761B744E6A591E1A422F8B755F84"
+    },
+    {
+      "relativePath": "Character\\Common\\Materials\\M_Outline.uasset",
+      "bytes": 22707,
+      "sha256": "9A36B68C9F97B2B64C4E37EF751456EB4A0ED8CFDCA8BC6DDE4BC985B526F14A"
+    },
+    {
+      "relativePath": "Character\\Common\\Materials\\M_Shadow.uasset",
+      "bytes": 32137,
+      "sha256": "33ABF3E1A631DA99AEC9988C78EA52BEEBE302A526555F8CEBEE8FA6A6CB5A01"
+    },
+    {
+      "relativePath": "Character\\Common\\Materials\\M_Test_Inst.uasset",
+      "bytes": 17981,
+      "sha256": "1735343CEBE9CF6FCACEA84864316F09ED91D390C4ABD41D3FD0688EAF9E4932"
+    },
+    {
+      "relativePath": "Character\\Common\\Materials\\M_Test.uasset",
+      "bytes": 67183,
+      "sha256": "B57AD413C9B8F5B5811A238B6773A73535F4E61053FB8D3B22BA9C91D722E075"
+    },
+    {
+      "relativePath": "Character\\Common\\Materials\\MI_BF_Outline_Simple.uasset",
+      "bytes": 5419,
+      "sha256": "52B084A66500BD75485A56D214F2DF2F484AD967C71EF572BF4DCD905A219B67"
+    },
+    {
+      "relativePath": "Character\\Common\\Materials\\MI_Eye_Shadow.uasset",
+      "bytes": 9288,
+      "sha256": "8F965A555E0711C70FD4F6DA631822800772C5ABC8402941B355AE360D515430"
+    },
+    {
+      "relativePath": "Character\\Common\\Materials\\MI_Hair_Shadow.uasset",
+      "bytes": 10061,
+      "sha256": "D53E0E239FF5C3C6C40F154CDD8E6B08759F7C6C26B275CE82C76A7A212E5032"
+    },
+    {
+      "relativePath": "Character\\Common\\Materials\\SP_Common_Skin.uasset",
+      "bytes": 1669,
+      "sha256": "D63AEFD0B778D3A0AEAC29F746DE65320E2F49F7F2C048E4C9A6DD47515F16BA"
+    },
+    {
+      "relativePath": "Character\\Common\\Materials\\MaterialFunction\\MF_Color_Blend.uasset",
+      "bytes": 13584,
+      "sha256": "CFC34122B4B7C3AE504AA3AB63C9863684486A14679550C0FC3E3F04E6562D54"
+    },
+    {
+      "relativePath": "Character\\Common\\Materials\\MaterialFunction\\MF_MaskRemapped.uasset",
+      "bytes": 11725,
+      "sha256": "F59272FFE1DE1761484025B17AAD742D34AD46746CB30878655B3261B79ED632"
+    },
+    {
+      "relativePath": "Character\\Common\\Materials\\MaterialFunction\\MF_RGB_Remapped.uasset",
+      "bytes": 15632,
+      "sha256": "905BBA6DA90D95B74D64465FFF36153716169B4F2938C4925CEB34ABF2BA2B32"
+    },
+    {
+      "relativePath": "Character\\Common\\Materials\\MaterialFunction\\MF_Tonemap.uasset",
+      "bytes": 9183,
+      "sha256": "5B3F0444679C46D06DC581F07C741FCA6CEADA3A9E4C0BAAD70ECD40BEAC886C"
+    },
+    {
+      "relativePath": "Character\\Common\\Materials\\MaterialLayers\\MB_ID_Mask.uasset",
+      "bytes": 13381,
+      "sha256": "AD8AD443C7AB24CF193374838F2D78CA441F940C680848A8A76791F5D6C317E8"
+    },
+    {
+      "relativePath": "Character\\Common\\Materials\\MaterialLayers\\ML_BaseLayer.uasset",
+      "bytes": 54159,
+      "sha256": "509D372BCF3CC19FD632F3B4FD1EBF99418E30174FD3D1418EE064E24B7F4902"
+    },
+    {
+      "relativePath": "Character\\Common\\Materials\\MaterialLayers\\ML_GGX.uasset",
+      "bytes": 24729,
+      "sha256": "E04FBB2C2B4E4B695204A16BE5C8099493730C05C510EABA813F65E4D0D5E755"
+    },
+    {
+      "relativePath": "Character\\Common\\Materials\\MaterialLayers\\ML_Mask.uasset",
+      "bytes": 15029,
+      "sha256": "47CE784005F862FB705527A72797808EAAFE80A9D7FABA919394FF282C1CCB6D"
+    },
+    {
+      "relativePath": "Character\\Common\\Materials\\MaterialLayers\\ML_Matal_Layer.uasset",
+      "bytes": 88991,
+      "sha256": "CA5EB83DD1FECCE0459081F012AC19721E19CFD10E7A20B6EBF6F19AC511D8EC"
+    },
+    {
+      "relativePath": "Character\\Common\\Materials\\MaterialLayers\\ML_None.uasset",
+      "bytes": 7586,
+      "sha256": "EAA037C2E5C8345F029BBD0DC1035472A4C619D646768644EDAF43CA1C8E47CD"
+    },
+    {
+      "relativePath": "Character\\Common\\Materials\\MaterialLayers\\ML_VertexMask.uasset",
+      "bytes": 18692,
+      "sha256": "038544CEBEE107FF2943077404880779DAAC339D325AAB98240AD419E30A1331"
+    },
+    {
+      "relativePath": "Character\\Common\\Materials\\MaterialTools\\CB_KK_Spe_Ramp.uasset",
+      "bytes": 5125,
+      "sha256": "A793AC358712BFBA17E5846DB975557E3459F678281B7EF046EBB511DD2BC4D4"
+    },
+    {
+      "relativePath": "Character\\Common\\Materials\\MaterialTools\\CB_RGB_Remapped.uasset",
+      "bytes": 4535,
+      "sha256": "F7B0D0B47A2654C5F942455233ABC8DFEEB6722F32F6176673B2CE6AD2489706"
+    },
+    {
+      "relativePath": "Character\\Common\\Materials\\MaterialTools\\CL_Render.uasset",
+      "bytes": 6729,
+      "sha256": "4DD26A0814C791C9069219F01CE9D16EE385D6CE850824A1C6E0BCA5FD080A4C"
+    },
+    {
+      "relativePath": "Character\\Common\\Materials\\MaterialTools\\MPC_Render.uasset",
+      "bytes": 1922,
+      "sha256": "0C1B7778C9F5CD19A415CFA3E99116C47EFACA20D029331F84CE07037A5CC9EC"
+    },
+    {
+      "relativePath": "Character\\Common\\Materials\\Post\\M_BackCha_Inst.uasset",
+      "bytes": 9842,
+      "sha256": "C3F4FE787F10BBB978E1A850DE84379A5387C7BB65D6BE9A48E7FFD5592DA319"
+    },
+    {
+      "relativePath": "Character\\Common\\Materials\\Post\\M_BackCha.uasset",
+      "bytes": 36528,
+      "sha256": "715209B439A01CA0AFA70F52A4B676DCC10D0DC103AB16944FF521082A84ED05"
+    },
+    {
+      "relativePath": "Character\\Common\\Materials\\Post\\PPM_RimLight.uasset",
+      "bytes": 65295,
+      "sha256": "85F5DF2D54920318CF8D46C6F46D0561550E2F09EB0DB8EA095C059C355C5FB9"
+    },
+    {
+      "relativePath": "Character\\Common\\Materials\\Post\\PPMI_Outline.uasset",
+      "bytes": 8504,
+      "sha256": "157299A3283F23674A66D731F624E0B7EC7E550DA716D49ACFEAF6AE192D87A1"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\modern_buildings_2_1k.uasset",
+      "bytes": 1127320,
+      "sha256": "D1BB2B0191AF8F1628B1048BD91F6D5EFDA20E89ED30D3573030DA0F8E9E032F"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\photo_studio_01_1k.uasset",
+      "bytes": 984467,
+      "sha256": "9543914CFB3FDC1B0173500B66D324ED2C7FC0B9DD402EC3F1BC11B7A41B3043"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\T_actor_common_body_01_RD.uasset",
+      "bytes": 11260,
+      "sha256": "2EE48E21DA064616BA9C80E818E50CC0590B0A273C3D4EFCA7A5271AD35A4331"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\T_actor_common_cloth_04_RD.uasset",
+      "bytes": 11556,
+      "sha256": "EDA26E8BB637F1A8FDF1C50D4791A04EBE33CC43592532503FE6F42610AF964A"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\T_actor_common_face_01_RD.uasset",
+      "bytes": 11260,
+      "sha256": "CD7A28626F290A33EC4CDB73C6B5EF0309D845E5908F52ACADAD72564F810757"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\T_actor_common_female_face_01_cm_M.uasset",
+      "bytes": 70582,
+      "sha256": "3CDF638356C6CF5E043880C3DF5EB1F9466D92637DCB24A1B92E82FDB5A6E207"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\T_actor_common_female_face_01_SDF.uasset",
+      "bytes": 329031,
+      "sha256": "13D4E2C4EB582DE654773EC387AB9AB1F3A3E401826224834E1DDCF314577BA9"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\T_actor_common_female_face_01_ST.uasset",
+      "bytes": 20076,
+      "sha256": "55B6AE5FD6D3DF18AAC1CF2E7DF76B5B6A315F780E6AA3EA6ED8A13D14457ABC"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\T_actor_common_hair_01_RD.uasset",
+      "bytes": 11259,
+      "sha256": "E0B3E3FF859B448957A49B0D7BB67ECCFF68419810D11096FF0E25980D780DFF"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\T_actor_common_hairline_03_M.uasset",
+      "bytes": 24711,
+      "sha256": "404F23C6226F667B08C743E91CDC395B0AE250066D59C235E12559711440F35B"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\T_actor_common_hairst_01_ST.uasset",
+      "bytes": 36454,
+      "sha256": "00D962FEE6916646EBD02B72E1AB026EC8EDD689406305E1F7F9BB0069B45507"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\T_Eye.uasset",
+      "bytes": 152430,
+      "sha256": "7A2B7F6A09481B2EB2D3FAEAB155FC46BEBFC5AD2673C3B0514659E0E310FCF3"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\T_Matel.uasset",
+      "bytes": 780147,
+      "sha256": "12162EDFC1DC34552A671A5E8D19982C68F057F47612A7F7B3C9EA71F9247DFE"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\A1.uasset",
+      "bytes": 15459,
+      "sha256": "4549427A68120AB45AABCA4B1FD55085D8251229E529C8221BB2A98A9EC9DC05"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\A2.uasset",
+      "bytes": 127348,
+      "sha256": "F9198A5F33A52C9004DA6141F8EE4A8E572947D4B2A4DD008DB7DD9EE5CE2461"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\A3.uasset",
+      "bytes": 31405,
+      "sha256": "E10A6D95E252747DC7BF17FAEBFAF12BA15F54B4026196D139F0160446849F2A"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\A4.uasset",
+      "bytes": 33566,
+      "sha256": "48F53A9012DE21DBFC4E404C91044A8B35EAE6D6352C0F4A5ECC9EEF96B7F124"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\A5.uasset",
+      "bytes": 28620,
+      "sha256": "F6CBC47CDEBF74F10808BA8218B21C6DD8CFF109D43720654EF4F49302E90558"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\A6.uasset",
+      "bytes": 24920,
+      "sha256": "20FE8600A5AF9E99F78C11A22EAD6B2134F33C332D45E9956E8BD68BEEA03FF2"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\A7.uasset",
+      "bytes": 16212,
+      "sha256": "2E77C1007C3D11CB04FAE87E56BC807CC8A23C837386DDB8F5AF96DE0FA4CCB2"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\BodySpa.uasset",
+      "bytes": 15227,
+      "sha256": "42406A47FC469B28C407DC915E6AC84FC277DDB7F23175C3E99A12423F5E8E1D"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\cloth2.uasset",
+      "bytes": 25707,
+      "sha256": "B622769F342AF8922AE5013B09004154F33480DF114AA95F557C62F63FDA8834"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\Eff_MatCap_07.uasset",
+      "bytes": 987026,
+      "sha256": "877E6CEC4CD88556D92D6727F6627863FDA3EB0F359B27FE2BAA95A269DD87D2"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\Eff_MatCap_11.uasset",
+      "bytes": 29708,
+      "sha256": "68508D0A172655F5415F843D3C15FAABC1DFCF4F3ECDC8E40941BDAE1504D141"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\Eff_Noise_01.uasset",
+      "bytes": 91137,
+      "sha256": "1E5726FC8C6247026CEB26B6913DFD6966AC7FFB24EE516C987A329FC56A2AE2"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\Eff_Noise_zy_006.uasset",
+      "bytes": 178778,
+      "sha256": "2FC099E398DDFB84DE26AB07012EB0BE6C58B83D2565A921AB9AB920FA31E8CA"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\glass.uasset",
+      "bytes": 56890,
+      "sha256": "4AC0CC10E9510348D372A9AD6433FE369B8E69A87463D2F2F902CDD67DE8312E"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\gold.uasset",
+      "bytes": 15700,
+      "sha256": "0C62822CD9E65FF640B697450D1BD1F39DBCF31AC23B2C04D19D004A3F52DFD6"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\hair_s.uasset",
+      "bytes": 15826,
+      "sha256": "03384831F301F8EB7C2D5B3135E591E920A712DBC2058C7A3EBBC3B8AE6CAA7F"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\hair_s00.uasset",
+      "bytes": 18131,
+      "sha256": "ED7090B7F83E457C9DAD86EC631C3AFD3E993867E17F7DC1004D1224421F0937"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\hair.uasset",
+      "bytes": 21053,
+      "sha256": "D03AAB76722C49924444AE92CCBDC5539BA0E1F7A5EBE056ABBE469881E65260"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\HairG.uasset",
+      "bytes": 21979,
+      "sha256": "96E7DE67C02E73D34E2601B8F84BF192B95B4186E958C9EA881F63277CA39FD1"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\HairHighLight.uasset",
+      "bytes": 12067,
+      "sha256": "12168FD1E719D22864C73C8DE15829C3356A4AB2A29B3F0B0855F2AC02117076"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\HairSpa0_psd.uasset",
+      "bytes": 15698,
+      "sha256": "BDB0E02648E6D8467E0C4683A76304E97C8F7C07D5808C3C0CFBD4C7BD26F85C"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\HairSpa1_psd.uasset",
+      "bytes": 20356,
+      "sha256": "731DB76A2597807A764F3F149796BABE2C532DD2CD82D6E6B51E47276B24638A"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\HL_hair_s.uasset",
+      "bytes": 15792,
+      "sha256": "20EA2277FA0E664248CEF923964A3E3CE091C2B662A15AA309689E5D27EC5347"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\katana.uasset",
+      "bytes": 25969,
+      "sha256": "BE0432B3AED47A90D8E7B527C42012B2AF3117CBE6719A15BC0078B107693600"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\ls.uasset",
+      "bytes": 38809,
+      "sha256": "7A4079E6C3FFD97AA314EA14682F2DA2B7DBA7D36E61BE8781FF25D2DDD3F8D4"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\m.uasset",
+      "bytes": 113926,
+      "sha256": "02CB739FF8B7C0A9A13F627AC19F18FCBF0275B1D3024C024E6E6723C553534A"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\mc1.uasset",
+      "bytes": 92748,
+      "sha256": "69CAF6AE53BCA0AE2C762398B535C55C4BA44C6955F6CB091B0C863DB47A02C0"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\mc3.uasset",
+      "bytes": 39182,
+      "sha256": "414DF0008D35D5E0885407988541046D3863FFEFF8D184FDAB8742A2F9BCD027"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\Metal_MatCap.uasset",
+      "bytes": 83172,
+      "sha256": "288688ED69DE20D1AFC6949741B374A2E82686C486CB5E18C85E41AFA348873D"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\metalB2.uasset",
+      "bytes": 38144,
+      "sha256": "B5A279B58501194FD9C4C860EBF2FA6E0E743316DD6F935005A6A68DA5D3FE2C"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\Nostradamus_Body_MatCap_Tex.uasset",
+      "bytes": 43189,
+      "sha256": "06E4D9D2AE48937D61490AB00011D6BE348C8ED5F8870C5048D6A0C72920AAE7"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\S_Hair.uasset",
+      "bytes": 102623,
+      "sha256": "6BD3CF925A111CF7ECF018327972F1DEE0DBEEA85351E13C0C2BA4B5F605A5D0"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\S_S_1.uasset",
+      "bytes": 39336,
+      "sha256": "5844DE3DA5E3471996C0C988B52E287298659256E12CADA9B89C4FB996A41019"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\S_S_2.uasset",
+      "bytes": 38111,
+      "sha256": "E325E512CB2B8102935E130EFC9B1E999BE551A9A8FF3F977087972D4057174F"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\S_S_3.uasset",
+      "bytes": 41532,
+      "sha256": "B0BD86D12A660A6A8FCAAEF6E7C86D9F2BBD2BB6EBC2841DC8972393F906B7E2"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\S_S_metal.uasset",
+      "bytes": 54292,
+      "sha256": "99683D6270F59C7F946680317427FDA5EECAFCA5AA02CAE7CB560C65104AC1E8"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\S_Skin.uasset",
+      "bytes": 15561,
+      "sha256": "EA193431FCD6683185A04112C39E7B6F72516D3670D7EAE867498B3ADE3FF6B2"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\S_Sock.uasset",
+      "bytes": 28721,
+      "sha256": "293188AC9A26AA08A6DF07FE666EB87DAD3A0EAA4CCB846BD2C929F5FBA4709A"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\s1.uasset",
+      "bytes": 12783,
+      "sha256": "B60435ACC8D93AC1DB0185F86D3F1902FFCC4B9A93243B626B34A8B22C7092B9"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\shiny.uasset",
+      "bytes": 208211,
+      "sha256": "8C3EA643BBB41647750AFB4AAC3333DBE5FED589EF7E811BD3A41F00987746D3"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\SPA_HairHighLight.uasset",
+      "bytes": 51683,
+      "sha256": "A86E789E0A34F2085A670B5C8678D5B43F4BB5A2878BAB54D8BFCD5417F018D3"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\spa-1.uasset",
+      "bytes": 176466,
+      "sha256": "2CCCB5EA325724AF7E587BFABBEC224D0A3488133D5782965309A9B059535B8C"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\spa-3.uasset",
+      "bytes": 224162,
+      "sha256": "8D0C80177D3CF1FA939A15275391648B1F8BB60A07A22E19C5CF0BE80A3BA545"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\spa-eye_hi.uasset",
+      "bytes": 25121,
+      "sha256": "33D2A5F0A26CA14010C66E167408BAA5E9BD2EF8088A65ABEE95E93A1F563A98"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\spa-eye.uasset",
+      "bytes": 25515,
+      "sha256": "CDCFED63D5A27CBBAE09F61FC3082D6E5BE6ADB5BF4D99C7C7949B10FCDE5B8D"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\spa-eye2.uasset",
+      "bytes": 25470,
+      "sha256": "3CD224EB36893FDC9E83A389C315D1828963E3A2231014145D9C06F7D7009DB7"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\spa-fa.uasset",
+      "bytes": 102623,
+      "sha256": "6788129F74462EFB484B1266D52AEEFE7471253147CA6BE3BD7726618E500F66"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\spa-pi.uasset",
+      "bytes": 15561,
+      "sha256": "C0AF82838A681AA75A42B9FCD5B471EC4C110C794F5B59797F1626E20E4A725B"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\ss1.uasset",
+      "bytes": 13065,
+      "sha256": "409146256D3886C197C1F93F329ADA3A637189320BB559B0734A6DDBA595BEC2"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\T_HighLight_01.uasset",
+      "bytes": 50171,
+      "sha256": "73692961AD80E48DC50C427B932FCBC1447247BE456A4962CF21218961B85766"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\TXJspa__1_.uasset",
+      "bytes": 63054,
+      "sha256": "67167DDACBECD04A7CBF94E25F58CD36E3ABC914B73A39DA6BB3A7B255842393"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\TXJspa__2_.uasset",
+      "bytes": 64265,
+      "sha256": "6FCA54ABE382EAE5480E234B8BA04574A5CB9BCFA1EE78D16CF5750B65468E84"
+    },
+    {
+      "relativePath": "Character\\Common\\Tex\\MatCap\\TXJspa__3_.uasset",
+      "bytes": 27027,
+      "sha256": "2ED21EFDF8B4FE839820703AE93DB9B7C09C5109629105C79C52060A1000B51B"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\SKM_Chen_Body.uasset",
+      "bytes": 12139133,
+      "sha256": "3A5D8DF0366AA15FB9EA34AF225CC071171444396139588C769139974E1DAF2F"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\SKM_Chen_OutLine.uasset",
+      "bytes": 23935083,
+      "sha256": "5749634E1872BE65A64592901469D3E8E66CAF5D3BFA7EF972A81207D815DB2E"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\SKM_Chen.uasset",
+      "bytes": 12654985,
+      "sha256": "A6D1FD82E79CBE6D67508B617627C48646A9970682C1FA2CF6C3DAC795313DF1"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\SKM_Qianyu_Anim.uasset",
+      "bytes": 5272299,
+      "sha256": "304D79AD69817F6ECCAF37B65C8E573D70C8BE4D66F00F4F2B344FA488A6CAB3"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\SKM_Qianyu_Skeleton.uasset",
+      "bytes": 79188,
+      "sha256": "D1A46BA4D55F2088414BD7807AA4C0103D0F2E4C9E437A23424D4718E724A082"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\Materials\\MI_Chen_BFO_None.uasset",
+      "bytes": 7351,
+      "sha256": "CBF226963E6CED8D0E9E7A3934497F34FA79CBC7233D1FB141E9E3D1B2D3F886"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\Materials\\MI_Chen_Eye.uasset",
+      "bytes": 13472,
+      "sha256": "9F1E271587F0180298FE75782A1DF88C6FC6BAE7C823E1BA06F93B707B199259"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\Materials\\MI_Chen_Face_Inst.uasset",
+      "bytes": 10568,
+      "sha256": "465379B7A2B7D7097C7B096FCFF815C3BA511B7161B6A0AF23E633EEFBBD611D"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\Materials\\MI_Chen_Face_Inst1.uasset",
+      "bytes": 10124,
+      "sha256": "04A99DA85028D16805567FE9426B54E2D883314DD0FE9AE2E521C340B5BF2773"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\Materials\\MI_Chen_Face.uasset",
+      "bytes": 18517,
+      "sha256": "1469179FD9C1745CBD50ECF15EA64580DDAB93DA7FA2DDC642AD994DB5FD0822"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\Materials\\MI_Chen_H.uasset",
+      "bytes": 9517,
+      "sha256": "FFB14439145612C9BF94A749307A950877484F51CF45140B639B6C67586B1821"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\Materials\\MI_Chen_Hair_Inst.uasset",
+      "bytes": 23586,
+      "sha256": "E7A029A5F8429DF853A02694119A0FC791A5C14ED1CE8BE19DB74ABDB42AC1DF"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\Materials\\MI_Chen_Hair.uasset",
+      "bytes": 43482,
+      "sha256": "80C86F4808D2EDBCC5F498919ED4785BA26CECC846C33DA88646FC674AF964EC"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\Materials\\MI_Chen_Outline_Main.uasset",
+      "bytes": 5426,
+      "sha256": "B2615726F70772A1ACAC622669A71C2F4E62A3FE8CA26C38D783A13656136B9F"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\Materials\\MI_Eyebrow.uasset",
+      "bytes": 12166,
+      "sha256": "BDAB8595CAB8621E9F8050DDEB500A35F4BC5BF0BB8E1EB8EC87208C6C83180B"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\Materials\\MI_Outline_B.uasset",
+      "bytes": 6665,
+      "sha256": "6E60A5CB9CE79171FD0F0D6C1207921E5A60FD864D33030DEBA6CC892D174914"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\Materials\\MI_Outline_H.uasset",
+      "bytes": 8026,
+      "sha256": "9C682922C43098121270F2B30D79E954647ADE323338A5D94F7BEEC15546858D"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\Materials\\MI_Outline_Skin.uasset",
+      "bytes": 7408,
+      "sha256": "0B95D7DEE85D3587D5B4BBBA06A0BFAC3E4C6EA9EA7427194E9079D2751DAF46"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\Materials\\MI_Qianyu_Cloth_01_Inst.uasset",
+      "bytes": 27566,
+      "sha256": "27EC6CF5709C0A4554F95CECF5457575777CB5B23399CB0E0CAF7C5F86683A7B"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\Materials\\MI_Qianyu_Cloth_01.uasset",
+      "bytes": 50058,
+      "sha256": "DD9BC1FF7428D630BD6C067EC9E7C464D247E73C214648D394709A209F0133E2"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\Materials\\MI_Qianyu_Skin_Inst_Inst.uasset",
+      "bytes": 20206,
+      "sha256": "712BA50EE105208918B28343F044BFC89C2FA708F6725BA247CE16497AA19183"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\Materials\\MI_Qianyu_Skin_Inst.uasset",
+      "bytes": 20118,
+      "sha256": "F4D5B462AFB97BD5A29DD340ED679BB4CB4D5736EE9A6FFC51EF698FB8EC8861"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\Materials\\MI_Qianyu_Skin.uasset",
+      "bytes": 20527,
+      "sha256": "16819C3DCFCBC06FA336BAFA327C255DD9A79D8D52DCCD783A4E7CBD9D11B413"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\Tex\\1.uasset",
+      "bytes": 659763,
+      "sha256": "B10C1D7C537508D9EFFC64E2A0B457BC034061E2EF27E9683DD93B4433B04E16"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\Tex\\CsutmMask.uasset",
+      "bytes": 19853,
+      "sha256": "C65EF348B40BBCD89C885DFECE145C4D2A5D184C3029539D4A0A656E0CAAAE21"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\Tex\\modern_buildings_2_1k.uasset",
+      "bytes": 1126803,
+      "sha256": "08BBB99528C0A30A23CFA5A9CF1917F33AB768BD68E157B1FBF324360CCEFB3F"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\Tex\\photo_studio_01_1k.uasset",
+      "bytes": 983950,
+      "sha256": "80914D36B9B0DDFE510B87EAD607852033AA61F2F5BD006A3EA532B4D8684A6C"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\Tex\\PreIntegratedFGD_GGXDisneyDiffuse.uasset",
+      "bytes": 14942,
+      "sha256": "DCED2FD461403D45747AC2541374BBDFBDC8A68816EB64366EB4B7C909EF0173"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\Tex\\T_actor_chen_body_01_D.uasset",
+      "bytes": 127296,
+      "sha256": "37670D589312B62A17EDF10E40B83FB71BB9CD8FAB1FB138FB67C95DF240A056"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\Tex\\T_actor_chen_cloth_01_D.uasset",
+      "bytes": 4091245,
+      "sha256": "FD325660659C387D149A02A5DB2985E2AE1AFDA969033A7AE9BA904A153373E8"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\Tex\\T_actor_chen_cloth_01_E.uasset",
+      "bytes": 19029,
+      "sha256": "326087A790DA0099E81F5EE75135E650D642A76E34250354847EAC628C9285A7"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\Tex\\T_actor_chen_cloth_01_N.uasset",
+      "bytes": 5701848,
+      "sha256": "6470CFE2153DDFF2693E7C648BF2899FE945D1F8B131E0E9E0669F7180E022B0"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\Tex\\T_actor_chen_cloth_01_P.uasset",
+      "bytes": 5581242,
+      "sha256": "005D04861349E8E467391ADD6077A2AFE0F991B5C6C1766976E31850810DAD97"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\Tex\\T_actor_chen_face_01_D.uasset",
+      "bytes": 418696,
+      "sha256": "4BF69D193129CB2BBDD2FC8FAA7EFBBA77477CD6EE79E75321A58629F634CF00"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\Tex\\T_actor_chen_hair_01_D.uasset",
+      "bytes": 1288404,
+      "sha256": "05DF9178D3282F6C49D6FEE0DE0A27D8E2B41145F2BCD49E3B892087B5D4DDF8"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\Tex\\T_actor_chen_hair_01_HN.uasset",
+      "bytes": 2451597,
+      "sha256": "28A367ED52E7A9BC96A5F37331D64B8EAA648755562EE8D40CEA93BC84F99B17"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\Tex\\T_actor_chen_hair_01_P.uasset",
+      "bytes": 4237092,
+      "sha256": "9ED3C51FF37D0095FA47EAED1B1940E07F41AD49F487B686FD73F408ADED12AE"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\Tex\\T_actor_chen_hair_01_ST.uasset",
+      "bytes": 76017,
+      "sha256": "E8459681159C2A2D1023E3F5ED9573EC2503168BC4DB7D36D514FFAFA34EDF39"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\Tex\\T_actor_chen_iris_01_D.uasset",
+      "bytes": 298129,
+      "sha256": "A8A815D98492AFF4E349A8E2DA993A3BB2A82FB8D5C9176A0477EA64A44CF487"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\Tex\\T_Face.uasset",
+      "bytes": 409048,
+      "sha256": "27B2B9C002FB3C1F3341481920D78D192A4776C1F333C007DF9C45E5523F01BB"
+    },
+    {
+      "relativePath": "Character\\Qianyu\\Tex\\T_R2T1KamolaMd10011Up_D.uasset",
+      "bytes": 5819645,
+      "sha256": "A1291C7F4C278EC3954561A1044FCC12A2FAC9B0EFD9775A75E26C6903D6C758"
+    },
+    {
+      "relativePath": "Levels\\Map_Main.umap",
+      "bytes": 69507,
+      "sha256": "956C1C9AC3D5F48FB8A7BF46066AE3EBC96979A5A512539AFD6702DBC33F611B"
+    },
+    {
+      "relativePath": "NFX\\M_Scan.uasset",
+      "bytes": 16306,
+      "sha256": "86C23370E0F8E44DD8521FD1AF0EE81C1F4B424DB5C45973A4D9F336E668C77F"
+    },
+    {
+      "relativePath": "NFX\\NFX_Scan.uasset",
+      "bytes": 948181,
+      "sha256": "3CA00B109CC1E36912BAA757FD2309BB04B19B44A6F740B7C39E84E897CE6169"
+    }
+  ],
+  "after_editor_load_hash_check": "SourceAndMigratedFilesStillMatchAll150SHA256Hashes",
+  "checked_utc": "2026-10-03T21:14:16.155550+00:00"
+}

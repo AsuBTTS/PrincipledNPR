@@ -1,0 +1,139 @@
+{
+  "documentType": "NPRStyleProfile",
+  "id": "AnimeFlat",
+  "schemaVersion": 1,
+  "responseModelVersion": 1,
+  "status": "Draft",
+  "sourceContract": {
+    "path": "../Schemas/NPRParameterContract.v1.json",
+    "reportSha256": "81be77fb2c15350af9804e487323d6dcc6442ee384a73647ec100cf06eadd516"
+  },
+  "implementationState": {
+    "calibration": "Uncalibrated",
+    "shaderConnection": "NotConnected",
+    "uDataAsset": "NotImplemented",
+    "toonProfile": "NotGenerated",
+    "renderTests": "NotRun"
+  },
+  "defaultsPatch": {
+    "TerminatorDotCenter": {
+      "isSet": true,
+      "value": 0
+    },
+    "TerminatorDotHalfWidth": {
+      "isSet": true,
+      "value": 0.02
+    },
+    "SpecHalfAngleRad": {
+      "isSet": true,
+      "value": 0.13962634015954636
+    },
+    "SpecEdgeSoftness": {
+      "isSet": true,
+      "value": 0.1
+    },
+    "SpecPeakScale": {
+      "isSet": true,
+      "value": 1
+    },
+    "NormalDetailStrength": {
+      "isSet": true,
+      "value": 0.25
+    },
+    "MacroNormalBlend": {
+      "isSet": true,
+      "value": 0.7
+    },
+    "RimGrazingAngleRad": {
+      "isSet": true,
+      "value": 0.20943951023931956
+    },
+    "RimEdgeHalfWidthRad": {
+      "isSet": true,
+      "value": 0.03490658503988659
+    },
+    "RimPeakScale": {
+      "isSet": true,
+      "value": 0.8
+    },
+    "OutlineWidthPx": {
+      "isSet": true,
+      "value": 2
+    },
+    "MatCapWeight": {
+      "isSet": true,
+      "value": 0
+    },
+    "ChromaScale": {
+      "isSet": true,
+      "value": 1
+    }
+  },
+  "responseFamilies": {
+    "Diffuse": "SignedDotTwoBand.v1",
+    "Specular": "AngularHalfVector.v1",
+    "Face": "CriticalAzimuth.v1",
+    "Hair": "AnisotropicAngular.v1",
+    "Rim": "GrazingAngleBand.v1",
+    "runtimeCurves": [],
+    "curveStatus": "NotGenerated"
+  },
+  "renderingPolicy": {
+    "candidateBackend": "S58",
+    "referenceBackend": "A0",
+    "nativeLighting": "UseNativeDirectAndIndirectPipeline",
+    "nativeShadowValidation": "NotRun",
+    "indirectDiffuseScaleDesignTarget": 0.25,
+    "indirectSpecularScaleDesignTarget": 0.15,
+    "includeShadowPolicy": "CalibrateGenericOnOff;FaceBridgePrioritizesOff",
+    "facePolicy": "KeyLightOffsetApproxCandidatePendingFaceGate",
+    "hairPolicy": "NativeTangentAnisotropyApproxCandidatePendingHairGate",
+    "rimPolicy": "SeparateAppearanceModule.NotImplemented",
+    "outlinePolicy": "InvertedHullCandidate.NotImplemented",
+    "matcapPolicy": "Disabled",
+    "colorMappingPolicy": "DisabledPendingExplicitColorSpace",
+    "profileRuntimeMutation": "Forbidden",
+    "styleRuntimeSwitch": "PrebuiltBundle.NotImplemented"
+  },
+  "materialPatches": {
+    "Generic": {},
+    "Face": {
+      "FaceAngularBiasRad": {
+        "isSet": true,
+        "value": 0
+      },
+      "FaceAngularHalfWidthRad": {
+        "isSet": true,
+        "value": 0.026179938779914945
+      },
+      "SpecPeakScale": {
+        "isSet": true,
+        "value": 0.15
+      }
+    },
+    "Hair": {
+      "StrandAnisotropy": {
+        "isSet": true,
+        "value": 0.9
+      },
+      "HairShiftAngleRad": {
+        "isSet": true,
+        "value": 0
+      }
+    }
+  },
+  "requiredCapabilities": [
+    "NativeDirectLighting",
+    "CastShadow",
+    "ReceiveShadow",
+    "SelfShadow",
+    "FaceContractAccepted",
+    "HairContractAccepted"
+  ],
+  "notes": [
+    "Canonical/reference design values only; uncalibrated for native roughness, anisotropy or ramp coordinates.",
+    "Draft semantic interchange JSON, not UToonProfile, not .uasset, not an implemented UPrimaryDataAsset.",
+    "MacroNormalBlend requires authored guide normals; probe primitives do not satisfy controlled-character asset contract.",
+    "Unsupported exact Face/Hair demands remain explicit; approximations require measured scope and error."
+  ]
+}

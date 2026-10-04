@@ -1,0 +1,563 @@
+{
+  "owner": "PrincipledNPR.TwoStyleCharacterProbe.v1",
+  "status": "Saved_GenericDisplayObserved",
+  "map": "/Game/NPR/Maps/L_TwoStyle_CharacterProbe",
+  "assets": [
+    {
+      "path": "/Game/NPR/Styles/SemiPBRStylized/Curves/C_Diffuse_Initial.C_Diffuse_Initial",
+      "class": "CurveLinearColor"
+    },
+    {
+      "path": "/Game/NPR/Styles/SemiPBRStylized/Profiles/TP_S58_InitialDiffuseSeed.TP_S58_InitialDiffuseSeed",
+      "class": "ToonProfile"
+    },
+    {
+      "path": "/Game/NPR/Styles/AnimeFlat/Curves/C_Diffuse_Initial.C_Diffuse_Initial",
+      "class": "CurveLinearColor"
+    },
+    {
+      "path": "/Game/NPR/Styles/AnimeFlat/Profiles/TP_S58_InitialDiffuseSeed.TP_S58_InitialDiffuseSeed",
+      "class": "ToonProfile"
+    },
+    {
+      "path": "/Game/NPR/Styles/SemiPBRStylized/Materials/M_S58_Character_Initial.M_S58_Character_Initial",
+      "class": "Material"
+    },
+    {
+      "path": "/Game/NPR/Styles/AnimeFlat/Materials/M_S58_Character_Initial.M_S58_Character_Initial",
+      "class": "Material"
+    },
+    {
+      "path": "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_00_Initial.MI_ChenQianyu_00_Initial",
+      "class": "MaterialInstanceConstant"
+    },
+    {
+      "path": "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_01_Initial.MI_ChenQianyu_01_Initial",
+      "class": "MaterialInstanceConstant"
+    },
+    {
+      "path": "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_02_Initial.MI_ChenQianyu_02_Initial",
+      "class": "MaterialInstanceConstant"
+    },
+    {
+      "path": "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_04_Initial.MI_ChenQianyu_04_Initial",
+      "class": "MaterialInstanceConstant"
+    },
+    {
+      "path": "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_06_Initial.MI_ChenQianyu_06_Initial",
+      "class": "MaterialInstanceConstant"
+    },
+    {
+      "path": "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_07_Initial.MI_ChenQianyu_07_Initial",
+      "class": "MaterialInstanceConstant"
+    },
+    {
+      "path": "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_08_Initial.MI_ChenQianyu_08_Initial",
+      "class": "MaterialInstanceConstant"
+    },
+    {
+      "path": "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_09_Initial.MI_ChenQianyu_09_Initial",
+      "class": "MaterialInstanceConstant"
+    },
+    {
+      "path": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_00_Initial.MI_Wanderer_00_Initial",
+      "class": "MaterialInstanceConstant"
+    },
+    {
+      "path": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_01_Initial.MI_Wanderer_01_Initial",
+      "class": "MaterialInstanceConstant"
+    },
+    {
+      "path": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_02_Initial.MI_Wanderer_02_Initial",
+      "class": "MaterialInstanceConstant"
+    },
+    {
+      "path": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_03_Initial.MI_Wanderer_03_Initial",
+      "class": "MaterialInstanceConstant"
+    },
+    {
+      "path": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_04_Initial.MI_Wanderer_04_Initial",
+      "class": "MaterialInstanceConstant"
+    },
+    {
+      "path": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_05_Initial.MI_Wanderer_05_Initial",
+      "class": "MaterialInstanceConstant"
+    },
+    {
+      "path": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_06_Initial.MI_Wanderer_06_Initial",
+      "class": "MaterialInstanceConstant"
+    },
+    {
+      "path": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_07_Initial.MI_Wanderer_07_Initial",
+      "class": "MaterialInstanceConstant"
+    },
+    {
+      "path": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_08_Initial.MI_Wanderer_08_Initial",
+      "class": "MaterialInstanceConstant"
+    },
+    {
+      "path": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_09_Initial.MI_Wanderer_09_Initial",
+      "class": "MaterialInstanceConstant"
+    },
+    {
+      "path": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_10_Initial.MI_Wanderer_10_Initial",
+      "class": "MaterialInstanceConstant"
+    },
+    {
+      "path": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_11_Initial.MI_Wanderer_11_Initial",
+      "class": "MaterialInstanceConstant"
+    },
+    {
+      "path": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_12_Initial.MI_Wanderer_12_Initial",
+      "class": "MaterialInstanceConstant"
+    },
+    {
+      "path": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_13_Initial.MI_Wanderer_13_Initial",
+      "class": "MaterialInstanceConstant"
+    },
+    {
+      "path": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_14_Initial.MI_Wanderer_14_Initial",
+      "class": "MaterialInstanceConstant"
+    },
+    {
+      "path": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_15_Initial.MI_Wanderer_15_Initial",
+      "class": "MaterialInstanceConstant"
+    },
+    {
+      "path": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_16_Initial.MI_Wanderer_16_Initial",
+      "class": "MaterialInstanceConstant"
+    },
+    {
+      "path": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_17_Initial.MI_Wanderer_17_Initial",
+      "class": "MaterialInstanceConstant"
+    },
+    {
+      "path": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_18_Initial.MI_Wanderer_18_Initial",
+      "class": "MaterialInstanceConstant"
+    },
+    {
+      "path": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_19_Initial.MI_Wanderer_19_Initial",
+      "class": "MaterialInstanceConstant"
+    },
+    {
+      "path": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_20_Initial.MI_Wanderer_20_Initial",
+      "class": "MaterialInstanceConstant"
+    },
+    {
+      "path": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_21_Initial.MI_Wanderer_21_Initial",
+      "class": "MaterialInstanceConstant"
+    },
+    {
+      "path": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_22_Initial.MI_Wanderer_22_Initial",
+      "class": "MaterialInstanceConstant"
+    },
+    {
+      "path": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_23_Initial.MI_Wanderer_23_Initial",
+      "class": "MaterialInstanceConstant"
+    },
+    {
+      "path": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_24_Initial.MI_Wanderer_24_Initial",
+      "class": "MaterialInstanceConstant"
+    },
+    {
+      "path": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_25_Initial.MI_Wanderer_25_Initial",
+      "class": "MaterialInstanceConstant"
+    }
+  ],
+  "actors": [
+    {
+      "label": "PNPR_ChenQianyu_EndfieldLike",
+      "path": "/Game/NPR/Maps/L_TwoStyle_CharacterProbe.L_TwoStyle_CharacterProbe:PersistentLevel.SkeletalMeshActor_0"
+    },
+    {
+      "label": "PNPR_Wanderer_GenshinLike",
+      "path": "/Game/NPR/Maps/L_TwoStyle_CharacterProbe.L_TwoStyle_CharacterProbe:PersistentLevel.SkeletalMeshActor_1"
+    },
+    {
+      "label": "PNPR_TwoStyle_Floor",
+      "path": "/Game/NPR/Maps/L_TwoStyle_CharacterProbe.L_TwoStyle_CharacterProbe:PersistentLevel.StaticMeshActor_0"
+    },
+    {
+      "label": "PNPR_TwoStyle_Key",
+      "path": "/Game/NPR/Maps/L_TwoStyle_CharacterProbe.L_TwoStyle_CharacterProbe:PersistentLevel.DirectionalLight_0"
+    },
+    {
+      "label": "PNPR_TwoStyle_Sky",
+      "path": "/Game/NPR/Maps/L_TwoStyle_CharacterProbe.L_TwoStyle_CharacterProbe:PersistentLevel.SkyLight_0"
+    },
+    {
+      "label": "PNPR_TwoStyle_FixedExposure",
+      "path": "/Game/NPR/Maps/L_TwoStyle_CharacterProbe.L_TwoStyle_CharacterProbe:PersistentLevel.PostProcessVolume_0"
+    },
+    {
+      "label": "PNPR_TwoStyle_Camera",
+      "path": "/Game/NPR/Maps/L_TwoStyle_CharacterProbe.L_TwoStyle_CharacterProbe:PersistentLevel.CameraActor_0"
+    }
+  ],
+  "compile_requests": [
+    {
+      "asset": "/Game/NPR/Styles/SemiPBRStylized/Materials/M_S58_Character_Initial.M_S58_Character_Initial",
+      "immediate_errors": []
+    },
+    {
+      "asset": "/Game/NPR/Styles/AnimeFlat/Materials/M_S58_Character_Initial.M_S58_Character_Initial",
+      "immediate_errors": []
+    }
+  ],
+  "character_slots": {
+    "ChenQianyu": [
+      {
+        "index": 0,
+        "material": "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_00_Initial.MI_ChenQianyu_00_Initial"
+      },
+      {
+        "index": 1,
+        "material": "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_01_Initial.MI_ChenQianyu_01_Initial"
+      },
+      {
+        "index": 2,
+        "material": "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_02_Initial.MI_ChenQianyu_02_Initial"
+      },
+      {
+        "index": 3,
+        "material": "/Game/NPR/Characters/ChenQianyu/Materials/M_ExcludedSourceProxy.M_ExcludedSourceProxy"
+      },
+      {
+        "index": 4,
+        "material": "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_04_Initial.MI_ChenQianyu_04_Initial"
+      },
+      {
+        "index": 5,
+        "material": "/Game/NPR/Characters/ChenQianyu/Materials/M_ExcludedSourceProxy.M_ExcludedSourceProxy"
+      },
+      {
+        "index": 6,
+        "material": "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_06_Initial.MI_ChenQianyu_06_Initial"
+      },
+      {
+        "index": 7,
+        "material": "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_07_Initial.MI_ChenQianyu_07_Initial"
+      },
+      {
+        "index": 8,
+        "material": "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_08_Initial.MI_ChenQianyu_08_Initial"
+      },
+      {
+        "index": 9,
+        "material": "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_09_Initial.MI_ChenQianyu_09_Initial"
+      },
+      {
+        "index": 10,
+        "material": "/Game/NPR/Characters/ChenQianyu/Materials/M_ExcludedSourceProxy.M_ExcludedSourceProxy"
+      }
+    ],
+    "Wanderer": [
+      {
+        "index": 0,
+        "pmx_material": "颜",
+        "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Face.T_Wanderer_Face",
+        "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_00_Initial.MI_Wanderer_00_Initial",
+        "opacity_scale": 1.0,
+        "policy": "BaseColor and source alpha"
+      },
+      {
+        "index": 1,
+        "pmx_material": "颜2",
+        "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Face.T_Wanderer_Face",
+        "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_01_Initial.MI_Wanderer_01_Initial",
+        "opacity_scale": 1.0,
+        "policy": "BaseColor and source alpha"
+      },
+      {
+        "index": 2,
+        "pmx_material": "二重",
+        "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Face.T_Wanderer_Face",
+        "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_02_Initial.MI_Wanderer_02_Initial",
+        "opacity_scale": 1.0,
+        "policy": "BaseColor and source alpha"
+      },
+      {
+        "index": 3,
+        "pmx_material": "眉",
+        "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Face.T_Wanderer_Face",
+        "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_03_Initial.MI_Wanderer_03_Initial",
+        "opacity_scale": 1.0,
+        "policy": "BaseColor and source alpha"
+      },
+      {
+        "index": 4,
+        "pmx_material": "口舌",
+        "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Face.T_Wanderer_Face",
+        "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_04_Initial.MI_Wanderer_04_Initial",
+        "opacity_scale": 1.0,
+        "policy": "BaseColor and source alpha"
+      },
+      {
+        "index": 5,
+        "pmx_material": "齿",
+        "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Face.T_Wanderer_Face",
+        "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_05_Initial.MI_Wanderer_05_Initial",
+        "opacity_scale": 1.0,
+        "policy": "BaseColor and source alpha"
+      },
+      {
+        "index": 6,
+        "pmx_material": "白目",
+        "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Face.T_Wanderer_Face",
+        "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_06_Initial.MI_Wanderer_06_Initial",
+        "opacity_scale": 1.0,
+        "policy": "BaseColor and source alpha"
+      },
+      {
+        "index": 7,
+        "pmx_material": "睫",
+        "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Face.T_Wanderer_Face",
+        "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_07_Initial.MI_Wanderer_07_Initial",
+        "opacity_scale": 1.0,
+        "policy": "BaseColor and source alpha"
+      },
+      {
+        "index": 8,
+        "pmx_material": "星目",
+        "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Face.T_Wanderer_Face",
+        "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_08_Initial.MI_Wanderer_08_Initial",
+        "opacity_scale": 1.0,
+        "policy": "BaseColor and source alpha"
+      },
+      {
+        "index": 9,
+        "pmx_material": "髮",
+        "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Hair.T_Wanderer_Hair",
+        "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_09_Initial.MI_Wanderer_09_Initial",
+        "opacity_scale": 1.0,
+        "policy": "BaseColor and source alpha"
+      },
+      {
+        "index": 10,
+        "pmx_material": "髮+",
+        "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_HairOverlay.T_Wanderer_HairOverlay",
+        "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_10_Initial.MI_Wanderer_10_Initial",
+        "opacity_scale": 0.0,
+        "policy": "Exclude PMX additive sphere-map Hair+ overlay"
+      },
+      {
+        "index": 11,
+        "pmx_material": "目",
+        "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Hair.T_Wanderer_Hair",
+        "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_11_Initial.MI_Wanderer_11_Initial",
+        "opacity_scale": 1.0,
+        "policy": "BaseColor and source alpha"
+      },
+      {
+        "index": 12,
+        "pmx_material": "体",
+        "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Body.T_Wanderer_Body",
+        "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_12_Initial.MI_Wanderer_12_Initial",
+        "opacity_scale": 1.0,
+        "policy": "BaseColor and source alpha"
+      },
+      {
+        "index": 13,
+        "pmx_material": "护腕",
+        "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Body.T_Wanderer_Body",
+        "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_13_Initial.MI_Wanderer_13_Initial",
+        "opacity_scale": 1.0,
+        "policy": "BaseColor and source alpha"
+      },
+      {
+        "index": 14,
+        "pmx_material": "饰1",
+        "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Body.T_Wanderer_Body",
+        "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_14_Initial.MI_Wanderer_14_Initial",
+        "opacity_scale": 1.0,
+        "policy": "BaseColor and source alpha"
+      },
+      {
+        "index": 15,
+        "pmx_material": "裤",
+        "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Body.T_Wanderer_Body",
+        "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_15_Initial.MI_Wanderer_15_Initial",
+        "opacity_scale": 1.0,
+        "policy": "BaseColor and source alpha"
+      },
+      {
+        "index": 16,
+        "pmx_material": "裤内",
+        "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Body.T_Wanderer_Body",
+        "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_16_Initial.MI_Wanderer_16_Initial",
+        "opacity_scale": 1.0,
+        "policy": "BaseColor and source alpha"
+      },
+      {
+        "index": 17,
+        "pmx_material": "腰绳1",
+        "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Body.T_Wanderer_Body",
+        "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_17_Initial.MI_Wanderer_17_Initial",
+        "opacity_scale": 1.0,
+        "policy": "BaseColor and source alpha"
+      },
+      {
+        "index": 18,
+        "pmx_material": "袖",
+        "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Body.T_Wanderer_Body",
+        "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_18_Initial.MI_Wanderer_18_Initial",
+        "opacity_scale": 1.0,
+        "policy": "BaseColor and source alpha"
+      },
+      {
+        "index": 19,
+        "pmx_material": "披肩",
+        "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Hair.T_Wanderer_Hair",
+        "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_19_Initial.MI_Wanderer_19_Initial",
+        "opacity_scale": 1.0,
+        "policy": "BaseColor and source alpha"
+      },
+      {
+        "index": 20,
+        "pmx_material": "神之眼AL",
+        "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Hair.T_Wanderer_Hair",
+        "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_20_Initial.MI_Wanderer_20_Initial",
+        "opacity_scale": 1.0,
+        "policy": "BaseColor and source alpha"
+      },
+      {
+        "index": 21,
+        "pmx_material": "肌",
+        "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Body.T_Wanderer_Body",
+        "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_21_Initial.MI_Wanderer_21_Initial",
+        "opacity_scale": 1.0,
+        "policy": "BaseColor and source alpha"
+      },
+      {
+        "index": 22,
+        "pmx_material": "肌2",
+        "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Skin.T_Wanderer_Skin",
+        "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_22_Initial.MI_Wanderer_22_Initial",
+        "opacity_scale": 1.0,
+        "policy": "BaseColor and source alpha"
+      },
+      {
+        "index": 23,
+        "pmx_material": "帽",
+        "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Body.T_Wanderer_Body",
+        "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_23_Initial.MI_Wanderer_23_Initial",
+        "opacity_scale": 1.0,
+        "policy": "BaseColor and source alpha"
+      },
+      {
+        "index": 24,
+        "pmx_material": "帽带",
+        "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Body.T_Wanderer_Body",
+        "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_24_Initial.MI_Wanderer_24_Initial",
+        "opacity_scale": 1.0,
+        "policy": "BaseColor and source alpha"
+      },
+      {
+        "index": 25,
+        "pmx_material": "AL",
+        "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Effect.T_Wanderer_Effect",
+        "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_25_Initial.MI_Wanderer_25_Initial",
+        "opacity_scale": 0.0,
+        "policy": "BaseColor and source alpha"
+      }
+    ]
+  },
+  "style_bindings": [
+    {
+      "semantic_style_id": "SemiPBRStylized",
+      "reference_direction": "EndfieldLike",
+      "semantic_style_file": "Documentation/Styles/SemiPBRStylized.v1.draft.json",
+      "semantic_source_sha256": "0a8613a500a69ad6217a48874c6bac00ad3989d5528bdd7e1556fa005f973a06",
+      "toon_profile": "/Game/NPR/Styles/SemiPBRStylized/Profiles/TP_S58_InitialDiffuseSeed.TP_S58_InitialDiffuseSeed",
+      "diffuse_curve": "/Game/NPR/Styles/SemiPBRStylized/Curves/C_Diffuse_Initial.C_Diffuse_Initial",
+      "diffuse_mapping": {
+        "signed_dot_center": 0,
+        "signed_dot_half_width": 0.2,
+        "shadow_multiplier": 0.18,
+        "readback_samples": [
+          0.18000000715255737,
+          0.18000000715255737,
+          0.5899999737739563,
+          1.0,
+          1.0
+        ],
+        "mapping_grade": "Approximate after native LUT sampling; artistic shadow multiplier authored here"
+      },
+      "unmapped_contracts": [
+        "AngularSpecular",
+        "MacroNormal",
+        "FaceCriticalAzimuth",
+        "HairAngularLobe",
+        "Rim",
+        "Outline"
+      ],
+      "status": "InitialDiffuseSeed_Uncalibrated",
+      "runtime_profile_mutation": "NotUsed",
+      "semantic_source_hash_normalization": "UTF8_LF"
+    },
+    {
+      "semantic_style_id": "AnimeFlat",
+      "reference_direction": "GenshinLike",
+      "semantic_style_file": "Documentation/Styles/AnimeFlat.v1.draft.json",
+      "semantic_source_sha256": "b2de4b54ccfcd1b54f02671eeecf8e77e3121e996b9fe89d905b03781b15b916",
+      "toon_profile": "/Game/NPR/Styles/AnimeFlat/Profiles/TP_S58_InitialDiffuseSeed.TP_S58_InitialDiffuseSeed",
+      "diffuse_curve": "/Game/NPR/Styles/AnimeFlat/Curves/C_Diffuse_Initial.C_Diffuse_Initial",
+      "diffuse_mapping": {
+        "signed_dot_center": 0,
+        "signed_dot_half_width": 0.02,
+        "shadow_multiplier": 0.28,
+        "readback_samples": [
+          0.2800000011920929,
+          0.2800000011920929,
+          0.6399999856948853,
+          1.0,
+          1.0
+        ],
+        "mapping_grade": "Approximate after native LUT sampling; artistic shadow multiplier authored here"
+      },
+      "unmapped_contracts": [
+        "AngularSpecular",
+        "MacroNormal",
+        "FaceCriticalAzimuth",
+        "HairAngularLobe",
+        "Rim",
+        "Outline"
+      ],
+      "status": "InitialDiffuseSeed_Uncalibrated",
+      "runtime_profile_mutation": "NotUsed",
+      "semantic_source_hash_normalization": "UTF8_LF"
+    }
+  ],
+  "face_model": "NotImplemented",
+  "hair_model": "NotImplemented",
+  "formal_lighting_tests": "NotRun",
+  "adapter_scope": "Initial diffuse-only seed; not a full semantic backend adapter",
+  "completed_utc": "2026-10-03T21:52:42.324161+00:00",
+  "verification": {
+    "map_saved_and_reloaded": true,
+    "actor_count_after_reload": 7,
+    "all_actor_material_bindings_readback": true,
+    "wanderer_default_mesh_materials_saved": 26,
+    "lit_viewport_observed": true,
+    "front_orientation_observed": true,
+    "scope": "Neutral pose, topology/texture placement and native Generic Toon display; no animation or formal lighting capability acceptance",
+    "face_hair_specialized_response": "NotImplemented",
+    "mmd_physics_ik_sdef": "NotPorted",
+    "style_calibration": "Uncalibrated_DiffuseSeedOnly"
+  },
+  "preview_camera": {
+    "location_cm": [
+      0,
+      250,
+      128
+    ],
+    "rotation_deg": {
+      "pitch": -8,
+      "yaw": -90,
+      "roll": 0
+    },
+    "sky_intensity": 0.6,
+    "fixed_exposure": true
+  },
+  "verified_at": "2026-10-03T21:55:20.674204+00:00"
+}

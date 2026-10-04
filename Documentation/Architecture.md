@@ -1,0 +1,45 @@
+# Principled NPR 初步语义骨架
+
+状态：**Draft / 未标定 / 未连接 Shader**。这些版本化 JSON 是语义契约草案；尚未实现 UDataAsset、Resolver、Backend Adapter 或 Runtime Style Switch。JSON 不参与引擎着色，不等于 ToonProfile，也不证明渲染测试通过。
+
+## 文件
+
+- Schemas/NPRParameterContract.v1.json：单位、范围、语义、MaterialProfile 输入要求、S58 映射与能力边界。
+- Schemas/NPRStyleProfile.schema.v1.json：风格草案 JSON Schema，拒绝未知参数 ID，角度存弧度。
+- Styles/AnimeFlat.v1.draft.json：清晰两阶、窄角域高光、较强形体抽象与条带设计初值。
+- Styles/SemiPBRStylized.v1.draft.json：宽明暗过渡、柔和高光、较多细节与间接贡献设计初值。
+
+报告来源 SHA256：e2b89f5a297e0130db6cca61442e41ce040f556b3b0806f5795bdb6302b91ff3。它对应创建骨架时读取的报告字节；不是后端实现或标定结果 hash。
+
+## 数据流与所有权
+
+PBR Surface Data + Asset Facts + Material Semantics + Style Semantics → Resolve → Capability Check → Backend Mapping/Calibration → Immutable Backend Package → MIC/MID Bundle。
+
+NPRStyleProfile → NPRBackendSubstrateToon → UToonProfile。Style 是引擎无关语义资产，ToonProfile 是后端产物。A0 仅作数学参考；S58 是须实测接受的 V1 生产候选。关键缺口被证明并冻结需求后，才评估局部 A+ 或自定义着色模型。
+
+覆盖顺序：SchemaDefaults → MaterialDefaults → StyleDefaults → StyleMaterialPatch → InstancePatch → RuntimeTransientPatch。
+
+Patch 使用稳定 ID 与 isSet/value；缺字段或 isSet=false 表示继承，0 为有效覆写。Reset 删除当前层字段。非法硬域报错，推荐范围只给诊断。HeadBone、Face 轴、UV 约定、临界角场编码与根梢流向是资产事实，不能由 Style 改写。当前还没有 MaterialDefaults 数值集合；Resolver 实现前以 schemaDefault 为缺字段基准，不猜测材质覆写。
+
+## 后端边界
+
+Generic diffuse 坐标映射可有条件精确，最终响应、LUT 与 AA 未标定。Specular 角宽/软度/峰值为 Approximate 候选，不能把 roughness 改名 size。Normal 预处理须按模型实现并验证引导法线。
+
+Face 逐灯完整 terminator 替换在公开 Toon 接口下为 Unsupported。PatternUV offset bridge 为 Approximate 候选，须标定单调内部范围、12-bit 量化、frac/wrap 接缝与全遮挡表现。主光偏移不等于逐灯 Face 场。刘海、鼻子与场景遮挡仍须实测。
+
+Hair 原生 Tangent/Anisotropy 为 Approximate 候选。独立 shifted lobe 与全视角参考角域瓣不能默认精确复现；旋转共享 Normal 会同时影响 diffuse/GI，不满足独立高光 shift 语义。
+
+Rim、Outline、MatCap、颜色映射是独立模块，当前均未连接。Emissive Rim 不自动拥有 native shadow visibility。
+
+## 下一轮开发
+
+1. 固定 UE 5.8.3 patch/CL 与 GBuffer 配置，完成真实 Toon 测试地图并记录环境。
+2. 实现最小语义结构和稀疏 Resolver，验证覆盖顺序、显式零值、Reset 与缺资源诊断。
+3. 从 canonical diffuse 生成 native Curve/Profile；拟合 specular 并输出有效范围和误差。
+4. 固定受控资产单独执行 FaceGate/HairGate，Generic 成功不替代角色特化验收。
+5. 将两 Draft 风格标定为有证据的后端 bundle，预生成 ToonProfile/MIC；运行时预载与切换，禁止写 Profile Settings。
+6. 独立 Rim/Outline 实现后再发布完整风格。保存源 hash、Profile/MI 引用、Engine patch/CL、测试状态和降级清单。
+
+## 当前验收
+
+只验收 JSON 可解析、参数 ID/单位/范围一致、两风格稀疏 patch 可校验、真实来源 hash 与文件存在。引擎安装、材质编译、实际着色、阴影/GI/运行时切换和受控角色资产由独立测试决定；此骨架均保持 NotRun。

@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "bootstrap_status": "AssetsCreatedAndSaved_RenderingNotValidated",
+  "rendering_validation": "NotRun",
+  "style_profiles": "NotImplemented: these are native diagnostic baselines",
+  "face_model": "NotImplemented",
+  "hair_model": "NotImplemented",
+  "map": "/Game/NPR/Maps/L_S58_ToonProbe",
+  "assets": [
+    {
+      "path": "/Game/NPR/Profiles/TP_S58_NativeBaseline_A",
+      "class": "ToonProfile",
+      "operation": "Created",
+      "diffuse_ramp_include_shadow": false
+    },
+    {
+      "path": "/Game/NPR/Profiles/TP_S58_NativeBaseline_B",
+      "class": "ToonProfile",
+      "operation": "Created",
+      "diffuse_ramp_include_shadow": true
+    },
+    {
+      "path": "/Game/NPR/Materials/M_S58_ToonBaseline_A",
+      "class": "Material",
+      "operation": "Created"
+    },
+    {
+      "path": "/Game/NPR/Materials/M_S58_ToonBaseline_B",
+      "class": "Material",
+      "operation": "Created"
+    },
+    {
+      "path": "/Game/NPR/Materials/M_S58_NativeSlab_Control",
+      "class": "Material",
+      "operation": "Created"
+    },
+    {
+      "path": "/Game/NPR/Materials/M_S58_NativeSlab_Floor",
+      "class": "Material",
+      "operation": "Created"
+    }
+  ],
+  "actors": [
+    {
+      "key": "Toon_A_ShadowOutsideRamp",
+      "actor": "/Game/NPR/Maps/L_S58_ToonProbe.L_S58_ToonProbe:PersistentLevel.StaticMeshActor_0",
+      "class": "StaticMeshActor",
+      "operation": "Created"
+    },
+    {
+      "key": "Toon_B_ShadowInsideRamp",
+      "actor": "/Game/NPR/Maps/L_S58_ToonProbe.L_S58_ToonProbe:PersistentLevel.StaticMeshActor_1",
+      "class": "StaticMeshActor",
+      "operation": "Created"
+    },
+    {
+      "key": "NativeSlab_Control",
+      "actor": "/Game/NPR/Maps/L_S58_ToonProbe.L_S58_ToonProbe:PersistentLevel.StaticMeshActor_2",
+      "class": "StaticMeshActor",
+      "operation": "Created"
+    },
+    {
+      "key": "Floor",
+      "actor": "/Game/NPR/Maps/L_S58_ToonProbe.L_S58_ToonProbe:PersistentLevel.StaticMeshActor_3",
+      "class": "StaticMeshActor",
+      "operation": "Created"
+    },
+    {
+      "key": "Occluder",
+      "actor": "/Game/NPR/Maps/L_S58_ToonProbe.L_S58_ToonProbe:PersistentLevel.StaticMeshActor_4",
+      "class": "StaticMeshActor",
+      "operation": "Created"
+    },
+    {
+      "key": "KeyDirectional",
+      "actor": "/Game/NPR/Maps/L_S58_ToonProbe.L_S58_ToonProbe:PersistentLevel.DirectionalLight_0",
+      "class": "DirectionalLight",
+      "operation": "Created"
+    },
+    {
+      "key": "SkyLight",
+      "actor": "/Game/NPR/Maps/L_S58_ToonProbe.L_S58_ToonProbe:PersistentLevel.SkyLight_0",
+      "class": "SkyLight",
+      "operation": "Created"
+    },
+    {
+      "key": "FixedExposure",
+      "actor": "/Game/NPR/Maps/L_S58_ToonProbe.L_S58_ToonProbe:PersistentLevel.PostProcessVolume_0",
+      "class": "PostProcessVolume",
+      "operation": "Created"
+    },
+    {
+      "key": "ProbeCamera",
+      "actor": "/Game/NPR/Maps/L_S58_ToonProbe.L_S58_ToonProbe:PersistentLevel.CameraActor_0",
+      "class": "CameraActor",
+      "operation": "Created"
+    },
+    {
+      "key": "PlayerStart",
+      "actor": "/Game/NPR/Maps/L_S58_ToonProbe.L_S58_ToonProbe:PersistentLevel.PlayerStart_0",
+      "class": "PlayerStart",
+      "operation": "Created"
+    }
+  ],
+  "material_compile_requests": [
+    {
+      "material": "/Game/NPR/Materials/M_S58_ToonBaseline_A.M_S58_ToonBaseline_A",
+      "operation": "Requested",
+      "immediate_errors": [],
+      "gpu_validation": "NotRun"
+    },
+    {
+      "material": "/Game/NPR/Materials/M_S58_ToonBaseline_B.M_S58_ToonBaseline_B",
+      "operation": "Requested",
+      "immediate_errors": [],
+      "gpu_validation": "NotRun"
+    },
+    {
+      "material": "/Game/NPR/Materials/M_S58_NativeSlab_Control.M_S58_NativeSlab_Control",
+      "operation": "Requested",
+      "immediate_errors": [],
+      "gpu_validation": "NotRun"
+    },
+    {
+      "material": "/Game/NPR/Materials/M_S58_NativeSlab_Floor.M_S58_NativeSlab_Floor",
+      "operation": "Requested",
+      "immediate_errors": [],
+      "gpu_validation": "NotRun"
+    }
+  ],
+  "warnings": [],
+  "limitations": [
+    "Empty immediate compile error arrays do not prove shader completion or visual correctness.",
+    "Cast/Receive/Self Shadow, VSM/CSM, Lumen, and indirect specular still require dedicated tests.",
+    "Baseline B changes only DiffuseRampIncludeShadow; it is not a second completed StyleProfile."
+  ],
+  "started_utc": "2026-10-03T20:19:18.556240+00:00",
+  "project_dir": ".",
+  "engine_version": "5.8.3-58210709+++UE5+Release-5.8",
+  "render_settings": {
+    "r.Substrate": 1,
+    "r.Substrate.ProjectGBufferFormat": 0,
+    "r.ForwardShading": 0,
+    "r.DynamicGlobalIlluminationMethod": 1,
+    "r.ReflectionMethod": 1,
+    "r.Shadow.Virtual.Enable": 1
+  },
+  "map_file": "Content/NPR/Maps/L_S58_ToonProbe.umap",
+  "finished_utc": "2026-10-03T20:19:37.247372+00:00"
+}

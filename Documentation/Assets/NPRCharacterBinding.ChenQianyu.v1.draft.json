@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "status": "Draft_Uncalibrated",
+  "character_id": "ChenQianyu",
+  "project": "PrincipledNPR.uproject",
+  "source_engine": "5.6",
+  "target_engine": "5.8.3-58210709+++UE5+Release-5.8",
+  "mesh": "/Game/EndfieldRender/Character/Qianyu/SKM_Chen.SKM_Chen",
+  "skeleton": "/Game/EndfieldRender/Character/Qianyu/SKM_Qianyu_Skeleton.SKM_Qianyu_Skeleton",
+  "unit": "UE centimeters",
+  "head_frame": {
+    "bone_candidate": "Bip001_Head",
+    "bone_exists": true,
+    "forward_bone_local": null,
+    "right_bone_local": null,
+    "up_bone_local": null,
+    "axes_validation": "NotRun",
+    "nonuniform_scale_policy": "Require orthonormal frame reconstruction"
+  },
+  "face_field": {
+    "candidate": "/Game/EndfieldRender/Character/Common/Tex/T_actor_common_female_face_01_SDF",
+    "width": 1024,
+    "height": 1024,
+    "srgb_in_source": true,
+    "value_convention": "Unknown",
+    "uv_channel": null,
+    "mirror_convention": "Unknown",
+    "critical_azimuth_calibration": "NotRun",
+    "connected_to_probe": false,
+    "required_action": "Inspect source graph and field encoding; calibrate on a separate linear data texture. Do not silently toggle source sRGB."
+  },
+  "hair": {
+    "slot_index": 9,
+    "normal_candidate": "/Game/EndfieldRender/Character/Qianyu/Tex/T_actor_chen_hair_01_HN",
+    "normal_candidate_compression": "BC7; encoded channels unverified",
+    "source_shift_tex_parameter": "/Game/EndfieldRender/Character/Common/Tex/T_actor_common_hairst_01_ST",
+    "flow_encoding": "Unknown",
+    "strand_tangent_axis": "Unknown",
+    "flow_uv_channel": null,
+    "native_anisotropy_validation": "NotRun",
+    "angular_reference_model": "NotImplemented",
+    "note": "The local hair_01_ST texture is used by a source outline mask instance; its name does not establish a Hair Flow map."
+  },
+  "material_slots": [
+    {
+      "index": 0,
+      "slot": "M_actor_chen_body_01_001",
+      "imported_slot": "M_actor_chen_body_01_001",
+      "material": "/Game/EndfieldRender/Character/Qianyu/Materials/MI_Qianyu_Skin.MI_Qianyu_Skin",
+      "material_profile_candidate": "Generic",
+      "semantic_validation": "Uncalibrated",
+      "probe_backend_response": "GenericToonOnly",
+      "exclusion_reason": null,
+      "base_color_from_effective_parameter": "/Game/EndfieldRender/Character/Qianyu/Tex/T_actor_chen_body_01_D.T_actor_chen_body_01_D"
+    },
+    {
+      "index": 1,
+      "slot": "M_actor_chen_body_01_002",
+      "imported_slot": "M_actor_chen_body_01_002",
+      "material": "/Game/EndfieldRender/Character/Qianyu/Materials/MI_Chen_Face_Inst.MI_Chen_Face_Inst",
+      "material_profile_candidate": "Generic",
+      "semantic_validation": "Uncalibrated",
+      "probe_backend_response": "GenericToonOnly",
+      "exclusion_reason": null,
+      "base_color_from_effective_parameter": "/Game/EndfieldRender/Character/Qianyu/Tex/T_actor_chen_body_01_D.T_actor_chen_body_01_D"
+    },
+    {
+      "index": 2,
+      "slot": "M_actor_chen_cloth_01",
+      "imported_slot": "M_actor_chen_cloth_01",
+      "material": "/Game/EndfieldRender/Character/Qianyu/Materials/MI_Qianyu_Cloth_01.MI_Qianyu_Cloth_01",
+      "material_profile_candidate": "Generic",
+      "semantic_validation": "Uncalibrated",
+      "probe_backend_response": "GenericToonOnly",
+      "exclusion_reason": null,
+      "base_color_from_effective_parameter": "/Game/EndfieldRender/Character/Qianyu/Tex/T_actor_chen_cloth_01_D.T_actor_chen_cloth_01_D"
+    },
+    {
+      "index": 3,
+      "slot": "Chen_cloth_outline",
+      "imported_slot": "Chen_cloth_outline",
+      "material": "/Engine/EngineMaterials/WorldGridMaterial.WorldGridMaterial",
+      "material_profile_candidate": "Generic",
+      "semantic_validation": "Uncalibrated",
+      "probe_backend_response": "Excluded",
+      "exclusion_reason": "Source embedded outline",
+      "base_color_from_effective_parameter": null
+    },
+    {
+      "index": 4,
+      "slot": "M_actor_chen_cloth_01_001",
+      "imported_slot": "M_actor_chen_cloth_01_001",
+      "material": "/Engine/EngineMaterials/WorldGridMaterial.WorldGridMaterial",
+      "material_profile_candidate": "Generic",
+      "semantic_validation": "Uncalibrated",
+      "probe_backend_response": "GenericToonOnly",
+      "exclusion_reason": null,
+      "base_color_from_effective_parameter": null
+    },
+    {
+      "index": 5,
+      "slot": "M_eyeshadow_common_01",
+      "imported_slot": "M_eyeshadow_common_01",
+      "material": "/Game/EndfieldRender/Character/Common/Materials/MI_Eye_Shadow.MI_Eye_Shadow",
+      "material_profile_candidate": "Generic",
+      "semantic_validation": "Uncalibrated",
+      "probe_backend_response": "Excluded",
+      "exclusion_reason": "Source eye shadow proxy",
+      "base_color_from_effective_parameter": null
+    },
+    {
+      "index": 6,
+      "slot": "M_actor_chen_face_01_002",
+      "imported_slot": "M_actor_chen_face_01_002",
+      "material": "/Game/EndfieldRender/Character/Qianyu/Materials/MI_Chen_Face.MI_Chen_Face",
+      "material_profile_candidate": "Face",
+      "semantic_validation": "Uncalibrated",
+      "probe_backend_response": "GenericToonOnly",
+      "exclusion_reason": null,
+      "base_color_from_effective_parameter": "/Game/EndfieldRender/Character/Qianyu/Tex/T_Face.T_Face"
+    },
+    {
+      "index": 7,
+      "slot": "M_actor_chen_brow_01_002",
+      "imported_slot": "M_actor_chen_brow_01_002",
+      "material": "/Game/EndfieldRender/Character/Qianyu/Materials/MI_Eyebrow.MI_Eyebrow",
+      "material_profile_candidate": "Generic",
+      "semantic_validation": "Uncalibrated",
+      "probe_backend_response": "GenericToonOnly",
+      "exclusion_reason": null,
+      "base_color_from_effective_parameter": "/Game/EndfieldRender/Character/Qianyu/Tex/T_actor_chen_face_01_D.T_actor_chen_face_01_D"
+    },
+    {
+      "index": 8,
+      "slot": "M_actor_chen_iris_01_002",
+      "imported_slot": "M_actor_chen_iris_01_002",
+      "material": "/Game/EndfieldRender/Character/Qianyu/Materials/MI_Chen_Eye.MI_Chen_Eye",
+      "material_profile_candidate": "Generic",
+      "semantic_validation": "Uncalibrated",
+      "probe_backend_response": "GenericToonOnly",
+      "exclusion_reason": null,
+      "base_color_from_effective_parameter": "/Game/EndfieldRender/Character/Qianyu/Tex/T_actor_chen_iris_01_D.T_actor_chen_iris_01_D"
+    },
+    {
+      "index": 9,
+      "slot": "M_actor_chen_hair_01_001",
+      "imported_slot": "M_actor_chen_hair_01_001",
+      "material": "/Game/EndfieldRender/Character/Qianyu/Materials/MI_Chen_Hair.MI_Chen_Hair",
+      "material_profile_candidate": "Hair",
+      "semantic_validation": "Uncalibrated",
+      "probe_backend_response": "GenericToonOnly",
+      "exclusion_reason": null,
+      "base_color_from_effective_parameter": "/Game/EndfieldRender/Character/Qianyu/Tex/T_actor_chen_hair_01_D.T_actor_chen_hair_01_D"
+    },
+    {
+      "index": 10,
+      "slot": "M_hairshadow_common_03_001",
+      "imported_slot": "M_hairshadow_common_03_001",
+      "material": "/Game/EndfieldRender/Character/Common/Materials/MI_Hair_Shadow.MI_Hair_Shadow",
+      "material_profile_candidate": "Generic",
+      "semantic_validation": "Uncalibrated",
+      "probe_backend_response": "Excluded",
+      "exclusion_reason": "Source hair shadow proxy",
+      "base_color_from_effective_parameter": null
+    }
+  ],
+  "probe_map": "/Game/NPR/Maps/L_ChenQianyu_AssetProbe",
+  "source_preservation": "Copied with original /Game/EndfieldRender package paths; only NPR assets and actor component overrides are authored.",
+  "redistribution_policy": "Project-local research fixture; do not bundle these third-party character files in plugin distribution.",
+  "open_tasks": [
+    "Confirm Face coordinate axes and animated head transform",
+    "Confirm UV channel and mirror seam",
+    "Convert and calibrate Face field value semantics",
+    "Audit packed texture channels",
+    "Confirm Hair Tangent/Flow and tangent handedness",
+    "Reduce source proxy sections and draw calls if needed"
+  ],
+  "default_style_id": "SemiPBRStylized",
+  "reference_direction": "EndfieldLike",
+  "two_character_probe_map": "/Game/NPR/Maps/L_TwoStyle_CharacterProbe",
+  "style_assignment": "Documentation/Styles/CharacterStyleAssignments.v1.json"
+}

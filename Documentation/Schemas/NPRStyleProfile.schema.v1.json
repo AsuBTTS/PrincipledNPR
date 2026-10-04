@@ -1,0 +1,431 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:principled-npr:style-profile-schema:v1",
+  "title": "NPRStyleProfile draft schema v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "documentType",
+    "id",
+    "schemaVersion",
+    "responseModelVersion",
+    "status",
+    "sourceContract",
+    "implementationState",
+    "defaultsPatch",
+    "responseFamilies",
+    "renderingPolicy",
+    "materialPatches",
+    "requiredCapabilities"
+  ],
+  "properties": {
+    "documentType": {
+      "const": "NPRStyleProfile"
+    },
+    "id": {
+      "type": "string",
+      "enum": [
+        "AnimeFlat",
+        "SemiPBRStylized"
+      ]
+    },
+    "schemaVersion": {
+      "const": 1
+    },
+    "responseModelVersion": {
+      "const": 1
+    },
+    "status": {
+      "const": "Draft"
+    },
+    "sourceContract": {
+      "type": "object",
+      "required": [
+        "path",
+        "reportSha256"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "const": "../Schemas/NPRParameterContract.v1.json"
+        },
+        "reportSha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "implementationState": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "calibration",
+        "shaderConnection",
+        "uDataAsset",
+        "toonProfile",
+        "renderTests"
+      ],
+      "properties": {
+        "calibration": {
+          "const": "Uncalibrated"
+        },
+        "shaderConnection": {
+          "const": "NotConnected"
+        },
+        "uDataAsset": {
+          "const": "NotImplemented"
+        },
+        "toonProfile": {
+          "const": "NotGenerated"
+        },
+        "renderTests": {
+          "const": "NotRun"
+        }
+      }
+    },
+    "defaultsPatch": {
+      "$ref": "#/$defs/patch"
+    },
+    "responseFamilies": {
+      "type": "object"
+    },
+    "renderingPolicy": {
+      "type": "object"
+    },
+    "materialPatches": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Generic": {
+          "$ref": "#/$defs/patch"
+        },
+        "Face": {
+          "$ref": "#/$defs/patch"
+        },
+        "Hair": {
+          "$ref": "#/$defs/patch"
+        }
+      }
+    },
+    "requiredCapabilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "patch": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "TerminatorDotCenter": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "isSet",
+            "value"
+          ],
+          "properties": {
+            "isSet": {
+              "type": "boolean"
+            },
+            "value": {
+              "type": "number",
+              "minimum": -1,
+              "maximum": 1
+            }
+          }
+        },
+        "TerminatorDotHalfWidth": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "isSet",
+            "value"
+          ],
+          "properties": {
+            "isSet": {
+              "type": "boolean"
+            },
+            "value": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 0.5
+            }
+          }
+        },
+        "SpecHalfAngleRad": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "isSet",
+            "value"
+          ],
+          "properties": {
+            "isSet": {
+              "type": "boolean"
+            },
+            "value": {
+              "type": "number",
+              "minimum": 0.017453292519943295,
+              "maximum": 1.0471975511965976
+            }
+          }
+        },
+        "SpecEdgeSoftness": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "isSet",
+            "value"
+          ],
+          "properties": {
+            "isSet": {
+              "type": "boolean"
+            },
+            "value": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          }
+        },
+        "SpecPeakScale": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "isSet",
+            "value"
+          ],
+          "properties": {
+            "isSet": {
+              "type": "boolean"
+            },
+            "value": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        },
+        "NormalDetailStrength": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "isSet",
+            "value"
+          ],
+          "properties": {
+            "isSet": {
+              "type": "boolean"
+            },
+            "value": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          }
+        },
+        "MacroNormalBlend": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "isSet",
+            "value"
+          ],
+          "properties": {
+            "isSet": {
+              "type": "boolean"
+            },
+            "value": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          }
+        },
+        "RimGrazingAngleRad": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "isSet",
+            "value"
+          ],
+          "properties": {
+            "isSet": {
+              "type": "boolean"
+            },
+            "value": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1.5707963267948966
+            }
+          }
+        },
+        "RimEdgeHalfWidthRad": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "isSet",
+            "value"
+          ],
+          "properties": {
+            "isSet": {
+              "type": "boolean"
+            },
+            "value": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1.5707963267948966
+            }
+          }
+        },
+        "RimPeakScale": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "isSet",
+            "value"
+          ],
+          "properties": {
+            "isSet": {
+              "type": "boolean"
+            },
+            "value": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        },
+        "FaceAngularBiasRad": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "isSet",
+            "value"
+          ],
+          "properties": {
+            "isSet": {
+              "type": "boolean"
+            },
+            "value": {
+              "type": "number"
+            }
+          }
+        },
+        "FaceAngularHalfWidthRad": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "isSet",
+            "value"
+          ],
+          "properties": {
+            "isSet": {
+              "type": "boolean"
+            },
+            "value": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        },
+        "HairShiftAngleRad": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "isSet",
+            "value"
+          ],
+          "properties": {
+            "isSet": {
+              "type": "boolean"
+            },
+            "value": {
+              "type": "number",
+              "minimum": -0.3490658503988659,
+              "maximum": 0.3490658503988659
+            }
+          }
+        },
+        "StrandAnisotropy": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "isSet",
+            "value"
+          ],
+          "properties": {
+            "isSet": {
+              "type": "boolean"
+            },
+            "value": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          }
+        },
+        "OutlineWidthPx": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "isSet",
+            "value"
+          ],
+          "properties": {
+            "isSet": {
+              "type": "boolean"
+            },
+            "value": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        },
+        "MatCapWeight": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "isSet",
+            "value"
+          ],
+          "properties": {
+            "isSet": {
+              "type": "boolean"
+            },
+            "value": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          }
+        },
+        "ChromaScale": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "isSet",
+            "value"
+          ],
+          "properties": {
+            "isSet": {
+              "type": "boolean"
+            },
+            "value": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        }
+      }
+    }
+  }
+}

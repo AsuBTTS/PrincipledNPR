@@ -1,0 +1,2679 @@
+{
+  "owner": "PrincipledNPR.WandererImport.v1",
+  "status": "ImportedAndMetadataChecked_VisualPending",
+  "mesh": "/Game/NPR/Characters/Wanderer/Meshes/SKM_Wanderer",
+  "imported_assets": [
+    {
+      "path": "/Game/NPR/Characters/Wanderer/Meshes/SKM_Wanderer.SKM_Wanderer",
+      "class": "SkeletalMesh"
+    },
+    {
+      "path": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Face.T_Wanderer_Face",
+      "class": "Texture2D"
+    },
+    {
+      "path": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_FaceAlt.T_Wanderer_FaceAlt",
+      "class": "Texture2D"
+    },
+    {
+      "path": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Hair.T_Wanderer_Hair",
+      "class": "Texture2D"
+    },
+    {
+      "path": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Body.T_Wanderer_Body",
+      "class": "Texture2D"
+    },
+    {
+      "path": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Skin.T_Wanderer_Skin",
+      "class": "Texture2D"
+    },
+    {
+      "path": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_HairOverlay.T_Wanderer_HairOverlay",
+      "class": "Texture2D"
+    },
+    {
+      "path": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Effect.T_Wanderer_Effect",
+      "class": "Texture2D"
+    }
+  ],
+  "textures": [
+    {
+      "source_relative": "tex/颜.png",
+      "asset": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Face.T_Wanderer_Face",
+      "width": 2048,
+      "height": 2048,
+      "srgb": true
+    },
+    {
+      "source_relative": "tex/颜2.png",
+      "asset": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_FaceAlt.T_Wanderer_FaceAlt",
+      "width": 2048,
+      "height": 2048,
+      "srgb": true
+    },
+    {
+      "source_relative": "tex/髮.png",
+      "asset": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Hair.T_Wanderer_Hair",
+      "width": 2048,
+      "height": 2048,
+      "srgb": true
+    },
+    {
+      "source_relative": "tex/体.png",
+      "asset": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Body.T_Wanderer_Body",
+      "width": 2048,
+      "height": 2048,
+      "srgb": true
+    },
+    {
+      "source_relative": "tex/肌.png",
+      "asset": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Skin.T_Wanderer_Skin",
+      "width": 2048,
+      "height": 2048,
+      "srgb": true
+    },
+    {
+      "source_relative": "tex/spa_h.png",
+      "asset": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_HairOverlay.T_Wanderer_HairOverlay",
+      "width": 2048,
+      "height": 2048,
+      "srgb": true
+    },
+    {
+      "source_relative": "tex/AL.png",
+      "asset": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Effect.T_Wanderer_Effect",
+      "width": 2048,
+      "height": 2048,
+      "srgb": true
+    }
+  ],
+  "formal_animation_validation": "NotRun",
+  "engine": "5.8.3-58210709+++UE5+Release-5.8",
+  "import_pipeline": "Explicit legacy FbxFactory; scoped Interchange FBX switch restored afterward",
+  "interchange_fbx_restored": true,
+  "audit": {
+    "skeleton": "/Game/NPR/Characters/Wanderer/Meshes/SKM_Wanderer_Skeleton.SKM_Wanderer_Skeleton",
+    "lod0_vertices": 28988,
+    "lod0_sections": 26,
+    "bone_count": 427,
+    "bones": [
+      {
+        "index": 0,
+        "name": "PNPR_Root",
+        "parent": "None"
+      },
+      {
+        "index": 1,
+        "name": "B_000",
+        "parent": "PNPR_Root"
+      },
+      {
+        "index": 2,
+        "name": "B_001",
+        "parent": "PNPR_Root"
+      },
+      {
+        "index": 3,
+        "name": "B_002",
+        "parent": "B_001"
+      },
+      {
+        "index": 4,
+        "name": "B_003",
+        "parent": "B_002"
+      },
+      {
+        "index": 5,
+        "name": "B_004",
+        "parent": "B_003"
+      },
+      {
+        "index": 6,
+        "name": "B_005",
+        "parent": "B_004"
+      },
+      {
+        "index": 7,
+        "name": "B_006",
+        "parent": "B_005"
+      },
+      {
+        "index": 8,
+        "name": "B_007",
+        "parent": "B_006"
+      },
+      {
+        "index": 9,
+        "name": "B_008",
+        "parent": "B_007"
+      },
+      {
+        "index": 10,
+        "name": "B_009",
+        "parent": "B_008"
+      },
+      {
+        "index": 11,
+        "name": "B_010",
+        "parent": "B_009"
+      },
+      {
+        "index": 12,
+        "name": "B_011",
+        "parent": "B_010"
+      },
+      {
+        "index": 13,
+        "name": "B_012",
+        "parent": "B_010"
+      },
+      {
+        "index": 14,
+        "name": "B_013",
+        "parent": "B_009"
+      },
+      {
+        "index": 15,
+        "name": "B_014",
+        "parent": "B_009"
+      },
+      {
+        "index": 16,
+        "name": "B_015",
+        "parent": "B_008"
+      },
+      {
+        "index": 17,
+        "name": "B_016",
+        "parent": "B_008"
+      },
+      {
+        "index": 18,
+        "name": "B_017",
+        "parent": "B_007"
+      },
+      {
+        "index": 19,
+        "name": "B_018",
+        "parent": "B_017"
+      },
+      {
+        "index": 20,
+        "name": "B_019",
+        "parent": "B_018"
+      },
+      {
+        "index": 21,
+        "name": "B_020",
+        "parent": "B_019"
+      },
+      {
+        "index": 22,
+        "name": "B_021",
+        "parent": "B_019"
+      },
+      {
+        "index": 23,
+        "name": "B_022",
+        "parent": "B_018"
+      },
+      {
+        "index": 24,
+        "name": "B_023",
+        "parent": "B_018"
+      },
+      {
+        "index": 25,
+        "name": "B_024",
+        "parent": "B_017"
+      },
+      {
+        "index": 26,
+        "name": "B_025",
+        "parent": "B_017"
+      },
+      {
+        "index": 27,
+        "name": "B_026",
+        "parent": "B_007"
+      },
+      {
+        "index": 28,
+        "name": "B_027",
+        "parent": "B_026"
+      },
+      {
+        "index": 29,
+        "name": "B_028",
+        "parent": "B_027"
+      },
+      {
+        "index": 30,
+        "name": "B_029",
+        "parent": "B_028"
+      },
+      {
+        "index": 31,
+        "name": "B_030",
+        "parent": "B_027"
+      },
+      {
+        "index": 32,
+        "name": "B_031",
+        "parent": "B_026"
+      },
+      {
+        "index": 33,
+        "name": "B_032",
+        "parent": "B_031"
+      },
+      {
+        "index": 34,
+        "name": "B_033",
+        "parent": "B_032"
+      },
+      {
+        "index": 35,
+        "name": "B_034",
+        "parent": "B_026"
+      },
+      {
+        "index": 36,
+        "name": "B_035",
+        "parent": "B_034"
+      },
+      {
+        "index": 37,
+        "name": "B_036",
+        "parent": "B_035"
+      },
+      {
+        "index": 38,
+        "name": "B_037",
+        "parent": "B_026"
+      },
+      {
+        "index": 39,
+        "name": "B_038",
+        "parent": "B_037"
+      },
+      {
+        "index": 40,
+        "name": "B_039",
+        "parent": "B_038"
+      },
+      {
+        "index": 41,
+        "name": "B_040",
+        "parent": "B_026"
+      },
+      {
+        "index": 42,
+        "name": "B_041",
+        "parent": "B_040"
+      },
+      {
+        "index": 43,
+        "name": "B_042",
+        "parent": "B_041"
+      },
+      {
+        "index": 44,
+        "name": "B_043",
+        "parent": "B_026"
+      },
+      {
+        "index": 45,
+        "name": "B_044",
+        "parent": "B_043"
+      },
+      {
+        "index": 46,
+        "name": "B_045",
+        "parent": "B_044"
+      },
+      {
+        "index": 47,
+        "name": "B_046",
+        "parent": "B_026"
+      },
+      {
+        "index": 48,
+        "name": "B_047",
+        "parent": "B_046"
+      },
+      {
+        "index": 49,
+        "name": "B_048",
+        "parent": "B_047"
+      },
+      {
+        "index": 50,
+        "name": "B_049",
+        "parent": "B_026"
+      },
+      {
+        "index": 51,
+        "name": "B_050",
+        "parent": "B_049"
+      },
+      {
+        "index": 52,
+        "name": "B_051",
+        "parent": "B_050"
+      },
+      {
+        "index": 53,
+        "name": "B_052",
+        "parent": "B_026"
+      },
+      {
+        "index": 54,
+        "name": "B_053",
+        "parent": "B_052"
+      },
+      {
+        "index": 55,
+        "name": "B_054",
+        "parent": "B_053"
+      },
+      {
+        "index": 56,
+        "name": "B_055",
+        "parent": "B_026"
+      },
+      {
+        "index": 57,
+        "name": "B_056",
+        "parent": "B_055"
+      },
+      {
+        "index": 58,
+        "name": "B_057",
+        "parent": "B_056"
+      },
+      {
+        "index": 59,
+        "name": "B_058",
+        "parent": "B_026"
+      },
+      {
+        "index": 60,
+        "name": "B_059",
+        "parent": "B_058"
+      },
+      {
+        "index": 61,
+        "name": "B_060",
+        "parent": "B_059"
+      },
+      {
+        "index": 62,
+        "name": "B_061",
+        "parent": "B_026"
+      },
+      {
+        "index": 63,
+        "name": "B_062",
+        "parent": "B_061"
+      },
+      {
+        "index": 64,
+        "name": "B_063",
+        "parent": "B_062"
+      },
+      {
+        "index": 65,
+        "name": "B_064",
+        "parent": "B_026"
+      },
+      {
+        "index": 66,
+        "name": "B_065",
+        "parent": "B_064"
+      },
+      {
+        "index": 67,
+        "name": "B_066",
+        "parent": "B_065"
+      },
+      {
+        "index": 68,
+        "name": "B_067",
+        "parent": "B_026"
+      },
+      {
+        "index": 69,
+        "name": "B_068",
+        "parent": "B_067"
+      },
+      {
+        "index": 70,
+        "name": "B_069",
+        "parent": "B_068"
+      },
+      {
+        "index": 71,
+        "name": "B_070",
+        "parent": "B_026"
+      },
+      {
+        "index": 72,
+        "name": "B_071",
+        "parent": "B_070"
+      },
+      {
+        "index": 73,
+        "name": "B_072",
+        "parent": "B_071"
+      },
+      {
+        "index": 74,
+        "name": "B_073",
+        "parent": "B_026"
+      },
+      {
+        "index": 75,
+        "name": "B_074",
+        "parent": "B_073"
+      },
+      {
+        "index": 76,
+        "name": "B_075",
+        "parent": "B_074"
+      },
+      {
+        "index": 77,
+        "name": "B_076",
+        "parent": "B_007"
+      },
+      {
+        "index": 78,
+        "name": "B_077",
+        "parent": "B_076"
+      },
+      {
+        "index": 79,
+        "name": "B_078",
+        "parent": "B_077"
+      },
+      {
+        "index": 80,
+        "name": "B_079",
+        "parent": "B_078"
+      },
+      {
+        "index": 81,
+        "name": "B_080",
+        "parent": "B_077"
+      },
+      {
+        "index": 82,
+        "name": "B_081",
+        "parent": "B_076"
+      },
+      {
+        "index": 83,
+        "name": "B_082",
+        "parent": "B_081"
+      },
+      {
+        "index": 84,
+        "name": "B_083",
+        "parent": "B_082"
+      },
+      {
+        "index": 85,
+        "name": "B_084",
+        "parent": "B_076"
+      },
+      {
+        "index": 86,
+        "name": "B_085",
+        "parent": "B_084"
+      },
+      {
+        "index": 87,
+        "name": "B_086",
+        "parent": "B_085"
+      },
+      {
+        "index": 88,
+        "name": "B_087",
+        "parent": "B_076"
+      },
+      {
+        "index": 89,
+        "name": "B_088",
+        "parent": "B_087"
+      },
+      {
+        "index": 90,
+        "name": "B_089",
+        "parent": "B_088"
+      },
+      {
+        "index": 91,
+        "name": "B_090",
+        "parent": "B_076"
+      },
+      {
+        "index": 92,
+        "name": "B_091",
+        "parent": "B_090"
+      },
+      {
+        "index": 93,
+        "name": "B_092",
+        "parent": "B_091"
+      },
+      {
+        "index": 94,
+        "name": "B_093",
+        "parent": "B_076"
+      },
+      {
+        "index": 95,
+        "name": "B_094",
+        "parent": "B_093"
+      },
+      {
+        "index": 96,
+        "name": "B_095",
+        "parent": "B_094"
+      },
+      {
+        "index": 97,
+        "name": "B_096",
+        "parent": "B_076"
+      },
+      {
+        "index": 98,
+        "name": "B_097",
+        "parent": "B_096"
+      },
+      {
+        "index": 99,
+        "name": "B_098",
+        "parent": "B_097"
+      },
+      {
+        "index": 100,
+        "name": "B_099",
+        "parent": "B_076"
+      },
+      {
+        "index": 101,
+        "name": "B_100",
+        "parent": "B_099"
+      },
+      {
+        "index": 102,
+        "name": "B_101",
+        "parent": "B_100"
+      },
+      {
+        "index": 103,
+        "name": "B_102",
+        "parent": "B_076"
+      },
+      {
+        "index": 104,
+        "name": "B_103",
+        "parent": "B_102"
+      },
+      {
+        "index": 105,
+        "name": "B_104",
+        "parent": "B_103"
+      },
+      {
+        "index": 106,
+        "name": "B_105",
+        "parent": "B_076"
+      },
+      {
+        "index": 107,
+        "name": "B_106",
+        "parent": "B_105"
+      },
+      {
+        "index": 108,
+        "name": "B_107",
+        "parent": "B_106"
+      },
+      {
+        "index": 109,
+        "name": "B_108",
+        "parent": "B_076"
+      },
+      {
+        "index": 110,
+        "name": "B_109",
+        "parent": "B_108"
+      },
+      {
+        "index": 111,
+        "name": "B_110",
+        "parent": "B_109"
+      },
+      {
+        "index": 112,
+        "name": "B_111",
+        "parent": "B_076"
+      },
+      {
+        "index": 113,
+        "name": "B_112",
+        "parent": "B_111"
+      },
+      {
+        "index": 114,
+        "name": "B_113",
+        "parent": "B_112"
+      },
+      {
+        "index": 115,
+        "name": "B_114",
+        "parent": "B_076"
+      },
+      {
+        "index": 116,
+        "name": "B_115",
+        "parent": "B_114"
+      },
+      {
+        "index": 117,
+        "name": "B_116",
+        "parent": "B_115"
+      },
+      {
+        "index": 118,
+        "name": "B_117",
+        "parent": "B_076"
+      },
+      {
+        "index": 119,
+        "name": "B_118",
+        "parent": "B_117"
+      },
+      {
+        "index": 120,
+        "name": "B_119",
+        "parent": "B_118"
+      },
+      {
+        "index": 121,
+        "name": "B_120",
+        "parent": "B_076"
+      },
+      {
+        "index": 122,
+        "name": "B_121",
+        "parent": "B_120"
+      },
+      {
+        "index": 123,
+        "name": "B_122",
+        "parent": "B_121"
+      },
+      {
+        "index": 124,
+        "name": "B_123",
+        "parent": "B_076"
+      },
+      {
+        "index": 125,
+        "name": "B_124",
+        "parent": "B_123"
+      },
+      {
+        "index": 126,
+        "name": "B_125",
+        "parent": "B_124"
+      },
+      {
+        "index": 127,
+        "name": "B_126",
+        "parent": "B_007"
+      },
+      {
+        "index": 128,
+        "name": "B_127",
+        "parent": "B_007"
+      },
+      {
+        "index": 129,
+        "name": "B_128",
+        "parent": "B_006"
+      },
+      {
+        "index": 130,
+        "name": "B_129",
+        "parent": "B_128"
+      },
+      {
+        "index": 131,
+        "name": "B_130",
+        "parent": "B_129"
+      },
+      {
+        "index": 132,
+        "name": "B_131",
+        "parent": "B_130"
+      },
+      {
+        "index": 133,
+        "name": "B_132",
+        "parent": "B_131"
+      },
+      {
+        "index": 134,
+        "name": "B_133",
+        "parent": "B_132"
+      },
+      {
+        "index": 135,
+        "name": "B_134",
+        "parent": "B_133"
+      },
+      {
+        "index": 136,
+        "name": "B_135",
+        "parent": "B_133"
+      },
+      {
+        "index": 137,
+        "name": "B_136",
+        "parent": "B_132"
+      },
+      {
+        "index": 138,
+        "name": "B_137",
+        "parent": "B_136"
+      },
+      {
+        "index": 139,
+        "name": "B_138",
+        "parent": "B_132"
+      },
+      {
+        "index": 140,
+        "name": "B_139",
+        "parent": "B_138"
+      },
+      {
+        "index": 141,
+        "name": "B_140",
+        "parent": "B_132"
+      },
+      {
+        "index": 142,
+        "name": "B_141",
+        "parent": "B_132"
+      },
+      {
+        "index": 143,
+        "name": "B_142",
+        "parent": "B_132"
+      },
+      {
+        "index": 144,
+        "name": "B_143",
+        "parent": "B_142"
+      },
+      {
+        "index": 145,
+        "name": "B_144",
+        "parent": "B_143"
+      },
+      {
+        "index": 146,
+        "name": "B_145",
+        "parent": "B_144"
+      },
+      {
+        "index": 147,
+        "name": "B_146",
+        "parent": "B_145"
+      },
+      {
+        "index": 148,
+        "name": "B_147",
+        "parent": "B_146"
+      },
+      {
+        "index": 149,
+        "name": "B_148",
+        "parent": "B_147"
+      },
+      {
+        "index": 150,
+        "name": "B_149",
+        "parent": "B_148"
+      },
+      {
+        "index": 151,
+        "name": "B_150",
+        "parent": "B_149"
+      },
+      {
+        "index": 152,
+        "name": "B_151",
+        "parent": "B_150"
+      },
+      {
+        "index": 153,
+        "name": "B_152",
+        "parent": "B_151"
+      },
+      {
+        "index": 154,
+        "name": "B_153",
+        "parent": "B_152"
+      },
+      {
+        "index": 155,
+        "name": "B_154",
+        "parent": "B_153"
+      },
+      {
+        "index": 156,
+        "name": "B_155",
+        "parent": "B_154"
+      },
+      {
+        "index": 157,
+        "name": "B_156",
+        "parent": "B_155"
+      },
+      {
+        "index": 158,
+        "name": "B_157",
+        "parent": "B_156"
+      },
+      {
+        "index": 159,
+        "name": "B_158",
+        "parent": "B_157"
+      },
+      {
+        "index": 160,
+        "name": "B_159",
+        "parent": "B_158"
+      },
+      {
+        "index": 161,
+        "name": "B_160",
+        "parent": "B_159"
+      },
+      {
+        "index": 162,
+        "name": "B_161",
+        "parent": "B_160"
+      },
+      {
+        "index": 163,
+        "name": "B_162",
+        "parent": "B_161"
+      },
+      {
+        "index": 164,
+        "name": "B_163",
+        "parent": "B_162"
+      },
+      {
+        "index": 165,
+        "name": "B_164",
+        "parent": "B_142"
+      },
+      {
+        "index": 166,
+        "name": "B_165",
+        "parent": "B_164"
+      },
+      {
+        "index": 167,
+        "name": "B_166",
+        "parent": "B_165"
+      },
+      {
+        "index": 168,
+        "name": "B_167",
+        "parent": "B_166"
+      },
+      {
+        "index": 169,
+        "name": "B_168",
+        "parent": "B_167"
+      },
+      {
+        "index": 170,
+        "name": "B_169",
+        "parent": "B_168"
+      },
+      {
+        "index": 171,
+        "name": "B_170",
+        "parent": "B_169"
+      },
+      {
+        "index": 172,
+        "name": "B_171",
+        "parent": "B_170"
+      },
+      {
+        "index": 173,
+        "name": "B_172",
+        "parent": "B_171"
+      },
+      {
+        "index": 174,
+        "name": "B_173",
+        "parent": "B_172"
+      },
+      {
+        "index": 175,
+        "name": "B_174",
+        "parent": "B_173"
+      },
+      {
+        "index": 176,
+        "name": "B_175",
+        "parent": "B_174"
+      },
+      {
+        "index": 177,
+        "name": "B_176",
+        "parent": "B_175"
+      },
+      {
+        "index": 178,
+        "name": "B_177",
+        "parent": "B_176"
+      },
+      {
+        "index": 179,
+        "name": "B_178",
+        "parent": "B_177"
+      },
+      {
+        "index": 180,
+        "name": "B_179",
+        "parent": "B_178"
+      },
+      {
+        "index": 181,
+        "name": "B_180",
+        "parent": "B_179"
+      },
+      {
+        "index": 182,
+        "name": "B_181",
+        "parent": "B_180"
+      },
+      {
+        "index": 183,
+        "name": "B_182",
+        "parent": "B_181"
+      },
+      {
+        "index": 184,
+        "name": "B_183",
+        "parent": "B_182"
+      },
+      {
+        "index": 185,
+        "name": "B_184",
+        "parent": "B_183"
+      },
+      {
+        "index": 186,
+        "name": "B_185",
+        "parent": "B_132"
+      },
+      {
+        "index": 187,
+        "name": "B_186",
+        "parent": "B_185"
+      },
+      {
+        "index": 188,
+        "name": "B_187",
+        "parent": "B_132"
+      },
+      {
+        "index": 189,
+        "name": "B_188",
+        "parent": "B_187"
+      },
+      {
+        "index": 190,
+        "name": "B_189",
+        "parent": "B_132"
+      },
+      {
+        "index": 191,
+        "name": "B_190",
+        "parent": "B_132"
+      },
+      {
+        "index": 192,
+        "name": "B_191",
+        "parent": "B_131"
+      },
+      {
+        "index": 193,
+        "name": "B_192",
+        "parent": "B_191"
+      },
+      {
+        "index": 194,
+        "name": "B_193",
+        "parent": "B_130"
+      },
+      {
+        "index": 195,
+        "name": "B_194",
+        "parent": "B_193"
+      },
+      {
+        "index": 196,
+        "name": "B_195",
+        "parent": "B_194"
+      },
+      {
+        "index": 197,
+        "name": "B_196",
+        "parent": "B_195"
+      },
+      {
+        "index": 198,
+        "name": "B_197",
+        "parent": "B_196"
+      },
+      {
+        "index": 199,
+        "name": "B_198",
+        "parent": "B_197"
+      },
+      {
+        "index": 200,
+        "name": "B_199",
+        "parent": "B_198"
+      },
+      {
+        "index": 201,
+        "name": "B_200",
+        "parent": "B_199"
+      },
+      {
+        "index": 202,
+        "name": "B_201",
+        "parent": "B_200"
+      },
+      {
+        "index": 203,
+        "name": "B_202",
+        "parent": "B_200"
+      },
+      {
+        "index": 204,
+        "name": "B_203",
+        "parent": "B_202"
+      },
+      {
+        "index": 205,
+        "name": "B_204",
+        "parent": "B_203"
+      },
+      {
+        "index": 206,
+        "name": "B_205",
+        "parent": "B_204"
+      },
+      {
+        "index": 207,
+        "name": "B_206",
+        "parent": "B_200"
+      },
+      {
+        "index": 208,
+        "name": "B_207",
+        "parent": "B_206"
+      },
+      {
+        "index": 209,
+        "name": "B_208",
+        "parent": "B_207"
+      },
+      {
+        "index": 210,
+        "name": "B_209",
+        "parent": "B_208"
+      },
+      {
+        "index": 211,
+        "name": "B_210",
+        "parent": "B_200"
+      },
+      {
+        "index": 212,
+        "name": "B_211",
+        "parent": "B_210"
+      },
+      {
+        "index": 213,
+        "name": "B_212",
+        "parent": "B_211"
+      },
+      {
+        "index": 214,
+        "name": "B_213",
+        "parent": "B_212"
+      },
+      {
+        "index": 215,
+        "name": "B_214",
+        "parent": "B_200"
+      },
+      {
+        "index": 216,
+        "name": "B_215",
+        "parent": "B_214"
+      },
+      {
+        "index": 217,
+        "name": "B_216",
+        "parent": "B_215"
+      },
+      {
+        "index": 218,
+        "name": "B_217",
+        "parent": "B_216"
+      },
+      {
+        "index": 219,
+        "name": "B_218",
+        "parent": "B_200"
+      },
+      {
+        "index": 220,
+        "name": "B_219",
+        "parent": "B_218"
+      },
+      {
+        "index": 221,
+        "name": "B_220",
+        "parent": "B_219"
+      },
+      {
+        "index": 222,
+        "name": "B_221",
+        "parent": "B_220"
+      },
+      {
+        "index": 223,
+        "name": "B_222",
+        "parent": "B_199"
+      },
+      {
+        "index": 224,
+        "name": "B_223",
+        "parent": "B_199"
+      },
+      {
+        "index": 225,
+        "name": "B_224",
+        "parent": "B_199"
+      },
+      {
+        "index": 226,
+        "name": "B_225",
+        "parent": "B_198"
+      },
+      {
+        "index": 227,
+        "name": "B_226",
+        "parent": "B_198"
+      },
+      {
+        "index": 228,
+        "name": "B_227",
+        "parent": "B_198"
+      },
+      {
+        "index": 229,
+        "name": "B_228",
+        "parent": "B_198"
+      },
+      {
+        "index": 230,
+        "name": "B_229",
+        "parent": "B_198"
+      },
+      {
+        "index": 231,
+        "name": "B_230",
+        "parent": "B_198"
+      },
+      {
+        "index": 232,
+        "name": "B_231",
+        "parent": "B_197"
+      },
+      {
+        "index": 233,
+        "name": "B_232",
+        "parent": "B_197"
+      },
+      {
+        "index": 234,
+        "name": "B_233",
+        "parent": "B_197"
+      },
+      {
+        "index": 235,
+        "name": "B_234",
+        "parent": "B_196"
+      },
+      {
+        "index": 236,
+        "name": "B_235",
+        "parent": "B_196"
+      },
+      {
+        "index": 237,
+        "name": "B_236",
+        "parent": "B_196"
+      },
+      {
+        "index": 238,
+        "name": "B_237",
+        "parent": "B_196"
+      },
+      {
+        "index": 239,
+        "name": "B_238",
+        "parent": "B_237"
+      },
+      {
+        "index": 240,
+        "name": "B_239",
+        "parent": "B_238"
+      },
+      {
+        "index": 241,
+        "name": "B_240",
+        "parent": "B_239"
+      },
+      {
+        "index": 242,
+        "name": "B_241",
+        "parent": "B_240"
+      },
+      {
+        "index": 243,
+        "name": "B_242",
+        "parent": "B_241"
+      },
+      {
+        "index": 244,
+        "name": "B_243",
+        "parent": "B_242"
+      },
+      {
+        "index": 245,
+        "name": "B_244",
+        "parent": "B_243"
+      },
+      {
+        "index": 246,
+        "name": "B_245",
+        "parent": "B_244"
+      },
+      {
+        "index": 247,
+        "name": "B_246",
+        "parent": "B_245"
+      },
+      {
+        "index": 248,
+        "name": "B_247",
+        "parent": "B_246"
+      },
+      {
+        "index": 249,
+        "name": "B_248",
+        "parent": "B_247"
+      },
+      {
+        "index": 250,
+        "name": "B_249",
+        "parent": "B_248"
+      },
+      {
+        "index": 251,
+        "name": "B_250",
+        "parent": "B_249"
+      },
+      {
+        "index": 252,
+        "name": "B_251",
+        "parent": "B_250"
+      },
+      {
+        "index": 253,
+        "name": "B_252",
+        "parent": "B_251"
+      },
+      {
+        "index": 254,
+        "name": "B_253",
+        "parent": "B_252"
+      },
+      {
+        "index": 255,
+        "name": "B_254",
+        "parent": "B_253"
+      },
+      {
+        "index": 256,
+        "name": "B_255",
+        "parent": "B_254"
+      },
+      {
+        "index": 257,
+        "name": "B_256",
+        "parent": "B_196"
+      },
+      {
+        "index": 258,
+        "name": "B_257",
+        "parent": "B_196"
+      },
+      {
+        "index": 259,
+        "name": "B_258",
+        "parent": "B_196"
+      },
+      {
+        "index": 260,
+        "name": "B_259",
+        "parent": "B_193"
+      },
+      {
+        "index": 261,
+        "name": "B_260",
+        "parent": "B_130"
+      },
+      {
+        "index": 262,
+        "name": "B_261",
+        "parent": "B_260"
+      },
+      {
+        "index": 263,
+        "name": "B_262",
+        "parent": "B_261"
+      },
+      {
+        "index": 264,
+        "name": "B_263",
+        "parent": "B_262"
+      },
+      {
+        "index": 265,
+        "name": "B_264",
+        "parent": "B_263"
+      },
+      {
+        "index": 266,
+        "name": "B_265",
+        "parent": "B_264"
+      },
+      {
+        "index": 267,
+        "name": "B_266",
+        "parent": "B_265"
+      },
+      {
+        "index": 268,
+        "name": "B_267",
+        "parent": "B_266"
+      },
+      {
+        "index": 269,
+        "name": "B_268",
+        "parent": "B_267"
+      },
+      {
+        "index": 270,
+        "name": "B_269",
+        "parent": "B_267"
+      },
+      {
+        "index": 271,
+        "name": "B_270",
+        "parent": "B_269"
+      },
+      {
+        "index": 272,
+        "name": "B_271",
+        "parent": "B_270"
+      },
+      {
+        "index": 273,
+        "name": "B_272",
+        "parent": "B_271"
+      },
+      {
+        "index": 274,
+        "name": "B_273",
+        "parent": "B_267"
+      },
+      {
+        "index": 275,
+        "name": "B_274",
+        "parent": "B_273"
+      },
+      {
+        "index": 276,
+        "name": "B_275",
+        "parent": "B_274"
+      },
+      {
+        "index": 277,
+        "name": "B_276",
+        "parent": "B_275"
+      },
+      {
+        "index": 278,
+        "name": "B_277",
+        "parent": "B_267"
+      },
+      {
+        "index": 279,
+        "name": "B_278",
+        "parent": "B_277"
+      },
+      {
+        "index": 280,
+        "name": "B_279",
+        "parent": "B_278"
+      },
+      {
+        "index": 281,
+        "name": "B_280",
+        "parent": "B_279"
+      },
+      {
+        "index": 282,
+        "name": "B_281",
+        "parent": "B_267"
+      },
+      {
+        "index": 283,
+        "name": "B_282",
+        "parent": "B_281"
+      },
+      {
+        "index": 284,
+        "name": "B_283",
+        "parent": "B_282"
+      },
+      {
+        "index": 285,
+        "name": "B_284",
+        "parent": "B_283"
+      },
+      {
+        "index": 286,
+        "name": "B_285",
+        "parent": "B_267"
+      },
+      {
+        "index": 287,
+        "name": "B_286",
+        "parent": "B_285"
+      },
+      {
+        "index": 288,
+        "name": "B_287",
+        "parent": "B_286"
+      },
+      {
+        "index": 289,
+        "name": "B_288",
+        "parent": "B_287"
+      },
+      {
+        "index": 290,
+        "name": "B_289",
+        "parent": "B_266"
+      },
+      {
+        "index": 291,
+        "name": "B_290",
+        "parent": "B_266"
+      },
+      {
+        "index": 292,
+        "name": "B_291",
+        "parent": "B_266"
+      },
+      {
+        "index": 293,
+        "name": "B_292",
+        "parent": "B_265"
+      },
+      {
+        "index": 294,
+        "name": "B_293",
+        "parent": "B_265"
+      },
+      {
+        "index": 295,
+        "name": "B_294",
+        "parent": "B_265"
+      },
+      {
+        "index": 296,
+        "name": "B_295",
+        "parent": "B_265"
+      },
+      {
+        "index": 297,
+        "name": "B_296",
+        "parent": "B_265"
+      },
+      {
+        "index": 298,
+        "name": "B_297",
+        "parent": "B_265"
+      },
+      {
+        "index": 299,
+        "name": "B_298",
+        "parent": "B_264"
+      },
+      {
+        "index": 300,
+        "name": "B_299",
+        "parent": "B_264"
+      },
+      {
+        "index": 301,
+        "name": "B_300",
+        "parent": "B_264"
+      },
+      {
+        "index": 302,
+        "name": "B_301",
+        "parent": "B_263"
+      },
+      {
+        "index": 303,
+        "name": "B_302",
+        "parent": "B_263"
+      },
+      {
+        "index": 304,
+        "name": "B_303",
+        "parent": "B_263"
+      },
+      {
+        "index": 305,
+        "name": "B_304",
+        "parent": "B_263"
+      },
+      {
+        "index": 306,
+        "name": "B_305",
+        "parent": "B_304"
+      },
+      {
+        "index": 307,
+        "name": "B_306",
+        "parent": "B_305"
+      },
+      {
+        "index": 308,
+        "name": "B_307",
+        "parent": "B_306"
+      },
+      {
+        "index": 309,
+        "name": "B_308",
+        "parent": "B_307"
+      },
+      {
+        "index": 310,
+        "name": "B_309",
+        "parent": "B_308"
+      },
+      {
+        "index": 311,
+        "name": "B_310",
+        "parent": "B_309"
+      },
+      {
+        "index": 312,
+        "name": "B_311",
+        "parent": "B_310"
+      },
+      {
+        "index": 313,
+        "name": "B_312",
+        "parent": "B_311"
+      },
+      {
+        "index": 314,
+        "name": "B_313",
+        "parent": "B_312"
+      },
+      {
+        "index": 315,
+        "name": "B_314",
+        "parent": "B_313"
+      },
+      {
+        "index": 316,
+        "name": "B_315",
+        "parent": "B_314"
+      },
+      {
+        "index": 317,
+        "name": "B_316",
+        "parent": "B_315"
+      },
+      {
+        "index": 318,
+        "name": "B_317",
+        "parent": "B_316"
+      },
+      {
+        "index": 319,
+        "name": "B_318",
+        "parent": "B_317"
+      },
+      {
+        "index": 320,
+        "name": "B_319",
+        "parent": "B_318"
+      },
+      {
+        "index": 321,
+        "name": "B_320",
+        "parent": "B_319"
+      },
+      {
+        "index": 322,
+        "name": "B_321",
+        "parent": "B_320"
+      },
+      {
+        "index": 323,
+        "name": "B_322",
+        "parent": "B_321"
+      },
+      {
+        "index": 324,
+        "name": "B_323",
+        "parent": "B_263"
+      },
+      {
+        "index": 325,
+        "name": "B_324",
+        "parent": "B_323"
+      },
+      {
+        "index": 326,
+        "name": "B_325",
+        "parent": "B_324"
+      },
+      {
+        "index": 327,
+        "name": "B_326",
+        "parent": "B_325"
+      },
+      {
+        "index": 328,
+        "name": "B_327",
+        "parent": "B_326"
+      },
+      {
+        "index": 329,
+        "name": "B_328",
+        "parent": "B_327"
+      },
+      {
+        "index": 330,
+        "name": "B_329",
+        "parent": "B_328"
+      },
+      {
+        "index": 331,
+        "name": "B_330",
+        "parent": "B_329"
+      },
+      {
+        "index": 332,
+        "name": "B_331",
+        "parent": "B_330"
+      },
+      {
+        "index": 333,
+        "name": "B_332",
+        "parent": "B_331"
+      },
+      {
+        "index": 334,
+        "name": "B_333",
+        "parent": "B_332"
+      },
+      {
+        "index": 335,
+        "name": "B_334",
+        "parent": "B_333"
+      },
+      {
+        "index": 336,
+        "name": "B_335",
+        "parent": "B_334"
+      },
+      {
+        "index": 337,
+        "name": "B_336",
+        "parent": "B_335"
+      },
+      {
+        "index": 338,
+        "name": "B_337",
+        "parent": "B_336"
+      },
+      {
+        "index": 339,
+        "name": "B_338",
+        "parent": "B_337"
+      },
+      {
+        "index": 340,
+        "name": "B_339",
+        "parent": "B_338"
+      },
+      {
+        "index": 341,
+        "name": "B_340",
+        "parent": "B_339"
+      },
+      {
+        "index": 342,
+        "name": "B_341",
+        "parent": "B_340"
+      },
+      {
+        "index": 343,
+        "name": "B_342",
+        "parent": "B_341"
+      },
+      {
+        "index": 344,
+        "name": "B_343",
+        "parent": "B_263"
+      },
+      {
+        "index": 345,
+        "name": "B_344",
+        "parent": "B_263"
+      },
+      {
+        "index": 346,
+        "name": "B_345",
+        "parent": "B_263"
+      },
+      {
+        "index": 347,
+        "name": "B_346",
+        "parent": "B_261"
+      },
+      {
+        "index": 348,
+        "name": "B_347",
+        "parent": "B_261"
+      },
+      {
+        "index": 349,
+        "name": "B_348",
+        "parent": "B_347"
+      },
+      {
+        "index": 350,
+        "name": "B_349",
+        "parent": "B_348"
+      },
+      {
+        "index": 351,
+        "name": "B_350",
+        "parent": "B_349"
+      },
+      {
+        "index": 352,
+        "name": "B_351",
+        "parent": "B_350"
+      },
+      {
+        "index": 353,
+        "name": "B_352",
+        "parent": "B_351"
+      },
+      {
+        "index": 354,
+        "name": "B_353",
+        "parent": "B_352"
+      },
+      {
+        "index": 355,
+        "name": "B_354",
+        "parent": "B_353"
+      },
+      {
+        "index": 356,
+        "name": "B_355",
+        "parent": "B_354"
+      },
+      {
+        "index": 357,
+        "name": "B_356",
+        "parent": "B_355"
+      },
+      {
+        "index": 358,
+        "name": "B_357",
+        "parent": "B_356"
+      },
+      {
+        "index": 359,
+        "name": "B_358",
+        "parent": "B_357"
+      },
+      {
+        "index": 360,
+        "name": "B_359",
+        "parent": "B_358"
+      },
+      {
+        "index": 361,
+        "name": "B_360",
+        "parent": "B_359"
+      },
+      {
+        "index": 362,
+        "name": "B_361",
+        "parent": "B_360"
+      },
+      {
+        "index": 363,
+        "name": "B_362",
+        "parent": "B_361"
+      },
+      {
+        "index": 364,
+        "name": "B_363",
+        "parent": "B_362"
+      },
+      {
+        "index": 365,
+        "name": "B_364",
+        "parent": "B_363"
+      },
+      {
+        "index": 366,
+        "name": "B_365",
+        "parent": "B_364"
+      },
+      {
+        "index": 367,
+        "name": "B_366",
+        "parent": "B_365"
+      },
+      {
+        "index": 368,
+        "name": "B_367",
+        "parent": "B_261"
+      },
+      {
+        "index": 369,
+        "name": "B_368",
+        "parent": "B_367"
+      },
+      {
+        "index": 370,
+        "name": "B_369",
+        "parent": "B_368"
+      },
+      {
+        "index": 371,
+        "name": "B_370",
+        "parent": "B_369"
+      },
+      {
+        "index": 372,
+        "name": "B_371",
+        "parent": "B_370"
+      },
+      {
+        "index": 373,
+        "name": "B_372",
+        "parent": "B_371"
+      },
+      {
+        "index": 374,
+        "name": "B_373",
+        "parent": "B_372"
+      },
+      {
+        "index": 375,
+        "name": "B_374",
+        "parent": "B_373"
+      },
+      {
+        "index": 376,
+        "name": "B_375",
+        "parent": "B_374"
+      },
+      {
+        "index": 377,
+        "name": "B_376",
+        "parent": "B_375"
+      },
+      {
+        "index": 378,
+        "name": "B_377",
+        "parent": "B_376"
+      },
+      {
+        "index": 379,
+        "name": "B_378",
+        "parent": "B_377"
+      },
+      {
+        "index": 380,
+        "name": "B_379",
+        "parent": "B_378"
+      },
+      {
+        "index": 381,
+        "name": "B_380",
+        "parent": "B_379"
+      },
+      {
+        "index": 382,
+        "name": "B_381",
+        "parent": "B_380"
+      },
+      {
+        "index": 383,
+        "name": "B_382",
+        "parent": "B_381"
+      },
+      {
+        "index": 384,
+        "name": "B_383",
+        "parent": "B_260"
+      },
+      {
+        "index": 385,
+        "name": "B_384",
+        "parent": "B_130"
+      },
+      {
+        "index": 386,
+        "name": "B_385",
+        "parent": "B_130"
+      },
+      {
+        "index": 387,
+        "name": "B_386",
+        "parent": "B_129"
+      },
+      {
+        "index": 388,
+        "name": "B_387",
+        "parent": "B_386"
+      },
+      {
+        "index": 389,
+        "name": "B_388",
+        "parent": "B_387"
+      },
+      {
+        "index": 390,
+        "name": "B_389",
+        "parent": "B_388"
+      },
+      {
+        "index": 391,
+        "name": "B_390",
+        "parent": "B_389"
+      },
+      {
+        "index": 392,
+        "name": "B_391",
+        "parent": "B_390"
+      },
+      {
+        "index": 393,
+        "name": "B_392",
+        "parent": "B_129"
+      },
+      {
+        "index": 394,
+        "name": "B_393",
+        "parent": "B_392"
+      },
+      {
+        "index": 395,
+        "name": "B_394",
+        "parent": "B_393"
+      },
+      {
+        "index": 396,
+        "name": "B_395",
+        "parent": "B_394"
+      },
+      {
+        "index": 397,
+        "name": "B_396",
+        "parent": "B_395"
+      },
+      {
+        "index": 398,
+        "name": "B_397",
+        "parent": "B_396"
+      },
+      {
+        "index": 399,
+        "name": "B_398",
+        "parent": "B_128"
+      },
+      {
+        "index": 400,
+        "name": "B_399",
+        "parent": "B_398"
+      },
+      {
+        "index": 401,
+        "name": "B_400",
+        "parent": "B_399"
+      },
+      {
+        "index": 402,
+        "name": "B_401",
+        "parent": "B_400"
+      },
+      {
+        "index": 403,
+        "name": "B_402",
+        "parent": "B_401"
+      },
+      {
+        "index": 404,
+        "name": "B_403",
+        "parent": "B_402"
+      },
+      {
+        "index": 405,
+        "name": "B_404",
+        "parent": "B_128"
+      },
+      {
+        "index": 406,
+        "name": "B_405",
+        "parent": "B_404"
+      },
+      {
+        "index": 407,
+        "name": "B_406",
+        "parent": "B_405"
+      },
+      {
+        "index": 408,
+        "name": "B_407",
+        "parent": "B_406"
+      },
+      {
+        "index": 409,
+        "name": "B_408",
+        "parent": "B_407"
+      },
+      {
+        "index": 410,
+        "name": "B_409",
+        "parent": "B_408"
+      },
+      {
+        "index": 411,
+        "name": "B_410",
+        "parent": "B_409"
+      },
+      {
+        "index": 412,
+        "name": "B_411",
+        "parent": "B_410"
+      },
+      {
+        "index": 413,
+        "name": "B_412",
+        "parent": "B_411"
+      },
+      {
+        "index": 414,
+        "name": "B_413",
+        "parent": "B_412"
+      },
+      {
+        "index": 415,
+        "name": "B_414",
+        "parent": "B_413"
+      },
+      {
+        "index": 416,
+        "name": "B_415",
+        "parent": "B_414"
+      },
+      {
+        "index": 417,
+        "name": "B_416",
+        "parent": "B_415"
+      },
+      {
+        "index": 418,
+        "name": "B_417",
+        "parent": "B_416"
+      },
+      {
+        "index": 419,
+        "name": "B_418",
+        "parent": "B_417"
+      },
+      {
+        "index": 420,
+        "name": "B_419",
+        "parent": "B_418"
+      },
+      {
+        "index": 421,
+        "name": "B_420",
+        "parent": "B_001"
+      },
+      {
+        "index": 422,
+        "name": "B_421",
+        "parent": "B_420"
+      },
+      {
+        "index": 423,
+        "name": "B_422",
+        "parent": "B_421"
+      },
+      {
+        "index": 424,
+        "name": "B_423",
+        "parent": "B_001"
+      },
+      {
+        "index": 425,
+        "name": "B_424",
+        "parent": "B_423"
+      },
+      {
+        "index": 426,
+        "name": "B_425",
+        "parent": "B_424"
+      }
+    ],
+    "head_bone": "B_132",
+    "head_source_name": "頭",
+    "height_cm": 166.29929873347282,
+    "bounds_origin_cm": [
+      2.8076963424682617,
+      -5.7220458984375e-06,
+      83.60997892916203
+    ],
+    "bounds_half_extent_cm": [
+      34.76779270172119,
+      56.13545036315918,
+      83.14964936673641
+    ],
+    "material_slots": [
+      {
+        "index": 0,
+        "slot_name": "M_Wanderer_00",
+        "imported_slot_name": "M_Wanderer_00"
+      },
+      {
+        "index": 1,
+        "slot_name": "M_Wanderer_01",
+        "imported_slot_name": "M_Wanderer_01"
+      },
+      {
+        "index": 2,
+        "slot_name": "M_Wanderer_02",
+        "imported_slot_name": "M_Wanderer_02"
+      },
+      {
+        "index": 3,
+        "slot_name": "M_Wanderer_03",
+        "imported_slot_name": "M_Wanderer_03"
+      },
+      {
+        "index": 4,
+        "slot_name": "M_Wanderer_04",
+        "imported_slot_name": "M_Wanderer_04"
+      },
+      {
+        "index": 5,
+        "slot_name": "M_Wanderer_05",
+        "imported_slot_name": "M_Wanderer_05"
+      },
+      {
+        "index": 6,
+        "slot_name": "M_Wanderer_06",
+        "imported_slot_name": "M_Wanderer_06"
+      },
+      {
+        "index": 7,
+        "slot_name": "M_Wanderer_07",
+        "imported_slot_name": "M_Wanderer_07"
+      },
+      {
+        "index": 8,
+        "slot_name": "M_Wanderer_08",
+        "imported_slot_name": "M_Wanderer_08"
+      },
+      {
+        "index": 9,
+        "slot_name": "M_Wanderer_09",
+        "imported_slot_name": "M_Wanderer_09"
+      },
+      {
+        "index": 10,
+        "slot_name": "M_Wanderer_10",
+        "imported_slot_name": "M_Wanderer_10"
+      },
+      {
+        "index": 11,
+        "slot_name": "M_Wanderer_11",
+        "imported_slot_name": "M_Wanderer_11"
+      },
+      {
+        "index": 12,
+        "slot_name": "M_Wanderer_12",
+        "imported_slot_name": "M_Wanderer_12"
+      },
+      {
+        "index": 13,
+        "slot_name": "M_Wanderer_13",
+        "imported_slot_name": "M_Wanderer_13"
+      },
+      {
+        "index": 14,
+        "slot_name": "M_Wanderer_14",
+        "imported_slot_name": "M_Wanderer_14"
+      },
+      {
+        "index": 15,
+        "slot_name": "M_Wanderer_15",
+        "imported_slot_name": "M_Wanderer_15"
+      },
+      {
+        "index": 16,
+        "slot_name": "M_Wanderer_16",
+        "imported_slot_name": "M_Wanderer_16"
+      },
+      {
+        "index": 17,
+        "slot_name": "M_Wanderer_17",
+        "imported_slot_name": "M_Wanderer_17"
+      },
+      {
+        "index": 18,
+        "slot_name": "M_Wanderer_18",
+        "imported_slot_name": "M_Wanderer_18"
+      },
+      {
+        "index": 19,
+        "slot_name": "M_Wanderer_19",
+        "imported_slot_name": "M_Wanderer_19"
+      },
+      {
+        "index": 20,
+        "slot_name": "M_Wanderer_20",
+        "imported_slot_name": "M_Wanderer_20"
+      },
+      {
+        "index": 21,
+        "slot_name": "M_Wanderer_21",
+        "imported_slot_name": "M_Wanderer_21"
+      },
+      {
+        "index": 22,
+        "slot_name": "M_Wanderer_22",
+        "imported_slot_name": "M_Wanderer_22"
+      },
+      {
+        "index": 23,
+        "slot_name": "M_Wanderer_23",
+        "imported_slot_name": "M_Wanderer_23"
+      },
+      {
+        "index": 24,
+        "slot_name": "M_Wanderer_24",
+        "imported_slot_name": "M_Wanderer_24"
+      },
+      {
+        "index": 25,
+        "slot_name": "M_Wanderer_25",
+        "imported_slot_name": "M_Wanderer_25"
+      }
+    ],
+    "morph_targets": [
+      "あ",
+      "い",
+      "う",
+      "え",
+      "お",
+      "にやり",
+      "ワ",
+      "ん",
+      "い１",
+      "い２",
+      "あ２",
+      "にやり２",
+      "にやり３",
+      "ω",
+      "てへぺろ",
+      "ぺろっ",
+      "口角上げ",
+      "口角下げ",
+      "口横広げ",
+      "口横狭め",
+      "舌広げ",
+      "まばたき",
+      "笑い",
+      "なごみ",
+      "ウィンク",
+      "ウィンク右",
+      "ウィンク２",
+      "ウィンク２右",
+      "なごみ左",
+      "なごみ右",
+      "びっくり",
+      "じと目",
+      "悲しむ",
+      "怒り目",
+      "ジト目",
+      "眼角上",
+      "眼角下",
+      "下眼上",
+      "真面目",
+      "困る",
+      "にこり",
+      "怒り",
+      "恥ずかしい",
+      "上",
+      "下",
+      "前",
+      "真面目左",
+      "真面目右",
+      "困る左",
+      "困る右",
+      "にこり左",
+      "にこり右",
+      "怒り左",
+      "怒り右",
+      "恥ずかしい左",
+      "恥ずかしい右",
+      "上左",
+      "上右",
+      "下左",
+      "下右",
+      "前左",
+      "前右",
+      "瞳小",
+      "星目",
+      "ハイライト消"
+    ]
+  },
+  "completed_utc": "2026-10-03T21:33:00.433193+00:00",
+  "visual_verification": {
+    "map_saved_and_reloaded": true,
+    "actor_count_after_reload": 7,
+    "all_actor_material_bindings_readback": true,
+    "wanderer_default_mesh_materials_saved": 26,
+    "lit_viewport_observed": true,
+    "front_orientation_observed": true,
+    "scope": "Neutral pose, topology/texture placement and native Generic Toon display; no animation or formal lighting capability acceptance",
+    "face_hair_specialized_response": "NotImplemented",
+    "mmd_physics_ik_sdef": "NotPorted",
+    "style_calibration": "Uncalibrated_DiffuseSeedOnly"
+  },
+  "default_mesh_materials": [
+    {
+      "index": 0,
+      "pmx_material": "颜",
+      "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Face.T_Wanderer_Face",
+      "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_00_Initial.MI_Wanderer_00_Initial",
+      "opacity_scale": 1.0,
+      "policy": "BaseColor and source alpha"
+    },
+    {
+      "index": 1,
+      "pmx_material": "颜2",
+      "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Face.T_Wanderer_Face",
+      "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_01_Initial.MI_Wanderer_01_Initial",
+      "opacity_scale": 1.0,
+      "policy": "BaseColor and source alpha"
+    },
+    {
+      "index": 2,
+      "pmx_material": "二重",
+      "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Face.T_Wanderer_Face",
+      "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_02_Initial.MI_Wanderer_02_Initial",
+      "opacity_scale": 1.0,
+      "policy": "BaseColor and source alpha"
+    },
+    {
+      "index": 3,
+      "pmx_material": "眉",
+      "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Face.T_Wanderer_Face",
+      "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_03_Initial.MI_Wanderer_03_Initial",
+      "opacity_scale": 1.0,
+      "policy": "BaseColor and source alpha"
+    },
+    {
+      "index": 4,
+      "pmx_material": "口舌",
+      "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Face.T_Wanderer_Face",
+      "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_04_Initial.MI_Wanderer_04_Initial",
+      "opacity_scale": 1.0,
+      "policy": "BaseColor and source alpha"
+    },
+    {
+      "index": 5,
+      "pmx_material": "齿",
+      "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Face.T_Wanderer_Face",
+      "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_05_Initial.MI_Wanderer_05_Initial",
+      "opacity_scale": 1.0,
+      "policy": "BaseColor and source alpha"
+    },
+    {
+      "index": 6,
+      "pmx_material": "白目",
+      "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Face.T_Wanderer_Face",
+      "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_06_Initial.MI_Wanderer_06_Initial",
+      "opacity_scale": 1.0,
+      "policy": "BaseColor and source alpha"
+    },
+    {
+      "index": 7,
+      "pmx_material": "睫",
+      "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Face.T_Wanderer_Face",
+      "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_07_Initial.MI_Wanderer_07_Initial",
+      "opacity_scale": 1.0,
+      "policy": "BaseColor and source alpha"
+    },
+    {
+      "index": 8,
+      "pmx_material": "星目",
+      "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Face.T_Wanderer_Face",
+      "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_08_Initial.MI_Wanderer_08_Initial",
+      "opacity_scale": 1.0,
+      "policy": "BaseColor and source alpha"
+    },
+    {
+      "index": 9,
+      "pmx_material": "髮",
+      "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Hair.T_Wanderer_Hair",
+      "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_09_Initial.MI_Wanderer_09_Initial",
+      "opacity_scale": 1.0,
+      "policy": "BaseColor and source alpha"
+    },
+    {
+      "index": 10,
+      "pmx_material": "髮+",
+      "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_HairOverlay.T_Wanderer_HairOverlay",
+      "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_10_Initial.MI_Wanderer_10_Initial",
+      "opacity_scale": 0.0,
+      "policy": "Exclude PMX additive sphere-map Hair+ overlay"
+    },
+    {
+      "index": 11,
+      "pmx_material": "目",
+      "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Hair.T_Wanderer_Hair",
+      "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_11_Initial.MI_Wanderer_11_Initial",
+      "opacity_scale": 1.0,
+      "policy": "BaseColor and source alpha"
+    },
+    {
+      "index": 12,
+      "pmx_material": "体",
+      "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Body.T_Wanderer_Body",
+      "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_12_Initial.MI_Wanderer_12_Initial",
+      "opacity_scale": 1.0,
+      "policy": "BaseColor and source alpha"
+    },
+    {
+      "index": 13,
+      "pmx_material": "护腕",
+      "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Body.T_Wanderer_Body",
+      "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_13_Initial.MI_Wanderer_13_Initial",
+      "opacity_scale": 1.0,
+      "policy": "BaseColor and source alpha"
+    },
+    {
+      "index": 14,
+      "pmx_material": "饰1",
+      "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Body.T_Wanderer_Body",
+      "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_14_Initial.MI_Wanderer_14_Initial",
+      "opacity_scale": 1.0,
+      "policy": "BaseColor and source alpha"
+    },
+    {
+      "index": 15,
+      "pmx_material": "裤",
+      "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Body.T_Wanderer_Body",
+      "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_15_Initial.MI_Wanderer_15_Initial",
+      "opacity_scale": 1.0,
+      "policy": "BaseColor and source alpha"
+    },
+    {
+      "index": 16,
+      "pmx_material": "裤内",
+      "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Body.T_Wanderer_Body",
+      "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_16_Initial.MI_Wanderer_16_Initial",
+      "opacity_scale": 1.0,
+      "policy": "BaseColor and source alpha"
+    },
+    {
+      "index": 17,
+      "pmx_material": "腰绳1",
+      "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Body.T_Wanderer_Body",
+      "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_17_Initial.MI_Wanderer_17_Initial",
+      "opacity_scale": 1.0,
+      "policy": "BaseColor and source alpha"
+    },
+    {
+      "index": 18,
+      "pmx_material": "袖",
+      "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Body.T_Wanderer_Body",
+      "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_18_Initial.MI_Wanderer_18_Initial",
+      "opacity_scale": 1.0,
+      "policy": "BaseColor and source alpha"
+    },
+    {
+      "index": 19,
+      "pmx_material": "披肩",
+      "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Hair.T_Wanderer_Hair",
+      "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_19_Initial.MI_Wanderer_19_Initial",
+      "opacity_scale": 1.0,
+      "policy": "BaseColor and source alpha"
+    },
+    {
+      "index": 20,
+      "pmx_material": "神之眼AL",
+      "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Hair.T_Wanderer_Hair",
+      "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_20_Initial.MI_Wanderer_20_Initial",
+      "opacity_scale": 1.0,
+      "policy": "BaseColor and source alpha"
+    },
+    {
+      "index": 21,
+      "pmx_material": "肌",
+      "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Body.T_Wanderer_Body",
+      "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_21_Initial.MI_Wanderer_21_Initial",
+      "opacity_scale": 1.0,
+      "policy": "BaseColor and source alpha"
+    },
+    {
+      "index": 22,
+      "pmx_material": "肌2",
+      "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Skin.T_Wanderer_Skin",
+      "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_22_Initial.MI_Wanderer_22_Initial",
+      "opacity_scale": 1.0,
+      "policy": "BaseColor and source alpha"
+    },
+    {
+      "index": 23,
+      "pmx_material": "帽",
+      "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Body.T_Wanderer_Body",
+      "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_23_Initial.MI_Wanderer_23_Initial",
+      "opacity_scale": 1.0,
+      "policy": "BaseColor and source alpha"
+    },
+    {
+      "index": 24,
+      "pmx_material": "帽带",
+      "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Body.T_Wanderer_Body",
+      "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_24_Initial.MI_Wanderer_24_Initial",
+      "opacity_scale": 1.0,
+      "policy": "BaseColor and source alpha"
+    },
+    {
+      "index": 25,
+      "pmx_material": "AL",
+      "texture": "/Game/NPR/Characters/Wanderer/Textures/T_Wanderer_Effect.T_Wanderer_Effect",
+      "material": "/Game/NPR/Characters/Wanderer/Materials/AnimeFlat/MI_Wanderer_25_Initial.MI_Wanderer_25_Initial",
+      "opacity_scale": 0.0,
+      "policy": "BaseColor and source alpha"
+    }
+  ],
+  "probe_map": "/Game/NPR/Maps/L_TwoStyle_CharacterProbe",
+  "workflow_state": "Imported_Saved_GenericDisplayObserved",
+  "skeleton_persistence": {
+    "asset": "/Game/NPR/Characters/Wanderer/Meshes/SKM_Wanderer_Skeleton.SKM_Wanderer_Skeleton",
+    "saved_to_canonical_package": true,
+    "correction": "Autogenerated skeleton had remained dirty in editor and autosave; explicitly saved its canonical package."
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "reason": "Use explicit pitch/yaw/roll keywords; native MakeRotator takes roll/pitch/yaw.",
+  "engine_version": "5.8.3-58210709+++UE5+Release-5.8",
+  "actors": [
+    {
+      "key": "KeyDirectional",
+      "before": {
+        "pitch": -79.99999999999991,
+        "yaw": 180.0,
+        "roll": 139.9999999999999
+      },
+      "after": {
+        "pitch": -40.000000000000014,
+        "yaw": -100.0,
+        "roll": -0.0
+      }
+    },
+    {
+      "key": "ProbeCamera",
+      "before": {
+        "pitch": 49.99999999999998,
+        "yaw": 180.0,
+        "roll": 160.0
+      },
+      "after": {
+        "pitch": -19.999999999999996,
+        "yaw": 129.99999999999997,
+        "roll": -0.0
+      }
+    },
+    {
+      "key": "PlayerStart",
+      "before": {
+        "pitch": 49.999999999999986,
+        "yaw": 180.0,
+        "roll": 180.0
+      },
+      "after": {
+        "pitch": 0.0,
+        "yaw": 129.99999999999997,
+        "roll": -0.0
+      }
+    }
+  ]
+}

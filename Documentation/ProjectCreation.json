@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-04T04:39:02.889276+08:00",
+  "setup_status": "Completed",
+  "engine": {
+    "path": "UE_ENGINE_ROOT",
+    "version": "5.8.3",
+    "changelist": 58210709,
+    "branch": "++UE5+Release-5.8",
+    "components": [
+      {
+        "artifact": "UE_5.8",
+        "state": "Installed",
+        "version": "5.8.3-58210709+++UE5+Release-5.8-Windows",
+        "directory": "UE_ENGINE_ROOT"
+      },
+      {
+        "artifact": "QuixelBridge_5.8",
+        "state": "Installed",
+        "version": "5.8.0-55116800+++UE5+Release-5.8-2025.0.1-55116800-Windows",
+        "directory": "UE_ENGINE_ROOT"
+      },
+      {
+        "artifact": "FabPlugin_5.8",
+        "state": "Installed",
+        "version": "5.8.0-55116800+++UE5+Release-5.8-0.0.17-57928021-Windows",
+        "directory": "UE_ENGINE_ROOT"
+      }
+    ]
+  },
+  "project": {
+    "path": "PrincipledNPR.uproject",
+    "engine_association": "5.8",
+    "engine_association_kind": "Portable UE version identifier; local registration is not shared",
+    "default_map": "/Game/NPR/Maps/L_S58_ToonProbe",
+    "blueprint_project": true,
+    "git_initialized": true,
+    "old_57_projects_converted": false,
+    "editor_startup_map": "/Game/NPR/Maps/L_TwoStyle_CharacterProbe"
+  },
+  "actual_render_settings": {
+    "r.Substrate": 1,
+    "r.Substrate.ProjectGBufferFormat": 0,
+    "r.ForwardShading": 0,
+    "r.DynamicGlobalIlluminationMethod": 1,
+    "r.ReflectionMethod": 1,
+    "r.Shadow.Virtual.Enable": 1,
+    "RHI": "D3D12",
+    "shader_platform": "PCD3D_SM6"
+  },
+  "assets": {
+    "native_toon_profiles": 2,
+    "native_toon_materials": 2,
+    "slab_materials": 2,
+    "map": 1,
+    "actors": 10,
+    "asset_manifest": "Documentation/AssetBootstrap.json"
+  },
+  "skeleton": {
+    "content_plugin": "PrincipledNPR",
+    "cpp_modules_implemented": false,
+    "parameter_definitions": 17,
+    "semantic_style_drafts": [
+      "AnimeFlat",
+      "SemiPBRStylized"
+    ],
+    "style_calibrated": false,
+    "UDataAsset_implementation": "NotImplemented",
+    "backend_adapter_implementation": "NotImplemented"
+  },
+  "checks": {
+    "bootstrap_editor_exit_code": 0,
+    "reopen_map": "Passed",
+    "actor_count_after_reopen": 10,
+    "lit_viewport_smoke_observed": true,
+    "smoke_scope": "Three spheres, native Toon bands, physical control and ground shadows visually observed; no capability acceptance implied.",
+    "reported_material_shader_errors": 0,
+    "transform_correction_saved": true,
+    "semantic_draft_ids_domains_provenance": "Passed",
+    "full_json_schema_validation": "NotRun",
+    "screenshot": "Documentation/UE5.8_PrincipledNPR_初始测试场景.png"
+  },
+  "remaining": [
+    "Face and Hair implementations",
+    "Runtime/Editor C++ toolchain and modules",
+    "Semantic Resolver and S58 adapter",
+    "Style calibration and native packages",
+    "Formal shadow/GI/multiple-light/runtime-switch/performance probes"
+  ],
+  "capability_tests": "NotRun; original thirty-test matrix remains unqualified",
+  "controlled_character_setup": {
+    "id": "ChenQianyu",
+    "status": "Saved_GenericDisplayObserved_FormalValidationNotRun",
+    "map": "/Game/NPR/Maps/L_ChenQianyu_AssetProbe",
+    "editor_startup_map": "/Game/NPR/Maps/L_ChenQianyu_AssetProbe",
+    "source": "ExternalSource/ChenQianyu/Content/EndfieldRender",
+    "source_hash_preservation": true,
+    "face_hair_specialization": "NotImplemented",
+    "detail": "Documentation/Assets/CharacterIntegration.md"
+  },
+  "two_character_setup": {
+    "status": "Saved_GenericDisplayObserved",
+    "characters": [
+      "ChenQianyu",
+      "Wanderer"
+    ],
+    "map": "/Game/NPR/Maps/L_TwoStyle_CharacterProbe",
+    "assignment_manifest": "Documentation/Styles/CharacterStyleAssignments.v1.json",
+    "wanderer_import": "Documentation/Assets/Wanderer.UE58.import.json",
+    "character_profile_calibration": "NotRun",
+    "face_hair_specialization": "NotImplemented",
+    "screenshot": "Documentation/Images/TwoStyleCharacterProbe.png"
+  },
+  "machine_specific_evidence": "Omitted from shared record; original snapshot is retained in ignored Saved/LocalResearchRecords"
+}

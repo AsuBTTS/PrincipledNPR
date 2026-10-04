@@ -1,0 +1,637 @@
+{
+  "documentType": "NPRParameterContract",
+  "schemaVersion": 1,
+  "responseModelVersion": 1,
+  "status": "Draft",
+  "calibrationStatus": "Uncalibrated",
+  "shaderConnectionStatus": "NotConnected",
+  "unrealAssetStatus": "NoUDataAssetImplementation",
+  "source": {
+    "reportFilename": "Principled_NPR_技术设计报告_V1.0.md",
+    "sha256": "81be77fb2c15350af9804e487323d6dcc6442ee384a73647ec100cf06eadd516",
+    "sections": [
+      "3.2",
+      "4",
+      "5",
+      "6",
+      "8",
+      "10.8",
+      "13"
+    ],
+    "hashNormalization": "UTF8_LF"
+  },
+  "overrideOrder": [
+    "SchemaDefaults",
+    "MaterialDefaults",
+    "StyleDefaults",
+    "StyleMaterialPatch",
+    "InstancePatch",
+    "RuntimeTransientPatch"
+  ],
+  "patchContract": {
+    "representation": "Sparse keyed isSet/value entries",
+    "unset": "Absent or isSet=false",
+    "zero": "Valid explicit value",
+    "reset": "Delete current patch entry",
+    "invalidValue": "Reject with diagnostic; no silent clamp",
+    "assetFacts": "Not overridable by Style"
+  },
+  "parameterDefinitions": [
+    {
+      "id": "TerminatorDotCenter",
+      "unit": "unitless_signed_dot",
+      "hardDomain": [
+        -1,
+        1
+      ],
+      "recommendedRange": [
+        -0.5,
+        0.5
+      ],
+      "schemaDefault": 0,
+      "group": "Diffuse",
+      "materialProfiles": [
+        "Generic",
+        "Hair"
+      ],
+      "semantic": "Signed N dot L response center; not shadow-map bias.",
+      "uiAliases": [
+        "shadowThreshold",
+        "terminatorPosition"
+      ],
+      "migrationVersion": 1
+    },
+    {
+      "id": "TerminatorDotHalfWidth",
+      "unit": "unitless_signed_dot_half_width",
+      "hardDomain": [
+        0,
+        0.5
+      ],
+      "recommendedRange": [
+        0,
+        0.25
+      ],
+      "schemaDefault": 0.05,
+      "group": "Diffuse",
+      "materialProfiles": [
+        "Generic",
+        "Hair"
+      ],
+      "semantic": "Artistic half-width in signed dot coordinates; zero retains pixel AA.",
+      "uiAliases": [
+        "shadowSoftness",
+        "terminatorSoftness"
+      ],
+      "migrationVersion": 1
+    },
+    {
+      "id": "SpecHalfAngleRad",
+      "unit": "radian",
+      "hardDomain": [
+        0.017453292519943295,
+        1.0471975511965976
+      ],
+      "recommendedRange": [
+        0.017453292519943295,
+        0.4363323129985824
+      ],
+      "schemaDefault": 0.13962634015954636,
+      "group": "Specular",
+      "materialProfiles": [
+        "Generic",
+        "Face",
+        "Hair"
+      ],
+      "semantic": "Raw half-vector lobe 50 percent angular half-width; Hair uses the strand T section.",
+      "uiAliases": [
+        "specularSize",
+        "specularHalfAngle"
+      ],
+      "migrationVersion": 1
+    },
+    {
+      "id": "SpecEdgeSoftness",
+      "unit": "unitless",
+      "hardDomain": [
+        0,
+        1
+      ],
+      "recommendedRange": [
+        0,
+        1
+      ],
+      "schemaDefault": 0.15,
+      "group": "Specular",
+      "materialProfiles": [
+        "Generic",
+        "Face",
+        "Hair"
+      ],
+      "semantic": "Reference angular half-width = .95 * value * min(beta, pi/2-beta).",
+      "uiAliases": [
+        "specularSoftness"
+      ],
+      "migrationVersion": 1
+    },
+    {
+      "id": "SpecPeakScale",
+      "unit": "linear_scene_multiplier",
+      "hardDomain": [
+        0,
+        null
+      ],
+      "recommendedRange": [
+        0,
+        2
+      ],
+      "schemaDefault": 1,
+      "group": "Specular",
+      "materialProfiles": [
+        "Generic",
+        "Face",
+        "Hair"
+      ],
+      "semantic": "Peak amplitude before visibility/Fresnel; integrated energy not held fixed.",
+      "uiAliases": [
+        "specularIntensity"
+      ],
+      "migrationVersion": 1
+    },
+    {
+      "id": "NormalDetailStrength",
+      "unit": "unitless",
+      "hardDomain": [
+        0,
+        1
+      ],
+      "recommendedRange": [
+        0,
+        1
+      ],
+      "schemaDefault": 1,
+      "group": "Normal",
+      "materialProfiles": [
+        "Generic",
+        "Face",
+        "Hair"
+      ],
+      "semantic": "Tangent-space detail attenuation, independent from macro abstraction.",
+      "uiAliases": [
+        "normalMapStrength"
+      ],
+      "migrationVersion": 1
+    },
+    {
+      "id": "MacroNormalBlend",
+      "unit": "unitless",
+      "hardDomain": [
+        0,
+        1
+      ],
+      "recommendedRange": [
+        0,
+        1
+      ],
+      "schemaDefault": 0,
+      "group": "Normal",
+      "materialProfiles": [
+        "Generic",
+        "Face",
+        "Hair"
+      ],
+      "semantic": "Spherical blend toward asset-authored guide normal; Unsupported without guide data.",
+      "uiAliases": [
+        "normalFlatten"
+      ],
+      "migrationVersion": 1
+    },
+    {
+      "id": "RimGrazingAngleRad",
+      "unit": "radian",
+      "hardDomain": [
+        0,
+        1.5707963267948966
+      ],
+      "recommendedRange": [
+        0.017453292519943295,
+        0.6108652381980153
+      ],
+      "schemaDefault": 0.13962634015954636,
+      "group": "Appearance.Rim",
+      "materialProfiles": [
+        "Generic",
+        "Face",
+        "Hair"
+      ],
+      "semantic": "Angular distance from silhouette, not pixels.",
+      "uiAliases": [
+        "rimWidth"
+      ],
+      "migrationVersion": 1
+    },
+    {
+      "id": "RimEdgeHalfWidthRad",
+      "unit": "radian",
+      "hardDomain": [
+        0,
+        1.5707963267948966
+      ],
+      "recommendedRange": [
+        0,
+        0.17453292519943295
+      ],
+      "schemaDefault": 0.03490658503988659,
+      "group": "Appearance.Rim",
+      "materialProfiles": [
+        "Generic",
+        "Face",
+        "Hair"
+      ],
+      "semantic": "Artistic grazing-angle edge transition half-width.",
+      "uiAliases": [
+        "rimSoftness"
+      ],
+      "migrationVersion": 1
+    },
+    {
+      "id": "RimPeakScale",
+      "unit": "linear_scene_multiplier",
+      "hardDomain": [
+        0,
+        null
+      ],
+      "recommendedRange": [
+        0,
+        2
+      ],
+      "schemaDefault": 0,
+      "group": "Appearance.Rim",
+      "materialProfiles": [
+        "Generic",
+        "Face",
+        "Hair"
+      ],
+      "semantic": "Linear amplitude with separate visibility policy.",
+      "uiAliases": [
+        "rimIntensity"
+      ],
+      "migrationVersion": 1
+    },
+    {
+      "id": "FaceAngularBiasRad",
+      "unit": "radian",
+      "hardDomain": null,
+      "recommendedRange": [
+        -0.08726646259971647,
+        0.08726646259971647
+      ],
+      "schemaDefault": 0,
+      "group": "Face",
+      "materialProfiles": [
+        "Face"
+      ],
+      "semantic": "Positive postpones darkening; divide by pi when converting to half-turn field coordinates.",
+      "uiAliases": [
+        "faceAngularBias"
+      ],
+      "migrationVersion": 1
+    },
+    {
+      "id": "FaceAngularHalfWidthRad",
+      "unit": "radian",
+      "hardDomain": [
+        0,
+        null
+      ],
+      "recommendedRange": [
+        0,
+        0.17453292519943295
+      ],
+      "schemaDefault": 0.03490658503988659,
+      "group": "Face",
+      "materialProfiles": [
+        "Face"
+      ],
+      "semantic": "Critical azimuth half-width, not screen-space feathering.",
+      "uiAliases": [
+        "faceSoftness"
+      ],
+      "migrationVersion": 1
+    },
+    {
+      "id": "HairShiftAngleRad",
+      "unit": "radian",
+      "hardDomain": [
+        -0.3490658503988659,
+        0.3490658503988659
+      ],
+      "recommendedRange": [
+        -0.3490658503988659,
+        0.3490658503988659
+      ],
+      "schemaDefault": 0,
+      "group": "Hair",
+      "materialProfiles": [
+        "Hair"
+      ],
+      "semantic": "Rotates T and N in their plane; root-to-tip orientation fixes shift sign.",
+      "uiAliases": [
+        "hairShift"
+      ],
+      "migrationVersion": 1
+    },
+    {
+      "id": "StrandAnisotropy",
+      "unit": "unitless",
+      "hardDomain": [
+        0,
+        1
+      ],
+      "recommendedRange": [
+        0,
+        1
+      ],
+      "schemaDefault": 0.9,
+      "group": "Hair",
+      "materialProfiles": [
+        "Hair"
+      ],
+      "semantic": "Broadens raw angular lobe toward fiber stripe; not native GGX anisotropy.",
+      "uiAliases": [
+        "hairAnisotropy"
+      ],
+      "migrationVersion": 1
+    },
+    {
+      "id": "OutlineWidthPx",
+      "unit": "output_resolution_pixel",
+      "hardDomain": [
+        0,
+        null
+      ],
+      "recommendedRange": [
+        0,
+        4
+      ],
+      "schemaDefault": 0,
+      "group": "Geometry.Outline",
+      "materialProfiles": [
+        "Generic",
+        "Face",
+        "Hair"
+      ],
+      "semantic": "Width at declared output resolution; requires separate outline backend.",
+      "uiAliases": [
+        "outlineWidth"
+      ],
+      "migrationVersion": 1
+    },
+    {
+      "id": "MatCapWeight",
+      "unit": "unitless",
+      "hardDomain": [
+        0,
+        1
+      ],
+      "recommendedRange": [
+        0,
+        1
+      ],
+      "schemaDefault": 0,
+      "group": "Appearance.MatCap",
+      "materialProfiles": [
+        "Generic",
+        "Face",
+        "Hair"
+      ],
+      "semantic": "Requires named blend operator and texture.",
+      "uiAliases": [
+        "matcapWeight"
+      ],
+      "migrationVersion": 1
+    },
+    {
+      "id": "ChromaScale",
+      "unit": "unitless",
+      "hardDomain": [
+        0,
+        null
+      ],
+      "recommendedRange": [
+        0,
+        2
+      ],
+      "schemaDefault": 1,
+      "group": "Appearance.Color",
+      "materialProfiles": [
+        "Generic",
+        "Face",
+        "Hair"
+      ],
+      "semantic": "Requires explicit color-space/luminance-preservation policy; disabled in these drafts.",
+      "uiAliases": [
+        "saturation"
+      ],
+      "migrationVersion": 1
+    }
+  ],
+  "materialProfiles": {
+    "Generic": {
+      "modelId": "Generic.Reference.v1",
+      "requiredInputs": [
+        "BaseColor",
+        "Normal",
+        "Roughness",
+        "Metallic"
+      ],
+      "optionalInputs": [
+        "AO",
+        "NormalMap",
+        "MacroNormal"
+      ]
+    },
+    "Face": {
+      "modelId": "Face.CriticalAzimuth.v1",
+      "requiredInputs": [
+        "BaseColor",
+        "FaceCriticalAzimuthField",
+        "FaceUVConvention",
+        "HeadBone",
+        "HeadFrameCalibration"
+      ],
+      "assetFacts": [
+        "FieldValueConvention",
+        "MirroringRule",
+        "UVFlipMetadata"
+      ],
+      "backendGate": "FaceGate.NotRun"
+    },
+    "Hair": {
+      "modelId": "Hair.AnisotropicAngular.v1",
+      "requiredInputs": [
+        "BaseColor",
+        "SmoothNormal",
+        "RootToTipFlow"
+      ],
+      "assetFacts": [
+        "FlowCoordinateSpace",
+        "TBNHandedness"
+      ],
+      "backendGate": "HairGate.NotRun"
+    }
+  },
+  "backends": {
+    "S58": {
+      "role": "V1ProductionCandidate",
+      "status": "Unaccepted",
+      "requiredGates": [
+        "GenericGate",
+        "ShadowGate",
+        "LumenGate",
+        "FaceGate",
+        "HairGate",
+        "RuntimeStyleGate"
+      ],
+      "mappingEntries": [
+        {
+          "semanticId": "TerminatorDotCenter",
+          "target": "UToonProfile DiffuseRamp center",
+          "level": "Exact",
+          "scope": "CoordinateOnly",
+          "implementation": "NotImplemented",
+          "renderValidation": "NotRun",
+          "condition": "Single zero-size directional light, include-shadow off, no offset: (tau+1)/2; final appearance uncalibrated."
+        },
+        {
+          "semanticId": "TerminatorDotHalfWidth",
+          "target": "DiffuseRamp half-width",
+          "level": "Approximate",
+          "scope": "Appearance",
+          "implementation": "NotImplemented",
+          "renderValidation": "NotRun",
+          "condition": "w/2 is coordinate-exact; LUT/filter/AA calibration required."
+        },
+        {
+          "semanticId": "SpecHalfAngleRad",
+          "target": "Roughness plus SpecularRamp",
+          "level": "Approximate",
+          "scope": "Appearance",
+          "implementation": "NotImplemented",
+          "renderValidation": "NotRun",
+          "condition": "Fit native D*energy lookup; never use size=1-roughness."
+        },
+        {
+          "semanticId": "SpecEdgeSoftness",
+          "target": "SpecularRamp fit",
+          "level": "Approximate",
+          "scope": "Appearance",
+          "implementation": "NotImplemented",
+          "renderValidation": "NotRun",
+          "condition": "View/light/roughness coupling requires measurement."
+        },
+        {
+          "semanticId": "SpecPeakScale",
+          "target": "SpecularRamp scale or calibrated multiplier",
+          "level": "Approximate",
+          "scope": "Appearance",
+          "implementation": "NotImplemented",
+          "renderValidation": "NotRun",
+          "condition": "Specular/F0 is not an independent peak knob."
+        },
+        {
+          "semanticId": "MacroNormalBlend",
+          "target": "Normal preprocessing",
+          "level": "Exact",
+          "scope": "DataPreprocessing",
+          "implementation": "NotImplemented",
+          "renderValidation": "NotRun",
+          "condition": "Valid authored macro normals required; otherwise Unsupported."
+        },
+        {
+          "semanticId": "FaceCriticalAzimuthTerminatorPerLight",
+          "target": null,
+          "level": "Unsupported",
+          "scope": "NativePublicInterface",
+          "implementation": "NotImplemented",
+          "renderValidation": "NotRun",
+          "condition": "No public per-light face-mask/NoL override; offset bridge is Approximate only."
+        },
+        {
+          "semanticId": "FaceKeyLightOffsetBridge",
+          "target": "PatternUV and prebuilt offset atlas",
+          "level": "Approximate",
+          "scope": "CandidateOnly",
+          "implementation": "NotImplemented",
+          "renderValidation": "NotRun",
+          "condition": "Calibrate monotone interior range and inverse, 12-bit UV, frac/wrap seams; no endpoint Exact claim."
+        },
+        {
+          "semanticId": "HairShiftAngleRad",
+          "target": null,
+          "level": "Unsupported",
+          "scope": "IndependentNativeLobeShift",
+          "implementation": "NotImplemented",
+          "renderValidation": "NotRun",
+          "condition": "Changing shared Normal also changes diffuse/GI; Tangent alone is not an independent shifted reference lobe."
+        },
+        {
+          "semanticId": "StrandAnisotropy",
+          "target": "Toon Tangent and Anisotropy",
+          "level": "Approximate",
+          "scope": "Appearance",
+          "implementation": "NotImplemented",
+          "renderValidation": "NotRun",
+          "condition": "Native anisotropic GGX differs; calibrate flow and anisotropy."
+        },
+        {
+          "semanticId": "HairAngularLobeAllViews",
+          "target": null,
+          "level": "Unsupported",
+          "scope": "ExactReferenceReproduction",
+          "implementation": "NotImplemented",
+          "renderValidation": "NotRun",
+          "condition": "Native GGX plus ramp is not generally identical to reference angular metric."
+        },
+        {
+          "semanticId": "RimGrazingAngleRad",
+          "target": null,
+          "level": "Unsupported",
+          "scope": "ToonProfileField",
+          "implementation": "NotImplemented",
+          "renderValidation": "NotRun",
+          "condition": "Separate appearance module; emissive rim does not acquire native visibility."
+        },
+        {
+          "semanticId": "OutlineWidthPx",
+          "target": null,
+          "level": "Unsupported",
+          "scope": "ToonProfileField",
+          "implementation": "NotImplemented",
+          "renderValidation": "NotRun",
+          "condition": "Separate geometry/screen module."
+        }
+      ],
+      "allRenderTests": "NotRun"
+    },
+    "A0": {
+      "role": "MathematicalReference",
+      "status": "NotImplemented",
+      "productionDefault": false,
+      "nativeReceiveShadow": "Unsupported",
+      "nativeLumenInput": "Unsupported",
+      "purpose": "Isolated raw semantic response comparison"
+    },
+    "APlusOrCustom": {
+      "role": "ConditionalExtension",
+      "status": "NotPlannedForImplementation",
+      "trigger": "Measured S58 gap and confirmed required semantic capability"
+    }
+  },
+  "resourceRules": {
+    "styleIsToonProfile": false,
+    "toonProfile": "Immutable prebuilt backend artifact",
+    "runtimeStyleSwitch": "Prebuild/preload MIC or MID bundles; never edit ToonProfile settings at runtime",
+    "runtimeImplementation": "NotImplemented"
+  }
+}

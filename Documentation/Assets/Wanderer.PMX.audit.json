@@ -1,0 +1,544 @@
+{
+  "source": "SourceAssets/Wanderer/Original/流浪者.pmx",
+  "format": "PMX",
+  "version": 2.0,
+  "name": "Wanderer",
+  "name_en": "",
+  "vertices": 27650,
+  "triangles": 32747,
+  "bounds_pmx_units": {
+    "min": [
+      -7.016931056976318,
+      0.057541195303201675,
+      -4.696936130523682
+    ],
+    "max": [
+      7.016932487487793,
+      20.844955444335938,
+      3.995012044906616
+    ]
+  },
+  "bone_count": 382,
+  "bones_and_face_morphs_inspected": false,
+  "materials": [
+    {
+      "name": "颜",
+      "name_en": "",
+      "diffuse": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "texture": "tex/颜.png",
+      "sphere_texture": null,
+      "sphere_mode": 0,
+      "toon_shared": false,
+      "toon_index": 1,
+      "triangle_count": 1601,
+      "flags": 31
+    },
+    {
+      "name": "颜2",
+      "name_en": "",
+      "diffuse": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "texture": "tex/颜.png",
+      "sphere_texture": null,
+      "sphere_mode": 0,
+      "toon_shared": false,
+      "toon_index": 1,
+      "triangle_count": 77,
+      "flags": 15
+    },
+    {
+      "name": "二重",
+      "name_en": "",
+      "diffuse": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "texture": "tex/颜.png",
+      "sphere_texture": null,
+      "sphere_mode": 0,
+      "toon_shared": false,
+      "toon_index": 1,
+      "triangle_count": 28,
+      "flags": 15
+    },
+    {
+      "name": "眉",
+      "name_en": "",
+      "diffuse": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "texture": "tex/颜.png",
+      "sphere_texture": null,
+      "sphere_mode": 0,
+      "toon_shared": false,
+      "toon_index": 2,
+      "triangle_count": 48,
+      "flags": 15
+    },
+    {
+      "name": "口舌",
+      "name_en": "",
+      "diffuse": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "texture": "tex/颜.png",
+      "sphere_texture": null,
+      "sphere_mode": 0,
+      "toon_shared": false,
+      "toon_index": 1,
+      "triangle_count": 388,
+      "flags": 15
+    },
+    {
+      "name": "齿",
+      "name_en": "",
+      "diffuse": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "texture": "tex/颜.png",
+      "sphere_texture": null,
+      "sphere_mode": 0,
+      "toon_shared": true,
+      "toon_index": 0,
+      "triangle_count": 144,
+      "flags": 15
+    },
+    {
+      "name": "白目",
+      "name_en": "",
+      "diffuse": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "texture": "tex/颜.png",
+      "sphere_texture": null,
+      "sphere_mode": 0,
+      "toon_shared": false,
+      "toon_index": -1,
+      "triangle_count": 140,
+      "flags": 3
+    },
+    {
+      "name": "睫",
+      "name_en": "",
+      "diffuse": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "texture": "tex/颜.png",
+      "sphere_texture": null,
+      "sphere_mode": 0,
+      "toon_shared": false,
+      "toon_index": 2,
+      "triangle_count": 276,
+      "flags": 15
+    },
+    {
+      "name": "星目",
+      "name_en": "",
+      "diffuse": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "texture": "tex/颜.png",
+      "sphere_texture": null,
+      "sphere_mode": 0,
+      "toon_shared": false,
+      "toon_index": -1,
+      "triangle_count": 64,
+      "flags": 15
+    },
+    {
+      "name": "髮",
+      "name_en": "",
+      "diffuse": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "texture": "tex/髮.png",
+      "sphere_texture": null,
+      "sphere_mode": 0,
+      "toon_shared": false,
+      "toon_index": 2,
+      "triangle_count": 1892,
+      "flags": 31
+    },
+    {
+      "name": "髮+",
+      "name_en": "",
+      "diffuse": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "texture": "tex/spa_h.png",
+      "sphere_texture": "sph/hair_s.bmp",
+      "sphere_mode": 2,
+      "toon_shared": false,
+      "toon_index": 2,
+      "triangle_count": 1892,
+      "flags": 15
+    },
+    {
+      "name": "目",
+      "name_en": "",
+      "diffuse": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "texture": "tex/髮.png",
+      "sphere_texture": null,
+      "sphere_mode": 0,
+      "toon_shared": false,
+      "toon_index": -1,
+      "triangle_count": 240,
+      "flags": 3
+    },
+    {
+      "name": "体",
+      "name_en": "",
+      "diffuse": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "texture": "tex/体.png",
+      "sphere_texture": null,
+      "sphere_mode": 0,
+      "toon_shared": false,
+      "toon_index": 7,
+      "triangle_count": 5338,
+      "flags": 31
+    },
+    {
+      "name": "护腕",
+      "name_en": "",
+      "diffuse": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "texture": "tex/体.png",
+      "sphere_texture": null,
+      "sphere_mode": 0,
+      "toon_shared": false,
+      "toon_index": 7,
+      "triangle_count": 1284,
+      "flags": 31
+    },
+    {
+      "name": "饰1",
+      "name_en": "",
+      "diffuse": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "texture": "tex/体.png",
+      "sphere_texture": null,
+      "sphere_mode": 0,
+      "toon_shared": false,
+      "toon_index": 7,
+      "triangle_count": 882,
+      "flags": 31
+    },
+    {
+      "name": "裤",
+      "name_en": "",
+      "diffuse": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "texture": "tex/体.png",
+      "sphere_texture": null,
+      "sphere_mode": 0,
+      "toon_shared": false,
+      "toon_index": 7,
+      "triangle_count": 746,
+      "flags": 31
+    },
+    {
+      "name": "裤内",
+      "name_en": "",
+      "diffuse": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "texture": "tex/体.png",
+      "sphere_texture": null,
+      "sphere_mode": 0,
+      "toon_shared": false,
+      "toon_index": 7,
+      "triangle_count": 182,
+      "flags": 14
+    },
+    {
+      "name": "腰绳1",
+      "name_en": "",
+      "diffuse": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "texture": "tex/体.png",
+      "sphere_texture": null,
+      "sphere_mode": 0,
+      "toon_shared": false,
+      "toon_index": 7,
+      "triangle_count": 508,
+      "flags": 31
+    },
+    {
+      "name": "袖",
+      "name_en": "",
+      "diffuse": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "texture": "tex/体.png",
+      "sphere_texture": null,
+      "sphere_mode": 0,
+      "toon_shared": false,
+      "toon_index": 7,
+      "triangle_count": 1892,
+      "flags": 31
+    },
+    {
+      "name": "披肩",
+      "name_en": "",
+      "diffuse": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "texture": "tex/髮.png",
+      "sphere_texture": null,
+      "sphere_mode": 0,
+      "toon_shared": false,
+      "toon_index": 7,
+      "triangle_count": 3514,
+      "flags": 31
+    },
+    {
+      "name": "神之眼AL",
+      "name_en": "",
+      "diffuse": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "texture": "tex/髮.png",
+      "sphere_texture": null,
+      "sphere_mode": 0,
+      "toon_shared": false,
+      "toon_index": 7,
+      "triangle_count": 147,
+      "flags": 31
+    },
+    {
+      "name": "肌",
+      "name_en": "",
+      "diffuse": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "texture": "tex/体.png",
+      "sphere_texture": null,
+      "sphere_mode": 0,
+      "toon_shared": false,
+      "toon_index": 1,
+      "triangle_count": 3588,
+      "flags": 31
+    },
+    {
+      "name": "肌2",
+      "name_en": "",
+      "diffuse": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "texture": "tex/肌.png",
+      "sphere_texture": null,
+      "sphere_mode": 0,
+      "toon_shared": false,
+      "toon_index": 1,
+      "triangle_count": 92,
+      "flags": 31
+    },
+    {
+      "name": "帽",
+      "name_en": "",
+      "diffuse": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "texture": "tex/体.png",
+      "sphere_texture": null,
+      "sphere_mode": 0,
+      "toon_shared": false,
+      "toon_index": 7,
+      "triangle_count": 4992,
+      "flags": 31
+    },
+    {
+      "name": "帽带",
+      "name_en": "",
+      "diffuse": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "texture": "tex/体.png",
+      "sphere_texture": null,
+      "sphere_mode": 0,
+      "toon_shared": false,
+      "toon_index": 7,
+      "triangle_count": 2456,
+      "flags": 31
+    },
+    {
+      "name": "AL",
+      "name_en": "",
+      "diffuse": [
+        1.0,
+        1.0,
+        1.0,
+        0.0
+      ],
+      "texture": "tex/AL.png",
+      "sphere_texture": null,
+      "sphere_mode": 0,
+      "toon_shared": false,
+      "toon_index": 7,
+      "triangle_count": 336,
+      "flags": 15
+    }
+  ],
+  "textures": [
+    {
+      "reference": "tex/颜.png",
+      "exists": true,
+      "width": 2048,
+      "height": 2048,
+      "mode": "RGB"
+    },
+    {
+      "reference": "skin.bmp",
+      "exists": true,
+      "width": 32,
+      "height": 32,
+      "mode": "RGB"
+    },
+    {
+      "reference": "hair.bmp",
+      "exists": true,
+      "width": 32,
+      "height": 32,
+      "mode": "RGB"
+    },
+    {
+      "reference": "tex/髮.png",
+      "exists": true,
+      "width": 2048,
+      "height": 2048,
+      "mode": "RGB"
+    },
+    {
+      "reference": "tex/spa_h.png",
+      "exists": true,
+      "width": 2048,
+      "height": 2048,
+      "mode": "RGBA"
+    },
+    {
+      "reference": "sph/hair_s.bmp",
+      "exists": true,
+      "width": 256,
+      "height": 256,
+      "mode": "RGB"
+    },
+    {
+      "reference": "tex/体.png",
+      "exists": true,
+      "width": 2048,
+      "height": 2048,
+      "mode": "RGB"
+    },
+    {
+      "reference": "toon_defo.bmp",
+      "exists": true,
+      "width": 16,
+      "height": 16,
+      "mode": "RGB"
+    },
+    {
+      "reference": "tex/肌.png",
+      "exists": true,
+      "width": 2048,
+      "height": 2048,
+      "mode": "RGBA"
+    },
+    {
+      "reference": "tex/AL.png",
+      "exists": true,
+      "width": 2048,
+      "height": 2048,
+      "mode": "RGBA"
+    }
+  ],
+  "material_triangle_sum_valid": true,
+  "ue_import_status": "NotConverted_NotImported",
+  "asset_contract_status": "Unknown",
+  "readme": "感谢下载本模型\n\n◆允许完善物理，修正模型权重、表情等bug\n\n  允许改色，适度更改衣装，添加spa、toon等\n\n◆请勿二次配布，以及拆取部件以用于改造其他模型\n\n  请勿用于18禁作品，极端宗教宣传，血腥恐怖猎奇作品，人身攻击等\n\n  请勿用于商业用途\n\n◆他人使用本模型所造成的一切不良后果，不由模型改造者与miHoYo承担，请向使用者追究全部责任\n\n◆模型提供：miHoYo\n\n◆模型改造：观海\n\n  联系我【BiliBili：观海子】\n\n◆最终解释权归属：miHoYo\n\n请遵守本规则使用",
+  "usage_record": "Local noncommercial research; do not include this model in distributed plugin/demo packages."
+}

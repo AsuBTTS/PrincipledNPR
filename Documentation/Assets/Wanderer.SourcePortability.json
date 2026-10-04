@@ -1,0 +1,12 @@
+{
+  "status": "RelativeImagePathsSaved",
+  "blend": "SourceAssets/Wanderer/Converted/Wanderer.blend",
+  "geometry_weights_uv_bones_morph_fingerprint_unchanged": true,
+  "fingerprint": "559ec5a085f911d87474058f608bb373e16424070fcb805f4c47b82e36d70b20",
+  "missing_optional_mmd_images": [
+    "toon01.bmp"
+  ],
+  "missing_image_policy": "Preserve missing dependency explicitly using a relative missing_dependency name; no substituted image",
+  "ue_assets_reimported": false,
+  "native_model_assets_changed": false
+}

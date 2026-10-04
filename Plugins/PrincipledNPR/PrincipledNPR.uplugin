@@ -1,0 +1,15 @@
+{
+  "FileVersion": 3,
+  "Version": 1,
+  "VersionName": "0.1.0-spike",
+  "FriendlyName": "Principled NPR",
+  "Description": "Content and development skeleton for the Principled NPR semantic framework.",
+  "Category": "Rendering",
+  "CreatedBy": "Principled NPR Project",
+  "CanContainContent": true,
+  "IsBetaVersion": false,
+  "IsExperimentalVersion": true,
+  "Installed": false,
+  "SupportedTargetPlatforms": ["Win64"],
+  "Modules": []
+}
