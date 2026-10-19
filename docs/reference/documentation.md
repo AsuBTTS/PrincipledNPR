@@ -18,7 +18,15 @@ npm run docs:build
 npm run docs:preview
 ```
 
-构建产物在 `docs/.vitepress/dist/`。预览通常为 `http://127.0.0.1:4173`；端口占用时以终端为准。产物可以部署到静态托管服务，本任务仅在本地构建，没有发布。部署到子目录时先设置 `DOCS_BASE`，例如 `/PrincipledNPR/`，再构建。
+构建产物在 `docs/.vitepress/dist/`。预览通常为 `http://127.0.0.1:4173`；端口占用时以终端为准。部署到子目录时先设置 `DOCS_BASE`，例如 `/PrincipledNPR/`，再构建。
+
+## 在线发布
+
+我们使用 GitHub Pages 托管[在线文档](https://asubtts.github.io/PrincipledNPR/)。`.github/workflows/docs.yml` 会在 `dev` 的相关文件更新后构建、检查并发布网站；构建失败时不会发布新版本。`main` 和 Pull Request 只做构建检查。
+
+发布时使用 `DOCS_BASE=/PrincipledNPR/`，确保导航、搜索、图片和源码下载都指向正确的子目录。仓库的 Pages 来源设置为 GitHub Actions，`github-pages` 环境允许 `dev` 部署。我们只上传构建出的静态文档，不上传完整 UE 工程和游戏资产。
+
+推送后可以在仓库 Actions 中查看 Documentation 工作流。需要看到部署成功，再打开在线地址确认页面；仅有“代码已推送”或“构建成功”不代表网站已经发布。
 
 ## 日常维护
 
