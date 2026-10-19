@@ -1,0 +1,108 @@
+{
+  "stage": "Reopen",
+  "status": "DataPassed_ImagesRequireReview",
+  "checks": [
+    {
+      "name": "RealRHI",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "LoadSavedScene",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "GroupPersists",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ConfigPersists",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "RebuildAfterReopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "ReopenedUnifiedGroup",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ReopenedPreset",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ModularSkeletalComponentsPersist",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "GroupPreviewCopiesBothComponents",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "GroupPreviewCaptureSize",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Export_GroupPreview",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "PreviewLiveSettings_<NPROutlineMethod.NONE: 0>",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Export_GroupPreviewNone",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "PreviewLiveSettings_<NPROutlineMethod.SCREEN_SPACE: 2>",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Export_GroupPreviewGreen",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "PreviewLiveSettings_<NPROutlineMethod.SCREEN_SPACE: 2>",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "TexturedCharacterPreviewGeometry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Export_TexturedCharacter",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "captures": [
+    "GroupPreview/Original.png",
+    "GroupPreview/Outline.png",
+    "GroupPreviewNone/Original.png",
+    "GroupPreviewNone/Outline.png",
+    "GroupPreviewGreen/Original.png",
+    "GroupPreviewGreen/Outline.png",
+    "TexturedCharacter/Original.png",
+    "TexturedCharacter/Outline.png"
+  ],
+  "visual_acceptance": "Pending",
+  "limitations": []
+}

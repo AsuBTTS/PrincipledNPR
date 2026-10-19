@@ -1,0 +1,678 @@
+{
+  "stage": "Baseline",
+  "status": "Captured",
+  "frames": [
+    {
+      "case": "Screen_TSR_Jitter1",
+      "index": 0,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter1",
+      "index": 1,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter1",
+      "index": 2,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter1",
+      "index": 3,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter1",
+      "index": 4,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter1",
+      "index": 5,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter1",
+      "index": 6,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter1",
+      "index": 7,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter1",
+      "index": 8,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter1",
+      "index": 9,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter1",
+      "index": 10,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter1",
+      "index": 11,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter1",
+      "index": 12,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter1",
+      "index": 13,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter1",
+      "index": 14,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter1",
+      "index": 15,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter1",
+      "index": 16,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter1",
+      "index": 17,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter1",
+      "index": 18,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter1",
+      "index": 19,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter1",
+      "index": 20,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter1",
+      "index": 21,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter1",
+      "index": 22,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter1",
+      "index": 23,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter1",
+      "index": 24,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter1",
+      "index": 25,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter1",
+      "index": 26,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter1",
+      "index": 27,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter1",
+      "index": 28,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter1",
+      "index": 29,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter1",
+      "index": 30,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter1",
+      "index": 31,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter0",
+      "index": 0,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter0",
+      "index": 1,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter0",
+      "index": 2,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter0",
+      "index": 3,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter0",
+      "index": 4,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter0",
+      "index": 5,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter0",
+      "index": 6,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter0",
+      "index": 7,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter0",
+      "index": 8,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter0",
+      "index": 9,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter0",
+      "index": 10,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter0",
+      "index": 11,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter0",
+      "index": 12,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter0",
+      "index": 13,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter0",
+      "index": 14,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter0",
+      "index": 15,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter0",
+      "index": 16,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter0",
+      "index": 17,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter0",
+      "index": 18,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter0",
+      "index": 19,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter0",
+      "index": 20,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter0",
+      "index": 21,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter0",
+      "index": 22,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter0",
+      "index": 23,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter0",
+      "index": 24,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter0",
+      "index": 25,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter0",
+      "index": 26,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter0",
+      "index": 27,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter0",
+      "index": 28,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter0",
+      "index": 29,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter0",
+      "index": 30,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Screen_TSR_Jitter0",
+      "index": 31,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Hull_TSR_Jitter1",
+      "index": 0,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Hull_TSR_Jitter1",
+      "index": 1,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Hull_TSR_Jitter1",
+      "index": 2,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Hull_TSR_Jitter1",
+      "index": 3,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Hull_TSR_Jitter1",
+      "index": 4,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Hull_TSR_Jitter1",
+      "index": 5,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Hull_TSR_Jitter1",
+      "index": 6,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Hull_TSR_Jitter1",
+      "index": 7,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Hull_TSR_Jitter1",
+      "index": 8,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Hull_TSR_Jitter1",
+      "index": 9,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Hull_TSR_Jitter1",
+      "index": 10,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Hull_TSR_Jitter1",
+      "index": 11,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Hull_TSR_Jitter1",
+      "index": 12,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Hull_TSR_Jitter1",
+      "index": 13,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Hull_TSR_Jitter1",
+      "index": 14,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Hull_TSR_Jitter1",
+      "index": 15,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Hull_TSR_Jitter1",
+      "index": 16,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Hull_TSR_Jitter1",
+      "index": 17,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Hull_TSR_Jitter1",
+      "index": 18,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Hull_TSR_Jitter1",
+      "index": 19,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Hull_TSR_Jitter1",
+      "index": 20,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Hull_TSR_Jitter1",
+      "index": 21,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Hull_TSR_Jitter1",
+      "index": 22,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Hull_TSR_Jitter1",
+      "index": 23,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Hull_TSR_Jitter1",
+      "index": 24,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Hull_TSR_Jitter1",
+      "index": 25,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Hull_TSR_Jitter1",
+      "index": 26,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Hull_TSR_Jitter1",
+      "index": 27,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Hull_TSR_Jitter1",
+      "index": 28,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Hull_TSR_Jitter1",
+      "index": 29,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Hull_TSR_Jitter1",
+      "index": 30,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "Hull_TSR_Jitter1",
+      "index": 31,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "None_TSR",
+      "index": 0,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "None_TSR",
+      "index": 1,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "None_TSR",
+      "index": 2,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "None_TSR",
+      "index": 3,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "None_TSR",
+      "index": 4,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "None_TSR",
+      "index": 5,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "None_TSR",
+      "index": 6,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "None_TSR",
+      "index": 7,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "None_TSR",
+      "index": 8,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "None_TSR",
+      "index": 9,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "None_TSR",
+      "index": 10,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "None_TSR",
+      "index": 11,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "None_TSR",
+      "index": 12,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "None_TSR",
+      "index": 13,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "None_TSR",
+      "index": 14,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "None_TSR",
+      "index": 15,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "None_TSR",
+      "index": 16,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "None_TSR",
+      "index": 17,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "None_TSR",
+      "index": 18,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "None_TSR",
+      "index": 19,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "None_TSR",
+      "index": 20,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "None_TSR",
+      "index": 21,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "None_TSR",
+      "index": 22,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "None_TSR",
+      "index": 23,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "None_TSR",
+      "index": 24,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "None_TSR",
+      "index": 25,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "None_TSR",
+      "index": 26,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "None_TSR",
+      "index": 27,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "None_TSR",
+      "index": 28,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "None_TSR",
+      "index": 29,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "None_TSR",
+      "index": 30,
+      "delta_seconds": 0.125
+    },
+    {
+      "case": "None_TSR",
+      "index": 31,
+      "delta_seconds": 0.125
+    }
+  ],
+  "cases": [
+    {
+      "name": "Screen_TSR_Jitter1",
+      "warmup_frames": 90,
+      "sample_frames": 32,
+      "initial_helpers": [
+        "/Game/NPR/Maps/L_Outline_MultiScope_v1.L_Outline_MultiScope_v1:PersistentLevel.SkeletalMeshActor_1.SkeletalMeshComponent_1"
+      ]
+    },
+    {
+      "name": "Screen_TSR_Jitter0",
+      "warmup_frames": 90,
+      "sample_frames": 32,
+      "initial_helpers": [
+        "/Game/NPR/Maps/L_Outline_MultiScope_v1.L_Outline_MultiScope_v1:PersistentLevel.SkeletalMeshActor_1.SkeletalMeshComponent_1"
+      ]
+    },
+    {
+      "name": "Hull_TSR_Jitter1",
+      "warmup_frames": 90,
+      "sample_frames": 32,
+      "initial_helpers": [
+        "/Game/NPR/Maps/L_Outline_MultiScope_v1.L_Outline_MultiScope_v1:PersistentLevel.SkeletalMeshActor_1.SkeletalMeshComponent_2"
+      ]
+    },
+    {
+      "name": "None_TSR",
+      "warmup_frames": 90,
+      "sample_frames": 32,
+      "initial_helpers": []
+    }
+  ]
+}

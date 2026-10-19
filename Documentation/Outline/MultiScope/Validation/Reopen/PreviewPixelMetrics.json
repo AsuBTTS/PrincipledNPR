@@ -1,0 +1,47 @@
+{
+  "Metrics": {
+    "TexturedCharacter": {
+      "RGBMeanAbsoluteDifference": 2.360450680272109,
+      "Red": 204,
+      "Green": 0,
+      "SourceShapePixels": 14118
+    },
+    "GroupPreviewGreen": {
+      "RGBMeanAbsoluteDifference": 4.513560090702948,
+      "Red": 201,
+      "Green": 10436,
+      "SourceShapePixels": 24943
+    },
+    "GroupPreview": {
+      "RGBMeanAbsoluteDifference": 3.569160997732426,
+      "Red": 8008,
+      "Green": 0,
+      "SourceShapePixels": 24992
+    },
+    "GroupPreviewNone": {
+      "RGBMeanAbsoluteDifference": 0,
+      "Red": 200,
+      "Green": 0,
+      "SourceShapePixels": 24977
+    }
+  },
+  "Checks": [
+    {
+      "Name": "BothViewsContainCharacter",
+      "Passed": true
+    },
+    {
+      "Name": "DisabledOutlineMatchesOriginal",
+      "Passed": true
+    },
+    {
+      "Name": "GreenAndWidthUpdateInActorPreview",
+      "Passed": true
+    },
+    {
+      "Name": "TexturedCharacterHasSurfaceAndOutline",
+      "Passed": true
+    }
+  ],
+  "Passed": true
+}

@@ -1,0 +1,191 @@
+{
+  "stage": "Create",
+  "status": "DataAndWorkflowPassed_PixelReviewRequired",
+  "checks": [
+    {
+      "name": "OneControlledCharacter",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ResetOwnedFixtureBinding",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ConvertSelectedSlot",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "IdempotentConversion",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "OriginalMaterialRetained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ChildMICParentPreserved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Inherited_BaseColorTexture",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Inherited_NormalTexture",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "OnlySelectedSlotConverted",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "InvalidSlotRejectedWithoutMutation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ActualShaderCompilation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "FixedComparisonResolution",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Refresh_None",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Export_None",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "PNGFiles_None",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Refresh_HullThin",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Export_HullThin",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "PNGFiles_HullThin",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Refresh_HullWide",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Export_HullWide",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "PNGFiles_HullWide",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Refresh_ScreenThin",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Export_ScreenThin",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "PNGFiles_ScreenThin",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Refresh_ScreenWide",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Export_ScreenWide",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "PNGFiles_ScreenWide",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Refresh_ScreenGreen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Export_ScreenGreen",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "PNGFiles_ScreenGreen",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "SavePreset",
+      "passed": true,
+      "detail": "(<Object '/Game/NPR/Outline/Presets/OP_ControlledOutline.OP_ControlledOutline' (0x000001C413C67080) Class 'NPROutlinePreset'>, '')"
+    },
+    {
+      "name": "ApplyPreset",
+      "passed": true,
+      "detail": "''"
+    },
+    {
+      "name": "SaveLevelAndMaterial",
+      "passed": true,
+      "detail": "''"
+    },
+    {
+      "name": "Export_FinalSaved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "PNGFiles_FinalSaved",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "captures": [
+    "Saved/NPR/Outline/Validation/Create/None",
+    "Saved/NPR/Outline/Validation/Create/HullThin",
+    "Saved/NPR/Outline/Validation/Create/HullWide",
+    "Saved/NPR/Outline/Validation/Create/ScreenThin",
+    "Saved/NPR/Outline/Validation/Create/ScreenWide",
+    "Saved/NPR/Outline/Validation/Create/ScreenGreen",
+    "Saved/NPR/Outline/Validation/Create/FinalSaved"
+  ],
+  "render_acceptance": "PendingImageInspection"
+}

@@ -1,0 +1,344 @@
+{
+  "stage": "Candidate1",
+  "passed": true,
+  "checks": [
+    {
+      "name": "AllCasesCaptured",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Legacy_Static100:32RealFrames",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Legacy_Static100:CorrectAA",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Legacy_Static100:ViewportKeepsRendering",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Legacy_Static100:StablePreviewHelpers",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Screen_Static100:32RealFrames",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Screen_Static100:CorrectAA",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Screen_Static100:ViewportKeepsRendering",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Screen_Static100:StablePreviewHelpers",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Screen_Static66:32RealFrames",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Screen_Static66:CorrectAA",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Screen_Static66:ViewportKeepsRendering",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Screen_Static66:StablePreviewHelpers",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Screen_TAA100:32RealFrames",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Screen_TAA100:CorrectAA",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Screen_TAA100:ViewportKeepsRendering",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Screen_TAA100:StablePreviewHelpers",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Hull_Static100:32RealFrames",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Hull_Static100:CorrectAA",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Hull_Static100:ViewportKeepsRendering",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Hull_Static100:StablePreviewHelpers",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Legacy_Motion100:32RealFrames",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Legacy_Motion100:CorrectAA",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Legacy_Motion100:ViewportKeepsRendering",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Legacy_Motion100:StablePreviewHelpers",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Screen_Motion100:32RealFrames",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Screen_Motion100:CorrectAA",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Screen_Motion100:ViewportKeepsRendering",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Screen_Motion100:StablePreviewHelpers",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Screen_Motion66:32RealFrames",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Screen_Motion66:CorrectAA",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Screen_Motion66:ViewportKeepsRendering",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Screen_Motion66:StablePreviewHelpers",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Hull_Motion100:32RealFrames",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Hull_Motion100:CorrectAA",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Hull_Motion100:ViewportKeepsRendering",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Hull_Motion100:StablePreviewHelpers",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Screen_Width1:32RealFrames",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Screen_Width1:CorrectAA",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Screen_Width1:ViewportKeepsRendering",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Screen_Width1:StablePreviewHelpers",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Screen_Width8:32RealFrames",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Screen_Width8:CorrectAA",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Screen_Width8:ViewportKeepsRendering",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Screen_Width8:StablePreviewHelpers",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Black_Static100:32RealFrames",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Black_Static100:CorrectAA",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Black_Static100:ViewportKeepsRendering",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Black_Static100:StablePreviewHelpers",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Black_Motion100:32RealFrames",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Black_Motion100:CorrectAA",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Black_Motion100:ViewportKeepsRendering",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Black_Motion100:StablePreviewHelpers",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Screen_Static100:StaticVariationBelow3Percent",
+      "passed": true,
+      "detail": 0.0075805531814694405
+    },
+    {
+      "name": "Screen_Static66:StaticVariationBelow3Percent",
+      "passed": true,
+      "detail": 0.004394193179905415
+    },
+    {
+      "name": "Screen_TAA100:StaticVariationBelow3Percent",
+      "passed": true,
+      "detail": 0.0152063500136137
+    },
+    {
+      "name": "Screen_Width1:StaticVariationBelow3Percent",
+      "passed": true,
+      "detail": 0.0135365454480052
+    },
+    {
+      "name": "Screen_Width8:StaticVariationBelow3Percent",
+      "passed": true,
+      "detail": 0.0046317861415445805
+    },
+    {
+      "name": "Black_Static100:StaticVariationBelow3Percent",
+      "passed": true,
+      "detail": 0.006992531940340996
+    },
+    {
+      "name": "Screen_Motion100:MotionVariationBelow6Percent",
+      "passed": true,
+      "detail": 0.03398381546139717
+    },
+    {
+      "name": "Screen_Motion66:MotionVariationBelow6Percent",
+      "passed": true,
+      "detail": 0.03466485068202019
+    },
+    {
+      "name": "Black_Motion100:MotionVariationBelow6Percent",
+      "passed": true,
+      "detail": 0.034448303282260895
+    },
+    {
+      "name": "StaticFlickerReductionAbove90Percent",
+      "passed": true,
+      "detail": 0.9667481109938199
+    },
+    {
+      "name": "MotionFlickerReductionAbove50Percent",
+      "passed": true,
+      "detail": 0.654734358727785
+    },
+    {
+      "name": "HullStableWithoutScreenPass",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "WidthResponds",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "DisplayWidthStableAt66Percent",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "static_reduction": 0.9667481109938199,
+  "motion_reduction": 0.654734358727785,
+  "scope": "This character, camera, preview renderer, tested AA modes and resolutions only."
+}

@@ -1,0 +1,51 @@
+{
+  "Metrics": {
+    "Independent": {
+      "Red": 1155,
+      "Green": 858,
+      "CenterRed": 262,
+      "Visible": 11096
+    },
+    "Unified": {
+      "Red": 1661,
+      "Green": 0,
+      "CenterRed": 294,
+      "Visible": 11096
+    },
+    "Occluded": {
+      "Red": 1115,
+      "Green": 0,
+      "CenterRed": 0,
+      "Visible": 23316
+    },
+    "NoOutline": {
+      "Red": 0,
+      "Green": 0,
+      "CenterRed": 0,
+      "Visible": 9435
+    }
+  },
+  "Checks": [
+    {
+      "Name": "NonBlankBaseline",
+      "Passed": true
+    },
+    {
+      "Name": "UnifiedVisibleRedOutline",
+      "Passed": true
+    },
+    {
+      "Name": "IndependentGroupsBothRender",
+      "Passed": true
+    },
+    {
+      "Name": "IndependentAddsBoundaryCoverage",
+      "Passed": true
+    },
+    {
+      "Name": "ForegroundOccludesCenterLine",
+      "Passed": true
+    }
+  ],
+  "Passed": true
+}

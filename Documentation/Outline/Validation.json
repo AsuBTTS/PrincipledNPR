@@ -1,0 +1,241 @@
+{
+  "Status": "PassedForControlledOutlineSlice",
+  "RecordedUtc": "2026-10-17T13:09:42.8698640Z",
+  "Scope": "One owned controlled skeletal character; Opaque material slot 2; Outline only",
+  "Engine": {
+    "Version": "5.8.3",
+    "Changelist": 58210709,
+    "Platform": "Win64",
+    "RHI": "D3D12",
+    "NullRHI": false
+  },
+  "Builds": {
+    "EditorDevelopment": "Succeeded",
+    "GameDevelopment": "Succeeded",
+    "Cook": "NotRun"
+  },
+  "Workflow": {
+    "Create": {
+      "Checks": 35,
+      "Failures": 0,
+      "Evidence": "Evidence/CreateWorkflow.json"
+    },
+    "Reopen": {
+      "Checks": 15,
+      "Failures": 0,
+      "Evidence": "Evidence/ReopenWorkflow.json"
+    },
+    "AfterUISaveReadback": {
+      "Checks": 14,
+      "Failures": 0,
+      "Evidence": "Evidence/AfterUISaveWorkflow.json"
+    },
+    "CaptureResolution": [
+      351,
+      493
+    ],
+    "Persistence": "Final Create and Reopen stages ran sequentially in different completed editor processes"
+  },
+  "PixelMetrics": {
+    "Scope": "Actual exported viewport pixels; color area/width response and persistence only, not full rendering acceptance",
+    "Rows": [
+      {
+        "Variant": "None",
+        "Width": 351,
+        "Height": 493,
+        "AddedRedPixels": 150,
+        "AddedGreenPixels": 0,
+        "MeanAbsoluteRGBDifference": 0.1755825623303649
+      },
+      {
+        "Variant": "HullThin",
+        "Width": 351,
+        "Height": 493,
+        "AddedRedPixels": 845,
+        "AddedGreenPixels": 0,
+        "MeanAbsoluteRGBDifference": 0.2982977256134795
+      },
+      {
+        "Variant": "HullWide",
+        "Width": 351,
+        "Height": 493,
+        "AddedRedPixels": 2411,
+        "AddedGreenPixels": 0,
+        "MeanAbsoluteRGBDifference": 0.8052911704027322
+      },
+      {
+        "Variant": "ScreenThin",
+        "Width": 351,
+        "Height": 493,
+        "AddedRedPixels": 3910,
+        "AddedGreenPixels": 0,
+        "MeanAbsoluteRGBDifference": 2.3225421812304843
+      },
+      {
+        "Variant": "ScreenWide",
+        "Width": 351,
+        "Height": 493,
+        "AddedRedPixels": 9650,
+        "AddedGreenPixels": 0,
+        "MeanAbsoluteRGBDifference": 5.7331511050239925
+      },
+      {
+        "Variant": "ScreenGreen",
+        "Width": 351,
+        "Height": 493,
+        "AddedRedPixels": -2,
+        "AddedGreenPixels": 9648,
+        "MeanAbsoluteRGBDifference": 5.516996738768206
+      },
+      {
+        "Variant": "FinalSaved",
+        "Width": 351,
+        "Height": 493,
+        "AddedRedPixels": 1,
+        "AddedGreenPixels": 0,
+        "MeanAbsoluteRGBDifference": 2.6454946651025084
+      }
+    ],
+    "Checks": [
+      {
+        "Name": "NoneMatchesOriginal",
+        "Passed": true
+      },
+      {
+        "Name": "HullWidthIncreasesColoredArea",
+        "Passed": true
+      },
+      {
+        "Name": "ScreenWidthIncreasesColoredArea",
+        "Passed": true
+      },
+      {
+        "Name": "GreenColorChangesPixels",
+        "Passed": true
+      },
+      {
+        "Name": "ReopenRetainsOutlineMask",
+        "Passed": true,
+        "SavedMaskPixels": 4929,
+        "ReopenedMaskPixels": 4951,
+        "ExactMaskIntersectionOverUnion": 0.7480537862703468,
+        "WithinOnePixelSavedCoverage": 0.9979711909109353,
+        "WithinOnePixelReopenCoverage": 0.9955564532417693,
+        "MeanAbsoluteRGBDifference": 1.0779440177682234
+      }
+    ],
+    "Passed": true
+  },
+  "ManualReview": {
+    "HullThinAndWide": "Visible; width increased",
+    "ScreenThinAndWide": "Visible; width increased",
+    "ScreenRedAndGreen": "Visible hue change",
+    "FinalSavedAndReopened": "Black outline retained",
+    "NativeUI": "Menu opening, actor selection, conversion entry, color/width input, method switch, lighting, save and PNG export operated",
+    "NativeUIScreenshot": "Images/UI_Saved.png"
+  },
+  "Limitations": [
+    "Opaque controlled slot only",
+    "Source graph inherited; full PBR-to-Toon surface conversion unfinished",
+    "Generic/Face/Hair and complete semantic resolver unfinished",
+    "Batch apply and undo-window synchronization unfinished",
+    "Cook, game visual acceptance, full angle/occlusion and performance not accepted"
+  ],
+  "Images": [
+    {
+      "Path": "Images/UI_ColorWidth.png",
+      "SHA256": "3D3837942DA3F6E10D401C247531C9336588099C37C2A46B7ECAA6360E38BAFD",
+      "Bytes": 224608
+    },
+    {
+      "Path": "Images/UI_Saved.png",
+      "SHA256": "E081C625F9E80466EB65A78032E3C1A9D0F6472BFE9A091C30CD661671D0B97E",
+      "Bytes": 144579
+    },
+    {
+      "Path": "Images/UI_Warm.png",
+      "SHA256": "D3F54C8658651C7CE1F6E08037A77F60E0010D8D6692BBE90B5BD3C085CA9F69",
+      "Bytes": 142790
+    },
+    {
+      "Path": "Images/Create/FinalSaved/Original.png",
+      "SHA256": "A73FD788B155DDCAFB29BD06FD968E844D2B4C9CD8BCFD7A05B5A356FBBC354C",
+      "Bytes": 186809
+    },
+    {
+      "Path": "Images/Create/FinalSaved/Outline.png",
+      "SHA256": "22A29AC8A67C72DC05F2FEF929378D594D57D81F4C630E68D82DD7BC668D1F79",
+      "Bytes": 182967
+    },
+    {
+      "Path": "Images/Create/HullThin/Original.png",
+      "SHA256": "B09CAE32A5E9CB9EFC0D1B53EC8CB180CA55B181C00A27FDCDF4C2D495C56E42",
+      "Bytes": 187023
+    },
+    {
+      "Path": "Images/Create/HullThin/Outline.png",
+      "SHA256": "BF34CE8ADD990F38582B003C7E5C894446783018B1595C1F15046078C8CD47E5",
+      "Bytes": 190432
+    },
+    {
+      "Path": "Images/Create/HullWide/Original.png",
+      "SHA256": "A066F1F943F0C4F46540DD7A8866FF8A4D7FE05F5D2A79648DC6A46142D63B6C",
+      "Bytes": 186908
+    },
+    {
+      "Path": "Images/Create/HullWide/Outline.png",
+      "SHA256": "FB1CB755C29675FCE7ACC47956E1232F43FFF1C7388BBC4BEC5BD77373C58BC5",
+      "Bytes": 192858
+    },
+    {
+      "Path": "Images/Create/None/Original.png",
+      "SHA256": "2DF2CF044A5954F5EA1DBA69BD3F49330074438F903825A07B67E0E27F9B6FAD",
+      "Bytes": 186413
+    },
+    {
+      "Path": "Images/Create/None/Outline.png",
+      "SHA256": "BE9F09CFD80A5C0D6F96390FF7912B10238F05AF4B4C96EF220D0857DF2F8F92",
+      "Bytes": 189342
+    },
+    {
+      "Path": "Images/Create/ScreenGreen/Original.png",
+      "SHA256": "237905AFE4F6E00A693153D62CFAB43EAF337D7B7796F438DCEF2A55DC5E026A",
+      "Bytes": 187106
+    },
+    {
+      "Path": "Images/Create/ScreenGreen/Outline.png",
+      "SHA256": "A2A8BE7D4BDE5444B243517F27C27FAF3BFEA62307117C42250A4DCEC085B654",
+      "Bytes": 180420
+    },
+    {
+      "Path": "Images/Create/ScreenThin/Original.png",
+      "SHA256": "D2538691C85AE2F4B79F6F2D88A02070D6398EDE2729EA9D457B967BBFC25401",
+      "Bytes": 188251
+    },
+    {
+      "Path": "Images/Create/ScreenThin/Outline.png",
+      "SHA256": "8EA219359B3452DB39AA6212AA339C166717C9C22BD91F71D188F1A33CC2A49A",
+      "Bytes": 186302
+    },
+    {
+      "Path": "Images/Create/ScreenWide/Original.png",
+      "SHA256": "87D71C04A57D575E6C01BF8DB3B365790B4AAC8A13CE9305FBEE1C3F5A473A9E",
+      "Bytes": 187179
+    },
+    {
+      "Path": "Images/Create/ScreenWide/Outline.png",
+      "SHA256": "9F840FC04114DB50FFE7402A8F053C25F4BAC29D6A88ECFD0A1E365E86A54106",
+      "Bytes": 180790
+    },
+    {
+      "Path": "Images/Reopen/Reopened/Original.png",
+      "SHA256": "A18988EB6C5B03CC440277CB25AC023364887845BD03200E1A93104F0C11A6F9",
+      "Bytes": 185897
+    },
+    {
+      "Path": "Images/Reopen/Reopened/Outline.png",
+      "SHA256": "B8D9D5DC3967AF6209106453D96063AD0F0800223D7CFF8A3E7CBFD2551E71EF",
+      "Bytes": 182170
+    }
+  ]
+}

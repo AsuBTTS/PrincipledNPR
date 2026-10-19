@@ -14,6 +14,8 @@ The canonical surface, material and style semantics remain independent of the re
 
 ## Status
 
+Outline 多粒度扩展新增 Actor 分组、组件/材质覆盖、受限 Section 选择和 Hull 顶点宽度控制。详见 [使用说明](Documentation/Outline/MultiScope/使用说明.md) 与 [审查与设计](Documentation/Outline/多粒度审查与设计.md)。统一外轮廓要求 Screen Space；共享槽的独立 Section 覆盖、多 LOD Section 身份映射与透明覆盖适配仍有明确限制。
+
 UE 5.8.3 installation has completed. The real non-partitioned probe map, two native ToonProfiles, two Toon materials and two physical Slab materials have been generated and saved by UE 5.8. See `Documentation/ProjectCreation.json` for setup and reopen verification.
 
 The native A/B profiles are shadow inclusion diagnostics. `Documentation/Styles/` contains two separate uncalibrated semantic style drafts. The project now has a C++ host plus `NPRRuntime` / `NPREditor` plugin modules, semantic Data Asset types and a minimal prebuilt-material binding component. Resolver, backend calibration and Face/Hair models remain unfinished. See [C++ structure and build workflow](Documentation/C++骨架.md) and `Documentation/CppScaffold.Validation.json` for actual build/load verification.
@@ -26,7 +28,17 @@ Run the native Toon probe against the acceptance matrix. In particular, test sha
 
 See `Documentation/` for the full design and test record.
 
+## Outline workflow slice
+
+`Window > Principled NPR · Outline` opens the single-slot editor workflow: select a controlled skeletal character, create a child material instance, edit outline color/width/method, compare synchronized viewports, and save a preset plus the bound level. The fixture map is `/Game/NPR/Maps/L_Outline_Workflow`.
+
+Outline offers Inverted Hull (width in cm), Screen Space (width in output pixels, requires `r.CustomDepth=3`), and None. The surface retains its original material graph and texture references; this is an Outline conversion, not a completed PBR-to-Toon surface converter. It currently accepts saved Opaque source slots. See [operation guide](Documentation/Outline/操作流程.md), [technical module report](Documentation/Outline/技术模块报告.md), and [extension workflow](Documentation/Outline/后续开发链路指导.md) for scope and actual validation evidence. This feature does not change the separate Generic/Face/Hair or S58 acceptance status.
+
 Developer scripts are optional asset creation, validation and Git collaboration tools. They do not run when opening the project or during rendering. See [tool roles and reconstruction workflow](Tools/README.md); use the editor's Save All for ordinary saves.
+
+Screen outlines now run after DOF and before TSR/TAA. Continuous-frame measurements, the jitter fix and its tested limits are recorded in the [temporal stability report](Documentation/Outline/Temporal/抖动修复报告.md).
+
+Outline width now combines base width, an edge-source scale and region overrides. Hull also accepts asset vertex red and a UV0 width mask. Defaults are restrained (1.25 px / 0.1 cm). Crease and occlusion classification remain unsupported; see the [width control guide](Documentation/Outline/多层宽度控制.md) for the capability table, authored feature boundaries and inheritance rules.
 
 ## Character fixture
 

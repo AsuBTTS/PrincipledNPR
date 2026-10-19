@@ -1,5 +1,7 @@
 # C++ 项目与插件骨架
 
+Outline 在此骨架上增加了独立 Runtime 设置/预设/绑定组件，以及 Editor 服务和双视口工具窗口。新增接口与真实验证范围见 [Outline 技术模块报告](Outline/技术模块报告.md)；下文的 `CppScaffold.Validation.json` 保留为原骨架验收，不替代 Outline 图像和重开验收。
+
 2026-10-04 起，项目从 Content-only 转为 C++ 宿主工程，插件增加独立 Runtime / Editor 模块。源资产、现有地图和材质保留原路径。引擎基线仍为 UE 5.8.3，CL 58210709。
 
 ## 模块与分工

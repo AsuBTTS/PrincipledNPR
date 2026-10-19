@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-10-17T23:04:25.303986+08:00",
+  "engine": "UE 5.8.3 / CL 58210709",
+  "rhi": "DX12 / SM6",
+  "temporal_capture_pid": 5008,
+  "regression_pid": 11676,
+  "ready_editor_pid": 18588,
+  "editor_build": "Saved/Logs/NPR-Temporal-EditorBuild.log",
+  "capture_log": "Saved/Logs/NPR-Temporal-Candidate1.log",
+  "regression_log": "Saved/Logs/NPR-Temporal-Regression.log",
+  "main_material_location": "BL_SceneColorAfterDOF",
+  "temporal_jitter": 1,
+  "files": {
+    "Tools/create_outline_backend_assets.py": "d7d7f7ca30be8c38dcb37a9487c0a1f828ccfd32611f6031768dd6dfaa6db39f",
+    "Plugins/PrincipledNPR/Content/Outline/M_OutlineScreen.uasset": "f560fcadfc403265b9f0a2847b8ad55cadf8685ab50744cad795291be7c2abe3",
+    "Plugins/PrincipledNPR/Source/NPREditor/Private/NPROutlineEditorUI.cpp": "915cc53896c88ea7614b314555ab9f559a49f984f4b55a9b00d6f3ed9a774514",
+    "Plugins/PrincipledNPR/Source/NPREditor/Private/NPROutlineEditorLibrary.cpp": "efa49cfd58c626b0c88b5ea41ce3410a7f3cb461cf846933105da50132a9d9dd",
+    "Plugins/PrincipledNPR/Source/NPREditor/Public/NPROutlineEditorLibrary.h": "08630ebfdb96a4611527c42db635aef304912d1c91fa0478a52bfa152a0d1d46"
+  },
+  "ready_editor_log": "Saved/Logs/NPR-Temporal-Interactive.log",
+  "ready_editor_mode": "Interactive, no unattended flag, no validation script notification"
+}

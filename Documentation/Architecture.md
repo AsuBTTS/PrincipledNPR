@@ -1,5 +1,7 @@
 # Principled NPR 初步语义骨架
 
+2026-10-17 补充：独立的 Outline 模块已接入角色绑定、双视口、预设与关卡保存链路，见 [Outline 技术模块报告](Outline/技术模块报告.md)。下面的 Draft 状态指完整语义解析和表面模型后端，不代表 Outline 仍为空壳。
+
 状态：**Draft / 未标定 / 未连接 Shader**。这些版本化 JSON 是语义契约草案；2026-10-04 已添加 C++ 宿主、NPRRuntime / NPREditor、基础 UDataAsset 类型和显式预制材质绑定组件，详见 `C++骨架.md` 与 `CppScaffold.Validation.json`。完整 Resolver、Backend Adapter 和语义驱动 Runtime Style Switch 尚未实现。JSON 不参与引擎着色，不等于 ToonProfile，也不证明渲染测试通过。
 
 ## 文件
@@ -29,7 +31,7 @@ Face 逐灯完整 terminator 替换在公开 Toon 接口下为 Unsupported。Pat
 
 Hair 原生 Tangent/Anisotropy 为 Approximate 候选。独立 shifted lobe 与全视角参考角域瓣不能默认精确复现；旋转共享 Normal 会同时影响 diffuse/GI，不满足独立高光 shift 语义。
 
-Rim、Outline、MatCap、颜色映射是独立模块，当前均未连接。Emissive Rim 不自动拥有 native shadow visibility。
+Rim、Outline、MatCap、颜色映射是独立模块。Outline 已通过强类型设置独立接入；Rim、MatCap 和颜色映射尚未连接。Emissive Rim 不自动拥有 native shadow visibility。
 
 ## 下一轮开发
 

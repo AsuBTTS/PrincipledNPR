@@ -1,0 +1,610 @@
+
+OBJECT /PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen CLASS Material
+PhysMaterial=
+PhysMaterialMask=
+PhysicalMaterialMap=
+RenderTracePhysicalMaterialOutputs=
+MaterialDomain=MD_PostProcess
+BlendMode=
+DecalBlendMode=
+MaterialDecalResponse=MDR_ColorNormalRoughness
+NaniteOverrideMaterial=(bEnableOverride=True)
+DisplacementScaling=(Magnitude=4.000000,Center=0.500000)
+DisplacementFadeRange=(StartSizePixels=4.000000,EndSizePixels=1.000000)
+ShadingModel=
+bCastDynamicShadowAsMasked=
+ShadingModels=(ShadingModelField=1)
+OpacityMaskClipValue=0.333300
+bEnableSeparateTranslucency=True
+bEnableResponsiveAA=
+bScreenSpaceReflections=
+bContactShadows=
+TwoSided=
+bIsThinSurface=
+DitheredLODTransition=
+DitherOpacityMask=
+bAllowNegativeEmissiveColor=
+bHasPixelAnimation=
+bEnableTessellation=
+bEnableDisplacementFade=
+TranslucencyPass=MTP_AfterDOF
+TranslucencyLightingMode=
+bEnableMobileSeparateTranslucency=
+NumCustomizedUVs=
+TranslucencyDirectionalLightingIntensity=1.000000
+TranslucentShadowDensityScale=0.500000
+TranslucentSelfShadowDensityScale=2.000000
+TranslucentSelfShadowSecondDensityScale=10.000000
+TranslucentSelfShadowSecondOpacity=
+TranslucentBackscatteringExponent=30.000000
+TranslucentMultipleScatteringExtinction=(R=1.000000,G=0.833000,B=0.588000,A=1.000000)
+TranslucentShadowStartOffset=100.000000
+bDisableDepthTest=
+bWriteOnlyAlpha=
+bGenerateSphericalParticleNormals=
+bTangentSpaceNormal=True
+bUseEmissiveForDynamicAreaLighting=
+bUsedAsSpecialEngineMaterial=
+bSubstrateRoughnessTracking=True
+bUsedWithSkeletalMesh=
+bUsedWithMeshDeformer=
+bUsedWithEditorCompositing=
+bUsedWithParticleSprites=
+bUsedWithBeamTrails=
+bUsedWithMeshParticles=
+bUsedWithNiagaraSprites=
+bUsedWithNiagaraRibbons=
+bUsedWithNiagaraMeshParticles=
+bUsedWithGeometryCache=
+bUsedWithStaticLighting=
+bUsedWithMorphTargets=
+bUsedWithSplineMeshes=
+bUsedWithInstancedStaticMeshes=
+bUsedWithGeometryCollections=
+bUsesDistortion=
+bRootNodeOverridesDefaultDistortion=
+bUsedWithClothing=
+bUsedWithWater=
+bUsedWithHairStrands=
+bUsedWithLidarPointCloud=
+bUsedWithVirtualHeightfieldMesh=
+bUsedWithNanite=
+bUsedWithVoxels=
+bUsedWithCurves=
+bUsedWithVolumetricCloud=
+bUsedWithHeterogeneousVolumes=
+bUsedWithInstancedSkinnedMesh=
+bUsedWithStaticMesh=True
+bUsedWithUI=
+bForceCompatibleWithLightFunctionAtlas=
+bAutomaticallySetUsageInEditor=True
+bFullyRough=
+bUseFullPrecision=
+FloatPrecisionMode=
+bUseLightmapDirectionality=True
+bUseAlphaToCoverage=
+bForwardRenderUsePreintegratedGFForSimpleIBL=
+bUseHQForwardReflections=
+bForwardBlendsSkyLightCubemaps=
+bUsePlanarForwardReflections=
+bNormalCurvatureToRoughness=
+AllowTranslucentCustomDepthWrites=
+bAllowFrontLayerTranslucency=True
+bCompatibleWithLumenCardSharing=
+Wireframe=
+bAllowTranslucentLocalLightShadow=
+TranslucentLocalLightShadowQuality=
+TranslucentDirectionalLightShadowQuality=
+ShadingRate=
+bAllowVariableRateShading=True
+EditorX=
+EditorY=
+EditorPitch=
+EditorYaw=
+bCanMaskedBeAssumedOpaque=
+bIsMasked=
+bUseMaterialAttributes=
+bEnableExecWire=
+bEnableNewHLSLGenerator=
+bCastRayTracedShadows=True
+bUseTranslucencyVertexFog=True
+bApplyCloudFogging=
+bIsSky=
+bComputeFogPerPixel=
+bOutputTranslucentVelocity=
+bIsTranslucencyVelocityFromDepth=
+bRelaxRuntimeVirtualTextureRestrictions=
+BlendableLocation=
+BlendableOutputAlpha=
+UserSceneTexture=
+UserTextureDivisor=(X=0,Y=0)
+ResolutionRelativeToInput=
+bDisablePreExposureScale=
+bUsedWithNeuralNetworks=
+bEnableStencilTest=
+StencilCompare=
+StencilRefValue=
+NeuralProfileId=-1
+RefractionMode=
+RefractionMethod=RM_None
+RefractionCoverageMode=RCM_CoverageAccountedFor
+PixelDepthOffsetMode=PDOM_AlongCameraVector
+BlendablePriority=100
+bIsBlendable=
+PreshaderGap=
+RefractionDepthBias=
+MaxWorldPositionOffsetDisplacement=
+bAlwaysEvaluateWorldPositionOffset=
+StateId=265C548C48B0994D55451EB7014ABA1D
+bSavedCachedExpressionData=
+ReferencedTextureGuids=
+EditorComments=
+Expressions=
+ParameterGroupData=
+DiffuseColor=(Constant=(R=0.215861,G=0.215861,B=0.215861,A=1.000000))
+SpecularColor=(Constant=(R=0.215861,G=0.215861,B=0.215861,A=1.000000))
+BaseColor=(Constant=(R=0.000000,G=0.000000,B=0.000000,A=0.000000))
+Metallic=()
+Specular=()
+Roughness=()
+Anisotropy=()
+Normal=(Constant=(X=0.000000,Y=0.000000,Z=0.000000))
+Tangent=(Constant=(X=0.000000,Y=0.000000,Z=0.000000))
+EmissiveColor=(Constant=(R=0.000000,G=0.000000,B=0.000000,A=0.000000))
+Opacity=()
+OpacityMask=()
+WorldPositionOffset=(Constant=(X=0.000000,Y=0.000000,Z=0.000000))
+SubsurfaceColor=(Constant=(R=0.000000,G=0.000000,B=0.000000,A=0.000000))
+ClearCoat=()
+ClearCoatRoughness=()
+AmbientOcclusion=()
+Refraction=()
+CustomizedUVs=()
+MaterialAttributes=()
+PixelDepthOffset=()
+ShadingModelFromMaterialExpression=()
+FrontMaterial=()
+EditorOnlyData=/Script/Engine.MaterialEditorOnlyData'/PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen:M_OutlineScreenEditorOnlyData'
+SubsurfaceProfile=
+SubsurfaceProfiles=
+SpecularProfiles=
+ToonProfiles=
+NeuralProfile=
+LightmassSettings=(EmissiveBoost=1.000000,DiffuseBoost=1.000000,ExportResolutionScale=1.000000)
+TextureStreamingDataVersion=
+TextureStreamingData=
+ReferencedDefaultTextures=
+AssetUserData=
+bIncludedInBaseGame=
+PreviewMesh=None
+ThumbnailInfo=
+LayerParameterExpansion=
+ParameterOverviewExpansion=
+AssetImportData=
+LightingGuid=3865361C4F148C523C10CFAA540D116B
+ROOT_OUTPUT 0 -> /PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen:MaterialExpressionCustom_0[0]
+
+OBJECT /PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen:MaterialExpressionSceneTexture_22 CLASS MaterialExpressionSceneTexture
+Coordinates=()
+SceneTextureId=PPI_PostProcessInput0
+bFiltered=
+MaterialExpressionEditorX=-520
+MaterialExpressionEditorY=
+SubgraphExpression=
+MaterialExpressionGuid=F67E15E54F5EBF19CE0309A26CCD94AC
+Material=/Script/Engine.Material'/PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=True
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=True
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Texture", "Texture"))
+Outputs=((OutputName="Color",Mask=1,MaskR=1,MaskG=1,MaskB=1,MaskA=1),(OutputName="Size"),(OutputName="InvSize"))
+
+OBJECT /PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen:MaterialExpressionSceneTexture_0 CLASS MaterialExpressionSceneTexture
+Coordinates=()
+SceneTextureId=PPI_PostProcessInput0
+bFiltered=
+MaterialExpressionEditorX=-520
+MaterialExpressionEditorY=
+SubgraphExpression=
+MaterialExpressionGuid=E3ED58C747225E5D1C2C78B3F8D11FF1
+Material=/Script/Engine.Material'/PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=True
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=True
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Texture", "Texture"))
+Outputs=((OutputName="Color",Mask=1,MaskR=1,MaskG=1,MaskB=1,MaskA=1),(OutputName="Size"),(OutputName="InvSize"))
+
+OBJECT /PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen:MaterialExpressionScalarParameter_0 CLASS MaterialExpressionScalarParameter
+DefaultValue=3.000000
+ControlType=
+SliderMin=
+SliderMax=
+Enumeration=
+EnumerationIndex=
+bUseCustomPrimitiveData=
+PrimitiveDataIndex=
+ParameterName=WidthPixels
+ExpressionGUID=76960803429D38C056AA84940FA79AA0
+Group=
+SortPriority=32
+MaterialExpressionEditorX=-520
+MaterialExpressionEditorY=662
+SubgraphExpression=
+MaterialExpressionGuid=4AC075EF46C2D7CAEF5FBAB5FE6ABA90
+Material=/Script/Engine.Material'/PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=True
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Parameters", "Parameters"))
+Outputs=(())
+
+OBJECT /PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen:MaterialExpressionSceneTexture_3 CLASS MaterialExpressionSceneTexture
+Coordinates=()
+SceneTextureId=PPI_PostProcessInput0
+bFiltered=
+MaterialExpressionEditorX=-520
+MaterialExpressionEditorY=
+SubgraphExpression=
+MaterialExpressionGuid=9FBBAD854943368D1B9002ACB47EA3FE
+Material=/Script/Engine.Material'/PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=True
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=True
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Texture", "Texture"))
+Outputs=((OutputName="Color",Mask=1,MaskR=1,MaskG=1,MaskB=1,MaskA=1),(OutputName="Size"),(OutputName="InvSize"))
+
+OBJECT /PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen:MaterialExpressionSceneTexture_5 CLASS MaterialExpressionSceneTexture
+Coordinates=()
+SceneTextureId=PPI_SceneDepth
+bFiltered=
+MaterialExpressionEditorX=-520
+MaterialExpressionEditorY=324
+SubgraphExpression=
+MaterialExpressionGuid=B294F9334392062884BB02B633CF1B35
+Material=/Script/Engine.Material'/PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=True
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=True
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Texture", "Texture"))
+Outputs=((OutputName="Color",Mask=1,MaskR=1,MaskG=1,MaskB=1,MaskA=1),(OutputName="Size"),(OutputName="InvSize"))
+
+OBJECT /PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen:MaterialExpressionScalarParameter_3 CLASS MaterialExpressionScalarParameter
+DefaultValue=3.000000
+ControlType=
+SliderMin=
+SliderMax=
+Enumeration=
+EnumerationIndex=
+bUseCustomPrimitiveData=
+PrimitiveDataIndex=
+ParameterName=WidthPixels
+ExpressionGUID=E5902A5141D8AEECC237E3B1CDE0BA2F
+Group=
+SortPriority=32
+MaterialExpressionEditorX=-520
+MaterialExpressionEditorY=662
+SubgraphExpression=
+MaterialExpressionGuid=2098C69F471B06E381516DA1BE416C5B
+Material=/Script/Engine.Material'/PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=True
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Parameters", "Parameters"))
+Outputs=(())
+
+OBJECT /PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen:MaterialExpressionCustom_0 CLASS MaterialExpressionCustom
+Code=
+float width = clamp(WidthPixels, 0.0, 8.0);
+float inside = abs(CurrentStencil.r - StencilId) < 0.5;
+if (width < 0.01 || inside > 0.5) return SceneColor.rgb;
+float2 uv = GetDefaultSceneTextureUV(Parameters, 25);
+float4 bounds = GetSceneTextureUVMinMax(25);
+// CustomDepth and post-tone-map output can have different resolutions (TSR/editor viewports).
+float2 pixelStep = GetSceneTextureViewSize(25).xy / GetSceneTextureViewSize(14).xy * View.BufferSizeAndInvSize.zw;
+float nearest = 1e10;
+float found = 0.0;
+[unroll] for (int ring = 1; ring <= 4; ++ring)
+{
+    [unroll] for (int dir = 0; dir < 16; ++dir)
+    {
+        float angle = dir * 0.392699081698724;
+        float2 p = clamp(uv + float2(cos(angle), sin(angle)) * width * (ring * 0.25) * pixelStep, bounds.xy, bounds.zw);
+        float stencil = SceneTextureLookup(Parameters, p, 25, false).r;
+        if (abs(stencil - StencilId) < 0.5)
+        {
+            found = 1.0;
+            nearest = min(nearest, SceneTextureLookup(Parameters, p, 13, false).r);
+        }
+    }
+}
+float visible = nearest <= CurrentDepth.r + DepthBiasCm;
+return lerp(SceneColor.rgb, OutlineColor.rgb, found * visible);
+
+OutputType=CMOT_Float3
+Description=Per-slot visible silhouette dilation
+Inputs=((InputName="SceneColor",Input=(Expression="/Script/Engine.MaterialExpressionSceneTexture'/PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen:MaterialExpressionSceneTexture_1'",Mask=1,MaskR=1,MaskG=1,MaskB=1,MaskA=1)),(InputName="CurrentStencil",Input=(Expression="/Script/Engine.MaterialExpressionSceneTexture'/PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen:MaterialExpressionSceneTexture_6'",Mask=1,MaskR=1,MaskG=1,MaskB=1,MaskA=1)),(InputName="CurrentDepth",Input=(Expression="/Script/Engine.MaterialExpressionSceneTexture'/PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen:MaterialExpressionSceneTexture_7'",Mask=1,MaskR=1,MaskG=1,MaskB=1,MaskA=1)),(InputName="OutlineColor",Input=(Expression="/Script/Engine.MaterialExpressionVectorParameter'/PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen:MaterialExpressionVectorParameter_0'",Mask=1,MaskR=1,MaskG=1,MaskB=1)),(InputName="WidthPixels",Input=(Expression="/Script/Engine.MaterialExpressionScalarParameter'/PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen:MaterialExpressionScalarParameter_1'")),(InputName="StencilId",Input=(Expression="/Script/Engine.MaterialExpressionScalarParameter'/PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen:MaterialExpressionScalarParameter_2'")),(InputName="DepthBiasCm",Input=(Expression="/Script/Engine.MaterialExpressionScalarParameter'/PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen:MaterialExpressionScalarParameter_6'")))
+AdditionalOutputs=
+AdditionalDefines=
+IncludeFilePaths=
+ContainsClipInstruction=
+ShowCode=
+MaterialExpressionEditorX=-260
+MaterialExpressionEditorY=
+SubgraphExpression=
+MaterialExpressionGuid=463E2295444698921CA7D99D5CC2B567
+Material=/Script/Engine.Material'/PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Custom", "Custom"))
+Outputs=(())
+INPUT /PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen:MaterialExpressionCustom_0.0 <- /PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen:MaterialExpressionSceneTexture_1[0]
+INPUT /PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen:MaterialExpressionCustom_0.1 <- /PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen:MaterialExpressionSceneTexture_6[0]
+INPUT /PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen:MaterialExpressionCustom_0.2 <- /PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen:MaterialExpressionSceneTexture_7[0]
+INPUT /PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen:MaterialExpressionCustom_0.3 <- /PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen:MaterialExpressionVectorParameter_0[0]
+INPUT /PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen:MaterialExpressionCustom_0.4 <- /PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen:MaterialExpressionScalarParameter_1[0]
+INPUT /PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen:MaterialExpressionCustom_0.5 <- /PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen:MaterialExpressionScalarParameter_2[0]
+INPUT /PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen:MaterialExpressionCustom_0.6 <- /PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen:MaterialExpressionScalarParameter_6[0]
+
+OBJECT /PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen:MaterialExpressionSceneTexture_1 CLASS MaterialExpressionSceneTexture
+Coordinates=()
+SceneTextureId=PPI_PostProcessInput0
+bFiltered=
+MaterialExpressionEditorX=-520
+MaterialExpressionEditorY=
+SubgraphExpression=
+MaterialExpressionGuid=24ADE3024F1E7DEB214E70941FCBA004
+Material=/Script/Engine.Material'/PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=True
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=True
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Texture", "Texture"))
+Outputs=((OutputName="Color",Mask=1,MaskR=1,MaskG=1,MaskB=1,MaskA=1),(OutputName="Size"),(OutputName="InvSize"))
+
+OBJECT /PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen:MaterialExpressionSceneTexture_6 CLASS MaterialExpressionSceneTexture
+Coordinates=()
+SceneTextureId=PPI_CustomStencil
+bFiltered=
+MaterialExpressionEditorX=-520
+MaterialExpressionEditorY=162
+SubgraphExpression=
+MaterialExpressionGuid=3086ABEC490EE490F1413984D5A89D88
+Material=/Script/Engine.Material'/PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=True
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=True
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Texture", "Texture"))
+Outputs=((OutputName="Color",Mask=1,MaskR=1,MaskG=1,MaskB=1,MaskA=1),(OutputName="Size"),(OutputName="InvSize"))
+
+OBJECT /PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen:MaterialExpressionSceneTexture_7 CLASS MaterialExpressionSceneTexture
+Coordinates=()
+SceneTextureId=PPI_SceneDepth
+bFiltered=
+MaterialExpressionEditorX=-520
+MaterialExpressionEditorY=324
+SubgraphExpression=
+MaterialExpressionGuid=B3B1A2BC48B04DDA81F18280801B8264
+Material=/Script/Engine.Material'/PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=True
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=True
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Texture", "Texture"))
+Outputs=((OutputName="Color",Mask=1,MaskR=1,MaskG=1,MaskB=1,MaskA=1),(OutputName="Size"),(OutputName="InvSize"))
+
+OBJECT /PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen:MaterialExpressionVectorParameter_0 CLASS MaterialExpressionVectorParameter
+DefaultValue=(R=0.015000,G=0.008000,B=0.025000,A=1.000000)
+bUseCustomPrimitiveData=
+PrimitiveDataIndex=
+ChannelNames=()
+ParameterName=OutlineColor
+ExpressionGUID=39AA7A5D4BD0E62300AC6C8342E44DB0
+Group=
+SortPriority=32
+MaterialExpressionEditorX=-520
+MaterialExpressionEditorY=486
+SubgraphExpression=
+MaterialExpressionGuid=9EA0A2CB419E318F1D3E84B7EA95AC3D
+Material=/Script/Engine.Material'/PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=True
+bCommentBubbleVisible=
+bShowOutputNameOnPin=True
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Parameters", "Parameters"))
+Outputs=((OutputName="RGB",Mask=1,MaskR=1,MaskG=1,MaskB=1),(OutputName="R",Mask=1,MaskR=1),(OutputName="G",Mask=1,MaskG=1),(OutputName="B",Mask=1,MaskB=1),(OutputName="A",Mask=1,MaskA=1),(OutputName="RGBA",Mask=1,MaskR=1,MaskG=1,MaskB=1,MaskA=1))
+
+OBJECT /PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen:MaterialExpressionScalarParameter_1 CLASS MaterialExpressionScalarParameter
+DefaultValue=3.000000
+ControlType=
+SliderMin=
+SliderMax=
+Enumeration=
+EnumerationIndex=
+bUseCustomPrimitiveData=
+PrimitiveDataIndex=
+ParameterName=WidthPixels
+ExpressionGUID=1B1FE42A4EF5EA1E1905B49B81E98CFB
+Group=
+SortPriority=32
+MaterialExpressionEditorX=-520
+MaterialExpressionEditorY=662
+SubgraphExpression=
+MaterialExpressionGuid=A5B2E6FC43754C8D028A48A2B2B3CF4E
+Material=/Script/Engine.Material'/PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=True
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Parameters", "Parameters"))
+Outputs=(())
+
+OBJECT /PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen:MaterialExpressionScalarParameter_2 CLASS MaterialExpressionScalarParameter
+DefaultValue=1.000000
+ControlType=
+SliderMin=
+SliderMax=
+Enumeration=
+EnumerationIndex=
+bUseCustomPrimitiveData=
+PrimitiveDataIndex=
+ParameterName=StencilId
+ExpressionGUID=7123CF8F4DF4EAA2692B54871A1D17F5
+Group=
+SortPriority=32
+MaterialExpressionEditorX=-520
+MaterialExpressionEditorY=824
+SubgraphExpression=
+MaterialExpressionGuid=B75CA5B3479BF12DC2C06FAF14553DE1
+Material=/Script/Engine.Material'/PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=True
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Parameters", "Parameters"))
+Outputs=(())
+
+OBJECT /PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen:MaterialExpressionScalarParameter_6 CLASS MaterialExpressionScalarParameter
+DefaultValue=0.100000
+ControlType=
+SliderMin=
+SliderMax=
+Enumeration=
+EnumerationIndex=
+bUseCustomPrimitiveData=
+PrimitiveDataIndex=
+ParameterName=DepthBiasCm
+ExpressionGUID=2124A9A349BE667882105FB3A07F991A
+Group=
+SortPriority=32
+MaterialExpressionEditorX=-520
+MaterialExpressionEditorY=986
+SubgraphExpression=
+MaterialExpressionGuid=2682744D493B01D505F9DF80BB878B6F
+Material=/Script/Engine.Material'/PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=True
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Parameters", "Parameters"))
+Outputs=(())

@@ -1,0 +1,3366 @@
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPMI_Outline.PPMI_Outline CLASS MaterialInstanceConstant
+ParameterStateId=DDCE9EDB4592FF310772B5B21B6B0F84
+PhysMaterialMask=
+PhysMaterial=
+PhysicalMaterialMap=
+Parent=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+NaniteOverrideMaterial=(bEnableOverride=True)
+SpecularProfileOverride=
+ToonProfileOverride=
+bHasStaticPermutationResource=
+bOverrideSubsurfaceProfile=
+bOverrideSpecularProfile=
+bOverrideToonProfile=
+bOverrideBlendableLocation=
+bOverrideBlendablePriority=
+bOverridePhysMaterial=
+BlendableLocationOverride=BL_SceneColorAfterDOF
+BlendablePriorityOverride=
+ScalarParameterValues=((ParameterInfo=(Name="Fading"),ParameterValue=1024.000000,ExpressionGUID=3E6CC675451C0D601D081DADD5A82A49),(ParameterInfo=(Name="Size"),ExpressionGUID=448766EF4067B4CE335171B91969AEA0),(ParameterInfo=(Name="Sobel Strength"),ExpressionGUID=AD8333474D9F388033250A8AC5F6966E),(ParameterInfo=(Name="RefractionDepthBias")))
+VectorParameterValues=((ParameterInfo=(Name="OutlineColor"),ParameterValue=(R=5.000000,G=5.000000,B=5.000000,A=1.000000),ExpressionGUID=66DE19874DECBA93664636A3487D5231),(ParameterInfo=(Name="UV_Scale_Offset"),ParameterValue=(R=1.000000,G=1.000000,B=0.104000,A=-0.283077),ExpressionGUID=B72CEDA0404F127AFAFF2CBB287EE06F))
+DoubleVectorParameterValues=
+TextureParameterValues=
+TextureCollectionParameterValues=
+ParameterCollectionParameterValues=
+RuntimeVirtualTextureParameterValues=
+SparseVolumeTextureParameterValues=
+FontParameterValues=
+UserSceneTextureOverrides=
+bOverrideBaseProperties=
+EnumerationObjects=
+BasePropertyOverrides=(OpacityMaskClipValue=0.333300,DisplacementScaling=(Magnitude=4.000000,Center=0.500000),DisplacementFadeRange=(StartSizePixels=4.000000,EndSizePixels=1.000000),UsageFlags=4194304)
+StaticParametersRuntime=(MaterialLayers=())
+ReferencedTextureGuids=
+StaticParameters=(EditorOnly=(MaterialLayers=()),MaterialLayers=())
+bSavedCachedData=
+EditorOnlyData=/Script/Engine.MaterialInstanceEditorOnlyData'/Game/EndfieldRender/Character/Common/Materials/Post/PPMI_Outline.PPMI_Outline:PPMI_OutlineEditorOnlyData'
+SubsurfaceProfile=
+SubsurfaceProfiles=
+SpecularProfiles=
+ToonProfiles=
+NeuralProfile=
+LightmassSettings=(EmissiveBoost=1.000000,DiffuseBoost=1.000000,ExportResolutionScale=1.000000)
+TextureStreamingDataVersion=
+TextureStreamingData=
+ReferencedDefaultTextures=
+AssetUserData=
+bIncludedInBaseGame=
+PreviewMesh=None
+ThumbnailInfo=/Script/UnrealEd.SceneThumbnailInfoWithPrimitive'/Game/EndfieldRender/Character/Common/Materials/Post/PPMI_Outline.PPMI_Outline:SceneThumbnailInfoWithPrimitive_0'
+LayerParameterExpansion=
+ParameterOverviewExpansion=
+AssetImportData=
+LightingGuid=0A38A4474828119AE3B61195D18F4F57
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight CLASS Material
+PhysMaterial=
+PhysMaterialMask=
+PhysicalMaterialMap=
+RenderTracePhysicalMaterialOutputs=
+MaterialDomain=MD_PostProcess
+BlendMode=
+DecalBlendMode=
+MaterialDecalResponse=MDR_ColorNormalRoughness
+NaniteOverrideMaterial=(bEnableOverride=True)
+DisplacementScaling=(Magnitude=4.000000,Center=0.500000)
+DisplacementFadeRange=(StartSizePixels=4.000000,EndSizePixels=1.000000)
+ShadingModel=MSM_DefaultLit
+bCastDynamicShadowAsMasked=
+ShadingModels=(ShadingModelField=2)
+OpacityMaskClipValue=0.333300
+bEnableSeparateTranslucency=True
+bEnableResponsiveAA=
+bScreenSpaceReflections=
+bContactShadows=
+TwoSided=
+bIsThinSurface=
+DitheredLODTransition=
+DitherOpacityMask=
+bAllowNegativeEmissiveColor=
+bHasPixelAnimation=
+bEnableTessellation=
+bEnableDisplacementFade=
+TranslucencyPass=MTP_AfterDOF
+TranslucencyLightingMode=
+bEnableMobileSeparateTranslucency=
+NumCustomizedUVs=
+TranslucencyDirectionalLightingIntensity=1.000000
+TranslucentShadowDensityScale=0.500000
+TranslucentSelfShadowDensityScale=2.000000
+TranslucentSelfShadowSecondDensityScale=10.000000
+TranslucentSelfShadowSecondOpacity=
+TranslucentBackscatteringExponent=30.000000
+TranslucentMultipleScatteringExtinction=(R=1.000000,G=0.833000,B=0.588000,A=1.000000)
+TranslucentShadowStartOffset=100.000000
+bDisableDepthTest=
+bWriteOnlyAlpha=
+bGenerateSphericalParticleNormals=
+bTangentSpaceNormal=True
+bUseEmissiveForDynamicAreaLighting=
+bUsedAsSpecialEngineMaterial=
+bSubstrateRoughnessTracking=True
+bUsedWithSkeletalMesh=
+bUsedWithMeshDeformer=
+bUsedWithEditorCompositing=
+bUsedWithParticleSprites=
+bUsedWithBeamTrails=
+bUsedWithMeshParticles=
+bUsedWithNiagaraSprites=
+bUsedWithNiagaraRibbons=
+bUsedWithNiagaraMeshParticles=
+bUsedWithGeometryCache=
+bUsedWithStaticLighting=
+bUsedWithMorphTargets=
+bUsedWithSplineMeshes=
+bUsedWithInstancedStaticMeshes=
+bUsedWithGeometryCollections=
+bUsesDistortion=
+bRootNodeOverridesDefaultDistortion=
+bUsedWithClothing=
+bUsedWithWater=
+bUsedWithHairStrands=
+bUsedWithLidarPointCloud=
+bUsedWithVirtualHeightfieldMesh=
+bUsedWithNanite=
+bUsedWithVoxels=
+bUsedWithCurves=
+bUsedWithVolumetricCloud=
+bUsedWithHeterogeneousVolumes=
+bUsedWithInstancedSkinnedMesh=
+bUsedWithStaticMesh=True
+bUsedWithUI=
+bForceCompatibleWithLightFunctionAtlas=
+bAutomaticallySetUsageInEditor=True
+bFullyRough=
+bUseFullPrecision=
+FloatPrecisionMode=
+bUseLightmapDirectionality=True
+bUseAlphaToCoverage=
+bForwardRenderUsePreintegratedGFForSimpleIBL=
+bUseHQForwardReflections=
+bForwardBlendsSkyLightCubemaps=
+bUsePlanarForwardReflections=
+bNormalCurvatureToRoughness=
+AllowTranslucentCustomDepthWrites=
+bAllowFrontLayerTranslucency=True
+bCompatibleWithLumenCardSharing=
+Wireframe=
+bAllowTranslucentLocalLightShadow=
+TranslucentLocalLightShadowQuality=
+TranslucentDirectionalLightShadowQuality=
+ShadingRate=
+bAllowVariableRateShading=True
+EditorX=3184
+EditorY=-720
+EditorPitch=
+EditorYaw=
+bCanMaskedBeAssumedOpaque=True
+bIsMasked=
+bUseMaterialAttributes=
+bEnableExecWire=
+bEnableNewHLSLGenerator=
+bCastRayTracedShadows=True
+bUseTranslucencyVertexFog=True
+bApplyCloudFogging=
+bIsSky=
+bComputeFogPerPixel=
+bOutputTranslucentVelocity=
+bIsTranslucencyVelocityFromDepth=
+bRelaxRuntimeVirtualTextureRestrictions=
+BlendableLocation=BL_SceneColorAfterDOF
+BlendableOutputAlpha=
+UserSceneTexture=
+UserTextureDivisor=(X=0,Y=0)
+ResolutionRelativeToInput=
+bDisablePreExposureScale=
+bUsedWithNeuralNetworks=
+bEnableStencilTest=
+StencilCompare=
+StencilRefValue=
+NeuralProfileId=-1
+RefractionMode=
+RefractionMethod=RM_None
+RefractionCoverageMode=RCM_CoverageAccountedFor
+PixelDepthOffsetMode=
+BlendablePriority=
+bIsBlendable=True
+PreshaderGap=
+RefractionDepthBias=
+MaxWorldPositionOffsetDisplacement=
+bAlwaysEvaluateWorldPositionOffset=
+StateId=39750B2E4552E37A596C94A2835D8FA0
+bSavedCachedExpressionData=
+ReferencedTextureGuids=
+EditorComments=
+Expressions=
+ParameterGroupData=
+DiffuseColor=(Constant=(R=0.215861,G=0.215861,B=0.215861,A=1.000000))
+SpecularColor=(Constant=(R=0.215861,G=0.215861,B=0.215861,A=1.000000))
+BaseColor=(Constant=(R=0.000000,G=0.000000,B=0.000000,A=0.000000))
+Metallic=()
+Specular=()
+Roughness=()
+Anisotropy=()
+Normal=(Constant=(X=0.000000,Y=0.000000,Z=0.000000))
+Tangent=(Constant=(X=0.000000,Y=0.000000,Z=0.000000))
+EmissiveColor=(Constant=(R=0.000000,G=0.000000,B=0.000000,A=0.000000))
+Opacity=()
+OpacityMask=()
+WorldPositionOffset=(Constant=(X=0.000000,Y=0.000000,Z=0.000000))
+SubsurfaceColor=(Constant=(R=0.000000,G=0.000000,B=0.000000,A=0.000000))
+ClearCoat=()
+ClearCoatRoughness=()
+AmbientOcclusion=()
+Refraction=()
+CustomizedUVs=()
+MaterialAttributes=()
+PixelDepthOffset=()
+ShadingModelFromMaterialExpression=()
+FrontMaterial=()
+EditorOnlyData=/Script/Engine.MaterialEditorOnlyData'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:PPM_RimLightEditorOnlyData'
+SubsurfaceProfile=
+SubsurfaceProfiles=
+SpecularProfiles=
+ToonProfiles=
+NeuralProfile=
+LightmassSettings=(EmissiveBoost=1.000000,DiffuseBoost=1.000000,ExportResolutionScale=1.000000)
+TextureStreamingDataVersion=
+TextureStreamingData=
+ReferencedDefaultTextures=
+AssetUserData=
+bIncludedInBaseGame=
+PreviewMesh=None
+ThumbnailInfo=/Script/UnrealEd.SceneThumbnailInfoWithPrimitive'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:SceneThumbnailInfoWithPrimitive_0'
+LayerParameterExpansion=
+ParameterOverviewExpansion=(("-12Global", True))
+AssetImportData=
+LightingGuid=47CB38624C53EB41EAD5E68934484AE8
+ROOT_OUTPUT 0 -> /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionFeatureLevelSwitch_0[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionIf_0 CLASS MaterialExpressionIf
+A=(Expression="/Script/Engine.MaterialExpressionComponentMask'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionComponentMask_1'")
+B=(Expression="/Script/Engine.MaterialExpressionScalarParameter'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionScalarParameter_1'")
+AGreaterThanB=(Expression="/Script/Engine.MaterialExpressionSceneTexture'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneTexture_0'",Mask=1,MaskR=1,MaskG=1,MaskB=1,MaskA=1)
+AEqualsB=(Expression="/Script/Engine.MaterialExpressionLinearInterpolate'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionLinearInterpolate_0'")
+ALessThanB=(Expression="/Script/Engine.MaterialExpressionSceneTexture'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneTexture_0'",Mask=1,MaskR=1,MaskG=1,MaskB=1,MaskA=1)
+EqualsThreshold=0.000010
+ConstB=
+ConstAEqualsB=
+MaterialExpressionEditorX=2560
+MaterialExpressionEditorY=-1170
+SubgraphExpression=
+MaterialExpressionGuid=C0D610EC45F122A45E96C6A354DCB460
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionIf_0.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionComponentMask_1[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionIf_0.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionScalarParameter_1[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionIf_0.2 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneTexture_0[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionIf_0.3 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionLinearInterpolate_0[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionIf_0.4 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneTexture_0[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionLinearInterpolate_0 CLASS MaterialExpressionLinearInterpolate
+A=(Expression="/Script/Engine.MaterialExpressionMultiply'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_2'")
+B=(Expression="/Script/Engine.MaterialExpressionComponentMask'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionComponentMask_0'")
+Alpha=(Expression="/Script/Engine.MaterialExpressionSaturate'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSaturate_1'")
+ConstA=
+ConstB=1.000000
+ConstAlpha=0.500000
+MaterialExpressionEditorX=2112
+MaterialExpressionEditorY=-656
+SubgraphExpression=
+MaterialExpressionGuid=63B520C74F2615B249665CA424B54515
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"),NSLOCTEXT("MaterialExpression", "Utility", "Utility"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionLinearInterpolate_0.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_2[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionLinearInterpolate_0.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionComponentMask_0[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionLinearInterpolate_0.2 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSaturate_1[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionCustom_5 CLASS MaterialExpressionCustom
+Code=    int tIndex = 14;
+   	float3 tc = SceneTexture.rgb;
+    float cuC = 1./Details;
+    float4 k = float4(0.0, -1.0/3.0, 2.0/3.0, -1.0);
+    float4 p = tc.g < tc.b ? float4(tc.b, tc.g, k.w, k.z) : float4(tc.gb, k.xy);
+    float4 q = tc.r < p.x   ? float4(p.x, p.y, p.w, tc.r) : float4(tc.r, p.yzx);
+    float d = q.x - min(q.w, q.y);
+    float e = 1.0e-10;
+    tc = float3(abs(q.z + (q.w - q.y) / (6.0 * d + e)), d / (q.x + e), q.x);
+    float2 taC = cuC*floor(tc.gb/cuC);
+    float3 h = float3(tc.r,taC);
+    float4 kr = float4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);
+    float3 pr = abs(frac(h.xxx + kr.xyz) * 6.0 - kr.www);
+    tc = h.z * lerp(kr.xxx, clamp(pr - kr.xxx, 0.0, 1.0), h.y);
+    return float4(tc, 1.0);
+OutputType=CMOT_Float3
+Description=HSV Limiter - HLSL
+Inputs=((InputName="UV",Input=(Expression="/Script/Engine.MaterialExpressionScreenPosition'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionScreenPosition_2'")),(InputName="SceneTexture",Input=(Expression="/Script/Engine.MaterialExpressionClamp'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionClamp_6'")),(InputName="ScreenResolution",Input=(Expression="/Script/Engine.MaterialExpressionMaterialFunctionCall'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMaterialFunctionCall_2'")),(InputName="Details",Input=(Expression="/Script/Engine.MaterialExpressionScalarParameter'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionScalarParameter_5'")))
+AdditionalOutputs=
+AdditionalDefines=
+IncludeFilePaths=
+ContainsClipInstruction=
+ShowCode=
+MaterialExpressionEditorX=1184
+MaterialExpressionEditorY=112
+SubgraphExpression=
+MaterialExpressionGuid=34827248405A4DD3C4BF4D9BB527D5A5
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Custom", "Custom"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionCustom_5.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionScreenPosition_2[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionCustom_5.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionClamp_6[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionCustom_5.2 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMaterialFunctionCall_2[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionCustom_5.3 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionScalarParameter_5[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_0 CLASS MaterialExpressionMultiply
+A=(Expression="/Script/Engine.MaterialExpressionMultiply'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_68'")
+B=(Expression="/Script/Engine.MaterialExpressionCustom'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionCustom_5'")
+ConstA=
+ConstB=1.000000
+MaterialExpressionEditorX=1501
+MaterialExpressionEditorY=-232
+SubgraphExpression=
+MaterialExpressionGuid=135D400347E231C4A0CA19A46490107D
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_0.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_68[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_0.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionCustom_5[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMaterialFunctionCall_2 CLASS MaterialExpressionMaterialFunctionCall
+MaterialFunction=/Script/Engine.MaterialFunction'/Engine/Functions/Engine_MaterialFunctions02/ScreenResolution.ScreenResolution'
+FunctionInputs=
+FunctionOutputs=((ExpressionOutputId=D21EB3BE4C1789227FDE70B7A16D9AE8,Output=(OutputName="Visible Resolution")),(ExpressionOutputId=2ED3DB9D4C40696F0C43FE8FD96180A7,Output=(OutputName="Buffer Resolution")))
+MaterialExpressionEditorX=1488
+MaterialExpressionEditorY=768
+SubgraphExpression=
+MaterialExpressionGuid=72D15AE642E4184FCFEA788E9AD366B1
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=True
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=True
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Functions", "Functions"))
+Outputs=((OutputName="Visible Resolution"),(OutputName="Buffer Resolution"))
+
+OBJECT /Engine/Functions/Engine_MaterialFunctions02/ScreenResolution.ScreenResolution CLASS MaterialFunction
+Description=Retrieves the visible screen resolution and the render target size.
+UserExposedCaption=
+bExposeToLibrary=True
+bPrefixParameterNames=
+bEnableExecWire=
+bEnableNewHLSLGenerator=
+LibraryCategories=
+LibraryCategoriesText=(NSLOCTEXT("MaterialExpression", "Misc", "Misc"),NSLOCTEXT("", "1835A69446FA56E73546C492D37449B1", "Coordinates"))
+DependentFunctionExpressionCandidates=
+PreviewBlendMode=
+PreviewMaterialDomain=
+FunctionExpressions=
+FunctionEditorComments=
+EditorOnlyData=/Script/Engine.MaterialFunctionEditorOnlyData'/Engine/Functions/Engine_MaterialFunctions02/ScreenResolution.ScreenResolution:ScreenResolutionEditorOnlyData'
+StateId=391DDAD74E9DCC58FD37D7B72AF07FC2
+MaterialFunctionUsage=
+CombinedInputTypes=
+CombinedOutputTypes=15
+ThumbnailInfo=/Script/UnrealEd.SceneThumbnailInfoWithPrimitive'/Engine/Functions/Engine_MaterialFunctions02/ScreenResolution.ScreenResolution:SceneThumbnailInfoWithPrimitive_7'
+
+OBJECT /Engine/Functions/Engine_MaterialFunctions02/ScreenResolution.ScreenResolution:MaterialExpressionFunctionOutput_2 CLASS MaterialExpressionFunctionOutput
+OutputName=Visible Resolution
+Description=
+SortPriority=
+A=(Expression="/Script/Engine.MaterialExpressionViewSize'/Engine/Functions/Engine_MaterialFunctions02/ScreenResolution.ScreenResolution:MaterialExpressionViewSize_0'")
+bLastPreviewed=True
+Id=D21EB3BE4C1789227FDE70B7A16D9AE8
+MaterialExpressionEditorX=288
+MaterialExpressionEditorY=176
+SubgraphExpression=
+MaterialExpressionGuid=319D003A4BCAB77F42051E96796F4C27
+Material=
+Function=/Script/Engine.MaterialFunction'/Engine/Functions/Engine_MaterialFunctions02/ScreenResolution.ScreenResolution'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Functions", "Functions"))
+Outputs=(())
+INPUT /Engine/Functions/Engine_MaterialFunctions02/ScreenResolution.ScreenResolution:MaterialExpressionFunctionOutput_2.0 <- /Engine/Functions/Engine_MaterialFunctions02/ScreenResolution.ScreenResolution:MaterialExpressionViewSize_0[0]
+
+OBJECT /Engine/Functions/Engine_MaterialFunctions02/ScreenResolution.ScreenResolution:MaterialExpressionFunctionOutput_3 CLASS MaterialExpressionFunctionOutput
+OutputName=Buffer Resolution
+Description=
+SortPriority=1
+A=(Expression="/Script/Engine.MaterialExpressionViewProperty'/Engine/Functions/Engine_MaterialFunctions02/ScreenResolution.ScreenResolution:MaterialExpressionViewProperty_0'")
+bLastPreviewed=True
+Id=2ED3DB9D4C40696F0C43FE8FD96180A7
+MaterialExpressionEditorX=288
+MaterialExpressionEditorY=400
+SubgraphExpression=
+MaterialExpressionGuid=319D003A4BCAB77F42051E96796F4C27
+Material=
+Function=/Script/Engine.MaterialFunction'/Engine/Functions/Engine_MaterialFunctions02/ScreenResolution.ScreenResolution'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Functions", "Functions"))
+Outputs=(())
+INPUT /Engine/Functions/Engine_MaterialFunctions02/ScreenResolution.ScreenResolution:MaterialExpressionFunctionOutput_3.0 <- /Engine/Functions/Engine_MaterialFunctions02/ScreenResolution.ScreenResolution:MaterialExpressionViewProperty_0[0]
+
+OBJECT /Engine/Functions/Engine_MaterialFunctions02/ScreenResolution.ScreenResolution:MaterialExpressionViewSize_0 CLASS MaterialExpressionViewSize
+MaterialExpressionEditorX=80
+MaterialExpressionEditorY=192
+SubgraphExpression=
+MaterialExpressionGuid=D2B031784A7610E4B830FBB402094666
+Material=
+Function=/Script/Engine.MaterialFunction'/Engine/Functions/Engine_MaterialFunctions02/ScreenResolution.ScreenResolution'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=True
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Coordinates", "Coordinates"))
+Outputs=(())
+
+OBJECT /Engine/Functions/Engine_MaterialFunctions02/ScreenResolution.ScreenResolution:MaterialExpressionViewProperty_0 CLASS MaterialExpressionViewProperty
+Property=
+MaterialExpressionEditorX=48
+MaterialExpressionEditorY=384
+SubgraphExpression=
+MaterialExpressionGuid=68C953924B006282D07E438B8CFC9477
+Material=
+Function=/Script/Engine.MaterialFunction'/Engine/Functions/Engine_MaterialFunctions02/ScreenResolution.ScreenResolution'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=True
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=True
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Constants", "Constants"))
+Outputs=((OutputName="Property"),(OutputName="InvProperty"))
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionScreenPosition_2 CLASS MaterialExpressionScreenPosition
+ExternalCodeIdentifiers=("ViewportUV","PixelPosition")
+MaterialExpressionEditorX=967
+MaterialExpressionEditorY=99
+SubgraphExpression=
+MaterialExpressionGuid=468E8AF0462B79DF03E929BA90A9ADC7
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=True
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=True
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Coordinates", "Coordinates"))
+Outputs=((OutputName="ViewportUV"),(OutputName="PixelPosition"))
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneTexture_1 CLASS MaterialExpressionSceneTexture
+Coordinates=()
+SceneTextureId=PPI_PostProcessInput0
+bFiltered=
+MaterialExpressionEditorX=457
+MaterialExpressionEditorY=2107
+SubgraphExpression=
+MaterialExpressionGuid=BE10DA044022594F080C4A87208602BA
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=True
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=True
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Texture", "Texture"))
+Outputs=((OutputName="Color",Mask=1,MaskR=1,MaskG=1,MaskB=1,MaskA=1),(OutputName="Size"),(OutputName="InvSize"))
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionScalarParameter_5 CLASS MaterialExpressionScalarParameter
+DefaultValue=20.000000
+ControlType=
+SliderMin=
+SliderMax=
+Enumeration=
+EnumerationIndex=
+bUseCustomPrimitiveData=
+PrimitiveDataIndex=
+ParameterName=Details
+ExpressionGUID=D0876B414AD514DC51F127B0B158E991
+Group=
+SortPriority=32
+MaterialExpressionEditorX=1461
+MaterialExpressionEditorY=1007
+SubgraphExpression=
+MaterialExpressionGuid=2F5B5CD64841ABEBF52D63963DAA95C2
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=True
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Parameters", "Parameters"))
+Outputs=(())
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_90 CLASS MaterialExpressionAdd
+A=(Expression="/Script/Engine.MaterialExpressionScalarParameter'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionScalarParameter_43'")
+B=()
+ConstA=
+ConstB=1024.000000
+MaterialExpressionEditorX=-200
+MaterialExpressionEditorY=1302
+SubgraphExpression=
+MaterialExpressionGuid=2338883141AD62DDA6161595013F4CB7
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_90.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionScalarParameter_43[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_91 CLASS MaterialExpressionAdd
+A=(Expression="/Script/Engine.MaterialExpressionMultiply'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_63'")
+B=()
+ConstA=
+ConstB=1.000000
+MaterialExpressionEditorX=-2370
+MaterialExpressionEditorY=1093
+SubgraphExpression=
+MaterialExpressionGuid=4644655B4D1E0D7F164CB4AA2C3B6211
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_91.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_63[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_63 CLASS MaterialExpressionMultiply
+A=(Expression="/Script/Engine.MaterialExpressionScalarParameter'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionScalarParameter_44'")
+B=()
+ConstA=
+ConstB=-1.000000
+MaterialExpressionEditorX=-2571
+MaterialExpressionEditorY=1093
+SubgraphExpression=
+MaterialExpressionGuid=F0FEE6AE4E573DC00F44C6A716BBAF4E
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_63.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionScalarParameter_44[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_92 CLASS MaterialExpressionAdd
+A=(Expression="/Script/Engine.MaterialExpressionAdd'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_90'")
+B=()
+ConstA=
+ConstB=512.000000
+MaterialExpressionEditorX=14
+MaterialExpressionEditorY=1588
+SubgraphExpression=
+MaterialExpressionGuid=D947236B49420005B0A0A3B2AF218BDA
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_92.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_90[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionScalarParameter_43 CLASS MaterialExpressionScalarParameter
+DefaultValue=1024.000000
+ControlType=
+SliderMin=
+SliderMax=
+Enumeration=
+EnumerationIndex=
+bUseCustomPrimitiveData=
+PrimitiveDataIndex=
+ParameterName=Fading
+ExpressionGUID=3E6CC675451C0D601D081DADD5A82A49
+Group=
+SortPriority=32
+MaterialExpressionEditorX=-479
+MaterialExpressionEditorY=1288
+SubgraphExpression=
+MaterialExpressionGuid=5F9EFF1E43A7DBC9FA619A81AAE4414F
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=True
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Parameters", "Parameters"))
+Outputs=(())
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionDivide_10 CLASS MaterialExpressionDivide
+A=(Expression="/Script/Engine.MaterialExpressionAdd'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_91'")
+B=()
+ConstA=1.000000
+ConstB=250.000000
+MaterialExpressionEditorX=-2177
+MaterialExpressionEditorY=1093
+SubgraphExpression=
+MaterialExpressionGuid=34A17AB74E9E93151E64DC9FFBE0076D
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionDivide_10.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_91[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionScalarParameter_44 CLASS MaterialExpressionScalarParameter
+DefaultValue=1.000000
+ControlType=
+SliderMin=
+SliderMax=
+Enumeration=
+EnumerationIndex=
+bUseCustomPrimitiveData=
+PrimitiveDataIndex=
+ParameterName=Size
+ExpressionGUID=448766EF4067B4CE335171B91969AEA0
+Group=
+SortPriority=32
+MaterialExpressionEditorX=-2850
+MaterialExpressionEditorY=1078
+SubgraphExpression=
+MaterialExpressionGuid=5F9EFF1E43A7DBC9FA619A81AAE4414F
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=True
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Parameters", "Parameters"))
+Outputs=(())
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionClamp_35 CLASS MaterialExpressionClamp
+Input=(Expression="/Script/Engine.MaterialExpressionOneMinus'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionOneMinus_23'")
+Min=(Expression="/Script/Engine.MaterialExpressionPower'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionPower_14'")
+Max=()
+ClampMode=
+MinDefault=
+MaxDefault=1.000000
+MaterialExpressionEditorX=1118
+MaterialExpressionEditorY=787
+SubgraphExpression=
+MaterialExpressionGuid=13717A3249FBD20FA1092C96A582AAE7
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionClamp_35.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionOneMinus_23[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionClamp_35.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionPower_14[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionPower_14 CLASS MaterialExpressionPower
+Base=(Expression="/Script/Engine.MaterialExpressionClamp'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionClamp_36'")
+Exponent=()
+ConstExponent=2.000000
+MaterialExpressionEditorX=913
+MaterialExpressionEditorY=1811
+SubgraphExpression=
+MaterialExpressionGuid=D325BF1F42927885592DBDA4A6612384
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionPower_14.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionClamp_36[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionClamp_36 CLASS MaterialExpressionClamp
+Input=(Expression="/Script/Engine.MaterialExpressionMultiply'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_64'")
+Min=()
+Max=()
+ClampMode=
+MinDefault=
+MaxDefault=1.000000
+MaterialExpressionEditorX=705
+MaterialExpressionEditorY=1812
+SubgraphExpression=
+MaterialExpressionGuid=13717A3249FBD20FA1092C96A582AAE7
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionClamp_36.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_64[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_64 CLASS MaterialExpressionMultiply
+A=()
+B=(Expression="/Script/Engine.MaterialExpressionSceneDepth'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_61'",Mask=1,MaskR=1)
+ConstA=0.000010
+ConstB=1.000000
+MaterialExpressionEditorX=483
+MaterialExpressionEditorY=1810
+SubgraphExpression=
+MaterialExpressionGuid=885F26FD4FC118E88CF42BA3B66C23E3
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_64.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_61[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_61 CLASS MaterialExpressionSceneDepth
+InputMode=
+Input=()
+Coordinates=()
+ConstInput=(X=0.000000,Y=0.000000)
+MaterialExpressionEditorX=280
+MaterialExpressionEditorY=1829
+SubgraphExpression=
+MaterialExpressionGuid=0F2420A34E6F0492B2A40FB719F69E0A
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=True
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Depth", "Depth"))
+Outputs=((Mask=1,MaskR=1))
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionOneMinus_23 CLASS MaterialExpressionOneMinus
+Input=(Expression="/Script/Engine.MaterialExpressionDivide'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionDivide_11'")
+MaterialExpressionEditorX=962
+MaterialExpressionEditorY=787
+SubgraphExpression=
+MaterialExpressionGuid=F0EDFEB44AA32FBDD027E39C6BF689A0
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionOneMinus_23.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionDivide_11[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionDivide_11 CLASS MaterialExpressionDivide
+A=(Expression="/Script/Engine.MaterialExpressionSubtract'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSubtract_19'")
+B=(Expression="/Script/Engine.MaterialExpressionSubtract'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSubtract_18'")
+ConstA=1.000000
+ConstB=2.000000
+MaterialExpressionEditorX=796
+MaterialExpressionEditorY=787
+SubgraphExpression=
+MaterialExpressionGuid=59F6846E467FF6BD9E8AD4B5BED9F23C
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionDivide_11.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSubtract_19[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionDivide_11.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSubtract_18[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSubtract_18 CLASS MaterialExpressionSubtract
+A=(Expression="/Script/Engine.MaterialExpressionLinearInterpolate'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionLinearInterpolate_20'")
+B=(Expression="/Script/Engine.MaterialExpressionLinearInterpolate'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionLinearInterpolate_21'")
+ConstA=1.000000
+ConstB=1.000000
+MaterialExpressionEditorX=616
+MaterialExpressionEditorY=1029
+SubgraphExpression=
+MaterialExpressionGuid=D79508D14ADFAFF64A344BB3D3FB61F1
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSubtract_18.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionLinearInterpolate_20[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSubtract_18.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionLinearInterpolate_21[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSubtract_19 CLASS MaterialExpressionSubtract
+A=(Expression="/Script/Engine.MaterialExpressionClamp'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionClamp_37'")
+B=(Expression="/Script/Engine.MaterialExpressionLinearInterpolate'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionLinearInterpolate_21'")
+ConstA=1.000000
+ConstB=1.000000
+MaterialExpressionEditorX=616
+MaterialExpressionEditorY=788
+SubgraphExpression=
+MaterialExpressionGuid=D79508D14ADFAFF64A344BB3D3FB61F1
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSubtract_19.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionClamp_37[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSubtract_19.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionLinearInterpolate_21[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionClamp_37 CLASS MaterialExpressionClamp
+Input=(Expression="/Script/Engine.MaterialExpressionSubtract'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSubtract_20'")
+Min=(Expression="/Script/Engine.MaterialExpressionLinearInterpolate'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionLinearInterpolate_21'")
+Max=(Expression="/Script/Engine.MaterialExpressionLinearInterpolate'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionLinearInterpolate_20'")
+ClampMode=
+MinDefault=
+MaxDefault=1.000000
+MaterialExpressionEditorX=435
+MaterialExpressionEditorY=786
+SubgraphExpression=
+MaterialExpressionGuid=B4B6E60442CCE52E044C2EAE5941DFF7
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionClamp_37.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSubtract_20[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionClamp_37.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionLinearInterpolate_21[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionClamp_37.2 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionLinearInterpolate_20[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionLinearInterpolate_20 CLASS MaterialExpressionLinearInterpolate
+A=()
+B=(Expression="/Script/Engine.MaterialExpressionAdd'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_92'")
+Alpha=(Expression="/Script/Engine.MaterialExpressionClamp'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionClamp_38'")
+ConstA=0.000100
+ConstB=1.000000
+ConstAlpha=0.500000
+MaterialExpressionEditorX=221
+MaterialExpressionEditorY=1553
+SubgraphExpression=
+MaterialExpressionGuid=2E5709B84B71D56071FEBDA81B6C73ED
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"),NSLOCTEXT("MaterialExpression", "Utility", "Utility"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionLinearInterpolate_20.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_92[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionLinearInterpolate_20.2 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionClamp_38[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionLinearInterpolate_21 CLASS MaterialExpressionLinearInterpolate
+A=()
+B=(Expression="/Script/Engine.MaterialExpressionAdd'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_90'")
+Alpha=(Expression="/Script/Engine.MaterialExpressionClamp'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionClamp_38'")
+ConstA=
+ConstB=1.000000
+ConstAlpha=0.500000
+MaterialExpressionEditorX=221
+MaterialExpressionEditorY=1277
+SubgraphExpression=
+MaterialExpressionGuid=2E5709B84B71D56071FEBDA81B6C73ED
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"),NSLOCTEXT("MaterialExpression", "Utility", "Utility"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionLinearInterpolate_21.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_90[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionLinearInterpolate_21.2 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionClamp_38[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionClamp_38 CLASS MaterialExpressionClamp
+Input=(Expression="/Script/Engine.MaterialExpressionMultiply'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_65'")
+Min=()
+Max=()
+ClampMode=
+MinDefault=
+MaxDefault=1.000000
+MaterialExpressionEditorX=13
+MaterialExpressionEditorY=2259
+SubgraphExpression=
+MaterialExpressionGuid=1AF97854436188B0E26F14AE3C89E4FD
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionClamp_38.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_65[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_65 CLASS MaterialExpressionMultiply
+A=()
+B=(Expression="/Script/Engine.MaterialExpressionSceneDepth'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_62'",Mask=1,MaskR=1)
+ConstA=0.000004
+ConstB=1.000000
+MaterialExpressionEditorX=-215
+MaterialExpressionEditorY=2259
+SubgraphExpression=
+MaterialExpressionGuid=D26731DA4ED8EF6370B988884DEDA224
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_65.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_62[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_62 CLASS MaterialExpressionSceneDepth
+InputMode=
+Input=()
+Coordinates=()
+ConstInput=(X=0.000000,Y=0.000000)
+MaterialExpressionEditorX=-418
+MaterialExpressionEditorY=2275
+SubgraphExpression=
+MaterialExpressionGuid=0F2420A34E6F0492B2A40FB719F69E0A
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=True
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Depth", "Depth"))
+Outputs=((Mask=1,MaskR=1))
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSubtract_20 CLASS MaterialExpressionSubtract
+A=(Expression="/Script/Engine.MaterialExpressionMultiply'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_66'")
+B=(Expression="/Script/Engine.MaterialExpressionSceneDepth'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_63'",Mask=1,MaskR=1)
+ConstA=1.000000
+ConstB=1.000000
+MaterialExpressionEditorX=255
+MaterialExpressionEditorY=786
+SubgraphExpression=
+MaterialExpressionGuid=6D3A43054E419CD666E920B7BE9211D5
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSubtract_20.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_66[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSubtract_20.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_63[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_63 CLASS MaterialExpressionSceneDepth
+InputMode=
+Input=()
+Coordinates=()
+ConstInput=(X=0.000000,Y=0.000000)
+MaterialExpressionEditorX=52
+MaterialExpressionEditorY=1032
+SubgraphExpression=
+MaterialExpressionGuid=0F2420A34E6F0492B2A40FB719F69E0A
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=True
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Depth", "Depth"))
+Outputs=((Mask=1,MaskR=1))
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_66 CLASS MaterialExpressionMultiply
+A=(Expression="/Script/Engine.MaterialExpressionAdd'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_93'")
+B=()
+ConstA=
+ConstB=0.125000
+MaterialExpressionEditorX=35
+MaterialExpressionEditorY=786
+SubgraphExpression=
+MaterialExpressionGuid=B1D4A0DC464F0C273C411F9F2FD05F4A
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_66.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_93[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_93 CLASS MaterialExpressionAdd
+A=(Expression="/Script/Engine.MaterialExpressionSceneDepth'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_71'",Mask=1,MaskR=1)
+B=(Expression="/Script/Engine.MaterialExpressionAdd'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_94'")
+ConstA=
+ConstB=1.000000
+MaterialExpressionEditorX=-144
+MaterialExpressionEditorY=848
+SubgraphExpression=
+MaterialExpressionGuid=D2ED17B640357C3B046746AD17F8B796
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_93.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_71[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_93.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_94[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_94 CLASS MaterialExpressionAdd
+A=(Expression="/Script/Engine.MaterialExpressionAdd'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_97'")
+B=(Expression="/Script/Engine.MaterialExpressionAdd'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_96'")
+ConstA=
+ConstB=1.000000
+MaterialExpressionEditorX=-297
+MaterialExpressionEditorY=2027
+SubgraphExpression=
+MaterialExpressionGuid=D2ED17B640357C3B046746AD17F8B796
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_94.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_97[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_94.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_96[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_95 CLASS MaterialExpressionAdd
+A=(Expression="/Script/Engine.MaterialExpressionSceneDepth'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_71'",Mask=1,MaskR=1)
+B=(Expression="/Script/Engine.MaterialExpressionAdd'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_98'")
+ConstA=
+ConstB=1.000000
+MaterialExpressionEditorX=-352
+MaterialExpressionEditorY=880
+SubgraphExpression=
+MaterialExpressionGuid=D2ED17B640357C3B046746AD17F8B796
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_95.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_71[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_95.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_98[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_96 CLASS MaterialExpressionAdd
+A=(Expression="/Script/Engine.MaterialExpressionSceneDepth'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_65'",Mask=1,MaskR=1)
+B=(Expression="/Script/Engine.MaterialExpressionSceneDepth'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_64'",Mask=1,MaskR=1)
+ConstA=
+ConstB=1.000000
+MaterialExpressionEditorX=-463
+MaterialExpressionEditorY=2521
+SubgraphExpression=
+MaterialExpressionGuid=D2ED17B640357C3B046746AD17F8B796
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_96.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_65[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_96.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_64[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_97 CLASS MaterialExpressionAdd
+A=(Expression="/Script/Engine.MaterialExpressionSceneDepth'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_67'",Mask=1,MaskR=1)
+B=(Expression="/Script/Engine.MaterialExpressionConstant'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionConstant_1'")
+ConstA=
+ConstB=1.000000
+MaterialExpressionEditorX=-463
+MaterialExpressionEditorY=2027
+SubgraphExpression=
+MaterialExpressionGuid=D2ED17B640357C3B046746AD17F8B796
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_97.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_67[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_97.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionConstant_1[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_98 CLASS MaterialExpressionAdd
+A=(Expression="/Script/Engine.MaterialExpressionSceneDepth'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_69'",Mask=1,MaskR=1)
+B=(Expression="/Script/Engine.MaterialExpressionSceneDepth'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_68'",Mask=1,MaskR=1)
+ConstA=
+ConstB=1.000000
+MaterialExpressionEditorX=-463
+MaterialExpressionEditorY=1550
+SubgraphExpression=
+MaterialExpressionGuid=D2ED17B640357C3B046746AD17F8B796
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_98.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_69[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_98.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_68[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_99 CLASS MaterialExpressionAdd
+A=(Expression="/Script/Engine.MaterialExpressionSceneDepth'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_71'",Mask=1,MaskR=1)
+B=(Expression="/Script/Engine.MaterialExpressionSceneDepth'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_70'",Mask=1,MaskR=1)
+ConstA=
+ConstB=1.000000
+MaterialExpressionEditorX=-512
+MaterialExpressionEditorY=848
+SubgraphExpression=
+MaterialExpressionGuid=D2ED17B640357C3B046746AD17F8B796
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_99.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_71[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_99.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_70[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_40 CLASS MaterialExpressionAppendVector
+A=(Expression="/Script/Engine.MaterialExpressionAbs'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAbs_5'")
+B=(Expression="/Script/Engine.MaterialExpressionConstant'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionConstant_13'")
+MaterialExpressionEditorX=-1004
+MaterialExpressionEditorY=2763
+SubgraphExpression=
+MaterialExpressionGuid=B400FDF4458C4019EA85698AA1010FBB
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"),NSLOCTEXT("MaterialExpression", "Vectors", "Vectors"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_40.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAbs_5[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_40.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionConstant_13[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_100 CLASS MaterialExpressionAdd
+A=(Expression="/Script/Engine.MaterialExpressionAppendVector'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_40'")
+B=(Expression="/Script/Engine.MaterialExpressionComponentMask'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionComponentMask_22'")
+ConstA=
+ConstB=1.000000
+MaterialExpressionEditorX=-832
+MaterialExpressionEditorY=2763
+SubgraphExpression=
+MaterialExpressionGuid=8B206EAB410944FBA73F4C8355A50A0D
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_100.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_40[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_100.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionComponentMask_22[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_64 CLASS MaterialExpressionSceneDepth
+InputMode=
+Input=(Expression="/Script/Engine.MaterialExpressionAdd'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_100'")
+Coordinates=()
+ConstInput=(X=0.000000,Y=0.000000)
+MaterialExpressionEditorX=-666
+MaterialExpressionEditorY=2749
+SubgraphExpression=
+MaterialExpressionGuid=0F2420A34E6F0492B2A40FB719F69E0A
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=True
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Depth", "Depth"))
+Outputs=((Mask=1,MaskR=1))
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_64.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_100[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_41 CLASS MaterialExpressionAppendVector
+A=(Expression="/Script/Engine.MaterialExpressionConstant'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionConstant_13'")
+B=(Expression="/Script/Engine.MaterialExpressionLinearInterpolate'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionLinearInterpolate_22'")
+MaterialExpressionEditorX=-1004
+MaterialExpressionEditorY=2522
+SubgraphExpression=
+MaterialExpressionGuid=B400FDF4458C4019EA85698AA1010FBB
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"),NSLOCTEXT("MaterialExpression", "Vectors", "Vectors"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_41.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionConstant_13[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_41.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionLinearInterpolate_22[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_101 CLASS MaterialExpressionAdd
+A=(Expression="/Script/Engine.MaterialExpressionAppendVector'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_41'")
+B=(Expression="/Script/Engine.MaterialExpressionComponentMask'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionComponentMask_22'")
+ConstA=
+ConstB=1.000000
+MaterialExpressionEditorX=-832
+MaterialExpressionEditorY=2522
+SubgraphExpression=
+MaterialExpressionGuid=8B206EAB410944FBA73F4C8355A50A0D
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_101.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_41[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_101.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionComponentMask_22[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_65 CLASS MaterialExpressionSceneDepth
+InputMode=
+Input=(Expression="/Script/Engine.MaterialExpressionAdd'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_101'")
+Coordinates=()
+ConstInput=(X=0.000000,Y=0.000000)
+MaterialExpressionEditorX=-666
+MaterialExpressionEditorY=2508
+SubgraphExpression=
+MaterialExpressionGuid=0F2420A34E6F0492B2A40FB719F69E0A
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=True
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Depth", "Depth"))
+Outputs=((Mask=1,MaskR=1))
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_65.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_101[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_42 CLASS MaterialExpressionAppendVector
+A=(Expression="/Script/Engine.MaterialExpressionLinearInterpolate'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionLinearInterpolate_22'")
+B=(Expression="/Script/Engine.MaterialExpressionConstant'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionConstant_13'")
+MaterialExpressionEditorX=-1004
+MaterialExpressionEditorY=2278
+SubgraphExpression=
+MaterialExpressionGuid=B400FDF4458C4019EA85698AA1010FBB
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"),NSLOCTEXT("MaterialExpression", "Vectors", "Vectors"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_42.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionLinearInterpolate_22[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_42.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionConstant_13[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_102 CLASS MaterialExpressionAdd
+A=(Expression="/Script/Engine.MaterialExpressionAppendVector'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_42'")
+B=(Expression="/Script/Engine.MaterialExpressionComponentMask'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionComponentMask_22'")
+ConstA=
+ConstB=1.000000
+MaterialExpressionEditorX=-832
+MaterialExpressionEditorY=2278
+SubgraphExpression=
+MaterialExpressionGuid=8B206EAB410944FBA73F4C8355A50A0D
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_102.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_42[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_102.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionComponentMask_22[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_66 CLASS MaterialExpressionSceneDepth
+InputMode=
+Input=(Expression="/Script/Engine.MaterialExpressionAdd'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_102'")
+Coordinates=()
+ConstInput=(X=0.000000,Y=0.000000)
+MaterialExpressionEditorX=-666
+MaterialExpressionEditorY=2257
+SubgraphExpression=
+MaterialExpressionGuid=0F2420A34E6F0492B2A40FB719F69E0A
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=True
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Depth", "Depth"))
+Outputs=((Mask=1,MaskR=1))
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_66.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_102[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_43 CLASS MaterialExpressionAppendVector
+A=(Expression="/Script/Engine.MaterialExpressionConstant'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionConstant_13'")
+B=(Expression="/Script/Engine.MaterialExpressionAbs'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAbs_5'")
+MaterialExpressionEditorX=-1004
+MaterialExpressionEditorY=2027
+SubgraphExpression=
+MaterialExpressionGuid=B400FDF4458C4019EA85698AA1010FBB
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"),NSLOCTEXT("MaterialExpression", "Vectors", "Vectors"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_43.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionConstant_13[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_43.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAbs_5[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_103 CLASS MaterialExpressionAdd
+A=(Expression="/Script/Engine.MaterialExpressionAppendVector'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_43'")
+B=(Expression="/Script/Engine.MaterialExpressionComponentMask'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionComponentMask_22'")
+ConstA=
+ConstB=1.000000
+MaterialExpressionEditorX=-832
+MaterialExpressionEditorY=2027
+SubgraphExpression=
+MaterialExpressionGuid=8B206EAB410944FBA73F4C8355A50A0D
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_103.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_43[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_103.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionComponentMask_22[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_67 CLASS MaterialExpressionSceneDepth
+InputMode=
+Input=(Expression="/Script/Engine.MaterialExpressionAdd'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_103'")
+Coordinates=()
+ConstInput=(X=0.000000,Y=0.000000)
+MaterialExpressionEditorX=-666
+MaterialExpressionEditorY=2013
+SubgraphExpression=
+MaterialExpressionGuid=0F2420A34E6F0492B2A40FB719F69E0A
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=True
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Depth", "Depth"))
+Outputs=((Mask=1,MaskR=1))
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_67.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_103[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_44 CLASS MaterialExpressionAppendVector
+A=(Expression="/Script/Engine.MaterialExpressionLinearInterpolate'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionLinearInterpolate_22'")
+B=(Expression="/Script/Engine.MaterialExpressionLinearInterpolate'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionLinearInterpolate_22'")
+MaterialExpressionEditorX=-1004
+MaterialExpressionEditorY=1793
+SubgraphExpression=
+MaterialExpressionGuid=B400FDF4458C4019EA85698AA1010FBB
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"),NSLOCTEXT("MaterialExpression", "Vectors", "Vectors"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_44.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionLinearInterpolate_22[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_44.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionLinearInterpolate_22[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_104 CLASS MaterialExpressionAdd
+A=(Expression="/Script/Engine.MaterialExpressionAppendVector'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_44'")
+B=(Expression="/Script/Engine.MaterialExpressionComponentMask'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionComponentMask_22'")
+ConstA=
+ConstB=1.000000
+MaterialExpressionEditorX=-832
+MaterialExpressionEditorY=1793
+SubgraphExpression=
+MaterialExpressionGuid=8B206EAB410944FBA73F4C8355A50A0D
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_104.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_44[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_104.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionComponentMask_22[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_68 CLASS MaterialExpressionSceneDepth
+InputMode=
+Input=(Expression="/Script/Engine.MaterialExpressionAdd'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_104'")
+Coordinates=()
+ConstInput=(X=0.000000,Y=0.000000)
+MaterialExpressionEditorX=-666
+MaterialExpressionEditorY=1777
+SubgraphExpression=
+MaterialExpressionGuid=0F2420A34E6F0492B2A40FB719F69E0A
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=True
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Depth", "Depth"))
+Outputs=((Mask=1,MaskR=1))
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_68.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_104[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_45 CLASS MaterialExpressionAppendVector
+A=(Expression="/Script/Engine.MaterialExpressionLinearInterpolate'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionLinearInterpolate_22'")
+B=(Expression="/Script/Engine.MaterialExpressionAbs'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAbs_5'")
+MaterialExpressionEditorX=-1004
+MaterialExpressionEditorY=1550
+SubgraphExpression=
+MaterialExpressionGuid=B400FDF4458C4019EA85698AA1010FBB
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"),NSLOCTEXT("MaterialExpression", "Vectors", "Vectors"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_45.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionLinearInterpolate_22[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_45.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAbs_5[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_105 CLASS MaterialExpressionAdd
+A=(Expression="/Script/Engine.MaterialExpressionAppendVector'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_45'")
+B=(Expression="/Script/Engine.MaterialExpressionComponentMask'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionComponentMask_22'")
+ConstA=
+ConstB=1.000000
+MaterialExpressionEditorX=-832
+MaterialExpressionEditorY=1550
+SubgraphExpression=
+MaterialExpressionGuid=8B206EAB410944FBA73F4C8355A50A0D
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_105.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_45[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_105.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionComponentMask_22[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_69 CLASS MaterialExpressionSceneDepth
+InputMode=
+Input=(Expression="/Script/Engine.MaterialExpressionAdd'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_105'")
+Coordinates=()
+ConstInput=(X=0.000000,Y=0.000000)
+MaterialExpressionEditorX=-666
+MaterialExpressionEditorY=1533
+SubgraphExpression=
+MaterialExpressionGuid=0F2420A34E6F0492B2A40FB719F69E0A
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=True
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Depth", "Depth"))
+Outputs=((Mask=1,MaskR=1))
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_69.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_105[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_46 CLASS MaterialExpressionAppendVector
+A=(Expression="/Script/Engine.MaterialExpressionAbs'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAbs_5'")
+B=(Expression="/Script/Engine.MaterialExpressionConstant'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionConstant_0'")
+MaterialExpressionEditorX=-1042
+MaterialExpressionEditorY=1198
+SubgraphExpression=
+MaterialExpressionGuid=B400FDF4458C4019EA85698AA1010FBB
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"),NSLOCTEXT("MaterialExpression", "Vectors", "Vectors"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_46.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAbs_5[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_46.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionConstant_0[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_106 CLASS MaterialExpressionAdd
+A=(Expression="/Script/Engine.MaterialExpressionAppendVector'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_46'")
+B=(Expression="/Script/Engine.MaterialExpressionComponentMask'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionComponentMask_22'")
+ConstA=
+ConstB=1.000000
+MaterialExpressionEditorX=-864
+MaterialExpressionEditorY=1200
+SubgraphExpression=
+MaterialExpressionGuid=8B206EAB410944FBA73F4C8355A50A0D
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_106.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_46[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_106.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionComponentMask_22[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_70 CLASS MaterialExpressionSceneDepth
+InputMode=
+Input=(Expression="/Script/Engine.MaterialExpressionAdd'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_106'")
+Coordinates=()
+ConstInput=(X=0.000000,Y=0.000000)
+MaterialExpressionEditorX=-704
+MaterialExpressionEditorY=1184
+SubgraphExpression=
+MaterialExpressionGuid=0F2420A34E6F0492B2A40FB719F69E0A
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=True
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Depth", "Depth"))
+Outputs=((Mask=1,MaskR=1))
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_70.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_106[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_47 CLASS MaterialExpressionAppendVector
+A=(Expression="/Script/Engine.MaterialExpressionAbs'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAbs_5'")
+B=(Expression="/Script/Engine.MaterialExpressionAbs'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAbs_5'")
+MaterialExpressionEditorX=-992
+MaterialExpressionEditorY=784
+SubgraphExpression=
+MaterialExpressionGuid=B400FDF4458C4019EA85698AA1010FBB
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"),NSLOCTEXT("MaterialExpression", "Vectors", "Vectors"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_47.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAbs_5[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_47.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAbs_5[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_107 CLASS MaterialExpressionAdd
+A=(Expression="/Script/Engine.MaterialExpressionAppendVector'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_47'")
+B=(Expression="/Script/Engine.MaterialExpressionComponentMask'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionComponentMask_22'")
+ConstA=
+ConstB=1.000000
+MaterialExpressionEditorX=-832
+MaterialExpressionEditorY=784
+SubgraphExpression=
+MaterialExpressionGuid=8B206EAB410944FBA73F4C8355A50A0D
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_107.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_47[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_107.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionComponentMask_22[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_71 CLASS MaterialExpressionSceneDepth
+InputMode=
+Input=(Expression="/Script/Engine.MaterialExpressionAdd'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_107'")
+Coordinates=()
+ConstInput=(X=0.000000,Y=0.000000)
+MaterialExpressionEditorX=-666
+MaterialExpressionEditorY=769
+SubgraphExpression=
+MaterialExpressionGuid=0F2420A34E6F0492B2A40FB719F69E0A
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=True
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Depth", "Depth"))
+Outputs=((Mask=1,MaskR=1))
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_71.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_107[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionComponentMask_22 CLASS MaterialExpressionComponentMask
+Input=(Expression="/Script/Engine.MaterialExpressionAdd'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_0'")
+R=True
+G=True
+B=
+A=
+MaterialExpressionEditorX=-1072
+MaterialExpressionEditorY=1072
+SubgraphExpression=
+MaterialExpressionGuid=1FE73DF943EC385120553DA442504B6D
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"),NSLOCTEXT("MaterialExpression", "Vectors", "Vectors"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionComponentMask_22.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_0[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionScreenPosition_11 CLASS MaterialExpressionScreenPosition
+ExternalCodeIdentifiers=("ViewportUV","PixelPosition")
+MaterialExpressionEditorX=-2016
+MaterialExpressionEditorY=1217
+SubgraphExpression=
+MaterialExpressionGuid=72D5CD0143623506A54F228556F6DFAE
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=True
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=True
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Coordinates", "Coordinates"))
+Outputs=((OutputName="ViewportUV"),(OutputName="PixelPosition"))
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAbs_5 CLASS MaterialExpressionAbs
+Input=(Expression="/Script/Engine.MaterialExpressionLinearInterpolate'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionLinearInterpolate_22'")
+MaterialExpressionEditorX=-1160
+MaterialExpressionEditorY=784
+SubgraphExpression=
+MaterialExpressionGuid=450AF13349B6989C8F7E0A86DAA50121
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAbs_5.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionLinearInterpolate_22[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionConstant_13 CLASS MaterialExpressionConstant
+R=
+MaterialExpressionEditorX=-1220
+MaterialExpressionEditorY=2027
+SubgraphExpression=
+MaterialExpressionGuid=A71B23C54D9D8D7CE7F0A38ADEC2F314
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Constants", "Constants"))
+Outputs=(())
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionLinearInterpolate_22 CLASS MaterialExpressionLinearInterpolate
+A=()
+B=()
+Alpha=(Expression="/Script/Engine.MaterialExpressionPower'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionPower_15'")
+ConstA=-0.002000
+ConstB=-0.001000
+ConstAlpha=0.500000
+MaterialExpressionEditorX=-1407
+MaterialExpressionEditorY=784
+SubgraphExpression=
+MaterialExpressionGuid=893D4E7A40025CBDF48BCC8725DC73A3
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"),NSLOCTEXT("MaterialExpression", "Utility", "Utility"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionLinearInterpolate_22.2 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionPower_15[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionPower_15 CLASS MaterialExpressionPower
+Base=(Expression="/Script/Engine.MaterialExpressionClamp'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionClamp_39'")
+Exponent=(Expression="/Script/Engine.MaterialExpressionConstant'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionConstant_14'")
+ConstExponent=2.000000
+MaterialExpressionEditorX=-1587
+MaterialExpressionEditorY=854
+SubgraphExpression=
+MaterialExpressionGuid=926D31D54248CCC573C40F86ECB7861F
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionPower_15.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionClamp_39[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionPower_15.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionConstant_14[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionConstant_14 CLASS MaterialExpressionConstant
+R=1.000000
+MaterialExpressionEditorX=-1824
+MaterialExpressionEditorY=1056
+SubgraphExpression=
+MaterialExpressionGuid=A71B23C54D9D8D7CE7F0A38ADEC2F314
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Constants", "Constants"))
+Outputs=(())
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionClamp_39 CLASS MaterialExpressionClamp
+Input=(Expression="/Script/Engine.MaterialExpressionMultiply'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_67'")
+Min=()
+Max=()
+ClampMode=
+MinDefault=
+MaxDefault=1.000000
+MaterialExpressionEditorX=-1795
+MaterialExpressionEditorY=854
+SubgraphExpression=
+MaterialExpressionGuid=230E51664E4D5474EC3F3D9A14B2E8C0
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionClamp_39.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_67[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_67 CLASS MaterialExpressionMultiply
+A=(Expression="/Script/Engine.MaterialExpressionSceneDepth'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_72'",Mask=1,MaskR=1)
+B=(Expression="/Script/Engine.MaterialExpressionDivide'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionDivide_10'")
+ConstA=
+ConstB=1.000000
+MaterialExpressionEditorX=-1970
+MaterialExpressionEditorY=854
+SubgraphExpression=
+MaterialExpressionGuid=E7EA570A4DDD385DE38075BF16C24CD1
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_67.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_72[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_67.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionDivide_10[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneDepth_72 CLASS MaterialExpressionSceneDepth
+InputMode=
+Input=()
+Coordinates=()
+ConstInput=(X=0.000000,Y=0.000000)
+MaterialExpressionEditorX=-2241
+MaterialExpressionEditorY=840
+SubgraphExpression=
+MaterialExpressionGuid=BFD0D6414F2D983E9B49BD95F89E910B
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=True
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Depth", "Depth"))
+Outputs=((Mask=1,MaskR=1))
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionComponentMask_23 CLASS MaterialExpressionComponentMask
+Input=(Expression="/Script/Engine.MaterialExpressionCustom'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionCustom_6'")
+R=True
+G=True
+B=True
+A=
+MaterialExpressionEditorX=1136
+MaterialExpressionEditorY=-256
+SubgraphExpression=
+MaterialExpressionGuid=9C23CE5E4A5155F5D6D757BABA30C9A5
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"),NSLOCTEXT("MaterialExpression", "Vectors", "Vectors"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionComponentMask_23.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionCustom_6[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionScalarParameter_45 CLASS MaterialExpressionScalarParameter
+DefaultValue=
+ControlType=
+SliderMin=
+SliderMax=
+Enumeration=
+EnumerationIndex=
+bUseCustomPrimitiveData=
+PrimitiveDataIndex=
+ParameterName=Sobel Strength
+ExpressionGUID=AD8333474D9F388033250A8AC5F6966E
+Group=
+SortPriority=32
+MaterialExpressionEditorX=516
+MaterialExpressionEditorY=552
+SubgraphExpression=
+MaterialExpressionGuid=2F5B5CD64841ABEBF52D63963DAA95C2
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=True
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Parameters", "Parameters"))
+Outputs=(())
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMaterialFunctionCall_16 CLASS MaterialExpressionMaterialFunctionCall
+MaterialFunction=/Script/Engine.MaterialFunction'/Engine/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat2Components.BreakOutFloat2Components'
+FunctionInputs=((ExpressionInputId=0FC5C56B4335798F20CB928CF1C87421,Input=(Expression="/Script/Engine.MaterialExpressionMaterialFunctionCall'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMaterialFunctionCall_17'",InputName="Float2")))
+FunctionOutputs=((ExpressionOutputId=6BC893C247FCFC567178CE944E213385,Output=(OutputName="R")),(ExpressionOutputId=9720C81E449DF8E5514FCB8A80FD5FA3,Output=(OutputName="G")))
+MaterialExpressionEditorX=481
+MaterialExpressionEditorY=313
+SubgraphExpression=
+MaterialExpressionGuid=2657913E447E63A4916A0892DD6A70F5
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=True
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=True
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Functions", "Functions"))
+Outputs=((OutputName="R"),(OutputName="G"))
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMaterialFunctionCall_16.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMaterialFunctionCall_17[0]
+
+OBJECT /Engine/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat2Components.BreakOutFloat2Components CLASS MaterialFunction
+Description=Enter a float 2 vector into the function and retrieve individual channels back through the scalar outputs.
+UserExposedCaption=
+bExposeToLibrary=
+bPrefixParameterNames=
+bEnableExecWire=
+bEnableNewHLSLGenerator=
+LibraryCategories=
+LibraryCategoriesText=(NSLOCTEXT("MaterialExpression", "Misc", "Misc"))
+DependentFunctionExpressionCandidates=
+PreviewBlendMode=
+PreviewMaterialDomain=
+FunctionExpressions=
+FunctionEditorComments=
+EditorOnlyData=/Script/Engine.MaterialFunctionEditorOnlyData'/Engine/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat2Components.BreakOutFloat2Components:BreakOutFloat2ComponentsEditorOnlyData'
+StateId=22DADBDB40F87C735DFD43AD510A7E06
+MaterialFunctionUsage=
+CombinedInputTypes=15
+CombinedOutputTypes=
+ThumbnailInfo=/Script/UnrealEd.SceneThumbnailInfoWithPrimitive'/Engine/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat2Components.BreakOutFloat2Components:SceneThumbnailInfoWithPrimitive_17'
+
+OBJECT /Engine/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat2Components.BreakOutFloat2Components:MaterialExpressionFunctionOutput_0 CLASS MaterialExpressionFunctionOutput
+OutputName=R
+Description=
+SortPriority=
+A=(Expression="/Script/Engine.MaterialExpressionComponentMask'/Engine/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat2Components.BreakOutFloat2Components:MaterialExpressionComponentMask_42'")
+bLastPreviewed=True
+Id=6BC893C247FCFC567178CE944E213385
+MaterialExpressionEditorX=-226
+MaterialExpressionEditorY=295
+SubgraphExpression=
+MaterialExpressionGuid=5110AB184AF910CD76E5C2B9A4C30B97
+Material=
+Function=/Script/Engine.MaterialFunction'/Engine/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat2Components.BreakOutFloat2Components'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Functions", "Functions"))
+Outputs=(())
+INPUT /Engine/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat2Components.BreakOutFloat2Components:MaterialExpressionFunctionOutput_0.0 <- /Engine/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat2Components.BreakOutFloat2Components:MaterialExpressionComponentMask_42[0]
+
+OBJECT /Engine/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat2Components.BreakOutFloat2Components:MaterialExpressionFunctionInput_11 CLASS MaterialExpressionFunctionInput
+Preview=()
+InputName=Float2
+Description=
+Id=0FC5C56B4335798F20CB928CF1C87421
+InputType=FunctionInput_Vector2
+PreviewValue=(X=0.000000,Y=0.000000,Z=0.000000,W=1.000000)
+bUsePreviewValueAsDefault=True
+SortPriority=
+BlendInputRelevance=
+MaterialExpressionEditorX=-651
+MaterialExpressionEditorY=375
+SubgraphExpression=
+MaterialExpressionGuid=BAACE1E8433F763077596BBD7BF91A1A
+Material=
+Function=/Script/Engine.MaterialFunction'/Engine/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat2Components.BreakOutFloat2Components'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Functions", "Functions"))
+Outputs=(())
+
+OBJECT /Engine/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat2Components.BreakOutFloat2Components:MaterialExpressionComponentMask_42 CLASS MaterialExpressionComponentMask
+Input=(Expression="/Script/Engine.MaterialExpressionFunctionInput'/Engine/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat2Components.BreakOutFloat2Components:MaterialExpressionFunctionInput_11'")
+R=True
+G=
+B=
+A=
+MaterialExpressionEditorX=-452
+MaterialExpressionEditorY=330
+SubgraphExpression=
+MaterialExpressionGuid=EAB237B349D959C3BB69C498085658CC
+Material=
+Function=/Script/Engine.MaterialFunction'/Engine/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat2Components.BreakOutFloat2Components'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"),NSLOCTEXT("MaterialExpression", "Vectors", "Vectors"))
+Outputs=(())
+INPUT /Engine/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat2Components.BreakOutFloat2Components:MaterialExpressionComponentMask_42.0 <- /Engine/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat2Components.BreakOutFloat2Components:MaterialExpressionFunctionInput_11[0]
+
+OBJECT /Engine/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat2Components.BreakOutFloat2Components:MaterialExpressionComponentMask_43 CLASS MaterialExpressionComponentMask
+Input=(Expression="/Script/Engine.MaterialExpressionFunctionInput'/Engine/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat2Components.BreakOutFloat2Components:MaterialExpressionFunctionInput_11'")
+R=
+G=True
+B=
+A=
+MaterialExpressionEditorX=-450
+MaterialExpressionEditorY=397
+SubgraphExpression=
+MaterialExpressionGuid=7947CCD14E73765B5EDD359C5B70982F
+Material=
+Function=/Script/Engine.MaterialFunction'/Engine/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat2Components.BreakOutFloat2Components'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"),NSLOCTEXT("MaterialExpression", "Vectors", "Vectors"))
+Outputs=(())
+INPUT /Engine/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat2Components.BreakOutFloat2Components:MaterialExpressionComponentMask_43.0 <- /Engine/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat2Components.BreakOutFloat2Components:MaterialExpressionFunctionInput_11[0]
+
+OBJECT /Engine/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat2Components.BreakOutFloat2Components:MaterialExpressionFunctionOutput_2 CLASS MaterialExpressionFunctionOutput
+OutputName=G
+Description=
+SortPriority=1
+A=(Expression="/Script/Engine.MaterialExpressionComponentMask'/Engine/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat2Components.BreakOutFloat2Components:MaterialExpressionComponentMask_43'")
+bLastPreviewed=True
+Id=9720C81E449DF8E5514FCB8A80FD5FA3
+MaterialExpressionEditorX=-221
+MaterialExpressionEditorY=453
+SubgraphExpression=
+MaterialExpressionGuid=9EF4218C434B4536891C458E88E19FA7
+Material=
+Function=/Script/Engine.MaterialFunction'/Engine/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat2Components.BreakOutFloat2Components'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Functions", "Functions"))
+Outputs=(())
+INPUT /Engine/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat2Components.BreakOutFloat2Components:MaterialExpressionFunctionOutput_2.0 <- /Engine/Functions/Engine_MaterialFunctions02/Utility/BreakOutFloat2Components.BreakOutFloat2Components:MaterialExpressionComponentMask_43[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMaterialFunctionCall_17 CLASS MaterialExpressionMaterialFunctionCall
+MaterialFunction=/Script/Engine.MaterialFunction'/Engine/Functions/Engine_MaterialFunctions02/ScreenResolution.ScreenResolution'
+FunctionInputs=
+FunctionOutputs=((ExpressionOutputId=D21EB3BE4C1789227FDE70B7A16D9AE8,Output=(OutputName="Visible Resolution")),(ExpressionOutputId=2ED3DB9D4C40696F0C43FE8FD96180A7,Output=(OutputName="Buffer Resolution")))
+MaterialExpressionEditorX=250
+MaterialExpressionEditorY=313
+SubgraphExpression=
+MaterialExpressionGuid=EA90B41D4CCC344743FAB783C23B5C89
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=True
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=True
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Functions", "Functions"))
+Outputs=((OutputName="Visible Resolution"),(OutputName="Buffer Resolution"))
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionScreenPosition_12 CLASS MaterialExpressionScreenPosition
+ExternalCodeIdentifiers=("ViewportUV","PixelPosition")
+MaterialExpressionEditorX=557
+MaterialExpressionEditorY=-246
+SubgraphExpression=
+MaterialExpressionGuid=468E8AF0462B79DF03E929BA90A9ADC7
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=True
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=True
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Coordinates", "Coordinates"))
+Outputs=((OutputName="ViewportUV"),(OutputName="PixelPosition"))
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionCustom_6 CLASS MaterialExpressionCustom
+Code=int tIndex = 14;
+float t1 = dot(SceneTextureLookup(UV + float2(-1.0f / sW, -1.0f / sH),tIndex,false), LMN);
+float t2 = dot(SceneTextureLookup(UV + float2(0, -1.0f / sH),tIndex,false), LMN);
+float t3 = dot(SceneTextureLookup(UV + float2(1.0f / sW, -1.0f / sH),tIndex,false), LMN); 
+float m1 = dot(SceneTextureLookup(UV + float2(-1.0f / sW, 0),tIndex,false), LMN); 
+float m3 = dot(SceneTextureLookup(UV + float2(-1.0f / sW, 0),tIndex,false), LMN);
+float b1 = dot(SceneTextureLookup(UV + float2(-1.0f / sW, 1.0f / sH),tIndex,false), LMN); 
+float b2 = dot(SceneTextureLookup(UV + float2(0, 1.0f / sH),tIndex,false), LMN);
+float b3 = dot(SceneTextureLookup(UV + float2(1.0f / sW, 1.0f / sH),tIndex,false), LMN); 
+float tot1 = t3 + b3 + (2 * m3) - t1 - (2 * m1) - b1;
+float tot2 = b1 + (2 * b2) + b3 - t1 - (2 * t2) - t3;
+float4 col;
+if (((tot1 * tot1) + (tot2 * tot2)) > 0.05) { col = float4(0,0,0,1); } else { col = float4(1,1,1,1); }
+return col;
+OutputType=CMOT_Float4
+Description=EdgeDetect - Convolution3x3 - HLSL
+Inputs=((InputName="UV",Input=(Expression="/Script/Engine.MaterialExpressionScreenPosition'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionScreenPosition_12'")),(InputName="SceneTexture",Input=(Expression="/Script/Engine.MaterialExpressionSceneTexture'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneTexture_18'",Mask=1,MaskR=1,MaskG=1,MaskB=1,MaskA=1)),(InputName="sW",Input=(Expression="/Script/Engine.MaterialExpressionMaterialFunctionCall'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMaterialFunctionCall_16'")),(InputName="sH",Input=(Expression="/Script/Engine.MaterialExpressionMaterialFunctionCall'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMaterialFunctionCall_16'",OutputIndex=1)),(InputName="LMN",Input=(Expression="/Script/Engine.MaterialExpressionScalarParameter'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionScalarParameter_45'")))
+AdditionalOutputs=
+AdditionalDefines=
+IncludeFilePaths=
+ContainsClipInstruction=
+ShowCode=
+MaterialExpressionEditorX=774
+MaterialExpressionEditorY=-232
+SubgraphExpression=
+MaterialExpressionGuid=2216CC2445BCFBF13C9ACB9BCE989E1E
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Custom", "Custom"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionCustom_6.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionScreenPosition_12[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionCustom_6.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneTexture_18[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionCustom_6.2 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMaterialFunctionCall_16[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionCustom_6.3 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMaterialFunctionCall_16[1]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionCustom_6.4 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionScalarParameter_45[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneTexture_18 CLASS MaterialExpressionSceneTexture
+Coordinates=()
+SceneTextureId=PPI_PostProcessInput0
+bFiltered=True
+MaterialExpressionEditorX=448
+MaterialExpressionEditorY=9
+SubgraphExpression=
+MaterialExpressionGuid=BE10DA044022594F080C4A87208602BA
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=True
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=True
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Texture", "Texture"))
+Outputs=((OutputName="Color",Mask=1,MaskR=1,MaskG=1,MaskB=1,MaskA=1),(OutputName="Size"),(OutputName="InvSize"))
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_68 CLASS MaterialExpressionMultiply
+A=(Expression="/Script/Engine.MaterialExpressionComponentMask'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionComponentMask_23'")
+B=(Expression="/Script/Engine.MaterialExpressionClamp'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionClamp_35'")
+ConstA=
+ConstB=1.000000
+MaterialExpressionEditorX=1326
+MaterialExpressionEditorY=-232
+SubgraphExpression=
+MaterialExpressionGuid=135D400347E231C4A0CA19A46490107D
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_68.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionComponentMask_23[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_68.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionClamp_35[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionClamp_6 CLASS MaterialExpressionClamp
+Input=(Expression="/Script/Engine.MaterialExpressionIf'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionIf_1'")
+Min=()
+Max=()
+ClampMode=
+MinDefault=
+MaxDefault=1.000000
+MaterialExpressionEditorX=976
+MaterialExpressionEditorY=1284
+SubgraphExpression=
+MaterialExpressionGuid=0A852CC941DCFDD289753DB06E3BFE84
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionClamp_6.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionIf_1[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionIf_1 CLASS MaterialExpressionIf
+A=(Expression="/Script/Engine.MaterialExpressionScalarParameter'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionScalarParameter_0'")
+B=()
+AGreaterThanB=(Expression="/Script/Engine.MaterialExpressionSceneTexture'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneTexture_2'",Mask=1,MaskR=1,MaskG=1,MaskB=1,MaskA=1)
+AEqualsB=()
+ALessThanB=(Expression="/Script/Engine.MaterialExpressionSceneTexture'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneTexture_1'",Mask=1,MaskR=1,MaskG=1,MaskB=1,MaskA=1)
+EqualsThreshold=0.000010
+ConstB=0.500000
+ConstAEqualsB=
+MaterialExpressionEditorX=783
+MaterialExpressionEditorY=1284
+SubgraphExpression=
+MaterialExpressionGuid=75D1DA48444B9E70CF84FBBEA40379E6
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionIf_1.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionScalarParameter_0[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionIf_1.2 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneTexture_2[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionIf_1.4 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneTexture_1[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionScalarParameter_0 CLASS MaterialExpressionScalarParameter
+DefaultValue=
+ControlType=
+SliderMin=
+SliderMax=
+Enumeration=
+EnumerationIndex=
+bUseCustomPrimitiveData=
+PrimitiveDataIndex=
+ParameterName=isDiffuseBuffer
+ExpressionGUID=446DCE254BF326F6C920198DFB6FC309
+Group=
+SortPriority=32
+MaterialExpressionEditorX=525
+MaterialExpressionEditorY=1270
+SubgraphExpression=
+MaterialExpressionGuid=47E05E614D8AC82F91A739A4D53E5FB2
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=True
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Parameters", "Parameters"))
+Outputs=(())
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneTexture_2 CLASS MaterialExpressionSceneTexture
+Coordinates=()
+SceneTextureId=PPI_DiffuseColor
+bFiltered=
+MaterialExpressionEditorX=457
+MaterialExpressionEditorY=1500
+SubgraphExpression=
+MaterialExpressionGuid=BE10DA044022594F080C4A87208602BA
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=True
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=True
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Texture", "Texture"))
+Outputs=((OutputName="Color",Mask=1,MaskR=1,MaskG=1,MaskB=1,MaskA=1),(OutputName="Size"),(OutputName="InvSize"))
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSaturate_1 CLASS MaterialExpressionSaturate
+Input=(Expression="/Script/Engine.MaterialExpressionMultiply'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_68'")
+MaterialExpressionEditorX=1536
+MaterialExpressionEditorY=-336
+SubgraphExpression=
+MaterialExpressionGuid=50293AFD4A597E6DF2DD549741BD9AFD
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSaturate_1.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_68[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneTexture_0 CLASS MaterialExpressionSceneTexture
+Coordinates=()
+SceneTextureId=PPI_PostProcessInput0
+bFiltered=True
+MaterialExpressionEditorX=1264
+MaterialExpressionEditorY=-656
+SubgraphExpression=
+MaterialExpressionGuid=0AE823F340766F253CCD23BD88825DE2
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=True
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=True
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Texture", "Texture"))
+Outputs=((OutputName="Color",Mask=1,MaskR=1,MaskG=1,MaskB=1,MaskA=1),(OutputName="Size"),(OutputName="InvSize"))
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionVectorParameter_0 CLASS MaterialExpressionVectorParameter
+DefaultValue=(R=5.000000,G=5.000000,B=5.000000,A=1.000000)
+bUseCustomPrimitiveData=
+PrimitiveDataIndex=
+ChannelNames=()
+ParameterName=OutlineColor
+ExpressionGUID=66DE19874DECBA93664636A3487D5231
+Group=
+SortPriority=32
+MaterialExpressionEditorX=1376
+MaterialExpressionEditorY=-928
+SubgraphExpression=
+MaterialExpressionGuid=225AEF264936467C277847AB53FDA544
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=True
+bCommentBubbleVisible=
+bShowOutputNameOnPin=True
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Parameters", "Parameters"))
+Outputs=((OutputName="RGB",Mask=1,MaskR=1,MaskG=1,MaskB=1),(OutputName="R",Mask=1,MaskR=1),(OutputName="G",Mask=1,MaskG=1),(OutputName="B",Mask=1,MaskB=1),(OutputName="A",Mask=1,MaskA=1),(OutputName="RGBA",Mask=1,MaskR=1,MaskG=1,MaskB=1,MaskA=1))
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionComponentMask_0 CLASS MaterialExpressionComponentMask
+Input=(Expression="/Script/Engine.MaterialExpressionSceneTexture'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneTexture_0'",Mask=1,MaskR=1,MaskG=1,MaskB=1,MaskA=1)
+R=True
+G=True
+B=True
+A=
+MaterialExpressionEditorX=1552
+MaterialExpressionEditorY=-608
+SubgraphExpression=
+MaterialExpressionGuid=6304D2B94615BC05570880A0C8452020
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"),NSLOCTEXT("MaterialExpression", "Vectors", "Vectors"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionComponentMask_0.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneTexture_0[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_0 CLASS MaterialExpressionAdd
+A=(Expression="/Script/Engine.MaterialExpressionMultiply'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_1'")
+B=(Expression="/Script/Engine.MaterialExpressionDivide'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionDivide_0'")
+ConstA=
+ConstB=1.000000
+MaterialExpressionEditorX=-1296
+MaterialExpressionEditorY=1070
+SubgraphExpression=
+MaterialExpressionGuid=FDBACECE45C0AFE6331F998B0011B338
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_0.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_1[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAdd_0.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionDivide_0[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionConstant2Vector_0 CLASS MaterialExpressionConstant2Vector
+R=
+G=50.000000
+MaterialExpressionEditorX=-1072
+MaterialExpressionEditorY=528
+SubgraphExpression=
+MaterialExpressionGuid=926177FE4C69D9A2FE95F1AF2410AD1D
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Constants", "Constants"),NSLOCTEXT("MaterialExpression", "Vectors", "Vectors"))
+Outputs=((Mask=1,MaskR=1,MaskG=1),(Mask=1,MaskR=1),(Mask=1,MaskG=1))
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_0 CLASS MaterialExpressionAppendVector
+A=(Expression="/Script/Engine.MaterialExpressionVectorParameter'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionVectorParameter_1'",OutputIndex=3,Mask=1,MaskB=1)
+B=(Expression="/Script/Engine.MaterialExpressionVectorParameter'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionVectorParameter_1'",OutputIndex=4,Mask=1,MaskA=1)
+MaterialExpressionEditorX=-1584
+MaterialExpressionEditorY=1536
+SubgraphExpression=
+MaterialExpressionGuid=C8536A2240776D56568FEC93F282AF38
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"),NSLOCTEXT("MaterialExpression", "Vectors", "Vectors"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_0.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionVectorParameter_1[3]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_0.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionVectorParameter_1[4]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionDivide_0 CLASS MaterialExpressionDivide
+A=(Expression="/Script/Engine.MaterialExpressionAppendVector'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_0'")
+B=()
+ConstA=1.000000
+ConstB=100.000000
+MaterialExpressionEditorX=-1392
+MaterialExpressionEditorY=1328
+SubgraphExpression=
+MaterialExpressionGuid=C8929913459A39012F7F4C8D94350297
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionDivide_0.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_0[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionVectorParameter_1 CLASS MaterialExpressionVectorParameter
+DefaultValue=(R=1.000000,G=1.000000,B=0.000000,A=0.000000)
+bUseCustomPrimitiveData=
+PrimitiveDataIndex=
+ChannelNames=()
+ParameterName=UV_Scale_Offset
+ExpressionGUID=B72CEDA0404F127AFAFF2CBB287EE06F
+Group=
+SortPriority=32
+MaterialExpressionEditorX=-1984
+MaterialExpressionEditorY=1440
+SubgraphExpression=
+MaterialExpressionGuid=49B64D6F45FCD64DDA40F48118E16985
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=True
+bCommentBubbleVisible=
+bShowOutputNameOnPin=True
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Parameters", "Parameters"))
+Outputs=((OutputName="RGB",Mask=1,MaskR=1,MaskG=1,MaskB=1),(OutputName="R",Mask=1,MaskR=1),(OutputName="G",Mask=1,MaskG=1),(OutputName="B",Mask=1,MaskB=1),(OutputName="A",Mask=1,MaskA=1),(OutputName="RGBA",Mask=1,MaskR=1,MaskG=1,MaskB=1,MaskA=1))
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_1 CLASS MaterialExpressionAppendVector
+A=(Expression="/Script/Engine.MaterialExpressionVectorParameter'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionVectorParameter_1'",OutputIndex=1,Mask=1,MaskR=1)
+B=(Expression="/Script/Engine.MaterialExpressionVectorParameter'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionVectorParameter_1'",OutputIndex=2,Mask=1,MaskG=1)
+MaterialExpressionEditorX=-1616
+MaterialExpressionEditorY=1456
+SubgraphExpression=
+MaterialExpressionGuid=425AC68A4C8E08ABEBEF0E89A5DD222E
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"),NSLOCTEXT("MaterialExpression", "Vectors", "Vectors"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_1.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionVectorParameter_1[1]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_1.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionVectorParameter_1[2]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_1 CLASS MaterialExpressionMultiply
+A=(Expression="/Script/Engine.MaterialExpressionScreenPosition'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionScreenPosition_11'")
+B=(Expression="/Script/Engine.MaterialExpressionAppendVector'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_1'")
+ConstA=
+ConstB=1.000000
+MaterialExpressionEditorX=-1648
+MaterialExpressionEditorY=1232
+SubgraphExpression=
+MaterialExpressionGuid=215B9E3745AB24EEF9A1369887C97783
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_1.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionScreenPosition_11[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_1.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionAppendVector_1[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_2 CLASS MaterialExpressionMultiply
+A=(Expression="/Script/Engine.MaterialExpressionVectorParameter'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionVectorParameter_0'",Mask=1,MaskR=1,MaskG=1,MaskB=1)
+B=(Expression="/Script/Engine.MaterialExpressionComponentMask'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionComponentMask_0'")
+ConstA=
+ConstB=1.000000
+MaterialExpressionEditorX=1840
+MaterialExpressionEditorY=-944
+SubgraphExpression=
+MaterialExpressionGuid=4210012B4805D7CA0DFE138C355CDE75
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_2.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionVectorParameter_0[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionMultiply_2.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionComponentMask_0[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionConstant_0 CLASS MaterialExpressionConstant
+R=
+MaterialExpressionEditorX=-1216
+MaterialExpressionEditorY=1280
+SubgraphExpression=
+MaterialExpressionGuid=7C39528A442AB8770307B5B10F9D7467
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Constants", "Constants"))
+Outputs=(())
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionConstant_1 CLASS MaterialExpressionConstant
+R=
+MaterialExpressionEditorX=-624
+MaterialExpressionEditorY=2144
+SubgraphExpression=
+MaterialExpressionGuid=BA066B00469658FDF42B2A8FE163B8E6
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Constants", "Constants"))
+Outputs=(())
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneTexture_3 CLASS MaterialExpressionSceneTexture
+Coordinates=()
+SceneTextureId=PPI_CustomStencil
+bFiltered=True
+MaterialExpressionEditorX=1952
+MaterialExpressionEditorY=-1183
+SubgraphExpression=
+MaterialExpressionGuid=32A887834DB6D69EC486CA9A4A8FBEF2
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=True
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=True
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Texture", "Texture"))
+Outputs=((OutputName="Color",Mask=1,MaskR=1,MaskG=1,MaskB=1,MaskA=1),(OutputName="Size"),(OutputName="InvSize"))
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionComponentMask_1 CLASS MaterialExpressionComponentMask
+Input=(Expression="/Script/Engine.MaterialExpressionSceneTexture'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneTexture_3'",Mask=1,MaskR=1,MaskG=1,MaskB=1,MaskA=1)
+R=True
+G=
+B=
+A=
+MaterialExpressionEditorX=2304
+MaterialExpressionEditorY=-1170
+SubgraphExpression=
+MaterialExpressionGuid=63754D2F4F99B17362436094A263B119
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"),NSLOCTEXT("MaterialExpression", "Vectors", "Vectors"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionComponentMask_1.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneTexture_3[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionScalarParameter_1 CLASS MaterialExpressionScalarParameter
+DefaultValue=1.000000
+ControlType=
+SliderMin=
+SliderMax=
+Enumeration=
+EnumerationIndex=
+bUseCustomPrimitiveData=
+PrimitiveDataIndex=
+ParameterName=Stile
+ExpressionGUID=CB7F7FBE44C69C847576238BD2C32394
+Group=
+SortPriority=32
+MaterialExpressionEditorX=2256
+MaterialExpressionEditorY=-976
+SubgraphExpression=
+MaterialExpressionGuid=580BD29440E59CB21843AB8A7E15B494
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=True
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Parameters", "Parameters"))
+Outputs=(())
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionFeatureLevelSwitch_0 CLASS MaterialExpressionFeatureLevelSwitch
+Default=(Expression="/Script/Engine.MaterialExpressionReroute'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionReroute_0'")
+Inputs=(Expression="/Script/Engine.MaterialExpressionSceneTexture'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneTexture_4'",Mask=1,MaskR=1,MaskG=1,MaskB=1,MaskA=1)
+MaterialExpressionEditorX=2896
+MaterialExpressionEditorY=-336
+SubgraphExpression=
+MaterialExpressionGuid=2628E9E54D30E7BA69673A9DC874C15A
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Utility", "Utility"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionFeatureLevelSwitch_0.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionReroute_0[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionFeatureLevelSwitch_0.1 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneTexture_4[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionFeatureLevelSwitch_0.2 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneTexture_4[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionFeatureLevelSwitch_0.3 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionReroute_0[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionFeatureLevelSwitch_0.4 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionReroute_0[0]
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionFeatureLevelSwitch_0.5 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionReroute_0[0]
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionSceneTexture_4 CLASS MaterialExpressionSceneTexture
+Coordinates=()
+SceneTextureId=PPI_PostProcessInput0
+bFiltered=True
+MaterialExpressionEditorX=2544
+MaterialExpressionEditorY=-352
+SubgraphExpression=
+MaterialExpressionGuid=0A9F8CBB424080D73960039A2535A655
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=True
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=True
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Texture", "Texture"))
+Outputs=((OutputName="Color",Mask=1,MaskR=1,MaskG=1,MaskB=1,MaskA=1),(OutputName="Size"),(OutputName="InvSize"))
+
+OBJECT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionReroute_0 CLASS MaterialExpressionReroute
+Input=(Expression="/Script/Engine.MaterialExpressionIf'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionIf_0'")
+MaterialExpressionEditorX=2800
+MaterialExpressionEditorY=-288
+SubgraphExpression=
+MaterialExpressionGuid=88E546FF49FFDF4EBAA4C490D202A10B
+Material=/Script/Engine.Material'/Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Utility", "Utility"))
+Outputs=(())
+INPUT /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionReroute_0.0 <- /Game/EndfieldRender/Character/Common/Materials/Post/PPM_RimLight.PPM_RimLight:MaterialExpressionIf_0[0]

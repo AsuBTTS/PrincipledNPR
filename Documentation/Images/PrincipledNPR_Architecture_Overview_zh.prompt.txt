@@ -1,0 +1,73 @@
+Use case: infographic-diagram.
+Image 1 is a visual layout reference only. Create a GENERIC HIGH-LEVEL software architecture diagram for a stylized character material editor. Match the reference's clean portrait layout: five softly colored horizontal layer bands, a left layer name and icon, central module cards, and a right column titled “对应技术” with recognizable Unreal Engine and C++ logos plus appropriate neutral icons. White background, navy Chinese typography, thin colored outlines, large legible text, professional technical document aesthetic.
+
+This diagram describes the system's overall design and responsibilities, not concrete repository implementation. Use broad functional module names. Do not include custom class names, filenames, folders, character names, exact engine versions, C++ identifiers, module identifiers, validation status or progress claims.
+
+Title exactly “Principled NPR”
+Subtitle exactly “系统总体架构与技术栈”
+
+Layer 1, blue:
+Left “应用层” / “Editor / UI”
+Three central cards:
+“风格编辑” with “参数调节 / 效果预览”
+“预设管理” with “保存 / 加载 / 风格库”
+“资产应用” with “角色 / 材质 / 场景”
+Right technology panel:
+Unreal Engine U logo with “UE Editor”
+window icon with “Slate”
+panel icon with “Details Panel”
+
+Layer 2, green:
+Left “数据层” / “Style Data”
+Three central cards:
+“风格资产” with “统一风格参数”
+“材质语义” with “通用 / 面部 / 头发”
+“参数与预设” with “参数结构 / 覆盖关系”
+Right technology panel:
+asset icon with “UDataAsset”
+C++ logo with “USTRUCT / UPROPERTY”
+Unreal Engine U logo with “UE 序列化”
+
+Layer 3, orange:
+Left “运行时层” / “Runtime”
+Three central cards:
+“参数解析” with “合并 / 校验 / 映射”
+“材质实例管理” with “创建 / 管理 / 更新”
+“参数绑定” with “资源绑定 / 动态控制”
+Right technology panel:
+C++ logo with “C++ / Actor Component”
+material cube icon with “Material Instance / MID”
+slider icon with “参数更新接口”
+
+Layer 4, purple:
+Left “渲染层” / “Material & Shader”
+Three central cards:
+“NPR 材质” with “漫反射 / 高光 / 法线”
+“外观模块” with “轮廓光 / 描边 / 颜色”
+“引擎光照” with “灯光 / 阴影 / 间接光”
+Right technology panel:
+Unreal Engine U logo with “UE Material Editor”
+node graph icon with “Material Function”
+render icon with “引擎渲染管线”
+
+Layer 5, pale slate-blue:
+Left “资源与场景层” / “Content & Scene”
+Four central cards:
+“角色模型”
+“贴图资源”
+“场景与灯光”
+“测试与对比”
+Right technology panel:
+Unreal Engine U logo with “Content Browser”
+scene icon with “Level / Lighting”
+image icon with “截图与效果对比”
+
+Connections:
+Between layers 1 and 2: down arrow “编辑 / 保存”, up arrow “读取 / 加载”.
+Between layers 2 and 3: down arrow “加载参数”, up arrow “参数更新”.
+Between layers 3 and 4: down arrow “设置材质参数”, up arrow “渲染反馈”.
+Between layers 5 and 4: upward arrow “资源与场景输入”.
+Keep arrows and labels in the gaps, with ample whitespace.
+
+Footer: large recognizable Unreal Engine U logo next to “Unreal Engine”, a plus sign, recognizable blue C++ hexagon logo next to “C++”.
+No project directory tree. No filenames or source paths. No custom names starting UNPR or FNPR. No Substrate-specific backend names or engine version numbers. No implementation statuses, no future expansion area, no AI claims, no watermark. Use accurate clear Simplified Chinese. Prioritize the broad software layers and the corresponding technology stack.
