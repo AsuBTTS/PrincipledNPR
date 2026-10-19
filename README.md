@@ -1,8 +1,8 @@
 # Principled NPR Material System(in dev)
 
-**[中文文档首页](docs/index.md)** · [快速开始](docs/guide/quick-start.md) · [Outline 描边](docs/features/outline.md) · [开发者指南](docs/developer/architecture.md)
+**[在线文档网站](https://asubtts.github.io/PrincipledNPR/)** · [文档源码](docs/index.md) · [快速开始](docs/guide/quick-start.md) · [Outline 描边](docs/features/outline.md) · [开发者指南](docs/developer/architecture.md)
 
-我们用这套文档介绍功能、操作流程和开发方法。文档站点支持左侧分级目录和搜索；在本地执行 `npm ci`、`npm run docs:dev` 即可打开。上面的链接可以直接在 GitHub 中阅读，完整站点的预览与构建方法见[文档站点开发](docs/reference/documentation.md)。
+我们用这套文档介绍功能、操作流程和开发方法。点击“在线文档网站”即可打开带左侧分级目录和搜索的网站，内容随 `dev` 分支自动发布。本地执行 `npm ci`、`npm run docs:dev` 也可以预览。完整预览、构建与发布方法见[文档站点开发](docs/reference/documentation.md)。
 
 This is the UE 5.8 project for the controlled Substrate Toon backend spike.
 
