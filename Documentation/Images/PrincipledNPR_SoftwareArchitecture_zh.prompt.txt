@@ -1,0 +1,51 @@
+Use case: infographic-diagram.
+Image 1 is a VISUAL STYLE AND LAYOUT REFERENCE ONLY. Create a new Simplified Chinese software architecture infographic for the real Unreal project PrincipledNPR. Match the reference's five colored horizontal layer bands, left layer label, central module cards, right aligned “对应技术” column with recognizable technology logos, clean white background, thin colored outlines, navy typography, restrained flat vector icons. Portrait technical poster, large readable text. No directory tree in the image.
+
+Title exactly: “Principled NPR”
+Subtitle exactly: “软件分层架构与技术栈”
+
+Five layers from top to bottom; use ONLY these names and labels, not the reference image's feature claims:
+
+1. Blue band, left label “工程与编辑器层” and “UE Editor”.
+Three central cards:
+“项目宿主” / “PrincipledNPR.uproject” / “Source / PrincipledNPR”
+“插件模块” / “NPRRuntime” / “NPREditor”
+“原生资产编辑” / “Data Asset” / “Details”
+Right “对应技术” panel: recognizable Unreal Engine circular U logo next to “UE Editor”; recognizable blue C++ hexagon logo next to “C++”; small build icon next to “UnrealBuildTool”.
+
+2. Green band, left label “语义数据层” and “Semantic Data”.
+Four central cards:
+“参数契约” / “NPRParameterContract.v1.json”
+“风格语义” / “UNPRStyleProfile”
+“材质语义” / “UNPRMaterialProfile”
+“稀疏覆写” / “FNPRParameterPatch”
+Long code names may be split across lines but preserve exact spelling.
+Right “对应技术” panel: JSON curly-brace icon with “JSON Schema”; Unreal Engine asset pictogram with “UDataAsset”; C++ logo with “USTRUCT / UPROPERTY”.
+
+3. Orange band, left label “运行时绑定层” and “Runtime Binding”.
+Three central cards:
+“预制材质包” / “UNPRBackendStylePackage”
+“绑定组件” / “UNPRStyleBindingComponent”
+“动态材质与槽位” / “MID / Mesh Slots”
+Right “对应技术” panel: C++ logo with “UActorComponent”; Unreal asset icon with “UMaterialInstanceDynamic”; mesh icon with “UMeshComponent”.
+
+4. Purple band, left label “渲染层” and “Substrate Toon”.
+Four central cards:
+“原生后端” / “Substrate Toon”
+“后端资源” / “UToonProfile / Curve”
+“材质资源” / “Material / MIC”
+“光照管线” / “Shadows / Lumen”
+Right “对应技术” panel: Unreal Engine U logo with “UE Material Editor”; render icon with “Deferred / VSM”; graphics icon with “DX12 / SM6”.
+
+5. Slate-blue band, left label “资源与场景层” and “Content & Scene”.
+Three central cards:
+“角色资产” / “Chen Qianyu / Wanderer”
+“探针场景” / “L_S58_ToonProbe” / “L_TwoStyle_CharacterProbe”
+“风格种子” / “AnimeFlat” / “SemiPBRStylized”
+Right “对应技术” panel: Unreal Engine U logo with “Content Browser”; folder icon with “UE Assets”; scene icon with “Level / Lighting”.
+
+Connections: downward arrow from layer 1 to layer 2 labeled “编辑 / 保存”. Between layers 2 and 3 use whitespace only, NO arrow, because semantic conversion is not wired. Downward arrow from layer 3 to layer 4 labeled “绑定材质 / 更新 MID”. Upward arrow from layer 5 to layer 4 labeled “角色 / 场景资源”. Arrows mean real asset editing, references and bindings; do not invent a semantic resolver pipeline.
+
+Footer strip: large recognizable Unreal Engine U logo with exact text “Unreal Engine 5.8.3”, plus C++ hexagon logo with exact text “C++”, plus JSON curly-brace icon with exact text “JSON”.
+
+Important constraints: match the reference's sophisticated layered infographic appearance, keep Chinese and long code identifiers crisp, use enough card height to prevent crowding, use actual recognizable Unreal Engine and C++ logos. No code implementation status, no “已实现”, “尚未实现”, “待开发”, “NotRun”. No feature claims like custom editor window, conversion wizard, preset batch application or runtime semantic conversion. No future expansion box, no AI features, no M_NPR_Master, no Style Applier, no fake modules, no repository tree, no watermark.

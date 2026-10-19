@@ -1,0 +1,90 @@
+{
+  "Scope": "Actual exported viewport pixels; color area/width response and persistence only, not full rendering acceptance",
+  "Rows": [
+    {
+      "Variant": "None",
+      "Width": 351,
+      "Height": 493,
+      "AddedRedPixels": 155,
+      "AddedGreenPixels": 0,
+      "MeanAbsoluteRGBDifference": 0.17224620470056576
+    },
+    {
+      "Variant": "HullThin",
+      "Width": 351,
+      "Height": 493,
+      "AddedRedPixels": 872,
+      "AddedGreenPixels": 0,
+      "MeanAbsoluteRGBDifference": 0.3070373645086289
+    },
+    {
+      "Variant": "HullWide",
+      "Width": 351,
+      "Height": 493,
+      "AddedRedPixels": 2420,
+      "AddedGreenPixels": 0,
+      "MeanAbsoluteRGBDifference": 0.8051332135172568
+    },
+    {
+      "Variant": "ScreenThin",
+      "Width": 351,
+      "Height": 493,
+      "AddedRedPixels": 3914,
+      "AddedGreenPixels": 0,
+      "MeanAbsoluteRGBDifference": 2.3212322948631265
+    },
+    {
+      "Variant": "ScreenWide",
+      "Width": 351,
+      "Height": 493,
+      "AddedRedPixels": 9650,
+      "AddedGreenPixels": 0,
+      "MeanAbsoluteRGBDifference": 5.73459775893853
+    },
+    {
+      "Variant": "ScreenGreen",
+      "Width": 351,
+      "Height": 493,
+      "AddedRedPixels": 0,
+      "AddedGreenPixels": 9648,
+      "MeanAbsoluteRGBDifference": 5.518044647862092
+    },
+    {
+      "Variant": "FinalSaved",
+      "Width": 351,
+      "Height": 493,
+      "AddedRedPixels": -1,
+      "AddedGreenPixels": 0,
+      "MeanAbsoluteRGBDifference": 2.6455890539730973
+    }
+  ],
+  "Checks": [
+    {
+      "Name": "NoneMatchesOriginal",
+      "Passed": true
+    },
+    {
+      "Name": "HullWidthIncreasesColoredArea",
+      "Passed": true
+    },
+    {
+      "Name": "ScreenWidthIncreasesColoredArea",
+      "Passed": true
+    },
+    {
+      "Name": "GreenColorChangesPixels",
+      "Passed": true
+    },
+    {
+      "Name": "ReopenRetainsOutlineMask",
+      "Passed": true,
+      "SavedMaskPixels": 4925,
+      "ReopenedMaskPixels": 4936,
+      "ExactMaskIntersectionOverUnion": 0.791931673632564,
+      "WithinOnePixelSavedCoverage": 0.9963451776649747,
+      "WithinOnePixelReopenCoverage": 0.9965559157212318,
+      "MeanAbsoluteRGBDifference": 0.9566389086334995
+    }
+  ],
+  "Passed": true
+}

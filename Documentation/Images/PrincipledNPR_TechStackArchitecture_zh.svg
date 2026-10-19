@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f6f8fc"/><stop offset="1" stop-color="#eaf0f8"/></linearGradient>
+  <linearGradient id="header" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#101b32"/><stop offset="1" stop-color="#163d67"/></linearGradient>
+  <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#10243a" flood-opacity=".10"/></filter>
+  <symbol id="unreal" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 0a12 12 0 1012 12A12 12 0 0012 0zm0 23.52A11.52 11.52 0 1123.52 12 11.52 11.52 0 0112 23.52zm7.13-9.791c-.206.997-1.126 3.557-4.06 4.942l-1.179-1.325-1.988 2a7.338 7.338 0 01-5.804-2.978 2.859 2.859 0 00.65.123c.326.006.678-.114.678-.66v-5.394a.89.89 0 00-1.116-.89c-.92.212-1.656 2.509-1.656 2.509a7.304 7.304 0 012.528-5.597 7.408 7.408 0 013.73-1.721c-1.006.573-1.57 1.507-1.57 2.29 0 1.262.76 1.109.984.923v7.28a1.157 1.157 0 00.148.256 1.075 1.075 0 00.88.445c.76 0 1.747-.868 1.747-.868V9.172c0-.6-.452-1.324-.905-1.572 0 0 .838-.149 1.484.346a5.537 5.537 0 01.387-.425c1.508-1.48 2.929-1.902 4.112-2.112 0 0-2.151 1.69-2.151 3.96 0 1.687.043 5.801.043 5.801.799.771 1.986-.342 3.059-1.441Z"/></symbol>
+  <symbol id="cplusplus" viewBox="0 0 24 24"><path d="M22.394 6c-.167-.29-.398-.543-.652-.69L12.926.22c-.509-.294-1.34-.294-1.848 0L2.26 5.31c-.508.293-.923 1.013-.923 1.6v10.18c0 .294.104.62.271.91.167.29.398.543.652.69l8.816 5.09c.508.293 1.34.293 1.848 0l8.816-5.09c.254-.147.485-.4.652-.69.167-.29.27-.616.27-.91V6.91c.003-.294-.1-.62-.268-.91zM12 19.11c-3.92 0-7.109-3.19-7.109-7.11s3.19-7.11 7.11-7.11a7.133 7.133 0 016.156 3.553l-3.076 1.78a3.567 3.567 0 00-3.08-1.78A3.56 3.56 0 008.444 12 3.56 3.56 0 0012 15.555a3.57 3.57 0 003.08-1.778l3.078 1.78A7.135 7.135 0 0112 19.11zm7.11-6.715h-.79v.79h-.79v-.79h-.79v-.79h.79v-.79h.79v.79h.79zm2.962 0h-.79v.79h-.79v-.79h-.79v-.79h.79v-.79h.79v.79h.79z"/></symbol>
+  <symbol id="json" viewBox="0 0 64 64"><path d="M22 8H17C12 8 10 12 10 17V24C10 29 8 31 4 32C8 33 10 35 10 40V47C10 52 12 56 17 56H22M42 8H47C52 8 54 12 54 17V24C54 29 56 31 60 32C56 33 54 35 54 40V47C54 52 52 56 47 56H42" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="cube" viewBox="0 0 64 64"><path d="M32 5 56 18.5v27L32 59 8 45.5v-27L32 5Zm0 0v27m24-13.5L32 32 8 18.5M32 32v27" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/></symbol>
+  <symbol id="mesh" viewBox="0 0 64 64"><path d="m32 5 21 12v30L32 59 11 47V17L32 5Zm0 0v27m21-15L32 32 11 17m21 15v27" fill="none" stroke="currentColor" stroke-width="4"/><circle cx="32" cy="32" r="3" fill="currentColor"/></symbol>
+  <symbol id="file" viewBox="0 0 64 64"><path d="M16 5h22l14 14v40H16zM38 5v15h14M24 34h20M24 43h20M24 52h13" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/></symbol>
+  <symbol id="light" viewBox="0 0 64 64"><circle cx="32" cy="28" r="13" fill="none" stroke="currentColor" stroke-width="4"/><path d="M24 43h16m-14 7h12M32 3v8M8 28h8m32 0h8M14 10l6 6m24-6-6 6" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></symbol>
+  <symbol id="link" viewBox="0 0 64 64"><path d="m26 39-5 5a12 12 0 0 1-17-17l12-12a12 12 0 0 1 17 0m5 10 5-5a12 12 0 0 1 17 17L48 49a12 12 0 0 1-17 0m-9-1 18-18" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></symbol>
+  <style>
+    text.footer{fill:#ffffff}.footerMuted{fill:#9fb2c9}.footerAccent{fill:#8bc6e6} text{font-family:'Microsoft YaHei UI','Microsoft YaHei',Arial,sans-serif;fill:#12243c}
+    .title{font-size:48px;font-weight:700;fill:#fff;letter-spacing:1px}
+    .subtitle{font-size:21px;fill:#d3e2f5}
+    .cardTitle{font-size:26px;font-weight:700}
+    .label{font-size:17px;fill:#5b6c82}
+    .item{font-size:20px;font-weight:600}
+    .path{font-family:Consolas,'Microsoft YaHei UI',monospace;font-size:15px;fill:#52647b}
+    .small{font-size:17px;fill:#55677e}
+    .arrow{stroke:#54718f;stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  </style>
+</defs>
+<rect width="1920" height="1080" fill="url(#bg)"/>
+<rect width="1920" height="155" fill="url(#header)"/>
+<circle cx="101.5" cy="75.5" r="39" fill="#fff"/><g transform="translate(68 42) scale(2.8)" color="#fff"><use href="#unreal" width="24" height="24"/></g>
+<text x="162" y="83" class="title">Principled NPR</text>
+<text x="164" y="120" class="subtitle">技术栈与项目模块关系 · Unreal Engine 5.8.3</text>
+<rect x="1544" y="43" width="67" height="67" rx="16" fill="#fff"/><g transform="translate(1550 49) scale(2.4)" color="#fff"><use href="#cplusplus" width="24" height="24"/></g>
+<text x="1625" y="91" class="subtitle">C++ Plugin</text>
+<circle cx="1792" cy="77" r="27" fill="#fff"/><g transform="translate(1768 53) scale(2.0)" color="#8ed3ee"><use href="#unreal" width="24" height="24"/></g>
+<text x="1818" y="90" class="subtitle">UE</text>
+
+<text x="72" y="214" font-size="20" font-weight="700" fill="#53667e">项目技术栈</text>
+<text x="1848" y="214" text-anchor="end" font-size="18" fill="#718198">资产与数据  →  模块与材质  →  场景渲染</text>
+
+<!-- Cards -->
+<g filter="url(#shadow)">
+  <rect x="70" y="250" width="268" height="600" rx="22" fill="#fff" stroke="#c9d8e8" stroke-width="2"/>
+  <rect x="370" y="250" width="268" height="600" rx="22" fill="#fff" stroke="#c9d8e8" stroke-width="2"/>
+  <rect x="670" y="250" width="268" height="600" rx="22" fill="#fff" stroke="#c9d8e8" stroke-width="2"/>
+  <rect x="970" y="250" width="268" height="600" rx="22" fill="#fff" stroke="#c9d8e8" stroke-width="2"/>
+  <rect x="1270" y="250" width="268" height="600" rx="22" fill="#fff" stroke="#c9d8e8" stroke-width="2"/>
+  <rect x="1570" y="250" width="268" height="600" rx="22" fill="#fff" stroke="#c9d8e8" stroke-width="2"/>
+</g>
+<!-- accent bars -->
+<rect x="70" y="250" width="268" height="9" rx="5" fill="#1767a5"/>
+<rect x="370" y="250" width="268" height="9" rx="5" fill="#267eab"/>
+<rect x="670" y="250" width="268" height="9" rx="5" fill="#6476bd"/>
+<rect x="970" y="250" width="268" height="9" rx="5" fill="#df872f"/>
+<rect x="1270" y="250" width="268" height="9" rx="5" fill="#167f86"/>
+<rect x="1570" y="250" width="268" height="9" rx="5" fill="#163d67"/>
+
+<!-- Flow arrows -->
+<path d="M343 548h20m-8-8 8 8-8 8 M643 548h20m-8-8 8 8-8 8 M943 548h20m-8-8 8 8-8 8 M1243 548h20m-8-8 8 8-8 8 M1543 548h20m-8-8 8 8-8 8" class="arrow"/>
+
+<!-- 1 Host -->
+<g transform="translate(165 286) scale(3.25)" color="#1767a5"><use href="#unreal" width="24" height="24"/></g>
+<text x="204" y="396" text-anchor="middle" class="cardTitle">项目宿主</text>
+<text x="204" y="429" text-anchor="middle" class="label">UNREAL ENGINE</text>
+<rect x="94" y="457" width="220" height="1" fill="#e3eaf2"/>
+<text x="101" y="502" class="item">PrincipledNPR</text>
+<text x="101" y="531" class="item">.uproject</text>
+<text x="101" y="582" class="label">游戏 / 编辑器目标</text>
+<text x="101" y="613" class="path">Source/PrincipledNPR</text>
+<text x="101" y="689" class="small">UE 5.8.3</text>
+<text x="101" y="718" class="small">Win64 · DX12 · SM6</text>
+<g transform="translate(99 774) scale(.95)" color="#1767a5"><use href="#unreal" width="24" height="24"/></g>
+<text x="137" y="801" class="small">Unreal Engine</text>
+
+<!-- 2 Plugin -->
+<g transform="translate(466 286) scale(3.25)" color="#1769aa"><use href="#cplusplus" width="24" height="24"/></g>
+<text x="504" y="396" text-anchor="middle" class="cardTitle">C++ 插件</text>
+<text x="504" y="429" text-anchor="middle" class="label">PLUGIN MODULES</text>
+<rect x="394" y="457" width="220" height="1" fill="#e3eaf2"/>
+<text x="401" y="502" class="item">NPRRuntime</text>
+<text x="401" y="531" class="label">Runtime Module</text>
+<text x="401" y="586" class="item">NPREditor</text>
+<text x="401" y="615" class="label">Editor Module</text>
+<text x="401" y="689" class="path">Plugins/PrincipledNPR/</text>
+<text x="401" y="718" class="path">Source/</text>
+<g transform="translate(399 774) scale(.95)" color="#1769aa"><use href="#cplusplus" width="24" height="24"/></g>
+<text x="437" y="801" class="small">C++ modules</text>
+
+<!-- 3 Data -->
+<rect x="754" y="286" width="68" height="68" rx="16" fill="#eef0ff"/>
+<g transform="translate(756 287) scale(1.03)" color="#6476bd"><use href="#json" width="64" height="64"/></g>
+<text x="804" y="396" text-anchor="middle" class="cardTitle">语义与资产</text>
+<text x="804" y="429" text-anchor="middle" class="label">JSON · Unreal Data Asset</text>
+<rect x="694" y="457" width="220" height="1" fill="#e3eaf2"/>
+<text x="701" y="502" class="item">参数契约</text>
+<text x="701" y="531" class="path">NPRParameterContract</text>
+<text x="701" y="585" class="item">UNPRStyleProfile</text>
+<text x="701" y="614" class="item">UNPRMaterialProfile</text>
+<text x="701" y="688" class="label">风格 / 材质语义</text>
+<text x="701" y="718" class="path">Documentation/Schemas</text>
+<text x="701" y="748" class="path">Content/NPR/Styles</text>
+<g transform="translate(701 775) scale(.55)" color="#6476bd"><use href="#cube" width="64" height="64"/></g>
+<text x="741" y="801" class="small">Character Assets</text>
+
+<!-- 4 Backend -->
+<g transform="translate(1066 286) scale(3.25)" color="#df872f"><use href="#unreal" width="24" height="24"/></g>
+<text x="1104" y="396" text-anchor="middle" class="cardTitle">S58 后端</text>
+<text x="1104" y="429" text-anchor="middle" class="label">SUBSTRATE TOON</text>
+<rect x="994" y="457" width="220" height="1" fill="#e3eaf2"/>
+<text x="1001" y="502" class="item">UToonProfile</text>
+<text x="1001" y="558" class="item">Material</text>
+<text x="1001" y="587" class="item">MIC</text>
+<text x="1001" y="638" class="item">UNPRBackendStyle</text><text x="1001" y="665" class="item">Package</text>
+<text x="1001" y="701" class="label">UE 原生 Toon 资源</text>
+<text x="1001" y="732" class="path">Content/NPR/Materials</text>
+<text x="1001" y="762" class="path">Content/NPR/Profiles</text>
+<g transform="translate(1000 779) scale(.82)" color="#df872f"><use href="#unreal" width="24" height="24"/></g>
+<text x="1036" y="801" class="small">Unreal Substrate</text>
+
+<!-- 5 Runtime -->
+<g transform="translate(1366 286) scale(3.25)" color="#167f86"><use href="#cplusplus" width="24" height="24"/></g>
+<text x="1404" y="396" text-anchor="middle" class="cardTitle">运行时绑定</text>
+<text x="1404" y="429" text-anchor="middle" class="label">COMPONENT · MID</text>
+<rect x="1294" y="457" width="220" height="1" fill="#e3eaf2"/>
+<text x="1301" y="502" class="item">UNPRStyleBinding</text>
+<text x="1301" y="531" class="item">Component</text>
+<text x="1301" y="586" class="item">Material Instance</text>
+<text x="1301" y="615" class="item">Dynamic (MID)</text>
+<text x="1301" y="689" class="item">Mesh Material Slots</text>
+<text x="1301" y="732" class="path">Plugins/PrincipledNPR/</text>
+<text x="1301" y="762" class="path">NPRRuntime</text>
+<g transform="translate(1300 779) scale(.82)" color="#167f86"><use href="#cplusplus" width="24" height="24"/></g>
+<text x="1336" y="801" class="small">Runtime C++</text>
+
+<!-- 6 Render -->
+<g transform="translate(1666 286) scale(3.25)" color="#163d67"><use href="#unreal" width="24" height="24"/></g>
+<text x="1704" y="396" text-anchor="middle" class="cardTitle">场景渲染</text>
+<text x="1704" y="429" text-anchor="middle" class="label">UE RENDERING</text>
+<rect x="1594" y="457" width="220" height="1" fill="#e3eaf2"/>
+<g transform="translate(1599 486) scale(.52)" color="#163d67"><use href="#light" width="64" height="64"/></g>
+<text x="1644" y="520" class="item">场景灯光</text>
+<g transform="translate(1599 548) scale(.52)" color="#163d67"><use href="#mesh" width="64" height="64"/></g>
+<text x="1644" y="582" class="item">阴影</text>
+<g transform="translate(1599 610) scale(.52)" color="#163d67"><use href="#unreal" width="24" height="24"/></g>
+<text x="1644" y="644" class="item">Lumen / GI</text>
+<text x="1601" y="718" class="label">Deferred · VSM</text>
+<text x="1601" y="748" class="path">Content/NPR/Maps</text>
+<g transform="translate(1600 779) scale(.82)" color="#163d67"><use href="#unreal" width="24" height="24"/></g>
+<text x="1636" y="801" class="small">Unreal Engine</text>
+
+<!-- Bottom tech strip -->
+<rect x="70" y="895" width="1780" height="116" rx="20" fill="#10233b"/>
+<text x="104" y="943" font-size="20" font-weight="700" style="fill:#8bc6e6">技术栈</text>
+<circle cx="339" cy="944" r="27" fill="#fff"/><g transform="translate(315 920) scale(2.0)" color="#fff"><use href="#unreal" width="24" height="24"/></g>
+<text x="367" y="958" font-size="20" style="fill:#fff">Unreal Engine 5.8.3</text>
+<rect x="644" y="914" width="60" height="60" rx="14" fill="#fff"/><g transform="translate(650 920) scale(2.0)" color="#7cc7f1"><use href="#cplusplus" width="24" height="24"/></g>
+<text x="702" y="958" font-size="20" style="fill:#fff">C++</text>
+<g transform="translate(825 920) scale(.75)" color="#b3aaff"><use href="#json" width="64" height="64"/></g>
+<text x="879" y="958" font-size="20" style="fill:#fff">JSON Schema</text>
+<text x="1155" y="958" font-size="19" style="fill:#b9c9dc">Substrate Toon  ·  UDataAsset  ·  MID  ·  DX12 / SM6</text>
+<text x="104" y="986" font-size="15" style="fill:#9fb2c9">模块与类名对应上方 Source 与 Content 目录。</text>
+<text x="1813" y="986" text-anchor="end" font-size="15" style="fill:#9fb2c9">PrincipledNPR · 技术总览</text>
+</svg>
+
+
+

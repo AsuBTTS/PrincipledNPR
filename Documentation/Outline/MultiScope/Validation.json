@@ -1,0 +1,110 @@
+{
+  "Status": "PassedForBoundedMultiScopeAndActorPreview",
+  "Date": "2026-10-17",
+  "Engine": "UE 5.8.3 CL 58210709 DX12 SM6",
+  "Workspace": "LOCAL_ONLY/PrincipledNPR",
+  "Builds": {
+    "Editor": "Succeeded",
+    "Game": "Succeeded"
+  },
+  "Integration": {
+    "AllPassed": true,
+    "MultiScopeReopenAndPreview": 18,
+    "LegacyCreate": 35,
+    "LegacyReopen": 15,
+    "MultiScopeCreate": 47
+  },
+  "Pixels": {
+    "AllPassed": true,
+    "MultiScopeScene": 5,
+    "LegacyRegression": 5,
+    "ActorPreview": 4
+  },
+  "ManualImageReview": {
+    "Unified": "Passed controlled intersecting meshes",
+    "ActorPreview": "Passed both skeletal sources, None, color and width",
+    "NativeUI": "Ordinary editor, real textured character visible, no validation script notification",
+    "Occluded": "Passed foreground depth check",
+    "Independent": "Passed two colors and visible join",
+    "TexturedCharacter": "Passed original surface and outlined side"
+  },
+  "Processes": {
+    "FinalMultiScopeCreate": 5912,
+    "Ready": 31768,
+    "LegacyReopen": 45272,
+    "MultiScopeReopenWithPreview": 51884
+  },
+  "Unsupported": [
+    "Unified + Hull",
+    "Independent shared-slot Section",
+    "Multi-LOD Section override identity",
+    "Masked/translucent coverage",
+    "Nanite/InstancedStaticMesh",
+    "Source CustomDepth ownership conflict",
+    "Hull negative or zero scale"
+  ],
+  "NotAccepted": [
+    "Skeletal automatic multi-LOD transition",
+    "Vertex gradient pixel proof",
+    "Cloth/Morph/Deformer/source WPO",
+    "Component mesh-paint overrides",
+    "Extreme scale/width culling and arbitrary views",
+    "Cook and packaged visuals",
+    "Performance budgets",
+    "Full native undo/property interaction matrix"
+  ],
+  "Images": [
+    {
+      "Path": "Validation/Create/Independent.png",
+      "SHA256": "62CF494C736B0C93EE910512D45993AAD7022AF3FF4C9362E0D7E91798831BF8"
+    },
+    {
+      "Path": "Validation/Create/NoOutline.png",
+      "SHA256": "1C269048D121EE5F6D7203CC0A4CDCAD82675C88F238BADD8F419C8049EC40DC"
+    },
+    {
+      "Path": "Validation/Create/Occluded.png",
+      "SHA256": "6E703A80338A3F74918F1B53E0D67DCEA54A6E9853F1FEF614A6624CFB0E3255"
+    },
+    {
+      "Path": "Validation/Create/Unified.png",
+      "SHA256": "F5CE1BAB295E5BB673DE5A052F0FD3A053391AAC82E32AC1C9CA62F9BE6B5A5D"
+    },
+    {
+      "Path": "Validation/Reopen/GroupPreview/Original.png",
+      "SHA256": "917B7DD1A19BD7CCC6E3A7E7685C97F6A89913EA603585AD303500CD83831AD2"
+    },
+    {
+      "Path": "Validation/Reopen/GroupPreview/Outline.png",
+      "SHA256": "15F96A00013A79B6CA4B84A1B785B5049C686A313C8AB6053BA05EC4DE6ADAEE"
+    },
+    {
+      "Path": "Validation/Reopen/GroupPreviewGreen/Original.png",
+      "SHA256": "CB8D96BBE78E3ACD7D9B8C4906AC702FDDB3652E5EFC7DCA0E999EE33B8D7254"
+    },
+    {
+      "Path": "Validation/Reopen/GroupPreviewGreen/Outline.png",
+      "SHA256": "F2F810918FE2C6FCDCA572413B61110B41C35D8C06251F3B89776CACBF2D863D"
+    },
+    {
+      "Path": "Validation/Reopen/GroupPreviewNone/Original.png",
+      "SHA256": "D52F47310F1CD74F92E7325F8F1F8485DC3D9DFD8DDE967E35EBD56C6A95166F"
+    },
+    {
+      "Path": "Validation/Reopen/GroupPreviewNone/Outline.png",
+      "SHA256": "D52F47310F1CD74F92E7325F8F1F8485DC3D9DFD8DDE967E35EBD56C6A95166F"
+    },
+    {
+      "Path": "Validation/Reopen/TexturedCharacter/Original.png",
+      "SHA256": "E7298A7C95AFD718F87636F217AD544E51FE3FE5798074461A44370908484ADC"
+    },
+    {
+      "Path": "Validation/Reopen/TexturedCharacter/Outline.png",
+      "SHA256": "7F9BBFA1B304DBB433B4F2E8320B6C6A1B612FD91A5081AABF2D7B6AF2530649"
+    },
+    {
+      "Path": "UI_CharacterReady.png",
+      "SHA256": "A4BEBCACB39047867A61B6A91674FA7930D3117E2A45C68C2B614EE20C883F80"
+    }
+  ]
+}

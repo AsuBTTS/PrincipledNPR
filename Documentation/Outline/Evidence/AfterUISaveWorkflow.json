@@ -1,0 +1,80 @@
+{
+  "stage": "Reopen",
+  "status": "DataAndWorkflowPassed_PixelReviewRequired",
+  "checks": [
+    {
+      "name": "LoadSavedMap",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "OneControlledCharacter",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "SavedBindingReconstructed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "SavedPresetLoads",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "SavedMethod",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "SavedWidth",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "SavedColor",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "SavedPresetReference",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "SavedMaterialAndSource",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "RebuildHelpersAfterReopen",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "ActualShaderCompilation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "HelperExistsAfterTicks",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Export_Reopened",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "PNGFiles_Reopened",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "captures": [
+    "Saved/NPR/Outline/Validation/Reopen/Reopened"
+  ],
+  "render_acceptance": "PendingImageInspection"
+}

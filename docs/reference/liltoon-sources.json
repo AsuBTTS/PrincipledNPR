@@ -1,0 +1,73 @@
+{
+  "repository": "https://github.com/lilxyzw/lilToon",
+  "commit": "4a3f868398fda5b7f5a254e506f86e43207103c3",
+  "reviewDate": "2026-10-19",
+  "license": "MIT; Copyright (c) 2020-2024 lilxyzw",
+  "note": "Pinned source retrieved for research; no upstream implementation copied into plugin. Hashes are raw downloaded bytes.",
+  "files": [
+    {
+      "path": "LICENSE",
+      "url": "https://github.com/lilxyzw/lilToon/blob/4a3f868398fda5b7f5a254e506f86e43207103c3/LICENSE",
+      "sha256": "6d63141c08315544ecde3b419abd4cb606d937806874a8944e780c6bd1379e7a",
+      "lines": 21
+    },
+    {
+      "path": "Assets/lilToon/Shader/lts.shader",
+      "url": "https://github.com/lilxyzw/lilToon/blob/4a3f868398fda5b7f5a254e506f86e43207103c3/Assets/lilToon/Shader/lts.shader",
+      "sha256": "5206bec25e82db5f8009b27fcc5ba94d7c41113031d4b6b0a2c25ca324a9c704",
+      "lines": 720
+    },
+    {
+      "path": "Assets/lilToon/Shader/Includes/lil_common_input.hlsl",
+      "url": "https://github.com/lilxyzw/lilToon/blob/4a3f868398fda5b7f5a254e506f86e43207103c3/Assets/lilToon/Shader/Includes/lil_common_input.hlsl",
+      "sha256": "9863c86c76682c5132ec04937977c96d22a12979b79527b698771214999ed9e0",
+      "lines": 923
+    },
+    {
+      "path": "Assets/lilToon/Shader/Includes/lil_common_frag.hlsl",
+      "url": "https://github.com/lilxyzw/lilToon/blob/4a3f868398fda5b7f5a254e506f86e43207103c3/Assets/lilToon/Shader/Includes/lil_common_frag.hlsl",
+      "sha256": "96b1bbfecc32d16735db16b5a0c46db3bf81c8f28b9d247c3394ae3c6af84dc1",
+      "lines": 2078
+    },
+    {
+      "path": "Assets/lilToon/Shader/Includes/lil_common_vert.hlsl",
+      "url": "https://github.com/lilxyzw/lilToon/blob/4a3f868398fda5b7f5a254e506f86e43207103c3/Assets/lilToon/Shader/Includes/lil_common_vert.hlsl",
+      "sha256": "19c7764d77ad29f14f62b3e4e7458f6c30b9e518cc875d86354dacb82560c6ed",
+      "lines": 512
+    },
+    {
+      "path": "Assets/lilToon/Shader/Includes/lil_pass_forward_normal.hlsl",
+      "url": "https://github.com/lilxyzw/lilToon/blob/4a3f868398fda5b7f5a254e506f86e43207103c3/Assets/lilToon/Shader/Includes/lil_pass_forward_normal.hlsl",
+      "sha256": "f7a7c2900444d3f9b16fdf78e1ebe0d7765282f36cc3256d9cc7d506d3b54a47",
+      "lines": 614
+    },
+    {
+      "path": "Assets/lilToon/Editor/lilToonPreset.cs",
+      "url": "https://github.com/lilxyzw/lilToon/blob/4a3f868398fda5b7f5a254e506f86e43207103c3/Assets/lilToon/Editor/lilToonPreset.cs",
+      "sha256": "3c97b57c8ab8b14e467f209896319729ef416bbd9b5320321c9850370a6834f4",
+      "lines": 555
+    },
+    {
+      "path": "Assets/lilToon/Editor/lilInspector/lilInspector.cs",
+      "url": "https://github.com/lilxyzw/lilToon/blob/4a3f868398fda5b7f5a254e506f86e43207103c3/Assets/lilToon/Editor/lilInspector/lilInspector.cs",
+      "sha256": "fb08b62bfeb9e8b85f30cab4a95c05eb2cdf4b47f07bb3490d3bfa8fb6e4bc24",
+      "lines": 197
+    },
+    {
+      "path": "Assets/lilToon/Editor/lilInspector/lilMaterialProperties.cs",
+      "url": "https://github.com/lilxyzw/lilToon/blob/4a3f868398fda5b7f5a254e506f86e43207103c3/Assets/lilToon/Editor/lilInspector/lilMaterialProperties.cs",
+      "sha256": "51d978b9105a952bda54beee3903886f3ba3f122e854cf83e8de67aed69c9849",
+      "lines": 1287
+    },
+    {
+      "path": "Assets/lilToon/Editor/lilInspector/lilPropertyGroupDrawerNormalMapAndReflectionSetting.cs",
+      "url": "https://github.com/lilxyzw/lilToon/blob/4a3f868398fda5b7f5a254e506f86e43207103c3/Assets/lilToon/Editor/lilInspector/lilPropertyGroupDrawerNormalMapAndReflectionSetting.cs",
+      "sha256": "0636dd44249a3e47fcd9f8c0362ef12da732fddd574f8f9fcd42e8986a71529e",
+      "lines": 266
+    }
+  ],
+  "officialDocs": [
+    "https://lilxyzw.github.io/lilToon/ja_JP/dev/shader_structure.html",
+    "https://lilxyzw.github.io/lilToon/ja_JP/color/maincolor.html"
+  ]
+}

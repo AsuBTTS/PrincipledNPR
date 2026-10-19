@@ -1,0 +1,31 @@
+{
+  "status": "Implemented_Built_AssetsCompiled",
+  "default_screen_px": 1.25,
+  "default_hull_cm": 0.1,
+  "editor_build": "Succeeded",
+  "game_build": "Succeeded",
+  "material_build": "AssetsCompiledAndSaved",
+  "tests_run": false,
+  "visual_regression": "NotRun",
+  "width_formula": "base x edge-source scale x resolved local scale; Hull additionally x vertex red x UV0 mask red",
+  "automatic_crease": false,
+  "automatic_occlusion": false,
+  "authored_feature_boundary": "ScreenSpace + IndependentRegions only",
+  "asset_update": {
+    "status": "AssetsCompiledAndSaved",
+    "screen_base_px": 1.25,
+    "hull_base_cm": 0.1,
+    "actor": "/Game/NPR/Maps/L_Outline_MultiScope_v1.L_Outline_MultiScope_v1:PersistentLevel.SkeletalMeshActor_1",
+    "preset": "/Game/NPR/Outline/MultiScope/OP_TexturedCharacter.OP_TexturedCharacter"
+  },
+  "sha256": {
+    "Plugins/PrincipledNPR/Source/NPRRuntime/Public/NPROutlinePreset.h": "8eca18cdc745d69bf8eed81427b64c2dd5a0b17c27cc29e615c56e0d9ff14ae0",
+    "Plugins/PrincipledNPR/Source/NPRRuntime/Private/NPROutlinePreset.cpp": "255a84115036d5c324c7642d6ad7d698750906a82366d4f398618a19203aca0a",
+    "Plugins/PrincipledNPR/Source/NPRRuntime/Public/NPROutlineActorComponent.h": "71da909242a46e193dccaef4b69d6395ff187045a79f6498a841d09cbf24b3d2",
+    "Plugins/PrincipledNPR/Source/NPRRuntime/Private/NPROutlineActorComponent.cpp": "05a0a1ed42d70edf0f77d3e22b6b7d219cd73534fa582c8e348965e2dfb5e975",
+    "Plugins/PrincipledNPR/Source/NPRRuntime/Private/NPROutlineComponent.cpp": "b75428432a5a2d5446d4791ab958f5e87415b49de6929b4076051c8af42ca721",
+    "Tools/create_outline_backend_assets.py": "86f5dafd678f755c7c33afd67d2d1ef4456a48d4708259973d177f891819f698",
+    "Plugins/PrincipledNPR/Content/Outline/M_OutlineHull.uasset": "c9c8e7424a615abc08e5ba5a32933dfc1b3c9cd4fa65e998fcc78fa433cfd2c4",
+    "Plugins/PrincipledNPR/Content/Outline/T_OutlineWidthMaskWhite.uasset": "8c9fd3bb408bcc39e0add42c210dfeb5f087b96d0ad695a12f230053e80417d7"
+  }
+}

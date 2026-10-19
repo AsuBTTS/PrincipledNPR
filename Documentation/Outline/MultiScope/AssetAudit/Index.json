@@ -1,0 +1,137 @@
+[
+  {
+    "asset": "/Game/EndfieldRender/Character/Common/Materials/MI_BF_Outline_Simple.MI_BF_Outline_Simple",
+    "class": "MaterialInstanceConstant",
+    "dump": "_Game_EndfieldRender_Character_Common_Materials_MI_BF_Outline_Simple.txt",
+    "referencers": [
+      "/Game/EndfieldRender/Character/Qianyu/Materials/MI_Chen_Outline_Main"
+    ],
+    "has_vertex_normal_node": true,
+    "has_vertex_color_node": true,
+    "has_custom_node": false,
+    "has_scene_texture_node": false
+  },
+  {
+    "asset": "/Game/EndfieldRender/Character/Common/Materials/M_Backface_Outline.M_Backface_Outline",
+    "class": "Material",
+    "dump": "_Game_EndfieldRender_Character_Common_Materials_M_Backface_Outline.txt",
+    "referencers": [
+      "/Game/EndfieldRender/Character/Common/Materials/MI_BF_Outline_Simple"
+    ],
+    "has_vertex_normal_node": true,
+    "has_vertex_color_node": true,
+    "has_custom_node": false,
+    "has_scene_texture_node": false
+  },
+  {
+    "asset": "/Game/EndfieldRender/Character/Common/Materials/M_Outline.M_Outline",
+    "class": "Material",
+    "dump": "_Game_EndfieldRender_Character_Common_Materials_M_Outline.txt",
+    "referencers": [
+      "/Game/EndfieldRender/Character/Qianyu/Materials/MI_Outline_B",
+      "/Game/EndfieldRender/Character/Qianyu/Materials/MI_Outline_Skin",
+      "/Game/EndfieldRender/Character/Qianyu/Materials/MI_Outline_H"
+    ],
+    "has_vertex_normal_node": true,
+    "has_vertex_color_node": true,
+    "has_custom_node": false,
+    "has_scene_texture_node": false
+  },
+  {
+    "asset": "/Game/EndfieldRender/Character/Common/Materials/Post/PPMI_Outline.PPMI_Outline",
+    "class": "MaterialInstanceConstant",
+    "dump": "_Game_EndfieldRender_Character_Common_Materials_Post_PPMI_Outline.txt",
+    "referencers": [
+      "/Game/EndfieldRender/Levels/Map_Main"
+    ],
+    "has_vertex_normal_node": false,
+    "has_vertex_color_node": false,
+    "has_custom_node": true,
+    "has_scene_texture_node": true
+  },
+  {
+    "asset": "/Game/EndfieldRender/Character/Qianyu/Materials/MI_Chen_Outline_Main.MI_Chen_Outline_Main",
+    "class": "MaterialInstanceConstant",
+    "dump": "_Game_EndfieldRender_Character_Qianyu_Materials_MI_Chen_Outline_Main.txt",
+    "referencers": [
+      "/Game/EndfieldRender/Character/Qianyu/Materials/MI_Chen_BFO_None"
+    ],
+    "has_vertex_normal_node": true,
+    "has_vertex_color_node": true,
+    "has_custom_node": false,
+    "has_scene_texture_node": false
+  },
+  {
+    "asset": "/Game/EndfieldRender/Character/Qianyu/Materials/MI_Outline_B.MI_Outline_B",
+    "class": "MaterialInstanceConstant",
+    "dump": "_Game_EndfieldRender_Character_Qianyu_Materials_MI_Outline_B.txt",
+    "referencers": [
+      "/Game/EndfieldRender/Character/Qianyu/SKM_Chen_OutLine"
+    ],
+    "has_vertex_normal_node": true,
+    "has_vertex_color_node": true,
+    "has_custom_node": false,
+    "has_scene_texture_node": false
+  },
+  {
+    "asset": "/Game/EndfieldRender/Character/Qianyu/Materials/MI_Outline_H.MI_Outline_H",
+    "class": "MaterialInstanceConstant",
+    "dump": "_Game_EndfieldRender_Character_Qianyu_Materials_MI_Outline_H.txt",
+    "referencers": [],
+    "has_vertex_normal_node": true,
+    "has_vertex_color_node": true,
+    "has_custom_node": false,
+    "has_scene_texture_node": false
+  },
+  {
+    "asset": "/Game/EndfieldRender/Character/Qianyu/Materials/MI_Outline_Skin.MI_Outline_Skin",
+    "class": "MaterialInstanceConstant",
+    "dump": "_Game_EndfieldRender_Character_Qianyu_Materials_MI_Outline_Skin.txt",
+    "referencers": [
+      "/Game/EndfieldRender/Character/Qianyu/SKM_Chen_OutLine"
+    ],
+    "has_vertex_normal_node": true,
+    "has_vertex_color_node": true,
+    "has_custom_node": false,
+    "has_scene_texture_node": false
+  },
+  {
+    "asset": "/PrincipledNPR/Outline/M_OutlineHull.M_OutlineHull",
+    "class": "Material",
+    "dump": "_PrincipledNPR_Outline_M_OutlineHull.txt",
+    "referencers": [
+      "/Game/NPR/Maps/L_Outline_MultiScope_v1",
+      "/Game/NPR/Maps/L_Outline_Workflow"
+    ],
+    "has_vertex_normal_node": true,
+    "has_vertex_color_node": true,
+    "has_custom_node": false,
+    "has_scene_texture_node": false
+  },
+  {
+    "asset": "/PrincipledNPR/Outline/M_OutlineMask.M_OutlineMask",
+    "class": "Material",
+    "dump": "_PrincipledNPR_Outline_M_OutlineMask.txt",
+    "referencers": [
+      "/Game/NPR/Maps/L_Outline_MultiScope_v1",
+      "/Game/NPR/Maps/L_Outline_Workflow"
+    ],
+    "has_vertex_normal_node": false,
+    "has_vertex_color_node": false,
+    "has_custom_node": false,
+    "has_scene_texture_node": false
+  },
+  {
+    "asset": "/PrincipledNPR/Outline/M_OutlineScreen.M_OutlineScreen",
+    "class": "Material",
+    "dump": "_PrincipledNPR_Outline_M_OutlineScreen.txt",
+    "referencers": [
+      "/Game/NPR/Maps/L_Outline_MultiScope_v1",
+      "/Game/NPR/Maps/L_Outline_Workflow"
+    ],
+    "has_vertex_normal_node": false,
+    "has_vertex_color_node": false,
+    "has_custom_node": true,
+    "has_scene_texture_node": true
+  }
+]
