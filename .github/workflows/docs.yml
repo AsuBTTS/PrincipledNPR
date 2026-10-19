@@ -1,0 +1,21 @@
+name: Documentation
+on:
+  pull_request:
+    paths: ['docs/**', 'Documentation/**', 'Plugins/PrincipledNPR/Source/**', 'Tools/**', 'package*.json', '.github/workflows/docs.yml']
+  push:
+    branches: [main, dev]
+    paths: ['docs/**', 'Documentation/**', 'Plugins/PrincipledNPR/Source/**', 'Tools/**', 'package*.json', '.github/workflows/docs.yml']
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+      - run: git lfs pull --include="Documentation/Outline/Guide/01-overview.png,Documentation/Outline/Temporal/Validation/Candidate1/Screen_Static100/000/*.png"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run docs:build

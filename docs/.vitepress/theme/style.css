@@ -1,0 +1,52 @@
+/* Deep, muted teal derived from the user's #42f4dc reference. */
+:root {
+  --npr-accent: #1b8c7d;
+  --vp-c-brand-1: #14685f;
+  --vp-c-brand-2: #0c514a;
+  --vp-c-brand-3: #14685f;
+  --vp-c-brand-soft: rgba(27, 140, 125, 0.12);
+  --vp-home-hero-name-color: #14685f;
+}
+.dark {
+  --vp-c-brand-1: #64baab;
+  --vp-c-brand-2: #7fcbbb;
+  --vp-c-brand-3: #14685f;
+  --vp-c-brand-soft: rgba(27, 140, 125, 0.18);
+  --vp-home-hero-name-color: #64baab;
+  --vp-button-brand-hover-text: #073c36;
+  --vp-button-brand-active-text: #073c36;
+}
+.VPDoc .content-container { max-width: 860px !important; }
+.vp-doc h1 { border-left: 4px solid var(--npr-accent); padding-left: 16px; }
+.VPSidebarItem.is-active > .item > .link {
+  background: var(--vp-c-brand-soft);
+  border-radius: 6px;
+  box-shadow: inset 3px 0 var(--npr-accent);
+  padding-left: 10px;
+}
+.vp-doc th { white-space: nowrap; }
+.vp-doc img { border-radius: 8px; }
+
+/* Keep the chapter tree visible in the app's narrower preview panel. */
+@media (min-width: 640px) and (max-width: 959px) {
+  :root { --vp-sidebar-width: 208px; }
+  .VPSidebar {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+    top: var(--vp-nav-height) !important;
+    bottom: 0 !important;
+    height: auto !important;
+    width: var(--vp-sidebar-width) !important;
+    padding: 24px 16px 40px;
+    background: var(--vp-sidebar-bg-color);
+    border-right: 1px solid var(--vp-c-divider);
+  }
+  .VPContent.has-sidebar { padding-left: var(--vp-sidebar-width); }
+  .VPLocalNav.has-sidebar { padding-left: var(--vp-sidebar-width); }
+  .VPLocalNav .menu { display: none; }
+  .VPLocalNav .container { justify-content: flex-end; }
+  .VPDoc.has-sidebar { padding: 28px 24px 64px; }
+  .VPBackdrop { display: none !important; }
+}
