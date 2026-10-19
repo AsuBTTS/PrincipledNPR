@@ -7,7 +7,7 @@ hero:
   tagline: 我们正在为泛二次元角色制作一套 UE5 材质渲染编辑工具。我们希望先按画面想要的变化调整明暗、反光和轮廓，再由系统处理底层渲染参数。
   image:
     src: /images/miku-hero.png
-    alt: 手绘风格的初音未来，手边托着一颗青绿色光球
+    alt: 青绿色调的初音未来插画，手边托着一颗青绿色光球
   actions:
     - theme: brand
       text: 开始使用
