@@ -6,6 +6,7 @@
   --vp-c-brand-3: #14685f;
   --vp-c-brand-soft: rgba(27, 140, 125, 0.12);
   --vp-home-hero-name-color: #14685f;
+  --vp-home-hero-image-background-image: radial-gradient(circle, rgba(27, 140, 125, 0.22), rgba(27, 140, 125, 0) 68%);
 }
 .dark {
   --vp-c-brand-1: #64baab;
@@ -13,6 +14,7 @@
   --vp-c-brand-3: #14685f;
   --vp-c-brand-soft: rgba(27, 140, 125, 0.18);
   --vp-home-hero-name-color: #64baab;
+  --vp-home-hero-image-background-image: radial-gradient(circle, rgba(27, 140, 125, 0.3), rgba(27, 140, 125, 0) 70%);
   --vp-button-brand-hover-text: #073c36;
   --vp-button-brand-active-text: #073c36;
 }
@@ -26,6 +28,32 @@
 }
 .vp-doc th { white-space: nowrap; }
 .vp-doc img { border-radius: 8px; }
+.VPHero .image-container { isolation: isolate; }
+.VPHero .image-bg,
+.VPHero .image-container::before,
+.VPHero .image-container::after { z-index: 0; }
+.VPHero .image-src {
+  z-index: 1;
+  -webkit-mask-image: radial-gradient(ellipse at 50% 47%, #000 56%, rgba(0, 0, 0, .96) 70%, rgba(0, 0, 0, .58) 84%, transparent 100%);
+  mask-image: radial-gradient(ellipse at 50% 47%, #000 56%, rgba(0, 0, 0, .96) 70%, rgba(0, 0, 0, .58) 84%, transparent 100%);
+}
+.VPHero .image-container::before {
+  content: "";
+  position: absolute;
+  inset: 8%;
+  border: 1px solid var(--vp-c-brand-soft);
+  border-radius: 50%;
+  transform: scale(1.08);
+}
+.VPHero .image-container::after {
+  content: "";
+  position: absolute;
+  inset: 15%;
+  border: 1px dashed var(--vp-c-brand-soft);
+  border-radius: 50%;
+  transform: rotate(-28deg) scaleX(1.35);
+  pointer-events: none;
+}
 
 /* Keep the chapter tree visible in the app's narrower preview panel. */
 @media (min-width: 640px) and (max-width: 959px) {

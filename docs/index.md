@@ -1,15 +1,21 @@
 ---
+layout: home
 aside: false
+hero:
+  name: Principled NPR
+  text: 用看得见的效果，调整角色风格
+  tagline: 我们正在为泛二次元角色制作一套 UE5 材质渲染编辑工具。我们希望先按画面想要的变化调整明暗、反光和轮廓，再由系统处理底层渲染参数。
+  image:
+    src: /images/miku-hero.png
+    alt: 手绘风格的初音未来，手边托着一颗青绿色光球
+  actions:
+    - theme: brand
+      text: 开始使用
+      link: /guide/quick-start
+    - theme: alt
+      text: 查看描边功能
+      link: /features/outline
 ---
-# Principled NPR
-
-## 用看得见的效果，调整角色风格
-
-我们正在为泛二次元角色制作一套 UE5 材质渲染编辑工具。我们希望调整明暗、反光和轮廓时，可以先考虑画面要怎样变化，再由系统处理底层渲染参数。
-
-我们目前可以使用的主要功能是 **Outline 描边**。这个功能支持整角色和局部区域调整，并提供左右对比预览、预设保存和图片导出。
-
-[开始使用 →](./guide/quick-start.md) · [查看描边功能 →](./features/outline.md)
 
 ## 从左侧目录开始
 
@@ -25,6 +31,6 @@ aside: false
 
 ## 我们做到哪一步了
 
-我们已经接通 Outline 的主要使用流程。完整 Principled 参数转换还在开发，边缘光和 MatCap 仍在规划中。我们会在每个功能页面说明当前能做什么、还缺什么，避免把设计目标写成已经完成的功能。
+我们已经接通 Outline 的主要使用流程，可以对整角色和局部区域调整描边，并提供左右对比预览、预设保存和图片导出。完整 Principled 参数转换还在开发，边缘光和 MatCap 仍在规划中。我们会在每个功能页面说明当前能做什么、还缺什么，避免把设计目标写成已经完成的功能。
 
 [查看实现状态与验证记录](./reference/status.md) · [查看更新记录](./changelog.md)
