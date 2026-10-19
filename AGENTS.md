@@ -7,6 +7,7 @@
 以下变更必须同步检查 `docs/`、原始 `Documentation/` 证据及 `docs/changelog.md`：Shader 参数增删或默认值/范围修改、Principled 映射、渲染算法、编辑器 UI/操作、Preset/Asset 数据结构、模块接口、影响用户操作或渲染结果的 Bug。
 
 - 保持 `Principled Parameters → Parameter Mapping → Shader / Rendering Implementation`。语义 ID 不等于 Shader pin；原始高级参数继续保留。
+- Shader 实现默认优先使用 UE 材质节点；重复节点网络先考虑 Material Function。只有缺少合适节点、图难以读懂或需要维护可复用 HLSL 算法时才新增 HLSL 文件；只有需要材质之外的渲染阶段或资源时才设计独立 Shader Pass。`.ush` 引用不等于独立 Pass；`.usf` 也不会自行注册和执行。新增实现时更新 `docs/developer/shader-pipeline.md`，说明选择理由、材质调用关系和验证情况。
 - 新参数先设计兼容方案，注明单位、硬域、推荐范围、默认值、依赖、控制粒度、后端质量与限制；不得悄悄重定义已有 ID。覆盖中的 0 有效，Reset 删除本层值。
 - JSON 契约、C++ 声明、运行时 Validate、材质构造脚本与实际二进制资产分别检查；修改脚本不证明资产已更新。
 - `npm run docs:generate` 更新自动参数页、离线证据和由参数契约生成的变化示意图。新增语义 ID 时，先补齐 `Tools/docs.mjs` 中的中文名称和解释；生成器会检查注解完整，再人工审查视觉说明、映射、算法、状态与操作步骤。Outline 字段也要有中文用途。生成器是有限语法解析器，遇到新声明形式应扩展它，不得跳过字段。
