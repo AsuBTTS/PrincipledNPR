@@ -122,7 +122,7 @@ for(const m of contract.backends.S58.mappingEntries) {
   generated+='| '+[code(m.semanticId),mappingNotes[m.semanticId],m.target??'无',`${quality} / ${scope} (${m.level} / ${m.scope})`,`${implementation} / ${validation} (${m.implementation} / ${m.renderValidation})`,m.condition].map(esc).join(' | ')+' |\n'
 }
 generated+='\n## 来源指纹\n\n构建检查覆盖以下文本源；改变后需重新生成并人工审查相关说明。不能证明 .uasset 与脚本一致。\n\n| 来源 | SHA256（UTF8 LF） |\n| --- | --- |\n'
-const assetPath = p => /\.(json|png)$/.test(p) ? p : p+'.txt'
+const assetPath = p => /\.(json|png|jpe?g)$/i.test(p) ? p : p+'.txt'
 for(const p of sourcePaths) generated+=`| [${esc(p)}](/generated/source/${assetPath(p)}) | ${hash(p)} |\n`
 const target='docs/principled/parameters.md'
 if(process.argv[2]==='generate') write(target,generated)
@@ -135,6 +135,7 @@ const resources=[...sourcePaths,
  'Documentation/Outline/MaterialSlotUI/Readbacks.json',
  'Documentation/Outline/MaterialSlotUI/IsolatedCloth.png',
  'Documentation/Outline/MaterialSlotUI/FullCharacter.png',
+ 'Documentation/Outline/MaterialSlotUI/NPRModulation-Outline-UE5.8.3.jpg',
  'Documentation/Outline/Guide/01-overview.png', 'Documentation/Outline/Guide/README.md',
  'Documentation/Outline/Temporal/Validation/Candidate1/Screen_Static100/000/Original.png',
  'Documentation/Outline/Temporal/Validation/Candidate1/Screen_Static100/000/Outline.png',

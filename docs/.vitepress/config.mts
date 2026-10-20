@@ -4,6 +4,7 @@ const section = (text: string, items: [string, string][]) => ({ text, collapsed:
 export default withMermaid(defineConfig({
   lang: 'zh-CN', title: 'Principled NPR', description: '面向泛二次元角色的风格化材质渲染编辑系统',
   base: process.env.DOCS_BASE || '/', lastUpdated: true,
+  head: [['link', { rel: 'icon', type: 'image/svg+xml', href: '/npr-mark.svg' }]],
   mermaid: {
     securityLevel: 'strict', startOnLoad: false, theme: 'base',
     themeVariables: {
@@ -12,6 +13,7 @@ export default withMermaid(defineConfig({
     }
   },
   themeConfig: {
+    logo: '/npr-mark.svg',
     nav: [{ text: '使用手册', link: '/guide/introduction' }, { text: '开发者', link: '/developer/architecture' }, { text: '更新记录', link: '/changelog' }],
     sidebar: [
       section('开始使用', [['系统介绍','/guide/introduction'],['安装与环境','/guide/installation'],['快速开始','/guide/quick-start']]),

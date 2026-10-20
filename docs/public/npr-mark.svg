@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-labelledby="title">
+  <title id="title">Principled NPR</title>
+  <rect width="48" height="48" rx="12" fill="#14685f" />
+  <path d="M14 34V14l20 20V14" fill="none" stroke="#e2f1ee" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" />
+  <path d="M14 39h20" fill="none" stroke="#64baab" stroke-linecap="round" stroke-width="3" />
+  <circle cx="34" cy="13" r="3" fill="#1b8c7d" stroke="#e2f1ee" stroke-width="1.5" />
+</svg>
