@@ -9,7 +9,7 @@ public:
     virtual void StartupModule() override
     {
         FNPROutlineEditorUI::Register();
-        UE_LOG(LogNPREditor, Display, TEXT("NPR editor loaded. Window > Principled NPR Outline opens the Outline workflow."));
+        UE_LOG(LogNPREditor, Display, TEXT("NPR editor loaded. Window > NPR Modulation opens Outline and the Rim Light placeholder."));
     }
     virtual void ShutdownModule() override { FNPROutlineEditorUI::Unregister(); }
 };

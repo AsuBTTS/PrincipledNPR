@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-20",
+  "environment": "Windows / UE 5.8.3 CL 58210709 / Editor Development Win64",
+  "map": "/Game/NPR/Maps/L_TwoStyle_CharacterProbe",
+  "actor": "PNPR_ChenQianyu_EndfieldLike",
+  "status": "PassedWithinScope",
+  "source_sha256_raw_bytes": {
+    "Plugins/PrincipledNPR/Source/NPREditor/Private/NPROutlineMeshCustomization.h": "b1e46335b559326d812c7d5800a0515a0aa4473d7725db162a1470013e44476a",
+    "Plugins/PrincipledNPR/Source/NPREditor/Private/NPROutlineEditorUI.cpp": "78b7f0e5370fadb402a979afabc67d600ad84251f19f6a945f55dc2808bb179c"
+  },
+  "build": "Succeeded; final editor reopened with compiled plugin",
+  "observed_checks": [
+    "Legacy OpenEditor opens NPR modulation with Outline selected",
+    "Outline and Rim Light placeholder navigation and return",
+    "Opaque capability labels and real material slot cards",
+    "Isolate slot 0 then slot 2; checked state follows target; cancel restores complete character",
+    "Existing slot parameter expansion affects only local pane and changes label to Collapse parameters",
+    "Final PrimaryButton background visibly emphasizes Edit parameters; expand and collapse confirmed after final rebuild",
+    "Original comparison can be enabled and disabled",
+    "Preview toolbar wraps in 850x600 window",
+    "Exported Original and Outline PNGs while original pane hidden"
+  ],
+  "readback_checks": [
+    "Actor settings",
+    "Component visibility and hidden state",
+    "Component relative location",
+    "Source material references",
+    "Component, material and section rules"
+  ],
+  "readbacks_unchanged": true,
+  "evidence": [
+    "Readbacks.json",
+    "IsolatedCloth.png",
+    "FullCharacter.png"
+  ],
+  "image_provenance": "Real UE comparison export at 640x720, before final button background emphasis; preview and rendering logic unchanged. Existing pink outline settings retained. No image synthesis or editing.",
+  "not_run": [
+    "67-step temporal render regression",
+    "Animation",
+    "Static meshes",
+    "Multiple LODs",
+    "Invalid rule cleanup",
+    "Reset inheritance",
+    "Complete new configuration workflow"
+  ],
+  "not_implemented": [
+    "Masked and translucent outline coverage",
+    "Rim Light rendering"
+  ]
+}

@@ -11,3 +11,5 @@ The first probe assets live under `/Game/NPR` so that project creation and nativ
 See `Documentation/C++骨架.md` and `Documentation/CppScaffold.Validation.json` for the module layout and actual validation status. Runtime has no UnrealEd dependency and does not modify UToonProfile settings. Native S58 acceptance remains separate from C++ build acceptance.
 
 Backend style packages are generated outputs; canonical StyleProfile assets must remain a separate semantic layer.
+
+Editor entry: Window > NPR 调制. The workspace contains Outline and an explicitly nonfunctional Rim Light placeholder. The existing OpenEditor API and saved Outline tab identity remain compatible. Material-slot cards expose outline/isolation checkboxes and optional local parameters; isolation is editor preview state only.

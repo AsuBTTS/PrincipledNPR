@@ -1,8 +1,16 @@
 import { defineConfig } from 'vitepress'
+import { withMermaid } from 'vitepress-plugin-mermaid'
 const section = (text: string, items: [string, string][]) => ({ text, collapsed: !['开始使用', '功能'].includes(text), items: items.map(([text, link]) => ({ text, link })) })
-export default defineConfig({
+export default withMermaid(defineConfig({
   lang: 'zh-CN', title: 'Principled NPR', description: '面向泛二次元角色的风格化材质渲染编辑系统',
   base: process.env.DOCS_BASE || '/', lastUpdated: true,
+  mermaid: {
+    securityLevel: 'strict', startOnLoad: false, theme: 'base',
+    themeVariables: {
+      primaryColor: '#e8f4f1', primaryTextColor: '#173d37', primaryBorderColor: '#14685f',
+      lineColor: '#1b8c7d', secondaryColor: '#edf5f2', tertiaryColor: '#f8fbfa'
+    }
+  },
   themeConfig: {
     nav: [{ text: '使用手册', link: '/guide/introduction' }, { text: '开发者', link: '/developer/architecture' }, { text: '更新记录', link: '/changelog' }],
     sidebar: [
@@ -17,4 +25,4 @@ export default defineConfig({
     outline: { label: '本页目录', level: [2,3] }, docFooter: { prev: '上一页', next: '下一页' },
     lastUpdated: { text: '最近更新' }, footer: { message: '实现状态以源码和有界验证证据为准。第三方参考见技术对照。' }
   }
-})
+}))

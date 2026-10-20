@@ -23,6 +23,10 @@ for(const page of pages) {
   links++
   if(!fs.existsSync(target)) failures.push(`${path.relative(root,page)}: missing ${raw}`)
   else if(fragment && target.endsWith('.html') && !ids.get(target)?.has(decodeURIComponent(fragment))) failures.push(`${path.relative(root,page)}: missing anchor ${raw}`)
+  else if(target.endsWith('.png')) {
+   const signature=fs.readFileSync(target).subarray(0,8)
+   if(!signature.equals(Buffer.from([137,80,78,71,13,10,26,10]))) failures.push(`${path.relative(root,page)}: invalid PNG asset ${raw}`)
+  }
  }
 }
 if(failures.length) throw Error(failures.join('\n'))

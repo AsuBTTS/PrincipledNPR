@@ -6,6 +6,7 @@
 | --- | --- | --- |
 | Outline 基础后端、角色分组、旧单槽流程 | 已实现并验证 | 2026-10-17 UE 5.8.3 / DX12 / SM6 历史记录；67 项时间稳定性检查、角色与旧单槽回归，范围见原报告 |
 | Outline 分层宽度、UV0 Mask | 已实现但待验证 | 已有 Editor/Game 构建及资产编译记录；新增图像回归 NotRun |
+| NPR 调制入口、材质槽隔离与参数展开 | 已实现并验证 | 2026-10-20 UE 5.8.3 / Windows；导航、隔离切换、参数展开、可选对比及窄窗口布局；未覆盖静态网格、多 LOD 和全部规则修改；见 [改进记录](/generated/source/Documentation/Outline/MaterialSlotUI.md.txt) |
 | 完整 Principled 参数链路 | 开发中 | JSON 为 Draft / Uncalibrated / NotConnected；C++ 宿主已有，完整 Resolver/Adapter 缺失 |
 | Toon 语义后端 | 开发中 | S58 候选未验收；映射项 NotImplemented / NotRun |
 | Rim Light、MatCap、统一颜色控制 | 规划中 | Rim 有语义设计，三者均无完整插件可用链路 |

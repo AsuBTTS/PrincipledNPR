@@ -4,13 +4,25 @@
 
 ## Outline 数据流
 
-```text
-Settings / Preset + Actor 区域规则
-→ ResolveRegions（逐层替换勾选字段）
-→ Validate（检查参数和后端能力）
-→ 按区域/样式分组 → 辅助 Mesh + MID
-→ Hull WPO 或 CustomDepth/Stencil + Screen 后处理
+这个功能从角色设置进入区域解析，再交给现有的两种描边材质路径：
+
+```mermaid
+flowchart TD
+    A[角色基础设置与预设] --> B[读取 Mesh、Material、Section 覆写]
+    B --> C[ResolveRegions：按层应用已勾选的参数]
+    C --> D{参数、目标和后端检查通过？}
+    D -->|否| E[停止刷新并显示错误]
+    D -->|是| F[按 Mesh、材质槽和样式整理区域]
+    F --> G[创建辅助网格与材质实例 MID]
+    G --> H{描边方法}
+    H -->|Inverted Hull| I[反向壳材质：顶点沿法线外扩]
+    H -->|Screen Space| J[辅助网格写入 CustomDepth 和 Stencil]
+    J --> K[屏幕后处理材质采样场景边缘]
+    I --> L[UE 显示最终描边]
+    K --> L
 ```
+
+图中的 MID 是运行中可调参数的材质实例。Screen Space 的屏幕后处理材质仍属于 UE 材质资产；当前插件没有独立的 `.usf` 渲染 Pass。
 
 WPO 是 World Position Offset，即移动顶点的位置。Hull 用它沿法线外扩，然后显示壳的背面。Screen 则借 CustomDepth/Stencil 保存角色区域的深度和编号，再向区域外采样画线。Stencil 可理解为“给区域写一个整数标签”。二者的宽度单位与算法不同，详见[Outline](../features/outline.md)。
 

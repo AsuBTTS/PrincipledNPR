@@ -1,0 +1,3174 @@
+{
+  "preview_and_parameters": {
+    "environment": "UE 5.8.3 CL 58210709 / Windows / real editor",
+    "target": "PNPR_ChenQianyu_EndfieldLike",
+    "steps": [
+      {
+        "step": "final-button-baseline",
+        "source_and_rules_unchanged": true,
+        "state": {
+          "outline": {
+            "enabled": true,
+            "scope": "<NPROutlineScope.INDEPENDENT_REGIONS: 1>",
+            "base": {
+              "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+              "color": [
+                1.0,
+                0.1131649985909462,
+                0.9239590167999268,
+                1.0
+              ],
+              "width_pixels": 1.25,
+              "hull_width_cm": 0.10000000149011612,
+              "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+              "edge_width_scales": [
+                1.8682689666748047,
+                1.0
+              ],
+              "local_width_scale": 1.0,
+              "depth_bias_cm": 0.10000000149011612,
+              "use_vertex_color_width": false,
+              "use_width_mask": false,
+              "width_mask": null
+            }
+          },
+          "meshes": [
+            {
+              "name": "SkeletalMeshComponent0",
+              "visible": true,
+              "hidden": false,
+              "location": [
+                -95.0,
+                0.0,
+                0.0
+              ],
+              "materials": [
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_00_Initial.MI_ChenQianyu_00_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_01_Initial.MI_ChenQianyu_01_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_02_Initial.MI_ChenQianyu_02_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/M_ExcludedSourceProxy.M_ExcludedSourceProxy",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_04_Initial.MI_ChenQianyu_04_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/M_ExcludedSourceProxy.M_ExcludedSourceProxy",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_06_Initial.MI_ChenQianyu_06_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_07_Initial.MI_ChenQianyu_07_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_08_Initial.MI_ChenQianyu_08_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_09_Initial.MI_ChenQianyu_09_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/M_ExcludedSourceProxy.M_ExcludedSourceProxy"
+              ],
+              "override": {
+                "override_enabled": false,
+                "enabled": true,
+                "override_method": false,
+                "override_color": false,
+                "override_width": false,
+                "override_edge_source": false,
+                "override_edge_width_scales": false,
+                "override_local_width_scale": false,
+                "override_depth_bias": false,
+                "override_vertex_control": false,
+                "override_width_mask": false,
+                "values": {
+                  "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                  "color": [
+                    0.014999999664723873,
+                    0.00800000037997961,
+                    0.02500000037252903,
+                    1.0
+                  ],
+                  "width_pixels": 1.25,
+                  "hull_width_cm": 0.10000000149011612,
+                  "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                  "edge_width_scales": [
+                    1.0,
+                    1.0
+                  ],
+                  "local_width_scale": 1.0,
+                  "depth_bias_cm": 0.10000000149011612,
+                  "use_vertex_color_width": false,
+                  "use_width_mask": false,
+                  "width_mask": null
+                }
+              },
+              "rules": [
+                {
+                  "slot": "Chen_cloth_outline",
+                  "override": {
+                    "override_enabled": true,
+                    "enabled": false,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_eyeshadow_common_01",
+                  "override": {
+                    "override_enabled": true,
+                    "enabled": false,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_hairshadow_common_03_001",
+                  "override": {
+                    "override_enabled": true,
+                    "enabled": false,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_actor_chen_body_01_001",
+                  "override": {
+                    "override_enabled": true,
+                    "enabled": true,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_actor_chen_cloth_01_001",
+                  "override": {
+                    "override_enabled": false,
+                    "enabled": true,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        1.0,
+                        0.02881000004708767,
+                        0.0,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_actor_chen_cloth_01",
+                  "override": {
+                    "override_enabled": false,
+                    "enabled": true,
+                    "override_method": false,
+                    "override_color": true,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.3050669431686401,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                }
+              ],
+              "sections": []
+            }
+          ]
+        },
+        "mesh_count_original": 1,
+        "mesh_count_outline": 1
+      },
+      {
+        "step": "final-edit-parameters-expanded",
+        "source_and_rules_unchanged": true,
+        "state": {
+          "outline": {
+            "enabled": true,
+            "scope": "<NPROutlineScope.INDEPENDENT_REGIONS: 1>",
+            "base": {
+              "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+              "color": [
+                1.0,
+                0.1131649985909462,
+                0.9239590167999268,
+                1.0
+              ],
+              "width_pixels": 1.25,
+              "hull_width_cm": 0.10000000149011612,
+              "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+              "edge_width_scales": [
+                1.8682689666748047,
+                1.0
+              ],
+              "local_width_scale": 1.0,
+              "depth_bias_cm": 0.10000000149011612,
+              "use_vertex_color_width": false,
+              "use_width_mask": false,
+              "width_mask": null
+            }
+          },
+          "meshes": [
+            {
+              "name": "SkeletalMeshComponent0",
+              "visible": true,
+              "hidden": false,
+              "location": [
+                -95.0,
+                0.0,
+                0.0
+              ],
+              "materials": [
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_00_Initial.MI_ChenQianyu_00_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_01_Initial.MI_ChenQianyu_01_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_02_Initial.MI_ChenQianyu_02_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/M_ExcludedSourceProxy.M_ExcludedSourceProxy",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_04_Initial.MI_ChenQianyu_04_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/M_ExcludedSourceProxy.M_ExcludedSourceProxy",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_06_Initial.MI_ChenQianyu_06_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_07_Initial.MI_ChenQianyu_07_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_08_Initial.MI_ChenQianyu_08_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_09_Initial.MI_ChenQianyu_09_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/M_ExcludedSourceProxy.M_ExcludedSourceProxy"
+              ],
+              "override": {
+                "override_enabled": false,
+                "enabled": true,
+                "override_method": false,
+                "override_color": false,
+                "override_width": false,
+                "override_edge_source": false,
+                "override_edge_width_scales": false,
+                "override_local_width_scale": false,
+                "override_depth_bias": false,
+                "override_vertex_control": false,
+                "override_width_mask": false,
+                "values": {
+                  "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                  "color": [
+                    0.014999999664723873,
+                    0.00800000037997961,
+                    0.02500000037252903,
+                    1.0
+                  ],
+                  "width_pixels": 1.25,
+                  "hull_width_cm": 0.10000000149011612,
+                  "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                  "edge_width_scales": [
+                    1.0,
+                    1.0
+                  ],
+                  "local_width_scale": 1.0,
+                  "depth_bias_cm": 0.10000000149011612,
+                  "use_vertex_color_width": false,
+                  "use_width_mask": false,
+                  "width_mask": null
+                }
+              },
+              "rules": [
+                {
+                  "slot": "Chen_cloth_outline",
+                  "override": {
+                    "override_enabled": true,
+                    "enabled": false,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_eyeshadow_common_01",
+                  "override": {
+                    "override_enabled": true,
+                    "enabled": false,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_hairshadow_common_03_001",
+                  "override": {
+                    "override_enabled": true,
+                    "enabled": false,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_actor_chen_body_01_001",
+                  "override": {
+                    "override_enabled": true,
+                    "enabled": true,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_actor_chen_cloth_01_001",
+                  "override": {
+                    "override_enabled": false,
+                    "enabled": true,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        1.0,
+                        0.02881000004708767,
+                        0.0,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_actor_chen_cloth_01",
+                  "override": {
+                    "override_enabled": false,
+                    "enabled": true,
+                    "override_method": false,
+                    "override_color": true,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.3050669431686401,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                }
+              ],
+              "sections": []
+            }
+          ]
+        },
+        "mesh_count_original": 1,
+        "mesh_count_outline": 1
+      },
+      {
+        "step": "final-edit-parameters-collapsed",
+        "source_and_rules_unchanged": true,
+        "state": {
+          "outline": {
+            "enabled": true,
+            "scope": "<NPROutlineScope.INDEPENDENT_REGIONS: 1>",
+            "base": {
+              "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+              "color": [
+                1.0,
+                0.1131649985909462,
+                0.9239590167999268,
+                1.0
+              ],
+              "width_pixels": 1.25,
+              "hull_width_cm": 0.10000000149011612,
+              "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+              "edge_width_scales": [
+                1.8682689666748047,
+                1.0
+              ],
+              "local_width_scale": 1.0,
+              "depth_bias_cm": 0.10000000149011612,
+              "use_vertex_color_width": false,
+              "use_width_mask": false,
+              "width_mask": null
+            }
+          },
+          "meshes": [
+            {
+              "name": "SkeletalMeshComponent0",
+              "visible": true,
+              "hidden": false,
+              "location": [
+                -95.0,
+                0.0,
+                0.0
+              ],
+              "materials": [
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_00_Initial.MI_ChenQianyu_00_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_01_Initial.MI_ChenQianyu_01_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_02_Initial.MI_ChenQianyu_02_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/M_ExcludedSourceProxy.M_ExcludedSourceProxy",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_04_Initial.MI_ChenQianyu_04_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/M_ExcludedSourceProxy.M_ExcludedSourceProxy",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_06_Initial.MI_ChenQianyu_06_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_07_Initial.MI_ChenQianyu_07_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_08_Initial.MI_ChenQianyu_08_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_09_Initial.MI_ChenQianyu_09_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/M_ExcludedSourceProxy.M_ExcludedSourceProxy"
+              ],
+              "override": {
+                "override_enabled": false,
+                "enabled": true,
+                "override_method": false,
+                "override_color": false,
+                "override_width": false,
+                "override_edge_source": false,
+                "override_edge_width_scales": false,
+                "override_local_width_scale": false,
+                "override_depth_bias": false,
+                "override_vertex_control": false,
+                "override_width_mask": false,
+                "values": {
+                  "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                  "color": [
+                    0.014999999664723873,
+                    0.00800000037997961,
+                    0.02500000037252903,
+                    1.0
+                  ],
+                  "width_pixels": 1.25,
+                  "hull_width_cm": 0.10000000149011612,
+                  "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                  "edge_width_scales": [
+                    1.0,
+                    1.0
+                  ],
+                  "local_width_scale": 1.0,
+                  "depth_bias_cm": 0.10000000149011612,
+                  "use_vertex_color_width": false,
+                  "use_width_mask": false,
+                  "width_mask": null
+                }
+              },
+              "rules": [
+                {
+                  "slot": "Chen_cloth_outline",
+                  "override": {
+                    "override_enabled": true,
+                    "enabled": false,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_eyeshadow_common_01",
+                  "override": {
+                    "override_enabled": true,
+                    "enabled": false,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_hairshadow_common_03_001",
+                  "override": {
+                    "override_enabled": true,
+                    "enabled": false,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_actor_chen_body_01_001",
+                  "override": {
+                    "override_enabled": true,
+                    "enabled": true,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_actor_chen_cloth_01_001",
+                  "override": {
+                    "override_enabled": false,
+                    "enabled": true,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        1.0,
+                        0.02881000004708767,
+                        0.0,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_actor_chen_cloth_01",
+                  "override": {
+                    "override_enabled": false,
+                    "enabled": true,
+                    "override_method": false,
+                    "override_color": true,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.3050669431686401,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                }
+              ],
+              "sections": []
+            }
+          ]
+        },
+        "mesh_count_original": 1,
+        "mesh_count_outline": 1
+      },
+      {
+        "step": "final-isolation-enabled",
+        "source_and_rules_unchanged": true,
+        "state": {
+          "outline": {
+            "enabled": true,
+            "scope": "<NPROutlineScope.INDEPENDENT_REGIONS: 1>",
+            "base": {
+              "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+              "color": [
+                1.0,
+                0.1131649985909462,
+                0.9239590167999268,
+                1.0
+              ],
+              "width_pixels": 1.25,
+              "hull_width_cm": 0.10000000149011612,
+              "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+              "edge_width_scales": [
+                1.8682689666748047,
+                1.0
+              ],
+              "local_width_scale": 1.0,
+              "depth_bias_cm": 0.10000000149011612,
+              "use_vertex_color_width": false,
+              "use_width_mask": false,
+              "width_mask": null
+            }
+          },
+          "meshes": [
+            {
+              "name": "SkeletalMeshComponent0",
+              "visible": true,
+              "hidden": false,
+              "location": [
+                -95.0,
+                0.0,
+                0.0
+              ],
+              "materials": [
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_00_Initial.MI_ChenQianyu_00_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_01_Initial.MI_ChenQianyu_01_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_02_Initial.MI_ChenQianyu_02_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/M_ExcludedSourceProxy.M_ExcludedSourceProxy",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_04_Initial.MI_ChenQianyu_04_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/M_ExcludedSourceProxy.M_ExcludedSourceProxy",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_06_Initial.MI_ChenQianyu_06_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_07_Initial.MI_ChenQianyu_07_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_08_Initial.MI_ChenQianyu_08_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_09_Initial.MI_ChenQianyu_09_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/M_ExcludedSourceProxy.M_ExcludedSourceProxy"
+              ],
+              "override": {
+                "override_enabled": false,
+                "enabled": true,
+                "override_method": false,
+                "override_color": false,
+                "override_width": false,
+                "override_edge_source": false,
+                "override_edge_width_scales": false,
+                "override_local_width_scale": false,
+                "override_depth_bias": false,
+                "override_vertex_control": false,
+                "override_width_mask": false,
+                "values": {
+                  "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                  "color": [
+                    0.014999999664723873,
+                    0.00800000037997961,
+                    0.02500000037252903,
+                    1.0
+                  ],
+                  "width_pixels": 1.25,
+                  "hull_width_cm": 0.10000000149011612,
+                  "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                  "edge_width_scales": [
+                    1.0,
+                    1.0
+                  ],
+                  "local_width_scale": 1.0,
+                  "depth_bias_cm": 0.10000000149011612,
+                  "use_vertex_color_width": false,
+                  "use_width_mask": false,
+                  "width_mask": null
+                }
+              },
+              "rules": [
+                {
+                  "slot": "Chen_cloth_outline",
+                  "override": {
+                    "override_enabled": true,
+                    "enabled": false,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_eyeshadow_common_01",
+                  "override": {
+                    "override_enabled": true,
+                    "enabled": false,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_hairshadow_common_03_001",
+                  "override": {
+                    "override_enabled": true,
+                    "enabled": false,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_actor_chen_body_01_001",
+                  "override": {
+                    "override_enabled": true,
+                    "enabled": true,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_actor_chen_cloth_01_001",
+                  "override": {
+                    "override_enabled": false,
+                    "enabled": true,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        1.0,
+                        0.02881000004708767,
+                        0.0,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_actor_chen_cloth_01",
+                  "override": {
+                    "override_enabled": false,
+                    "enabled": true,
+                    "override_method": false,
+                    "override_color": true,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.3050669431686401,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                }
+              ],
+              "sections": []
+            }
+          ]
+        },
+        "mesh_count_original": 1,
+        "mesh_count_outline": 1,
+        "export_ok": true
+      },
+      {
+        "step": "final-isolation-cleared",
+        "source_and_rules_unchanged": true,
+        "state": {
+          "outline": {
+            "enabled": true,
+            "scope": "<NPROutlineScope.INDEPENDENT_REGIONS: 1>",
+            "base": {
+              "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+              "color": [
+                1.0,
+                0.1131649985909462,
+                0.9239590167999268,
+                1.0
+              ],
+              "width_pixels": 1.25,
+              "hull_width_cm": 0.10000000149011612,
+              "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+              "edge_width_scales": [
+                1.8682689666748047,
+                1.0
+              ],
+              "local_width_scale": 1.0,
+              "depth_bias_cm": 0.10000000149011612,
+              "use_vertex_color_width": false,
+              "use_width_mask": false,
+              "width_mask": null
+            }
+          },
+          "meshes": [
+            {
+              "name": "SkeletalMeshComponent0",
+              "visible": true,
+              "hidden": false,
+              "location": [
+                -95.0,
+                0.0,
+                0.0
+              ],
+              "materials": [
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_00_Initial.MI_ChenQianyu_00_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_01_Initial.MI_ChenQianyu_01_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_02_Initial.MI_ChenQianyu_02_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/M_ExcludedSourceProxy.M_ExcludedSourceProxy",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_04_Initial.MI_ChenQianyu_04_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/M_ExcludedSourceProxy.M_ExcludedSourceProxy",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_06_Initial.MI_ChenQianyu_06_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_07_Initial.MI_ChenQianyu_07_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_08_Initial.MI_ChenQianyu_08_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_09_Initial.MI_ChenQianyu_09_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/M_ExcludedSourceProxy.M_ExcludedSourceProxy"
+              ],
+              "override": {
+                "override_enabled": false,
+                "enabled": true,
+                "override_method": false,
+                "override_color": false,
+                "override_width": false,
+                "override_edge_source": false,
+                "override_edge_width_scales": false,
+                "override_local_width_scale": false,
+                "override_depth_bias": false,
+                "override_vertex_control": false,
+                "override_width_mask": false,
+                "values": {
+                  "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                  "color": [
+                    0.014999999664723873,
+                    0.00800000037997961,
+                    0.02500000037252903,
+                    1.0
+                  ],
+                  "width_pixels": 1.25,
+                  "hull_width_cm": 0.10000000149011612,
+                  "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                  "edge_width_scales": [
+                    1.0,
+                    1.0
+                  ],
+                  "local_width_scale": 1.0,
+                  "depth_bias_cm": 0.10000000149011612,
+                  "use_vertex_color_width": false,
+                  "use_width_mask": false,
+                  "width_mask": null
+                }
+              },
+              "rules": [
+                {
+                  "slot": "Chen_cloth_outline",
+                  "override": {
+                    "override_enabled": true,
+                    "enabled": false,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_eyeshadow_common_01",
+                  "override": {
+                    "override_enabled": true,
+                    "enabled": false,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_hairshadow_common_03_001",
+                  "override": {
+                    "override_enabled": true,
+                    "enabled": false,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_actor_chen_body_01_001",
+                  "override": {
+                    "override_enabled": true,
+                    "enabled": true,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_actor_chen_cloth_01_001",
+                  "override": {
+                    "override_enabled": false,
+                    "enabled": true,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        1.0,
+                        0.02881000004708767,
+                        0.0,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_actor_chen_cloth_01",
+                  "override": {
+                    "override_enabled": false,
+                    "enabled": true,
+                    "override_method": false,
+                    "override_color": true,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.3050669431686401,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                }
+              ],
+              "sections": []
+            }
+          ]
+        },
+        "mesh_count_original": 1,
+        "mesh_count_outline": 1,
+        "export_ok": true
+      }
+    ],
+    "baseline": {
+      "outline": {
+        "enabled": true,
+        "scope": "<NPROutlineScope.INDEPENDENT_REGIONS: 1>",
+        "base": {
+          "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+          "color": [
+            1.0,
+            0.1131649985909462,
+            0.9239590167999268,
+            1.0
+          ],
+          "width_pixels": 1.25,
+          "hull_width_cm": 0.10000000149011612,
+          "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+          "edge_width_scales": [
+            1.8682689666748047,
+            1.0
+          ],
+          "local_width_scale": 1.0,
+          "depth_bias_cm": 0.10000000149011612,
+          "use_vertex_color_width": false,
+          "use_width_mask": false,
+          "width_mask": null
+        }
+      },
+      "meshes": [
+        {
+          "name": "SkeletalMeshComponent0",
+          "visible": true,
+          "hidden": false,
+          "location": [
+            -95.0,
+            0.0,
+            0.0
+          ],
+          "materials": [
+            "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_00_Initial.MI_ChenQianyu_00_Initial",
+            "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_01_Initial.MI_ChenQianyu_01_Initial",
+            "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_02_Initial.MI_ChenQianyu_02_Initial",
+            "/Game/NPR/Characters/ChenQianyu/Materials/M_ExcludedSourceProxy.M_ExcludedSourceProxy",
+            "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_04_Initial.MI_ChenQianyu_04_Initial",
+            "/Game/NPR/Characters/ChenQianyu/Materials/M_ExcludedSourceProxy.M_ExcludedSourceProxy",
+            "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_06_Initial.MI_ChenQianyu_06_Initial",
+            "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_07_Initial.MI_ChenQianyu_07_Initial",
+            "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_08_Initial.MI_ChenQianyu_08_Initial",
+            "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_09_Initial.MI_ChenQianyu_09_Initial",
+            "/Game/NPR/Characters/ChenQianyu/Materials/M_ExcludedSourceProxy.M_ExcludedSourceProxy"
+          ],
+          "override": {
+            "override_enabled": false,
+            "enabled": true,
+            "override_method": false,
+            "override_color": false,
+            "override_width": false,
+            "override_edge_source": false,
+            "override_edge_width_scales": false,
+            "override_local_width_scale": false,
+            "override_depth_bias": false,
+            "override_vertex_control": false,
+            "override_width_mask": false,
+            "values": {
+              "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+              "color": [
+                0.014999999664723873,
+                0.00800000037997961,
+                0.02500000037252903,
+                1.0
+              ],
+              "width_pixels": 1.25,
+              "hull_width_cm": 0.10000000149011612,
+              "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+              "edge_width_scales": [
+                1.0,
+                1.0
+              ],
+              "local_width_scale": 1.0,
+              "depth_bias_cm": 0.10000000149011612,
+              "use_vertex_color_width": false,
+              "use_width_mask": false,
+              "width_mask": null
+            }
+          },
+          "rules": [
+            {
+              "slot": "Chen_cloth_outline",
+              "override": {
+                "override_enabled": true,
+                "enabled": false,
+                "override_method": false,
+                "override_color": false,
+                "override_width": false,
+                "override_edge_source": false,
+                "override_edge_width_scales": false,
+                "override_local_width_scale": false,
+                "override_depth_bias": false,
+                "override_vertex_control": false,
+                "override_width_mask": false,
+                "values": {
+                  "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                  "color": [
+                    0.014999999664723873,
+                    0.00800000037997961,
+                    0.02500000037252903,
+                    1.0
+                  ],
+                  "width_pixels": 1.25,
+                  "hull_width_cm": 0.10000000149011612,
+                  "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                  "edge_width_scales": [
+                    1.0,
+                    1.0
+                  ],
+                  "local_width_scale": 1.0,
+                  "depth_bias_cm": 0.10000000149011612,
+                  "use_vertex_color_width": false,
+                  "use_width_mask": false,
+                  "width_mask": null
+                }
+              }
+            },
+            {
+              "slot": "M_eyeshadow_common_01",
+              "override": {
+                "override_enabled": true,
+                "enabled": false,
+                "override_method": false,
+                "override_color": false,
+                "override_width": false,
+                "override_edge_source": false,
+                "override_edge_width_scales": false,
+                "override_local_width_scale": false,
+                "override_depth_bias": false,
+                "override_vertex_control": false,
+                "override_width_mask": false,
+                "values": {
+                  "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                  "color": [
+                    0.014999999664723873,
+                    0.00800000037997961,
+                    0.02500000037252903,
+                    1.0
+                  ],
+                  "width_pixels": 1.25,
+                  "hull_width_cm": 0.10000000149011612,
+                  "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                  "edge_width_scales": [
+                    1.0,
+                    1.0
+                  ],
+                  "local_width_scale": 1.0,
+                  "depth_bias_cm": 0.10000000149011612,
+                  "use_vertex_color_width": false,
+                  "use_width_mask": false,
+                  "width_mask": null
+                }
+              }
+            },
+            {
+              "slot": "M_hairshadow_common_03_001",
+              "override": {
+                "override_enabled": true,
+                "enabled": false,
+                "override_method": false,
+                "override_color": false,
+                "override_width": false,
+                "override_edge_source": false,
+                "override_edge_width_scales": false,
+                "override_local_width_scale": false,
+                "override_depth_bias": false,
+                "override_vertex_control": false,
+                "override_width_mask": false,
+                "values": {
+                  "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                  "color": [
+                    0.014999999664723873,
+                    0.00800000037997961,
+                    0.02500000037252903,
+                    1.0
+                  ],
+                  "width_pixels": 1.25,
+                  "hull_width_cm": 0.10000000149011612,
+                  "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                  "edge_width_scales": [
+                    1.0,
+                    1.0
+                  ],
+                  "local_width_scale": 1.0,
+                  "depth_bias_cm": 0.10000000149011612,
+                  "use_vertex_color_width": false,
+                  "use_width_mask": false,
+                  "width_mask": null
+                }
+              }
+            },
+            {
+              "slot": "M_actor_chen_body_01_001",
+              "override": {
+                "override_enabled": true,
+                "enabled": true,
+                "override_method": false,
+                "override_color": false,
+                "override_width": false,
+                "override_edge_source": false,
+                "override_edge_width_scales": false,
+                "override_local_width_scale": false,
+                "override_depth_bias": false,
+                "override_vertex_control": false,
+                "override_width_mask": false,
+                "values": {
+                  "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                  "color": [
+                    0.014999999664723873,
+                    0.00800000037997961,
+                    0.02500000037252903,
+                    1.0
+                  ],
+                  "width_pixels": 1.25,
+                  "hull_width_cm": 0.10000000149011612,
+                  "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                  "edge_width_scales": [
+                    1.0,
+                    1.0
+                  ],
+                  "local_width_scale": 1.0,
+                  "depth_bias_cm": 0.10000000149011612,
+                  "use_vertex_color_width": false,
+                  "use_width_mask": false,
+                  "width_mask": null
+                }
+              }
+            },
+            {
+              "slot": "M_actor_chen_cloth_01_001",
+              "override": {
+                "override_enabled": false,
+                "enabled": true,
+                "override_method": false,
+                "override_color": false,
+                "override_width": false,
+                "override_edge_source": false,
+                "override_edge_width_scales": false,
+                "override_local_width_scale": false,
+                "override_depth_bias": false,
+                "override_vertex_control": false,
+                "override_width_mask": false,
+                "values": {
+                  "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                  "color": [
+                    1.0,
+                    0.02881000004708767,
+                    0.0,
+                    1.0
+                  ],
+                  "width_pixels": 1.25,
+                  "hull_width_cm": 0.10000000149011612,
+                  "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                  "edge_width_scales": [
+                    1.0,
+                    1.0
+                  ],
+                  "local_width_scale": 1.0,
+                  "depth_bias_cm": 0.10000000149011612,
+                  "use_vertex_color_width": false,
+                  "use_width_mask": false,
+                  "width_mask": null
+                }
+              }
+            },
+            {
+              "slot": "M_actor_chen_cloth_01",
+              "override": {
+                "override_enabled": false,
+                "enabled": true,
+                "override_method": false,
+                "override_color": true,
+                "override_width": false,
+                "override_edge_source": false,
+                "override_edge_width_scales": false,
+                "override_local_width_scale": false,
+                "override_depth_bias": false,
+                "override_vertex_control": false,
+                "override_width_mask": false,
+                "values": {
+                  "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                  "color": [
+                    0.014999999664723873,
+                    0.00800000037997961,
+                    0.02500000037252903,
+                    1.0
+                  ],
+                  "width_pixels": 1.25,
+                  "hull_width_cm": 0.10000000149011612,
+                  "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                  "edge_width_scales": [
+                    1.0,
+                    1.0
+                  ],
+                  "local_width_scale": 1.3050669431686401,
+                  "depth_bias_cm": 0.10000000149011612,
+                  "use_vertex_color_width": false,
+                  "use_width_mask": false,
+                  "width_mask": null
+                }
+              }
+            }
+          ],
+          "sections": []
+        }
+      ]
+    }
+  },
+  "emphasized_button": {
+    "environment": "UE 5.8.3 CL 58210709 / Windows / real editor",
+    "target": "PNPR_ChenQianyu_EndfieldLike",
+    "steps": [
+      {
+        "step": "primary-button-baseline",
+        "source_and_rules_unchanged": true,
+        "state": {
+          "outline": {
+            "enabled": true,
+            "scope": "<NPROutlineScope.INDEPENDENT_REGIONS: 1>",
+            "base": {
+              "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+              "color": [
+                1.0,
+                0.1131649985909462,
+                0.9239590167999268,
+                1.0
+              ],
+              "width_pixels": 1.25,
+              "hull_width_cm": 0.10000000149011612,
+              "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+              "edge_width_scales": [
+                1.8682689666748047,
+                1.0
+              ],
+              "local_width_scale": 1.0,
+              "depth_bias_cm": 0.10000000149011612,
+              "use_vertex_color_width": false,
+              "use_width_mask": false,
+              "width_mask": null
+            }
+          },
+          "meshes": [
+            {
+              "name": "SkeletalMeshComponent0",
+              "visible": true,
+              "hidden": false,
+              "location": [
+                -95.0,
+                0.0,
+                0.0
+              ],
+              "materials": [
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_00_Initial.MI_ChenQianyu_00_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_01_Initial.MI_ChenQianyu_01_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_02_Initial.MI_ChenQianyu_02_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/M_ExcludedSourceProxy.M_ExcludedSourceProxy",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_04_Initial.MI_ChenQianyu_04_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/M_ExcludedSourceProxy.M_ExcludedSourceProxy",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_06_Initial.MI_ChenQianyu_06_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_07_Initial.MI_ChenQianyu_07_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_08_Initial.MI_ChenQianyu_08_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_09_Initial.MI_ChenQianyu_09_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/M_ExcludedSourceProxy.M_ExcludedSourceProxy"
+              ],
+              "override": {
+                "override_enabled": false,
+                "enabled": true,
+                "override_method": false,
+                "override_color": false,
+                "override_width": false,
+                "override_edge_source": false,
+                "override_edge_width_scales": false,
+                "override_local_width_scale": false,
+                "override_depth_bias": false,
+                "override_vertex_control": false,
+                "override_width_mask": false,
+                "values": {
+                  "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                  "color": [
+                    0.014999999664723873,
+                    0.00800000037997961,
+                    0.02500000037252903,
+                    1.0
+                  ],
+                  "width_pixels": 1.25,
+                  "hull_width_cm": 0.10000000149011612,
+                  "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                  "edge_width_scales": [
+                    1.0,
+                    1.0
+                  ],
+                  "local_width_scale": 1.0,
+                  "depth_bias_cm": 0.10000000149011612,
+                  "use_vertex_color_width": false,
+                  "use_width_mask": false,
+                  "width_mask": null
+                }
+              },
+              "rules": [
+                {
+                  "slot": "Chen_cloth_outline",
+                  "override": {
+                    "override_enabled": true,
+                    "enabled": false,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_eyeshadow_common_01",
+                  "override": {
+                    "override_enabled": true,
+                    "enabled": false,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_hairshadow_common_03_001",
+                  "override": {
+                    "override_enabled": true,
+                    "enabled": false,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_actor_chen_body_01_001",
+                  "override": {
+                    "override_enabled": true,
+                    "enabled": true,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_actor_chen_cloth_01_001",
+                  "override": {
+                    "override_enabled": false,
+                    "enabled": true,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        1.0,
+                        0.02881000004708767,
+                        0.0,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_actor_chen_cloth_01",
+                  "override": {
+                    "override_enabled": false,
+                    "enabled": true,
+                    "override_method": false,
+                    "override_color": true,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.3050669431686401,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                }
+              ],
+              "sections": []
+            }
+          ]
+        },
+        "mesh_count_original": 1,
+        "mesh_count_outline": 1
+      },
+      {
+        "step": "primary-button-expanded",
+        "source_and_rules_unchanged": true,
+        "state": {
+          "outline": {
+            "enabled": true,
+            "scope": "<NPROutlineScope.INDEPENDENT_REGIONS: 1>",
+            "base": {
+              "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+              "color": [
+                1.0,
+                0.1131649985909462,
+                0.9239590167999268,
+                1.0
+              ],
+              "width_pixels": 1.25,
+              "hull_width_cm": 0.10000000149011612,
+              "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+              "edge_width_scales": [
+                1.8682689666748047,
+                1.0
+              ],
+              "local_width_scale": 1.0,
+              "depth_bias_cm": 0.10000000149011612,
+              "use_vertex_color_width": false,
+              "use_width_mask": false,
+              "width_mask": null
+            }
+          },
+          "meshes": [
+            {
+              "name": "SkeletalMeshComponent0",
+              "visible": true,
+              "hidden": false,
+              "location": [
+                -95.0,
+                0.0,
+                0.0
+              ],
+              "materials": [
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_00_Initial.MI_ChenQianyu_00_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_01_Initial.MI_ChenQianyu_01_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_02_Initial.MI_ChenQianyu_02_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/M_ExcludedSourceProxy.M_ExcludedSourceProxy",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_04_Initial.MI_ChenQianyu_04_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/M_ExcludedSourceProxy.M_ExcludedSourceProxy",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_06_Initial.MI_ChenQianyu_06_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_07_Initial.MI_ChenQianyu_07_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_08_Initial.MI_ChenQianyu_08_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_09_Initial.MI_ChenQianyu_09_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/M_ExcludedSourceProxy.M_ExcludedSourceProxy"
+              ],
+              "override": {
+                "override_enabled": false,
+                "enabled": true,
+                "override_method": false,
+                "override_color": false,
+                "override_width": false,
+                "override_edge_source": false,
+                "override_edge_width_scales": false,
+                "override_local_width_scale": false,
+                "override_depth_bias": false,
+                "override_vertex_control": false,
+                "override_width_mask": false,
+                "values": {
+                  "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                  "color": [
+                    0.014999999664723873,
+                    0.00800000037997961,
+                    0.02500000037252903,
+                    1.0
+                  ],
+                  "width_pixels": 1.25,
+                  "hull_width_cm": 0.10000000149011612,
+                  "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                  "edge_width_scales": [
+                    1.0,
+                    1.0
+                  ],
+                  "local_width_scale": 1.0,
+                  "depth_bias_cm": 0.10000000149011612,
+                  "use_vertex_color_width": false,
+                  "use_width_mask": false,
+                  "width_mask": null
+                }
+              },
+              "rules": [
+                {
+                  "slot": "Chen_cloth_outline",
+                  "override": {
+                    "override_enabled": true,
+                    "enabled": false,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_eyeshadow_common_01",
+                  "override": {
+                    "override_enabled": true,
+                    "enabled": false,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_hairshadow_common_03_001",
+                  "override": {
+                    "override_enabled": true,
+                    "enabled": false,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_actor_chen_body_01_001",
+                  "override": {
+                    "override_enabled": true,
+                    "enabled": true,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_actor_chen_cloth_01_001",
+                  "override": {
+                    "override_enabled": false,
+                    "enabled": true,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        1.0,
+                        0.02881000004708767,
+                        0.0,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_actor_chen_cloth_01",
+                  "override": {
+                    "override_enabled": false,
+                    "enabled": true,
+                    "override_method": false,
+                    "override_color": true,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.3050669431686401,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                }
+              ],
+              "sections": []
+            }
+          ]
+        },
+        "mesh_count_original": 1,
+        "mesh_count_outline": 1
+      },
+      {
+        "step": "primary-button-collapsed",
+        "source_and_rules_unchanged": true,
+        "state": {
+          "outline": {
+            "enabled": true,
+            "scope": "<NPROutlineScope.INDEPENDENT_REGIONS: 1>",
+            "base": {
+              "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+              "color": [
+                1.0,
+                0.1131649985909462,
+                0.9239590167999268,
+                1.0
+              ],
+              "width_pixels": 1.25,
+              "hull_width_cm": 0.10000000149011612,
+              "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+              "edge_width_scales": [
+                1.8682689666748047,
+                1.0
+              ],
+              "local_width_scale": 1.0,
+              "depth_bias_cm": 0.10000000149011612,
+              "use_vertex_color_width": false,
+              "use_width_mask": false,
+              "width_mask": null
+            }
+          },
+          "meshes": [
+            {
+              "name": "SkeletalMeshComponent0",
+              "visible": true,
+              "hidden": false,
+              "location": [
+                -95.0,
+                0.0,
+                0.0
+              ],
+              "materials": [
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_00_Initial.MI_ChenQianyu_00_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_01_Initial.MI_ChenQianyu_01_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_02_Initial.MI_ChenQianyu_02_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/M_ExcludedSourceProxy.M_ExcludedSourceProxy",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_04_Initial.MI_ChenQianyu_04_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/M_ExcludedSourceProxy.M_ExcludedSourceProxy",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_06_Initial.MI_ChenQianyu_06_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_07_Initial.MI_ChenQianyu_07_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_08_Initial.MI_ChenQianyu_08_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_09_Initial.MI_ChenQianyu_09_Initial",
+                "/Game/NPR/Characters/ChenQianyu/Materials/M_ExcludedSourceProxy.M_ExcludedSourceProxy"
+              ],
+              "override": {
+                "override_enabled": false,
+                "enabled": true,
+                "override_method": false,
+                "override_color": false,
+                "override_width": false,
+                "override_edge_source": false,
+                "override_edge_width_scales": false,
+                "override_local_width_scale": false,
+                "override_depth_bias": false,
+                "override_vertex_control": false,
+                "override_width_mask": false,
+                "values": {
+                  "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                  "color": [
+                    0.014999999664723873,
+                    0.00800000037997961,
+                    0.02500000037252903,
+                    1.0
+                  ],
+                  "width_pixels": 1.25,
+                  "hull_width_cm": 0.10000000149011612,
+                  "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                  "edge_width_scales": [
+                    1.0,
+                    1.0
+                  ],
+                  "local_width_scale": 1.0,
+                  "depth_bias_cm": 0.10000000149011612,
+                  "use_vertex_color_width": false,
+                  "use_width_mask": false,
+                  "width_mask": null
+                }
+              },
+              "rules": [
+                {
+                  "slot": "Chen_cloth_outline",
+                  "override": {
+                    "override_enabled": true,
+                    "enabled": false,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_eyeshadow_common_01",
+                  "override": {
+                    "override_enabled": true,
+                    "enabled": false,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_hairshadow_common_03_001",
+                  "override": {
+                    "override_enabled": true,
+                    "enabled": false,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_actor_chen_body_01_001",
+                  "override": {
+                    "override_enabled": true,
+                    "enabled": true,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_actor_chen_cloth_01_001",
+                  "override": {
+                    "override_enabled": false,
+                    "enabled": true,
+                    "override_method": false,
+                    "override_color": false,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        1.0,
+                        0.02881000004708767,
+                        0.0,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.0,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                },
+                {
+                  "slot": "M_actor_chen_cloth_01",
+                  "override": {
+                    "override_enabled": false,
+                    "enabled": true,
+                    "override_method": false,
+                    "override_color": true,
+                    "override_width": false,
+                    "override_edge_source": false,
+                    "override_edge_width_scales": false,
+                    "override_local_width_scale": false,
+                    "override_depth_bias": false,
+                    "override_vertex_control": false,
+                    "override_width_mask": false,
+                    "values": {
+                      "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                      "color": [
+                        0.014999999664723873,
+                        0.00800000037997961,
+                        0.02500000037252903,
+                        1.0
+                      ],
+                      "width_pixels": 1.25,
+                      "hull_width_cm": 0.10000000149011612,
+                      "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                      "edge_width_scales": [
+                        1.0,
+                        1.0
+                      ],
+                      "local_width_scale": 1.3050669431686401,
+                      "depth_bias_cm": 0.10000000149011612,
+                      "use_vertex_color_width": false,
+                      "use_width_mask": false,
+                      "width_mask": null
+                    }
+                  }
+                }
+              ],
+              "sections": []
+            }
+          ]
+        },
+        "mesh_count_original": 1,
+        "mesh_count_outline": 1
+      }
+    ],
+    "baseline": {
+      "outline": {
+        "enabled": true,
+        "scope": "<NPROutlineScope.INDEPENDENT_REGIONS: 1>",
+        "base": {
+          "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+          "color": [
+            1.0,
+            0.1131649985909462,
+            0.9239590167999268,
+            1.0
+          ],
+          "width_pixels": 1.25,
+          "hull_width_cm": 0.10000000149011612,
+          "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+          "edge_width_scales": [
+            1.8682689666748047,
+            1.0
+          ],
+          "local_width_scale": 1.0,
+          "depth_bias_cm": 0.10000000149011612,
+          "use_vertex_color_width": false,
+          "use_width_mask": false,
+          "width_mask": null
+        }
+      },
+      "meshes": [
+        {
+          "name": "SkeletalMeshComponent0",
+          "visible": true,
+          "hidden": false,
+          "location": [
+            -95.0,
+            0.0,
+            0.0
+          ],
+          "materials": [
+            "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_00_Initial.MI_ChenQianyu_00_Initial",
+            "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_01_Initial.MI_ChenQianyu_01_Initial",
+            "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_02_Initial.MI_ChenQianyu_02_Initial",
+            "/Game/NPR/Characters/ChenQianyu/Materials/M_ExcludedSourceProxy.M_ExcludedSourceProxy",
+            "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_04_Initial.MI_ChenQianyu_04_Initial",
+            "/Game/NPR/Characters/ChenQianyu/Materials/M_ExcludedSourceProxy.M_ExcludedSourceProxy",
+            "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_06_Initial.MI_ChenQianyu_06_Initial",
+            "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_07_Initial.MI_ChenQianyu_07_Initial",
+            "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_08_Initial.MI_ChenQianyu_08_Initial",
+            "/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_09_Initial.MI_ChenQianyu_09_Initial",
+            "/Game/NPR/Characters/ChenQianyu/Materials/M_ExcludedSourceProxy.M_ExcludedSourceProxy"
+          ],
+          "override": {
+            "override_enabled": false,
+            "enabled": true,
+            "override_method": false,
+            "override_color": false,
+            "override_width": false,
+            "override_edge_source": false,
+            "override_edge_width_scales": false,
+            "override_local_width_scale": false,
+            "override_depth_bias": false,
+            "override_vertex_control": false,
+            "override_width_mask": false,
+            "values": {
+              "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+              "color": [
+                0.014999999664723873,
+                0.00800000037997961,
+                0.02500000037252903,
+                1.0
+              ],
+              "width_pixels": 1.25,
+              "hull_width_cm": 0.10000000149011612,
+              "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+              "edge_width_scales": [
+                1.0,
+                1.0
+              ],
+              "local_width_scale": 1.0,
+              "depth_bias_cm": 0.10000000149011612,
+              "use_vertex_color_width": false,
+              "use_width_mask": false,
+              "width_mask": null
+            }
+          },
+          "rules": [
+            {
+              "slot": "Chen_cloth_outline",
+              "override": {
+                "override_enabled": true,
+                "enabled": false,
+                "override_method": false,
+                "override_color": false,
+                "override_width": false,
+                "override_edge_source": false,
+                "override_edge_width_scales": false,
+                "override_local_width_scale": false,
+                "override_depth_bias": false,
+                "override_vertex_control": false,
+                "override_width_mask": false,
+                "values": {
+                  "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                  "color": [
+                    0.014999999664723873,
+                    0.00800000037997961,
+                    0.02500000037252903,
+                    1.0
+                  ],
+                  "width_pixels": 1.25,
+                  "hull_width_cm": 0.10000000149011612,
+                  "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                  "edge_width_scales": [
+                    1.0,
+                    1.0
+                  ],
+                  "local_width_scale": 1.0,
+                  "depth_bias_cm": 0.10000000149011612,
+                  "use_vertex_color_width": false,
+                  "use_width_mask": false,
+                  "width_mask": null
+                }
+              }
+            },
+            {
+              "slot": "M_eyeshadow_common_01",
+              "override": {
+                "override_enabled": true,
+                "enabled": false,
+                "override_method": false,
+                "override_color": false,
+                "override_width": false,
+                "override_edge_source": false,
+                "override_edge_width_scales": false,
+                "override_local_width_scale": false,
+                "override_depth_bias": false,
+                "override_vertex_control": false,
+                "override_width_mask": false,
+                "values": {
+                  "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                  "color": [
+                    0.014999999664723873,
+                    0.00800000037997961,
+                    0.02500000037252903,
+                    1.0
+                  ],
+                  "width_pixels": 1.25,
+                  "hull_width_cm": 0.10000000149011612,
+                  "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                  "edge_width_scales": [
+                    1.0,
+                    1.0
+                  ],
+                  "local_width_scale": 1.0,
+                  "depth_bias_cm": 0.10000000149011612,
+                  "use_vertex_color_width": false,
+                  "use_width_mask": false,
+                  "width_mask": null
+                }
+              }
+            },
+            {
+              "slot": "M_hairshadow_common_03_001",
+              "override": {
+                "override_enabled": true,
+                "enabled": false,
+                "override_method": false,
+                "override_color": false,
+                "override_width": false,
+                "override_edge_source": false,
+                "override_edge_width_scales": false,
+                "override_local_width_scale": false,
+                "override_depth_bias": false,
+                "override_vertex_control": false,
+                "override_width_mask": false,
+                "values": {
+                  "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                  "color": [
+                    0.014999999664723873,
+                    0.00800000037997961,
+                    0.02500000037252903,
+                    1.0
+                  ],
+                  "width_pixels": 1.25,
+                  "hull_width_cm": 0.10000000149011612,
+                  "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                  "edge_width_scales": [
+                    1.0,
+                    1.0
+                  ],
+                  "local_width_scale": 1.0,
+                  "depth_bias_cm": 0.10000000149011612,
+                  "use_vertex_color_width": false,
+                  "use_width_mask": false,
+                  "width_mask": null
+                }
+              }
+            },
+            {
+              "slot": "M_actor_chen_body_01_001",
+              "override": {
+                "override_enabled": true,
+                "enabled": true,
+                "override_method": false,
+                "override_color": false,
+                "override_width": false,
+                "override_edge_source": false,
+                "override_edge_width_scales": false,
+                "override_local_width_scale": false,
+                "override_depth_bias": false,
+                "override_vertex_control": false,
+                "override_width_mask": false,
+                "values": {
+                  "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                  "color": [
+                    0.014999999664723873,
+                    0.00800000037997961,
+                    0.02500000037252903,
+                    1.0
+                  ],
+                  "width_pixels": 1.25,
+                  "hull_width_cm": 0.10000000149011612,
+                  "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                  "edge_width_scales": [
+                    1.0,
+                    1.0
+                  ],
+                  "local_width_scale": 1.0,
+                  "depth_bias_cm": 0.10000000149011612,
+                  "use_vertex_color_width": false,
+                  "use_width_mask": false,
+                  "width_mask": null
+                }
+              }
+            },
+            {
+              "slot": "M_actor_chen_cloth_01_001",
+              "override": {
+                "override_enabled": false,
+                "enabled": true,
+                "override_method": false,
+                "override_color": false,
+                "override_width": false,
+                "override_edge_source": false,
+                "override_edge_width_scales": false,
+                "override_local_width_scale": false,
+                "override_depth_bias": false,
+                "override_vertex_control": false,
+                "override_width_mask": false,
+                "values": {
+                  "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                  "color": [
+                    1.0,
+                    0.02881000004708767,
+                    0.0,
+                    1.0
+                  ],
+                  "width_pixels": 1.25,
+                  "hull_width_cm": 0.10000000149011612,
+                  "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                  "edge_width_scales": [
+                    1.0,
+                    1.0
+                  ],
+                  "local_width_scale": 1.0,
+                  "depth_bias_cm": 0.10000000149011612,
+                  "use_vertex_color_width": false,
+                  "use_width_mask": false,
+                  "width_mask": null
+                }
+              }
+            },
+            {
+              "slot": "M_actor_chen_cloth_01",
+              "override": {
+                "override_enabled": false,
+                "enabled": true,
+                "override_method": false,
+                "override_color": true,
+                "override_width": false,
+                "override_edge_source": false,
+                "override_edge_width_scales": false,
+                "override_local_width_scale": false,
+                "override_depth_bias": false,
+                "override_vertex_control": false,
+                "override_width_mask": false,
+                "values": {
+                  "method": "<NPROutlineMethod.INVERTED_HULL: 1>",
+                  "color": [
+                    0.014999999664723873,
+                    0.00800000037997961,
+                    0.02500000037252903,
+                    1.0
+                  ],
+                  "width_pixels": 1.25,
+                  "hull_width_cm": 0.10000000149011612,
+                  "width_edge_source": "<NPROutlineEdgeSource.SILHOUETTE: 0>",
+                  "edge_width_scales": [
+                    1.0,
+                    1.0
+                  ],
+                  "local_width_scale": 1.3050669431686401,
+                  "depth_bias_cm": 0.10000000149011612,
+                  "use_vertex_color_width": false,
+                  "use_width_mask": false,
+                  "width_mask": null
+                }
+              }
+            }
+          ],
+          "sections": []
+        }
+      ]
+    }
+  }
+}

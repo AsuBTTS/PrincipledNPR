@@ -6,7 +6,7 @@
 
 我们目前提供两种方法：反向壳把模型外扩一点，用外壳背面形成轮廓；Screen Space（屏幕空间）在画面上找角色区域的边缘，再向外画线，适合统一整角色的外轮廓。
 
-基础路径为**已实现并验证**（历史环境和有界证据见[状态页](../reference/status.md)）；新增分层宽度、UV0 Mask 为**已实现但待验证**，已有构建/资产编译记录，新增图像回归未运行。本次仅验证文档。UV0 Mask 是一张按模型第一套贴图坐标读取的遮罩图，红通道越暗，该处的壳宽度越小。
+基础路径为**已实现并验证**（历史环境和有界证据见[状态页](../reference/status.md)）；新增分层宽度、UV0 Mask 为**已实现但待验证**，已有构建/资产编译记录，新增图像回归未运行。2026-10-20 的新增界面验证单独记录在本文末尾。UV0 Mask 是一张按模型第一套贴图坐标读取的遮罩图，红通道越暗，该处的壳宽度越小。
 
 初次使用先按[快速开始](../guide/quick-start.md)操作。下表保留代码中的字段名，便于在界面和报错中对照；后面的“渲染实现”主要供开发者阅读。
 
@@ -64,3 +64,32 @@ Screen 通过辅助网格写 CustomDepth/Stencil；后处理读 SceneColor、Sce
 `NPROutlinePreset.h/.cpp`：Settings、Validate、GetResolvedWidth、ApplyMaterialParameters。`NPROutlineActorComponent.cpp`：ResolveRegions、RefreshOutline、GetSectionMapping、组与 Stencil 分配。`NPROutlineComponent.cpp`：旧单槽绑定。
 
 `Tools/create_outline_backend_assets.py`：材质图及嵌入 HLSL；插件当前没有独立 Shaders 目录。`NPROutlineEditorUI.cpp`：双视口和交互；`NPROutlineEditorLibrary.cpp`：资产/关卡保存入口。这些源码均可从[参数页来源指纹](../principled/parameters.md)下载核对。
+
+## 材质槽勾选与隔离预览（2026-10-20）
+
+我们在角色配置的 `Meshes` 中直接读取真实使用中的材质槽，显示编号、槽名、当前材质和 Opaque 支持状态。展开组件后，取消某行的“描边”即可排除这一槽；不再添加空规则或输入槽名。勾选会创建或更新本槽启用覆写，“恢复继承”删除本槽规则并恢复继承。Actor 总开关和更深层 Section 规则仍然生效。
+
+勾选“隔离”可只看该组件的当前材质槽，选中时显示“隔离中”；取消勾选或点击工具栏“显示全部材质”恢复全角色。切换到另一槽时，原槽的隔离勾选会同步取消。隔离只作用于临时预览，不改变关卡组件可见性、原始材质或源网格。隔离预览会让其他区域不参与临时描边，所以它不能代替完整角色验收。Masked / Translucent 槽仍无法生成正确描边覆盖，但可以单独查看原表面、取消该槽描边。
+
+工具栏“原材质对比”默认关闭，开启后恢复原材质与 Outline 双视口；相机和灯光继续共享。PNG 导出仍输出 Original.png 和 Outline.png，隔离状态会体现在导出画面中。
+
+组件源引用改为名称提示，避免展开整套 UE 网格组件属性。组件级覆写、材质槽“编辑参数”和 Section 高级覆写继续保留。材质槽按钮带明显背景和加粗文字，展开后改为“收起参数”。已有 None、未使用或重复槽名规则会显示清理按钮；点击后移除无效项，同名规则保留第一条，因此清理前应确认不需要后续重复条目的参数。
+
+实现与验证边界见 [材质槽界面改进记录](/generated/source/Documentation/Outline/MaterialSlotUI.md.txt)。新增 UI 与隔离流程不沿用旧时间稳定性验收结果。
+
+2026-10-20：顶级入口改为“窗口 → NPR 调制”，窗口内切换 Outline 和 Rim Light 占位页。材质槽改用原生 Slate 分组卡片；名称、材质与覆盖能力分行显示，描边/隔离使用勾选框，“编辑参数”按需展开，“恢复继承”删除本槽覆写。隔离状态直接读取当前预览目标，避免按钮文字与画面状态不一致。编辑属性只更新窗口内反馈，同一提示去重。
+
+已在 UE 5.8.3 / Windows 的当前角色中检查导航、隔离切换、参数按钮、原材质对比与窄窗口布局。真实导出对照：[仅衣服槽](/generated/source/Documentation/Outline/MaterialSlotUI/IsolatedCloth.png)、[取消隔离后的角色](/generated/source/Documentation/Outline/MaterialSlotUI/FullCharacter.png)。[机器可读记录](/generated/source/Documentation/Outline/MaterialSlotUI/Validation.json)列明未覆盖的操作和资产类型；这次界面检查不扩展渲染后端的验收范围。
+
+这两张原图来自 UE 预览视口导出，保留当时已有的粉色描边参数；左图查看完整角色，右图只隔离当前衣服材质槽。隔离图中未显示的部件是预览筛选结果，不能据此判断完整角色效果。
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;">
+  <figure style="margin:0;">
+    <img src="/generated/source/Documentation/Outline/MaterialSlotUI/FullCharacter.png" alt="UE 预览导出的完整角色描边画面" style="display:block;width:100%;height:auto;border:1px solid var(--vp-c-divider);border-radius:8px;" />
+    <figcaption>图 1 · 完整角色预览：所有区域一起显示。</figcaption>
+  </figure>
+  <figure style="margin:0;">
+    <img src="/generated/source/Documentation/Outline/MaterialSlotUI/IsolatedCloth.png" alt="UE 预览导出的单个衣服材质槽隔离画面" style="display:block;width:100%;height:auto;border:1px solid var(--vp-c-divider);border-radius:8px;" />
+    <figcaption>图 2 · 衣服槽隔离预览：只用于检查当前槽，不能代替完整角色验收。</figcaption>
+  </figure>
+</div>

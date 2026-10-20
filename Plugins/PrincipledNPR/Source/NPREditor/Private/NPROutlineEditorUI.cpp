@@ -1,4 +1,5 @@
 #include "NPROutlineEditorUI.h"
+#include "NPROutlineMeshCustomization.h"
 
 #include "NPROutlineEditorLibrary.h"
 #include "NPROutlineComponent.h"
@@ -22,6 +23,8 @@
 #include "Widgets/Layout/SScrollBox.h"
 #include "Widgets/Layout/SBox.h"
 #include "Widgets/Layout/SBorder.h"
+#include "Widgets/Layout/SWidgetSwitcher.h"
+#include "Widgets/Layout/SWrapBox.h"
 #include "Widgets/Input/SButton.h"
 #include "Widgets/Input/SComboBox.h"
 #include "Widgets/Input/SEditableTextBox.h"
@@ -211,7 +214,10 @@ public:
             if(!IsValid(Original)||!IsValid(Copy)) continue;
             const FTransform Transform(Original->GetComponentRotation(),Original->GetComponentLocation()-Origin,Original->GetComponentScale());
             if(!Copy->GetComponentTransform().Equals(Transform)) Copy->SetWorldTransform(Transform);
-            Copy->SetVisibility(Original->IsVisible()); Copy->SetHiddenInGame(Original->bHiddenInGame);
+            Copy->SetVisibility(Original->IsVisible() && (IsolatedSlot==INDEX_NONE || IsolatedSource.Get()==Original));
+            if(auto* S=Cast<USkeletalMeshComponent>(Copy)) S->SetMaterialPreview(IsolatedSource.Get()==Original?IsolatedSlot:INDEX_NONE);
+            if(auto* S=Cast<UStaticMeshComponent>(Copy)) S->SetMaterialPreview(IsolatedSource.Get()==Original?IsolatedSlot:INDEX_NONE);
+            Copy->SetHiddenInGame(Original->bHiddenInGame);
             Copy->SetRenderCustomDepth(Original->bRenderCustomDepth); Copy->SetCustomDepthStencilValue(Original->CustomDepthStencilValue);
             if(auto* Skel=Cast<USkeletalMeshComponent>(Original))
             {
@@ -240,7 +246,38 @@ public:
             PreviewGroup->BaseSettings=Source->BaseSettings; PreviewGroup->Meshes=Source->Meshes;
             PreviewGroup->HullTemplate=Source->HullTemplate; PreviewGroup->MaskTemplate=Source->MaskTemplate; PreviewGroup->ScreenTemplate=Source->ScreenTemplate;
             for(auto& Rule:PreviewGroup->Meshes) Rule.Mesh=Copies.FindRef(Rule.Mesh.Get());
+            if(IsolatedSlot!=INDEX_NONE)
+            {
+                // Filter only transient preview rules. Persistent actor rules and original surfaces are untouched.
+                for(auto& Rule:PreviewGroup->Meshes)
+                {
+                    auto* Original=IsolatedSource.Get();
+                    const bool Selected=Original && Rule.Mesh==Copies.FindRef(Original);
+                    const auto Names=Rule.Mesh->GetMaterialSlotNames();
+                    for(int32 Slot=0;Slot<Names.Num();++Slot) if(!Selected || Slot!=IsolatedSlot)
+                    {
+                        auto& O=FNPROutlineMeshCustomization::FindOrAdd(Rule,Names[Slot]).Override;
+                        O.bOverrideEnabled=true; O.bEnabled=false;
+                    }
+                    TArray<FNPROutlineSectionInfo> Mapping; FString Error;
+                    UNPROutlineActorComponent::GetSectionMapping(Rule.Mesh,Mapping,Error);
+                    for(auto& Section:Rule.Sections)
+                        for(const auto& Row:Mapping)
+                            if(Row.LODIndex==Section.LODIndex && Row.SectionIndex==Section.SectionIndex && (!Selected || Row.MaterialSlotIndex!=IsolatedSlot))
+                            { Section.Override.bOverrideEnabled=true; Section.Override.bEnabled=false; }
+                }
+            }
             if(PreviewGroup->IsRegistered()) PreviewGroup->RefreshOutline();
+        }
+        Invalidate();
+    }
+    void SetIsolation(UMeshComponent* Source, int32 Slot)
+    {
+        IsolatedSource=Source; IsolatedSlot=Slot;
+        if(!GroupActor)
+        {
+            PreviewActor->GetSkeletalMeshComponent()->SetMaterialPreview(Slot);
+            if(PreviewBinding && PreviewBinding->GetOutlineMesh()) PreviewBinding->GetOutlineMesh()->SetMaterialPreview(Slot);
         }
         Invalidate();
     }
@@ -288,10 +325,12 @@ public:
         Scene->SetLightDirection(Index == 2 ? FRotator(-15, 110, 0) : FRotator(-40, -35, 0));
         Invalidate();
     }
+    FIntPoint ViewSize() const { return SceneViewport.IsValid()?SceneViewport->GetSizeXY():FIntPoint::ZeroValue; }
     bool SavePNG(const FString& Filename)
     {
         if (!SceneViewport.IsValid()) return false;
         const FIntPoint Size = SceneViewport->GetSizeXY();
+        SceneViewport->Draw();
         TArray<FColor> Pixels;
         if (Size.X < 1 || Size.Y < 1 || !SceneViewport->ReadPixels(Pixels)) return false;
         for (FColor& Pixel : Pixels) Pixel.A = 255;
@@ -323,6 +362,8 @@ private:
     AActor* GroupActor=nullptr;
     UNPROutlineActorComponent* PreviewGroup=nullptr;
     TMap<TWeakObjectPtr<UMeshComponent>,UMeshComponent*> Copies;
+    TWeakObjectPtr<UMeshComponent> IsolatedSource;
+    int32 IsolatedSlot=INDEX_NONE;
     FBox GroupBounds=FBox(ForceInit);
 };
 
@@ -340,13 +381,17 @@ public:
         DetailsArgs.bHideSelectionTip = true;
         DetailsArgs.NameAreaSettings = FDetailsViewArgs::HideNameArea;
         Details = FModuleManager::LoadModuleChecked<FPropertyEditorModule>(TEXT("PropertyEditor")).CreateDetailView(DetailsArgs);
+        Details->RegisterInstancedCustomPropertyTypeLayout(TEXT("NPROutlineMeshRule"), FOnGetPropertyTypeCustomizationInstance::CreateLambda([this]
+        { return MakeShared<FNPROutlineMeshCustomization>(SlotUIState,
+            [this](UMeshComponent* Source,int32 Slot,bool Checked){if(Checked) IsolatePreview(Source,Slot); else if(IsolatedSource.Get()==Source && IsolatedSlot==Slot) IsolatePreview(nullptr,INDEX_NONE);},
+            [this](UMeshComponent* Source,int32 Slot){return IsValid(Source) && IsolatedSource.Get()==Source && IsolatedSlot==Slot;}); }));
         Details->SetObject(Working.Get());
         Details->OnFinishedChangingProperties().AddSP(this, &SNPROutlineEditor::CommitSettings);
         Camera = MakeShared<FSharedCamera>();
         ChildSlot
         [
             SNew(SSplitter)
-            + SSplitter::Slot().Value(0.29f)
+            + SSplitter::Slot().Value(0.29f).MinSize(350.f)
             [
                 SNew(SVerticalBox)
                 + SVerticalBox::Slot().AutoHeight().Padding(10,6)
@@ -397,14 +442,18 @@ public:
             [
                 SNew(SVerticalBox)
                 + SVerticalBox::Slot().AutoHeight().Padding(8)
-                [SNew(SHorizontalBox)
-                    + SHorizontalBox::Slot().AutoWidth().Padding(4)[LightButton(TEXT("标准 / Studio"),0)]
-                    + SHorizontalBox::Slot().AutoWidth().Padding(4)[LightButton(TEXT("暖光 / Warm"),1)]
-                    + SHorizontalBox::Slot().AutoWidth().Padding(4)[LightButton(TEXT("侧光 / Raking"),2)]
-                    + SHorizontalBox::Slot().FillWidth(1).Padding(8)[SNew(STextBlock).Text_Lambda([this]{return FText::FromString(Group.IsValid()?TEXT("整组组件 · 参考姿势 · 共享相机与灯光；右侧应用角色描边"):TEXT("共享相机 · 相同几何、材质与灯光；右侧叠加 Outline"));}).AutoWrapText(true)]]
+                [SNew(SVerticalBox)
+                    + SVerticalBox::Slot().AutoHeight()[SNew(SWrapBox).UseAllottedSize(true).InnerSlotPadding(FVector2D(4,4))
+                    + SWrapBox::Slot().Padding(4)[LightButton(TEXT("标准 / Studio"),0)]
+                    + SWrapBox::Slot().Padding(4)[LightButton(TEXT("暖光 / Warm"),1)]
+                    + SWrapBox::Slot().Padding(4)[LightButton(TEXT("侧光 / Raking"),2)]
+                    + SWrapBox::Slot().Padding(4)[SNew(SCheckBox).IsChecked_Lambda([this]{return bShowOriginal?ECheckBoxState::Checked:ECheckBoxState::Unchecked;}).OnCheckStateChanged_Lambda([this](ECheckBoxState State){bShowOriginal=State==ECheckBoxState::Checked; if(bShowOriginal && !bFixedCapture) OriginalView->SetCaptureSize(0,0); OriginalPane->SetVisibility(bShowOriginal?EVisibility::Visible:EVisibility::Collapsed);})[SNew(STextBlock).Text(FText::FromString(TEXT("原材质对比")))]]
+                    + SWrapBox::Slot().Padding(4)[SNew(SButton).Text(FText::FromString(TEXT("显示全部材质"))).OnClicked_Lambda([this]{IsolatePreview(nullptr,INDEX_NONE);return FReply::Handled();})]
+                    ]
+                    + SVerticalBox::Slot().AutoHeight().Padding(4,2)[SNew(STextBlock).Text_Lambda([this]{if(IsolatedSource.IsValid()) return FText::FromString(FString::Printf(TEXT("隔离预览：%s · 槽 %d（不改变关卡）"),*IsolatedSource->GetName(),IsolatedSlot)); return FText::FromString(Group.IsValid()?TEXT("整组组件 · 参考姿势 · 共享相机与灯光；右侧应用角色描边"):TEXT("共享相机 · 相同几何、材质与灯光；右侧叠加 Outline"));}).AutoWrapText(true)]]
                 + SVerticalBox::Slot().FillHeight(1)
                 [SNew(SSplitter)
-                    + SSplitter::Slot()[SNew(SVerticalBox)
+                    + SSplitter::Slot()[SAssignNew(OriginalPane,SVerticalBox).Visibility(EVisibility::Collapsed)
                         + SVerticalBox::Slot().AutoHeight().Padding(6)[SNew(STextBlock).Text(FText::FromString(TEXT("原材质 / Original")))]
                         + SVerticalBox::Slot().FillHeight(1)[SAssignNew(OriginalView,SOutlineViewport,Camera.ToSharedRef())]]
                     + SSplitter::Slot()[SNew(SVerticalBox)
@@ -419,6 +468,14 @@ public:
         SCompoundWidget::Tick(Geometry,Time,Delta);
         if(Group.IsValid())
         {
+            if(IsolatedSlot!=INDEX_NONE)
+            {
+                auto* Source=IsolatedSource.Get();
+                const bool Present=IsValid(Source) && Group->Meshes.ContainsByPredicate([Source](const auto& Rule){return Rule.Mesh==Source;});
+                TArray<FNPROutlineSectionInfo> Mapping; FString MappingError;
+                if(Present) UNPROutlineActorComponent::GetSectionMapping(Source,Mapping,MappingError);
+                if(!Present || !Mapping.ContainsByPredicate([this](const auto& Row){return Row.MaterialSlotIndex==IsolatedSlot;})) IsolatePreview(nullptr,INDEX_NONE);
+            }
             OriginalView->SyncGroup(Group.Get()); NPRView->SyncGroup(Group.Get());
             if(CollectionRevision!=Group->GetCollectionRevision())
             {
@@ -437,6 +494,7 @@ public:
     bool Export(const FString& Directory)
     {
         IFileManager::Get().MakeDirectory(*Directory,true);
+        if(!bShowOriginal && !bFixedCapture) { const FIntPoint Size=NPRView->ViewSize(); OriginalView->SetCaptureSize(Size.X,Size.Y); }
         return OriginalView->SavePNG(Directory/TEXT("Original.png")) && NPRView->SavePNG(Directory/TEXT("Outline.png"));
     }
     void ReloadSelection() { UseSelection(false); }
@@ -453,30 +511,55 @@ public:
     FString TemporalState() const { return NPRView->TemporalState(); }
     bool SetCaptureSize(int32 Width, int32 Height)
     {
+        bFixedCapture=Width>0 && Height>0;
         const bool bOriginal = OriginalView->SetCaptureSize(Width, Height);
         const bool bOutline = NPRView->SetCaptureSize(Width, Height);
         FocusCurrent(false);
         return bOriginal && bOutline;
     }
 private:
+    void IsolatePreview(UMeshComponent* Source,int32 Slot)
+    {
+        if(!IsValid(Source)) {Source=nullptr;Slot=INDEX_NONE;}
+        IsolatedSource=Source; IsolatedSlot=Slot;
+        OriginalView->SetIsolation(Source,Slot); NPRView->SetIsolation(Source,Slot);
+        if(Group.IsValid()) {OriginalView->SyncGroup(Group.Get());NPRView->SyncGroup(Group.Get());}
+        Report(Source?FString::Printf(TEXT("仅预览 %s 的材质槽 %d；取消勾选隔离或点“显示全部材质”恢复。关卡规则未改变。"),*Source->GetName(),Slot):TEXT("已恢复全部材质预览。"),false,false);
+    }
     void Report(const FString& Message,bool bError=false,bool bNotify=true)
     {
+        const FString DisplayMessage=bError?ExplainError(Message):Message;
+        const FString NewStatus=(bError?TEXT("需要处理 · "):TEXT("操作结果 · "))+DisplayMessage;
+        const bool Changed=Status!=NewStatus;
         bStatusError=bError;
-        Status=(bError?TEXT("需要处理 · "):TEXT("操作结果 · "))+Message;
-        if(bNotify)
+        Status=NewStatus;
+        if(bNotify && Changed)
         {
-            FNotificationInfo Info(FText::FromString(Message)); Info.ExpireDuration=bError?7.f:4.f;
+            FNotificationInfo Info(FText::FromString(DisplayMessage)); Info.ExpireDuration=bError?7.f:4.f;
             if(auto Item=FSlateNotificationManager::Get().AddNotification(Info))
                 Item->SetCompletionState(bError?SNotificationItem::CS_Fail:SNotificationItem::CS_Success);
         }
     }
     bool HasTarget() const { return Group.IsValid() || Mesh.IsValid(); }
     bool CanPreview() const { return OriginalView.IsValid() && NPRView.IsValid() && OriginalView->MeshCount()>0 && NPRView->MeshCount()>0; }
+    FString ExplainError(const FString& Error) const
+    {
+        if(Error.Contains(TEXT("needs Opaque coverage")))
+        {
+            FString Region,Unused; Error.Split(TEXT(" needs "),&Region,&Unused);
+            return Region+TEXT(" 的材质覆盖尚未适配。当前描边只支持 Opaque（不透明），Masked（遮罩）和 Translucent（半透明）仍可显示原表面与隔离预览。请查看组件的材质槽支持状态。");
+        }
+        if(Error.Contains(TEXT("Unified Silhouette requires Screen Space")))
+            return TEXT("统一外轮廓需要 Screen Space。请切换基础描边方法，或使用独立区域配合反向壳。");
+        if(Error.Contains(TEXT("Material rule needs a unique, used slot name")))
+            return TEXT("存在空白、未使用或重复的材质槽规则。展开对应组件，使用“移除无效/重复规则”清理，再从真实材质槽列表勾选。");
+        return Error;
+    }
     FString RenderError() const
     {
-        if(Group.IsValid() && !Group->GetLastError().IsEmpty()) return Group->GetLastError();
-        if(Binding.IsValid() && !Binding->GetLastError().IsEmpty()) return Binding->GetLastError();
-        return NPRView.IsValid()?NPRView->PreviewError():FString();
+        if(Group.IsValid() && !Group->GetLastError().IsEmpty()) return ExplainError(Group->GetLastError());
+        if(Binding.IsValid() && !Binding->GetLastError().IsEmpty()) return ExplainError(Binding->GetLastError());
+        return NPRView.IsValid()?ExplainError(NPRView->PreviewError()):FString();
     }
     FString VisibilityHint() const
     {
@@ -517,7 +600,7 @@ private:
     }
     void LoadActor(AActor* Actor)
     {
-        Group.Reset(); SelectedActor.Reset(); Details->SetObject(Working.Get());
+        Group.Reset(); IsolatePreview(nullptr,INDEX_NONE); SelectedActor.Reset(); Details->SetObject(Working.Get());
         Mesh.Reset(); Binding.Reset(); Slots.Reset(); SelectedSlot.Reset(); LoadedPreset.Reset(); SelectedPreset.Reset();
         SelectedActor=Actor;
         if(IsValid(Actor))
@@ -583,7 +666,7 @@ private:
     }
     void CommitSettings(const FPropertyChangedEvent&)
     {
-        if(Group.IsValid()){Group->MarkPackageDirty();const bool OK=Group->RefreshOutline();Report(OK?TEXT("角色参数已应用，请保存基础预设与当前关卡。")+VisibilityHint():Group->GetLastError(),!OK);return;}
+        if(Group.IsValid()){Group->MarkPackageDirty();const bool OK=Group->RefreshOutline();Report(OK?TEXT("角色参数已应用，请保存基础预设与当前关卡。")+VisibilityHint():Group->GetLastError(),!OK,false);return;}
         if(!Binding.IsValid()){Report(TEXT("当前是未绑定的预备参数，请先转换单槽绑定。"));return;}
         FString Error;
         if(!Working->Settings.Validate(Error)){Report(Error,true);return;}
@@ -668,6 +751,11 @@ private:
     TStrongObjectPtr<UNPROutlinePreset> Working;
     void ShowGroup(UNPROutlineActorComponent* Value)
     {
+        if(Group.Get()!=Value)
+        {
+            IsolatedSource.Reset(); IsolatedSlot=INDEX_NONE;
+            OriginalView->SetIsolation(nullptr,INDEX_NONE); NPRView->SetIsolation(nullptr,INDEX_NONE);
+        }
         Group=Value; Binding.Reset(); Mesh.Reset(); Slots.Reset(); SelectedSlot.Reset();
         SelectionLabel=Value->GetOwner()->GetActorLabel()+TEXT(" / Actor Outline");
         Details->SetObject(Value);
@@ -697,6 +785,12 @@ private:
     TWeakObjectPtr<UNPROutlineComponent> Binding;
     TWeakObjectPtr<UNPROutlinePreset> LoadedPreset;
     TWeakObjectPtr<UNPROutlinePreset> SelectedPreset;
+    TWeakObjectPtr<UMeshComponent> IsolatedSource;
+    int32 IsolatedSlot=INDEX_NONE;
+    bool bShowOriginal=false;
+    bool bFixedCapture=false;
+    TSharedPtr<SVerticalBox> OriginalPane;
+    TSharedRef<FNPROutlineSlotUIState> SlotUIState=MakeShared<FNPROutlineSlotUIState>();
     TSharedPtr<IDetailsView> Details;
     TSharedPtr<SComboBox<TSharedPtr<FOutlineSlot>>> SlotsCombo;
     TArray<TSharedPtr<FOutlineSlot>> Slots;
@@ -711,6 +805,59 @@ private:
     bool bLoadingSelection=false;
     uint32 CollectionRevision=0;
 };
+// Keep the old Outline tab identity and scripting facade for saved layouts and existing tools.
+// The containing workspace owns feature navigation; placeholder pages cannot change render state.
+class SNPRModulationEditor final : public SCompoundWidget
+{
+public:
+    SLATE_BEGIN_ARGS(SNPRModulationEditor) {} SLATE_END_ARGS()
+    void Construct(const FArguments&)
+    {
+        ChildSlot
+        [SNew(SVerticalBox)
+            + SVerticalBox::Slot().AutoHeight()
+            [SNew(SBorder).BorderImage(FAppStyle::GetBrush("ToolPanel.GroupBorder")).Padding(FMargin(14,10))
+                [SNew(SHorizontalBox)
+                    + SHorizontalBox::Slot().AutoWidth().VAlign(VAlign_Center).Padding(0,0,24,0)
+                    [SNew(STextBlock).Text(FText::FromString(TEXT("NPR 调制"))).Font(FCoreStyle::GetDefaultFontStyle("Bold",16))]
+                    + SHorizontalBox::Slot().AutoWidth().Padding(0,0,8,0)[FeatureEntry(TEXT("Outline · 描边"),0)]
+                    + SHorizontalBox::Slot().AutoWidth()[FeatureEntry(TEXT("Rim Light · 边缘光（占位）"),1)]
+                ]
+            ]
+            + SVerticalBox::Slot().FillHeight(1)
+            [SAssignNew(FeaturePages,SWidgetSwitcher)
+                + SWidgetSwitcher::Slot()[SAssignNew(Outline,SNPROutlineEditor)]
+                + SWidgetSwitcher::Slot()
+                [SNew(SBox).HAlign(HAlign_Center).VAlign(VAlign_Center).Padding(30)
+                    [SNew(SBox).MaxDesiredWidth(640)
+                        [SNew(SBorder).BorderImage(FAppStyle::GetBrush("ToolPanel.GroupBorder")).Padding(32)
+                            [SNew(SVerticalBox)
+                                + SVerticalBox::Slot().AutoHeight()[SNew(STextBlock).Text(FText::FromString(TEXT("Rim Light · 边缘光"))).Font(FCoreStyle::GetDefaultFontStyle("Bold",24))]
+                                + SVerticalBox::Slot().AutoHeight().Padding(0,12)[SNew(STextBlock).Text(FText::FromString(TEXT("功能占位 · 尚未接入渲染"))).ColorAndOpacity(FLinearColor(0.86f,0.63f,0.34f))]
+                                + SVerticalBox::Slot().AutoHeight()[SNew(STextBlock).Text(FText::FromString(TEXT("边缘光用于提亮角色表面靠近轮廓的区域。这里先保留入口，后续将接入覆盖范围、过渡和亮度控制。当前页面不会创建配置、修改材质或改变预览。"))).AutoWrapText(true)]
+                                + SVerticalBox::Slot().AutoHeight().Padding(0,24,0,0)[SNew(SButton).Text(FText::FromString(TEXT("返回 Outline 描边"))).OnClicked_Lambda([this]{ShowOutline();return FReply::Handled();})]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ];
+    }
+    void ShowOutline() { ActiveFeature=0; FeaturePages->SetActiveWidgetIndex(0); }
+    TSharedPtr<SNPROutlineEditor> GetOutline() const { return Outline; }
+private:
+    TSharedRef<SWidget> FeatureEntry(const TCHAR* Label,int32 Feature)
+    {
+        return SNew(SCheckBox).Style(FAppStyle::Get(),"ToggleButtonCheckbox").Padding(FMargin(12,6))
+            .IsChecked_Lambda([this,Feature]{return ActiveFeature==Feature?ECheckBoxState::Checked:ECheckBoxState::Unchecked;})
+            .OnCheckStateChanged_Lambda([this,Feature](ECheckBoxState Value){if(Value==ECheckBoxState::Checked){ActiveFeature=Feature;FeaturePages->SetActiveWidgetIndex(Feature);}})
+            [SNew(STextBlock).Text(FText::FromString(Label))];
+    }
+    int32 ActiveFeature=0;
+    TSharedPtr<SWidgetSwitcher> FeaturePages;
+    TSharedPtr<SNPROutlineEditor> Outline;
+};
+TWeakPtr<SNPRModulationEditor> ActiveWorkspace;
 TWeakPtr<SNPROutlineEditor> ActiveEditor;
 }
 
@@ -718,16 +865,17 @@ void FNPROutlineEditorUI::Register()
 {
     FGlobalTabmanager::Get()->RegisterNomadTabSpawner(OutlineTabId,FOnSpawnTab::CreateLambda([](const FSpawnTabArgs&)
     {
-        TSharedRef<SNPROutlineEditor> Widget=SNew(SNPROutlineEditor);
-        ActiveEditor=Widget;
+        TSharedRef<SNPRModulationEditor> Widget=SNew(SNPRModulationEditor);
+        ActiveWorkspace=Widget;
+        ActiveEditor=Widget->GetOutline();
         return SNew(SDockTab).TabRole(ETabRole::NomadTab)[Widget];
-    })).SetDisplayName(FText::FromString(TEXT("Principled NPR · Outline")));
+    })).SetDisplayName(FText::FromString(TEXT("NPR 调制")));
     MenuStartupHandle = UToolMenus::RegisterStartupCallback(FSimpleMulticastDelegate::FDelegate::CreateLambda([]
     {
         FToolMenuOwnerScoped Owner(TEXT("PrincipledNPROutline"));
         UToolMenu* Menu=UToolMenus::Get()->ExtendMenu(TEXT("LevelEditor.MainMenu.Window"));
-        Menu->FindOrAddSection(TEXT("NPR")).AddMenuEntry(TEXT("OpenNPROutline"),FText::FromString(TEXT("Principled NPR · Outline")),
-            FText::FromString(TEXT("Open the Outline material workflow")),FSlateIcon(),FUIAction(FExecuteAction::CreateStatic(&FNPROutlineEditorUI::Open)));
+        Menu->FindOrAddSection(TEXT("NPR")).AddMenuEntry(TEXT("OpenNPROutline"),FText::FromString(TEXT("NPR 调制")),
+            FText::FromString(TEXT("打开 NPR 调制：Outline 描边与 Rim Light 边缘光占位入口")),FSlateIcon(),FUIAction(FExecuteAction::CreateStatic(&FNPROutlineEditorUI::Open)));
     }));
 }
 void FNPROutlineEditorUI::Unregister()
@@ -736,7 +884,7 @@ void FNPROutlineEditorUI::Unregister()
     UToolMenus::UnregisterOwner(TEXT("PrincipledNPROutline"));
     FGlobalTabmanager::Get()->UnregisterNomadTabSpawner(OutlineTabId);
 }
-void FNPROutlineEditorUI::Open(){FGlobalTabmanager::Get()->TryInvokeTab(OutlineTabId);if(ActiveEditor.IsValid())ActiveEditor.Pin()->ReloadSelection();}
+void FNPROutlineEditorUI::Open(){FGlobalTabmanager::Get()->TryInvokeTab(OutlineTabId);if(ActiveWorkspace.IsValid())ActiveWorkspace.Pin()->ShowOutline();if(ActiveEditor.IsValid())ActiveEditor.Pin()->ReloadSelection();}
 bool FNPROutlineEditorUI::ExportComparison(const FString& Directory){return ActiveEditor.IsValid()&&ActiveEditor.Pin()->Export(Directory);}
 bool FNPROutlineEditorUI::SetComparisonCaptureSize(int32 Width,int32 Height){return ActiveEditor.IsValid()&&ActiveEditor.Pin()->SetCaptureSize(Width,Height);}
 int32 FNPROutlineEditorUI::GetComparisonMeshCount(bool bOutlined){return ActiveEditor.IsValid()?ActiveEditor.Pin()->MeshCount(bOutlined):0;}

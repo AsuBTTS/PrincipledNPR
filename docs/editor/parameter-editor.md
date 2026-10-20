@@ -1,6 +1,6 @@
 # 参数编辑与双视口
 
-我们目前通过这个窗口调整 Outline 描边。打开 **Window → Principled NPR Outline** 后，左边看原材质，右边看当前描边。两个预览使用相同的相机和灯光，方便我们判断参数变化带来的效果。
+NPR 调制是各外观模块的统一入口，目前提供 Outline 描边和 Rim Light 边缘光占位页。打开 **窗口 → NPR 调制 → Outline · 描边** 后，默认只显示当前描边；勾选“原材质对比”可并排查看原材质。两个预览使用相同的相机和灯光，方便我们判断参数变化带来的效果。
 
 ## 选择目标
 
@@ -22,4 +22,14 @@ Actor 总开关控制整个角色；局部 Enabled 和 Method=None 可关闭区�
 
 “导出双视口 PNG”每次创建独立时间目录；导出后可打开上次目录。导出图片不会代替[保存预设与关卡](./presets.md)。角色模式关闭描边时保留规则；旧单槽恢复则移除该槽绑定。
 
-实现入口为 `NPROutlineEditorUI.cpp` 的 `UseSelection`、`ConfigureActor`、`LoadPreset`、`Save` 和窗口构造。完整原始文件可从[参数页](../principled/parameters.md)读取。当前基础流程有历史验证；本次未操作 UE 窗口。
+实现入口为 `NPROutlineEditorUI.cpp` 的 `UseSelection`、`ConfigureActor`、`LoadPreset`、`Save` 和窗口构造。完整原始文件可从[参数页](../principled/parameters.md)读取。2026-10-20 已在 UE 5.8.3 中检查功能页切换、材质槽隔离、参数展开和窄窗口布局，具体范围见[界面验证记录](/generated/source/Documentation/Outline/MaterialSlotUI.md.txt)。
+
+## 功能入口与材质槽列表
+
+窗口顶部切换 Outline 与 Rim Light。边缘光页只显示占位说明，没有可用开关，不会改变材质或预览。旧的 OpenEditor 脚本入口仍打开这个窗口并选中 Outline。
+
+展开 Meshes 中的组件，会看到材质槽卡片：标题显示槽编号和名称，次行显示材质，能力说明区分 Opaque、Masked 和 Translucent。“描边”勾选控制本槽启用覆写；“隔离”勾选只看当前槽，勾选时显示“隔离中”，取消后恢复全角色。切换到别的槽会同步取消原槽勾选，“显示全部材质”会清空隔离。
+
+点击带明显背景、加粗文字的“编辑参数”按钮展开本槽局部参数，展开后按钮变为“收起参数”；“恢复继承”删除本槽全部覆写。隔离、功能页切换和原材质对比均属于窗口状态，不保存为角色风格。当前渲染后端仍只支持 Opaque 覆盖，界面改进没有增加 Masked 支持。
+
+“组件参数”和“Section 高级”分别展开高级配置。首次打开一个尚无规则的材质槽参数，会建立继承配置；再次查看已有规则不修改关卡。窗口较窄时预览工具栏换行，避免隔离恢复和对比开关挤出窗口。

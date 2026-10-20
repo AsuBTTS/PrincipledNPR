@@ -16,6 +16,7 @@ const cppPath = 'Plugins/PrincipledNPR/Source/NPRRuntime/Private/NPROutlinePrese
 const builderPath = 'Tools/create_outline_backend_assets.py'
 const contract = json(contractPath)
 const sourcePaths = [contractPath, headerPath, cppPath, builderPath,
+  'Plugins/PrincipledNPR/Source/NPREditor/Private/NPROutlineMeshCustomization.h',
   'Plugins/PrincipledNPR/Source/NPRRuntime/Public/NPROutlineActorComponent.h',
   'Plugins/PrincipledNPR/Source/NPRRuntime/Private/NPROutlineActorComponent.cpp',
   'Plugins/PrincipledNPR/Source/NPRRuntime/Private/NPROutlineComponent.cpp',
@@ -129,6 +130,11 @@ else if(!fs.existsSync(path.join(root,target)) || read(target)!==generated) thro
 
 // Recreate a small set of original evidence/source files for offline static hosting.
 const resources=[...sourcePaths,
+ 'Documentation/Outline/MaterialSlotUI.md',
+ 'Documentation/Outline/MaterialSlotUI/Validation.json',
+ 'Documentation/Outline/MaterialSlotUI/Readbacks.json',
+ 'Documentation/Outline/MaterialSlotUI/IsolatedCloth.png',
+ 'Documentation/Outline/MaterialSlotUI/FullCharacter.png',
  'Documentation/Outline/Guide/01-overview.png', 'Documentation/Outline/Guide/README.md',
  'Documentation/Outline/Temporal/Validation/Candidate1/Screen_Static100/000/Original.png',
  'Documentation/Outline/Temporal/Validation/Candidate1/Screen_Static100/000/Outline.png',
