@@ -1,10 +1,12 @@
 import { defineConfig } from 'vitepress'
 import { withMermaid } from 'vitepress-plugin-mermaid'
+const docsBase = process.env.DOCS_BASE || '/'
+const docsBasePath = docsBase.endsWith('/') ? docsBase : `${docsBase}/`
 const section = (text: string, items: [string, string][]) => ({ text, collapsed: !['开始使用', '功能'].includes(text), items: items.map(([text, link]) => ({ text, link })) })
 export default withMermaid(defineConfig({
   lang: 'zh-CN', title: 'Principled NPR', description: '面向泛二次元角色的风格化材质渲染编辑系统',
-  base: process.env.DOCS_BASE || '/', lastUpdated: true,
-  head: [['link', { rel: 'icon', type: 'image/svg+xml', href: '/npr-mark.svg' }]],
+  base: docsBasePath, lastUpdated: true,
+  head: [['link', { rel: 'icon', type: 'image/svg+xml', href: `${docsBasePath}npr-mark.svg` }]],
   mermaid: {
     securityLevel: 'strict', startOnLoad: false, theme: 'base',
     themeVariables: {
