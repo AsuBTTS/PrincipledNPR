@@ -4,6 +4,74 @@
 
 我们用这套文档介绍功能、操作流程和开发方法。点击“在线文档网站”即可打开带左侧分级目录和搜索的网站，内容随 `dev` 分支自动发布。本地执行 `npm ci`、`npm run docs:dev` 也可以预览。完整预览、构建与发布方法见[文档站点开发](docs/reference/documentation.md)。
 
+## Structure Now:
+```
+PrincipledNPR/
+├── PrincipledNPR.uproject
+├── Config/                         # UE 项目配置
+├── Source/                         # 项目自身的 UE 模块与构建目标
+│   ├── PrincipledNPR/
+│   ├── PrincipledNPR.Target.cs
+│   └── PrincipledNPREditor.Target.cs
+├── Plugins/
+│   └── PrincipledNPR/
+│       ├── PrincipledNPR.uplugin
+│       ├── Source/
+│       │   ├── NPRRuntime/         # 运行时数据、描边和材质绑定
+│       │   │   ├── Public/
+│       │   │   │   ├── NPRSemanticTypes.h
+│       │   │   │   ├── NPRStyleProfile.h
+│       │   │   │   ├── NPRMaterialProfile.h
+│       │   │   │   ├── NPRBackendStylePackage.h
+│       │   │   │   ├── NPRStyleBindingComponent.h
+│       │   │   │   ├── NPROutlinePreset.h
+│       │   │   │   ├── NPROutlineActorComponent.h
+│       │   │   │   └── NPROutlineComponent.h
+│       │   │   └── Private/
+│       │   │       ├── NPRStyleBindingComponent.cpp
+│       │   │       ├── NPROutlineActorComponent.cpp
+│       │   │       ├── NPROutlinePreset.cpp
+│       │   │       └── NPROutlineComponent.cpp
+│       │   └── NPREditor/          # 编辑器窗口、属性定制和保存工具
+│       │       ├── Public/
+│       │       │   └── NPROutlineEditorLibrary.h
+│       │       └── Private/
+│       │           ├── NPROutlineEditorUI.*
+│       │           ├── NPROutlineMeshCustomization.h
+│       │           └── NPROutlineEditorLibrary.cpp
+│       └── Content/
+│           └── Outline/            # 描边材质与宽度遮罩资产
+│               ├── M_OutlineHull
+│               ├── M_OutlineScreen
+│               ├── M_OutlineMask
+│               └── T_OutlineWidthMaskWhite
+├── Content/                        # 项目角色、材质、样式、预设和测试资产
+│   ├── NPR/
+│   │   ├── Characters/
+│   │   ├── Materials/
+│   │   ├── Outline/
+│   │   ├── Presets/
+│   │   ├── Profiles/
+│   │   ├── Styles/
+│   │   └── TestAssets/
+│   └── EndfieldRender/             # 现有角色和项目材质资产
+├── Documentation/                  # 原始技术资料、参数契约和验证证据
+│   ├── Schemas/
+│   └── Outline/
+├── docs/                            # VitePress 中文文档网站
+│   ├── guide/
+│   ├── principled/
+│   ├── features/
+│   ├── editor/
+│   ├── developer/
+│   ├── reference/
+│   └── .vitepress/
+├── Tools/                           # 文档生成、资产构建和验证脚本
+├── .github/workflows/               # 文档构建与发布流程
+├── AGENTS.md                        # 项目与文档维护规则
+└── package.json                     # 文档站点依赖和命令
+```
+
 This is the UE 5.8 project for the controlled Substrate Toon backend spike.
 
 The canonical surface, material and style semantics remain independent of the rendering backend. S58 is the primary implementation candidate; A0 remains the mathematical reference. A native Toon material does not establish acceptance for Face, Hair, shadows or Lumen.
