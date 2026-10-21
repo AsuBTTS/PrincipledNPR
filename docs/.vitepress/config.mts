@@ -19,9 +19,9 @@ export default withMermaid(defineConfig({
     nav: [{ text: '使用手册', link: '/guide/introduction' }, { text: '开发者', link: '/developer/architecture' }, { text: '更新记录', link: '/changelog' }],
     sidebar: [
       section('开始使用', [['系统介绍','/guide/introduction'],['安装与环境','/guide/installation'],['快速开始','/guide/quick-start']]),
-      section('Principled 参数', [['设计与状态','/principled/overview'],['参数参考（自动生成）','/principled/parameters'],['映射与控制粒度','/principled/mapping']]),
+      { text: 'Principled 参数', link: '/principled/overview' },
       section('功能', [['Outline 描边','/features/outline'],['Rim Light 边缘光','/features/rim-light'],['基础颜色','/features/base-color'],['Toon 明暗','/features/toon-shading'],['MatCap','/features/matcap']]),
-      section('编辑器', [['参数编辑与双视口','/editor/parameter-editor'],['预设与保存','/editor/presets']]),
+      { text: '编辑器', link: '/editor/parameter-editor' },
       section('开发者', [['模块架构','/developer/architecture'],['渲染管线','/developer/shader-pipeline'],['参数契约与校验','/developer/parameter-schema'],['扩展与维护','/developer/extending']]),
       section('参考资料', [['lilToon 源码对照','/reference/liltoon-comparison'],['既有技术资料','/reference/legacy'],['实现状态与证据','/reference/status'],['文档开发','/reference/documentation']])
     ],

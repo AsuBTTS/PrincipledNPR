@@ -1,95 +1,78 @@
 # Outline 描边
 
-## 功能与实现状态
+我们用描边让角色轮廓更清楚，也可以按头发、衣服等区域分别调整。下面先说明如何在编辑器里使用，再介绍两种描边方法怎样工作。
 
-我们用描边来强调角色的轮廓，让角色更容易从背景中突出。这个功能会在角色边缘画线，我们可以调整线的颜色、宽度，也可以只调整头发、衣服等局部区域。
+我们目前的实现状态是：基础描边、角色分组和旧单槽流程为**已实现并验证**；分层宽度和 UV0 遮罩为**已实现但待验证**；NPR 调制窗口、材质槽隔离与参数展开为**已实现并验证**。这些结论有各自的验证范围，详见[状态与证据](../reference/status.md)。
 
-我们目前提供两种方法：反向壳把模型外扩一点，用外壳背面形成轮廓；Screen Space（屏幕空间）在画面上找角色区域的边缘，再向外画线，适合统一整角色的外轮廓。
+## 效果和当前状态
 
-基础路径为**已实现并验证**（历史环境和有界证据见[状态页](../reference/status.md)）；新增分层宽度、UV0 Mask 为**已实现但待验证**，已有构建/资产编译记录，新增图像回归未运行。2026-10-20 的新增界面验证单独记录在本文末尾。UV0 Mask 是一张按模型第一套贴图坐标读取的遮罩图，红通道越暗，该处的壳宽度越小。
-
-初次使用先按[快速开始](../guide/quick-start.md)操作。下表保留代码中的字段名，便于在界面和报错中对照；后面的“渲染实现”主要供开发者阅读。
-
-## 效果展示
+下面是 2026-10-17 时间稳定性实验留下的一组真实画面对比。它能帮助我们看懂屏幕空间描边的位置，但颜色、线宽和当前默认值可能已经不同，也没有验证后来增加的遮罩功能。
 
 | 原材质 | Screen Space 描边 |
 | --- | --- |
 | ![原材质](/generated/source/Documentation/Outline/Temporal/Validation/Candidate1/Screen_Static100/000/Original.png) | ![Screen 描边](/generated/source/Documentation/Outline/Temporal/Validation/Candidate1/Screen_Static100/000/Outline.png) |
 
-来源是 2026-10-17 时间稳定性实验 Candidate1 / Screen_Static100 / 000。该历史图用于说明描边位置，颜色、宽度和当前默认值可能不同；不能作为最新 Mask 功能验收。真实连续帧指标见[历史数据](/generated/source/Documentation/Outline/Temporal/TemporalMetrics.json)。
+## 在 UE 编辑器里使用
 
-## 参数与依赖
+先按[安装与环境](../guide/installation.md)打开工程，并在关卡大纲中选中一个角色。然后从 **窗口 → NPR 调制** 打开工具，点击“使用关卡选中角色 / Use Selection”，再点击“创建 / 打开角色级配置”。这会读取角色的静态网格或骨骼网格组件；不需要先把每个材质槽单独转换。
 
-完整 C++ 类型、默认值、声明范围和编辑条件见[自动生成表](../principled/parameters.md)。主要入口：
+![UE 5.8.3 中的 NPR 调制窗口，左侧显示角色材质槽，右侧显示描边预览](/generated/source/Documentation/Outline/MaterialSlotUI/NPRModulation-Outline-UE5.8.3.jpg)
 
-| 控制 | 默认值 / 范围 | 映射及用途 |
-| --- | --- | --- |
-| Method | InvertedHull；None / InvertedHull / ScreenSpace | 选择后端，None 显式关闭 |
-| Color | 线性 RGBA (0.015, 0.008, 0.025, 1)；RGB [0,1] | OutlineColor；隐藏 alpha，不支持透明描边合成 |
-| WidthPixels | 1.25；[0,8] px | Screen → WidthPixels；关联语义 OutlineWidthPx，尚无自动桥接 |
-| HullWidthCm | 0.1；[0,5] cm | Hull → WidthCm；不能当作像素宽度 |
-| WidthEdgeSource | Silhouette | 选择轮廓或手工 FeatureBoundary；并不自动分类 |
-| EdgeWidthScales | Silhouette=1、FeatureBoundary=1；各 [0,4] | 当前来源倍率 |
-| LocalWidthScale | 1；[0,4] | 最深层勾选覆写替换 |
-| DepthBiasCm | 0.1；[0,5] cm | Screen 深度容差；不是遮挡边宽度 |
-| bUseVertexColorWidth | false | Hull，资产顶点色 R；不复制组件 Mesh Paint 覆盖 |
-| bUseWidthMask / WidthMask | false / 空引用 | Hull，UV0、Masks、线性、非 VT 的 Texture2D R 通道 |
+在“描边方式 / Method”中选择反向壳或屏幕空间。要给整个人物使用统一外轮廓，选择 Screen Space 和“统一外轮廓 / UnifiedSilhouette”；要让头发、衣服等部分分别调整，选择“独立区域 / IndependentRegions”。从默认细线开始：Screen Space 的基础宽度是 1.25 px，反向壳是 0.1 cm。
 
-Validate 同时检查有限数值、来源支持、纹理类型和组合后最终宽度上限（Screen 8 px / Hull 5 cm）。0 宽度会移除相应辅助描边。Screen 拒绝顶点色/Mask 连续宽度；Hull 拒绝 FeatureBoundary。Crease/Occlusion 枚举虽保留用于能力诊断，但不可作为有效编辑来源。
+在 `Meshes` 中展开要调整的组件，再从实际材质槽卡片勾选“描边”。点击“编辑参数”可调本槽设置：勾选对应的覆写项后，`Values` 中的值才会替换继承值。“覆写基础宽度”直接换成本区域的基础数值；“覆写区域宽度倍率”则按比例调整已有宽度。勾选“隔离”可临时只看这个槽；取消隔离或点击“显示全部材质”即可恢复整个人物。
 
-## 渲染实现
+工具默认显示描边预览。打开“原材质对比”可并排查看原材质和描边结果；“聚焦当前角色”以及 Studio、Warm、Raking 灯光只改变预览，不会改关卡灯光。需要留图时可以导出双视口 PNG。最后保存所选描边预设和当前关卡，重新打开关卡检查区域设置。角色预览使用参考姿势，动画效果还要在实际场景中确认。
 
-Hull 由独立辅助 Static/Skeletal Mesh 执行：`VertexNormalWS × WidthCm` 写 WPO，顶点色和 UV0 Mask 进一步乘宽度；双面 Masked Unlit 材质通过 TwoSidedSign 丢弃正面，背面壳与常规深度测试形成轮廓。Mask 在顶点阶段显式 mip 0 采样，细节受顶点密度、UV 接缝和纹理驻留影响。
-
-Screen 通过辅助网格写 CustomDepth/Stencil；后处理读 SceneColor、SceneDepth、CustomDepth、CustomStencil。中心属于本组时保留原色，在外部执行 4 圈 × 16 方向采样，找到本组邻域后以最近深度和 DepthBiasCm 抑制被遮挡线。宽度乘 `View.ViewResolutionFraction`；采样步长来自纹理缓冲尺寸。采样半径不保证任意视角严格等厚。
-
-当前 Screen 位于 **Scene Color After DOF，TSR/TAA 之前**。与深度共享 jitter 后交由时间抗锯齿处理；不是关闭时域 AA。不同 Stencil 组独立后处理 Pass，数量随样式/区域分组增加。最多可用 ID 受 1–255 与其他场景使用者约束，耗尽报错。
-
-## 使用流程
-
-按[快速开始](../guide/quick-start.md)建立 Actor 配置。统一外轮廓选择 Screen + UnifiedSilhouette，要求全组样式一致，可局部关闭。局部不同颜色/宽度选择 IndependentRegions，再在组件、Materials 或受支持 Sections 中勾选覆写。
-
-需要手工区域边界时使用 Screen + IndependentRegions + FeatureBoundary；相邻区域可能在共享边形成双侧线。保存[基础预设及当前关卡](../editor/presets.md)后重新打开验证。旧单槽转换、恢复入口仍保留。
-
-## 限制与性能
-
-- 没有自动几何折痕或遮挡边分类。Depth 比较只能抑制遮挡，不生成独立 Occlusion 线。
-- Unified+Hull 被拒绝，几何外扩可能出现内部壳轮廓。Unified 不支持同组不同局部样式/宽度。
-- Section 仅限单 LOD 且独占材质槽，共享槽/多 LOD 必须报错。不可把槽隔离说成任意 Section 隔离。
-- 透明/Masked 原材质的透明形状不由通用辅助 Mask 自动复制；细发片、缝隙、法线接缝及非均匀缩放需资产实测。未声明 Nanite、移动平台和 Cook 的全面兼容。
-- 多辅助网格、蒙皮、CustomDepth 和多后处理 Pass 有成本；Skeletal 使用 Leader Pose，运行时动画须在关卡检查。
-
-## 开发者入口
-
-`NPROutlinePreset.h/.cpp`：Settings、Validate、GetResolvedWidth、ApplyMaterialParameters。`NPROutlineActorComponent.cpp`：ResolveRegions、RefreshOutline、GetSectionMapping、组与 Stencil 分配。`NPROutlineComponent.cpp`：旧单槽绑定。
-
-`Tools/create_outline_backend_assets.py`：材质图及嵌入 HLSL；插件当前没有独立 Shaders 目录。`NPROutlineEditorUI.cpp`：双视口和交互；`NPROutlineEditorLibrary.cpp`：资产/关卡保存入口。这些源码均可从[参数页来源指纹](../principled/parameters.md)下载核对。
-
-## 材质槽勾选与隔离预览（2026-10-20）
-
-我们在角色配置的 `Meshes` 中直接读取真实使用中的材质槽，显示编号、槽名、当前材质和 Opaque 支持状态。展开组件后，取消某行的“描边”即可排除这一槽；不再添加空规则或输入槽名。勾选会创建或更新本槽启用覆写，“恢复继承”删除本槽规则并恢复继承。Actor 总开关和更深层 Section 规则仍然生效。
-
-勾选“隔离”可只看该组件的当前材质槽，选中时显示“隔离中”；取消勾选或点击工具栏“显示全部材质”恢复全角色。切换到另一槽时，原槽的隔离勾选会同步取消。隔离只作用于临时预览，不改变关卡组件可见性、原始材质或源网格。隔离预览会让其他区域不参与临时描边，所以它不能代替完整角色验收。Masked / Translucent 槽仍无法生成正确描边覆盖，但可以单独查看原表面、取消该槽描边。
-
-工具栏“原材质对比”默认关闭，开启后恢复原材质与 Outline 双视口；相机和灯光继续共享。PNG 导出仍输出 Original.png 和 Outline.png，隔离状态会体现在导出画面中。
-
-组件源引用改为名称提示，避免展开整套 UE 网格组件属性。组件级覆写、材质槽“编辑参数”和 Section 高级覆写继续保留。材质槽按钮带明显背景和加粗文字，展开后改为“收起参数”。已有 None、未使用或重复槽名规则会显示清理按钮；点击后移除无效项，同名规则保留第一条，因此清理前应确认不需要后续重复条目的参数。
-
-实现与验证边界见 [材质槽界面改进记录](/generated/source/Documentation/Outline/MaterialSlotUI.md.txt)。新增 UI 与隔离流程不沿用旧时间稳定性验收结果。
-
-2026-10-20：顶级入口改为“窗口 → NPR 调制”，窗口内切换 Outline 和 Rim Light 占位页。材质槽改用原生 Slate 分组卡片；名称、材质与覆盖能力分行显示，描边/隔离使用勾选框，“编辑参数”按需展开，“恢复继承”删除本槽覆写。隔离状态直接读取当前预览目标，避免按钮文字与画面状态不一致。编辑属性只更新窗口内反馈，同一提示去重。
-
-已在 UE 5.8.3 / Windows 的当前角色中检查导航、隔离切换、参数按钮、原材质对比与窄窗口布局。真实导出对照：[仅衣服槽](/generated/source/Documentation/Outline/MaterialSlotUI/IsolatedCloth.png)、[取消隔离后的角色](/generated/source/Documentation/Outline/MaterialSlotUI/FullCharacter.png)。[机器可读记录](/generated/source/Documentation/Outline/MaterialSlotUI/Validation.json)列明未覆盖的操作和资产类型；这次界面检查不扩展渲染后端的验收范围。
-
-这两张原图来自 UE 预览视口导出，保留当时已有的粉色描边参数；左图查看完整角色，右图只隔离当前衣服材质槽。隔离图中未显示的部件是预览筛选结果，不能据此判断完整角色效果。
+2026-10-20 的真实界面导出如下。左图展示完整角色，右图只隔离了衣服材质槽；隔离画面只用于检查该槽，不能代替整个人物验收。原始参数是当时已有的粉色描边，不代表当前默认颜色。
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;">
   <figure style="margin:0;">
     <img src="/generated/source/Documentation/Outline/MaterialSlotUI/FullCharacter.png" alt="UE 预览导出的完整角色描边画面" style="display:block;width:100%;height:auto;border:1px solid var(--vp-c-divider);border-radius:8px;" />
-    <figcaption>图 1 · 完整角色预览：所有区域一起显示。</figcaption>
+    <figcaption>完整角色预览：所有区域一起显示。</figcaption>
   </figure>
   <figure style="margin:0;">
     <img src="/generated/source/Documentation/Outline/MaterialSlotUI/IsolatedCloth.png" alt="UE 预览导出的单个衣服材质槽隔离画面" style="display:block;width:100%;height:auto;border:1px solid var(--vp-c-divider);border-radius:8px;" />
-    <figcaption>图 2 · 衣服槽隔离预览：只用于检查当前槽，不能代替完整角色验收。</figcaption>
+    <figcaption>衣服槽隔离预览：只检查当前槽。</figcaption>
   </figure>
 </div>
+
+## 参数怎样影响线宽
+
+屏幕空间描边按像素扩张，反向壳按模型空间的厘米数外扩，所以二者不是同一个单位。当前宽度由“基础宽度 × 边缘类型倍率 × 区域倍率”算出；区域层级从角色、组件、材质槽到 Section 逐级继承，只有最深处勾选的覆写生效，并不会把各层倍率连乘。
+
+| 控制 | 默认值和范围 | 我们用它做什么 |
+| --- | --- | --- |
+| 描边方式 `Method` | InvertedHull；也可关闭或选 ScreenSpace | 选择外扩模型或在画面中扩张边缘 |
+| 描边颜色 `Color` | 线性 RGB `(0.015, 0.008, 0.025)` | 设置线条颜色；当前不合成透明描边 |
+| 屏幕宽度 `WidthPixels` | 1.25；0–8 px | 设置 Screen Space 的基础宽度 |
+| 壳宽度 `HullWidthCm` | 0.1；0–5 cm | 设置反向壳的基础外扩距离 |
+| 边缘来源倍率 `EdgeWidthScales` | Silhouette 和 FeatureBoundary 默认均为 1；各 0–4 | 调整当前边缘来源的宽度比例 |
+| 区域倍率 `LocalWidthScale` | 1；0–4 | 按组件、材质槽或 Section 缩放宽度 |
+| 深度容差 `DepthBiasCm` | 0.1；0–5 cm | Screen Space 用来减少被其他物体挡住的线 |
+| 顶点色宽度 `bUseVertexColorWidth` | 关闭 | 反向壳读取模型顶点色 R 通道控制局部外扩 |
+| UV0 遮罩 `bUseWidthMask` / `WidthMask` | 关闭 / 空 | 反向壳读取宽度贴图的 R 通道；需要符合格式要求的 Texture2D |
+
+例如 Screen Space 基础宽度为 1.25 px、边缘倍率为 1、区域倍率为 0.8 时，区域计算宽度为 1 px。反向壳还可以继续乘顶点色和遮罩因子。像素和厘米会受相机、距离及模型大小影响，不能用固定比例换算。
+
+完整字段、声明范围和对应源码见[参数参考](../principled/parameters.md)。其中规划中的 Principled `OutlineWidthPx` 尚未自动连接到当前 Outline；目前没有一个跨两种方法通用的最终视觉宽度旋钮。
+
+## 两种方法怎样画出描边
+
+**反向壳（Inverted Hull）** 会为角色组件创建辅助网格，把模型沿表面朝向稍微向外推，再只留下外壳背面形成线条。推开的距离由 `HullWidthCm` 和各层倍率决定，顶点色和 UV0 遮罩还能继续控制局部宽度。这里的表面朝向也叫法线；WPO（世界位置偏移）是材质在渲染时移动顶点的位置。它使用插件里的 `M_OutlineHull` 材质，不修改角色原始网格和材质资产。
+
+**屏幕空间（Screen Space）** 会先让辅助网格写入 UE 的 CustomDepth / Stencil 标记，再由后处理材质读取画面颜色、深度和标记，在角色边缘附近采样并扩张出线条。材质里的 Custom HLSL（材质自定义代码）执行采样计算。当前按 4 圈、每圈 16 个方向采样，并用深度容差减少画在遮挡物后面的线；后处理位置为 Scene Color After DOF、TSR/TAA 之前。采样半径不保证所有视角都呈现严格等厚线条。
+
+这两种方式目前都通过 UE 材质资产接入：反向壳使用 `M_OutlineHull`，屏幕空间使用 `M_OutlineScreen` 和后处理配置。可复用的 HLSL 仍嵌在材质 Custom 节点中，插件目前没有独立的 `Shaders/` 源码目录或单独注册的全局 Shader Pass。
+
+## 限制、源码和验证范围
+
+- 没有自动识别几何折痕或遮挡边。FeatureBoundary 只在 Screen Space + IndependentRegions 下使用人工划分区域；相邻区域可能在共享边形成两条线。
+- UnifiedSilhouette 要求整组样式和宽度一致，只支持局部关闭；需要不同颜色或线宽时要用 IndependentRegions。统一模式下不支持 Hull。
+- Section 仅支持单 LOD 且独占材质槽；共享槽或多 LOD 组合会报错。Masked / Translucent 原材质目前不能生成正确的描边覆盖。
+- 反向壳的遮罩细节受网格顶点密度、UV 接缝和纹理驻留影响；Screen Space 不支持连续顶点色或 UV 遮罩宽度。
+- 辅助网格、蒙皮、CustomDepth 和不同 Stencil 组的后处理都有运行成本。移动平台、Nanite、Cook 和复杂动画的全面兼容尚未验证。
+
+开发入口在 `NPROutlinePreset.h/.cpp`（设置、校验和宽度计算）、`NPROutlineActorComponent.cpp`（区域解析和渲染资源）、`NPROutlineEditorUI.cpp`（工具窗口）及 `Tools/create_outline_backend_assets.py`（材质资产构造脚本）。这些材质资产的真实编译状态与用户操作记录见[历史资料索引](../reference/legacy.md)和[状态与证据](../reference/status.md)。
+
+基础描边的历史图像与时间稳定性记录仍在 [2026-10-17 实验资料](/generated/source/Documentation/Outline/Temporal/TemporalMetrics.json)。分层宽度和 UV0 遮罩有编译及资产更新记录，但本次没有运行 UE 或新的渲染回归；当前 UI 的验证范围见[材质槽界面记录](/generated/source/Documentation/Outline/MaterialSlotUI.md.txt)与对应的[机器记录](/generated/source/Documentation/Outline/MaterialSlotUI/Validation.json)。

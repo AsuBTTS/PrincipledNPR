@@ -19,15 +19,7 @@ hero:
 
 ## 从左侧目录开始
 
-左侧目录按内容分组。点击分组标题可以展开或收起，点击页面名称就能跳转到对应说明。
-
-| 我们想做什么 | 从这里开始 |
-| --- | --- |
-| 给角色添加描边 | [快速开始](./guide/quick-start.md) |
-| 调整线宽、颜色和局部区域 | [Outline 描边](./features/outline.md) |
-| 保存设置，下次继续使用 | [预设与保存](./editor/presets.md) |
-| 了解统一参数的设计 | [Principled 参数体系](./principled/overview.md) |
-| 开发或扩展功能 | [模块架构](./developer/architecture.md) |
+我们把文档按用途放在左侧分组里。第一次打开工程，可以先读[系统介绍](./guide/introduction.md)、[安装与环境](./guide/installation.md)和[快速开始](./guide/quick-start.md)；需要调整某种画面效果时，直接打开“功能”下对应的说明；想了解编辑器和插件实现，再看“编辑器”和“开发者”。点击分组标题可以展开或收起，点击页面名称即可跳转。
 
 ## 我们做到哪一步了
 
