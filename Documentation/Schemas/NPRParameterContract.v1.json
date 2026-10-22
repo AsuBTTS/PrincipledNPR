@@ -279,6 +279,38 @@
       "migrationVersion": 1
     },
     {
+      "id": "RimColor",
+      "valueType": "linear_rgb",
+      "componentCount": 3,
+      "unit": "linear_scene_rgb",
+      "hardDomain": [
+        0,
+        null
+      ],
+      "recommendedRange": [
+        0,
+        1
+      ],
+      "domainApplication": "per_component",
+      "schemaDefault": [
+        1,
+        1,
+        1
+      ],
+      "group": "Appearance.Rim",
+      "materialProfiles": [
+        "Generic",
+        "Face",
+        "Hair"
+      ],
+      "semantic": "Linear RGB tint of the extra rim contribution; multiplied by RimPeakScale. Alpha is ignored; brightness is not normalized. Requires typed vector storage, not the legacy scalar patch map.",
+      "uiAliases": [
+        "rimColor"
+      ],
+      "migrationVersion": 1,
+      "compatibility": "Additive optional RGB ID. Legacy styles without a color resolve to white. Existing scalar IDs and response model remain unchanged. UDataAsset color patch persistence is a separate integration task."
+    },
+    {
       "id": "FaceAngularBiasRad",
       "unit": "radian",
       "hardDomain": null,

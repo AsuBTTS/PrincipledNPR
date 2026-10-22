@@ -2,6 +2,7 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "NPRRimParameters.h"
 #include "NPRStyleBindingComponent.generated.h"
 
 class UMeshComponent;
@@ -25,6 +26,10 @@ public:
     /** Updates only existing scalar parameters. Does not mutate ToonProfile or static switches. */
     UFUNCTION(BlueprintCallable, Category = "NPR|Binding")
     bool SetScalarParameter(FName ParameterName, float Value, FString& OutError);
+
+    /** Validates the four canonical Rim values and every active slot before any MID write. */
+    UFUNCTION(BlueprintCallable, Category = "NPR|Binding")
+    bool SetRimParameters(const FNPRRimParameters& Parameters, FString& OutError);
 
     UFUNCTION(BlueprintCallable, Category = "NPR|Binding")
     void RestoreMaterials();

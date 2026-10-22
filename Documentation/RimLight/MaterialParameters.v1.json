@@ -1,0 +1,169 @@
+{
+  "version": 1,
+  "scope": "Frozen four-control semantic-to-material mapping, independent of backend lighting model",
+  "material": "/PrincipledNPR/RimLight/M_RimLight",
+  "function": "/PrincipledNPR/RimLight/MF_RimLight",
+  "preview_instance": "/PrincipledNPR/RimLight/MI_RimLight_Preview",
+  "policy": "UnshadowedEmissiveAppearance",
+  "control_granularity": "Per material instance / function call",
+  "parameters": [
+    {
+      "material_parameter": "亮边宽度",
+      "semantic_id": "RimGrazingAngleRad",
+      "function_input": "RimGrazingAngleRad",
+      "type": "scalar",
+      "ui_unit": "degree",
+      "function_unit": "radian",
+      "transform": "degrees * pi / 180",
+      "default": 8,
+      "hard_domain": [
+        0,
+        90
+      ],
+      "recommended_range": [
+        1,
+        35
+      ],
+      "canonical_default": 0.13962634015954636,
+      "canonical_unit": "radian",
+      "canonical_hard_domain": [
+        0,
+        1.5707963267948966
+      ],
+      "canonical_value_type": "scalar",
+      "required_in_material": true,
+      "ui_slider_range": [
+        0,
+        35
+      ]
+    },
+    {
+      "material_parameter": "边缘柔和度",
+      "semantic_id": "RimEdgeHalfWidthRad",
+      "function_input": "RimEdgeHalfWidthRad",
+      "type": "scalar",
+      "ui_unit": "degree_half_width",
+      "function_unit": "radian_half_width",
+      "transform": "degrees * pi / 180",
+      "default": 2,
+      "hard_domain": [
+        0,
+        90
+      ],
+      "recommended_range": [
+        0,
+        10
+      ],
+      "canonical_default": 0.03490658503988659,
+      "canonical_unit": "radian",
+      "canonical_hard_domain": [
+        0,
+        1.5707963267948966
+      ],
+      "canonical_value_type": "scalar",
+      "required_in_material": true,
+      "ui_slider_range": [
+        0,
+        10
+      ]
+    },
+    {
+      "material_parameter": "边缘光强度",
+      "semantic_id": "RimPeakScale",
+      "function_input": "RimPeakScale",
+      "type": "scalar",
+      "unit": "linear_scene_multiplier",
+      "default": 0,
+      "preview_override": 1,
+      "hard_domain": [
+        0,
+        null
+      ],
+      "recommended_range": [
+        0,
+        2
+      ],
+      "canonical_default": 0,
+      "canonical_unit": "linear_scene_multiplier",
+      "canonical_hard_domain": [
+        0,
+        null
+      ],
+      "canonical_value_type": "scalar",
+      "required_in_material": true,
+      "ui_slider_range": [
+        0,
+        2
+      ]
+    },
+    {
+      "material_parameter": "边缘光颜色",
+      "semantic_id": "RimColor",
+      "function_input": "RimColor",
+      "type": "linear_rgb",
+      "unit": "linear_scene_rgb",
+      "default": [
+        1,
+        1,
+        1
+      ],
+      "hard_domain_per_channel": [
+        0,
+        null
+      ],
+      "recommended_range_per_channel": [
+        0,
+        1
+      ],
+      "alpha": "ignored",
+      "canonical_default": [
+        1,
+        1,
+        1
+      ],
+      "canonical_unit": "linear_scene_rgb",
+      "canonical_hard_domain": [
+        0,
+        null
+      ],
+      "canonical_value_type": "linear_rgb",
+      "required_in_material": true
+    }
+  ],
+  "validation": "FNPRRimParameters::Validate rejects nonfinite/out-of-domain canonical values without clamping. The mapping module validates values before conversion. Raw UE material-instance edits do not call C++ Validate; consumers must validate before writing. Finite float32 representation is required at the material boundary.",
+  "normal_policy": "Normalized world-space rim normal and view; default rim/geometry normals use VertexNormalWS. Geometry front gate suppresses back faces; two-sided flipped-normal authoring is not included.",
+  "limits": [
+    "Pixel stage only because derivatives are used",
+    "Not fixed pixel width",
+    "No light-direction or native shadow-visibility input",
+    "Color/intensity are coupled in amplitude",
+    "Softness wider than coverage can reduce the attained peak",
+    "Existing nonzero vectors required for normal/view overrides",
+    "No automatic actor/material-slot application"
+  ],
+  "documentType": "NPRRimMaterialContract",
+  "contractVersion": 1,
+  "compatibility": {
+    "existing_scalar_ids": "unchanged",
+    "existing_material_names": "unchanged; names are v1 binding FNames, not display-only aliases",
+    "missing_RimColor": "white [1,1,1]",
+    "legacy_scalar_patch": "FNPRParameterPatch.Values still stores scalar FNPRFloatOverride entries; typed RGB persistence is task 4",
+    "reset": "delete current sparse entry; zero scalar and black RGB are valid overrides"
+  },
+  "handoff": {
+    "cpp_header": "Plugins/PrincipledNPR/Source/NPRRuntime/Public/NPRRimParameters.h",
+    "cpp_validation": "FNPRRimParameters::Validate",
+    "cpp_mid_writer": "UNPRStyleBindingComponent::SetRimParameters",
+    "cpp_angle_conversion": [
+      "GetMaterialWidthDegrees",
+      "GetMaterialSoftnessDegrees"
+    ],
+    "python_mapping": "Tools/rim_light_contract.py",
+    "asset_audit": "Tools/audit_rim_light_contract.py",
+    "material_function_outputs": [
+      "RimColorContribution",
+      "RimMask"
+    ],
+    "status": "Contract and explicit four-control MID writer implemented and validated in controlled scope; Style Profile persistence / automatic actor binding / modulation UI remain separate work"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-22",
+  "status": "Reviewed",
+  "source": "Real render targets exported by NPR.Rim.RenderBinding in UE 5.8.3 / DX12 / SM6",
+  "reviewed": [
+    "Off.png",
+    "Default8.png",
+    "Wide25.png",
+    "Hard25.png",
+    "Soft25.png",
+    "Red25.png",
+    "Red25Double.png"
+  ],
+  "off_again": "Byte-identical SHA256 to the reviewed Off.png; numeric maximum error 0",
+  "observations": "Dark base sphere; narrow 8 degree rim and wider 25 degree rim; softer inner transition at softness 10; red tint and brighter red at intensity 2. No default checker material remains.",
+  "image_set": {
+    "Off.png": "81b1ccaaee952b08660dbd78df5822744bcdf55b1e44e29073993ce9c9d69d13",
+    "Default8.png": "9f2a744b491daf6c949173280c0f639736265bc0d7624e2e7299748d631a2320",
+    "Wide25.png": "2f2a2dbc01deee622f566b865167337b9bd83fd238c87dc132d4a4bea3d8749e",
+    "Hard25.png": "847c80c1cf74c8ff3d031fc9cac748b794e1db4de144e49104c26a1325e56f1c",
+    "Soft25.png": "ae6a2e0320cf29e138889a3eb76034b94cf5d350a651c436d4f2763a4ae50ca9",
+    "Red25.png": "6b3c7a6861682c070016c30e73ce571c791ff38594b3e6ecd6986ffcf7080eac",
+    "Red25Double.png": "222b1182148cdee178794ddd013613435c551604b553ab09db7d76f303c3a62d",
+    "OffAgain.png": "81b1ccaaee952b08660dbd78df5822744bcdf55b1e44e29073993ce9c9d69d13"
+  },
+  "scope": "Controlled static sphere parameter response only, not UI screenshots or character/shadow/animation/temporal/Cook/performance acceptance"
+}

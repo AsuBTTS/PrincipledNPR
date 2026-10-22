@@ -1,0 +1,31 @@
+{
+  "status": "AssetsSaved_CompileRequested",
+  "engine": "5.8.3-58210709+++UE5+Release-5.8",
+  "assets": [
+    "/PrincipledNPR/Surface/T_SurfaceValidationChecker.T_SurfaceValidationChecker",
+    "/PrincipledNPR/Surface/T_SurfaceValidationNormal.T_SurfaceValidationNormal",
+    "/PrincipledNPR/Surface/MF_NPRSurfaceInputs.MF_NPRSurfaceInputs",
+    "/PrincipledNPR/Surface/MF_NPRAdditiveColor.MF_NPRAdditiveColor",
+    "/PrincipledNPR/Surface/MF_NPRComposeEmissive.MF_NPRComposeEmissive",
+    "/PrincipledNPR/Surface/M_NPRSurface_DefaultLit.M_NPRSurface_DefaultLit",
+    "/PrincipledNPR/Surface/SR_DefaultLit_Rim.SR_DefaultLit_Rim",
+    "/PrincipledNPR/Surface/M_NPRSurface_Toon.M_NPRSurface_Toon",
+    "/PrincipledNPR/Surface/SR_Toon_Rim.SR_Toon_Rim",
+    "/PrincipledNPR/Surface/MI_NPRSurface_Preview.MI_NPRSurface_Preview"
+  ],
+  "render_validation": "NotRun",
+  "scope": "Owned Surface family assets; no existing actors, Rim, Outline or ToonProfile edits.",
+  "source_sha256": "bb75289d0581724ffcd6d07eaf0c8da5e00335bd2b7c6d5e0b0c70441fded50d",
+  "asset_sha256": {
+    "MF_NPRAdditiveColor.uasset": "161247d62a22b05d9f6ff33340ff717d4be0fd17cf2eb0090865cda8ecc20e3b",
+    "MF_NPRComposeEmissive.uasset": "b6aff89ac64d0e59264e8fc7d28a6c1e7296197ce442cf8fefdb418def3ca4a0",
+    "MF_NPRSurfaceInputs.uasset": "bc7bd63397b9bbe16ed6b0b56b1ec55d6869af4063655148e1b481d33b28ab46",
+    "MI_NPRSurface_Preview.uasset": "5f795b5e82ee254a00d5bd2c6641f191cbf153ae5cf3ca25938c90a3933932a4",
+    "M_NPRSurface_DefaultLit.uasset": "7d478bb7e0a227478f4e3c4a656ccfcb79eb7d7a91e831081f465aa408cbe9e9",
+    "M_NPRSurface_Toon.uasset": "6b74387aec3bbd3083877109f3b34d7cdad662615a0cf39ee0dd8d0cc2ca9d72",
+    "SR_DefaultLit_Rim.uasset": "45d6eafb537221da3f86240a60d4349208acb5ccdb5c1dc29a83894eaa73bdea",
+    "SR_Toon_Rim.uasset": "b61c1b2ec950c3e2fb544ade600f18b8ba14c8bb2b9e7ee1f9b611d3fabeffa5",
+    "T_SurfaceValidationChecker.uasset": "006e4c1ded77525a87a7a4cfd4755f796aec6985ed5a6a05d891faf7789ec41d",
+    "T_SurfaceValidationNormal.uasset": "f6c5fcd8a6b376f056904e364ed73af759b6b8bfe297c4419d4fd857c96921d2"
+  }
+}

@@ -23,6 +23,8 @@ Outline 则已经独立完成设置、区域解析、辅助网格、后处理、
 
 ## 后续架构决策
 
+方案 B 的第一步已建立 [Surface Master Family / Recipe](../features/surface-material.md)：`UNPRSurfaceRecipe → ComposePackage → UNPRBackendStylePackage → ApplyPackage → 同一槽 MID`。两个家族复用基础输入、既有 Rim 与附加贡献函数。Composer 只选预制材质并检查能力与归属，不在运行时生成材质图。完整 Style Resolver 和跨后端 Execution Plan 仍待实现，Outline 继续独立管理辅助资源。
+
 继续采用[三层参数模型](../principled/overview.md)，在不改变旧 API 的前提下补充映射结果与能力诊断。渲染策略不同可有不同实现，但需记录单位、误差、适用条件和退化方式。ToonProfile 是预制的后端资源，不能直接作为艺术语义 Style，也不应在运行时改其设置。
 
 Shader 实现采用材质节点优先：节点图本身就是 UE 编写材质 Shader 的方式。重复节点网络先考虑材质函数；只有表达不清、缺少合适节点或需要维护可复用 HLSL 算法时，才加入源码文件。独立 Shader Pass 只用于确实需要材质之外的渲染阶段和资源的效果。具体判断与 UE 接入边界见[渲染管线](./shader-pipeline.md#后续实现原则-材质节点优先)。

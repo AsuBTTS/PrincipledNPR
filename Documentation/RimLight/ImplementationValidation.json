@@ -1,0 +1,71 @@
+{
+  "date": "2026-10-22",
+  "platform": "Windows 11 x64",
+  "engine": "5.8.3-58210709+++UE5+Release-5.8",
+  "scope": "Rim parameter contract and explicit four-control MID binding, verified on transient meshes and an isolated static preview sphere. Profile persistence, automatic actor binding and the Rim modulation UI remain separate work.",
+  "cpp_game_build": {
+    "target": "PrincipledNPR Win64 Development",
+    "status": "Passed",
+    "result": "Succeeded",
+    "elapsed_seconds": 82.54,
+    "compiled": [
+      "NPRRimParameters.cpp and generated USTRUCT declarations (preceding incremental build)",
+      "NPRRimContractTests.cpp"
+    ],
+    "final_actions": [
+      "Compile [x64] NPRRimContractTests.cpp",
+      "Link [x64] PrincipledNPR.exe",
+      "WriteMetadata PrincipledNPR.target"
+    ],
+    "reproduce": "Build.bat PrincipledNPR Win64 Development -Project=<project>/PrincipledNPR.uproject -WaitMutex"
+  },
+  "cpp_automation": {
+    "test": "NPR.Rim.MaterialContract",
+    "status": "NotRun_StartupFailedBeforeTests",
+    "attempt": "PrincipledNPR.exe -nullrhi -unattended -nosound -ExecCmds=\"Automation RunTests NPR.Rim.MaterialContract\" -TestExit=\"Automation Test Queue Empty\"",
+    "observed": [
+      "Failed to load premade asset registry. LoadResult == 1.",
+      "Assertion failed: ReaderPos + Num <= ReaderSize, BufferReader.h:52",
+      "Crash in runnable thread IOThreadPool #2"
+    ],
+    "log": "Saved/Logs/RimContractRuntime.log",
+    "interpretation": "Engine startup failed during asset loading before the test queue. A zero shell exit code does not mean these tests passed. The underlying asset-loading cause was not diagnosed in task 2."
+  },
+  "cpp_editor_build": {
+    "status": "Passed",
+    "target": "PrincipledNPREditor Win64 Development",
+    "full_build_seconds": 69.35,
+    "final_render_test_rebuild_seconds": 15.82,
+    "live_coding": "Succeeded initially; then closed the saved project normally and rebuilt both DLLs for durable reflection and future launches"
+  },
+  "latest_game_build": {
+    "status": "Passed",
+    "target": "PrincipledNPR Win64 Development",
+    "elapsed_seconds": 110.07
+  },
+  "latest_editor_automation": {
+    "date_local": "2026-10-22 16:28 Asia/Shanghai",
+    "status": "Passed",
+    "tests": [
+      "NPR.Rim.LiveBinding",
+      "NPR.Rim.MaterialContract",
+      "NPR.Rim.RenderBinding"
+    ],
+    "succeeded": 3,
+    "failed": 0,
+    "warnings": 0,
+    "rhi": "D3D12 SM6",
+    "gpu": "Intel(R) UHD Graphics",
+    "report": "Saved/Automation/RimBinding/index.json",
+    "log": "Saved/Logs/RimBindingEditor.log",
+    "readiness_override": "Process-only Engine.AutomationTestSettings DefaultInteractiveFramerate=1, duration=1. This only removes the background readiness wait; no performance acceptance is claimed and no editor preference was changed."
+  },
+  "current_editor_refresh": "Completed_MI_RimLight_PreviewOpenedAndVisuallyConfirmed",
+  "offline_contract": "ContractValidation.json",
+  "saved_asset_readback": "ParameterExposureValidation.json",
+  "render_validation": "BindingValidation/ImageMetrics.json: eight real GPU captures and eight image/automation gates passed; visual review in BindingValidation/ImageReview.json",
+  "reflected_cpp_calls": "BindingValidation/PythonReadback.json: ten checks passed in the reopened editor; no level actors or asset/config saves",
+  "historical_scope": "The earlier cpp_game_build and cpp_automation fields preserve task 2 evidence, including the Game startup failure before tests. The latest Editor run supersedes that missing execution coverage.",
+  "capture_test_correction": "Initial synchronous captures showed the same default material although export succeeded. The final test waits across frames and asserts enabled Rim changes pixels and OffAgain restores pixels, then runs numeric and visual gates.",
+  "overall_contract_status": "Validated_InControlledBindingAndSphereScope"
+}

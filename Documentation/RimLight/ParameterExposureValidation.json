@@ -1,0 +1,78 @@
+{
+  "status": "Passed",
+  "checked_at_utc": "2026-10-22T07:36:04.175466+00:00",
+  "engine": "5.8.3-58210709+++UE5+Release-5.8",
+  "contract_version": 1,
+  "checks": {
+    "ScalarNamesAndTypes": true,
+    "VectorNamesAndTypes": true,
+    "FunctionFeedsEmissive": true,
+    "RimGrazingAngleRadDefault": true,
+    "RimGrazingAngleRadGroup": true,
+    "RimGrazingAngleRadSliders": true,
+    "RimGrazingAngleRadFunctionType": true,
+    "RimGrazingAngleRadFunctionDefaultConnected": true,
+    "RimGrazingAngleRadFunctionDefault": true,
+    "RimGrazingAngleRadFunctionPinBinding": true,
+    "RimGrazingAngleRadDegreeConversion": true,
+    "RimEdgeHalfWidthRadDefault": true,
+    "RimEdgeHalfWidthRadGroup": true,
+    "RimEdgeHalfWidthRadSliders": true,
+    "RimEdgeHalfWidthRadFunctionType": true,
+    "RimEdgeHalfWidthRadFunctionDefaultConnected": true,
+    "RimEdgeHalfWidthRadFunctionDefault": true,
+    "RimEdgeHalfWidthRadFunctionPinBinding": true,
+    "RimEdgeHalfWidthRadDegreeConversion": true,
+    "RimPeakScaleDefault": true,
+    "RimPeakScaleGroup": true,
+    "RimPeakScaleSliders": true,
+    "RimPeakScaleFunctionType": true,
+    "RimPeakScaleFunctionDefaultConnected": true,
+    "RimPeakScaleFunctionDefault": true,
+    "RimPeakScaleFunctionPinBinding": true,
+    "RimColorDefault": true,
+    "RimColorGroup": true,
+    "RimColorFunctionType": true,
+    "RimColorFunctionDefaultConnected": true,
+    "RimColorFunctionDefault": true,
+    "RimColorFunctionPinBinding": true,
+    "PreviewOverrideSeparate": true,
+    "AlphaExcludedByVector3": true
+  },
+  "saved_assets": false,
+  "parameters": [
+    {
+      "semantic_id": "RimGrazingAngleRad",
+      "material_name": "亮边宽度",
+      "actual_default": 8.0,
+      "function_input": "RimGrazingAngleRad"
+    },
+    {
+      "semantic_id": "RimEdgeHalfWidthRad",
+      "material_name": "边缘柔和度",
+      "actual_default": 2.0,
+      "function_input": "RimEdgeHalfWidthRad"
+    },
+    {
+      "semantic_id": "RimPeakScale",
+      "material_name": "边缘光强度",
+      "actual_default": 0.0,
+      "function_input": "RimPeakScale"
+    },
+    {
+      "semantic_id": "RimColor",
+      "material_name": "边缘光颜色",
+      "actual_default": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "function_input": "RimColor"
+    }
+  ],
+  "asset_sha256": {
+    "Plugins/PrincipledNPR/Content/RimLight/MF_RimLight.uasset": "c98b4a93bff26795f60e63d7e5c953fc3acfd83d02db15584dff7d54252393e5",
+    "Plugins/PrincipledNPR/Content/RimLight/MI_RimLight_Preview.uasset": "54d8997eb51f4e386a9e97041e41b957a1dd78c710d028bc1af7c8b9a9e76937",
+    "Plugins/PrincipledNPR/Content/RimLight/M_RimLight.uasset": "61a4101e032856475a12e9a697ca3b10f3b8e394cbec98d2f9249cc89bdc58c5"
+  }
+}

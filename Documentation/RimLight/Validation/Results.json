@@ -1,0 +1,34 @@
+{
+  "engine": "5.8.3-58210709+++UE5+Release-5.8",
+  "status": "CompiledReopened_CapturesExported",
+  "checks": {
+    "RealRHI": true,
+    "AssetsReopen": true,
+    "FourParameters": true,
+    "DefaultOff": true,
+    "PreviewEnabled": true,
+    "NoCustomHLSL": true,
+    "FunctionInterface": true,
+    "CompiledShaderPresent": true,
+    "TransientMID": true,
+    "Capture_Off": true,
+    "Capture_Default8": true,
+    "Capture_Wide25": true,
+    "Capture_Hard25": true,
+    "Capture_Soft25": true,
+    "Capture_Red25": true,
+    "Capture_Red25Double": true
+  },
+  "captures": [
+    "Off.png",
+    "Default8.png",
+    "Wide25.png",
+    "Hard25.png",
+    "Soft25.png",
+    "Red25.png",
+    "Red25Double.png"
+  ],
+  "image_review": "Pending",
+  "scope": "Independent process asset reload; static orthographic sphere, four parameters. No character, shadow, temporal or Cook acceptance.",
+  "pixel_instructions": 219
+}

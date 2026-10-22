@@ -1,0 +1,158 @@
+{
+  "status": "Passed",
+  "checked_at_utc": "2026-10-22T12:51:44.971095+00:00",
+  "scope": "UE 5.8.3 / CL 58210709; main-project Surface Composer and isolated 512px sphere GPU captures; BaseColor/Normal/HDR addition, AdditionalEmission, native Toon+Rim, Screen/Hull coexistence. Independent Rim regression executed in validation project to preserve old evidence.",
+  "engine": "5.8.3-58210709+++UE5+Release-5.8",
+  "devices": [
+    {
+      "platform": "WindowsEditor",
+      "oSVersion": "Windows 11 (25H2) [10.0.26200.9711] ",
+      "gPU": "Intel(R) UHD Graphics",
+      "renderMode": "D3D12_SM6",
+      "rHI": "D3D12 (SM6)"
+    }
+  ],
+  "checks": {
+    "TwoSurfaceAutomationTests": true,
+    "NinetyBinaryAssetChecks": true,
+    "AuditedSavedAssetHashes": true,
+    "BaseColorPreserved": true,
+    "NormalPreserved": true,
+    "NormalTextureActuallyUsed": true,
+    "BaseEmissiveVisible": true,
+    "RimVisible": true,
+    "SecondEffectVisible": true,
+    "HDRContributionsAdd": true,
+    "ScreenOutlineVisible": true,
+    "HullOutlineVisible": true,
+    "ToonAndRimVisible": true,
+    "SeventeenReal512Captures": true,
+    "IndependentRimRegression": true,
+    "ExistingRimOutlineSourcesAssetsMapsEvidenceUnchanged": true,
+    "GameBuild": true,
+    "MainEditorBuild": true
+  },
+  "gpu_metrics": {
+    "captured_at_utc": "2026-10-22T12:44:21.384Z",
+    "base_color_rim_difference": 0,
+    "normal_rim_difference": 0,
+    "normal_texture_difference": 0.30639526,
+    "base_emissive_difference": 0.0728756141,
+    "rim_difference": 0.062899068,
+    "second_effect_difference": 0.0424118783,
+    "hdr_relative_addition_error": 0.00884810877,
+    "screen_outline_difference": 0.0124211183,
+    "hull_outline_difference": 0.0184767734,
+    "toon_rim_difference": 0.0570369148
+  },
+  "surface_tests": [
+    {
+      "fullTestPath": "NPR.Surface.Composer",
+      "state": "Success",
+      "errors": 0,
+      "warnings": 0,
+      "duration": 0.09888289868831635
+    },
+    {
+      "fullTestPath": "NPR.Surface.RenderComposition",
+      "state": "Success",
+      "errors": 0,
+      "warnings": 0,
+      "duration": 7.15319299697876
+    }
+  ],
+  "rim_regression": {
+    "checks": {
+      "Eight512Captures": true,
+      "DefaultEnablesVisibleRim": true,
+      "WidthIncreasesCoverage": true,
+      "SoftnessBroadensTransition": true,
+      "RGBChangesHue": true,
+      "IntensityIncreasesRedContribution": true,
+      "ZeroRestoresRenderedOff": true,
+      "ThreeCppTestsSucceeded": true
+    },
+    "automation": {
+      "reportCreatedOn": "2026.10.22-12.38.35",
+      "devices": [
+        {
+          "platform": "WindowsEditor",
+          "oSVersion": "Windows 11 (25H2) [10.0.26200.9711] ",
+          "gPU": "Intel(R) UHD Graphics",
+          "renderMode": "D3D12_SM6",
+          "rHI": "D3D12 (SM6)"
+        }
+      ],
+      "tests": [
+        {
+          "fullTestPath": "NPR.Rim.LiveBinding",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0,
+          "duration": 0.03474939987063408
+        },
+        {
+          "fullTestPath": "NPR.Rim.MaterialContract",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0,
+          "duration": 0.010237101465463638
+        },
+        {
+          "fullTestPath": "NPR.Rim.RenderBinding",
+          "state": "Success",
+          "errors": 0,
+          "warnings": 0,
+          "duration": 2.6493980884552
+        }
+      ]
+    }
+  },
+  "unchanged_existing_files": true,
+  "unexpected_changes": [],
+  "captures_sha256": {
+    "AdditionalHDR.png": "01d503b02c226211b0c0a2302fc4e885eab0f5b92450b14646a690899951ae6b",
+    "AllHDR.png": "d8ae28b5cf0ec4e9f48e356c293ec539007f6018a5e2d870429e858d2d470a32",
+    "BaseColorOff.png": "f8f1578dff607f87e48d00d783212f17469044fbd66e17781d8cc3553a28c278",
+    "BaseColorRim.png": "f8f1578dff607f87e48d00d783212f17469044fbd66e17781d8cc3553a28c278",
+    "BaseEmissionHDR.png": "77e497782c9f3853b530a7d1ab0cd239c132a7f8a1abed9473cc78c2b189e41e",
+    "BaselineHDR.png": "57905a721cf50be9e56285391ee3f67c973f52fa05d5b2681ea1e3f35460d255",
+    "CombinedHDR.png": "d690036e4d0bd391f92468fdd252815f1583abfdd908464e5840c83221dc9e84",
+    "NormalFlat.png": "2af766eef86157046fb9120ce13f0cad917efa3b60011ed18ff1d9a77d760494",
+    "NormalOff.png": "a4c0ae7f2c1fd13bbd21b1f8a8b09cda545246e3e61b5067b915f603a7e45406",
+    "NormalRim.png": "a4c0ae7f2c1fd13bbd21b1f8a8b09cda545246e3e61b5067b915f603a7e45406",
+    "RimOnlyHDR.png": "1ffefc686f261a4c0150da98dbf0aaf295cbd00668f010fe5980fe89a3360e0d",
+    "SurfaceBase.png": "97f93baf08ec0247de542d1de4d4a6d9b57ba10c277838aaf4787011414718b2",
+    "SurfaceHullOutline.png": "cd7c066befc0c71bfb05341bb263d193d79a41002fcb0f8fd8ce53698b5859b2",
+    "SurfaceRim.png": "d724fe618085dd104598e102377d3f99c327dc1410f421f00e32264fb8900232",
+    "SurfaceScreenOutline.png": "79f7ffe0d88612ba79488ab87a03a65b700b1a9cb33123fc17de7de53b53b04c",
+    "ToonBase.png": "8643c254f314259d12f6cd3a9f245a44408c0a5a0ef5e27c76467fdbea6712af",
+    "ToonRim.png": "3df91fe6458ea4631066228f30ad90b84ba1314c52ebcb44583ba2643244fc04"
+  },
+  "asset_sha256": {
+    "MF_NPRAdditiveColor.uasset": "161247d62a22b05d9f6ff33340ff717d4be0fd17cf2eb0090865cda8ecc20e3b",
+    "MF_NPRComposeEmissive.uasset": "b6aff89ac64d0e59264e8fc7d28a6c1e7296197ce442cf8fefdb418def3ca4a0",
+    "MF_NPRSurfaceInputs.uasset": "bc7bd63397b9bbe16ed6b0b56b1ec55d6869af4063655148e1b481d33b28ab46",
+    "MI_NPRSurface_Preview.uasset": "5f795b5e82ee254a00d5bd2c6641f191cbf153ae5cf3ca25938c90a3933932a4",
+    "M_NPRSurface_DefaultLit.uasset": "7d478bb7e0a227478f4e3c4a656ccfcb79eb7d7a91e831081f465aa408cbe9e9",
+    "M_NPRSurface_Toon.uasset": "6b74387aec3bbd3083877109f3b34d7cdad662615a0cf39ee0dd8d0cc2ca9d72",
+    "SR_DefaultLit_Rim.uasset": "45d6eafb537221da3f86240a60d4349208acb5ccdb5c1dc29a83894eaa73bdea",
+    "SR_Toon_Rim.uasset": "b61c1b2ec950c3e2fb544ade600f18b8ba14c8bb2b9e7ee1f9b611d3fabeffa5",
+    "T_SurfaceValidationChecker.uasset": "006e4c1ded77525a87a7a4cfd4755f796aec6985ed5a6a05d891faf7789ec41d",
+    "T_SurfaceValidationNormal.uasset": "f6c5fcd8a6b376f056904e364ed73af759b6b8bfe297c4419d4fd857c96921d2"
+  },
+  "source_sha256": {
+    "Plugins/PrincipledNPR/Source/NPRRuntime/Public/NPRSurfaceRecipe.h": "b8462a130467c6f460c2660f32142f97fdb99a31c871c4c402e8e9f7013d32c6",
+    "Plugins/PrincipledNPR/Source/NPRRuntime/Private/NPRSurfaceRecipe.cpp": "c6a9cc8e599335aa7a20179373926bce57b0f1be5379e7acb16aa9189504cd7e",
+    "Plugins/PrincipledNPR/Source/NPRRuntime/Private/Tests/NPRSurfaceComposerTests.cpp": "adda3dbfaa32d2da73d885cb2ca6626af4b8a639d787f3f0463fc5c028bd392f",
+    "Plugins/PrincipledNPR/Source/NPREditor/Private/Tests/NPRSurfaceRenderTests.cpp": "24d0c3ffc724e7655b89cc5a934e0bd74c40c1d63e7885eafd4f20d7a95a449b"
+  },
+  "validation_corrections": "Initial captures included fallback material. Final test explicitly completes assigned texture/shader work and retains capture view state; failed initial attempts preserved separately.",
+  "limits": [
+    "No complete Style Profile resolver, editor modulation page or automatic arbitrary source-graph conversion.",
+    "No character animation, transparency, arbitrary LOD, shadow/GI quality, Cook or performance acceptance.",
+    "Toon family uses the existing uncalibrated Game probe profile; does not certify full S58 semantic mapping.",
+    "New technical Surface inputs use native MID setters; those setters do not enforce contract numeric domains.",
+    "Existing open Editor process must be reopened to load new reflected classes; UBT generated suffixed main-project DLLs without replacing loaded old binaries."
+  ]
+}

@@ -20,7 +20,7 @@ export default withMermaid(defineConfig({
     sidebar: [
       section('开始使用', [['系统介绍','/guide/introduction'],['安装与环境','/guide/installation'],['快速开始','/guide/quick-start']]),
       { text: 'Principled 参数', link: '/principled/overview' },
-      section('功能', [['Outline 描边','/features/outline'],['Rim Light 边缘光','/features/rim-light'],['基础颜色','/features/base-color'],['Toon 明暗','/features/toon-shading'],['MatCap','/features/matcap']]),
+      section('功能', [['Outline 描边','/features/outline'],['Surface 材质组合','/features/surface-material'],['Rim Light 边缘光','/features/rim-light'],['基础颜色','/features/base-color'],['Toon 明暗','/features/toon-shading'],['MatCap','/features/matcap']]),
       { text: '编辑器', link: '/editor/parameter-editor' },
       section('开发者', [['模块架构','/developer/architecture'],['渲染管线','/developer/shader-pipeline'],['参数契约与校验','/developer/parameter-schema'],['扩展与维护','/developer/extending']]),
       section('参考资料', [['lilToon 源码对照','/reference/liltoon-comparison'],['既有技术资料','/reference/legacy'],['实现状态与证据','/reference/status'],['文档开发','/reference/documentation']])

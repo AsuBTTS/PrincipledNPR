@@ -126,6 +126,28 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
+        "RimColor": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "isSet",
+            "value"
+          ],
+          "properties": {
+            "isSet": {
+              "type": "boolean"
+            },
+            "value": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "type": "number",
+                "minimum": 0
+              }
+            }
+          }
+        },
         "TerminatorDotCenter": {
           "type": "object",
           "additionalProperties": false,

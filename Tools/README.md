@@ -24,6 +24,9 @@
 | `create_two_style_character_probe.py` | 创建两种初始风格的原生资源与双角色场景 | UE 编辑器 Python |
 | `finalize_two_character_import.py` | 完成流浪者默认材质槽绑定，并保存、重载检查双角色场景 | UE 编辑器 Python |
 | `create_outline_backend_assets.py` | 重建归属本插件的 Hull / Mask / Screen 描边材质 | UE 编辑器 Python |
+| `create_rim_light_assets.py` | 创建角度边缘光材质函数、四项控制的表面材质和预览实例；已有资产保留人工编辑 | UE 编辑器 Python |
+| `open_rim_light_material.py` | 刷新当前编辑器的 Rim 目录并打开预览实例，不保存关卡 | UE 编辑器 Python |
+| `verify_rim_light_materials.py` | 独立进程重载、编译检查及真实 GPU 球体参数变体导出 | UE 编辑器 Python，真实 RHI |
 | `create_outline_workflow_fixture.py` | 创建独立的单角色、单 Opaque 槽描边测试场景；已有场景只读取 | UE 编辑器 Python |
 
 流浪者重建流程按转换 → 导入 → 创建双风格场景 → 完成材质绑定的顺序执行。已有 `.blend`、FBX 和 UE 资产均已保存，协作者无需为打开项目重复转换或导入。
@@ -36,6 +39,8 @@
 |---|---|
 | `verify_reference_math.py` | 检查参考模型的标量恒等式、连续性和边界案例；不是 GPU 渲染验收 |
 | `verify_semantic_drafts.py` | 检查风格草案的 ID、数值域与报告来源；不是正式风格视觉验收 |
+| `verify_rim_light_contract.py` | 交叉检查 Rim 的 JSON、C++ 声明、默认值、颜色形状、转换、零值与非法输入；普通 Python 3 |
+| `audit_rim_light_contract.py` | 在独立 UE 进程只读重载实际材质/函数/实例，检查四项类型、名称、默认值与函数连接；不保存资产 |
 | `verify_outline_workflow.py` | 真 RHI 下调用与 Outline 窗口相同的服务，检查转换、参数变体导出、保存和独立进程重开；PNG 仍需检查 |
 
 前两个使用普通 Python 3，不需要启动 UE。Outline 验证需要 UE Editor，使用 `NPR_OUTLINE_STAGE=Create` 和 `Reopen` 分别启动两个进程；不能加 `-nullrhi`。普通 Outline 使用不需要运行这些脚本，见 `Documentation/Outline/操作流程.md`。
@@ -49,6 +54,26 @@
 ```
 
 跨进程同时记录精确掩码 IoU 和 RGB 差异，并显式允许 1 px 的光栅/时域抖动：两向覆盖均须达到 95%，描边面积差须小于 5%。此测量不替代全视角、遮挡、性能或 Cook 验收。
+
+### Rim Light 第②步参数交接
+
+`rim_light_contract.py` 提供纯 Python 校验与弧度转材质度数，不写材质。`create_rim_light_assets.py` 从同一映射表读取默认值，但已有自有资产保留人工编辑，因此脚本通过后仍要单独检查实际 `.uasset`。稳定 ID、中文 FName、RGB 存储边界和 C++ 接法见 [参数交接](../Documentation/RimLight/ParameterHandoff.md)。
+
+```powershell
+python Tools/verify_rim_light_contract.py
+python Tools/verify_semantic_drafts.py
+& 'E:\Unreal Engine\UE_5.8\Engine\Binaries\Win64\UnrealEditor-Cmd.exe' 'E:\unrealProjects\PrincipledNPR\PrincipledNPR.uproject' -run=pythonscript '-script=E:\unrealProjects\PrincipledNPR\Tools\audit_rim_light_contract.py' -unattended -NullRHI -NoSound -NoSplash -NoSourceControl
+```
+
+引擎与项目路径按本机调整。2026-10-22 离线检查 27 项、资产检查 34 项通过；C++ 用例名为 `NPR.Rim.MaterialContract`，执行状态单独见 `Documentation/RimLight/ImplementationValidation.json`。NullRHI 不生成画面，不能替代 GPU 渲染验收。
+
+### Rim Light 第③步动态调参验证
+
+完整 Editor 构建后，在 UE 命令框执行 `Automation RunTests NPR.Rim`，运行参数契约、双槽绑定和真实 GPU 跨帧球体三项用例。`RenderBinding` 使用独立 `FPreviewScene`，不会替换当前关卡的角色材质。每项参数更新复用同一个 MID，导出八张 PNG 到 `Documentation/RimLight/BindingValidation`；`check_rim_binding_images.py` 需要 Pillow / NumPy，用于图像数值门禁。启动时通过 `-ReportExportPath=<project>/Saved/Automation/RimBinding` 保存报告，图像检查读取该报告。
+
+`verify_rim_binding_python.py` 在已打开工程内对临时 Mesh / Binding / Package 调用实际 C++ 反射接口，读回角度、强度和 HDR RGB，检查非法值拒绝、MID 保持与恢复，最后刷新 `MI_RimLight_Preview`；不保存资产、地图或配置。只能在已完整编译新接口的编辑器中执行。UE 的该 Python 方法成功返回字符串、失败返回 None，空串也是成功。
+
+2026-10-22 三项 C++、八项图像/自动化和十项反射检查通过；这些结果只覆盖记录中的受控网格和静态球体。调用和后续 Profile 对接见 [③ 动态调参](../Documentation/RimLight/RuntimeBinding.md)。
 
 ## Git 协作
 
@@ -73,3 +98,10 @@ Screen 材质当前位于 Scene Color After DOF，在 TSR/TAA 之前；保持默
 `Open-PrincipledNPR.ps1` 是可选启动助手；也可直接打开 `.uproject`。
 
 `Build-PrincipledNPR.ps1` 是 C++ 构建 / IDE 工程生成入口，接收自己的 UE 安装目录；不参与运行时渲染。构建前保存并关闭编辑器，详见 `Documentation/C++骨架.md`。
+## Surface Master Family
+
+`create_surface_master_assets.py` 在 UE 5.8.3 中创建带归属标签的共享函数、两个 Master 家族、Recipe、预览实例与测试纹理；复用原有 `MF_RimLight` 和未修改的 Toon 探针 Profile。已有同名归属资产保留，不重建覆盖。`audit_surface_master_assets.py` 独立只读检查实际保存资产的类型、默认值、图连接及参数归属。
+
+先构建 Runtime / Editor，再在独立 UE 进程创建资产与审查。`NPR.Surface.Composer` 与 `NPR.Surface.RenderComposition` 验证同槽 MID、多效果贡献、BaseColor/Normal 保持及 Outline/Toon 共存；`NPR.Rim` 原有三项测试继续运行。不要在主工作区重跑会覆盖历史图像的 Rim 用例，使用隔离输出并保留旧证据。契约与实施边界见 `Documentation/Surface/`。
+
+`check_surface_validation.py` 使用带 Pillow 的 Python 汇总实际报告、90 项资产审查、HDR 指标、构建日志与开工基线，输出 `Documentation/Surface/ImplementationValidation.json`。它需要本轮 `Saved` 日志和基线，不会凭空证明另一工作区的保留性。新 GPU 用例只更新 Surface 证据目录；完整操作与交付清单见 [实施记录](../Documentation/Surface/Implementation.md)。

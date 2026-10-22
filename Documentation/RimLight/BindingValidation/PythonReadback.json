@@ -1,0 +1,20 @@
+{
+  "status": "Passed",
+  "engine": "5.8.3-58210709+++UE5+Release-5.8",
+  "checks": {
+    "ApplyPackage": true,
+    "MIDCreated": true,
+    "FourControlUpdate": true,
+    "DegreesAndIntensityReadback": true,
+    "HDRRGBReadback": true,
+    "InvalidInputRejected": true,
+    "PreviousValueRetained": true,
+    "MIDIdentityRetained": true,
+    "OriginalRestored": true,
+    "PreviewRefreshDispatched": true
+  },
+  "scope": "Reflected production C++ calls on transient mesh/component/package; no level actors, config or assets saved.",
+  "reflection": "x.set_rim_parameters(parameters) -> str or None\r\nValidates the four canonical Rim values and every active slot before any MID write.\r\n\r\nArgs:\r\n    parameters (NPRRimParameters): \r\n\r\nReturns:\r\n    str or None: \r\n\r\n    out_error (str):",
+  "success_return": "''",
+  "rejected_return": "None"
+}

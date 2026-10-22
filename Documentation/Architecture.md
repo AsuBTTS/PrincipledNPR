@@ -1,5 +1,7 @@
 # Principled NPR 初步语义骨架
 
+2026-10-22 方案 B 增量：已增加 Surface Master Family / Recipe、共享表面函数、预制选择与绑定包链路，见 [Surface 实施记录](Surface/Implementation.md)。这不替代完整语义 Resolver；原有 Rim 与 Outline 保留。实际验收范围以新增执行记录为准。
+
 2026-10-17 补充：独立的 Outline 模块已接入角色绑定、双视口、预设与关卡保存链路，见 [Outline 技术模块报告](Outline/技术模块报告.md)。下面的 Draft 状态指完整语义解析和表面模型后端，不代表 Outline 仍为空壳。
 
 状态：**Draft / 未标定 / 未连接 Shader**。这些版本化 JSON 是语义契约草案；2026-10-04 已添加 C++ 宿主、NPRRuntime / NPREditor、基础 UDataAsset 类型和显式预制材质绑定组件，详见 `C++骨架.md` 与 `CppScaffold.Validation.json`。完整 Resolver、Backend Adapter 和语义驱动 Runtime Style Switch 尚未实现。JSON 不参与引擎着色，不等于 ToonProfile，也不证明渲染测试通过。
@@ -31,7 +33,9 @@ Face 逐灯完整 terminator 替换在公开 Toon 接口下为 Unsupported。Pat
 
 Hair 原生 Tangent/Anisotropy 为 Approximate 候选。独立 shifted lobe 与全视角参考角域瓣不能默认精确复现；旋转共享 Normal 会同时影响 diffuse/GI，不满足独立高光 shift 语义。
 
-Rim、Outline、MatCap、颜色映射是独立模块。Outline 已通过强类型设置独立接入；Rim、MatCap 和颜色映射尚未连接。Emissive Rim 不自动拥有 native shadow visibility。
+Rim、Outline、MatCap、颜色映射是独立模块。Outline 已通过强类型设置独立接入；2026-10-21 Rim 新增独立材质函数、表面材质与四项控制预览实例，见 `RimLight/Materials.md`，尚未接入完整语义 Resolver 与角色工作流。MatCap 和颜色映射尚未连接。Emissive Rim 不自动拥有 native shadow visibility。
+
+2026-10-22 Rim 第②步补齐 `FNPRRimParameters` 强类型契约、校验及度数转换，四项材质绑定固定在 `RimLight/MaterialParameters.v1.json`，交接见 `RimLight/ParameterHandoff.md`。新增可选 `RimColor` 语义 ID，默认线性白色，原三个标量 ID 保持不变；旧 `FNPRParameterPatch.Values` 仍只存标量覆盖项，RGB 持久化由第④步扩展。第③步已通过 `UNPRStyleBindingComponent::SetRimParameters` 接入显式 MID 绑定，先检查全部槽再写四项值，验证范围见 `RimLight/RuntimeBinding.md`。完整 Resolver 和自动角色绑定仍待实现。独立 Rim 不需要 S58 或 ToonProfile，S58 只是可选后端候选。
 
 ## 下一轮开发
 

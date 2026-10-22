@@ -30,10 +30,15 @@ for path in sorted((docs / 'Styles').glob('*.v1.draft.json')):
             assert identifier in definitions, 'Unknown parameter: ' + identifier
             assert set(entry) == {'isSet', 'value'} and isinstance(entry['isSet'], bool)
             value = entry['value']
-            assert isinstance(value, (int, float)) and not isinstance(value, bool) and math.isfinite(value)
+            rgb = definitions[identifier].get('valueType') == 'linear_rgb'
+            if rgb:
+                assert isinstance(value, list) and len(value) == definitions[identifier]['componentCount'] == 3
+            values = value if rgb else [value]
             domain = definitions[identifier]['hardDomain']
             low, high = domain if domain is not None else (None, None)
-            assert low is None or value >= low, identifier + ' below hard domain'
-            assert high is None or value <= high, identifier + ' above hard domain'
+            for component in values:
+                assert isinstance(component, (int, float)) and not isinstance(component, bool) and math.isfinite(component)
+                assert low is None or component >= low, identifier + ' below hard domain'
+                assert high is None or component <= high, identifier + ' above hard domain'
     print(path.name + ': draft data checks PASS')
 print('IDs, domains and provenance PASS; full JSON Schema/rendering validation not performed.')

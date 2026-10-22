@@ -1,0 +1,208 @@
+{
+  "version": 1,
+  "kind": "BackendMaterialInputs_NotNewCanonicalSemanticIDs",
+  "scope": "Opaque ordinary StaticMesh/SkeletalMesh Surface family; per material slot MID; global parameter association only",
+  "families": {
+    "DefaultLit": "/PrincipledNPR/Surface/M_NPRSurface_DefaultLit",
+    "S58Toon": "/PrincipledNPR/Surface/M_NPRSurface_Toon"
+  },
+  "functions": [
+    "MF_NPRSurfaceInputs",
+    "MF_RimLight",
+    "MF_NPRAdditiveColor",
+    "MF_NPRComposeEmissive"
+  ],
+  "composition": "BaseEmissive + RimColorContribution + AdditionalEmissiveContribution; no clamp; BaseColor and NormalTS remain separate",
+  "rimContract": "../RimLight/MaterialParameters.v1.json",
+  "runtime": "ComposePackage checks loaded recipes/ownership/types and returns a prebuilt material package; ApplyPackage creates MID; existing SetRimParameters performs frozen numeric validation and mapping. New backend inputs use native MID setters and require caller validation; recipe validation does not validate arbitrary native MID writes.",
+  "parameters": [
+    {
+      "name": "NPR_BaseColor",
+      "owner": "BaseSurface",
+      "type": "vector",
+      "unit": "linear_rgb",
+      "default": [
+        0.18,
+        0.18,
+        0.18
+      ],
+      "hardDomain": [
+        0,
+        1
+      ],
+      "recommendedRange": [
+        0,
+        1
+      ],
+      "rule": "RGB tint times BaseColorTexture; alpha ignored"
+    },
+    {
+      "name": "NPR_BaseColorTexture",
+      "owner": "BaseSurface",
+      "type": "texture",
+      "unit": "color_texture_uv0",
+      "default": "/Engine/EngineResources/WhiteSquareTexture",
+      "hardDomain": "Nonvirtual Texture2D compatible with Color sampler",
+      "recommendedRange": null,
+      "rule": "Existing character source texture supplied explicitly; no automatic graph conversion"
+    },
+    {
+      "name": "NPR_NormalTexture",
+      "owner": "BaseSurface",
+      "type": "texture",
+      "unit": "tangent_space_normal_uv0",
+      "default": "/Engine/EngineMaterials/DefaultNormal",
+      "hardDomain": "Nonvirtual Texture2D with Normalmap compression and sRGB=false",
+      "recommendedRange": null,
+      "rule": "Normalized lerp from flat tangent normal to decoded normal"
+    },
+    {
+      "name": "NPR_NormalStrength",
+      "owner": "BaseSurface",
+      "type": "scalar",
+      "unit": "unitless",
+      "default": 1,
+      "hardDomain": [
+        0,
+        1
+      ],
+      "recommendedRange": [
+        0,
+        1
+      ],
+      "rule": "0 is flat tangent normal, 1 is sampled tangent normal; Rim keeps its existing vertex-normal default"
+    },
+    {
+      "name": "NPR_EmissiveColor",
+      "owner": "BaseSurface",
+      "type": "vector",
+      "unit": "linear_hdr_rgb",
+      "default": [
+        0,
+        0,
+        0
+      ],
+      "hardDomain": [
+        0,
+        null
+      ],
+      "recommendedRange": [
+        0,
+        1
+      ],
+      "rule": "Finite nonnegative RGB; alpha ignored"
+    },
+    {
+      "name": "NPR_EmissiveTexture",
+      "owner": "BaseSurface",
+      "type": "texture",
+      "unit": "color_texture_uv0",
+      "default": "/Engine/EngineResources/WhiteSquareTexture",
+      "hardDomain": "Nonvirtual Texture2D compatible with Color sampler",
+      "recommendedRange": null,
+      "rule": "BaseEmissive = sampled RGB * EmissiveColor * EmissiveScale"
+    },
+    {
+      "name": "NPR_EmissiveScale",
+      "owner": "BaseSurface",
+      "type": "scalar",
+      "unit": "linear_multiplier",
+      "default": 1,
+      "hardDomain": [
+        0,
+        null
+      ],
+      "recommendedRange": [
+        0,
+        1
+      ],
+      "rule": "Finite nonnegative; zero is valid; independent from Rim"
+    },
+    {
+      "name": "NPR_Roughness",
+      "owner": "BaseSurface",
+      "type": "scalar",
+      "unit": "unitless",
+      "default": 0.5,
+      "hardDomain": [
+        0,
+        1
+      ],
+      "recommendedRange": [
+        0,
+        1
+      ],
+      "rule": "UE native roughness; not canonical SpecHalfAngleRad"
+    },
+    {
+      "name": "NPR_Metallic",
+      "owner": "BaseSurface",
+      "type": "scalar",
+      "unit": "unitless",
+      "default": 0,
+      "hardDomain": [
+        0,
+        1
+      ],
+      "recommendedRange": [
+        0,
+        1
+      ],
+      "rule": "UE native metallic"
+    },
+    {
+      "name": "NPR_Specular",
+      "owner": "BaseSurface",
+      "type": "scalar",
+      "unit": "unitless",
+      "default": 0.5,
+      "hardDomain": [
+        0,
+        1
+      ],
+      "recommendedRange": [
+        0,
+        1
+      ],
+      "rule": "UE native specular; not a completed stylized specular effect"
+    },
+    {
+      "name": "NPR_AdditionalEmissiveColor",
+      "owner": "AdditionalEmission",
+      "type": "vector",
+      "unit": "linear_hdr_rgb",
+      "default": [
+        0,
+        0,
+        0
+      ],
+      "hardDomain": [
+        0,
+        null
+      ],
+      "recommendedRange": [
+        0,
+        1
+      ],
+      "rule": "Minimal second additive module and extension contract; does not imply MatCap support"
+    },
+    {
+      "name": "NPR_AdditionalEmissiveScale",
+      "owner": "AdditionalEmission",
+      "type": "scalar",
+      "unit": "linear_multiplier",
+      "default": 0,
+      "hardDomain": [
+        0,
+        null
+      ],
+      "recommendedRange": [
+        0,
+        4
+      ],
+      "rule": "MF_NPRAdditiveColor output; changing this does not modify Rim or BaseEmissive"
+    }
+  ],
+  "compatibility": "All existing assets, Rim IDs/names/units/defaults and Outline backends are preserved. No automatic conversion of arbitrary source Material graphs, Material Layers, masked/translucent coverage, WPO or arbitrary runtime topology. Toon profile is the unchanged uncalibrated existing probe resource; native Toon quality is a separate gate.",
+  "profileIntegration": "NotImplemented; no full semantic Style Profile resolver or cross-backend Execution Plan is introduced in this increment."
+}

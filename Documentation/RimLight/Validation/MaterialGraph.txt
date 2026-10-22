@@ -1,0 +1,2100 @@
+
+OBJECT /PrincipledNPR/RimLight/MI_RimLight_Preview.MI_RimLight_Preview CLASS MaterialInstanceConstant
+ParameterStateId=DB6A84D54539EBD9284850BA4E9A2811
+PhysMaterialMask=
+PhysMaterial=
+PhysicalMaterialMap=
+Parent=/Script/Engine.Material'/PrincipledNPR/RimLight/M_RimLight.M_RimLight'
+NaniteOverrideMaterial=(bEnableOverride=True)
+SpecularProfileOverride=
+ToonProfileOverride=
+bHasStaticPermutationResource=
+bOverrideSubsurfaceProfile=
+bOverrideSpecularProfile=
+bOverrideToonProfile=
+bOverrideBlendableLocation=
+bOverrideBlendablePriority=
+bOverridePhysMaterial=
+BlendableLocationOverride=
+BlendablePriorityOverride=
+ScalarParameterValues=((ParameterInfo=(Name="边缘光强度"),ParameterValue=1.000000,ExpressionGUID=3818EB6049D506DF4345B6AC0362E8AC))
+VectorParameterValues=
+DoubleVectorParameterValues=
+TextureParameterValues=
+TextureCollectionParameterValues=
+ParameterCollectionParameterValues=
+RuntimeVirtualTextureParameterValues=
+SparseVolumeTextureParameterValues=
+FontParameterValues=
+UserSceneTextureOverrides=
+bOverrideBaseProperties=
+EnumerationObjects=
+BasePropertyOverrides=(ShadingModel=MSM_DefaultLit,OpacityMaskClipValue=0.333300,DisplacementScaling=(Magnitude=4.000000,Center=0.500000),DisplacementFadeRange=(StartSizePixels=4.000000,EndSizePixels=1.000000),UsageFlags=4194305)
+StaticParametersRuntime=(MaterialLayers=())
+ReferencedTextureGuids=
+StaticParameters=(EditorOnly=(MaterialLayers=()),MaterialLayers=())
+bSavedCachedData=
+EditorOnlyData=/Script/Engine.MaterialInstanceEditorOnlyData'/PrincipledNPR/RimLight/MI_RimLight_Preview.MI_RimLight_Preview:MI_RimLight_PreviewEditorOnlyData'
+SubsurfaceProfile=
+SubsurfaceProfiles=
+SpecularProfiles=
+ToonProfiles=
+NeuralProfile=
+LightmassSettings=(EmissiveBoost=1.000000,DiffuseBoost=1.000000,ExportResolutionScale=1.000000)
+TextureStreamingDataVersion=
+TextureStreamingData=
+ReferencedDefaultTextures=
+AssetUserData=
+bIncludedInBaseGame=
+PreviewMesh=None
+ThumbnailInfo=
+LayerParameterExpansion=
+ParameterOverviewExpansion=
+AssetImportData=
+LightingGuid=A7851DEF41CBFDC1E355B2A7B8EDA176
+
+OBJECT /PrincipledNPR/RimLight/M_RimLight.M_RimLight CLASS Material
+PhysMaterial=
+PhysMaterialMask=
+PhysicalMaterialMap=
+RenderTracePhysicalMaterialOutputs=
+MaterialDomain=
+BlendMode=
+DecalBlendMode=
+MaterialDecalResponse=MDR_ColorNormalRoughness
+NaniteOverrideMaterial=(bEnableOverride=True)
+DisplacementScaling=(Magnitude=4.000000,Center=0.500000)
+DisplacementFadeRange=(StartSizePixels=4.000000,EndSizePixels=1.000000)
+ShadingModel=MSM_DefaultLit
+bCastDynamicShadowAsMasked=
+ShadingModels=(ShadingModelField=2)
+OpacityMaskClipValue=0.333300
+bEnableSeparateTranslucency=True
+bEnableResponsiveAA=
+bScreenSpaceReflections=
+bContactShadows=
+TwoSided=
+bIsThinSurface=
+DitheredLODTransition=
+DitherOpacityMask=
+bAllowNegativeEmissiveColor=
+bHasPixelAnimation=
+bEnableTessellation=
+bEnableDisplacementFade=
+TranslucencyPass=MTP_AfterDOF
+TranslucencyLightingMode=
+bEnableMobileSeparateTranslucency=
+NumCustomizedUVs=
+TranslucencyDirectionalLightingIntensity=1.000000
+TranslucentShadowDensityScale=0.500000
+TranslucentSelfShadowDensityScale=2.000000
+TranslucentSelfShadowSecondDensityScale=10.000000
+TranslucentSelfShadowSecondOpacity=
+TranslucentBackscatteringExponent=30.000000
+TranslucentMultipleScatteringExtinction=(R=1.000000,G=0.833000,B=0.588000,A=1.000000)
+TranslucentShadowStartOffset=100.000000
+bDisableDepthTest=
+bWriteOnlyAlpha=
+bGenerateSphericalParticleNormals=
+bTangentSpaceNormal=True
+bUseEmissiveForDynamicAreaLighting=
+bUsedAsSpecialEngineMaterial=
+bSubstrateRoughnessTracking=True
+bUsedWithSkeletalMesh=True
+bUsedWithMeshDeformer=
+bUsedWithEditorCompositing=
+bUsedWithParticleSprites=
+bUsedWithBeamTrails=
+bUsedWithMeshParticles=
+bUsedWithNiagaraSprites=
+bUsedWithNiagaraRibbons=
+bUsedWithNiagaraMeshParticles=
+bUsedWithGeometryCache=
+bUsedWithStaticLighting=
+bUsedWithMorphTargets=
+bUsedWithSplineMeshes=
+bUsedWithInstancedStaticMeshes=
+bUsedWithGeometryCollections=
+bUsesDistortion=
+bRootNodeOverridesDefaultDistortion=
+bUsedWithClothing=
+bUsedWithWater=
+bUsedWithHairStrands=
+bUsedWithLidarPointCloud=
+bUsedWithVirtualHeightfieldMesh=
+bUsedWithNanite=
+bUsedWithVoxels=
+bUsedWithCurves=
+bUsedWithVolumetricCloud=
+bUsedWithHeterogeneousVolumes=
+bUsedWithInstancedSkinnedMesh=
+bUsedWithStaticMesh=True
+bUsedWithUI=
+bForceCompatibleWithLightFunctionAtlas=
+bAutomaticallySetUsageInEditor=True
+bFullyRough=
+bUseFullPrecision=
+FloatPrecisionMode=
+bUseLightmapDirectionality=True
+bUseAlphaToCoverage=
+bForwardRenderUsePreintegratedGFForSimpleIBL=
+bUseHQForwardReflections=
+bForwardBlendsSkyLightCubemaps=
+bUsePlanarForwardReflections=
+bNormalCurvatureToRoughness=
+AllowTranslucentCustomDepthWrites=
+bAllowFrontLayerTranslucency=True
+bCompatibleWithLumenCardSharing=
+Wireframe=
+bAllowTranslucentLocalLightShadow=
+TranslucentLocalLightShadowQuality=
+TranslucentDirectionalLightShadowQuality=
+ShadingRate=
+bAllowVariableRateShading=True
+EditorX=
+EditorY=
+EditorPitch=
+EditorYaw=
+bCanMaskedBeAssumedOpaque=
+bIsMasked=
+bUseMaterialAttributes=
+bEnableExecWire=
+bEnableNewHLSLGenerator=
+bCastRayTracedShadows=True
+bUseTranslucencyVertexFog=True
+bApplyCloudFogging=
+bIsSky=
+bComputeFogPerPixel=
+bOutputTranslucentVelocity=
+bIsTranslucencyVelocityFromDepth=
+bRelaxRuntimeVirtualTextureRestrictions=
+BlendableLocation=
+BlendableOutputAlpha=
+UserSceneTexture=
+UserTextureDivisor=(X=0,Y=0)
+ResolutionRelativeToInput=
+bDisablePreExposureScale=
+bUsedWithNeuralNetworks=
+bEnableStencilTest=
+StencilCompare=
+StencilRefValue=
+NeuralProfileId=-1
+RefractionMode=
+RefractionMethod=RM_None
+RefractionCoverageMode=RCM_CoverageAccountedFor
+PixelDepthOffsetMode=PDOM_AlongCameraVector
+BlendablePriority=
+bIsBlendable=True
+PreshaderGap=
+RefractionDepthBias=
+MaxWorldPositionOffsetDisplacement=
+bAlwaysEvaluateWorldPositionOffset=
+StateId=D150C4594168FF2FFA0BA6B8BBEAB0D0
+bSavedCachedExpressionData=
+ReferencedTextureGuids=
+EditorComments=
+Expressions=
+ParameterGroupData=
+DiffuseColor=(Constant=(R=0.215861,G=0.215861,B=0.215861,A=1.000000))
+SpecularColor=(Constant=(R=0.215861,G=0.215861,B=0.215861,A=1.000000))
+BaseColor=(Constant=(R=0.000000,G=0.000000,B=0.000000,A=0.000000))
+Metallic=()
+Specular=()
+Roughness=()
+Anisotropy=()
+Normal=(Constant=(X=0.000000,Y=0.000000,Z=0.000000))
+Tangent=(Constant=(X=0.000000,Y=0.000000,Z=0.000000))
+EmissiveColor=(Constant=(R=0.000000,G=0.000000,B=0.000000,A=0.000000))
+Opacity=()
+OpacityMask=()
+WorldPositionOffset=(Constant=(X=0.000000,Y=0.000000,Z=0.000000))
+SubsurfaceColor=(Constant=(R=0.000000,G=0.000000,B=0.000000,A=0.000000))
+ClearCoat=()
+ClearCoatRoughness=()
+AmbientOcclusion=()
+Refraction=()
+CustomizedUVs=()
+MaterialAttributes=()
+PixelDepthOffset=()
+ShadingModelFromMaterialExpression=()
+FrontMaterial=()
+EditorOnlyData=/Script/Engine.MaterialEditorOnlyData'/PrincipledNPR/RimLight/M_RimLight.M_RimLight:M_RimLightEditorOnlyData'
+SubsurfaceProfile=
+SubsurfaceProfiles=
+SpecularProfiles=
+ToonProfiles=
+NeuralProfile=
+LightmassSettings=(EmissiveBoost=1.000000,DiffuseBoost=1.000000,ExportResolutionScale=1.000000)
+TextureStreamingDataVersion=
+TextureStreamingData=
+ReferencedDefaultTextures=
+AssetUserData=
+bIncludedInBaseGame=
+PreviewMesh=None
+ThumbnailInfo=
+LayerParameterExpansion=
+ParameterOverviewExpansion=
+AssetImportData=
+LightingGuid=549F1B33400B94DA468BF99F0EF31236
+ROOT_OUTPUT 0 -> /PrincipledNPR/RimLight/M_RimLight.M_RimLight:MaterialExpressionMaterialFunctionCall_0[0]
+ROOT_OUTPUT 5 -> /PrincipledNPR/RimLight/M_RimLight.M_RimLight:MaterialExpressionConstant3Vector_0[0]
+ROOT_OUTPUT 8 -> /PrincipledNPR/RimLight/M_RimLight.M_RimLight:MaterialExpressionConstant_0[0]
+
+OBJECT /PrincipledNPR/RimLight/M_RimLight.M_RimLight:MaterialExpressionMaterialFunctionCall_0 CLASS MaterialExpressionMaterialFunctionCall
+MaterialFunction=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+FunctionInputs=((ExpressionInputId=7FA756C04D865A0822C11AA46E525774,Input=(OutputIndex=-1,InputName="RimNormalWS")),(ExpressionInputId=110D66C743551122BEDD6783AF3E56DA,Input=(OutputIndex=-1,InputName="GeometryNormalWS")),(ExpressionInputId=ADE106D8426F62068F9052BCFD3E0633,Input=(OutputIndex=-1,InputName="ViewDirectionWS")),(ExpressionInputId=07A6831D43377EBFC39CC59A7597CCDF,Input=(Expression="/Script/Engine.MaterialExpressionMultiply'/PrincipledNPR/RimLight/M_RimLight.M_RimLight:MaterialExpressionMultiply_0'",InputName="RimGrazingAngleRad")),(ExpressionInputId=68B06C244FF586A3DF95D7A7EF5B6841,Input=(Expression="/Script/Engine.MaterialExpressionMultiply'/PrincipledNPR/RimLight/M_RimLight.M_RimLight:MaterialExpressionMultiply_1'",InputName="RimEdgeHalfWidthRad")),(ExpressionInputId=EF78D1354E568E9AECCC83A9CB321677,Input=(Expression="/Script/Engine.MaterialExpressionScalarParameter'/PrincipledNPR/RimLight/M_RimLight.M_RimLight:MaterialExpressionScalarParameter_2'",InputName="RimPeakScale")),(ExpressionInputId=B098FB5647F1D2DF560A50AB2DE4E8FF,Input=(Expression="/Script/Engine.MaterialExpressionVectorParameter'/PrincipledNPR/RimLight/M_RimLight.M_RimLight:MaterialExpressionVectorParameter_0'",InputName="RimColor",Mask=1,MaskR=1,MaskG=1,MaskB=1)))
+FunctionOutputs=((ExpressionOutputId=8D9BE5EF46D9B4C8B15479A2DB4D7F1C,Output=(OutputName="RimColorContribution")),(ExpressionOutputId=975EF34047106C057E1A0AA88DFF08C2,Output=(OutputName="RimMask")))
+MaterialExpressionEditorX=240
+MaterialExpressionEditorY=
+SubgraphExpression=
+MaterialExpressionGuid=0C87A4214B942D2F1E7A5E8CA90B1D8C
+Material=/Script/Engine.Material'/PrincipledNPR/RimLight/M_RimLight.M_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=True
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=True
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Functions", "Functions"))
+Outputs=((OutputName="RimColorContribution"),(OutputName="RimMask"))
+INPUT /PrincipledNPR/RimLight/M_RimLight.M_RimLight:MaterialExpressionMaterialFunctionCall_0.3 <- /PrincipledNPR/RimLight/M_RimLight.M_RimLight:MaterialExpressionMultiply_0[0]
+INPUT /PrincipledNPR/RimLight/M_RimLight.M_RimLight:MaterialExpressionMaterialFunctionCall_0.4 <- /PrincipledNPR/RimLight/M_RimLight.M_RimLight:MaterialExpressionMultiply_1[0]
+INPUT /PrincipledNPR/RimLight/M_RimLight.M_RimLight:MaterialExpressionMaterialFunctionCall_0.5 <- /PrincipledNPR/RimLight/M_RimLight.M_RimLight:MaterialExpressionScalarParameter_2[0]
+INPUT /PrincipledNPR/RimLight/M_RimLight.M_RimLight:MaterialExpressionMaterialFunctionCall_0.6 <- /PrincipledNPR/RimLight/M_RimLight.M_RimLight:MaterialExpressionVectorParameter_0[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight CLASS MaterialFunction
+Description=角度边缘光：亮边宽度/柔和度以弧度输入，RGB 颜色与强度相乘。仅像素阶段，不含灯光可见度。
+UserExposedCaption=
+bExposeToLibrary=True
+bPrefixParameterNames=
+bEnableExecWire=
+bEnableNewHLSLGenerator=
+LibraryCategories=
+LibraryCategoriesText=(NSLOCTEXT("MaterialExpression", "Misc", "Misc"))
+DependentFunctionExpressionCandidates=
+PreviewBlendMode=
+PreviewMaterialDomain=
+FunctionExpressions=
+FunctionEditorComments=
+EditorOnlyData=/Script/Engine.MaterialFunctionEditorOnlyData'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MF_RimLightEditorOnlyData'
+StateId=49A8BD52489DFFCADEC175A4F6FD3623
+MaterialFunctionUsage=
+CombinedInputTypes=15
+CombinedOutputTypes=
+ThumbnailInfo=
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionVertexNormalWS_0 CLASS MaterialExpressionVertexNormalWS
+ExternalCodeIdentifiers=("VertexNormal")
+MaterialExpressionEditorX=-1800
+MaterialExpressionEditorY=
+SubgraphExpression=
+MaterialExpressionGuid=2300F9814409B0F5C573C5B3C20EECA2
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=True
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Vectors", "Vectors"),NSLOCTEXT("MaterialExpression", "Coordinates", "Coordinates"))
+Outputs=(())
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionVertexNormalWS_1 CLASS MaterialExpressionVertexNormalWS
+ExternalCodeIdentifiers=("VertexNormal")
+MaterialExpressionEditorX=-1800
+MaterialExpressionEditorY=200
+SubgraphExpression=
+MaterialExpressionGuid=315855744C8051DF4576B9B9035EED08
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=True
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Vectors", "Vectors"),NSLOCTEXT("MaterialExpression", "Coordinates", "Coordinates"))
+Outputs=(())
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionCameraVectorWS_0 CLASS MaterialExpressionCameraVectorWS
+ExternalCodeIdentifiers=("CameraVector")
+MaterialExpressionEditorX=-1800
+MaterialExpressionEditorY=400
+SubgraphExpression=
+MaterialExpressionGuid=CE9891834DCDC898C2F2AD9913999FDC
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=True
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Vectors", "Vectors"))
+Outputs=(())
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionFunctionInput_0 CLASS MaterialExpressionFunctionInput
+Preview=(Expression="/Script/Engine.MaterialExpressionVertexNormalWS'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionVertexNormalWS_0'")
+InputName=RimNormalWS
+Description=
+Id=7FA756C04D865A0822C11AA46E525774
+InputType=FunctionInput_Vector3
+PreviewValue=(X=0.000000,Y=0.000000,Z=0.000000,W=1.000000)
+bUsePreviewValueAsDefault=True
+SortPriority=
+BlendInputRelevance=
+MaterialExpressionEditorX=-1400
+MaterialExpressionEditorY=
+SubgraphExpression=
+MaterialExpressionGuid=2214AD724B67A49537003CAE5F78A377
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Functions", "Functions"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionFunctionInput_0.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionVertexNormalWS_0[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionFunctionInput_1 CLASS MaterialExpressionFunctionInput
+Preview=(Expression="/Script/Engine.MaterialExpressionVertexNormalWS'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionVertexNormalWS_1'")
+InputName=GeometryNormalWS
+Description=
+Id=110D66C743551122BEDD6783AF3E56DA
+InputType=FunctionInput_Vector3
+PreviewValue=(X=0.000000,Y=0.000000,Z=0.000000,W=1.000000)
+bUsePreviewValueAsDefault=True
+SortPriority=1
+BlendInputRelevance=
+MaterialExpressionEditorX=-1400
+MaterialExpressionEditorY=160
+SubgraphExpression=
+MaterialExpressionGuid=CF63254C4368CA0263F180B366C9B5DC
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Functions", "Functions"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionFunctionInput_1.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionVertexNormalWS_1[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionFunctionInput_2 CLASS MaterialExpressionFunctionInput
+Preview=(Expression="/Script/Engine.MaterialExpressionCameraVectorWS'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionCameraVectorWS_0'")
+InputName=ViewDirectionWS
+Description=
+Id=ADE106D8426F62068F9052BCFD3E0633
+InputType=FunctionInput_Vector3
+PreviewValue=(X=0.000000,Y=0.000000,Z=0.000000,W=1.000000)
+bUsePreviewValueAsDefault=True
+SortPriority=2
+BlendInputRelevance=
+MaterialExpressionEditorX=-1400
+MaterialExpressionEditorY=320
+SubgraphExpression=
+MaterialExpressionGuid=90C0058741C660BF8CE1DAA1CA043C51
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Functions", "Functions"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionFunctionInput_2.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionCameraVectorWS_0[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionFunctionInput_3 CLASS MaterialExpressionFunctionInput
+Preview=(Expression="/Script/Engine.MaterialExpressionConstant'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionConstant_0'")
+InputName=RimGrazingAngleRad
+Description=
+Id=07A6831D43377EBFC39CC59A7597CCDF
+InputType=
+PreviewValue=(X=0.000000,Y=0.000000,Z=0.000000,W=1.000000)
+bUsePreviewValueAsDefault=True
+SortPriority=3
+BlendInputRelevance=
+MaterialExpressionEditorX=-1400
+MaterialExpressionEditorY=480
+SubgraphExpression=
+MaterialExpressionGuid=E46ED9164765840ECD00418DE6AEA89A
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Functions", "Functions"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionFunctionInput_3.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionConstant_0[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionConstant_0 CLASS MaterialExpressionConstant
+R=0.139626
+MaterialExpressionEditorX=-1800
+MaterialExpressionEditorY=480
+SubgraphExpression=
+MaterialExpressionGuid=AF010AB4451A4BDEDD33FE894193DC17
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Constants", "Constants"))
+Outputs=(())
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionFunctionInput_4 CLASS MaterialExpressionFunctionInput
+Preview=(Expression="/Script/Engine.MaterialExpressionConstant'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionConstant_1'")
+InputName=RimEdgeHalfWidthRad
+Description=
+Id=68B06C244FF586A3DF95D7A7EF5B6841
+InputType=
+PreviewValue=(X=0.000000,Y=0.000000,Z=0.000000,W=1.000000)
+bUsePreviewValueAsDefault=True
+SortPriority=4
+BlendInputRelevance=
+MaterialExpressionEditorX=-1400
+MaterialExpressionEditorY=640
+SubgraphExpression=
+MaterialExpressionGuid=DFFDF0514F724119E53077864EC07052
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Functions", "Functions"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionFunctionInput_4.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionConstant_1[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionConstant_1 CLASS MaterialExpressionConstant
+R=0.034907
+MaterialExpressionEditorX=-1800
+MaterialExpressionEditorY=640
+SubgraphExpression=
+MaterialExpressionGuid=AA946B5F449267A247D9C3B9CF8867DE
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Constants", "Constants"))
+Outputs=(())
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionFunctionInput_5 CLASS MaterialExpressionFunctionInput
+Preview=(Expression="/Script/Engine.MaterialExpressionConstant'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionConstant_2'")
+InputName=RimPeakScale
+Description=
+Id=EF78D1354E568E9AECCC83A9CB321677
+InputType=
+PreviewValue=(X=0.000000,Y=0.000000,Z=0.000000,W=1.000000)
+bUsePreviewValueAsDefault=True
+SortPriority=5
+BlendInputRelevance=
+MaterialExpressionEditorX=-1400
+MaterialExpressionEditorY=800
+SubgraphExpression=
+MaterialExpressionGuid=47E52BFD473DF10599F19181A99CF837
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Functions", "Functions"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionFunctionInput_5.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionConstant_2[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionConstant_2 CLASS MaterialExpressionConstant
+R=
+MaterialExpressionEditorX=-1800
+MaterialExpressionEditorY=800
+SubgraphExpression=
+MaterialExpressionGuid=09E270B044A4B883A6E54790CBCBDBD4
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Constants", "Constants"))
+Outputs=(())
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionFunctionInput_6 CLASS MaterialExpressionFunctionInput
+Preview=(Expression="/Script/Engine.MaterialExpressionConstant3Vector'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionConstant3Vector_0'",Mask=1,MaskR=1,MaskG=1,MaskB=1)
+InputName=RimColor
+Description=
+Id=B098FB5647F1D2DF560A50AB2DE4E8FF
+InputType=FunctionInput_Vector3
+PreviewValue=(X=0.000000,Y=0.000000,Z=0.000000,W=1.000000)
+bUsePreviewValueAsDefault=True
+SortPriority=6
+BlendInputRelevance=
+MaterialExpressionEditorX=-1400
+MaterialExpressionEditorY=960
+SubgraphExpression=
+MaterialExpressionGuid=B0E1702543A70B063CF8D58007235D02
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Functions", "Functions"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionFunctionInput_6.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionConstant3Vector_0[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionConstant3Vector_0 CLASS MaterialExpressionConstant3Vector
+Constant=(R=1.000000,G=1.000000,B=1.000000,A=1.000000)
+MaterialExpressionEditorX=-1800
+MaterialExpressionEditorY=960
+SubgraphExpression=
+MaterialExpressionGuid=1A93827D4A31D74914C2DE85EDF59AEE
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Constants", "Constants"),NSLOCTEXT("MaterialExpression", "Vectors", "Vectors"))
+Outputs=((Mask=1,MaskR=1,MaskG=1,MaskB=1),(Mask=1,MaskR=1),(Mask=1,MaskG=1),(Mask=1,MaskB=1))
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionNormalize_0 CLASS MaterialExpressionNormalize
+VectorInput=(Expression="/Script/Engine.MaterialExpressionFunctionInput'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionFunctionInput_0'")
+MaterialExpressionEditorX=-1100
+MaterialExpressionEditorY=
+SubgraphExpression=
+MaterialExpressionGuid=D575478F41F443770333589B097BC40F
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"),NSLOCTEXT("MaterialExpression", "Vectors", "Vectors"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionNormalize_0.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionFunctionInput_0[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionNormalize_1 CLASS MaterialExpressionNormalize
+VectorInput=(Expression="/Script/Engine.MaterialExpressionFunctionInput'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionFunctionInput_1'")
+MaterialExpressionEditorX=-1100
+MaterialExpressionEditorY=200
+SubgraphExpression=
+MaterialExpressionGuid=7B37A07C4067949AB76C258AB2D3A2DF
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"),NSLOCTEXT("MaterialExpression", "Vectors", "Vectors"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionNormalize_1.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionFunctionInput_1[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionNormalize_2 CLASS MaterialExpressionNormalize
+VectorInput=(Expression="/Script/Engine.MaterialExpressionFunctionInput'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionFunctionInput_2'")
+MaterialExpressionEditorX=-1100
+MaterialExpressionEditorY=400
+SubgraphExpression=
+MaterialExpressionGuid=665EAAC541580CD456F5498B94FEDE11
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"),NSLOCTEXT("MaterialExpression", "Vectors", "Vectors"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionNormalize_2.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionFunctionInput_2[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDotProduct_0 CLASS MaterialExpressionDotProduct
+A=(Expression="/Script/Engine.MaterialExpressionNormalize'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionNormalize_0'")
+B=(Expression="/Script/Engine.MaterialExpressionNormalize'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionNormalize_2'")
+MaterialExpressionEditorX=-860
+MaterialExpressionEditorY=
+SubgraphExpression=
+MaterialExpressionGuid=0BE77A014ED2E61D5F84E7BA92239798
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"),NSLOCTEXT("MaterialExpression", "Vectors", "Vectors"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDotProduct_0.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionNormalize_0[0]
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDotProduct_0.1 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionNormalize_2[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionSaturate_0 CLASS MaterialExpressionSaturate
+Input=(Expression="/Script/Engine.MaterialExpressionDotProduct'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDotProduct_0'")
+MaterialExpressionEditorX=-640
+MaterialExpressionEditorY=
+SubgraphExpression=
+MaterialExpressionGuid=03D35E404E37D3121DF973945DFBB444
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionSaturate_0.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDotProduct_0[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionArcsine_0 CLASS MaterialExpressionArcsine
+Input=(Expression="/Script/Engine.MaterialExpressionSaturate'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionSaturate_0'")
+MaterialExpressionEditorX=-420
+MaterialExpressionEditorY=
+SubgraphExpression=
+MaterialExpressionGuid=748A0CF2465CF4CF7B15C4A07390B354
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionArcsine_0.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionSaturate_0[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDDX_0 CLASS MaterialExpressionDDX
+Value=(Expression="/Script/Engine.MaterialExpressionArcsine'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionArcsine_0'")
+MaterialExpressionEditorX=
+MaterialExpressionEditorY=100
+SubgraphExpression=
+MaterialExpressionGuid=855C5AAB4A6B8655C50FD8AFC1FD9FF4
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Utility", "Utility"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDDX_0.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionArcsine_0[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDDY_0 CLASS MaterialExpressionDDY
+Value=(Expression="/Script/Engine.MaterialExpressionArcsine'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionArcsine_0'")
+MaterialExpressionEditorX=
+MaterialExpressionEditorY=230
+SubgraphExpression=
+MaterialExpressionGuid=F50D04C8438C09EF67B4DDB350E4FCB3
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Utility", "Utility"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDDY_0.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionArcsine_0[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionAbs_0 CLASS MaterialExpressionAbs
+Input=(Expression="/Script/Engine.MaterialExpressionDDX'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDDX_0'")
+MaterialExpressionEditorX=180
+MaterialExpressionEditorY=100
+SubgraphExpression=
+MaterialExpressionGuid=9D0B3B374C272C3FEE7996BA6C8D3CF0
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionAbs_0.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDDX_0[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionAbs_1 CLASS MaterialExpressionAbs
+Input=(Expression="/Script/Engine.MaterialExpressionDDY'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDDY_0'")
+MaterialExpressionEditorX=180
+MaterialExpressionEditorY=230
+SubgraphExpression=
+MaterialExpressionGuid=60C862CD4C23C9A7FFAD9DB3B03544EC
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionAbs_1.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDDY_0[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionAdd_0 CLASS MaterialExpressionAdd
+A=(Expression="/Script/Engine.MaterialExpressionAbs'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionAbs_0'")
+B=(Expression="/Script/Engine.MaterialExpressionAbs'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionAbs_1'")
+ConstA=
+ConstB=1.000000
+MaterialExpressionEditorX=360
+MaterialExpressionEditorY=130
+SubgraphExpression=
+MaterialExpressionGuid=20B6ECF943B8E66D7312EFB72D1D83C0
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionAdd_0.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionAbs_0[0]
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionAdd_0.1 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionAbs_1[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_0 CLASS MaterialExpressionMultiply
+A=(Expression="/Script/Engine.MaterialExpressionAdd'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionAdd_0'")
+B=()
+ConstA=
+ConstB=0.500000
+MaterialExpressionEditorX=530
+MaterialExpressionEditorY=130
+SubgraphExpression=
+MaterialExpressionGuid=F77B288B4A2C84C5F18AA799D8C1A376
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_0.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionAdd_0[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMax_0 CLASS MaterialExpressionMax
+A=(Expression="/Script/Engine.MaterialExpressionFunctionInput'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionFunctionInput_4'")
+B=(Expression="/Script/Engine.MaterialExpressionMultiply'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_0'")
+ConstA=
+ConstB=1.000000
+MaterialExpressionEditorX=710
+MaterialExpressionEditorY=70
+SubgraphExpression=
+MaterialExpressionGuid=DD8C3AC34368AF76FF50F6A00EB4BC82
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMax_0.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionFunctionInput_4[0]
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMax_0.1 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_0[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMax_1 CLASS MaterialExpressionMax
+A=(Expression="/Script/Engine.MaterialExpressionMax'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMax_0'")
+B=()
+ConstA=
+ConstB=0.000010
+MaterialExpressionEditorX=880
+MaterialExpressionEditorY=70
+SubgraphExpression=
+MaterialExpressionGuid=D89BCAF34ACA601B49D6029009557A28
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMax_1.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMax_0[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionSubtract_0 CLASS MaterialExpressionSubtract
+A=(Expression="/Script/Engine.MaterialExpressionArcsine'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionArcsine_0'")
+B=(Expression="/Script/Engine.MaterialExpressionFunctionInput'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionFunctionInput_3'")
+ConstA=1.000000
+ConstB=1.000000
+MaterialExpressionEditorX=710
+MaterialExpressionEditorY=-90
+SubgraphExpression=
+MaterialExpressionGuid=A32D361047207DA30D0498B5937355B9
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionSubtract_0.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionArcsine_0[0]
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionSubtract_0.1 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionFunctionInput_3[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionAdd_1 CLASS MaterialExpressionAdd
+A=(Expression="/Script/Engine.MaterialExpressionSubtract'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionSubtract_0'")
+B=(Expression="/Script/Engine.MaterialExpressionMax'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMax_1'")
+ConstA=
+ConstB=1.000000
+MaterialExpressionEditorX=1060
+MaterialExpressionEditorY=-20
+SubgraphExpression=
+MaterialExpressionGuid=6A8A06D846CC6B76DBEE7088484AB635
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionAdd_1.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionSubtract_0[0]
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionAdd_1.1 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMax_1[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_1 CLASS MaterialExpressionMultiply
+A=(Expression="/Script/Engine.MaterialExpressionMax'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMax_1'")
+B=()
+ConstA=
+ConstB=2.000000
+MaterialExpressionEditorX=1060
+MaterialExpressionEditorY=130
+SubgraphExpression=
+MaterialExpressionGuid=63280DFB436364A6E58C95B02CADBF62
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_1.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMax_1[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDivide_0 CLASS MaterialExpressionDivide
+A=(Expression="/Script/Engine.MaterialExpressionAdd'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionAdd_1'")
+B=(Expression="/Script/Engine.MaterialExpressionMultiply'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_1'")
+ConstA=1.000000
+ConstB=2.000000
+MaterialExpressionEditorX=1240
+MaterialExpressionEditorY=
+SubgraphExpression=
+MaterialExpressionGuid=56E0DED54F19B74500EACCB89B34E4DD
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDivide_0.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionAdd_1[0]
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDivide_0.1 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_1[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionSaturate_1 CLASS MaterialExpressionSaturate
+Input=(Expression="/Script/Engine.MaterialExpressionDivide'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDivide_0'")
+MaterialExpressionEditorX=1420
+MaterialExpressionEditorY=
+SubgraphExpression=
+MaterialExpressionGuid=87C376C348B2A212891A39B3D6302374
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionSaturate_1.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDivide_0[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_2 CLASS MaterialExpressionMultiply
+A=(Expression="/Script/Engine.MaterialExpressionSaturate'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionSaturate_1'")
+B=(Expression="/Script/Engine.MaterialExpressionSaturate'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionSaturate_1'")
+ConstA=
+ConstB=1.000000
+MaterialExpressionEditorX=1600
+MaterialExpressionEditorY=
+SubgraphExpression=
+MaterialExpressionGuid=EC22AF54418C6D6D21A34C99BA064436
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_2.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionSaturate_1[0]
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_2.1 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionSaturate_1[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_3 CLASS MaterialExpressionMultiply
+A=(Expression="/Script/Engine.MaterialExpressionSaturate'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionSaturate_1'")
+B=()
+ConstA=
+ConstB=2.000000
+MaterialExpressionEditorX=1600
+MaterialExpressionEditorY=130
+SubgraphExpression=
+MaterialExpressionGuid=891AF1EA499B8EC97442CB971D6CEB53
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_3.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionSaturate_1[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionSubtract_1 CLASS MaterialExpressionSubtract
+A=()
+B=(Expression="/Script/Engine.MaterialExpressionMultiply'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_3'")
+ConstA=3.000000
+ConstB=1.000000
+MaterialExpressionEditorX=1780
+MaterialExpressionEditorY=130
+SubgraphExpression=
+MaterialExpressionGuid=B062D1C4492C1A271E474997407D213B
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionSubtract_1.1 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_3[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_4 CLASS MaterialExpressionMultiply
+A=(Expression="/Script/Engine.MaterialExpressionMultiply'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_2'")
+B=(Expression="/Script/Engine.MaterialExpressionSubtract'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionSubtract_1'")
+ConstA=
+ConstB=1.000000
+MaterialExpressionEditorX=1960
+MaterialExpressionEditorY=
+SubgraphExpression=
+MaterialExpressionGuid=3495F5FD4E74CF3CBBBE2996E19200C0
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_4.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_2[0]
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_4.1 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionSubtract_1[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionOneMinus_0 CLASS MaterialExpressionOneMinus
+Input=(Expression="/Script/Engine.MaterialExpressionMultiply'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_4'")
+MaterialExpressionEditorX=2160
+MaterialExpressionEditorY=
+SubgraphExpression=
+MaterialExpressionGuid=82A2902E49CE47BE2E655398ED69E252
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionOneMinus_0.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_4[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDotProduct_1 CLASS MaterialExpressionDotProduct
+A=(Expression="/Script/Engine.MaterialExpressionNormalize'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionNormalize_1'")
+B=(Expression="/Script/Engine.MaterialExpressionNormalize'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionNormalize_2'")
+MaterialExpressionEditorX=-420
+MaterialExpressionEditorY=650
+SubgraphExpression=
+MaterialExpressionGuid=2C29BA5E48DF0D36BEF542A72BF19CAC
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"),NSLOCTEXT("MaterialExpression", "Vectors", "Vectors"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDotProduct_1.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionNormalize_1[0]
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDotProduct_1.1 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionNormalize_2[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionConstant_3 CLASS MaterialExpressionConstant
+R=
+MaterialExpressionEditorX=-420
+MaterialExpressionEditorY=850
+SubgraphExpression=
+MaterialExpressionGuid=BFEFDF3A44977C1E7B918E8E2B0C88B0
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Constants", "Constants"))
+Outputs=(())
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDDX_1 CLASS MaterialExpressionDDX
+Value=(Expression="/Script/Engine.MaterialExpressionDotProduct'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDotProduct_1'")
+MaterialExpressionEditorX=
+MaterialExpressionEditorY=950
+SubgraphExpression=
+MaterialExpressionGuid=57E55FE2411FF9B0F8986C999A72D206
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Utility", "Utility"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDDX_1.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDotProduct_1[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDDY_1 CLASS MaterialExpressionDDY
+Value=(Expression="/Script/Engine.MaterialExpressionDotProduct'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDotProduct_1'")
+MaterialExpressionEditorX=
+MaterialExpressionEditorY=1080
+SubgraphExpression=
+MaterialExpressionGuid=6287D91A409048E6596C7599CB456D8D
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Utility", "Utility"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDDY_1.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDotProduct_1[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionAbs_2 CLASS MaterialExpressionAbs
+Input=(Expression="/Script/Engine.MaterialExpressionDDX'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDDX_1'")
+MaterialExpressionEditorX=180
+MaterialExpressionEditorY=950
+SubgraphExpression=
+MaterialExpressionGuid=DCADBE59463337D49287289C643A1A31
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionAbs_2.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDDX_1[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionAbs_3 CLASS MaterialExpressionAbs
+Input=(Expression="/Script/Engine.MaterialExpressionDDY'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDDY_1'")
+MaterialExpressionEditorX=180
+MaterialExpressionEditorY=1080
+SubgraphExpression=
+MaterialExpressionGuid=14FC9AE74A60BDD133C459BD16A039D9
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionAbs_3.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDDY_1[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionAdd_2 CLASS MaterialExpressionAdd
+A=(Expression="/Script/Engine.MaterialExpressionAbs'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionAbs_2'")
+B=(Expression="/Script/Engine.MaterialExpressionAbs'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionAbs_3'")
+ConstA=
+ConstB=1.000000
+MaterialExpressionEditorX=360
+MaterialExpressionEditorY=980
+SubgraphExpression=
+MaterialExpressionGuid=E71684994EE90F0E9E958D909422E6B2
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionAdd_2.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionAbs_2[0]
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionAdd_2.1 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionAbs_3[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_5 CLASS MaterialExpressionMultiply
+A=(Expression="/Script/Engine.MaterialExpressionAdd'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionAdd_2'")
+B=()
+ConstA=
+ConstB=0.500000
+MaterialExpressionEditorX=530
+MaterialExpressionEditorY=980
+SubgraphExpression=
+MaterialExpressionGuid=0484173E4678498B1AEBA486CD36929B
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_5.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionAdd_2[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMax_2 CLASS MaterialExpressionMax
+A=(Expression="/Script/Engine.MaterialExpressionConstant'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionConstant_3'")
+B=(Expression="/Script/Engine.MaterialExpressionMultiply'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_5'")
+ConstA=
+ConstB=1.000000
+MaterialExpressionEditorX=710
+MaterialExpressionEditorY=920
+SubgraphExpression=
+MaterialExpressionGuid=1BEBC46F4B4A4A2FB62FD2B5F6B082D9
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMax_2.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionConstant_3[0]
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMax_2.1 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_5[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMax_3 CLASS MaterialExpressionMax
+A=(Expression="/Script/Engine.MaterialExpressionMax'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMax_2'")
+B=()
+ConstA=
+ConstB=0.000010
+MaterialExpressionEditorX=880
+MaterialExpressionEditorY=920
+SubgraphExpression=
+MaterialExpressionGuid=CF28C78848E67BAC30A9109D41E79029
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMax_3.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMax_2[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionSubtract_2 CLASS MaterialExpressionSubtract
+A=(Expression="/Script/Engine.MaterialExpressionDotProduct'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDotProduct_1'")
+B=(Expression="/Script/Engine.MaterialExpressionConstant'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionConstant_3'")
+ConstA=1.000000
+ConstB=1.000000
+MaterialExpressionEditorX=710
+MaterialExpressionEditorY=760
+SubgraphExpression=
+MaterialExpressionGuid=1188E9984B7605209F4FF0B295309216
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionSubtract_2.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDotProduct_1[0]
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionSubtract_2.1 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionConstant_3[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionAdd_3 CLASS MaterialExpressionAdd
+A=(Expression="/Script/Engine.MaterialExpressionSubtract'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionSubtract_2'")
+B=(Expression="/Script/Engine.MaterialExpressionMax'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMax_3'")
+ConstA=
+ConstB=1.000000
+MaterialExpressionEditorX=1060
+MaterialExpressionEditorY=830
+SubgraphExpression=
+MaterialExpressionGuid=6A5E18A24089C1FA616E8DB9CB1C9399
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionAdd_3.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionSubtract_2[0]
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionAdd_3.1 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMax_3[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_6 CLASS MaterialExpressionMultiply
+A=(Expression="/Script/Engine.MaterialExpressionMax'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMax_3'")
+B=()
+ConstA=
+ConstB=2.000000
+MaterialExpressionEditorX=1060
+MaterialExpressionEditorY=980
+SubgraphExpression=
+MaterialExpressionGuid=C94F0F6C483C20BACC4AF5B52D05FAC3
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_6.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMax_3[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDivide_1 CLASS MaterialExpressionDivide
+A=(Expression="/Script/Engine.MaterialExpressionAdd'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionAdd_3'")
+B=(Expression="/Script/Engine.MaterialExpressionMultiply'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_6'")
+ConstA=1.000000
+ConstB=2.000000
+MaterialExpressionEditorX=1240
+MaterialExpressionEditorY=850
+SubgraphExpression=
+MaterialExpressionGuid=78AD9EE94B46F1C4C25C5BB7737A878D
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDivide_1.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionAdd_3[0]
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDivide_1.1 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_6[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionSaturate_2 CLASS MaterialExpressionSaturate
+Input=(Expression="/Script/Engine.MaterialExpressionDivide'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDivide_1'")
+MaterialExpressionEditorX=1420
+MaterialExpressionEditorY=850
+SubgraphExpression=
+MaterialExpressionGuid=6EF7E18B4569B885EB908884BD4E0B6F
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionSaturate_2.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionDivide_1[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_7 CLASS MaterialExpressionMultiply
+A=(Expression="/Script/Engine.MaterialExpressionSaturate'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionSaturate_2'")
+B=(Expression="/Script/Engine.MaterialExpressionSaturate'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionSaturate_2'")
+ConstA=
+ConstB=1.000000
+MaterialExpressionEditorX=1600
+MaterialExpressionEditorY=850
+SubgraphExpression=
+MaterialExpressionGuid=25E90AAF427E9724B845C8AB583F7734
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_7.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionSaturate_2[0]
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_7.1 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionSaturate_2[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_8 CLASS MaterialExpressionMultiply
+A=(Expression="/Script/Engine.MaterialExpressionSaturate'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionSaturate_2'")
+B=()
+ConstA=
+ConstB=2.000000
+MaterialExpressionEditorX=1600
+MaterialExpressionEditorY=980
+SubgraphExpression=
+MaterialExpressionGuid=5CEABF7044877140743444A8A365344F
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_8.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionSaturate_2[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionSubtract_3 CLASS MaterialExpressionSubtract
+A=()
+B=(Expression="/Script/Engine.MaterialExpressionMultiply'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_8'")
+ConstA=3.000000
+ConstB=1.000000
+MaterialExpressionEditorX=1780
+MaterialExpressionEditorY=980
+SubgraphExpression=
+MaterialExpressionGuid=7E9DD4654037E74EC47A2FBC400DFD30
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionSubtract_3.1 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_8[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_9 CLASS MaterialExpressionMultiply
+A=(Expression="/Script/Engine.MaterialExpressionMultiply'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_7'")
+B=(Expression="/Script/Engine.MaterialExpressionSubtract'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionSubtract_3'")
+ConstA=
+ConstB=1.000000
+MaterialExpressionEditorX=1960
+MaterialExpressionEditorY=850
+SubgraphExpression=
+MaterialExpressionGuid=9DCCF7C94EE80D61E843AC9642EE03A3
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_9.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_7[0]
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_9.1 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionSubtract_3[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_10 CLASS MaterialExpressionMultiply
+A=(Expression="/Script/Engine.MaterialExpressionOneMinus'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionOneMinus_0'")
+B=(Expression="/Script/Engine.MaterialExpressionMultiply'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_9'")
+ConstA=
+ConstB=1.000000
+MaterialExpressionEditorX=2400
+MaterialExpressionEditorY=100
+SubgraphExpression=
+MaterialExpressionGuid=82B4299B47CD94395EE5818797FE0234
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_10.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionOneMinus_0[0]
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_10.1 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_9[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_11 CLASS MaterialExpressionMultiply
+A=(Expression="/Script/Engine.MaterialExpressionFunctionInput'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionFunctionInput_5'")
+B=(Expression="/Script/Engine.MaterialExpressionFunctionInput'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionFunctionInput_6'")
+ConstA=
+ConstB=1.000000
+MaterialExpressionEditorX=2400
+MaterialExpressionEditorY=420
+SubgraphExpression=
+MaterialExpressionGuid=A83558C74EF50C50C01D89B2662E2E0D
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_11.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionFunctionInput_5[0]
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_11.1 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionFunctionInput_6[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_12 CLASS MaterialExpressionMultiply
+A=(Expression="/Script/Engine.MaterialExpressionMultiply'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_10'")
+B=(Expression="/Script/Engine.MaterialExpressionMultiply'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_11'")
+ConstA=
+ConstB=1.000000
+MaterialExpressionEditorX=2620
+MaterialExpressionEditorY=100
+SubgraphExpression=
+MaterialExpressionGuid=630D9FA541AE27BAE4836C9BA7518B4D
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_12.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_10[0]
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_12.1 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_11[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionFunctionOutput_0 CLASS MaterialExpressionFunctionOutput
+OutputName=RimColorContribution
+Description=
+SortPriority=
+A=(Expression="/Script/Engine.MaterialExpressionMultiply'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_12'")
+bLastPreviewed=
+Id=8D9BE5EF46D9B4C8B15479A2DB4D7F1C
+MaterialExpressionEditorX=2860
+MaterialExpressionEditorY=
+SubgraphExpression=
+MaterialExpressionGuid=8365758844DD469468476596DDECDC8A
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Functions", "Functions"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionFunctionOutput_0.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_12[0]
+
+OBJECT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionFunctionOutput_1 CLASS MaterialExpressionFunctionOutput
+OutputName=RimMask
+Description=
+SortPriority=1
+A=(Expression="/Script/Engine.MaterialExpressionMultiply'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_10'")
+bLastPreviewed=
+Id=975EF34047106C057E1A0AA88DFF08C2
+MaterialExpressionEditorX=2860
+MaterialExpressionEditorY=220
+SubgraphExpression=
+MaterialExpressionGuid=481D061448B870C6BE898886F87B135A
+Material=
+Function=/Script/Engine.MaterialFunction'/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight'
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Functions", "Functions"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionFunctionOutput_1.0 <- /PrincipledNPR/RimLight/MF_RimLight.MF_RimLight:MaterialExpressionMultiply_10[0]
+
+OBJECT /PrincipledNPR/RimLight/M_RimLight.M_RimLight:MaterialExpressionScalarParameter_0 CLASS MaterialExpressionScalarParameter
+DefaultValue=8.000000
+ControlType=
+SliderMin=
+SliderMax=35.000000
+Enumeration=
+EnumerationIndex=
+bUseCustomPrimitiveData=
+PrimitiveDataIndex=
+ParameterName=亮边宽度
+ExpressionGUID=15AF7E4B4B1A6401453229960EF7959B
+Group=边缘光
+SortPriority=
+MaterialExpressionEditorX=-600
+MaterialExpressionEditorY=
+SubgraphExpression=
+MaterialExpressionGuid=18F563264A43DCBCF07ADAB8C25C7407
+Material=/Script/Engine.Material'/PrincipledNPR/RimLight/M_RimLight.M_RimLight'
+Function=
+Desc=角度单位：度（硬域 0..90°）
+bRealtimePreview=
+bIsParameterExpression=True
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Parameters", "Parameters"))
+Outputs=(())
+
+OBJECT /PrincipledNPR/RimLight/M_RimLight.M_RimLight:MaterialExpressionMultiply_0 CLASS MaterialExpressionMultiply
+A=(Expression="/Script/Engine.MaterialExpressionScalarParameter'/PrincipledNPR/RimLight/M_RimLight.M_RimLight:MaterialExpressionScalarParameter_0'")
+B=()
+ConstA=
+ConstB=0.017453
+MaterialExpressionEditorX=-200
+MaterialExpressionEditorY=
+SubgraphExpression=
+MaterialExpressionGuid=8B3D54E445F667942E5D409A61BB4293
+Material=/Script/Engine.Material'/PrincipledNPR/RimLight/M_RimLight.M_RimLight'
+Function=
+Desc=度 → 弧度；保留 canonical ID 的弧度语义
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/M_RimLight.M_RimLight:MaterialExpressionMultiply_0.0 <- /PrincipledNPR/RimLight/M_RimLight.M_RimLight:MaterialExpressionScalarParameter_0[0]
+
+OBJECT /PrincipledNPR/RimLight/M_RimLight.M_RimLight:MaterialExpressionScalarParameter_1 CLASS MaterialExpressionScalarParameter
+DefaultValue=2.000000
+ControlType=
+SliderMin=
+SliderMax=10.000000
+Enumeration=
+EnumerationIndex=
+bUseCustomPrimitiveData=
+PrimitiveDataIndex=
+ParameterName=边缘柔和度
+ExpressionGUID=C0337CA4416BB1E4B662C1B646002718
+Group=边缘光
+SortPriority=1
+MaterialExpressionEditorX=-600
+MaterialExpressionEditorY=200
+SubgraphExpression=
+MaterialExpressionGuid=09993E6A4B1BEB4FD752918456B29334
+Material=/Script/Engine.Material'/PrincipledNPR/RimLight/M_RimLight.M_RimLight'
+Function=
+Desc=角度单位：度（硬域 0..90°）
+bRealtimePreview=
+bIsParameterExpression=True
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Parameters", "Parameters"))
+Outputs=(())
+
+OBJECT /PrincipledNPR/RimLight/M_RimLight.M_RimLight:MaterialExpressionMultiply_1 CLASS MaterialExpressionMultiply
+A=(Expression="/Script/Engine.MaterialExpressionScalarParameter'/PrincipledNPR/RimLight/M_RimLight.M_RimLight:MaterialExpressionScalarParameter_1'")
+B=()
+ConstA=
+ConstB=0.017453
+MaterialExpressionEditorX=-200
+MaterialExpressionEditorY=200
+SubgraphExpression=
+MaterialExpressionGuid=10412C63455EAE1C739C2C9F1FEB239D
+Material=/Script/Engine.Material'/PrincipledNPR/RimLight/M_RimLight.M_RimLight'
+Function=
+Desc=度 → 弧度；保留 canonical ID 的弧度语义
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Math", "Math"))
+Outputs=(())
+INPUT /PrincipledNPR/RimLight/M_RimLight.M_RimLight:MaterialExpressionMultiply_1.0 <- /PrincipledNPR/RimLight/M_RimLight.M_RimLight:MaterialExpressionScalarParameter_1[0]
+
+OBJECT /PrincipledNPR/RimLight/M_RimLight.M_RimLight:MaterialExpressionScalarParameter_2 CLASS MaterialExpressionScalarParameter
+DefaultValue=
+ControlType=
+SliderMin=
+SliderMax=2.000000
+Enumeration=
+EnumerationIndex=
+bUseCustomPrimitiveData=
+PrimitiveDataIndex=
+ParameterName=边缘光强度
+ExpressionGUID=3818EB6049D506DF4345B6AC0362E8AC
+Group=边缘光
+SortPriority=2
+MaterialExpressionEditorX=-600
+MaterialExpressionEditorY=400
+SubgraphExpression=
+MaterialExpressionGuid=0038338F4BA941CDF1AE099806364625
+Material=/Script/Engine.Material'/PrincipledNPR/RimLight/M_RimLight.M_RimLight'
+Function=
+Desc=场景线性倍率，0 关闭；支持有限非负值
+bRealtimePreview=
+bIsParameterExpression=True
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Parameters", "Parameters"))
+Outputs=(())
+
+OBJECT /PrincipledNPR/RimLight/M_RimLight.M_RimLight:MaterialExpressionVectorParameter_0 CLASS MaterialExpressionVectorParameter
+DefaultValue=(R=1.000000,G=1.000000,B=1.000000,A=1.000000)
+bUseCustomPrimitiveData=
+PrimitiveDataIndex=
+ChannelNames=()
+ParameterName=边缘光颜色
+ExpressionGUID=9DE4578448CFE0AAF4F6FA87AF712B58
+Group=边缘光
+SortPriority=3
+MaterialExpressionEditorX=-600
+MaterialExpressionEditorY=660
+SubgraphExpression=
+MaterialExpressionGuid=01F0378F4C232518F2AF5EB6D2EC00E4
+Material=/Script/Engine.Material'/PrincipledNPR/RimLight/M_RimLight.M_RimLight'
+Function=
+Desc=线性 RGB，Alpha 不参与计算。支持有限非负 HDR 颜色。
+bRealtimePreview=
+bIsParameterExpression=True
+bCommentBubbleVisible=
+bShowOutputNameOnPin=True
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Parameters", "Parameters"))
+Outputs=((OutputName="RGB",Mask=1,MaskR=1,MaskG=1,MaskB=1),(OutputName="R",Mask=1,MaskR=1),(OutputName="G",Mask=1,MaskG=1),(OutputName="B",Mask=1,MaskB=1),(OutputName="A",Mask=1,MaskA=1),(OutputName="RGBA",Mask=1,MaskR=1,MaskG=1,MaskB=1,MaskA=1))
+
+OBJECT /PrincipledNPR/RimLight/M_RimLight.M_RimLight:MaterialExpressionConstant3Vector_0 CLASS MaterialExpressionConstant3Vector
+Constant=(R=0.080000,G=0.080000,B=0.080000,A=1.000000)
+MaterialExpressionEditorX=240
+MaterialExpressionEditorY=-280
+SubgraphExpression=
+MaterialExpressionGuid=4E0968ED405FA8E09E1D10A3F6EDF516
+Material=/Script/Engine.Material'/PrincipledNPR/RimLight/M_RimLight.M_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Constants", "Constants"),NSLOCTEXT("MaterialExpression", "Vectors", "Vectors"))
+Outputs=((Mask=1,MaskR=1,MaskG=1,MaskB=1),(Mask=1,MaskR=1),(Mask=1,MaskG=1),(Mask=1,MaskB=1))
+
+OBJECT /PrincipledNPR/RimLight/M_RimLight.M_RimLight:MaterialExpressionConstant_0 CLASS MaterialExpressionConstant
+R=0.500000
+MaterialExpressionEditorX=240
+MaterialExpressionEditorY=-120
+SubgraphExpression=
+MaterialExpressionGuid=A3842DDD4268C37D1365CF98F53F8CC7
+Material=/Script/Engine.Material'/PrincipledNPR/RimLight/M_RimLight.M_RimLight'
+Function=
+Desc=
+bRealtimePreview=
+bIsParameterExpression=
+bCommentBubbleVisible=
+bShowOutputNameOnPin=
+bShowMaskColorsOnPin=True
+bHidePreviewWindow=
+bCollapsed=True
+bShaderInputData=
+bShowInputs=True
+bShowOutputs=True
+MenuCategories=(NSLOCTEXT("MaterialExpression", "Constants", "Constants"))
+Outputs=(())

@@ -85,6 +85,61 @@ bool UNPRStyleBindingComponent::SetScalarParameter(FName ParameterName, float Va
     return true;
 }
 
+bool UNPRStyleBindingComponent::SetRimParameters(const FNPRRimParameters& Parameters, FString& OutError)
+{
+    if (!Parameters.Validate(OutError))
+    {
+        return false;
+    }
+    if (!IsValid(BoundMesh) || ActiveMaterials.IsEmpty())
+    {
+        OutError = TEXT("An active mesh/material binding is required for Rim parameters.");
+        return false;
+    }
+
+    const FName WidthName(NPRRimContract::WidthMaterialName);
+    const FName SoftnessName(NPRRimContract::SoftnessMaterialName);
+    const FName IntensityName(NPRRimContract::IntensityMaterialName);
+    const FName ColorName(NPRRimContract::ColorMaterialName);
+    for (const auto& Entry : ActiveMaterials)
+    {
+        if (!IsValid(Entry.Value) || Entry.Key < 0 || Entry.Key >= BoundMesh->GetNumMaterials() ||
+            BoundMesh->GetMaterial(Entry.Key) != Entry.Value)
+        {
+            OutError = FString::Printf(TEXT("Rim binding in slot %d was replaced or is invalid; no parameters changed."), Entry.Key);
+            return false;
+        }
+        float Scalar = 0.f;
+        FLinearColor Color;
+        for (const FName Name : {WidthName, SoftnessName, IntensityName})
+        {
+            if (!Entry.Value->GetScalarParameterValue(FHashedMaterialParameterInfo(Name), Scalar))
+            {
+                OutError = FString::Printf(TEXT("Rim scalar '%s' is absent in slot %d; no parameters changed."), *Name.ToString(), Entry.Key);
+                return false;
+            }
+        }
+        if (!Entry.Value->GetVectorParameterValue(FHashedMaterialParameterInfo(ColorName), Color))
+        {
+            OutError = FString::Printf(TEXT("Rim vector '%s' is absent in slot %d; no parameters changed."), *ColorName.ToString(), Entry.Key);
+            return false;
+        }
+    }
+
+    // Preflight completed for every slot. Existing scalar-only writes remain unchanged.
+    const float WidthDegrees = Parameters.GetMaterialWidthDegrees();
+    const float SoftnessDegrees = Parameters.GetMaterialSoftnessDegrees();
+    const FLinearColor RGB(Parameters.RimColor.R, Parameters.RimColor.G, Parameters.RimColor.B, 1.f);
+    for (const auto& Entry : ActiveMaterials)
+    {
+        Entry.Value->SetScalarParameterValue(WidthName, WidthDegrees);
+        Entry.Value->SetScalarParameterValue(SoftnessName, SoftnessDegrees);
+        Entry.Value->SetScalarParameterValue(IntensityName, Parameters.RimPeakScale);
+        Entry.Value->SetVectorParameterValue(ColorName, RGB);
+    }
+    return true;
+}
+
 void UNPRStyleBindingComponent::RestoreMaterials()
 {
     if (IsValid(BoundMesh))

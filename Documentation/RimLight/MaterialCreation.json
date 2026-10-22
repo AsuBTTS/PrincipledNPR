@@ -1,0 +1,24 @@
+{
+  "engine": "5.8.3-58210709+++UE5+Release-5.8",
+  "assets": [
+    "/PrincipledNPR/RimLight/MF_RimLight.MF_RimLight",
+    "/PrincipledNPR/RimLight/M_RimLight.M_RimLight",
+    "/PrincipledNPR/RimLight/MI_RimLight_Preview.MI_RimLight_Preview"
+  ],
+  "status": "AssetsSaved_CompileRequested",
+  "render_validation": "NotRun",
+  "runtime_resolver": "NotConnected",
+  "policy": "UnshadowedEmissiveAppearance",
+  "compile_errors": [],
+  "readback": {
+    "亮边宽度": 8.0,
+    "边缘柔和度": 2.0,
+    "边缘光强度": 1.0
+  },
+  "source_sha256": "a2b70258776f566b316295baf87957af1df45ed1659f352ac788f64271d29066",
+  "asset_sha256": {
+    "Plugins/PrincipledNPR/Content/RimLight/MF_RimLight.uasset": "c98b4a93bff26795f60e63d7e5c953fc3acfd83d02db15584dff7d54252393e5",
+    "Plugins/PrincipledNPR/Content/RimLight/MI_RimLight_Preview.uasset": "54d8997eb51f4e386a9e97041e41b957a1dd78c710d028bc1af7c8b9a9e76937",
+    "Plugins/PrincipledNPR/Content/RimLight/M_RimLight.uasset": "b7a277feb9f3051da9d24f6b26f0af7901d7d84db68ab6905f283b04829e3711"
+  }
+}

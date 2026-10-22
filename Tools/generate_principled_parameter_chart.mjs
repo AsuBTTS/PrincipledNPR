@@ -27,9 +27,10 @@ const presentation = {
   SpecPeakScale: { name: '高光亮度倍率', kind: 'spec-peak', color: '#bb4d50' },
   NormalDetailStrength: { name: '细节法线强度', kind: 'normal-detail', color: '#b99243' },
   MacroNormalBlend: { name: '形体法线融合', kind: 'macro-normal', color: '#d0a947', note: '需要资产提供引导法线' },
-  RimGrazingAngleRad: { name: '边缘光延伸角', kind: 'rim-width', color: '#548b59' },
-  RimEdgeHalfWidthRad: { name: '边缘光过渡半宽', kind: 'rim-softness', color: '#66a16c' },
-  RimPeakScale: { name: '边缘光强度倍率', kind: 'rim-peak', color: '#497d4f' },
+  RimGrazingAngleRad: { name: '亮边宽度（延伸角）', kind: 'rim-width', color: '#548b59' },
+  RimEdgeHalfWidthRad: { name: '边缘柔和度（过渡半宽）', kind: 'rim-softness', color: '#66a16c' },
+  RimPeakScale: { name: '边缘光强度', kind: 'rim-peak', color: '#497d4f' },
+  RimColor: { name: '边缘光颜色', kind: 'rim-color', color: '#497d4f', note: '五种 RGB 示例，不按大小排序' },
   FaceAngularBiasRad: { name: '面部明暗位置偏移', kind: 'terminator', color: '#d8a347' },
   FaceAngularHalfWidthRad: { name: '面部明暗过渡半宽', kind: 'soft-terminator', color: '#edb954' },
   HairShiftAngleRad: { name: '发丝高光偏转', kind: 'hair-shift', color: '#5298ac' },
@@ -40,7 +41,7 @@ const presentation = {
 };
 
 const width = 1900;
-const height = 2350;
+const height = 2434;
 const panel = { x: 54, y: 220, width: 1792 };
 const labelX = 112;
 const gridStartX = 740;
@@ -69,6 +70,7 @@ const rgb = (hex) => hex.match(/[a-f\d]{2}/gi).map((part) => Number.parseInt(par
 const hex = (parts) => `#${parts.map((part) => Math.round(Math.max(0, Math.min(255, part))).toString(16).padStart(2, '0')).join('')}`;
 const mix = (a, b, amount) => hex(rgb(a).map((part, index) => part * (1 - amount) + rgb(b)[index] * amount));
 const fmt = (value, entry) => {
+  if (entry.valueType === 'linear_rgb') return `RGB(${value.join(',')})`;
   if (/radian/.test(entry.unit)) {
     const degrees = value * 180 / Math.PI;
     const shown = Number.isInteger(degrees) ? String(degrees) : degrees.toFixed(1).replace(/\.0$/, '');
@@ -83,6 +85,10 @@ const fmt = (value, entry) => {
   return value.toFixed(2);
 };
 const sampleValues = (entry) => {
+  if (entry.valueType === 'linear_rgb') {
+    if (entry.componentCount !== 3 || entry.domainApplication !== 'per_component') throw new Error('Unsupported RGB contract');
+    return [[1,1,1], [1,0.2,0.1], [0.2,1,0.2], [0.1,0.4,1], [0.7,0.2,1]];
+  }
   const range = entry.recommendedRange;
   if (!range || range.length !== 2 || range.some((value) => typeof value !== 'number')) {
     throw new Error(`Missing finite recommended range for ${entry.id}.`);
@@ -160,6 +166,11 @@ function sphereMarkup(entry, meta, t, cx, cy, rowIndex) {
     case 'rim-peak':
       detail = `<circle cx="${cx}" cy="${cy}" r="${sphereRadius - 3}" fill="none" stroke="#c9ffb5" stroke-width="5" opacity="${t * 0.96}"/>`;
       break;
+    case 'rim-color': {
+      const tint = hex(sampleValues(entry)[Math.round(t * 4)].map(v => v * 255));
+      detail = `<circle cx="${cx}" cy="${cy}" r="${sphereRadius - 3}" fill="none" stroke="${tint}" stroke-width="5"/>`;
+      break;
+    }
     case 'hair-shift': {
       const angle = -20 + t * 40;
       detail = `<g transform="rotate(${angle} ${cx} ${cy})"><path d="M ${cx - 25} ${cy + 10} Q ${cx} ${cy - 4} ${cx + 25} ${cy - 11}" fill="none" stroke="#123c51" stroke-width="10" opacity="0.5"/><path d="M ${cx - 22} ${cy + 4} Q ${cx} ${cy - 10} ${cx + 21} ${cy - 17}" fill="none" stroke="#ffffff" stroke-width="5" opacity="0.92"/><path d="M ${cx - 20} ${cy + 10} Q ${cx} ${cy - 3} ${cx + 20} ${cy - 9}" fill="none" stroke="#d8ffff" stroke-width="2" opacity="0.9"/></g>`;
@@ -220,7 +231,7 @@ const panelHeight = y - panel.y + 20;
 const svg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="title desc">
   <title id="title">Principled NPR 参数变化方向概念示意</title>
-  <desc id="desc">展示参数契约中 17 个 Principled 参数沿各自建议范围的五个档位变化。球体仅为帮助理解视觉方向的概念示意，不是 UE 实测结果。</desc>
+  <desc id="desc">展示参数契约中 ${entries.length} 个 Principled 参数的五个档位，RGB 行为五种颜色示例。球体仅为帮助理解视觉方向的概念示意，不是 UE 实测结果。</desc>
   <defs>
     <linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#172326"/><stop offset="1" stop-color="#243437"/></linearGradient>
     <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fbfcfa"/><stop offset="1" stop-color="#f3f7f4"/></linearGradient>
@@ -230,7 +241,7 @@ const svg = `<?xml version="1.0" encoding="UTF-8"?>
   <rect width="${width}" height="${height}" fill="url(#background)"/>
   <path d="M0 0H${width}V12H0Z" fill="url(#teal)"/>
   ${addText(76, 88, 'Principled 参数如何改变画面？', 52, '#f5faf8', 750)}
-  ${addText(78, 132, '我们按每项参数自己的建议范围，展示五个由低到高的档位。', 23, '#c8d7d3', 400)}
+  ${addText(78, 132, '数值参数按建议范围展示五档；颜色参数展示五种 RGB 示例。', 23, '#c8d7d3', 400)}
   <rect x="1458" y="50" width="366" height="50" rx="25" fill="#315752" stroke="#54aa9d" stroke-width="1"/>
   <circle cx="1486" cy="75" r="6" fill="#62cbbc"/>
   ${addText(1504, 82, '概念示意 · 不是 UE 实测画面', 17, '#e7f5f0', 650)}
@@ -243,11 +254,11 @@ const svg = `<?xml version="1.0" encoding="UTF-8"?>
   ${addText(gridStartX + cellWidth * 4, panel.y + 31, '建议范围高端', 12.5, '#60777a', 500, 'middle')}
   <line x1="${panel.x + 26}" y1="${panel.y + 48}" x2="${panel.x + panel.width - 26}" y2="${panel.y + 48}" stroke="#dce5e1" stroke-width="1"/>
   ${body}
-  <line x1="78" y1="2112" x2="1822" y2="2112" stroke="#526a6b" stroke-opacity="0.6"/>
-  ${addText(78, 2150, `状态：Draft / 未标定 / 未接入 Principled 渲染。当前共 ${entries.length} 项，默认值与推荐范围直接读取参数契约。`, 16, '#e0ece8', 500)}
-  ${addText(78, 2184, '球体用于解释参数方向，不代表已经接通或通过 UE 渲染验证。Face、Hair 与形体法线控制还依赖对应资产数据。', 14, '#b8cbc7', 400)}
-  ${addText(78, 2215, '描边功能已有独立实现；图中的 OutlineWidthPx 尚未自动映射到该链路。', 14, '#b8cbc7', 400)}
-  ${addText(1822, 2254, 'Principled NPR · 参数契约 v1', 13, '#94aaa6', 500, 'end')}
+  <line x1="78" y1="2196" x2="1822" y2="2196" stroke="#526a6b" stroke-opacity="0.6"/>
+  ${addText(78, 2234, `状态：完整参数链路仍为 Draft / 未标定。当前共 ${entries.length} 项，默认值与推荐范围直接读取参数契约。`, 16, '#e0ece8', 500)}
+  ${addText(78, 2268, '球体用于解释参数方向，不代表 UE 渲染验收；RGB 行展示五种颜色示例，不按大小排序。', 14, '#b8cbc7', 400)}
+  ${addText(78, 2299, '描边和边缘光材质已有独立实现；完整 Resolver、角色与风格存储的验证范围另见功能页。', 14, '#b8cbc7', 400)}
+  ${addText(1822, 2338, 'Principled NPR · 参数契约 v1', 13, '#94aaa6', 500, 'end')}
 </svg>`;
 
 if (process.argv.includes('--check')) {

@@ -1,0 +1,6 @@
+{
+  "status": "Passed",
+  "checks": 27,
+  "scope": "JSON / C++ declarations / conversion / rejection / compatibility; binary asset exposure audited separately",
+  "contract_version": 1
+}

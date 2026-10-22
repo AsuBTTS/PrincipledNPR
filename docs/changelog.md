@@ -1,6 +1,21 @@
 # 更新记录
 
+## 2026-10-22
+
+- 正式采用方案 B，新增 Surface Master Family、共享基础表面/贡献函数、两个预制 Recipe 与小型 Composer。Default Lit 和原生 Toon 家族复用原有 `MF_RimLight` 与 `SetRimParameters`，保持旧参数、角度单位、默认值和 Mapping；BaseColor、Normal、原有 Emissive 与独立附加贡献共用一个槽 MID。
+- 主工程 Game/Editor 构建、两项 Surface 自动化、90 项实际资产检查、17 张真实 GPU 捕获和 18 项汇总门禁通过；原有三项 Rim 自动化与八项图像门禁通过。BaseColor/Normal 在切换 Rim 前后差值为 0；HDR 相加相对误差约 0.885%；原生 Toon+Rim 单槽、Screen/Hull 共存已验证。范围是 UE 5.8.3 / DX12 SM6 独立静态球体，不覆盖角色、完整语义映射、Cook 或性能。
+- 原有 Rim/Outline 源码、资产、地图和历史证据按开工基线保持，UI 未修改；补齐 [Surface 使用说明](./features/surface-material.md)、技术输入契约与原始执行证据。完整 Profile / Resolver / Execution Plan、MatCap 和风格化 Specular 尚未实现。
+
+- 完成③ C++ / MID 动态调参：新增 `SetRimParameters`，先校验四项值及全部已绑定槽，再整组写入三个 Scalar 和 RGB Vector；支持角度转换、HDR、显式零值和黑色，缺参数或外部换材质时保留旧值。旧标量入口和材质算法保留。
+- Game 与完整 Editor 构建通过，重开工程后通过三项 C++ 自动化、八项图像/自动化门禁和十项反射调用检查。真实 GPU 图像来自独立球体预览场景；同一个 MID 连续更新，回到强度 0 后与初始关闭图像完全一致。修正了同帧捕获可能只得到默认材质的验证问题，改为跨帧等待并检查实际像素变化；当前 UE 预览已刷新。
+
+- 固定 Rim Light 四项材质参数的名称、类型、单位、默认值与范围，新增可选语义 ID `RimColor`（线性 RGB，缺失时继承白色），保留已有三个标量 ID。新增 `FNPRRimParameters` 校验和弧度转材质度数的方法，为第③步 MID 调参与第④步 Profile 存储提供接口约定；旧 C++ 标量 Patch 保持原样。
+- 材质构造脚本从契约读取默认值；新增离线交叉检查和实际资产只读检查，分别通过 27 项、34 项。第②步早期 Game 自动化在资产加载阶段退出的记录保留；第③步最新 Editor 运行已补齐用例执行并通过。未修改 Rim 算法或重存人工编辑的资产。
+- 同步参数参考、18 项概念示意图、开发管线、功能状态和交接说明。参数契约不代表完整 Resolver、MID 写入、Profile 保存或调制窗口已完成。
+
 ## 2026-10-21
+
+- 创建角度 Rim Light 的纯节点材质函数、表面材质和预览实例，提供“亮边宽度、边缘柔和度、边缘光强度、边缘光颜色”。实例角度用度数，函数保留弧度语义；基础强度仍为 0，预览实例覆盖为 1。新增颜色为后端 Vector 输入，完整 Resolver 与调制窗口仍待接入；不引用 ToonProfile。
 
 - 调整文档分组和入口：快速开始只介绍打开工程与调制窗口；Outline 页面承接描边操作、效果说明和实现方式；首页改为简洁的阅读指引。Principled 参数页改用使用者容易理解的语言说明设计目标，编辑器页补充各模块的关系图。
 
