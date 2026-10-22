@@ -30,13 +30,19 @@ npm run docs:preview
 
 ## 日常维护
 
-1. 改正文、增加页面，并在 `.vitepress/config.mts` 配导航。
-2. 参数或相关源码变化后执行 `npm run docs:generate`；它会更新参数表、离线源码/证据资源和参数契约变化示意图。
+1. 五份独立说明在 `Documentation/` 修改原文，其他网页在 `docs/` 修改；增加页面时在 `.vitepress/config.mts` 配导航。
+2. 原文、参数或相关源码变化后执行 `npm run docs:generate`；它会同步五份网页阅读版，更新参数表、离线源码/证据资源和参数契约变化示意图。
 3. 人工检查参数的视觉解释、功能状态、截图来源和操作步骤。自动表不可代替这一步。
 4. 执行 `npm run docs:build`，再预览检查桌面/窄屏导航、搜索和图片。首次安装由 lockfile 固定依赖，用 `npm ci` 复现。
 
 `docs/public/generated/`、构建产物、缓存和 node_modules 都不提交。生成参数页与参数示意图需要提交，确保代码审查能看到数据变化；文档工具按需从仓库原始文件复制精选资源。机器检查不访问所有外链，第三方链接应在变更时核查。
 
+独立说明的原文分别为 `Documentation/项目架构设计.md`、`Documentation/项目开发说明与约束.md`、`Documentation/NPR调制插件使用说明.md`、`Documentation/outline_introduction.md` 和 `Documentation/rim_light_introduction.md`，文件名保持用户指定名称。网页阅读版仍在 `docs/` 中按 architecture、developer、guides、outline、rim 分组，页面开头的注释记录原文路径。`Tools/docs.mjs` 生成时转换图片、证据和页面的相对链接；`docs:check` 会拒绝原文和网页内容不一致的版本。直接修改网页阅读版会在下次生成时被原文覆盖。
+
+旧开发者、编辑器和功能 URL 留作简短入口，导航进入对应阅读版。OpenSpec 直接引用 `Documentation/` 原文；`openspec/specs/` 记录已有行为，不替代手册。工程中的非网页阅读从 `Documentation/README.md` 开始。
+
+用户指定迁出的 12 份旧说明已离开日常文档层，原文和随附资料在 D 盘归档；仍被工具使用的契约和最终证据继续留在工程中。位置和哈希索引见[历史资料](./legacy.md)。D 盘阅读副本在 `Doc_current`，独立原文更新后应一同刷新；该目录不随 Git 或 Pages 发布。
+
 ## 页面写法
 
-先写用途和操作，再解释技术。术语第一次出现要用白话解释；用户页面尽量少放内部类名，开发者页面保留必要的精确信息。每个功能应写清：用途、效果图或待补、参数、实现、流程、限制、源码入口和状态。没有实际图片时不要造图。
+先说明用途和可见变化；单项功能按算法、公式、使用的顺序展开。术语第一次出现要用白话解释；用户页面尽量少放内部类名，开发者页面保留必要的精确信息。每个功能应写清：用途、效果图或待补、参数、实现、流程、限制、源码入口和状态。没有实际图片时不要造图。

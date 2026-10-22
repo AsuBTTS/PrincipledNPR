@@ -13,7 +13,7 @@
 | Rim Light 独立材质 | 已实现并验证 | 2026-10-22 Windows / UE 5.8.3 / DX12 SM6，静态球体四项变化的八张真实图像、八项门禁及人工查看；不覆盖角色、阴影、动画、时域或 Cook，见[图像记录](/generated/source/Documentation/RimLight/BindingValidation/ImageMetrics.json) |
 | Rim Light ② 参数暴露与契约 | 已实现并验证 | 2026-10-22 Windows / UE 5.8.3；27 项离线交叉检查、34 项实际资产只读检查及 C++ MaterialContract 用例通过；Game/Editor 构建通过；早期 Game 启动失败记录保留，最新 Editor 验证已补齐用例执行 |
 | Rim Light ③ C++ / MID 动态调参 | 已实现并验证 | 2026-10-22 UE 5.8.3 / DX12 SM6；双槽读回、失败保持原值、外部替换与恢复；同一个 MID 跨帧更新、八项图像/自动化门禁和当前编辑器十项反射检查，见[动态调参](/generated/source/Documentation/RimLight/RuntimeBinding.md.txt)与[执行记录](/generated/source/Documentation/RimLight/ImplementationValidation.json) |
-| Rim Light 完整工作流 | 开发中 | 材质可独立编辑，调制窗口仍为占位；Resolver、角色绑定与阴影可见度未接入 |
+| Rim Light 完整工作流 | 开发中 | 材质可独立编辑，调制窗口仍为占位；Resolver、自动角色绑定与阴影可见度未接入 |
 | MatCap、统一颜色控制 | 规划中 | 无完整插件可用链路 |
 
 [67 项原始记录](/generated/source/Documentation/Outline/Temporal/Acceptance.json)与[宽度层实现记录](/generated/source/Documentation/Outline/WidthLayers/Implementation.json)可离线查看。历史证据不能作为后续新功能的通过证明。

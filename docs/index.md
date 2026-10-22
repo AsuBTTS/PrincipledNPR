@@ -26,3 +26,13 @@ hero:
 我们已经接通 Outline 的主要使用流程，可以对整角色和局部区域调整描边，并提供左右对比预览、预设保存和图片导出。[Surface Master](./features/surface-material.md) 已让基础颜色、法线、自发光与 Rim 在同一个材质槽中组合，并通过原生 Toon + Rim 的球体验证。完整 Principled 参数转换还在开发；Surface 和 Rim 的调制窗口与角色工作流仍待接入，MatCap 仍在规划中。每个功能页分别说明当前能力和验证范围。
 
 [查看实现状态与验证记录](./reference/status.md) · [查看更新记录](./changelog.md)
+
+## 五份当前说明
+
+- [项目架构设计](./architecture/项目架构设计.md)：先理解系统怎样分工。
+- [项目开发说明与约束](./developer/项目开发说明与约束.md)：开发前核对各模块要求。
+- [NPR调制插件使用说明](./guides/NPR调制插件使用说明.md)：按当前界面操作。
+- [outline_introduction](./outline/outline_introduction.md)：描边算法、引擎公式与使用。
+- [rim_light_introduction](./rim/rim_light_introduction.md)：角度 Rim 算法、节点公式与使用。
+
+旧说明的合并和迁移位置见[历史归档索引](./reference/legacy.md)。

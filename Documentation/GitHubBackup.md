@@ -31,7 +31,7 @@ Windows SDK, then build the local Editor modules before opening the project:
 ```
 
 Source, Build.cs and Target.cs files are shared; compiled modules and generated
-IDE files remain local. See `C++骨架.md` and `CppScaffold.Validation.json` for
+IDE files remain local. See [current build guide](项目开发说明与约束.md) and `CppScaffold.Validation.json` for
 the architecture and verified build/load scope.
 
 Open `PrincipledNPR.uproject`. The shared EngineAssociation is `5.8`. On another

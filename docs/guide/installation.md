@@ -13,6 +13,6 @@
 4. 打开 `.uproject`，确认 `PrincipledNPR`、PythonScriptPlugin、EditorScriptingUtilities 启用。Python 工具用于构建/验证资产，普通使用窗口不必执行重建脚本。
 5. Screen Space 依赖 CustomDepth with Stencil。现有 `Config/DefaultEngine.ini` 已配置 `r.CustomDepth=3`，使用其他工程时需核对对应项目设置。
 
-插件包含 `NPRRuntime` 和 `NPREditor`；内容在 `/PrincipledNPR/Outline/`。不要为了使用窗口重新生成或覆盖所有材质资产。宽度后端资产确需更新时，按[扩展指南](../developer/extending.md)核对归属标记、编译状态及现有资源。
+插件包含 `NPRRuntime` 和 `NPREditor`；材质分别位于 `/PrincipledNPR/Outline/`、`RimLight/`、`Surface/`。不要为了使用窗口重新生成或覆盖所有材质资产。后端资产确需更新时，按[开发约束](../developer/项目开发说明与约束.md)核对归属标记、编译状态及现有资源。
 
 文档站点只需 Node.js 20+，独立于引擎；见[文档开发](../reference/documentation.md)。

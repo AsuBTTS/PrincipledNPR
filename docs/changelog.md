@@ -2,6 +2,11 @@
 
 ## 2026-10-22
 
+- 按用户要求合并并迁出 12 份旧说明到 D 盘 `Doc_history/2026-10-22_历史文档整合`，保留带哈希的原文、图片和数据快照；工程保留仍被工具使用的契约及验收证据，历史索引记录迁出清单。
+- 在 `Documentation/` 新增五份独立说明原文：项目架构设计、项目开发说明与约束、NPR 调制插件使用说明、outline_introduction、rim_light_introduction；`docs/` 参照生成网页阅读版，并检查两者一致。功能说明先算法后使用，补充与实际 UE 节点对应的 Rim、Outline 和 Surface 公式、例子与流程图。
+- OpenSpec 接入五份当前文档的阅读与维护要求，并建立 Outline 和材质系统的现有行为规范。未创建示例中的虚构开发变更；本轮只做文档和流程配置，未改渲染代码、资产或 UI，也未重跑 UE。
+- 修正文档 Mermaid 节点的段落行高，避免中文多行标签在实际预览中被裁切；不改变插件窗口样式。
+
 - 正式采用方案 B，新增 Surface Master Family、共享基础表面/贡献函数、两个预制 Recipe 与小型 Composer。Default Lit 和原生 Toon 家族复用原有 `MF_RimLight` 与 `SetRimParameters`，保持旧参数、角度单位、默认值和 Mapping；BaseColor、Normal、原有 Emissive 与独立附加贡献共用一个槽 MID。
 - 主工程 Game/Editor 构建、两项 Surface 自动化、90 项实际资产检查、17 张真实 GPU 捕获和 18 项汇总门禁通过；原有三项 Rim 自动化与八项图像门禁通过。BaseColor/Normal 在切换 Rim 前后差值为 0；HDR 相加相对误差约 0.885%；原生 Toon+Rim 单槽、Screen/Hull 共存已验证。范围是 UE 5.8.3 / DX12 SM6 独立静态球体，不覆盖角色、完整语义映射、Cook 或性能。
 - 原有 Rim/Outline 源码、资产、地图和历史证据按开工基线保持，UI 未修改；补齐 [Surface 使用说明](./features/surface-material.md)、技术输入契约与原始执行证据。完整 Profile / Resolver / Execution Plan、MatCap 和风格化 Specular 尚未实现。

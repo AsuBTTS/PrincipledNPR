@@ -1,0 +1,113 @@
+{
+  "format_version": 1,
+  "archived_at_utc": "2026-10-22T13:59:38.4757693Z",
+  "source_commit": "fbdbac4f1e775ba3dd4310c82986de1a6b5c4834",
+  "archive_folder": "Doc_history/2026-10-22_历史文档整合",
+  "moved_documents": [
+    {
+      "source": "Documentation/下一轮开发交接_V1.0.md",
+      "bytes": 6500,
+      "sha256": "40e33adfb341a5c44526de6d35671ae164c8ab8c0335ac3931b375de4993d284",
+      "moved": true
+    },
+    {
+      "source": "Documentation/项目创建记录.md",
+      "bytes": 4137,
+      "sha256": "79ff8d2069e55a9269740515f9068610db240135fb3fa01aa8e3643ec6858fe9",
+      "moved": true
+    },
+    {
+      "source": "Documentation/项目结构Tree.md",
+      "bytes": 3049,
+      "sha256": "b5a38fec52636c32d374b716ffcf2fdfe10c9970e8decaeb453cf63e76ce8bcb",
+      "moved": true
+    },
+    {
+      "source": "Documentation/BootstrapInterfaces.md",
+      "bytes": 5688,
+      "sha256": "88220a8612ee7b0ab1c4d4947c387c47811dc4a94ae16fa65ce0ff116978597d",
+      "moved": true
+    },
+    {
+      "source": "Documentation/C++骨架.md",
+      "bytes": 5315,
+      "sha256": "c88e543ed68e1d8e2b5e55d194d02058aaffeca27daf3622884dbab4eb26bbc0",
+      "moved": true
+    },
+    {
+      "source": "Documentation/ProbeGuide.md",
+      "bytes": 1750,
+      "sha256": "c9416a90879e7215a5ba1223c4c4026bf82399bd10c4aa0248e0333e53a28d04",
+      "moved": true
+    },
+    {
+      "source": "Documentation/UE5.8_Toon_专项修订摘要.md",
+      "bytes": 3349,
+      "sha256": "e001b4c4c2b4ac8f3248e11be38b21b48b9cb28410be673c321a73df85af1b5c",
+      "moved": true
+    },
+    {
+      "source": "Documentation/Assets/CharacterIntegration.md",
+      "bytes": 6743,
+      "sha256": "ebbe0070b26706f93821734e44bdb996c79714e34f65c54d60b3d70da7075b91",
+      "moved": true
+    },
+    {
+      "source": "Documentation/Outline/按钮说明与修复.md",
+      "bytes": 5863,
+      "sha256": "fc6fb9e197bd3d81f80dd966f2be12a289c0d1d5c61c6b5a78c0fdca45931a0e",
+      "moved": true
+    },
+    {
+      "source": "Documentation/Outline/操作流程.md",
+      "bytes": 7986,
+      "sha256": "dd2e554a56a9fdc54ad9fd41c7edf13d51574601dd5e8d4a529539605618fd4c",
+      "moved": true
+    },
+    {
+      "source": "Documentation/Outline/后续开发链路指导.md",
+      "bytes": 3980,
+      "sha256": "a2792e413d8ad35248c0c7de0f022582834f8dea54c3de78f6e7addf67610802",
+      "moved": true
+    },
+    {
+      "source": "Documentation/Outline/MultiScope/使用说明.md",
+      "bytes": 3492,
+      "sha256": "fdf0963d06b7f5b6e0057073f177b5a0a68c1a133f73bd66c7e06bb874cb4557",
+      "moved": true
+    }
+  ],
+  "supporting_snapshot_file_count": 1371,
+  "relocation_notices": [
+    "Documentation/项目创建记录.md"
+  ],
+  "current_documents": [
+    "Documentation/项目架构设计.md",
+    "Documentation/项目开发说明与约束.md",
+    "Documentation/NPR调制插件使用说明.md",
+    "Documentation/outline_introduction.md",
+    "Documentation/rim_light_introduction.md"
+  ],
+  "website_pages": [
+    {
+      "source": "Documentation/项目架构设计.md",
+      "page": "docs/architecture/项目架构设计.md"
+    },
+    {
+      "source": "Documentation/项目开发说明与约束.md",
+      "page": "docs/developer/项目开发说明与约束.md"
+    },
+    {
+      "source": "Documentation/NPR调制插件使用说明.md",
+      "page": "docs/guides/NPR调制插件使用说明.md"
+    },
+    {
+      "source": "Documentation/outline_introduction.md",
+      "page": "docs/outline/outline_introduction.md"
+    },
+    {
+      "source": "Documentation/rim_light_introduction.md",
+      "page": "docs/rim/rim_light_introduction.md"
+    }
+  ]
+}

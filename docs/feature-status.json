@@ -1,14 +1,14 @@
 [
-  {"id": "outline-core", "page": "features/outline.md", "status": "已实现并验证", "evidence": ["Documentation/Outline/Temporal/Acceptance.json", "Documentation/Outline/Temporal/抖动修复报告.md"]},
-  {"id": "outline-width-layers", "page": "features/outline.md", "status": "已实现但待验证", "evidence": ["Documentation/Outline/WidthLayers/Implementation.json"]},
-  {"id": "outline-material-ui", "page": "features/outline.md", "status": "已实现并验证", "evidence": ["Documentation/Outline/MaterialSlotUI.md", "Documentation/Outline/MaterialSlotUI/Validation.json", "Documentation/Outline/MaterialSlotUI/Readbacks.json"]},
+  {"id": "outline-core", "page": "outline/outline_introduction.md", "status": "已实现并验证", "evidence": ["Documentation/Outline/Temporal/Acceptance.json", "Documentation/Outline/Temporal/抖动修复报告.md"]},
+  {"id": "outline-width-layers", "page": "outline/outline_introduction.md", "status": "已实现但待验证", "evidence": ["Documentation/Outline/WidthLayers/Implementation.json"]},
+  {"id": "outline-material-ui", "page": "outline/outline_introduction.md", "status": "已实现并验证", "evidence": ["Documentation/Outline/MaterialSlotUI.md", "Documentation/Outline/MaterialSlotUI/Validation.json", "Documentation/Outline/MaterialSlotUI/Readbacks.json"]},
   {"id": "principled", "page": "principled/overview.md", "status": "开发中", "evidence": ["Documentation/Schemas/NPRParameterContract.v1.json"]},
   {"id": "toon-shading", "page": "features/toon-shading.md", "status": "开发中", "evidence": ["Documentation/Schemas/NPRParameterContract.v1.json"]},
   {"id": "surface-composition", "page": "features/surface-material.md", "status": "已实现并验证", "evidence": ["Documentation/Surface/Implementation.md", "Documentation/Surface/ImplementationValidation.json", "Documentation/Surface/AssetAudit.json", "Documentation/Surface/Validation/GpuMetrics.json"]},
-  {"id": "rim-light", "page": "features/rim-light.md", "status": "开发中", "evidence": ["Documentation/Schemas/NPRParameterContract.v1.json", "Documentation/RimLight/MaterialParameters.v1.json"]},
-  {"id": "rim-material", "page": "features/rim-light.md", "status": "已实现并验证", "evidence": ["Documentation/RimLight/BindingValidation/ImageMetrics.json", "Documentation/RimLight/BindingValidation/ImageReview.json", "Documentation/RimLight/Materials.md"]},
-  {"id": "rim-parameter-contract", "page": "features/rim-light.md", "status": "已实现并验证", "evidence": ["Documentation/RimLight/ParameterHandoff.md", "Documentation/RimLight/ContractValidation.json", "Documentation/RimLight/ParameterExposureValidation.json", "Documentation/RimLight/ImplementationValidation.json"]},
-  {"id": "rim-mid-binding", "page": "features/rim-light.md", "status": "已实现并验证", "evidence": ["Documentation/RimLight/RuntimeBinding.md", "Documentation/RimLight/ImplementationValidation.json", "Documentation/RimLight/BindingValidation/ImageMetrics.json", "Documentation/RimLight/BindingValidation/PythonReadback.json"]},
+  {"id": "rim-light", "page": "rim/rim_light_introduction.md", "status": "开发中", "evidence": ["Documentation/Schemas/NPRParameterContract.v1.json", "Documentation/RimLight/MaterialParameters.v1.json"]},
+  {"id": "rim-material", "page": "rim/rim_light_introduction.md", "status": "已实现并验证", "evidence": ["Documentation/RimLight/BindingValidation/ImageMetrics.json", "Documentation/RimLight/BindingValidation/ImageReview.json", "Documentation/RimLight/Materials.md"]},
+  {"id": "rim-parameter-contract", "page": "rim/rim_light_introduction.md", "status": "已实现并验证", "evidence": ["Documentation/RimLight/ParameterHandoff.md", "Documentation/RimLight/ContractValidation.json", "Documentation/RimLight/ParameterExposureValidation.json", "Documentation/RimLight/ImplementationValidation.json"]},
+  {"id": "rim-mid-binding", "page": "rim/rim_light_introduction.md", "status": "已实现并验证", "evidence": ["Documentation/RimLight/RuntimeBinding.md", "Documentation/RimLight/ImplementationValidation.json", "Documentation/RimLight/BindingValidation/ImageMetrics.json", "Documentation/RimLight/BindingValidation/PythonReadback.json"]},
   {"id": "base-color", "page": "features/base-color.md", "status": "规划中", "evidence": ["Documentation/Architecture.md"]},
   {"id": "matcap", "page": "features/matcap.md", "status": "规划中", "evidence": ["Documentation/Architecture.md"]}
 ]

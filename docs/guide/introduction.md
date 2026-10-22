@@ -6,8 +6,8 @@
 Principled Parameters → Parameter Mapping → Shader / Rendering Implementation
 ```
 
-我们目前可以使用的主要功能是 [Outline 描边](../features/outline.md)。这个功能支持两种描边方法，可以调整整个角色或局部区域，并提供左右对比预览和预设保存。原有的单材质槽操作流程也继续保留。
+NPR 调制窗口目前可用的主要功能是 [Outline 描边](../outline/outline_introduction.md)，支持两种方法、角色与局部设置、对比和预设保存。原有单材质槽流程继续保留。[Rim Light](../rim/rim_light_introduction.md) 已有材质和运行时调参，Surface 已能保留原表面并组合 Rim，但它们还没有窗口内的完整调制流程。
 
-我们已经为完整参数体系准备了数据格式、两份风格草案和基础资产类型，但还没有接通完整的参数计算与渲染转换。[边缘光](../features/rim-light.md)和 [MatCap](../features/matcap.md) 也还不能通过这套工具开启。各项进展见[状态与证据](../reference/status.md)。
+完整参数体系已有数据格式、两份未标定风格草案和基础资产类型；完整自动转换仍未接通。[MatCap](../features/matcap.md) 仍在规划。各项进展和验证范围见[状态与证据](../reference/status.md)。
 
 文档面向角色美术、技术美术和插件开发者。首次使用从[安装](./installation.md)和[快速开始](./quick-start.md)进入；开发扩展先读[架构](../developer/architecture.md)与[参数映射](../principled/mapping.md)。

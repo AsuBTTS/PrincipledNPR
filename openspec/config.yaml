@@ -1,0 +1,41 @@
+schema: spec-driven
+
+context: |
+  项目为 PrincipledNPR。先读取根目录 AGENTS.md，再读取与当前变更相关的下列文档；这些路径是阅读入口，不是已经执行过的验证。
+  - Documentation/项目架构设计.md：当前模块分工、方案 B 的 Surface 组合与独立 Outline。
+  - Documentation/项目开发说明与约束.md：各模块约束、参数兼容、构建和验证要求。
+  - Documentation/NPR调制插件使用说明.md：实际窗口入口、保存和当前未接通的功能。
+  - Documentation/outline_introduction.md：Outline 算法、公式、使用和限制。
+  - Documentation/rim_light_introduction.md：Rim 节点公式、单位、使用和限制。
+  新增功能前结合实际源码、参数契约、资产和证据核实状态。Documentation 保存独立说明原文，docs 参照同步为网页；openspec/specs 约束已有行为；changes 只记录真实进行中的变更。
+  保留现有参数语义、算法、材质入口、资产、UI 样式和工具；不因示例结构重建已经完成的 Rim 功能。
+  当前采用方案 B：兼容 Surface 母材质与同槽 MID 组合效果，Outline 保留独立渲染方式。完整风格解析、自动角色转换、Rim 调制 UI 等未完成能力以当前文档和证据为准。
+  文档使用通俗中文。单项功能先介绍算法，再说明使用；数学计算提供对应 UE 节点、变量、单位和数值例子。
+  只运行文档或 OpenSpec 检查时，不报告新增 UE 渲染验收。历史说明已按用户要求迁至 D 盘，检索入口为 docs/reference/legacy.md 与 Documentation/HistoryArchive.json。
+
+rules:
+  proposal:
+    - "先说明使用者要改变的画面或操作，列明范围和不处理的内容。"
+    - "区分已有能力、新增能力和待验证能力，引用相关规范与当前文档。"
+  design:
+    - "按项目开发说明逐项检查受影响模块；不要引入 Runtime 对编辑器模块的依赖。"
+    - "说明参数归属、单位、默认值、映射、组合、保存、恢复及旧资产兼容。"
+    - "涉及数学时，用 UE 材质节点或现有代码变量解释公式，并保留现有参数语义。"
+  specs:
+    - "写明可检查的行为和失败场景；区分表面组合、几何描边和后处理描边。"
+    - "0 与黑色可以是有效覆盖；恢复继承删除本层值，不静默改变单位或默认值。"
+    - "不要把未来 UI、完整 Resolver、Cook 或未运行图像验收描述为已完成。"
+  tasks:
+    - "覆盖受影响的源码、契约、实际资产、验证和文档，不用脚本修改代替资产检查。"
+    - "先更新 Documentation 中受影响的独立说明，再生成 docs 网页阅读版；同步状态清单、changelog 和适用检查。"
+    - "图像与模块编译分别记录；仅完成文档任务时明确本轮未运行 UE。"
+
+operations:
+  apply:
+    guidance:
+      - "实施前实际读取相关当前文档和变更产物；配置中的路径不代表已读取正文。"
+      - "旧原文与验证证据不得静默覆盖。文档迁移需保留来源、哈希和可追溯入口。"
+  archive:
+    guidance:
+      - "核实任务和测试范围；归档 OpenSpec 变更不等于清理 Documentation 原始证据。"
+      - "同步现有功能规范和使用文档，再说明已完成与仍未完成的能力。"

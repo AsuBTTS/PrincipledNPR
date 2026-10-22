@@ -28,6 +28,8 @@
 }
 .vp-doc th { white-space: nowrap; }
 .vp-doc img { border-radius: 8px; }
+/* Match Mermaid's 1.5-line text measurement; VitePress paragraph line-height clips multi-line labels. */
+.vp-doc svg .nodeLabel p { margin: 0; line-height: 1.5; }
 .VPHero .image-container { isolation: isolate; }
 .VPHero .image-bg,
 .VPHero .image-container::before,

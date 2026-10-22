@@ -1,4 +1,4 @@
-// No UE mutation. Generate objective reference data; keep explanations in authored pages.
+// No UE mutation. Sync standalone Documentation originals and generate reference data.
 import fs from 'node:fs'
 import path from 'node:path'
 import crypto from 'node:crypto'
@@ -147,6 +147,35 @@ for(const m of contract.backends.S58.mappingEntries) {
 }
 generated+='\n## 来源指纹\n\n构建检查覆盖以下文本源；改变后需重新生成并人工审查相关说明。不能证明 .uasset 与脚本一致。\n\n| 来源 | SHA256（UTF8 LF） |\n| --- | --- |\n'
 const assetPath = p => /\.(json|png|jpe?g)$/i.test(p) ? p : p+'.txt'
+// The five standalone originals live in Documentation. These are their website reading views.
+const documentationPages = [
+ ['Documentation/项目架构设计.md', 'docs/architecture/项目架构设计.md'],
+ ['Documentation/项目开发说明与约束.md', 'docs/developer/项目开发说明与约束.md'],
+ ['Documentation/NPR调制插件使用说明.md', 'docs/guides/NPR调制插件使用说明.md'],
+ ['Documentation/outline_introduction.md', 'docs/outline/outline_introduction.md'],
+ ['Documentation/rim_light_introduction.md', 'docs/rim/rim_light_introduction.md']
+]
+const toPosix = p => p.split(path.sep).join('/')
+const localLinks = /\]\(([^\s)]+)(?:\s+"[^"]*")?\)/g
+function websiteLink(url, source, page) {
+ if (/^(https?:|mailto:|#|\/\/)/.test(url)) return url
+ const [,pathname,suffix] = url.match(/^([^#?]*)(.*)$/)
+ const absolute = path.resolve(root, path.dirname(source), decodeURIComponent(pathname))
+ const projectPath = toPosix(path.relative(root, absolute))
+ if (!fs.existsSync(absolute) || !fs.statSync(absolute).isFile()) throw Error(`${source}: Missing local file ${url}`)
+ const view = documentationPages.find(([original]) => original === projectPath)
+ if (view) return toPosix(path.relative(path.dirname(path.join(root,page)),path.join(root,view[1])))+suffix
+ if (projectPath.startsWith('Documentation/')) return '/generated/source/'+assetPath(projectPath)+suffix
+ if (projectPath.startsWith('docs/public/')) return '/'+projectPath.slice('docs/public/'.length)+suffix
+ if (projectPath.startsWith('docs/')) return toPosix(path.relative(path.dirname(path.join(root,page)),absolute))+suffix
+ throw Error(`${source}: Website link needs an explicit offline source mapping: ${url}`)
+}
+for (const [source,page] of documentationPages) {
+ const body = read(source).replace(localLinks, (match,url) => match.replace(url,websiteLink(url,source,page)))
+ const content = `<!-- Generated from ${source}. Edit the original, then run npm run docs:generate. -->\n\n`+body
+ if (process.argv[2] === 'generate') write(page,content)
+ else if (!fs.existsSync(path.join(root,page)) || read(page) !== content) throw Error(`网页阅读版过期：先维护 ${source}，再运行 npm run docs:generate 同步 ${page}。`)
+}
 for(const p of sourcePaths) generated+=`| [${esc(p)}](/generated/source/${assetPath(p)}) | ${hash(p)} |\n`
 const surfaceContract=json('Documentation/Surface/SurfaceContract.v1.json')
 const surfaceNames={NPR_BaseColor:'基础颜色倍率',NPR_BaseColorTexture:'基础颜色纹理',NPR_NormalTexture:'切线法线纹理',NPR_NormalStrength:'法线强度',NPR_EmissiveColor:'原有自发光颜色',NPR_EmissiveTexture:'原有自发光纹理',NPR_EmissiveScale:'原有自发光强度',NPR_Roughness:'原生粗糙度',NPR_Metallic:'原生金属度',NPR_Specular:'原生镜面反射',NPR_AdditionalEmissiveColor:'附加自发光颜色',NPR_AdditionalEmissiveScale:'附加自发光强度'}
@@ -160,6 +189,7 @@ else if(!fs.existsSync(path.join(root,target)) || read(target)!==generated) thro
 
 // Recreate a small set of original evidence/source files for offline static hosting.
 const resources=[...sourcePaths,
+ 'Documentation/HistoryArchive.json',
  'Documentation/Surface/Implementation.md',
  'Documentation/Surface/ImplementationValidation.json',
  'Documentation/Surface/AssetCreation.json',
@@ -219,4 +249,4 @@ for(const item of statuses) {
  for(const p of item.evidence) if(!fs.existsSync(path.join(root,p))) errors.push('Missing evidence '+p)
 }
 if(errors.length) throw Error(errors.join('\n'))
-console.log(`Docs ${process.argv[2]} PASS: ${contract.parameterDefinitions.length} semantic parameters, ${outlineRows().length} outline fields, ${docs.length} pages, ${statuses.length} status entries; local file links checked. No UE rendering validation.`)
+console.log(`Docs ${process.argv[2]} PASS: ${documentationPages.length} Documentation originals / synchronized web views, ${contract.parameterDefinitions.length} semantic parameters, ${outlineRows().length} outline fields, ${docs.length} pages, ${statuses.length} status entries; local file links checked. No UE rendering validation.`)

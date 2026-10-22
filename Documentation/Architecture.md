@@ -4,7 +4,7 @@
 
 2026-10-17 补充：独立的 Outline 模块已接入角色绑定、双视口、预设与关卡保存链路，见 [Outline 技术模块报告](Outline/技术模块报告.md)。下面的 Draft 状态指完整语义解析和表面模型后端，不代表 Outline 仍为空壳。
 
-状态：**Draft / 未标定 / 未连接 Shader**。这些版本化 JSON 是语义契约草案；2026-10-04 已添加 C++ 宿主、NPRRuntime / NPREditor、基础 UDataAsset 类型和显式预制材质绑定组件，详见 `C++骨架.md` 与 `CppScaffold.Validation.json`。完整 Resolver、Backend Adapter 和语义驱动 Runtime Style Switch 尚未实现。JSON 不参与引擎着色，不等于 ToonProfile，也不证明渲染测试通过。
+状态：**Draft / 未标定 / 未连接 Shader**。这些版本化 JSON 是语义契约草案；2026-10-04 已添加 C++ 宿主、NPRRuntime / NPREditor、基础 UDataAsset 类型和显式预制材质绑定组件，详见 当前 `Documentation/项目开发说明与约束.md` 与 `CppScaffold.Validation.json`。完整 Resolver、Backend Adapter 和语义驱动 Runtime Style Switch 尚未实现。JSON 不参与引擎着色，不等于 ToonProfile，也不证明渲染测试通过。
 
 ## 文件
 

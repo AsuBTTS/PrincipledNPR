@@ -10,7 +10,7 @@
 
 `Measure-MultiScopePreview.ps1` 检查整组双视口的实际人物、关闭描边、颜色与宽度变化。`open_outline_character_demo.py` 选择真实带纹理人物并打开整组预览，可通过普通编辑器的 `-ExecCmds="py <脚本绝对路径>"` 启动，不开启持续验证会话。
 
-新增功能用法见 [多粒度 Outline 使用说明](../Documentation/Outline/MultiScope/使用说明.md)，范围与限制见 [审查与设计](../Documentation/Outline/多粒度审查与设计.md)。Create 只会重置带归属标记的专用测试关卡。
+新增功能用法见 [多粒度 Outline 使用说明](../Documentation/outline_introduction.md)，范围与限制见 [审查与设计](../Documentation/Outline/多粒度审查与设计.md)。Create 只会重置带归属标记的专用测试关卡。
 
 ## 资产开发
 
@@ -43,7 +43,7 @@
 | `audit_rim_light_contract.py` | 在独立 UE 进程只读重载实际材质/函数/实例，检查四项类型、名称、默认值与函数连接；不保存资产 |
 | `verify_outline_workflow.py` | 真 RHI 下调用与 Outline 窗口相同的服务，检查转换、参数变体导出、保存和独立进程重开；PNG 仍需检查 |
 
-前两个使用普通 Python 3，不需要启动 UE。Outline 验证需要 UE Editor，使用 `NPR_OUTLINE_STAGE=Create` 和 `Reopen` 分别启动两个进程；不能加 `-nullrhi`。普通 Outline 使用不需要运行这些脚本，见 `Documentation/Outline/操作流程.md`。
+前两个使用普通 Python 3，不需要启动 UE。Outline 验证需要 UE Editor，使用 `NPR_OUTLINE_STAGE=Create` 和 `Reopen` 分别启动两个进程；不能加 `-nullrhi`。普通 Outline 使用不需要运行这些脚本，见 `Documentation/NPR调制插件使用说明.md`。
 
 `verify_outline_workflow.py` 通过 `SetComparisonCaptureSize` 将测试渲染缓冲固定为 351×493；普通窗口不设固定尺寸。Create 仅恢复有明确所有权标记的受控槽，使其可以重复执行。
 
@@ -97,7 +97,7 @@ Screen 材质当前位于 Scene Color After DOF，在 TSR/TAA 之前；保持默
 
 `Open-PrincipledNPR.ps1` 是可选启动助手；也可直接打开 `.uproject`。
 
-`Build-PrincipledNPR.ps1` 是 C++ 构建 / IDE 工程生成入口，接收自己的 UE 安装目录；不参与运行时渲染。构建前保存并关闭编辑器，详见 `Documentation/C++骨架.md`。
+`Build-PrincipledNPR.ps1` 是 C++ 构建 / IDE 工程生成入口，接收自己的 UE 安装目录；不参与运行时渲染。构建前保存并关闭编辑器，详见 `Documentation/项目开发说明与约束.md`。
 ## Surface Master Family
 
 `create_surface_master_assets.py` 在 UE 5.8.3 中创建带归属标签的共享函数、两个 Master 家族、Recipe、预览实例与测试纹理；复用原有 `MF_RimLight` 和未修改的 Toon 探针 Profile。已有同名归属资产保留，不重建覆盖。`audit_surface_master_assets.py` 独立只读检查实际保存资产的类型、默认值、图连接及参数归属。
