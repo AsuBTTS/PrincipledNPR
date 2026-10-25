@@ -48,7 +48,7 @@ UE 蓝图可使用同名 `Set Rim Parameters` 节点，输入 `NPRRimParameters`
 
 Python 调用这个 UFUNCTION 时，UE 把原生 bool 当作成功标记：成功返回 `OutError` 字符串（通常为空串），失败返回 `None`。不要用空串的真假判断成功；C++ 和蓝图仍读取原生 bool 与 `OutError`。
 
-这个入口解决第③步的动态参数写入；第④步 RGB 风格存储、第⑤步 Profile 到角色的自动绑定、第⑥步 NPR 调制窗口仍需各自接入。当前验证只覆盖受控网格及四项 Rim 参数，不能替代角色多槽/多 LOD、阴影、动画、时域、Cook 或性能验收。
+这个入口解决第③步的动态参数写入。2026-10-25 已加入 RGB Profile 存储、单槽角色绑定和 NPR 调制窗口，使用顺序见 [Rim 编辑器工作流](EditorWorkflow.md)。前述 2026-10-22 验证只覆盖受控网格及四项 Rim 参数，不能替代本轮角色多槽/多 LOD、阴影、动画、时域、Cook 或性能验收。
 
 ## 源码
 
