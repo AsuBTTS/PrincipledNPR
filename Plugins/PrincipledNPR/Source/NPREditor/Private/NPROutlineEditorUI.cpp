@@ -1,4 +1,5 @@
 #include "NPROutlineEditorUI.h"
+#include "NPRRimEditorUI.h"
 #include "NPROutlineMeshCustomization.h"
 
 #include "NPROutlineEditorLibrary.h"
@@ -821,25 +822,13 @@ public:
                     + SHorizontalBox::Slot().AutoWidth().VAlign(VAlign_Center).Padding(0,0,24,0)
                     [SNew(STextBlock).Text(FText::FromString(TEXT("NPR 调制"))).Font(FCoreStyle::GetDefaultFontStyle("Bold",16))]
                     + SHorizontalBox::Slot().AutoWidth().Padding(0,0,8,0)[FeatureEntry(TEXT("Outline · 描边"),0)]
-                    + SHorizontalBox::Slot().AutoWidth()[FeatureEntry(TEXT("Rim Light · 边缘光（占位）"),1)]
+                    + SHorizontalBox::Slot().AutoWidth()[FeatureEntry(TEXT("Rim Light · 边缘光"),1)]
                 ]
             ]
             + SVerticalBox::Slot().FillHeight(1)
             [SAssignNew(FeaturePages,SWidgetSwitcher)
                 + SWidgetSwitcher::Slot()[SAssignNew(Outline,SNPROutlineEditor)]
-                + SWidgetSwitcher::Slot()
-                [SNew(SBox).HAlign(HAlign_Center).VAlign(VAlign_Center).Padding(30)
-                    [SNew(SBox).MaxDesiredWidth(640)
-                        [SNew(SBorder).BorderImage(FAppStyle::GetBrush("ToolPanel.GroupBorder")).Padding(32)
-                            [SNew(SVerticalBox)
-                                + SVerticalBox::Slot().AutoHeight()[SNew(STextBlock).Text(FText::FromString(TEXT("Rim Light · 边缘光"))).Font(FCoreStyle::GetDefaultFontStyle("Bold",24))]
-                                + SVerticalBox::Slot().AutoHeight().Padding(0,12)[SNew(STextBlock).Text(FText::FromString(TEXT("功能占位 · 尚未接入渲染"))).ColorAndOpacity(FLinearColor(0.86f,0.63f,0.34f))]
-                                + SVerticalBox::Slot().AutoHeight()[SNew(STextBlock).Text(FText::FromString(TEXT("边缘光用于提亮角色表面靠近轮廓的区域。这里先保留入口，后续将接入覆盖范围、过渡和亮度控制。当前页面不会创建配置、修改材质或改变预览。"))).AutoWrapText(true)]
-                                + SVerticalBox::Slot().AutoHeight().Padding(0,24,0,0)[SNew(SButton).Text(FText::FromString(TEXT("返回 Outline 描边"))).OnClicked_Lambda([this]{ShowOutline();return FReply::Handled();})]
-                            ]
-                        ]
-                    ]
-                ]
+                + SWidgetSwitcher::Slot()[SNew(SNPRRimEditor)]
             ]
         ];
     }
@@ -875,7 +864,7 @@ void FNPROutlineEditorUI::Register()
         FToolMenuOwnerScoped Owner(TEXT("PrincipledNPROutline"));
         UToolMenu* Menu=UToolMenus::Get()->ExtendMenu(TEXT("LevelEditor.MainMenu.Window"));
         Menu->FindOrAddSection(TEXT("NPR")).AddMenuEntry(TEXT("OpenNPROutline"),FText::FromString(TEXT("NPR 调制")),
-            FText::FromString(TEXT("打开 NPR 调制：Outline 描边与 Rim Light 边缘光占位入口")),FSlateIcon(),FUIAction(FExecuteAction::CreateStatic(&FNPROutlineEditorUI::Open)));
+            FText::FromString(TEXT("打开 NPR 调制：Outline 描边与 Rim Light 边缘光")),FSlateIcon(),FUIAction(FExecuteAction::CreateStatic(&FNPROutlineEditorUI::Open)));
     }));
 }
 void FNPROutlineEditorUI::Unregister()

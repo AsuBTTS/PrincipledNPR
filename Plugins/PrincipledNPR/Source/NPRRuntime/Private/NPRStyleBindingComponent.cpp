@@ -3,10 +3,155 @@
 #include "Components/MeshComponent.h"
 #include "Materials/MaterialInstanceDynamic.h"
 #include "NPRBackendStylePackage.h"
+#include "NPRStyleProfile.h"
+#include "NPRSurfaceRecipe.h"
+#include "Engine/Texture2D.h"
 
 UNPRStyleBindingComponent::UNPRStyleBindingComponent()
 {
     PrimaryComponentTick.bCanEverTick = false;
+}
+
+bool FNPRRimSurfaceInputs::Validate(FString& OutError) const
+{
+    OutError.Reset();
+    if (!bConfigured)
+    {
+        OutError = TEXT("Specify the source BaseColor, Normal and Emissive inputs before replacing a character material.");
+        return false;
+    }
+    const auto ValidRGB = [](const FLinearColor& Color, float Maximum)
+    {
+        return FMath::IsFinite(Color.R) && FMath::IsFinite(Color.G) && FMath::IsFinite(Color.B) &&
+            Color.R >= 0.f && Color.G >= 0.f && Color.B >= 0.f &&
+            Color.R <= Maximum && Color.G <= Maximum && Color.B <= Maximum;
+    };
+    if (!ValidRGB(BaseColor, 1.f) || !ValidRGB(EmissiveColor, TNumericLimits<float>::Max()) ||
+        !FMath::IsFinite(NormalStrength) || NormalStrength < 0.f || NormalStrength > 1.f ||
+        !FMath::IsFinite(EmissiveScale) || EmissiveScale < 0.f)
+    {
+        OutError = TEXT("Surface inputs have invalid RGB, normal strength or emissive scale.");
+        return false;
+    }
+    if ((BaseColorTexture && !IsValid(BaseColorTexture)) ||
+        (NormalTexture && !IsValid(NormalTexture)) ||
+        (EmissiveTexture && !IsValid(EmissiveTexture)))
+    {
+        OutError = TEXT("A selected Surface input texture is no longer valid.");
+        return false;
+    }
+    return true;
+}
+
+bool UNPRStyleBindingComponent::IsRimBoundTo(const UMeshComponent* Mesh, int32 SlotIndex) const
+{
+    const auto* Active = ActiveMaterials.Find(SlotIndex);
+    return IsValid(Mesh) && BoundMesh == Mesh && ActiveMaterials.Num() == 1 && Active &&
+        IsValid(Active->Get()) && SlotIndex >= 0 && SlotIndex < Mesh->GetNumMaterials() &&
+        Mesh->GetMaterial(SlotIndex) == Active->Get();
+}
+
+bool UNPRStyleBindingComponent::ApplyRimPreview(UMeshComponent* Mesh, int32 SlotIndex,
+    UNPRSurfaceRecipe* Recipe, const FNPRRimSurfaceInputs& Inputs,
+    const FNPRRimParameters& Parameters, FString& OutError)
+{
+    OutError.Reset();
+    if (!IsValid(Mesh) || !IsValid(Recipe) || SlotIndex < 0 || SlotIndex >= Mesh->GetNumMaterials() ||
+        (GetOwner() && Mesh->GetOwner() != GetOwner()))
+    {
+        OutError = TEXT("Select a mesh and valid material slot on this actor, plus a loaded Surface recipe.");
+        return false;
+    }
+    if (!Inputs.Validate(OutError) || !Parameters.Validate(OutError))
+    {
+        return false;
+    }
+
+    UNPRSurfaceRecipe* SelectedRecipe = nullptr;
+    TArray<UNPRSurfaceRecipe*> Candidates{Recipe};
+    TArray<FName> Effects{TEXT("RimLight")};
+    TArray<int32> Slots{SlotIndex};
+    UNPRBackendStylePackage* Package = UNPRSurfaceComposerLibrary::ComposePackage(
+        Mesh, Recipe->FamilyId, Candidates, Effects, Slots, SelectedRecipe, OutError);
+    if (!Package || SelectedRecipe != Recipe)
+    {
+        return false;
+    }
+    if (IsValid(BoundMesh) && BoundMesh != Mesh)
+    {
+        RestoreMaterials();
+    }
+    if (!ApplyPackage(Mesh, Package, OutError))
+    {
+        return false;
+    }
+
+    UMaterialInstanceDynamic* MID = ActiveMaterials.FindRef(SlotIndex);
+    if (!IsValid(MID))
+    {
+        RestoreMaterials();
+        OutError = TEXT("The Surface recipe did not create an active MID.");
+        return false;
+    }
+    MID->SetVectorParameterValue(TEXT("NPR_BaseColor"),
+        FLinearColor(Inputs.BaseColor.R, Inputs.BaseColor.G, Inputs.BaseColor.B, 1.f));
+    if (Inputs.BaseColorTexture)
+    {
+        MID->SetTextureParameterValue(TEXT("NPR_BaseColorTexture"), Inputs.BaseColorTexture);
+    }
+    if (Inputs.NormalTexture)
+    {
+        MID->SetTextureParameterValue(TEXT("NPR_NormalTexture"), Inputs.NormalTexture);
+    }
+    MID->SetScalarParameterValue(TEXT("NPR_NormalStrength"), Inputs.NormalStrength);
+    MID->SetVectorParameterValue(TEXT("NPR_EmissiveColor"),
+        FLinearColor(Inputs.EmissiveColor.R, Inputs.EmissiveColor.G, Inputs.EmissiveColor.B, 1.f));
+    if (Inputs.EmissiveTexture)
+    {
+        MID->SetTextureParameterValue(TEXT("NPR_EmissiveTexture"), Inputs.EmissiveTexture);
+    }
+    MID->SetScalarParameterValue(TEXT("NPR_EmissiveScale"), Inputs.EmissiveScale);
+    if (!SetRimParameters(Parameters, OutError))
+    {
+        RestoreMaterials();
+        return false;
+    }
+    return true;
+}
+
+bool UNPRStyleBindingComponent::ApplyConfiguredRim(FString& OutError)
+{
+    OutError.Reset();
+    if (!IsValid(RimMesh) || !IsValid(RimProfile) || !IsValid(RimRecipe) || RimSlotIndex < 0)
+    {
+        OutError = TEXT("Saved Rim binding is missing a mesh, slot, Style Profile or Surface recipe.");
+        return false;
+    }
+    FNPRRimParameters Parameters;
+    if (!RimProfile->ResolveRimParameters(RimMaterialKind, Parameters, OutError))
+    {
+        return false;
+    }
+    return ApplyRimPreview(RimMesh, RimSlotIndex, RimRecipe, RimSurfaceInputs, Parameters, OutError);
+}
+
+void UNPRStyleBindingComponent::OnRegister()
+{
+    Super::OnRegister();
+    if (IsValid(RimMesh) && IsValid(RimProfile) && IsValid(RimRecipe) && RimSlotIndex >= 0)
+    {
+        FString Error;
+        if (!ApplyConfiguredRim(Error))
+        {
+            UE_LOG(LogTemp, Warning, TEXT("NPR Rim binding on '%s' was not restored: %s"), *GetNameSafe(GetOwner()), *Error);
+        }
+    }
+}
+
+void UNPRStyleBindingComponent::OnUnregister()
+{
+    RestoreMaterials();
+    Super::OnUnregister();
 }
 
 bool UNPRStyleBindingComponent::ApplyPackage(UMeshComponent* Mesh, const UNPRBackendStylePackage* Package, FString& OutError)

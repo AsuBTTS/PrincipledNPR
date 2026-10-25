@@ -33,6 +33,19 @@ struct NPRRUNTIME_API FNPRFloatOverride
     double Value = 0.0;
 };
 
+/** Sparse linear RGB entry. Alpha is ignored; black is an explicit value. */
+USTRUCT(BlueprintType)
+struct NPRRUNTIME_API FNPRColorOverride
+{
+    GENERATED_BODY()
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPR")
+    bool bIsSet = false;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPR", meta = (HideAlphaChannel))
+    FLinearColor Value = FLinearColor::White;
+};
+
 USTRUCT(BlueprintType)
 struct NPRRUNTIME_API FNPRParameterPatch
 {
@@ -41,6 +54,10 @@ struct NPRRUNTIME_API FNPRParameterPatch
     /** Keys are canonical IDs from NPRParameterContract.v1.json, not shader pin names. */
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPR")
     TMap<FName, FNPRFloatOverride> Values;
+
+    /** Typed RGB values coexist with the v1 scalar map for old assets. */
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "NPR")
+    TMap<FName, FNPRColorOverride> Colors;
 };
 
 USTRUCT(BlueprintType)

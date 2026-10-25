@@ -3,6 +3,7 @@
 #include "CoreMinimal.h"
 #include "Engine/DataAsset.h"
 #include "NPRSemanticTypes.h"
+#include "NPRRimParameters.h"
 #include "NPRStyleProfile.generated.h"
 
 class UCurveFloat;
@@ -35,4 +36,8 @@ public:
     /** Named semantic strategies; backend-specific pin names do not belong here. */
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Semantics")
     TMap<FName, FName> RenderingPolicies;
+
+    /** Resolve defaults then the selected material kind. Missing v1 RGB inherits white. */
+    UFUNCTION(BlueprintCallable, Category = "NPR|Rim")
+    bool ResolveRimParameters(ENPRMaterialKind Kind, FNPRRimParameters& OutParameters, FString& OutError) const;
 };
