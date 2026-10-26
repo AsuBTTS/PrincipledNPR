@@ -21,17 +21,23 @@ public:
     UPROPERTY(Transient)
     uint8 OverrideMask = 0;
 
-    UPROPERTY(EditAnywhere, Category="Rim|Target")
+    UPROPERTY(Transient)
     TObjectPtr<UMeshComponent> Mesh = nullptr;
 
-    UPROPERTY(EditAnywhere, Category="Rim|Target", meta=(ClampMin="0"))
+    UPROPERTY(Transient)
     int32 SlotIndex = 0;
 
     UPROPERTY(EditAnywhere, Category="Rim|Assets")
     TObjectPtr<UNPRStyleProfile> StyleProfile = nullptr;
 
-    UPROPERTY(EditAnywhere, Category="Rim|Assets")
+    UPROPERTY(Transient)
     TObjectPtr<UNPRSurfaceRecipe> SurfaceRecipe = nullptr;
+
+    UPROPERTY(Transient)
+    TObjectPtr<UMaterialInterface> GeneratedMaterial = nullptr;
+
+    UPROPERTY(EditAnywhere, Category="Rim|Controls", meta=(DisplayName="着色模型"))
+    ENPRRimShadingModel ShadingModel = ENPRRimShadingModel::KeepOriginal;
 
     UPROPERTY(EditAnywhere, Category="Rim|Assets")
     ENPRMaterialKind MaterialKind = ENPRMaterialKind::Generic;
@@ -39,8 +45,8 @@ public:
     UPROPERTY(EditAnywhere, Category="Rim|Controls", meta=(DisplayName="亮边宽度（度）", ClampMin="0", ClampMax="90", UIMin="0", UIMax="35"))
     double WidthDegrees = 8.0;
 
-    UPROPERTY(EditAnywhere, Category="Rim|Controls", meta=(DisplayName="边缘柔和度（度）", ClampMin="0", ClampMax="90", UIMin="0", UIMax="10"))
-    double SoftnessDegrees = 2.0;
+    UPROPERTY(EditAnywhere, Category="Rim|Controls", meta=(DisplayName="边缘柔和度（度）", ClampMin="0", ClampMax="90", UIMin="0", UIMax="90"))
+    double SoftnessDegrees = 12.0;
 
     UPROPERTY(EditAnywhere, Category="Rim|Controls", meta=(DisplayName="边缘光强度", ClampMin="0", UIMin="0", UIMax="2"))
     float Intensity = 0.f;
@@ -48,6 +54,6 @@ public:
     UPROPERTY(EditAnywhere, Category="Rim|Controls", meta=(DisplayName="边缘光颜色", HideAlphaChannel))
     FLinearColor Color = FLinearColor::White;
 
-    UPROPERTY(EditAnywhere, Category="Rim|Source Surface")
+    UPROPERTY(Transient)
     FNPRRimSurfaceInputs SourceInputs;
 };

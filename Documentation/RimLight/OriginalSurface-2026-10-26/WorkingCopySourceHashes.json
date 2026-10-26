@@ -1,0 +1,9 @@
+{
+  "scope": "Raw source bytes in the tested Windows working copy; repository text is normalized to LF by .gitattributes. Hashes.json uses repository LF bytes for these source paths.",
+  "source_sha256": {
+    "Plugins/PrincipledNPR/Source/NPREditor/Private/NPRRimMaterialBuilder.cpp": "96a1332d65f735e6defda7f5d99ee6c5ba2c0e6bb1ff93379037c32f130281a3",
+    "Plugins/PrincipledNPR/Source/NPREditor/Private/NPRRimMaterialBuilder.h": "794661626264abd4907b1725ed7e0fb5b46d98a4b9e6c3da8ba13226a6f1d664",
+    "Plugins/PrincipledNPR/Source/NPREditor/Private/NPRRimEditorUI.cpp": "3e090df5a0d6fb4e7f2a1d2a987ae0fbfb5db3349b3e063f7fc1e9cae9b4304d",
+    "Plugins/PrincipledNPR/Source/NPRRuntime/Private/NPRStyleBindingComponent.cpp": "4938ca1e699a382c56174073dc222e9c05c77c3b1d2975f7ca8189472454c40b"
+  }
+}

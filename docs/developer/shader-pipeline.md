@@ -57,3 +57,10 @@ Screen 放在景深之后、时间抗锯齿之前。TSR 是时间超分辨率，
 跨引擎版本升级时重点核对后处理插入位置、SceneTexture 编号/缓冲尺寸、预曝光和时间上采样顺序。预曝光是引擎为控制亮度数值采用的缩放，不应在材质已自动处理时再次手工乘。
 
 S58 语义后端的曲线生成、标定和包构造仍待实现；不可把这里的 Outline Pass 说明套到表面 Toon Lighting。
+
+
+## Rim 的原表面派生
+
+`NPRRimMaterialBuilder.cpp` 在编辑器复制原材质图和实例有效参数，在副本的原自发光后添加 `MF_RimLight`。传统 Material Attributes 使用 Get/Set Material Attributes 只覆盖自发光；直接 Substrate Toon、Slab、Shading Models 将贡献加到 BSDF 的 EmissiveColor。优先复用节点与现有函数，未新增 HLSL 或独立 Shader Pass。原 Normal 图不改动，Rim 继续使用顶点世界法线。
+
+新图仅在首次启用或着色模型切换时编译，保存后运行时绑定已生成材质。四项角度/颜色/强度修改只写 MID。复杂 Substrate 函数根与层组合暂时拒绝自动派生。Subsurface 是明确切换光照模型，不是新 Rim 公式；源图映射、兼容字段和本次检查见[槽位说明](/generated/source/Documentation/RimLight/EditorWorkflow.md.txt)与[检查记录](/generated/source/Documentation/RimLight/OriginalSurface-2026-10-26.md.txt)。

@@ -1,0 +1,87 @@
+{
+  "scope": "DebugGame UE 5.8.3 CL58210709 DX12 SM6; original surface Rim; source preservation and existing regressions",
+  "date_utc": "2026-10-26T12:13:01Z",
+  "succeeded": 13,
+  "succeeded_with_warnings": 0,
+  "failed": 0,
+  "tests": [
+    {
+      "name": "NPR.Editor.RimOriginalSurfacePixels.Legacy",
+      "state": "Success",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "name": "NPR.Editor.RimOriginalSurfacePixels.Toon",
+      "state": "Success",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "name": "NPR.Editor.PreviewSlotParameters",
+      "state": "Success",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "name": "NPR.Editor.RimOriginalMaterial",
+      "state": "Success",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "name": "NPR.Editor.RimPreviewPixels",
+      "state": "Success",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "name": "NPR.Editor.RimWorkflow",
+      "state": "Success",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "name": "NPR.Rim.LiveBinding",
+      "state": "Success",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "name": "NPR.Rim.MaterialContract",
+      "state": "Success",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "name": "NPR.Rim.ProfileBinding",
+      "state": "Success",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "name": "NPR.Rim.RenderBinding",
+      "state": "Success",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "name": "NPR.Rim.StyleProfile",
+      "state": "Success",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "name": "NPR.Surface.Composer",
+      "state": "Success",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "name": "NPR.Surface.RenderComposition",
+      "state": "Success",
+      "warnings": [],
+      "errors": []
+    }
+  ]
+}

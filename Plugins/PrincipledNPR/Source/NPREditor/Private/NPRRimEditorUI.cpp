@@ -1,5 +1,7 @@
 #include "NPRRimEditorUI.h"
 #include "NPRRimEditorOptions.h"
+#include "NPRRimMaterialBuilder.h"
+#include "Materials/MaterialInstanceConstant.h"
 #include "NPRStyleProfile.h"
 #include "NPRStyleBindingComponent.h"
 #include "NPRSurfaceRecipe.h"
@@ -92,7 +94,7 @@ struct SNPRRimEditor::FImpl : FNotifyHook
     {
         auto IsControl=[](const FProperty* F){return F && (F->GetFName()==GET_MEMBER_NAME_CHECKED(UNPRRimEditorOptions,WidthDegrees)||
             F->GetFName()==GET_MEMBER_NAME_CHECKED(UNPRRimEditorOptions,SoftnessDegrees)||F->GetFName()==GET_MEMBER_NAME_CHECKED(UNPRRimEditorOptions,Intensity)||
-            F->GetFName()==GET_MEMBER_NAME_CHECKED(UNPRRimEditorOptions,Color));};
+            F->GetFName()==GET_MEMBER_NAME_CHECKED(UNPRRimEditorOptions,Color)||F->GetFName()==GET_MEMBER_NAME_CHECKED(UNPRRimEditorOptions,ShadingModel));};
         return IsControl(&P.Property)||P.ParentProperties.ContainsByPredicate(IsControl);
     }
     TSharedRef<IDetailsView> MakeSlotDetails()
@@ -134,12 +136,12 @@ struct SNPRRimEditor::FImpl : FNotifyHook
     void ResetParameters()
     {
         const FScopedTransaction T(NSLOCTEXT("NPR","ResetRimSlot","Reset Rim slot parameters"));Options->Modify();
-        FNPRRimParameters Defaults;FString Error;
+        FNPRRimParameters Defaults; Defaults.RimEdgeHalfWidthRad=FMath::DegreesToRadians(12.0);FString Error;
         if(IsValid(Options->StyleProfile))
         {auto* OnlyDefaults=NewObject<UNPRStyleProfile>();OnlyDefaults->Defaults=Options->StyleProfile->Defaults;
             if(!OnlyDefaults->ResolveRimParameters(Options->MaterialKind,Defaults,Error)){Message(Error,true);return;}}
         Options->OverrideMask=0;Show(Defaults);
-        if(Options->SourceInputs.bConfigured&&IsValid(Options->StyleProfile)&&IsValid(Options->SurfaceRecipe))Preview(false);
+        if(IsValid(Options->Mesh))Preview(false);
         else Message(TEXT("已重置当前槽参数；尚未应用的槽不会因此替换材质。"));
     }
     bool HasOverride(int32 Index) const { return (Options->OverrideMask & (1 << Index)) != 0; }
@@ -147,22 +149,48 @@ struct SNPRRimEditor::FImpl : FNotifyHook
     FString Status = TEXT("Select an actor in the level, then click Read Selection.");
     bool bError = false;
     void Message(const FString& Text, bool Error = false) { Status = Text; bError = Error; }
+    struct FDraft
+    {
+        TStrongObjectPtr<UNPRStyleBindingComponent> Component;
+        TStrongObjectPtr<UNPRStyleProfile> Profile;
+        TStrongObjectPtr<UMaterialInterface> Material;
+        TWeakObjectPtr<UMeshComponent> Mesh;
+        int32 Slot=INDEX_NONE;
+        FNPRRimParameters Parameters;
+        ENPRRimShadingModel Model=ENPRRimShadingModel::KeepOriginal;
+        ENPRMaterialKind Kind=ENPRMaterialKind::Generic;
+        uint8 Mask=0;
+        bool Temporary=false;
+    };
+    TArray<FDraft> Drafts;
+    void Detach()
+    {
+        Binding.Reset(); PreviewMesh.Reset();PreviewSlot=INDEX_NONE;
+        bTemporary=bPreview=false;
+    }
     void Release()
     {
-        if (UNPRStyleBindingComponent* Component = Binding.Get())
+        // Every slot keeps its draft active when another card is selected. Closing/retargeting
+        // restores all drafts, and reinstates saved bindings without touching external replacements.
+        for (auto& Draft:Drafts)
         {
-            const bool Owned = Component->OwnsBoundMaterials();
+            auto* Component=Draft.Component.Get();
+            if (!IsValid(Component)) continue;
+            const bool Owned=Component->OwnsBoundMaterials();
             Component->RestoreMaterials();
-            if (bTemporary) Component->DestroyComponent();
-            else if (Owned && IsValid(Component->RimProfile))
-            {
-                FString Error;
-                Component->ApplyConfiguredRim(Error);
-            }
+            if (Draft.Temporary) Component->DestroyComponent();
+            else if (Owned) { FString Error;Component->ApplyConfiguredRim(Error); }
         }
-        Binding.Reset();
-        PreviewMesh.Reset();PreviewSlot=INDEX_NONE;
-        bTemporary = bPreview = false;
+        Drafts.Reset();Detach();
+    }
+    void RememberDraft()
+    {
+        auto* Draft=Drafts.FindByPredicate([this](const auto& D){return D.Mesh==Options->Mesh&&D.Slot==Options->SlotIndex;});
+        if (!Draft) Draft=&Drafts.AddDefaulted_GetRef();
+        Draft->Component.Reset(Binding.Get());Draft->Profile.Reset(Options->StyleProfile);
+        Draft->Material.Reset(Options->GeneratedMaterial);Draft->Mesh=Options->Mesh;Draft->Slot=Options->SlotIndex;
+        Draft->Parameters=Values();Draft->Model=Options->ShadingModel;Draft->Kind=Options->MaterialKind;
+        Draft->Mask=Options->OverrideMask;Draft->Temporary=bTemporary;
     }
     FNPRRimParameters Values() const
     {
@@ -207,7 +235,7 @@ struct SNPRRimEditor::FImpl : FNotifyHook
             }
         }
         Show(Resolved);
-        Message(TEXT("Profile loaded. Apply Preview to bind the selected mesh slot."));
+        Message(TEXT("风格参数已读取。可在对应材质槽启用 Rim。"));
         if(bPreview) Preview(false);
     }
     void ReadSelection()
@@ -221,7 +249,8 @@ struct SNPRRimEditor::FImpl : FNotifyHook
         Options->MaterialKind = ENPRMaterialKind::Generic;
         Options->SourceInputs = FNPRRimSurfaceInputs();
         Options->OverrideMask = 0;
-        Show(FNPRRimParameters());
+        Options->GeneratedMaterial=nullptr; Options->ShadingModel=ENPRRimShadingModel::KeepOriginal;
+        FNPRRimParameters Fresh; Fresh.RimEdgeHalfWidthRad=FMath::DegreesToRadians(12.0); Show(Fresh);
         Actor = GEditor->GetSelectedActorCount()==1 ? Cast<AActor>(GEditor->GetSelectedActors()->GetSelectedObject(0)) : nullptr;
         AActor* Selected = Actor.Get();
         if (!Selected) { CharacterPreview->LoadActor(nullptr);BuildTargets();Message(TEXT("请在关卡大纲中只选中一个角色。"),true); return; }
@@ -230,15 +259,16 @@ struct SNPRRimEditor::FImpl : FNotifyHook
             if (IsValid(Mesh) && !Mesh->HasAnyFlags(RF_Transient) && Mesh->GetNumMaterials() > 0) { Options->Mesh = Mesh; break; }
         for (UNPRStyleBindingComponent* Existing : TInlineComponentArray<UNPRStyleBindingComponent*>(Selected))
         {
-            if (!IsValid(Existing->RimProfile) || !IsValid(Existing->RimMesh)) continue;
+            if ((!Existing->bUseRimLocalParameters && !IsValid(Existing->RimProfile)) || !IsValid(Existing->RimMesh)) continue;
             Options->Mesh = Existing->RimMesh;
             Options->SlotIndex = Existing->RimSlotIndex;
             Options->StyleProfile = Existing->RimProfile;
             Options->SurfaceRecipe = Existing->RimRecipe;
             Options->MaterialKind = Existing->RimMaterialKind;
             Options->SourceInputs = Existing->RimSurfaceInputs;
+            Options->GeneratedMaterial=Existing->RimGeneratedMaterial; Options->ShadingModel=Existing->RimShadingModel;
             Binding = Existing;
-            Load();
+            if(Existing->bUseRimLocalParameters)Show(Existing->RimLocalParameters);else Load();
             break;
         }
         RefreshDetails();
@@ -257,6 +287,7 @@ struct SNPRRimEditor::FImpl : FNotifyHook
         UPackage* Package = CreatePackage(*PackageName);
         UNPRStyleProfile* Profile = NewObject<UNPRStyleProfile>(Package,*AssetName,RF_Public|RF_Standalone|RF_Transactional);
         Profile->StyleId = FName(*AssetName);
+        auto& Soft=Profile->Defaults.Values.FindOrAdd(NPRRimContract::SoftnessId); Soft.bIsSet=true;Soft.Value=FMath::DegreesToRadians(12.0);
         FAssetRegistryModule::AssetCreated(Profile);
         Package->MarkPackageDirty();
         Options->StyleProfile = Profile;
@@ -270,10 +301,12 @@ struct SNPRRimEditor::FImpl : FNotifyHook
             if(Current->IsRimBoundTo(Options->Mesh,Options->SlotIndex) ||
                 (PreviewMesh.Get()==Options->Mesh && PreviewSlot==Options->SlotIndex) ||
                 (Current->RimMesh==Options->Mesh && Current->RimSlotIndex==Options->SlotIndex))return Current;
-            Release();
+            Detach();
         }
         AActor* Selected = Actor.Get();
         if (!IsValid(Selected)) return nullptr;
+        if(auto* Draft=Drafts.FindByPredicate([this](const auto& D){return D.Mesh==Options->Mesh&&D.Slot==Options->SlotIndex;}))
+        {Binding=Draft->Component.Get();bTemporary=Draft->Temporary;return Binding.Get();}
         for (UNPRStyleBindingComponent* Existing : TInlineComponentArray<UNPRStyleBindingComponent*>(Selected))
             if (Existing->RimMesh == Options->Mesh && Existing->RimSlotIndex == Options->SlotIndex)
             { Binding = Existing; return Existing; }
@@ -287,49 +320,68 @@ struct SNPRRimEditor::FImpl : FNotifyHook
     {
         if(!IsValid(Mesh)||Mesh->GetOwner()!=Actor.Get()||Slot<0||Slot>=Mesh->GetNumMaterials())
         {Message(TEXT("请选择当前角色的有效 Mesh 与材质槽。"),true);return;}
-        Release();
+        Detach();
         Options->Mesh=Mesh;Options->SlotIndex=Slot;Options->SourceInputs=FNPRRimSurfaceInputs();Options->OverrideMask=0;
+        Options->StyleProfile=nullptr;Options->GeneratedMaterial=nullptr;Options->ShadingModel=ENPRRimShadingModel::KeepOriginal;
+        FNPRRimParameters Fresh;Fresh.RimEdgeHalfWidthRad=FMath::DegreesToRadians(12.0);Show(Fresh);
         for(auto* Existing:TInlineComponentArray<UNPRStyleBindingComponent*>(Actor.Get()))
             if(Existing->RimMesh==Mesh && Existing->RimSlotIndex==Slot)
             {
                 Binding=Existing;Options->StyleProfile=Existing->RimProfile;Options->SurfaceRecipe=Existing->RimRecipe;
-                Options->MaterialKind=Existing->RimMaterialKind;Options->SourceInputs=Existing->RimSurfaceInputs;break;
+                Options->MaterialKind=Existing->RimMaterialKind;Options->SourceInputs=Existing->RimSurfaceInputs;
+                Options->GeneratedMaterial=Existing->RimGeneratedMaterial;Options->ShadingModel=Existing->RimShadingModel;break;
             }
-        if(IsValid(Options->StyleProfile))Load();
+        if(Binding.IsValid()&&Binding->bUseRimLocalParameters)Show(Binding->RimLocalParameters);
+        else if(IsValid(Options->StyleProfile))Load();
+        if(auto* Draft=Drafts.FindByPredicate([Mesh,Slot](const auto& D){return D.Mesh==Mesh&&D.Slot==Slot;}))
+        {
+            Binding=Draft->Component.Get();bTemporary=Draft->Temporary;bPreview=Binding.IsValid()&&Binding->OwnsBoundMaterials();
+            Options->StyleProfile=Draft->Profile.Get();Options->GeneratedMaterial=Draft->Material.Get();
+            Options->ShadingModel=Draft->Model;Options->MaterialKind=Draft->Kind;Options->OverrideMask=Draft->Mask;
+            Show(Draft->Parameters);PreviewMesh=Mesh;PreviewSlot=Slot;
+        }
         RefreshDetails();CharacterPreview->SetRimTarget(Mesh,Slot);SetIsolation(nullptr,INDEX_NONE);BuildTargets();
-        Message(TEXT("已切换材质槽；现有已保存绑定保持。新槽需明确配置源输入并应用预览。"));
+        Message(TEXT("已选择材质槽。启用 Rim 后直接调节边缘光；原材质贴图保持。"));
     }
     bool Preview(bool Recompose, bool ExplicitApply=false)
     {
         auto Fail = [this](const FString& Error)
         {
-            Release();
             Message(Error,true);
             return false;
         };
         if (!IsValid(Actor.Get()) || !IsValid(Options->Mesh) || Options->Mesh->GetOwner()!=Actor.Get() ||
-            Options->SlotIndex<0 || Options->SlotIndex>=Options->Mesh->GetNumMaterials() ||
-            !IsValid(Options->StyleProfile) || !IsValid(Options->SurfaceRecipe))
-        { return Fail(TEXT("Select actor, its mesh and slot, a Profile and a compatible Recipe.")); }
+            Options->SlotIndex<0 || Options->SlotIndex>=Options->Mesh->GetNumMaterials())
+        { return Fail(TEXT("请读取角色，再选择对应 Mesh 的材质槽。")); }
         FString Error;
         const FNPRRimParameters Parameters = Values();
-        if (!Parameters.Validate(Error) || !Options->SourceInputs.Validate(Error))
+        if (!Parameters.Validate(Error))
         { return Fail(Error); }
         UNPRStyleBindingComponent* Component = EnsureBinding();
         if (!Component) { return Fail(TEXT("Could not create the actor binding.")); }
         if(!ExplicitApply && Component->HasTrackedMaterials() && !Component->OwnsBoundMaterials())
-        { return Fail(TEXT("目标材质已被其他系统替换；已保留外部材质。需要覆盖时请明确点击应用预览。")); }
-        const bool OK = !Recompose && Component->IsRimBoundTo(Options->Mesh,Options->SlotIndex)
+        { return Fail(TEXT("目标材质已被其他系统替换；已保留外部材质。需要覆盖时请在该槽重新勾选启用 Rim。")); }
+        if (ExplicitApply && Component->HasTrackedMaterials() && !Component->OwnsBoundMaterials()) Options->GeneratedMaterial=nullptr;
+        const bool Rebind=Recompose || !IsValid(Options->GeneratedMaterial) ||
+            !Component->IsRimBoundTo(Options->Mesh,Options->SlotIndex) ||
+            Component->GetOwnedMaterial(Options->Mesh,Options->SlotIndex)->Parent!=Options->GeneratedMaterial;
+        if (Recompose || !IsValid(Options->GeneratedMaterial))
+        {
+            auto* Generated=NPRRimMaterialBuilder::Build(SourceMaterial(Options->Mesh,Options->SlotIndex),Options->ShadingModel,Error);
+            if (!Generated) { Message(Error,true); return false; }
+            Options->GeneratedMaterial=Generated;
+        }
+        const bool OK = !Rebind && Component->IsRimBoundTo(Options->Mesh,Options->SlotIndex)
             ? Component->SetRimParameters(Parameters,Error)
-            : Component->ApplyRimPreview(Options->Mesh,Options->SlotIndex,Options->SurfaceRecipe,
-                Options->SourceInputs,Parameters,Error);
+            : Component->ApplyRimMaterial(Options->Mesh,Options->SlotIndex,Options->GeneratedMaterial,Parameters,Error);
         if (!OK) { return Fail(Error); }
         bPreview = true;
+        RememberDraft();
         PreviewMesh=Options->Mesh;PreviewSlot=Options->SlotIndex;
         CharacterPreview->SetRimTarget(Options->Mesh,Options->SlotIndex);
         CharacterPreview->Refresh();
         BuildTargets();
-        Message(TEXT("Live preview active on the selected slot. Save to persist."));
+        Message(TEXT("本槽 Rim 正在实时预览，原表面已保留。保存角色 Rim 可持久化。"));
         return true;
     }
     void Changed(const FPropertyChangedEvent& Event)
@@ -355,18 +407,16 @@ struct SNPRRimEditor::FImpl : FNotifyHook
         // A loaded saved binding need not have passed through the Apply button in this window.
         if (W||S||I||C)
         {
-            if(IsValid(Options->StyleProfile)&&IsValid(Options->SurfaceRecipe)&&Options->SourceInputs.bConfigured)
-                Preview(false);
-            else Message(TEXT("本槽尚未配置 Rim：请选择 Profile 与 Surface Recipe，并确认源表面输入；配置完成后调参会实时更新。"),true);
+            if(IsValid(Options->Mesh)) Preview(false);
         }
-        else if(bPreview) Preview(true);
+        else if(Name==GET_MEMBER_NAME_CHECKED(UNPRRimEditorOptions,ShadingModel) || bPreview) Preview(true);
         CharacterPreview->SetRimTarget(Options->Mesh,Options->SlotIndex);
     }
     void Reset(ERimField Field)
     {
         const FScopedTransaction Transaction(NSLOCTEXT("NPR","ResetRim","Reset Rim override"));
         Options->Modify();
-        FNPRRimParameters Inherited;
+        FNPRRimParameters Inherited;Inherited.RimEdgeHalfWidthRad=FMath::DegreesToRadians(12.0);
         if (UNPRStyleProfile* Profile = Options->StyleProfile)
         {
             UNPRStyleProfile* Defaults = NewObject<UNPRStyleProfile>(GetTransientPackage());
@@ -391,61 +441,36 @@ struct SNPRRimEditor::FImpl : FNotifyHook
     }
     void Save()
     {
-        if (!Preview(false)) return;
-        AActor* Selected = Actor.Get();
-        UNPRStyleProfile* Profile = Options->StyleProfile;
-        UNPRStyleBindingComponent* Component = Binding.Get();
-        if (!Selected || !Profile || !Component) return;
-        const FScopedTransaction Transaction(NSLOCTEXT("NPR","SaveRim","Save Rim profile and actor binding"));
-        Profile->Modify(); Selected->Modify(); Component->Modify();
-        FNPRParameterPatch& Patch = Profile->MaterialOverrides.FindOrAdd(Options->MaterialKind);
-        const FNPRRimParameters Parameters = Values();
-        const double Scalars[3] = {Parameters.RimGrazingAngleRad,Parameters.RimEdgeHalfWidthRad,Parameters.RimPeakScale};
-        for (int32 I=0;I<3;++I)
+        if (Drafts.IsEmpty()) { Message(TEXT("请先在材质槽中启用并调整 Rim。"),true);return; }
+        AActor* Selected=Actor.Get();if(!Selected)return;
+        FString Error;
+        // Write generated assets before any level reference can point at them on disk.
+        for(auto& Draft:Drafts)
         {
-            const FName Id=FieldId(static_cast<ERimField>(I));
-            if (HasOverride(I))
-            {
-                FNPRFloatOverride& Entry=Patch.Values.FindOrAdd(Id);
-                Entry.bIsSet=true; Entry.Value=Scalars[I];
-            }
-            else Patch.Values.Remove(Id);
+            if(!Draft.Component->OwnsBoundMaterials())
+            {Message(TEXT("有材质槽已被其他系统替换，请重新选择并启用该槽后保存。"),true);return;}
+            if(!NPRRimMaterialBuilder::Save(Cast<UMaterialInstanceConstant>(Draft.Material.Get()),Error))
+            {Message(Error,true);return;}
         }
-        if (HasOverride(3))
+        const FScopedTransaction Transaction(NSLOCTEXT("NPR","SaveRim","Save actor Rim slots"));
+        Selected->Modify();
+        for(auto& Draft:Drafts)
         {
-            FNPRColorOverride& Entry=Patch.Colors.FindOrAdd(FieldId(ERimField::Color));
-            Entry.bIsSet=true; Entry.Value=Parameters.RimColor;
+            auto* Component=Draft.Component.Get();Component->Modify();
+            Component->RimMesh=Draft.Mesh.Get();Component->RimSlotIndex=Draft.Slot;
+            Component->RimProfile=Draft.Profile.Get();Component->RimMaterialKind=Draft.Kind;
+            Component->RimGeneratedMaterial=Draft.Material.Get();Component->RimShadingModel=Draft.Model;
+            Component->bUseRimLocalParameters=true;Component->RimLocalParameters=Draft.Parameters;
+            if(Draft.Temporary)
+            {Component->ClearFlags(RF_Transient);Selected->AddInstanceComponent(Component);Draft.Temporary=false;}
+            Component->RestoreMaterials();
         }
-        else Patch.Colors.Remove(FieldId(ERimField::Color));
-        Component->RimMesh=Options->Mesh;
-        Component->RimSlotIndex=Options->SlotIndex;
-        Component->RimProfile=Profile;
-        Component->RimRecipe=Options->SurfaceRecipe;
-        Component->RimMaterialKind=Options->MaterialKind;
-        Component->RimSurfaceInputs=Options->SourceInputs;
-        if (bTemporary)
-        {
-            Component->ClearFlags(RF_Transient);
-            Selected->AddInstanceComponent(Component);
-            bTemporary=false;
-        }
-        Profile->MarkPackageDirty(); Selected->MarkPackageDirty();
-        if (!SaveProfile(Profile)) { Message(TEXT("Style Profile asset save failed."),true); return; }
-        Component->RestoreMaterials();
-        bPreview=false;
-        if (!FEditorFileUtils::SaveLevel(Selected->GetLevel()))
-        {
-            FString RestoreError;
-            Component->ApplyConfiguredRim(RestoreError);
-            Message(TEXT("Profile saved, but level save failed or was canceled."),true);
-            return;
-        }
-        FString RestoreError;
-        if (!Component->ApplyConfiguredRim(RestoreError))
-        { Message(FString::Printf(TEXT("Saved, but preview could not be restored: %s"),*RestoreError),true); return; }
-        bPreview=true;
-        BuildTargets();
-        Message(TEXT("Style Profile and actor binding saved."));
+        bTemporary=false;Selected->MarkPackageDirty();
+        const bool Saved=FEditorFileUtils::SaveLevel(Selected->GetLevel());
+        for(auto& Draft:Drafts) {FString RestoreError;Draft.Component->ApplyConfiguredRim(RestoreError);}
+        bPreview=Binding.IsValid()&&Binding->OwnsBoundMaterials();BuildTargets();
+        Message(Saved?TEXT("角色各材质槽的 Rim 已保存。原材质和贴图未改写。"):
+            TEXT("关卡未保存；Rim 仍在预览，请重新保存。"),!Saved);
     }
     void BuildTargets()
     {
@@ -468,10 +493,10 @@ struct SNPRRimEditor::FImpl : FNotifyHook
                     .HeaderContent()[SNew(STextBlock).Text(FText::FromString(FString::Printf(TEXT("%s · %d 个材质槽"),*Mesh->GetName(),Count))).Font(FAppStyle::GetFontStyle("PropertyWindow.BoldFont"))]
                     .BodyContent()[Body]];
             }
-            auto* Material=SourceMaterial(Mesh.Get(),Slot);const bool Opaque=Material&&Material->GetBlendMode()==BLEND_Opaque;
+            auto* Material=SourceMaterial(Mesh.Get(),Slot);const bool Opaque=Material&&(Material->GetBlendMode()==BLEND_Opaque||Material->GetBlendMode()==BLEND_Masked);
             const FString MaterialName=Material?Material->GetName():TEXT("未指定材质");
-            const FString Capability=Opaque?TEXT("Opaque（不透明） · Rim 源输入需明确配置"):
-                Material&&Material->GetBlendMode()==BLEND_Translucent?TEXT("Translucent（半透明） · 预制 Rim 表面未适配"):TEXT("此混合模式需专用表面 · 不自动转换");
+            const FString Capability=Opaque?TEXT("保留原材质和贴图 · 仅追加 Rim"):
+                Material&&Material->GetBlendMode()==BLEND_Translucent?TEXT("Translucent（半透明） · 当前 Rim 材质派生未适配"):TEXT("此混合模式需专用表面 · 不自动转换");
             auto Controls=MakeSlotDetails();
             Groups.FindChecked(Mesh)->AddSlot().AutoHeight().Padding(0,3)[SNew(SBorder).BorderImage(FAppStyle::GetBrush("WhiteBrush"))
                 .BorderBackgroundColor_Lambda([this,Mesh,Slot]{return IsolatedMesh==Mesh&&IsolatedSlot==Slot?FLinearColor(.045f,.095f,.085f):FLinearColor(.035f,.038f,.042f);}).Padding(FMargin(10,8))
@@ -481,17 +506,15 @@ struct SNPRRimEditor::FImpl : FNotifyHook
                     + SVerticalBox::Slot().AutoHeight().Padding(0,2,0,6)[SNew(STextBlock).Text(FText::FromString(Capability)).ColorAndOpacity(Opaque?FLinearColor(.55f,.70f,.64f):FLinearColor(.86f,.63f,.34f)).AutoWrapText(true)]
                     + SVerticalBox::Slot().AutoHeight()[SNew(SWrapBox).UseAllottedSize(true).InnerSlotPadding(FVector2D(10,5))
                         + SWrapBox::Slot()[SNew(SCheckBox).IsEnabled(Opaque).IsChecked_Lambda([this,Mesh,Slot]{return SlotEnabled(Mesh.Get(),Slot)?ECheckBoxState::Checked:ECheckBoxState::Unchecked;})
-                            .ToolTipText(FText::FromString(TEXT("启用或关闭本槽 Rim；强度 0 表示关闭。配置齐全后颜色和强度会实时更新。")))
-                            .OnCheckStateChanged_Lambda([this,Mesh,Slot](ECheckBoxState S){if(Mesh.IsValid())ToggleSlot(Mesh.Get(),Slot,S==ECheckBoxState::Checked);})[SNew(STextBlock).Text(FText::FromString(TEXT("Rim")))]]
+                            .ToolTipText(FText::FromString(TEXT("启用或关闭本材质槽的 Rim。保留原材质；颜色、宽度、柔和度和强度实时更新。")))
+                            .OnCheckStateChanged_Lambda([this,Mesh,Slot](ECheckBoxState S){if(Mesh.IsValid())ToggleSlot(Mesh.Get(),Slot,S==ECheckBoxState::Checked);})[SNew(STextBlock).Text(FText::FromString(TEXT("启用 Rim")))]]
                         + SWrapBox::Slot()[SNew(SCheckBox).IsChecked_Lambda([this,Mesh,Slot]{return IsolatedMesh==Mesh&&IsolatedSlot==Slot?ECheckBoxState::Checked:ECheckBoxState::Unchecked;})
                             .OnCheckStateChanged_Lambda([this,Mesh,Slot](ECheckBoxState S){SetIsolation(S==ECheckBoxState::Checked?Mesh.Get():nullptr,Slot);})[SNew(STextBlock).Text(FText::FromString(TEXT("隔离")))]]
                         + SWrapBox::Slot()[SNew(SButton).ButtonStyle(FAppStyle::Get(),"PrimaryButton").ContentPadding(FMargin(10,4))
                             .Text_Lambda([this,Mesh,Slot]{return FText::FromString(Options->Mesh==Mesh.Get()&&Options->SlotIndex==Slot&&bControlsExpanded?TEXT("收起参数"):TEXT("编辑参数"));})
                             .OnClicked_Lambda([this,Mesh,Slot]{if(Mesh.IsValid()){if(Options->Mesh==Mesh.Get()&&Options->SlotIndex==Slot)bControlsExpanded=!bControlsExpanded;
                                 else{SelectTarget(Mesh.Get(),Slot);bControlsExpanded=true;}RefreshDetails();}return FReply::Handled();})]
-                        + SWrapBox::Slot()[SNew(SButton).ButtonStyle(FAppStyle::Get(),"SimpleButton").Text(FText::FromString(TEXT("重置参数")))
-                            .ToolTipText(FText::FromString(TEXT("恢复所选 Profile 的默认参数；未选配置时为内置默认。没有全局 Rim 继承；只有保存操作才会写入 Profile。")))
-                            .OnClicked_Lambda([this,Mesh,Slot]{if(Options->Mesh!=Mesh.Get()||Options->SlotIndex!=Slot)SelectTarget(Mesh.Get(),Slot);ResetParameters();return FReply::Handled();})]]
+                    ]
                     + SVerticalBox::Slot().AutoHeight().Padding(0,6)[SNew(SBox).Visibility_Lambda([this,Mesh,Slot]{return Options->Mesh==Mesh.Get()&&Options->SlotIndex==Slot&&bControlsExpanded?EVisibility::Visible:EVisibility::Collapsed;})[Controls]]]];
         }
     }
@@ -517,7 +540,7 @@ void SNPRRimEditor::Construct(const FArguments&)
     Args.NameAreaSettings=FDetailsViewArgs::HideNameArea;
     Args.NotifyHook=Impl.Get();
     Impl->Details=Editor.CreateDetailView(Args);
-    Impl->Details->SetIsPropertyVisibleDelegate(FIsPropertyVisible::CreateLambda([](const FPropertyAndParent& P){return !FImpl::IsControlProperty(P);}));
+    Impl->Details->SetIsPropertyVisibleDelegate(FIsPropertyVisible::CreateLambda([](const FPropertyAndParent& P){return P.Property.GetFName()==GET_MEMBER_NAME_CHECKED(UNPRRimEditorOptions,StyleProfile)||P.Property.GetFName()==GET_MEMBER_NAME_CHECKED(UNPRRimEditorOptions,MaterialKind);}));
     Impl->Details->SetObject(Impl->Options.Get());
     Impl->UndoHandle=FEditorDelegates::PostUndoRedo.AddLambda([this]
     {
@@ -542,29 +565,16 @@ void SNPRRimEditor::Construct(const FArguments&)
                 .Text_Lambda([this]{return FText::FromString(Impl->Status);})
                 .ColorAndOpacity_Lambda([this]{return Impl->bError?FSlateColor(FLinearColor(.9f,.25f,.2f)):FSlateColor::UseForeground();})
                 .AutoWrapText(true)]
-            + SVerticalBox::Slot().AutoHeight()[SNew(SButton).Text(FText::FromString(TEXT("使用关卡选中角色 / Read Selection")))
-                .OnClicked_Lambda([this]{Impl->ReadSelection();return FReply::Handled();})]
-            + SVerticalBox::Slot().AutoHeight()[SNew(SWrapBox).UseAllottedSize(true).InnerSlotPadding(FVector2D(6,6))
-                + SWrapBox::Slot()[SNew(SButton).Text(FText::FromString(TEXT("新建 / New Profile")))
-                    .OnClicked_Lambda([this]{Impl->NewProfile();return FReply::Handled();})]
-                + SWrapBox::Slot()[SNew(SButton).Text(FText::FromString(TEXT("加载 / Load Profile")))
-                    .OnClicked_Lambda([this]{Impl->Load();return FReply::Handled();})]
-                + SWrapBox::Slot()[SNew(SButton).Text(FText::FromString(TEXT("应用 / Apply Preview")))
-                    .OnClicked_Lambda([this]{Impl->Preview(true,true);return FReply::Handled();})]]
-            + SVerticalBox::Slot().AutoHeight().Padding(0,8)[SNew(SWrapBox).UseAllottedSize(true).InnerSlotPadding(FVector2D(6,6))
-                + SWrapBox::Slot()[SNew(SButton).Text(FText::FromString(TEXT("重置本槽宽度")))
-                    .OnClicked_Lambda([this]{Impl->Reset(ERimField::Width);return FReply::Handled();})]
-                + SWrapBox::Slot()[SNew(SButton).Text(FText::FromString(TEXT("重置本槽柔和度")))
-                    .OnClicked_Lambda([this]{Impl->Reset(ERimField::Softness);return FReply::Handled();})]
-                + SWrapBox::Slot()[SNew(SButton).Text(FText::FromString(TEXT("重置本槽强度")))
-                    .OnClicked_Lambda([this]{Impl->Reset(ERimField::Intensity);return FReply::Handled();})]
-                + SWrapBox::Slot()[SNew(SButton).Text(FText::FromString(TEXT("重置本槽颜色")))
-                    .OnClicked_Lambda([this]{Impl->Reset(ERimField::Color);return FReply::Handled();})]]
-            + SVerticalBox::Slot().AutoHeight()[SNew(SButton).Text(FText::FromString(TEXT("保存风格与角色绑定")))
-                .OnClicked_Lambda([this]{Impl->Save();return FReply::Handled();})]
-            + SVerticalBox::Slot().AutoHeight().Padding(0,8)[SNew(SExpandableArea).InitiallyCollapsed(true)
-                .HeaderContent()[SNew(STextBlock).Text_Lambda([this]{return FText::FromString(FString::Printf(TEXT("当前槽配置：%s · 槽 %d"),*GetNameSafe(Impl->Options->Mesh),Impl->Options->SlotIndex));}).AutoWrapText(true)]
-                .BodyContent()[Impl->Details.ToSharedRef()]]
+            + SVerticalBox::Slot().AutoHeight().Padding(0,4,0,12)[SNew(SWrapBox).UseAllottedSize(true).InnerSlotPadding(FVector2D(12,10))
+                + SWrapBox::Slot()[SNew(SButton).ContentPadding(FMargin(14,8)).Text(FText::FromString(TEXT("读取选中角色")))
+                    .OnClicked_Lambda([this]{Impl->ReadSelection();return FReply::Handled();})]
+                + SWrapBox::Slot()[SNew(SButton).ContentPadding(FMargin(14,8)).Text(FText::FromString(TEXT("保存角色 Rim")))
+                    .OnClicked_Lambda([this]{Impl->Save();return FReply::Handled();})]]
+            + SVerticalBox::Slot().AutoHeight().Padding(0,0,0,8)[SNew(SExpandableArea).InitiallyCollapsed(true)
+                .HeaderContent()[SNew(STextBlock).Text(FText::FromString(TEXT("风格资产（可选）")))]
+                .BodyContent()[SNew(SVerticalBox)
+                    + SVerticalBox::Slot().AutoHeight().Padding(0,8)[Impl->Details.ToSharedRef()]
+                ]]
             + SVerticalBox::Slot().AutoHeight().Padding(0,12,0,4)[SNew(STextBlock).Text(FText::FromString(TEXT("Mesh / 材质槽 · 已应用效果"))).Font(FCoreStyle::GetDefaultFontStyle("Bold",14))]
             + SVerticalBox::Slot().AutoHeight()[SAssignNew(Impl->MeshList,SVerticalBox)]
         ]]]
@@ -633,9 +643,11 @@ bool FNPRRimEditorWorkflowTest::RunTest(const FString&)
         for(auto Selected:PreviousSelection)if(Selected.IsValid())GEditor->SelectActor(Selected.Get(),true,false,true);
     };
     auto& UI=*Widget->Impl;
-    if(!TestTrue(TEXT("Persisted-style preview applies"),UI.Preview(true,true)))return false;
+    UI.Options->SourceInputs=FNPRRimSurfaceInputs();
+    if(!TestTrue(TEXT("Legacy recipe binding migrates to original surface on first edit without source inputs"),UI.Preview(false)))return false;
     auto* MID=Binding->GetOwnedMaterial(Mesh,0);
     if(!TestNotNull(TEXT("Production MID exists"),MID))return false;
+    TestTrue(TEXT("First edit actually rebinds the generated parent instead of only updating the old recipe MID"),MID->Parent==UI.Options->GeneratedMaterial);
     TestEqual(TEXT("Both actor meshes are previewed"),UI.CharacterPreview->MeshCount(),2);
     TestTrue(TEXT("Material slot isolation succeeds"),UI.CharacterPreview->Isolate(Mesh,0));
     TestTrue(TEXT("Both viewports isolate the same mesh"),UI.CharacterPreview->IsMeshVisible(true,Mesh)&&UI.CharacterPreview->IsMeshVisible(false,Mesh));
@@ -701,6 +713,23 @@ bool FNPRRimEditorWorkflowTest::RunTest(const FString&)
     UI.SelectTarget(Mesh,0);
     TestTrue(TEXT("Selecting an externally replaced saved target does not reapply it"),Mesh->GetMaterial(0)==External);
     TestTrue(TEXT("Other mesh keeps its independent saved effect"),OtherBinding->GetOwnedMaterial(OtherMesh,0)!=nullptr);
+    auto AddMesh=[&](){auto* M=NewObject<UStaticMeshComponent>(Actor,NAME_None,RF_Transactional);Actor->AddInstanceComponent(M);
+        M->SetStaticMesh(Mesh->GetStaticMesh());M->SetMaterial(0,SourceMaterial);M->RegisterComponent();return M;};
+    auto* FreshA=AddMesh();auto* FreshB=AddMesh();
+    UI.SelectTarget(FreshA,0);UI.ToggleSlot(FreshA,0,true);
+    auto* FreshBindingA=UI.Binding.Get();auto* FreshMID=FreshBindingA->GetOwnedMaterial(FreshA,0);
+    TestEqual(TEXT("Fresh card uses softer authoring default"),UI.Options->SoftnessDegrees,12.0);
+    TestTrue(TEXT("Fresh card needs no explicit Profile or Recipe"),!UI.Options->StyleProfile&&FreshMID);
+    UI.Options->Color=FLinearColor::Red;UI.NotifyPostChange(ColorEvent,ColorEvent.Property);
+    UI.SelectTarget(FreshB,0);UI.ToggleSlot(FreshB,0,true);
+    UI.Options->Color=FLinearColor::Green;UI.NotifyPostChange(ColorEvent,ColorEvent.Property);
+    TestTrue(TEXT("Previous unsaved slot remains enabled while editing another"),FreshBindingA->GetOwnedMaterial(FreshA,0)==FreshMID);
+    FLinearColor KeptColor;FreshMID->GetVectorParameterValue(FHashedMaterialParameterInfo(FName(NPRRimContract::ColorMaterialName)),KeptColor);
+    TestTrue(TEXT("Independent draft slot retains red"),KeptColor.Equals(FLinearColor::Red));
+    UI.SelectTarget(FreshA,0);
+    TestTrue(TEXT("Selecting a draft restores its own controls"),UI.Options->Color.Equals(FLinearColor::Red));
+    UI.ToggleSlot(FreshA,0,false);TestFalse(TEXT("Per-slot disable writes valid zero"),UI.SlotEnabled(FreshA,0));
+    UI.ToggleSlot(FreshA,0,true);TestTrue(TEXT("Per-slot enable restores last intensity"),UI.SlotEnabled(FreshA,0));
     UI.Binding.Reset();
     return true;
 }

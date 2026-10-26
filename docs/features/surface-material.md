@@ -4,15 +4,15 @@
 
 这个功能采用方案 B：保留现有 Runtime / Editor、Rim 和 Outline，逐步增加组合能力。**已实现并验证**：2026-10-22 在 UE 5.8.3 / Windows / DX12 SM6 的静态球体上，通过基础表面、同槽多贡献、原生 Toon + Rim 及两种 Outline 共存验证。角色、动画与生产性能仍待验收。
 
-## 打开与使用
+## 底层调试与程序接入
 
 1. 在内容浏览器打开 `Principled NPR Content / Surface`。
 2. `MI_NPRSurface_Preview` 展示基础纹理、切线法线和 Rim，继承 `M_NPRSurface_DefaultLit`。
-3. 在“基础表面”组指定角色的 BaseColor、Normal、Emissive 纹理及倍率。默认颜色纹理是白色，法线是平坦法线，自发光为黑色。
+3. 底层实例可指定 BaseColor、Normal、Emissive 纹理及倍率。注意当前母材质引用的 Engine DefaultNormal 有细节，不能仅凭名字认定它是平坦法线；不需要法线时把法线强度设为 0。
 4. “边缘光”组沿用 [Rim Light](./rim-light.md) 的原有四项中文参数、单位与默认值。“附加自发光”是独立的最小第二效果模块。
 5. 运行时调用 `UNPRSurfaceComposerLibrary::ComposePackage`，提供 Family、候选 Recipe、请求效果与目标槽，再调用既有 `ApplyPackage`。继续用原有 `SetRimParameters` 更新 Rim；其他表面输入使用 UE 原生 MID 参数接口。
 
-Composer 不自动复制角色原材质图。接入角色时必须明确提供原有表面纹理和数值；特殊混合、顶点位移或透明裁切不会自动迁移。请保留原材质，先在受控对象上配置和验证。
+这些是开发者调试底层组合的步骤，不是使用 Rim 的前置操作。Rim 窗口在每个具名材质槽内启用效果，自动派生原材质并追加 Rim，保留原贴图和表面参数，不显式要求 Recipe。未来需要 Normal 编辑时再增加对应入口。Composer 自身仍不分析任意原材质图，旧接口及 Recipe 资产继续兼容，源图支持边界见[槽位操作说明](/generated/source/Documentation/RimLight/EditorWorkflow.md.txt)。
 
 已经打开的旧编辑器进程需要重开工程，才能加载本轮新增的 Recipe 反射类型。主工程新的独立测试进程已加载这些类型并通过测试；不需要重新创建已保存的 Surface 资产。
 

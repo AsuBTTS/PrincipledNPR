@@ -1,0 +1,74 @@
+{
+  "scope": "Final Development Editor UE 5.8.3 CL58210709 DX12 SM6; includes legacy first-edit parent-rebind regression",
+  "date_utc": "2026.10.26-12.46.53",
+  "succeeded": 13,
+  "succeeded_with_warnings": 0,
+  "failed": 0,
+  "tests": [
+    {
+      "name": "NPR.Editor.RimOriginalSurfacePixels.Legacy",
+      "state": "Success",
+      "errors": []
+    },
+    {
+      "name": "NPR.Editor.RimOriginalSurfacePixels.Toon",
+      "state": "Success",
+      "errors": []
+    },
+    {
+      "name": "NPR.Editor.PreviewSlotParameters",
+      "state": "Success",
+      "errors": []
+    },
+    {
+      "name": "NPR.Editor.RimOriginalMaterial",
+      "state": "Success",
+      "errors": []
+    },
+    {
+      "name": "NPR.Editor.RimPreviewPixels",
+      "state": "Success",
+      "errors": []
+    },
+    {
+      "name": "NPR.Editor.RimWorkflow",
+      "state": "Success",
+      "errors": []
+    },
+    {
+      "name": "NPR.Rim.LiveBinding",
+      "state": "Success",
+      "errors": []
+    },
+    {
+      "name": "NPR.Rim.MaterialContract",
+      "state": "Success",
+      "errors": []
+    },
+    {
+      "name": "NPR.Rim.ProfileBinding",
+      "state": "Success",
+      "errors": []
+    },
+    {
+      "name": "NPR.Rim.RenderBinding",
+      "state": "Success",
+      "errors": []
+    },
+    {
+      "name": "NPR.Rim.StyleProfile",
+      "state": "Success",
+      "errors": []
+    },
+    {
+      "name": "NPR.Surface.Composer",
+      "state": "Success",
+      "errors": []
+    },
+    {
+      "name": "NPR.Surface.RenderComposition",
+      "state": "Success",
+      "errors": []
+    }
+  ]
+}

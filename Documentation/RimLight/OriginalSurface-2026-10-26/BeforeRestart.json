@@ -1,0 +1,49 @@
+{
+  "stage": "BeforeRestart",
+  "bindings": [
+    {
+      "slot": 0,
+      "local": true,
+      "profile": "None",
+      "recipe": "None",
+      "model": "<NPRRimShadingModel.KEEP_ORIGINAL: 0>",
+      "material": "/Game/NPR/Generated/Rim/M_Rim_MI_ChenQianyu_00_Initial_Instance.M_Rim_MI_ChenQianyu_00_Initial_Instance",
+      "width_degrees": 8.0,
+      "softness_degrees": 12.000000000000002,
+      "intensity": 1.0,
+      "color": [
+        0.23580099642276764,
+        1.0,
+        0.3998349905014038
+      ],
+      "live_color": [
+        0.23580099642276764,
+        1.0,
+        0.3998349905014038
+      ],
+      "source_texture": "/Game/EndfieldRender/Character/Qianyu/Tex/T_actor_chen_body_01_D.T_actor_chen_body_01_D"
+    },
+    {
+      "slot": 1,
+      "local": true,
+      "profile": "None",
+      "recipe": "None",
+      "model": "<NPRRimShadingModel.SUBSURFACE: 1>",
+      "material": "/Game/NPR/Generated/Rim/M_Rim_MI_ChenQianyu_01_Initial1_Instance.M_Rim_MI_ChenQianyu_01_Initial1_Instance",
+      "width_degrees": 8.0,
+      "softness_degrees": 12.000000000000002,
+      "intensity": 1.0,
+      "color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "live_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "source_texture": "/Game/EndfieldRender/Character/Qianyu/Tex/T_actor_chen_body_01_D.T_actor_chen_body_01_D"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "scope": "First DebugGame DX12 run of original-surface Rim changes; failure retained",
+  "succeeded": 12,
+  "failed": 1,
+  "tests": [
+    {
+      "name": "NPR.Editor.RimOriginalSurfacePixels.Legacy",
+      "state": "Success",
+      "errors": []
+    },
+    {
+      "name": "NPR.Editor.RimOriginalSurfacePixels.Toon",
+      "state": "Fail",
+      "errors": [
+        "Expected 'Rim zero preserves original rendered surface, not merely previous override' to be true.",
+        "Expected 'Color edit turns preview pixels red' to be true.",
+        "Expected 'Next color edit turns same preview pixels green' to be true.",
+        "Expected 'Zero intensity restores original preview pixels' to be true."
+      ]
+    },
+    {
+      "name": "NPR.Editor.PreviewSlotParameters",
+      "state": "Success",
+      "errors": []
+    },
+    {
+      "name": "NPR.Editor.RimOriginalMaterial",
+      "state": "Success",
+      "errors": []
+    },
+    {
+      "name": "NPR.Editor.RimPreviewPixels",
+      "state": "Success",
+      "errors": []
+    },
+    {
+      "name": "NPR.Editor.RimWorkflow",
+      "state": "Success",
+      "errors": []
+    },
+    {
+      "name": "NPR.Rim.LiveBinding",
+      "state": "Success",
+      "errors": []
+    },
+    {
+      "name": "NPR.Rim.MaterialContract",
+      "state": "Success",
+      "errors": []
+    },
+    {
+      "name": "NPR.Rim.ProfileBinding",
+      "state": "Success",
+      "errors": []
+    },
+    {
+      "name": "NPR.Rim.RenderBinding",
+      "state": "Success",
+      "errors": []
+    },
+    {
+      "name": "NPR.Rim.StyleProfile",
+      "state": "Success",
+      "errors": []
+    },
+    {
+      "name": "NPR.Surface.Composer",
+      "state": "Success",
+      "errors": []
+    },
+    {
+      "name": "NPR.Surface.RenderComposition",
+      "state": "Success",
+      "errors": []
+    }
+  ]
+}

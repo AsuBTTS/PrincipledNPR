@@ -14,7 +14,8 @@
 | Rim Light 独立材质 | 已实现并验证 | 2026-10-22 Windows / UE 5.8.3 / DX12 SM6，静态球体四项变化的八张真实图像、八项门禁及人工查看；不覆盖角色、阴影、动画、时域或 Cook，见[图像记录](/generated/source/Documentation/RimLight/BindingValidation/ImageMetrics.json) |
 | Rim Light ② 参数暴露与契约 | 已实现并验证 | 2026-10-22 Windows / UE 5.8.3；27 项离线交叉检查、34 项实际资产只读检查及 C++ MaterialContract 用例通过；Game/Editor 构建通过；早期 Game 启动失败记录保留，最新 Editor 验证已补齐用例执行 |
 | Rim Light ③ C++ / MID 动态调参 | 已实现并验证 | 2026-10-22 UE 5.8.3 / DX12 SM6；双槽读回、失败保持原值、外部替换与恢复；同一个 MID 跨帧更新、八项图像/自动化门禁和当前编辑器十项反射检查，见[动态调参](/generated/source/Documentation/RimLight/RuntimeBinding.md.txt)与[执行记录](/generated/source/Documentation/RimLight/ImplementationValidation.json) |
-| Rim Light 完整工作流 | 已实现待完整视觉验收 | 2026-10-25 角色单槽预览、Profile/关卡保存与重开记录保留；2026-10-26 补充 Undo、实时预览颜色/强度及外部材质保护回归。阴影、动画、多 LOD、Cook、性能和完整角色材质观感仍需单独验证；见 [工作流](/generated/source/Documentation/RimLight/EditorWorkflow.md.txt) |
+| Rim Light 原材质派生与逐槽操作 | 已实现并验证 | 2026-10-26 UE 5.8.3 / DX12 SM6；常规 Editor/Game 构建、13 项自动化（0 警告）、传统及 Toon 原表面与 Rim 归零最大通道差 0、隔离工程原生取色器、多槽保存及新进程重开通过；Profile/Recipe 均可为空，Subsurface 覆盖实际模型与编译。复杂层、透明、动画、多 LOD、Cook、性能和皮肤散射质量未验收，见[本轮检查](/generated/source/Documentation/RimLight/OriginalSurface-2026-10-26.md.txt) |
+| Rim Light 完整工作流 | 已实现待完整视觉验收 | 保留 2026-10-25 旧 Profile/Recipe 流程与 2026-10-26 工作区历史记录；当前日常操作改为按槽启用并默认保留原材质。受控验证不替代任意角色与光照的完整验收；见[槽位工作流](/generated/source/Documentation/RimLight/EditorWorkflow.md.txt) |
 | MatCap、统一颜色控制 | 规划中 | 无完整插件可用链路 |
 
 [67 项原始记录](/generated/source/Documentation/Outline/Temporal/Acceptance.json)与[宽度层实现记录](/generated/source/Documentation/Outline/WidthLayers/Implementation.json)可离线查看。历史证据不能作为后续新功能的通过证明。

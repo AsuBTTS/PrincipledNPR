@@ -14,6 +14,14 @@ class UNPRStyleProfile;
 class UNPRSurfaceRecipe;
 class UTexture2D;
 
+/** Optional surface-model choice. KeepOriginal never changes the source shading model. */
+UENUM(BlueprintType)
+enum class ENPRRimShadingModel : uint8
+{
+    KeepOriginal UMETA(DisplayName="保持原着色模型"),
+    Subsurface UMETA(DisplayName="Subsurface · 次表面")
+};
+
 /** Explicit source values for the prebuilt Surface material. No arbitrary graph conversion occurs. */
 USTRUCT(BlueprintType)
 struct NPRRUNTIME_API FNPRRimSurfaceInputs
@@ -65,6 +73,11 @@ public:
     bool ApplyRimPreview(UMeshComponent* Mesh, int32 SlotIndex, UNPRSurfaceRecipe* Recipe,
         const FNPRRimSurfaceInputs& Inputs, const FNPRRimParameters& Parameters, FString& OutError);
 
+    /** Bind an editor-generated copy of the original surface; only writes the four Rim controls. */
+    UFUNCTION(BlueprintCallable, Category = "NPR|Rim")
+    bool ApplyRimMaterial(UMeshComponent* Mesh, int32 SlotIndex, UMaterialInterface* Material,
+        const FNPRRimParameters& Parameters, FString& OutError);
+
     /** Reapply the persisted actor/slot/profile configuration after a map is reopened. */
     UFUNCTION(BlueprintCallable, Category = "NPR|Rim")
     bool ApplyConfiguredRim(FString& OutError);
@@ -95,6 +108,20 @@ public:
 
     UPROPERTY(EditInstanceOnly, BlueprintReadOnly, Category = "NPR|Rim")
     FNPRRimSurfaceInputs RimSurfaceInputs;
+
+    /** Null keeps legacy Recipe bindings readable. New editor bindings preserve the original graph. */
+    UPROPERTY(VisibleInstanceOnly, BlueprintReadOnly, Category = "NPR|Rim")
+    TObjectPtr<UMaterialInterface> RimGeneratedMaterial = nullptr;
+
+    UPROPERTY(EditInstanceOnly, BlueprintReadOnly, Category = "NPR|Rim")
+    ENPRRimShadingModel RimShadingModel = ENPRRimShadingModel::KeepOriginal;
+
+    /** New slot authoring saves independently of any shared style asset. Legacy profiles still resolve. */
+    UPROPERTY(VisibleInstanceOnly, BlueprintReadOnly, Category = "NPR|Rim")
+    bool bUseRimLocalParameters = false;
+
+    UPROPERTY(VisibleInstanceOnly, BlueprintReadOnly, Category = "NPR|Rim")
+    FNPRRimParameters RimLocalParameters;
 
     /** Updates only existing scalar parameters. Does not mutate ToonProfile or static switches. */
     UFUNCTION(BlueprintCallable, Category = "NPR|Binding")

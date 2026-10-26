@@ -10,7 +10,7 @@
 | 查看每个 Mesh 已应用的效果 | NPR 调制 → 角色效果总览 | 按 Mesh/材质槽列出本插件登记的效果，支持单效果与网格隔离 |
 | 在窗口中调整 Rim | 顶部 Rim Light；或总览中的非后处理 → Rim Light | Profile、角色槽位、实时角色视口、原材质对比和隔离；完整角色观感仍需按资产验收 |
 | 实际观察 Rim | 内容浏览器中的预览材质实例 | 可用，见 [Rim 介绍](rim_light_introduction.md) |
-| 同时保留贴图、法线、自发光并加 Rim | Surface 母材质与预览实例 | 已有受控球体验证，角色接入要明确配置原有输入 |
+| 同时保留贴图、法线、自发光并加 Rim | Surface 母材质与预览实例 | Surface 是底层组合能力；Rim 卡片默认保留原图和贴图 |
 | 一键把任意角色变为完整 Toon 风格 | 尚无完整入口 | 仍在开发 |
 
 Outline 的“转换”只建立描边所需绑定，不会自动把整个人物变成 Toon，也不会自动接入 Surface 母材质。
@@ -84,7 +84,7 @@ Outline 的“转换”只建立描边所需绑定，不会自动把整个人物
 
 在内容浏览器开启插件内容显示，打开 `Principled NPR Content / RimLight / MI_RimLight_Preview`，通过材质实例查看四项 Rim 控制。要保留原有表面并组合效果，优先阅读 [Surface 使用说明](../docs/features/surface-material.md)，从 `Surface / MI_NPRSurface_Preview` 了解基础输入。
 
-角色原有的颜色、法线和自发光需要显式提供；不要把独立 Rim 演示材质直接套给角色后，期待自动保留全部贴图。Rim 页面可选角色网格与槽位、加载 Style Profile、实时调参并保存绑定，也能在角色视口隔离 Mesh、材质槽或 Rim 效果，并打开原材质对比。详见[统一效果工作区](Editor/NPRWorkspace.md)与[配置与角色绑定](RimLight/EditorWorkflow.md)。程序和蓝图调参继续使用既有绑定接口，见 [Rim 介绍](rim_light_introduction.md)。
+Rim 页按 Mesh 分组显示具名材质槽，在卡片内启用和调整边缘光。工具默认复制原图并追加 Rim，保留贴图、法线和原有自发光；不要求输入 Index 或显式指定 Recipe。新槽柔和度默认 12°，可调至 90°。顶部只保留读取与保存；Style Profile 可选。也能在角色视口隔离 Mesh、材质槽或 Rim 效果，并打开原材质对比。详见[统一效果工作区](Editor/NPRWorkspace.md)与[配置与角色绑定](RimLight/EditorWorkflow.md)。程序和蓝图调参继续使用既有绑定接口，见 [Rim 介绍](rim_light_introduction.md)。
 
 ## 9. 没有变化时先检查什么
 
@@ -95,7 +95,7 @@ Outline 的“转换”只建立描边所需绑定，不会自动把整个人物
 | Screen 没有描边 | 方法和总开关、区域开关、项目 CustomDepth/Stencil 配置及界面诊断 |
 | 线条过粗或很细 | 当前是厘米还是像素；基础宽度与区域倍率是否合适 |
 | 套用预设后局部仍不同 | 预设只更改基础值，关卡内局部覆写仍然生效 |
-| Rim 没有亮边 | 查看页顶错误提示：是否加载 Profile、选择兼容 Recipe、明确配置 Source Surface；强度是否为 0、颜色是否为黑；Shader 是否准备完成；是否隔离到了另一个槽 |
+| Rim 没有亮边 | 查看页顶错误提示：是否提示当前材质图尚未适配；强度是否为 0、颜色是否为黑；Shader 是否准备完成；是否隔离到了另一个槽 |
 | 导出成功但重开设置丢失 | 是否真正保存了关卡，而不是只导出图片 |
 
 ## 10. 使用范围与维护

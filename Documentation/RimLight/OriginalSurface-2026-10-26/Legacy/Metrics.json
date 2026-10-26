@@ -1,0 +1,8 @@
+{
+  "on_pixels":20038,
+  "red_channel_delta":[3452594,73996,39500],
+  "green_channel_delta":[104171,3437277,104602],
+  "green_intensity_gain":3.60284042,
+  "off_again_max_error":0,
+  "scope":"Real GPU capture using the exact MID returned by the shared realtime character preview; no synthetic images"
+}

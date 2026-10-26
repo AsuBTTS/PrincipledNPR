@@ -57,3 +57,10 @@ Python 调用这个 UFUNCTION 时，UE 把原生 bool 当作成功标记：成�
 - `Plugins/PrincipledNPR/Source/NPRRuntime/Private/Tests/NPRRimBindingTests.cpp`
 - `Plugins/PrincipledNPR/Source/NPREditor/Private/Tests/NPRRimRenderTests.cpp`
 - 单位、名称和默认值继续由 `MaterialParameters.v1.json` 与 [第②步交接](ParameterHandoff.md)约定。
+
+
+## 原表面派生绑定
+
+编辑器 `NPRRimMaterialBuilder` 在副本上连接既有 Rim 函数，生成材质后通过 `ApplyRimMaterial(Mesh, Slot, Material, Parameters, Error)` 绑定。运行时只加载已生成材质，不复制或编译编辑器图。保存配置中的 `bUseRimLocalParameters=true` 使用当前槽独立值，优先于可选 Profile；旧配置为 false 时继续 Profile 解析。`RimGeneratedMaterial` 为空时，旧 Recipe 路径继续兼容。
+
+空 Normal Texture 在旧 `ApplyRimPreview` 路径映射为法线强度 0，避免继承母材质非平坦的 DefaultNormal 纹理。新路径完全保留原 Normal 图，不需要这一替代输入。数据约定见[原表面绑定契约](OriginalSurfaceBinding.v1.json)，操作见[槽位工作流](EditorWorkflow.md)。

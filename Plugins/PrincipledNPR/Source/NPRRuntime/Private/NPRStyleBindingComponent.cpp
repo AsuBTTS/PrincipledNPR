@@ -125,7 +125,8 @@ bool UNPRStyleBindingComponent::ApplyRimPreview(UMeshComponent* Mesh, int32 Slot
     {
         MID->SetTextureParameterValue(TEXT("NPR_NormalTexture"), Inputs.NormalTexture);
     }
-    MID->SetScalarParameterValue(TEXT("NPR_NormalStrength"), Inputs.NormalStrength);
+    // A null texture must not inherit the engine's detailed DefaultNormal map from the recipe.
+    MID->SetScalarParameterValue(TEXT("NPR_NormalStrength"), Inputs.NormalTexture ? Inputs.NormalStrength : 0.f);
     MID->SetVectorParameterValue(TEXT("NPR_EmissiveColor"),
         FLinearColor(Inputs.EmissiveColor.R, Inputs.EmissiveColor.G, Inputs.EmissiveColor.B, 1.f));
     if (Inputs.EmissiveTexture)
@@ -144,23 +145,46 @@ bool UNPRStyleBindingComponent::ApplyRimPreview(UMeshComponent* Mesh, int32 Slot
 bool UNPRStyleBindingComponent::ApplyConfiguredRim(FString& OutError)
 {
     OutError.Reset();
-    if (!IsValid(RimMesh) || !IsValid(RimProfile) || !IsValid(RimRecipe) || RimSlotIndex < 0)
+    if (!IsValid(RimMesh) || (!bUseRimLocalParameters && !IsValid(RimProfile)) || (!IsValid(RimGeneratedMaterial) && !IsValid(RimRecipe)) || RimSlotIndex < 0)
     {
         OutError = TEXT("Saved Rim binding is missing a mesh, slot, Style Profile or Surface recipe.");
         return false;
     }
-    FNPRRimParameters Parameters;
-    if (!RimProfile->ResolveRimParameters(RimMaterialKind, Parameters, OutError))
+    FNPRRimParameters Parameters=RimLocalParameters;
+    if (!bUseRimLocalParameters && !RimProfile->ResolveRimParameters(RimMaterialKind, Parameters, OutError))
     {
         return false;
     }
-    return ApplyRimPreview(RimMesh, RimSlotIndex, RimRecipe, RimSurfaceInputs, Parameters, OutError);
+    return IsValid(RimGeneratedMaterial)
+        ? ApplyRimMaterial(RimMesh, RimSlotIndex, RimGeneratedMaterial, Parameters, OutError)
+        : ApplyRimPreview(RimMesh, RimSlotIndex, RimRecipe, RimSurfaceInputs, Parameters, OutError);
+}
+
+bool UNPRStyleBindingComponent::ApplyRimMaterial(UMeshComponent* Mesh, int32 SlotIndex,
+    UMaterialInterface* Material, const FNPRRimParameters& Parameters, FString& OutError)
+{
+    OutError.Reset();
+    if (!IsValid(Mesh) || !IsValid(Material) || SlotIndex<0 || SlotIndex>=Mesh->GetNumMaterials() ||
+        (GetOwner() && Mesh->GetOwner()!=GetOwner()) || !Parameters.Validate(OutError))
+    { if (OutError.IsEmpty()) OutError=TEXT("请选择当前角色的有效材质槽和 Rim 材质。"); return false; }
+    // Validate the complete parameter bundle before replacing anything.
+    float Scalar=0; FLinearColor Color;
+    for (const FName Name : {FName(NPRRimContract::WidthMaterialName),FName(NPRRimContract::SoftnessMaterialName),FName(NPRRimContract::IntensityMaterialName)})
+        if (!Material->GetScalarParameterValue(FHashedMaterialParameterInfo(Name),Scalar))
+        { OutError=TEXT("生成的材质缺少 Rim 参数；原材质保持不变。"); return false; }
+    if (!Material->GetVectorParameterValue(FHashedMaterialParameterInfo(FName(NPRRimContract::ColorMaterialName)),Color))
+    { OutError=TEXT("生成的材质缺少 Rim 颜色；原材质保持不变。"); return false; }
+    auto* Package=NewObject<UNPRBackendStylePackage>(this);
+    FNPRBackendMaterialSlot& Slot=Package->MaterialSlots.AddDefaulted_GetRef();
+    Slot.SlotIndex=SlotIndex; Slot.Material=Material;
+    if (IsValid(BoundMesh) && BoundMesh!=Mesh) RestoreMaterials();
+    return ApplyPackage(Mesh,Package,OutError) && SetRimParameters(Parameters,OutError);
 }
 
 void UNPRStyleBindingComponent::OnRegister()
 {
     Super::OnRegister();
-    if (IsValid(RimMesh) && IsValid(RimProfile) && IsValid(RimRecipe) && RimSlotIndex >= 0)
+    if (IsValid(RimMesh) && (bUseRimLocalParameters || IsValid(RimProfile)) && (IsValid(RimGeneratedMaterial) || IsValid(RimRecipe)) && RimSlotIndex >= 0)
     {
         FString Error;
         if (!ApplyConfiguredRim(Error))

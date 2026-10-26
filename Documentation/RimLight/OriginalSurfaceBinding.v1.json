@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "purpose": "Per-slot original surface plus existing Rim; no mandatory Recipe selection",
+  "editor_defaults": {
+    "width_degrees": 8,
+    "softness_degrees": 12,
+    "intensity": 0,
+    "enable_intensity_when_zero": 1,
+    "color_linear_rgb": [
+      1,
+      1,
+      1
+    ]
+  },
+  "legacy_v1_defaults": "FNPRRimParameters, material contract and existing assets keep softness 2 degrees",
+  "angles": {
+    "storage": "radians",
+    "editor_and_material": "degrees",
+    "hard_domain_degrees": [
+      0,
+      90
+    ],
+    "softness_slider_degrees": [
+      0,
+      90
+    ],
+    "softness_meaning": "transition half-width"
+  },
+  "binding_fields": {
+    "RimGeneratedMaterial": "saved reference to editor-derived instance; null allows legacy Recipe binding",
+    "RimShadingModel": {
+      "default": "KeepOriginal",
+      "choices": [
+        "KeepOriginal",
+        "Subsurface"
+      ]
+    },
+    "bUseRimLocalParameters": "false by default for compatibility; true uses per-slot values",
+    "RimLocalParameters": "four canonical Rim values; explicit zeros and black are valid"
+  },
+  "runtime": "ApplyConfiguredRim uses saved generated material plus local values, or legacy Profile/Recipe when new fields are unset",
+  "supported_source_roots": [
+    "legacy independent properties",
+    "legacy Material Attributes for KeepOriginal",
+    "direct Substrate Toon BSDF",
+    "direct Substrate Slab BSDF",
+    "direct Substrate Shading Models"
+  ],
+  "unsupported_no_mutation": [
+    "translucent",
+    "complex Substrate layering/function root",
+    "Material Attributes Subsurface switch"
+  ],
+  "subsurface_mapping": {
+    "legacy": "MSM_Subsurface",
+    "Toon": "Shading Models MSM_Subsurface, original surface pins copied; ToonProfile not used by derived SSS",
+    "Slab": "MSS_Wrap; absent SSSMFP gets RGB 1 cm",
+    "quality": "model choice only; not a calibrated skin preset"
+  },
+  "validation": "see OriginalSurface-2026-10-26.md"
+}

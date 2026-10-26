@@ -55,6 +55,8 @@ bool FNPRRimProfileBindingTest::RunTest(const FString&)
     auto* MID = Cast<UMaterialInstanceDynamic>(Mesh->GetMaterial(1));
     if (!TestNotNull(TEXT("Composed MID exists"), MID)) return false;
     float Scalar = -1.f;
+    MID->GetScalarParameterValue(FHashedMaterialParameterInfo(TEXT("NPR_NormalStrength")),Scalar);
+    TestEqual(TEXT("Null normal texture cannot inherit detailed recipe DefaultNormal"),Scalar,0.f);
     FLinearColor Vector;
     TestTrue(TEXT("Rim intensity available"), MID->GetScalarParameterValue(
         FHashedMaterialParameterInfo(FName(NPRRimContract::IntensityMaterialName)),Scalar));

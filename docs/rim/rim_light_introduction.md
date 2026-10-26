@@ -116,7 +116,7 @@ Surface 最终自发光 = 原有自发光 + Rim 贡献 + 其他附加贡献
 
 ## 2. 当前实现与真实效果
 
-独立 Rim 材质、四项参数契约和 C++/MID 调参已有受控验证。RGB Profile、显式角色槽位绑定与调制窗口已经接通；2026-10-26 增加统一工作区、角色预览与隔离，当前验证范围见[工作区记录](/generated/source/Documentation/Editor/WorkspaceValidation.json)。完整语义解析和任意角色自动转换仍未完成。
+独立 Rim 材质、四项参数契约和 C++/MID 调参已有受控验证。RGB Profile、显式角色槽位绑定与调制窗口已经接通；2026-10-26 增加统一工作区、角色预览与隔离，较早工作区的验证见[工作区记录](/generated/source/Documentation/Editor/WorkspaceValidation.json)。本次原表面派生、逐槽保存和 Subsurface 选择的范围见[原材质 Rim 检查](/generated/source/Documentation/RimLight/OriginalSurface-2026-10-26.md.txt)。完整语义解析和任意角色自动转换仍未完成。
 
 | 宽度变化示例 | 颜色变化示例 |
 | --- | --- |
@@ -124,34 +124,36 @@ Surface 最终自发光 = 原有自发光 + Rim 贡献 + 其他附加贡献
 
 来源：2026-10-22，UE 5.8.3 / DX12 SM6，512 × 512 受控球体的真实渲染导出，不是窗口截图，也不代表角色和阴影已全面验收。
 
-## 3. 使用：先在材质实例观察
+## 3. 使用：在对应材质槽启用 Rim
 
-1. 在内容浏览器开启插件内容显示。
-2. 打开 `Principled NPR Content / RimLight / MI_RimLight_Preview`。
-3. 勾选需要覆盖的参数，先改宽度，再改柔和度，最后改颜色和强度。
-4. 比较细亮边、较宽亮边、硬过渡和软过渡，确认自己需要的方向。
-5. 验证后保存自己的实例，不必改动基础函数。
+1. 在关卡中选中角色，打开顶部 **Rim Light**，点击 **读取选中角色**。
+2. 在 Mesh 分组中按槽名和原材质名找到目标，勾选该槽的 **启用 Rim**。
+3. 点 **编辑参数**，直接调整颜色、亮边宽度、柔和度和强度。新槽柔和度为 12°，滑条可到 90°；原有配置保留原值。
+4. 用 **隔离**、**隔离当前 Mesh** 和 **原材质对比** 检查。默认保持原着色模型，需要时单独选择 **Subsurface · 次表面**。
+5. 点击 **保存角色 Rim**，保存本次修改的各槽配置和生成材质。
 
-基础材质的强度默认是 0，因此默认关闭；预览实例的历史示例覆盖为 1，用来方便观察。角色调参可直接点击顶部 **Rim Light**，也可进入 **NPR 调制** 总览中的 **非后处理 → Rim Light**，支持可视化预览、Mesh/材质槽隔离和原材质对比。步骤见[统一效果工作区](../guides/npr-workspace.md)。
+原材质图和贴图默认保留；不需要填写 Index、指定 Recipe 或重新输入底色、Normal、自发光。四项参数会实时更新当前槽的预览，切换卡片保留其他槽的草稿。完整步骤和源图支持范围见[槽位操作说明](/generated/source/Documentation/RimLight/EditorWorkflow.md.txt)与[统一效果工作区](../guides/npr-workspace.md)。
+
+独立演示材质仍保留：在内容浏览器开启插件内容，打开 `RimLight / MI_RimLight_Preview`，可单独比较宽度、柔和度、颜色和强度。基础材质强度默认 0，历史预览实例覆盖为 1。这个演示入口不作为角色添加 Rim 的前置步骤。
 
 ## 4. 四项参数
 
 | 材质中显示的名字 | 默认值 | 硬范围 | 建议先尝试 |
 | --- | --- | --- | --- |
 | 亮边宽度 | 8° | 0°–90° | 1°–35° |
-| 边缘柔和度 | 2°，过渡半宽 | 0°–90° | 0°–10° |
+| 边缘柔和度 | 新槽 12°；旧程序结构和基础资产 2°，过渡半宽 | 0°–90° | 4°–25° |
 | 边缘光强度 | 0；预览覆盖 1 | 有限非负值 | 0–2 |
 | 边缘光颜色 | 线性 RGB 白色 `(1,1,1)` | 每通道有限非负值，忽略 Alpha | 每通道 0–1 |
 
-滑条建议范围不等于硬范围。程序入口会拒绝非法数值，而原生材质实例编辑不会自动调用项目校验。强度 0 和黑色都是有效关闭方式；窗口的“重置参数”回到所选 Profile 的默认值，并在保存时移除对应材质类型覆盖。没有全局或角色级 Rim 继承链。
+滑条建议范围不等于硬范围。程序入口会拒绝非法数值，而原生材质实例编辑不会自动调用项目校验。强度 0 和黑色都是有效关闭方式；属性行的重置箭头恢复编辑器默认值；旧的 Profile 稀疏覆盖与 Reset 接口仍保留。新槽局部保存，不改写共享 Profile。没有全局或角色级 Rim 继承链。
 
 柔和度大于亮边宽度时，可能没有完整强度区。角度宽度不是固定像素厚度，模型形状、距离和视角会影响画面；颜色亮度与强度也共同决定明暗。
 
-## 5. 在 Surface 中保留原有表面
+## 5. 默认保留原材质，Surface 组合留在底层
 
-打开 `Surface / MI_NPRSurface_Preview`。它继承 `M_NPRSurface_DefaultLit`，可以分别指定基础颜色、法线、自发光输入，再调整原有四项 Rim 参数。
+底层组合调试仍可打开 `Surface / MI_NPRSurface_Preview`，它继承 `M_NPRSurface_DefaultLit`，可以分别指定基础颜色、法线、自发光输入，再调整原有四项 Rim 参数。
 
-角色接入时，需要明确填入原材质使用的贴图与数值；不会自动分析任意角色原材质。透明裁切、顶点变形等额外逻辑也不会自动迁移。详细说明见 [Surface 材质组合](../features/surface-material.md)。
+日常使用在每个 Mesh/材质槽卡片启用 Rim，工具复制原图并追加既有 Rim 函数，保留原贴图和表面参数。无需显式选择 Recipe，也不在 Rim 页调整 Normal、底色或原自发光。Surface Master、Recipe 代码与资产继续作为底层组合能力；未来需要法线编辑时再增加独立入口。当前源图支持范围和 Subsurface 选项见[槽位操作说明](/generated/source/Documentation/RimLight/EditorWorkflow.md.txt)。
 
 2026-10-22 的受控验证中，切换 Rim 前后 BaseColor 和 Normal 缓冲差值均为 0；原有自发光、Rim 和第二份附加贡献的 HDR 相加误差约 0.885%，小于该测试 1% 门限。原生 Toon + Rim 也在同一材质槽中显示；Toon 使用的是既有未标定探针 Profile。
 
@@ -183,4 +185,4 @@ const bool bUpdated = Binding->SetRimParameters(Rim, Error);
 
 2026-10-22 的三项 Rim 自动化、八项图像/自动化门禁及反射调用检查有各自记录；Surface 最近一次验证另行证明同槽组合。证据见[参数与材质契约](/generated/source/Documentation/RimLight/MaterialParameters.v1.json)、[Rim 执行记录](/generated/source/Documentation/RimLight/ImplementationValidation.json)、[图像指标](/generated/source/Documentation/RimLight/BindingValidation/ImageMetrics.json)和 [Surface 验证](/generated/source/Documentation/Surface/ImplementationValidation.json)。
 
-源码入口为 `NPRRimParameters`、`NPRStyleBindingComponent` 与 `Tools/create_rim_light_assets.py`。修改算法、参数、材质组合或操作后，同步本文、[开发约束](../developer/项目开发说明与约束.md)和[状态清单](../reference/status.md)，避免旧验证范围被扩大解释。
+本次原材质派生、逐槽应用和精简 UI 的检查见[原材质 Rim 检查](/generated/source/Documentation/RimLight/OriginalSurface-2026-10-26.md.txt)，较早图像只覆盖原先受控材质链路。源码入口为 `NPRRimParameters`、`NPRStyleBindingComponent`、`NPRRimMaterialBuilder` 与 `Tools/create_rim_light_assets.py`。修改算法、参数、材质组合或操作后，同步本文、[开发约束](../developer/项目开发说明与约束.md)和[状态清单](../reference/status.md)，避免旧验证范围被扩大解释。

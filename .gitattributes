@@ -19,6 +19,7 @@ Documentation/Editor/WorkspaceEvidence/**/*.txt -text -whitespace
 Documentation/RimLight/Integration-2026-10-26/**/*.json -text -filter -whitespace
 Documentation/RimLight/Integration-2026-10-26/**/*.log -text -whitespace
 Documentation/RimLight/Integration-2026-10-26/**/*.txt -text -whitespace
+Documentation/RimLight/OriginalSurface-2026-10-26/**/*.json -text -filter -whitespace
 SourceAssets/Wanderer/Original/*.txt -text -diff
 *.uasset filter=lfs diff=lfs merge=lfs -text
 *.umap filter=lfs diff=lfs merge=lfs -text

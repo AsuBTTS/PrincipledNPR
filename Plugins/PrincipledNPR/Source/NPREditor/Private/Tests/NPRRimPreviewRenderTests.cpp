@@ -2,6 +2,8 @@
 
 #if WITH_DEV_AUTOMATION_TESTS
 #include "NPRCharacterPreview.h"
+#include "NPRRimMaterialBuilder.h"
+#include "Materials/MaterialInstanceConstant.h"
 #include "NPRStyleBindingComponent.h"
 #include "NPRSurfaceRecipe.h"
 #include "NPRBackendStylePackage.h"
@@ -33,6 +35,9 @@ struct FPreviewRimFixture
     UStaticMeshComponent* RenderMesh=nullptr;
     UNPRStyleBindingComponent* Binding=nullptr;
     UMaterialInterface* FirstPreviewMaterial=nullptr;
+    UMaterialInterface* Original=nullptr;
+    TArray<FColor> OriginalPixels;
+    bool OriginalCaptured=false;
     USceneCaptureComponent2D* Capture=nullptr;
     UTextureRenderTarget2D* Target=nullptr;
     TArray<TArray<FColor>> Pixels;
@@ -48,6 +53,16 @@ public:
     virtual bool Update()override
     {
         auto& F=*Fixture;
+        if(F.Original && !F.OriginalCaptured)
+        {
+            F.Original->EnsureIsComplete();
+            F.RenderMesh->SetMaterial(0,F.Original);
+            F.CaptureScene.GetWorld()->Tick(LEVELTICK_All,1.f/60.f);F.CaptureScene.GetWorld()->SendAllEndOfFrameUpdates();F.Capture->CaptureScene();
+            if(--F.Delay>0)return false;
+            FlushRenderingCommands();F.Target->GameThread_GetRenderTargetResource()->ReadPixels(F.OriginalPixels);
+            FImageUtils::SaveImageByExtension(*(F.Directory/TEXT("Original.png")),FImageView(F.OriginalPixels.GetData(),512,512));
+            F.OriginalCaptured=true;F.Delay=45;return false;
+        }
         const TCHAR* Names[]={TEXT("Off"),TEXT("Red1"),TEXT("Green1"),TEXT("Green2"),TEXT("OffAgain")};
         if(F.Variant==UE_ARRAY_COUNT(Names))
         {
@@ -63,6 +78,17 @@ public:
                 Gain+=int32(G2.G)-int32(G.G);
             }
             Gain/=F.Pixels[0].Num();
+            if(F.Original)
+            {
+                int32 Maximum=0;
+                for(int32 I=0;I<F.OriginalPixels.Num();++I)
+                {
+                    const auto A=F.OriginalPixels[I],B=F.Pixels[0][I];
+                    Maximum=FMath::Max(Maximum,FMath::Max3(FMath::Abs(int32(A.R)-B.R),FMath::Abs(int32(A.G)-B.G),FMath::Abs(int32(A.B)-B.B)));
+                }
+                Test->TestTrue(TEXT("Rim zero preserves original rendered surface, not merely previous override"),Maximum<=2);
+                FFileHelper::SaveStringToFile(FString::Printf(TEXT("{\"original_vs_rim_zero_max_error\":%d}\n"),Maximum),*(F.Directory/TEXT("SourcePreservation.json")));
+            }
             Test->TestTrue(TEXT("Preview material actually produces visible Rim pixels"),OnPixels>500);
             Test->TestTrue(TEXT("Color edit turns preview pixels red"),Red[0]>2*FMath::Max(1.,FMath::Max(Red[1],Red[2])));
             Test->TestTrue(TEXT("Next color edit turns same preview pixels green"),Green[1]>2*FMath::Max(1.,FMath::Max(Green[0],Green[2])));
@@ -83,7 +109,10 @@ public:
             if(!F.FirstPreviewMaterial)F.FirstPreviewMaterial=Material;
             if(!Test->TestNotNull(TEXT("Shared viewport supplies real preview material"),Material))return true;
             Test->TestTrue(TEXT("Color/intensity edits preserve the preview MID identity"),Material==F.FirstPreviewMaterial);
-            F.RenderMesh->SetMaterial(0,Material);F.bApplied=true;
+            F.RenderMesh->SetMaterial(0,Material);
+            FAssetCompilingManager::Get().FinishAllCompilation();Material->EnsureIsComplete();
+            if(GShaderCompilingManager)GShaderCompilingManager->FinishAllCompilation();
+            FlushRenderingCommands();F.bApplied=true;
         }
         F.Preview->Refresh(); // Repeated idle refreshes must not wipe the queued render parameters.
         F.CaptureScene.GetWorld()->Tick(LEVELTICK_All,1.f/60.f);F.CaptureScene.GetWorld()->SendAllEndOfFrameUpdates();F.Capture->CaptureScene();
@@ -132,6 +161,46 @@ bool FNPRRimPreviewRenderTest::RunTest(const FString&)
     F->CaptureScene.AddComponent(F->Capture,FTransform(FRotator::ZeroRotator,FVector(-200,0,0)));
     FAssetCompilingManager::Get().FinishAllCompilation();if(GShaderCompilingManager)GShaderCompilingManager->FinishAllCompilation();
     F->Directory=FPaths::ConvertRelativePathToFull(FPaths::ProjectSavedDir()/TEXT("NPR/Workspace/RimPreview"));IFileManager::Get().MakeDirectory(*F->Directory,true);
+    FAutomationTestFramework::Get().EnqueueLatentCommand(MakeShared<FPreviewRimFrames>(this,F));return true;
+}
+IMPLEMENT_COMPLEX_AUTOMATION_TEST(FNPRRimOriginalSurfaceRenderTest,"NPR.Editor.RimOriginalSurfacePixels",
+    EAutomationTestFlags::EditorContext|EAutomationTestFlags::EngineFilter|EAutomationTestFlags::NonNullRHI)
+void FNPRRimOriginalSurfaceRenderTest::GetTests(TArray<FString>& Names,TArray<FString>& Commands)const
+{Names.Add(TEXT("Legacy"));Commands.Add(TEXT("Legacy"));Names.Add(TEXT("Toon"));Commands.Add(TEXT("Toon"));}
+
+bool FNPRRimOriginalSurfaceRenderTest::RunTest(const FString& SourceKind)
+{
+    auto F=MakeShared<FPreviewRimFixture>();
+    auto* Sphere=LoadObject<UStaticMesh>(nullptr,TEXT("/Engine/BasicShapes/Sphere.Sphere"));
+    auto* Recipe=LoadObject<UNPRSurfaceRecipe>(nullptr,TEXT("/PrincipledNPR/Surface/SR_DefaultLit_Rim.SR_DefaultLit_Rim"));
+    if(!TestTrue(TEXT("Saved sphere and recipe load"),Sphere&&Recipe))return false;
+    FActorSpawnParameters Spawn;Spawn.ObjectFlags=RF_Transient;
+    auto* Actor=F->SourceScene.GetWorld()->SpawnActor<AActor>(Spawn);
+    F->Source=NewObject<UStaticMeshComponent>(Actor);Actor->SetRootComponent(F->Source);Actor->AddInstanceComponent(F->Source);
+    F->Source->SetStaticMesh(Sphere);F->Source->RegisterComponent();
+    F->Binding=NewObject<UNPRStyleBindingComponent>(Actor);Actor->AddInstanceComponent(F->Binding);F->Binding->RegisterComponent();
+    F->Original=SourceKind==TEXT("Toon") ? LoadObject<UMaterialInterface>(nullptr,TEXT("/Game/NPR/Characters/ChenQianyu/Materials/SemiPBRStylized/MI_ChenQianyu_00_Initial.MI_ChenQianyu_00_Initial")) : F->Source->GetMaterial(0);
+    if(!TestNotNull(TEXT("Original character/grid surface loads"),F->Original))return false;
+    F->Source->SetMaterial(0,F->Original);
+    FNPRRimParameters Parameters;FString Error;
+    auto* Derived=NPRRimMaterialBuilder::Build(F->Original,ENPRRimShadingModel::KeepOriginal,Error);
+    if(!TestNotNull(*Error,Derived))return false;
+    if(!TestTrue(TEXT("Original surface Rim binding needs no Recipe or source-input form"),F->Binding->ApplyRimMaterial(F->Source,0,Derived,Parameters,Error)))return false;
+    F->Preview=MakeNPRCharacterPreview();F->Preview->LoadActor(Actor);F->Preview->SetRimTarget(F->Source,0);F->Preview->SetRimSolo(true);
+    F->RenderMesh=NewObject<UStaticMeshComponent>();F->RenderMesh->SetStaticMesh(Sphere);F->CaptureScene.AddComponent(F->RenderMesh,FTransform::Identity);
+    F->RenderMesh->SetMaterial(0,F->Preview->PreviewMaterial(false,F->Source,0));
+    F->Capture=NewObject<USceneCaptureComponent2D>();F->Capture->ProjectionType=ECameraProjectionMode::Orthographic;
+    F->Capture->OrthoWidth=150;F->Capture->bCaptureEveryFrame=false;F->Capture->bCaptureOnMovement=false;F->Capture->CaptureSource=SCS_FinalColorLDR;
+    F->Capture->ShowFlags.SetTemporalAA(false);F->Capture->ShowFlags.SetBloom(false);F->Capture->ShowFlags.SetMotionBlur(false);
+    F->Capture->ShowFlags.SetGlobalIllumination(false);F->Capture->ShowFlags.SetReflectionEnvironment(false);
+    auto& PP=F->Capture->PostProcessSettings;PP.bOverride_AutoExposureMethod=true;PP.AutoExposureMethod=AEM_Manual;
+    PP.bOverride_AutoExposureApplyPhysicalCameraExposure=true;PP.AutoExposureApplyPhysicalCameraExposure=false;
+    PP.bOverride_AutoExposureBias=true;PP.AutoExposureBias=0;
+    F->Target=NewObject<UTextureRenderTarget2D>();F->Target->RenderTargetFormat=RTF_RGBA8;F->Target->ClearColor=FLinearColor::Black;
+    F->Target->InitAutoFormat(512,512);F->Target->UpdateResourceImmediate(true);F->Capture->TextureTarget=F->Target;
+    F->CaptureScene.AddComponent(F->Capture,FTransform(FRotator::ZeroRotator,FVector(-200,0,0)));
+    FAssetCompilingManager::Get().FinishAllCompilation();if(GShaderCompilingManager)GShaderCompilingManager->FinishAllCompilation();
+    F->Directory=FPaths::ConvertRelativePathToFull(FPaths::ProjectSavedDir()/TEXT("NPR/RimOriginalSurface")/SourceKind);IFileManager::Get().MakeDirectory(*F->Directory,true);
     FAutomationTestFramework::Get().EnqueueLatentCommand(MakeShared<FPreviewRimFrames>(this,F));return true;
 }
 IMPLEMENT_SIMPLE_AUTOMATION_TEST(FNPRPreviewSlotParametersTest,"NPR.Editor.PreviewSlotParameters",
