@@ -1,0 +1,59 @@
+Using bundled DotNet SDK version: 10.0 win-x64
+Running UnrealBuildTool: dotnet "..\..\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" PrincipledNPREditor Win64 Development -Project=E:\unrealProjects\PrincipledNPR\PrincipledNPR.uproject -WaitMutex
+Log file: C:\Users\12894\AppData\Local\UnrealBuildTool\Log.txt
+Determining max actions to execute in parallel (16 physical cores, 24 logical cores)
+  Executing up to 16 processes, one per physical core
+Using 'git status' to determine working set for adaptive non-unity build (E:\unrealProjects\PrincipledNPR).
+UbaServer - Listening on 0.0.0.0:1345
+Invalidating makefile for PrincipledNPREditor (source file added)
+Available x64 toolchains (1):
+ * D:\D\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.51.36231
+    (Family=14.51.36231, FamilyRank=2, Version=14.51.36260, HostArchitecture=x64, ReleaseChannel=Latest, Architecture=x64)
+Visual Studio compiler version 14.51.36260 is newer than latest preferred version 14.50.35717. Please use caution as this compiler has not been heavily tested
+UHT compiled-in object format Default
+UHT processed PrincipledNPREditor in 13.3681731 seconds (11 generated files written)
+Deleted hot-reload file: E:\unrealProjects\PrincipledNPR\Binaries\Win64\PrincipledNPREditor.target
+Deleted hot-reload file: E:\unrealProjects\PrincipledNPR\Binaries\Win64\UnrealEditor.modules
+Deleted hot-reload file: E:\unrealProjects\PrincipledNPR\Plugins\PrincipledNPR\Binaries\Win64\UnrealEditor-NPREditor-6201.dll
+Deleted hot-reload file: E:\unrealProjects\PrincipledNPR\Plugins\PrincipledNPR\Binaries\Win64\UnrealEditor-NPREditor-6201.pdb
+Deleted hot-reload file: E:\unrealProjects\PrincipledNPR\Plugins\PrincipledNPR\Binaries\Win64\UnrealEditor-NPREditor-6202.dll
+Deleted hot-reload file: E:\unrealProjects\PrincipledNPR\Plugins\PrincipledNPR\Binaries\Win64\UnrealEditor-NPREditor-6202.pdb
+Deleted hot-reload file: E:\unrealProjects\PrincipledNPR\Plugins\PrincipledNPR\Binaries\Win64\UnrealEditor-NPRRuntime-6201.dll
+Deleted hot-reload file: E:\unrealProjects\PrincipledNPR\Plugins\PrincipledNPR\Binaries\Win64\UnrealEditor-NPRRuntime-6201.pdb
+Deleted hot-reload file: E:\unrealProjects\PrincipledNPR\Plugins\PrincipledNPR\Binaries\Win64\UnrealEditor-NPRRuntime-6202.dll
+Deleted hot-reload file: E:\unrealProjects\PrincipledNPR\Plugins\PrincipledNPR\Binaries\Win64\UnrealEditor-NPRRuntime-6202.pdb
+Deleted hot-reload file: E:\unrealProjects\PrincipledNPR\Plugins\PrincipledNPR\Binaries\Win64\UnrealEditor.modules
+Deleted hot-reload file: E:\unrealProjects\PrincipledNPR\Plugins\PrincipledNPR\Intermediate\Build\Win64\x64\UnrealEditor\Development\NPREditor\UnrealEditor-NPREditor-6201.lib
+Deleted hot-reload file: E:\unrealProjects\PrincipledNPR\Plugins\PrincipledNPR\Intermediate\Build\Win64\x64\UnrealEditor\Development\NPREditor\UnrealEditor-NPREditor-6202.lib
+Deleted hot-reload file: E:\unrealProjects\PrincipledNPR\Plugins\PrincipledNPR\Intermediate\Build\Win64\x64\UnrealEditor\Development\NPRRuntime\UnrealEditor-NPRRuntime-6201.lib
+Deleted hot-reload file: E:\unrealProjects\PrincipledNPR\Plugins\PrincipledNPR\Intermediate\Build\Win64\x64\UnrealEditor\Development\NPRRuntime\UnrealEditor-NPRRuntime-6202.lib
+Building PrincipledNPREditor...
+===== Toolchain Information =====
+Using ISPC compiler (E:\Unreal Engine\UE_5.8\Engine\Source\ThirdParty\Intel\ISPC\bin\Windows\ispc.exe)
+  Intel(r) Implicit SPMD Program Compiler (Intel(r) ISPC), 1.24.0 (build commit  @ 20250404, LLVM 18.1.2) 
+Using Visual Studio 14.51.36260 toolchain (D:\D\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.51.36231) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+Warning: Visual Studio compiler 14.51.36260 is not a preferred version
+=================================
+Using Unreal Build Accelerator local executor to run 7 action(s)
+  CPU 16 physical cores, 24 logical cores
+  Memory 31.71 GB physical, 34.13 GB/61.71 GB committed
+  UBA Storage capacity 40 GB
+[1/7] Compile [x64] Module.NPRRuntime.cpp
+[2/7] Link [x64] UnrealEditor-NPRRuntime.lib
+  正在创建库 E:/unrealProjects/PrincipledNPR/Plugins/PrincipledNPR/Intermediate/Build/Win64/x64/UnrealEditor/Development/NPRRuntime/UnrealEditor-NPRRuntime.lib 和对象 E:/unrealProjects/PrincipledNPR/Plugins/PrincipledNPR/Intermediate/Build/Win64/x64/UnrealEditor/Development/NPRRuntime/UnrealEditor-NPRRuntime.exp
+[3/7] Link [x64] UnrealEditor-NPRRuntime.dll
+[4/7] Compile [x64] Module.NPREditor.cpp
+E:\Unreal Engine\UE_5.8\Engine\Source\Runtime\Engine\Classes\Engine\TextureCube.h(43,26): warning C4996: 'UTexture::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                        ^
+[5/7] Link [x64] UnrealEditor-NPREditor.lib
+  正在创建库 E:/unrealProjects/PrincipledNPR/Plugins/PrincipledNPR/Intermediate/Build/Win64/x64/UnrealEditor/Development/NPREditor/UnrealEditor-NPREditor.lib 和对象 E:/unrealProjects/PrincipledNPR/Plugins/PrincipledNPR/Intermediate/Build/Win64/x64/UnrealEditor/Development/NPREditor/UnrealEditor-NPREditor.exp
+[6/7] Link [x64] UnrealEditor-NPREditor.dll
+[7/7] WriteMetadata PrincipledNPREditor.target [NoUba]
+
+Total time in Unreal Build Accelerator local executor: 60.72 seconds
+Output binary: E:\Unreal Engine\UE_5.8\Engine\Binaries\Win64\UnrealEditor.exe
+
+Result: Succeeded
+Total execution time: 85.53 seconds
+Trace written to file C:\Users\12894\AppData\Local\UnrealBuildTool\Trace.uba with size 15.4kb

@@ -1,0 +1,227 @@
+{
+  "status": "BaselineFailed_EditorOwnershipUndoAndStaleImageGate",
+  "date_local": "2026-10-26 Asia/Shanghai",
+  "tested_revision": "b551a3da09ff0a7c4da423a841ec28caebc4b635",
+  "engine": "5.8.3 / CL 58210709",
+  "devices": [
+    {
+      "deviceName": "EVANGELION-AV01",
+      "instance": "46DEDF25438FB4501D97438412ADA26E",
+      "instanceName": "EVANGELION-AV01-53764",
+      "platform": "WindowsEditor",
+      "oSVersion": "Windows 11 (25H2) [10.0.26200.9711] ",
+      "model": "Default",
+      "gPU": "Intel(R) UHD Graphics",
+      "cPUModel": "Intel(R) Core(TM) i7-14650HX",
+      "rAMInGB": 32,
+      "renderMode": "D3D12_SM6",
+      "rHI": "D3D12 (SM6)",
+      "appInstanceLog": ""
+    }
+  ],
+  "isolation": "Separate Saved/IntegrationTests/HUA-20261026/Project project; exact main-project compiled DLLs and plugin assets shared through junctions; independent maps, profiles, logs, captures and evidence.",
+  "checks": {
+    "EditorBuild": true,
+    "GameBuild": true,
+    "DocsBuild": true,
+    "SevenCppTests": true,
+    "SevenRimImageMetrics": true,
+    "SurfaceAssetAudit": true,
+    "Supplemental27": true,
+    "UserPreviewAssetUnchanged": true,
+    "SavedActorUndoReturnsPriorValue": false,
+    "ExistingRimImageGate": false,
+    "ActorSwitchPreservesExternalMaterial": false,
+    "FourUiResetsDeleteOverrides": true
+  },
+  "tests": [
+    {
+      "fullTestPath": "NPR.Rim.LiveBinding",
+      "state": "Success",
+      "errors": 0,
+      "warnings": 0,
+      "duration": 0.04747310280799866
+    },
+    {
+      "fullTestPath": "NPR.Rim.MaterialContract",
+      "state": "Success",
+      "errors": 0,
+      "warnings": 0,
+      "duration": 0.023664098232984543
+    },
+    {
+      "fullTestPath": "NPR.Rim.ProfileBinding",
+      "state": "Success",
+      "errors": 0,
+      "warnings": 0,
+      "duration": 0.022054899483919144
+    },
+    {
+      "fullTestPath": "NPR.Rim.RenderBinding",
+      "state": "Success",
+      "errors": 0,
+      "warnings": 0,
+      "duration": 3.3749148845672607
+    },
+    {
+      "fullTestPath": "NPR.Rim.StyleProfile",
+      "state": "Success",
+      "errors": 0,
+      "warnings": 0,
+      "duration": 0.01336739957332611
+    },
+    {
+      "fullTestPath": "NPR.Surface.Composer",
+      "state": "Success",
+      "errors": 0,
+      "warnings": 0,
+      "duration": 0.07835400104522705
+    },
+    {
+      "fullTestPath": "NPR.Surface.RenderComposition",
+      "state": "Success",
+      "errors": 0,
+      "warnings": 0,
+      "duration": 8.538996696472168
+    }
+  ],
+  "rim_image_metrics": {
+    "signal_area_pixels": {
+      "Off": 0,
+      "Default8": 3238,
+      "Wide25": 18664,
+      "Hard25": 17582,
+      "Soft25": 25504,
+      "Red25": 18400,
+      "Red25Double": 19048,
+      "OffAgain": 0
+    },
+    "transition_pixels": {
+      "Hard25": 2433,
+      "Soft25": 13715
+    },
+    "red_mean_rgb_delta": [
+      186.51190185546875,
+      2.6069021224975586,
+      1.2892391681671143
+    ],
+    "double_intensity_red_gain": 48.74924087524414,
+    "off_again_max_error": 0.0
+  },
+  "surface_gpu_metrics": {
+    "captured_at_utc": "2026-10-25T16:55:04.247Z",
+    "base_color_rim_difference": 0,
+    "normal_rim_difference": 0,
+    "normal_texture_difference": 0.30639526,
+    "base_emissive_difference": 0.0728756141,
+    "rim_difference": 0.062899068,
+    "second_effect_difference": 0.0424118783,
+    "hdr_relative_addition_error": 0.00884810877,
+    "screen_outline_difference": 0.0124074686,
+    "hull_outline_difference": 0.018471965,
+    "toon_rim_difference": 0.0570434296
+  },
+  "supplemental": {
+    "status": "Passed",
+    "checks": {
+      "SavedMapReloads": true,
+      "SavedComponentRestored": true,
+      "OnRegisterRebindsMID": true,
+      "PersistedIntensityRestored": true,
+      "PersistedProfileRecipeAndSlot": true,
+      "PersistedSourceInputConfigured": true,
+      "DiskMapStoredOriginalMaterial": true,
+      "ExplicitRebindAfterRestore": true,
+      "UnconfiguredInputsRejected": true,
+      "FailureKeepsLiveMID": true,
+      "InvalidNormalStrengthRejected": true,
+      "InvalidInputsKeepLiveMID": true,
+      "InvalidSlotRejected": true,
+      "WrongActorMeshRejected": true,
+      "WrongActorKeepsBothMeshes": true,
+      "ProfileBRebinds": true,
+      "ProfileBSemanticsReachMID": true,
+      "ProfileARebinds": true,
+      "ExplicitZeroBlackAccepted": true,
+      "ZeroBlackReadback": true,
+      "LiveParameterUpdateKeepsMID": true,
+      "RuntimeRestorePreservesExternalReplacement": true,
+      "SkeletalElevenSlotFixture": true,
+      "SkeletalOneSlotApplies": true,
+      "OtherTenSkeletalSlotsUnchanged": true,
+      "SkeletalParametersReadback": true,
+      "AllSkeletalMaterialsRestore": true
+    },
+    "details": {
+      "character": "SKM_Chen; explicit scalar/vector Surface inputs; material readback only, no full character visual acceptance"
+    }
+  },
+  "undo_expected": 0.8,
+  "undo_actual": 0.4000000059604645,
+  "undo_mid_actual": 0.4000000059604645,
+  "mid_stable_during_edits": true,
+  "limitations": [
+    "No Cook, performance, shadow, animation, multi-LOD or full character visual acceptance.",
+    "Persistence and supplementary reflected API checks used NullRHI; only the separate 25 automation captures prove GPU rendering.",
+    "Auxiliary live Python/Slate snapshot sessions crashed; crash evidence is retained, root cause is not attributed to HUA.",
+    "Rim preview asset audit has a local-edit mismatch at PreviewOverrideSeparate; user asset retained verbatim."
+  ],
+  "dll_sha256": {
+    "UnrealEditor-NPREditor.dll": "10b96db9a0c4b4c58d5e9899b4398d745e164bd4eea5f46a68be2068fb21f828",
+    "UnrealEditor-NPRRuntime.dll": "05a66f8f277c777bfc9e9e829adff6648a2f861a3d57d5c18509f57c5f93cde9"
+  },
+  "source_sha256": {
+    "Plugins/PrincipledNPR/Source/NPREditor/Private/NPRRimEditorUI.cpp": "f98d2f7aedd89aad32c5896d5a175e843d5a040e15df00bb3a118ecde6d65c19",
+    "Plugins/PrincipledNPR/Source/NPRRuntime/Private/NPRStyleBindingComponent.cpp": "2c51d4e7b61b987414e08ea6af3e61258cad3fc1a63416be4d2aa6f69efabdf0",
+    "Plugins/PrincipledNPR/Source/NPRRuntime/Private/NPRStyleProfile.cpp": "c45c8d8b47b957944d3f528222c1a74fb1ac4dbfe0fc200cbc6dcda20260f231",
+    "Tools/check_rim_binding_images.py": "f8b59f0f92e10de0b8576f8a71d507f99a56cf0f5588873f78da4081718f171a"
+  },
+  "evidence_sha256": {
+    "Automation.json": "2eb8275001644982853d81bcf1a83005a4427a6d493e37e46d14ae089200150a",
+    "DocsBuild.log": "6720ee9f2f1f30ed7b9dfce2202aad3a37b78a35a95f982034fda364dfb6f9f0",
+    "EditorBuild.log": "9ea15bc0a8fafe6de14ef891a9f10e5c8d2910ad7dffa5f07e903451f4f3d7c1",
+    "GameBuild.log": "668d0d555f7131ec68719ab7b9d8fae325811b926fcaf658da7776ad02e832d2",
+    "NativeExternalBefore.txt": "e317d20f50c98ab4e5169bd508a312c8300165ef358c00cd2600faa4a61af8ec",
+    "NativeReadback.json": "6f1f276cf1cadfe6218d1e17300e206ac7d9805df414873da82dc7c260ec6b80",
+    "NativeReset.json": "508e7e637d7f8788addb0b706ccaad9d0b555a65ccfe30510c7ff2e990c345a0",
+    "NativeUI.log": "d59e29193f694a2d303df4e6e0894068f28f00d2b86dbdbc07e42d2283f6caa5",
+    "Persistence.log": "809665b2a8380ebd046323201c1f1c926d8874630d47c60123cc36a653cda0b3",
+    "Reset.png": "8e3375af05999191e18a48865620d7b4dfc29d7e9d08d8e94b734092d7f59834",
+    "Supplemental.json": "61bdbc6ec7dbc1d47f13a11b1e45621c287d2f9630b80b63735905bab3044659",
+    "SurfaceAssetAudit.json": "527da1b60d260038c19a1a76ac6f94bd5aa3abfb9b9a23cc6dd4edf89ebf01dd",
+    "UIRun4.log": "6c3750457f332a4fd920bd86ad0aaba7c32a9897961e854c8b46dbe8d901c0b1",
+    "Undo.png": "358d90edeff8bd56225c0bdb59a35a5aaea95ea0c28f670507289463b86281e6",
+    "Readback/R4-Applied.json": "efb46fde055dff4664c77e38c6dd9fbde8922cb072a4ec1279c86e7bf881de59",
+    "Readback/R4-Intensity08.json": "0697beb200934aa2014b4e07d9e9a2102c7b94019d83e2179f5ea76ad03c1119",
+    "Readback/R4-Intensity16.json": "edacf0d2f9c99f4bce77ccf0d372dd6e564060dfe56a674c784630122c2fbfe3",
+    "Readback/R4-SavedBaseline.json": "d180081d67aa3a4bb4eb59632b69ca2b98b3659fb86b9ec7ae56a1304d52d800",
+    "Readback/R4-Undo.json": "cae067456bba7970a4311859a81f4c2c581b3e2c84503bd5f548440be1c45e8e",
+    "Rim/Default8.png": "eae5cbd7b35850721157ad76c0d146d1a4129cfed19efa7cfb432d36bf0ab453",
+    "Rim/Hard25.png": "f1314d2ce110cadd9d07280896e8ad275e7962b72c0ff3600c2dd267514b103f",
+    "Rim/ImageMetrics.json": "e33bb4f0497a963548ab9d246919d3a55ceb8de5707082700d4759e784244342",
+    "Rim/Off.png": "c250e14413c1b8df095e5597cb74c89948b17faef5c5653a075871758a625292",
+    "Rim/OffAgain.png": "c250e14413c1b8df095e5597cb74c89948b17faef5c5653a075871758a625292",
+    "Rim/Red25.png": "d0e809219d1a1d5b643157420efba1d1346b9da2757429fee7f6b39618cf7a98",
+    "Rim/Red25Double.png": "830e6fdaba25aa58b217e9fb5e6c3d883536195fe8aa58b0dde9063f50a95129",
+    "Rim/Soft25.png": "70edac569bf341a48dbdb8f8fbed44a4e1861c3be8d925761fa920128fbc3de5",
+    "Rim/Wide25.png": "f6315a1a290091633f4e696b0dfce70f05e136e3a12302cb923889a29226fa40",
+    "Surface/AdditionalHDR.png": "01d503b02c226211b0c0a2302fc4e885eab0f5b92450b14646a690899951ae6b",
+    "Surface/AllHDR.png": "d8ae28b5cf0ec4e9f48e356c293ec539007f6018a5e2d870429e858d2d470a32",
+    "Surface/BaseColorOff.png": "f8f1578dff607f87e48d00d783212f17469044fbd66e17781d8cc3553a28c278",
+    "Surface/BaseColorRim.png": "f8f1578dff607f87e48d00d783212f17469044fbd66e17781d8cc3553a28c278",
+    "Surface/BaseEmissionHDR.png": "77e497782c9f3853b530a7d1ab0cd239c132a7f8a1abed9473cc78c2b189e41e",
+    "Surface/BaselineHDR.png": "57905a721cf50be9e56285391ee3f67c973f52fa05d5b2681ea1e3f35460d255",
+    "Surface/CombinedHDR.png": "d690036e4d0bd391f92468fdd252815f1583abfdd908464e5840c83221dc9e84",
+    "Surface/GpuMetrics.json": "9231fa7749d807a9ff349243ca7416c2d36171553012ef08b03756d2e7621189",
+    "Surface/NormalFlat.png": "2af766eef86157046fb9120ce13f0cad917efa3b60011ed18ff1d9a77d760494",
+    "Surface/NormalOff.png": "a4c0ae7f2c1fd13bbd21b1f8a8b09cda545246e3e61b5067b915f603a7e45406",
+    "Surface/NormalRim.png": "a4c0ae7f2c1fd13bbd21b1f8a8b09cda545246e3e61b5067b915f603a7e45406",
+    "Surface/RimOnlyHDR.png": "1ffefc686f261a4c0150da98dbf0aaf295cbd00668f010fe5980fe89a3360e0d",
+    "Surface/SurfaceBase.png": "924e7c9f36617f7a8598c3a946a26b747fcaa5cd23c39cfc53d2b8cd2de5c3cc",
+    "Surface/SurfaceHullOutline.png": "b90b3889be7d583b4b22c9d174c43497f3c79152797cb24832ba90af091bebab",
+    "Surface/SurfaceRim.png": "7f47364a82e36851d8422be915b21aad0008a3556d7b2e320fca5fccf1c9c039",
+    "Surface/SurfaceScreenOutline.png": "bf380a5b946dabac8f526aebefdf99e70db4e539f4ac5134df7b7f5e679ab3b5",
+    "Surface/ToonBase.png": "a622c991a34a9b557d40700f7a3d8b89f6370acf3051146a40363fe6b2631616",
+    "Surface/ToonRim.png": "84f69f14253ca27a5c109af513791c377701be4265277d688a8ca648c85c3816"
+  }
+}

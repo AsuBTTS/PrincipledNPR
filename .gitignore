@@ -24,4 +24,6 @@ docs/.vitepress/dist/
 docs/public/generated/
 Tools/__pycache__/
 *.log
+!Documentation/RimLight/Integration-2026-10-26/*.log
+!Documentation/Editor/WorkspaceEvidence/*.log
 .vsconfig

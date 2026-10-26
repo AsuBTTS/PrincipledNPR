@@ -1,0 +1,129 @@
+{
+  "date_local": "2026-10-26 Asia/Shanghai",
+  "status": "Passed_ControlledScope",
+  "engine": "UE 5.8.3 CL58210709",
+  "editor_build": "Passed",
+  "game_build": "Passed",
+  "automation": {
+    "tests": 10,
+    "passed": 10,
+    "errors": 0,
+    "warnings": 0,
+    "report_created_on_utc": "2026.10.26-04.27.39",
+    "cases": [
+      {
+        "fullTestPath": "NPR.Editor.PreviewSlotParameters",
+        "state": "Success",
+        "errors": 0,
+        "warnings": 0,
+        "duration": 0.25221729278564453
+      },
+      {
+        "fullTestPath": "NPR.Editor.RimPreviewPixels",
+        "state": "Success",
+        "errors": 0,
+        "warnings": 0,
+        "duration": 2.0799384117126465
+      },
+      {
+        "fullTestPath": "NPR.Editor.RimWorkflow",
+        "state": "Success",
+        "errors": 0,
+        "warnings": 0,
+        "duration": 0.9921458959579468
+      },
+      {
+        "fullTestPath": "NPR.Rim.LiveBinding",
+        "state": "Success",
+        "errors": 0,
+        "warnings": 0,
+        "duration": 0.021403200924396515
+      },
+      {
+        "fullTestPath": "NPR.Rim.MaterialContract",
+        "state": "Success",
+        "errors": 0,
+        "warnings": 0,
+        "duration": 0.01586420089006424
+      },
+      {
+        "fullTestPath": "NPR.Rim.ProfileBinding",
+        "state": "Success",
+        "errors": 0,
+        "warnings": 0,
+        "duration": 0.015726100653409958
+      },
+      {
+        "fullTestPath": "NPR.Rim.RenderBinding",
+        "state": "Success",
+        "errors": 0,
+        "warnings": 0,
+        "duration": 2.710134744644165
+      },
+      {
+        "fullTestPath": "NPR.Rim.StyleProfile",
+        "state": "Success",
+        "errors": 0,
+        "warnings": 0,
+        "duration": 0.019000697880983353
+      },
+      {
+        "fullTestPath": "NPR.Surface.Composer",
+        "state": "Success",
+        "errors": 0,
+        "warnings": 0,
+        "duration": 0.03551759943366051
+      },
+      {
+        "fullTestPath": "NPR.Surface.RenderComposition",
+        "state": "Success",
+        "errors": 0,
+        "warnings": 0,
+        "duration": 6.843985080718994
+      }
+    ]
+  },
+  "visual_review": {
+    "status": "Passed_FinalNavigation",
+    "viewport": "902x725",
+    "fixture": "Qianyu / SkeletalMeshComponent0 / 11 slots, reference pose",
+    "checks": [
+      "Top navigation contains NPR, Outline and Rim only",
+      "NPR uses 16 pt, Outline/Rim use 12 pt; equal content height and centered text",
+      "Post-process categories are inside Overview",
+      "Overview Rim category opens Rim editor",
+      "Top Outline opens original editor",
+      "Character fits after preview focus settles"
+    ],
+    "screenshots": [
+      "Overview.jpg",
+      "RimNavigation.jpg",
+      "OutlineNavigation.jpg"
+    ],
+    "earlier_rim_color_and_isolation_evidence": "../RimCardsIsolatedGreen.jpg, captured before final navigation changes"
+  },
+  "gpu_preview": {
+    "on_pixels": 20007,
+    "red_channel_delta": [
+      3466043,
+      61682,
+      32465
+    ],
+    "green_channel_delta": [
+      83886,
+      3458591,
+      86785
+    ],
+    "green_intensity_gain": 3.63674164,
+    "off_again_max_error": 0,
+    "scope": "Real GPU capture using the exact MID returned by the shared realtime character preview; no synthetic images"
+  },
+  "evidence": "WorkspaceEvidence/Final/Summary.json",
+  "previous_snapshot": "WorkspaceEvidence/Summary.json",
+  "limits": [
+    "Thirty real GPU exports use controlled static spheres; five of them render the exact shared-preview MID, not editor UI screenshots.",
+    "Native UI verifies reference-pose character layout and navigation. Earlier color/isolation screenshot is separately dated and scoped.",
+    "No animation, shadows, multi-LOD, arbitrary material migration, temporal stability, Cook or performance acceptance.",
+    "Known engine deprecation/toolchain warnings are distinct from zero automation warnings."
+  ]
+}

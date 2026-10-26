@@ -1,5 +1,9 @@
 #include "NPROutlineEditorUI.h"
 #include "NPRRimEditorUI.h"
+#include "NPRCharacterPreview.h"
+#include "NPRModulationEditorLibrary.h"
+#include "NPRStyleBindingComponent.h"
+#include "Materials/MaterialInstanceDynamic.h"
 #include "NPROutlineMeshCustomization.h"
 
 #include "NPROutlineEditorLibrary.h"
@@ -26,6 +30,7 @@
 #include "Widgets/Layout/SBorder.h"
 #include "Widgets/Layout/SWidgetSwitcher.h"
 #include "Widgets/Layout/SWrapBox.h"
+#include "Framework/Application/SlateApplication.h"
 #include "Widgets/Input/SButton.h"
 #include "Widgets/Input/SComboBox.h"
 #include "Widgets/Input/SEditableTextBox.h"
@@ -197,7 +202,7 @@ public:
         if(PreviewGroup) { PreviewGroup->RegisterComponent(); PreviewGroup->RefreshOutline(); }
         Invalidate();
     }
-    void SyncGroup(UNPROutlineActorComponent* Source)
+    void SyncGroup(UNPROutlineActorComponent* Source, bool bCopyMaterials=true)
     {
         if(!GroupActor || !IsValid(Source)) return;
         TSet<UMeshComponent*> ValidSources;
@@ -215,7 +220,7 @@ public:
             if(!IsValid(Original)||!IsValid(Copy)) continue;
             const FTransform Transform(Original->GetComponentRotation(),Original->GetComponentLocation()-Origin,Original->GetComponentScale());
             if(!Copy->GetComponentTransform().Equals(Transform)) Copy->SetWorldTransform(Transform);
-            Copy->SetVisibility(Original->IsVisible() && (IsolatedSlot==INDEX_NONE || IsolatedSource.Get()==Original));
+            Copy->SetVisibility(Original->IsVisible() && (!IsolatedSource.IsValid() || IsolatedSource.Get()==Original));
             if(auto* S=Cast<USkeletalMeshComponent>(Copy)) S->SetMaterialPreview(IsolatedSource.Get()==Original?IsolatedSlot:INDEX_NONE);
             if(auto* S=Cast<UStaticMeshComponent>(Copy)) S->SetMaterialPreview(IsolatedSource.Get()==Original?IsolatedSlot:INDEX_NONE);
             Copy->SetHiddenInGame(Original->bHiddenInGame);
@@ -237,7 +242,7 @@ public:
                 if(Target->GetStaticMesh()!=Static->GetStaticMesh()) Target->SetStaticMesh(Static->GetStaticMesh());
                 Target->SetForcedLodModel(Static->ForcedLodModel);
             }
-            for(int32 M=0;M<Original->GetNumMaterials();++M) Copy->SetMaterial(M,Original->GetMaterial(M));
+            if(bCopyMaterials) for(int32 M=0;M<Original->GetNumMaterials();++M) Copy->SetMaterial(M,Original->GetMaterial(M));
             Copy->UpdateBounds();
             if(Copy->IsVisible()) GroupBounds+=Copy->Bounds.GetBox();
         }
@@ -247,6 +252,14 @@ public:
             PreviewGroup->BaseSettings=Source->BaseSettings; PreviewGroup->Meshes=Source->Meshes;
             PreviewGroup->HullTemplate=Source->HullTemplate; PreviewGroup->MaskTemplate=Source->MaskTemplate; PreviewGroup->ScreenTemplate=Source->ScreenTemplate;
             for(auto& Rule:PreviewGroup->Meshes) Rule.Mesh=Copies.FindRef(Rule.Mesh.Get());
+            if(MethodFilter.IsSet())
+            {
+                TArray<FNPROutlineResolvedRegion> Regions;FString Error;
+                if(PreviewGroup->ResolveRegions(Regions,Error))
+                    for(const auto& Region:Regions) if(Region.Settings.Method!=MethodFilter.GetValue())
+                        for(auto& Rule:PreviewGroup->Meshes) if(Rule.Mesh==Region.Mesh)
+                        {auto& Override=FNPROutlineMeshCustomization::FindOrAdd(Rule,Rule.Mesh->GetMaterialSlotNames()[Region.MaterialSlotIndex]).Override;Override.bOverrideEnabled=true;Override.bEnabled=false;}
+            }
             if(IsolatedSlot!=INDEX_NONE)
             {
                 // Filter only transient preview rules. Persistent actor rules and original surfaces are untouched.
@@ -283,6 +296,8 @@ public:
         Invalidate();
     }
     int32 MeshCount() const { return GroupActor?Copies.Num():(PreviewActor->GetSkeletalMeshComponent()->GetSkeletalMeshAsset()?1:0); }
+    UMeshComponent* CopyOf(UMeshComponent* Source) const { return Copies.FindRef(Source); }
+    void SetMethodFilter(TOptional<ENPROutlineMethod> Filter) { MethodFilter=Filter; }
     void ApplySharedCamera() { Client->ApplySharedCamera(); Invalidate(); }
     void SetScreenPercentage(int32 Percentage)
     { Client->SetPreviewScreenPercentage(Percentage); Client->SetPreviewingScreenPercentage(true); Invalidate(); }
@@ -366,6 +381,202 @@ private:
     TWeakObjectPtr<UMeshComponent> IsolatedSource;
     int32 IsolatedSlot=INDEX_NONE;
     FBox GroupBounds=FBox(ForceInit);
+    TOptional<ENPROutlineMethod> MethodFilter;
+};
+
+class FCharacterPreview final : public FNPRCharacterPreview, public TSharedFromThis<FCharacterPreview>
+{
+    struct FSlotMaterial
+    {
+        TStrongObjectPtr<UMaterialInstanceDynamic> MID;
+        uint32 SourceHash=0;
+        bool bInitialized=false;
+    };
+    static uint32 MaterialState(UMaterialInstanceDynamic* MID,UMaterialInterface* Parent)
+    {
+        uint32 Hash=GetTypeHash(Parent);
+        if(!MID)return Hash;
+        auto ParameterHash=[](const FMaterialParameterInfo& P)
+        {return HashCombineFast(GetTypeHash(P.Name),HashCombineFast(GetTypeHash(P.Index),GetTypeHash(uint8(P.Association))));};
+        Hash=HashCombineFast(Hash,GetTypeHash(MID->ScalarParameterValues.Num()));
+        for(const auto& V:MID->ScalarParameterValues)Hash=HashCombineFast(Hash,HashCombineFast(ParameterHash(V.ParameterInfo),GetTypeHash(V.ParameterValue)));
+        for(const auto& V:MID->VectorParameterValues)Hash=HashCombineFast(Hash,HashCombineFast(ParameterHash(V.ParameterInfo),FCrc::MemCrc32(&V.ParameterValue,sizeof(V.ParameterValue))));
+        for(const auto& V:MID->TextureParameterValues)Hash=HashCombineFast(Hash,HashCombineFast(ParameterHash(V.ParameterInfo),GetTypeHash(V.ParameterValue.Get())));
+        return Hash;
+    }
+public:
+    void Construct()
+    {
+        Camera=MakeShared<FSharedCamera>();
+        Original=SNew(SOutlineViewport,Camera.ToSharedRef());
+        Current=SNew(SOutlineViewport,Camera.ToSharedRef());
+        Content=SNew(SVerticalBox)
+            + SVerticalBox::Slot().AutoHeight().Padding(8)
+            [SNew(SWrapBox).UseAllottedSize(true).InnerSlotPadding(FVector2D(6,6))
+                + SWrapBox::Slot()[Light(TEXT("标准 / Studio"),0)]
+                + SWrapBox::Slot()[Light(TEXT("暖光 / Warm"),1)]
+                + SWrapBox::Slot()[Light(TEXT("侧光 / Raking"),2)]
+                + SWrapBox::Slot()[SNew(SButton).Text(FText::FromString(TEXT("聚焦当前角色"))).OnClicked_Lambda([this]{Focus();return FReply::Handled();})]
+                + SWrapBox::Slot()[SNew(SButton).Text(FText::FromString(TEXT("显示全部材质"))).OnClicked_Lambda([this]{Isolate(nullptr,INDEX_NONE);return FReply::Handled();})]
+                + SWrapBox::Slot()[SNew(SCheckBox).IsChecked_Lambda([this]{return bCompare?ECheckBoxState::Checked:ECheckBoxState::Unchecked;})
+                    .OnCheckStateChanged_Lambda([this](ECheckBoxState S){bCompare=S==ECheckBoxState::Checked;OriginalPane->SetVisibility(bCompare?EVisibility::Visible:EVisibility::Collapsed);bPendingFocus=true;StableSizeFrames=0;})
+                    [SNew(STextBlock).Text(FText::FromString(TEXT("原材质对比")))]]]
+            + SVerticalBox::Slot().AutoHeight().Padding(8,2)[SNew(STextBlock).AutoWrapText(true).Text_Lambda([this]
+                {return FText::FromString(Isolated.IsValid()?FString::Printf(TEXT("隔离预览：%s · %s（不改变关卡可见性）"),*Isolated->GetName(),Slot>=0?*FString::Printf(TEXT("槽 %d"),Slot):TEXT("整个 Mesh")):
+                    TEXT("完整角色 · 参考姿势 · 共享相机与灯光；预览副本与关卡分离"));})]
+            + SVerticalBox::Slot().FillHeight(1)[SNew(SSplitter)
+                + SSplitter::Slot()[SAssignNew(OriginalPane,SVerticalBox).Visibility(EVisibility::Collapsed)
+                    + SVerticalBox::Slot().AutoHeight().Padding(6)[SNew(STextBlock).Text(FText::FromString(TEXT("原材质 / Original")))]
+                    + SVerticalBox::Slot().FillHeight(1)[Original.ToSharedRef()]]
+                + SSplitter::Slot()[SNew(SVerticalBox)
+                    + SVerticalBox::Slot().AutoHeight().Padding(6)[SNew(STextBlock).Text_Lambda([this]{return FText::FromString(
+                        EffectFilter==TEXT("RimLight")?TEXT("只看 Rim Light / 当前参数"):
+                        EffectFilter==TEXT("HullOutline")?TEXT("只看反向壳描边 / 非后处理"):
+                        EffectFilter==TEXT("ScreenOutline")?TEXT("只看屏幕空间描边 / 后处理"):
+                        EffectFilter==TEXT("Surface")?TEXT("只看表面组合 / 不含 Rim 与描边"):TEXT("已应用效果组合 / 当前角色"));})]
+                    + SVerticalBox::Slot().FillHeight(1)[Current.ToSharedRef()]]];
+    }
+    virtual TSharedRef<SWidget> Widget() override { return Content.ToSharedRef(); }
+    virtual void LoadActor(AActor* Actor) override
+    {
+        Source=Actor; Proxy.Reset();EffectProxy.Reset(); SoloMaterials.Reset(); Isolated.Reset(); Slot=INDEX_NONE;
+        if(IsValid(Actor))
+        {
+            Proxy.Reset(NewObject<UNPROutlineActorComponent>(Actor,NAME_None,RF_Transient));
+            EffectProxy.Reset(NewObject<UNPROutlineActorComponent>(Actor,NAME_None,RF_Transient));
+            Proxy->bEnabled=false;
+            TSet<UMeshComponent*> Seen;
+            for(const auto& Row:UNPRModulationEditorLibrary::GetMeshEffects(Actor)) if(!Seen.Contains(Row.Mesh))
+            { FNPROutlineMeshRule Rule; Rule.Mesh=Row.Mesh;Rule.SourceName=Row.Mesh->GetFName();Proxy->Meshes.Add(Rule);Seen.Add(Row.Mesh); }
+        }
+        UpdateEffectProxy();Rebuild(); Refresh();Focus();bPendingFocus=true;StableSizeFrames=0;
+    }
+    virtual void Refresh() override
+    {
+        if(!Source.IsValid()){if(Proxy.IsValid())LoadActor(nullptr);return;}
+        if(!Proxy.IsValid())return;
+        if(bPendingFocus)
+        {
+            auto Size=Current->ViewSize();
+            if(Size.X>0&&Size.Y>0&&Size==LastSize)++StableSizeFrames;else StableSizeFrames=0;
+            LastSize=Size;if(StableSizeFrames>=2){Focus();bPendingFocus=false;}
+        }
+        UpdateEffectProxy();
+        Original->SyncGroup(Proxy.Get(),false);
+        Current->SyncGroup(ShowsOutline()?EffectProxy.Get():Proxy.Get(),false);
+        for(const auto& Rule:Proxy->Meshes)
+        {
+            auto* Mesh=Rule.Mesh.Get(); auto* A=Original->CopyOf(Mesh);auto* B=Current->CopyOf(Mesh);
+            if(!IsValid(Mesh)||!A||!B)continue;
+            for(int32 I=0;I<Mesh->GetNumMaterials();++I)
+            {
+                UMaterialInterface* Base=Mesh->GetMaterial(I);
+                for(auto* Binding:TInlineComponentArray<UNPRStyleBindingComponent*>(Source.Get()))
+                    if(Binding->GetOwnedMaterial(Mesh,I)) {Base=Binding->GetSourceMaterial(Mesh,I);break;}
+                for(auto* Binding:TInlineComponentArray<UNPROutlineComponent*>(Source.Get()))
+                    if(Binding->TargetMesh==Mesh && Binding->MaterialSlotIndex==I && Base==Binding->ConvertedMaterial) Base=Binding->OriginalMaterial;
+                A->SetMaterial(I,Base);
+                if(bSolo || EffectFilter==TEXT("Surface") || EffectFilter==TEXT("HullOutline") || EffectFilter==TEXT("ScreenOutline"))
+                {
+                    const bool SelectedRim=bSolo && ((!RimTarget.IsValid()) || (Mesh==RimTarget.Get() && I==RimSlot));
+                    if(SelectedRim || EffectFilter==TEXT("Surface"))
+                    {
+                        // Clone the live parent. Disable only the independent second contribution in this preview.
+                        auto& Stored=SoloMaterials.FindOrAdd(Mesh).FindOrAdd(I);
+                        auto* SourceMID=Cast<UMaterialInstanceDynamic>(Mesh->GetMaterial(I));
+                        UMaterialInterface* Parent=SourceMID?SourceMID->Parent.Get():Mesh->GetMaterial(I);
+                        if(!Stored.MID.IsValid() || Stored.MID->Parent!=Parent){Stored.MID.Reset(UMaterialInstanceDynamic::Create(Parent,B));Stored.bInitialized=false;}
+                        auto* MID=Stored.MID.Get();
+                        const uint32 Hash=MaterialState(SourceMID,Parent);
+                        // Copy only when source values change. Reinitializing the render resource every Tick
+                        // prevents a stable realtime preview and needlessly rebuilds uniform data.
+                        if(SourceMID && (!Stored.bInitialized || Stored.SourceHash!=Hash))MID->CopyParameterOverrides(SourceMID);
+                        Stored.SourceHash=Hash;Stored.bInitialized=true;
+                        if(bSolo) MID->SetScalarParameterValue(TEXT("NPR_AdditionalEmissiveScale"),0.f);
+                        else MID->SetScalarParameterValue(FName(NPRRimContract::IntensityMaterialName),0.f);
+                        B->SetMaterial(I,MID);
+                    }
+                    else B->SetMaterial(I,Base);
+                }
+                else B->SetMaterial(I,Mesh->GetMaterial(I));
+            }
+        }
+    }
+    virtual bool Isolate(UMeshComponent* Mesh,int32 InSlot) override
+    {
+        if(Mesh && (!Source.IsValid() || Mesh->GetOwner()!=Source.Get() || !Original->CopyOf(Mesh) || InSlot<INDEX_NONE || InSlot>=Mesh->GetNumMaterials())) return false;
+        Isolated=Mesh;Slot=Mesh?InSlot:INDEX_NONE;
+        Original->SetIsolation(Mesh,Slot);Current->SetIsolation(Mesh,Slot);Refresh();return true;
+    }
+    virtual void SetRimTarget(UMeshComponent* Mesh,int32 InSlot) override
+    {if(RimTarget.Get()!=Mesh || RimSlot!=InSlot){RimTarget=Mesh;RimSlot=InSlot;SoloMaterials.Reset();}Refresh();}
+    virtual void SetRimSolo(bool Solo) override { SetEffectFilter(Solo?FName(TEXT("RimLight")):FName(TEXT("All"))); }
+    virtual void SetEffectFilter(FName Effect) override
+    {if(EffectFilter!=Effect){EffectFilter=Effect;bSolo=Effect==TEXT("RimLight");UpdateEffectProxy();Rebuild();Refresh();}}
+    virtual bool Focus() override { const bool OK=Current->Focus();Original->ApplySharedCamera();return OK; }
+    virtual int32 MeshCount() const override {return Current->MeshCount();}
+    virtual bool Export(const FString& Directory) override
+    {
+        IFileManager::Get().MakeDirectory(*Directory,true);
+        if(!bCompare){auto Size=Current->ViewSize();Original->SetCaptureSize(Size.X,Size.Y);}
+        Refresh();return Original->SavePNG(Directory/TEXT("Original.png"))&&Current->SavePNG(Directory/TEXT("Effects.png"));
+    }
+    virtual UMaterialInterface* PreviewMaterial(bool bOriginal,UMeshComponent* Mesh,int32 InSlot) const override
+    {auto* Copy=(bOriginal?Original:Current)->CopyOf(Mesh);return Copy?Copy->GetMaterial(InSlot):nullptr;}
+    virtual bool IsMeshVisible(bool bOriginal,UMeshComponent* Mesh)const override
+    {auto* Copy=(bOriginal?Original:Current)->CopyOf(Mesh);return Copy && Copy->IsVisible();}
+private:
+    void Rebuild()
+    {
+        SoloMaterials.Reset();
+        Original->LoadGroup(Proxy.Get(),false);
+        Current->SetMethodFilter(EffectFilter==TEXT("HullOutline")?TOptional<ENPROutlineMethod>(ENPROutlineMethod::InvertedHull):
+            EffectFilter==TEXT("ScreenOutline")?TOptional<ENPROutlineMethod>(ENPROutlineMethod::ScreenSpace):TOptional<ENPROutlineMethod>());
+        Current->LoadGroup(ShowsOutline()?EffectProxy.Get():Proxy.Get(),ShowsOutline());
+        Original->SetIsolation(Isolated.Get(),Slot);Current->SetIsolation(Isolated.Get(),Slot);
+    }
+    bool ShowsOutline() const {return EffectProxy.IsValid() && (EffectFilter==TEXT("All") || EffectFilter==TEXT("HullOutline") || EffectFilter==TEXT("ScreenOutline"));}
+    void UpdateEffectProxy()
+    {
+        if(!Source.IsValid() || !EffectProxy.IsValid())return;
+        auto* Group=Source->FindComponentByClass<UNPROutlineActorComponent>();
+        EffectProxy->bEnabled=Group?Group->bEnabled:true;
+        EffectProxy->Scope=Group?Group->Scope:ENPROutlineScope::IndependentRegions;
+        EffectProxy->BaseSettings=Group?Group->BaseSettings:FNPROutlineSettings();
+        if(!Group)EffectProxy->BaseSettings.Method=ENPROutlineMethod::None;
+        EffectProxy->Meshes=Group?Group->Meshes:Proxy->Meshes;
+        if(Group)
+        {
+            EffectProxy->HullTemplate=Group->HullTemplate;EffectProxy->MaskTemplate=Group->MaskTemplate;EffectProxy->ScreenTemplate=Group->ScreenTemplate;
+            for(const auto& Rule:Proxy->Meshes) if(!EffectProxy->Meshes.ContainsByPredicate([&](const auto& Existing){return Existing.Mesh==Rule.Mesh;}))
+            {auto Copy=Rule;Copy.Override.bOverrideEnabled=true;Copy.Override.bEnabled=false;EffectProxy->Meshes.Add(Copy);}
+        }
+        else for(auto* Old:TInlineComponentArray<UNPROutlineComponent*>(Source.Get()))
+        {
+            EffectProxy->HullTemplate=Old->HullTemplate;EffectProxy->MaskTemplate=Old->MaskTemplate;EffectProxy->ScreenTemplate=Old->ScreenTemplate;
+            for(auto& Rule:EffectProxy->Meshes) if(Rule.Mesh==Old->TargetMesh)
+            {
+                auto& O=FNPROutlineMeshCustomization::FindOrAdd(Rule,Old->MaterialSlotName).Override;
+                O.bOverrideMethod=O.bOverrideColor=O.bOverrideWidth=O.bOverrideDepthBias=O.bOverrideVertexControl=true;
+                O.bOverrideEdgeSource=O.bOverrideEdgeWidthScales=O.bOverrideLocalWidthScale=O.bOverrideWidthMask=true;O.Values=Old->Settings;
+            }
+        }
+    }
+    TSharedRef<SWidget> Light(const TCHAR* Label,int32 Index)
+    {return SNew(SButton).Text(FText::FromString(Label)).OnClicked_Lambda([this,Index]{Original->SetLighting(Index);Current->SetLighting(Index);return FReply::Handled();});}
+    TWeakObjectPtr<AActor> Source;
+    TStrongObjectPtr<UNPROutlineActorComponent> Proxy,EffectProxy;
+    TWeakObjectPtr<UMeshComponent> Isolated,RimTarget;
+    int32 Slot=INDEX_NONE,RimSlot=INDEX_NONE;
+    bool bCompare=false,bSolo=false;
+    FName EffectFilter=TEXT("All");
+    TSharedPtr<FSharedCamera> Camera;
+    TSharedPtr<SOutlineViewport> Original,Current;
+    TSharedPtr<SVerticalBox> Content,OriginalPane;
+    TMap<TWeakObjectPtr<UMeshComponent>,TMap<int32,FSlotMaterial>> SoloMaterials;
+    bool bPendingFocus=false;
+    int32 StableSizeFrames=0;
+    FIntPoint LastSize=FIntPoint::ZeroValue;
 };
 
 struct FOutlineSlot { int32 Index; FString Label; };
@@ -499,6 +710,7 @@ public:
         return OriginalView->SavePNG(Directory/TEXT("Original.png")) && NPRView->SavePNG(Directory/TEXT("Outline.png"));
     }
     void ReloadSelection() { UseSelection(false); }
+    void SyncSelection() { if(LevelSelection()!=SelectedActor.Get())UseSelection(false); }
     int32 MeshCount(bool bOutlined) const { return bOutlined?NPRView->MeshCount():OriginalView->MeshCount(); }
     bool SetCamera(const FVector& Location,const FRotator& Rotation)
     {
@@ -807,7 +1019,80 @@ private:
     uint32 CollectionRevision=0;
 };
 // Keep the old Outline tab identity and scripting facade for saved layouts and existing tools.
-// The containing workspace owns feature navigation; placeholder pages cannot change render state.
+class SNPRActorEffects final : public SCompoundWidget
+{
+public:
+    SLATE_BEGIN_ARGS(SNPRActorEffects) {} SLATE_END_ARGS()
+    void Construct(const FArguments&)
+    {
+        Preview=MakeNPRCharacterPreview();
+        ChildSlot[SNew(SVerticalBox)
+            + SVerticalBox::Slot().AutoHeight().Padding(10,8)[SNew(SWrapBox).UseAllottedSize(true).InnerSlotPadding(FVector2D(12,8))
+                + SWrapBox::Slot()[SNew(SBorder).Padding(10)[SNew(SVerticalBox)
+                    + SVerticalBox::Slot().AutoHeight().Padding(0,0,0,6)[SNew(STextBlock).Text(FText::FromString(TEXT("非后处理"))).Font(FCoreStyle::GetDefaultFontStyle("Bold",12))]
+                    + SVerticalBox::Slot().AutoHeight()[SNew(SWrapBox).UseAllottedSize(true).InnerSlotPadding(FVector2D(6,6))
+                        + SWrapBox::Slot()[CategoryEntry(TEXT("Rim Light · 边缘光"),TEXT("RimLight"))]
+                        + SWrapBox::Slot()[CategoryEntry(TEXT("反向壳 · 几何描边"),TEXT("HullOutline"))]
+                        + SWrapBox::Slot()[CategoryEntry(TEXT("Surface · 表面组合"),TEXT("Surface"))]]]]
+                + SWrapBox::Slot()[SNew(SBorder).Padding(10)[SNew(SVerticalBox)
+                    + SVerticalBox::Slot().AutoHeight().Padding(0,0,0,6)[SNew(STextBlock).Text(FText::FromString(TEXT("后处理"))).Font(FCoreStyle::GetDefaultFontStyle("Bold",12))]
+                    + SVerticalBox::Slot().AutoHeight()[CategoryEntry(TEXT("Screen · 屏幕描边"),TEXT("ScreenOutline"))]]]]
+            + SVerticalBox::Slot().FillHeight(1)[SNew(SSplitter)
+            + SSplitter::Slot().Value(.32f)[SNew(SBorder).Padding(10)[SNew(SScrollBox)+SScrollBox::Slot()[SNew(SVerticalBox)
+                + SVerticalBox::Slot().AutoHeight()[SNew(STextBlock).Text(FText::FromString(TEXT("角色 · Mesh · 已应用效果"))).Font(FCoreStyle::GetDefaultFontStyle("Bold",16))]
+                + SVerticalBox::Slot().AutoHeight().Padding(0,8)[SNew(SButton).Text(FText::FromString(TEXT("使用关卡选中角色"))).OnClicked_Lambda([this]{Reload();return FReply::Handled();})]
+                + SVerticalBox::Slot().AutoHeight().Padding(0,4)[SNew(STextBlock).Text_Lambda([this]{return FText::FromString(Actor.IsValid()?Actor->GetActorLabel():TEXT("请在关卡大纲中只选中一个角色。"));}).AutoWrapText(true)]
+                + SVerticalBox::Slot().AutoHeight()[SNew(STextBlock).Text(FText::FromString(TEXT("按实际登记的绑定查看效果。选择单项只影响预览，原材质图中未登记的功能不作猜测。"))).AutoWrapText(true)]
+                + SVerticalBox::Slot().AutoHeight().Padding(0,8)[SNew(SButton).Text(FText::FromString(TEXT("查看全部效果组合"))).OnClicked_Lambda([this]{Filter=TEXT("All");Preview->SetEffectFilter(Filter);Preview->SetRimTarget(nullptr,INDEX_NONE);return FReply::Handled();})]
+                + SVerticalBox::Slot().AutoHeight()[SAssignNew(RowsBox,SVerticalBox)]]]]
+            + SSplitter::Slot().Value(.68f)[Preview->Widget()]]];
+        Reload();
+    }
+    void Reload()
+    {
+        Actor=GEditor && GEditor->GetSelectedActorCount()==1?Cast<AActor>(GEditor->GetSelectedActors()->GetSelectedObject(0)):nullptr;
+        Preview->LoadActor(Actor.Get());Signature=TEXT("!reload");BuildRows();
+    }
+    void FilterEffect(FName Effect){Filter=Effect;Preview->SetRimTarget(nullptr,INDEX_NONE);Preview->SetEffectFilter(Effect);}
+    TSharedPtr<FNPRCharacterPreview> GetPreview()const{return Preview;}
+    virtual void Tick(const FGeometry& G,double T,float D)override
+    {SCompoundWidget::Tick(G,T,D);Preview->Refresh();if(T>=NextUpdate){BuildRows();NextUpdate=T+.5;}}
+private:
+    TSharedRef<SWidget> CategoryEntry(const TCHAR* Label,FName Effect)
+    {return SNew(SButton).Text(FText::FromString(Label)).OnClicked_Lambda([this,Effect]
+        {if(Effect==TEXT("RimLight"))FNPROutlineEditorUI::SelectFeature(TEXT("Rim"));else FilterEffect(Effect);return FReply::Handled();});}
+    void BuildRows()
+    {
+        const auto Rows=UNPRModulationEditorLibrary::GetMeshEffects(Actor.Get());
+        FString NewSignature;
+        for(const auto& Row:Rows)NewSignature+=Row.Mesh->GetPathName()+FString::FromInt(Row.SlotIndex)+Row.Description;
+        if(NewSignature==Signature)return;Signature=NewSignature;RowsBox->ClearChildren();
+        for(const auto& Row:Rows)
+        {
+            const TWeakObjectPtr<UMeshComponent> Mesh=Row.Mesh;const int32 Slot=Row.SlotIndex;
+            TSharedRef<SWrapBox> Buttons=SNew(SWrapBox).UseAllottedSize(true).InnerSlotPadding(FVector2D(5,5));
+            Buttons->AddSlot()[SNew(SButton).Text(FText::FromString(TEXT("隔离 Mesh"))).OnClicked_Lambda([this,Mesh]{Preview->Isolate(Mesh.Get(),INDEX_NONE);return FReply::Handled();})];
+            Buttons->AddSlot()[SNew(SButton).Text(FText::FromString(TEXT("隔离材质槽"))).OnClicked_Lambda([this,Mesh,Slot]{Preview->Isolate(Mesh.Get(),Slot);return FReply::Handled();})];
+            for(const FName Effect:Row.Effects)
+            {
+                Buttons->AddSlot()[SNew(SButton).Text(FText::FromString(TEXT("只看 ")+Effect.ToString()))
+                    .OnClicked_Lambda([this,Mesh,Slot,Effect]{Filter=Effect;Preview->SetRimTarget(Mesh.Get(),Slot);Preview->SetEffectFilter(Effect);Preview->Isolate(Mesh.Get(),Slot);return FReply::Handled();})];
+                if(Effect==TEXT("RimLight")||Effect==TEXT("HullOutline")||Effect==TEXT("ScreenOutline"))
+                    Buttons->AddSlot()[SNew(SButton).Text(FText::FromString(Effect==TEXT("RimLight")?TEXT("编辑 Rim Light"):TEXT("编辑描边")))
+                        .OnClicked_Lambda([Mesh,Slot,Effect]{FNPROutlineEditorUI::EditEffect(Mesh.Get(),Slot,Effect);return FReply::Handled();})];
+            }
+            RowsBox->AddSlot().AutoHeight().Padding(0,4)[SNew(SBorder).Padding(8)[SNew(SVerticalBox)
+                + SVerticalBox::Slot().AutoHeight()[SNew(STextBlock).Text(FText::FromString(FString::Printf(TEXT("%s · 槽 %d / %s"),*Row.Mesh->GetName(),Slot,*Row.SlotName.ToString()))).AutoWrapText(true)]
+                + SVerticalBox::Slot().AutoHeight().Padding(0,4)[SNew(STextBlock).Text(FText::FromString(Row.Description)).AutoWrapText(true)]
+                + SVerticalBox::Slot().AutoHeight()[Buttons]]];
+        }
+    }
+    TWeakObjectPtr<AActor> Actor;
+    TSharedPtr<FNPRCharacterPreview> Preview;
+    TSharedPtr<SVerticalBox> RowsBox;
+    FString Signature;FName Filter=TEXT("All");double NextUpdate=0;
+};
+
 class SNPRModulationEditor final : public SCompoundWidget
 {
 public:
@@ -816,39 +1101,60 @@ public:
     {
         ChildSlot
         [SNew(SVerticalBox)
-            + SVerticalBox::Slot().AutoHeight()
-            [SNew(SBorder).BorderImage(FAppStyle::GetBrush("ToolPanel.GroupBorder")).Padding(FMargin(14,10))
-                [SNew(SHorizontalBox)
-                    + SHorizontalBox::Slot().AutoWidth().VAlign(VAlign_Center).Padding(0,0,24,0)
-                    [SNew(STextBlock).Text(FText::FromString(TEXT("NPR 调制"))).Font(FCoreStyle::GetDefaultFontStyle("Bold",16))]
-                    + SHorizontalBox::Slot().AutoWidth().Padding(0,0,8,0)[FeatureEntry(TEXT("Outline · 描边"),0)]
-                    + SHorizontalBox::Slot().AutoWidth()[FeatureEntry(TEXT("Rim Light · 边缘光"),1)]
-                ]
-            ]
+            + SVerticalBox::Slot().AutoHeight()[SNew(SBorder).BorderImage(FAppStyle::GetBrush("ToolPanel.GroupBorder")).Padding(FMargin(14,10))
+                [SNew(SWrapBox).UseAllottedSize(true).InnerSlotPadding(FVector2D(8,6))
+                    + SWrapBox::Slot()[FeatureEntry(TEXT("NPR 调制"),2)]
+                    + SWrapBox::Slot()[FeatureEntry(TEXT("Outline · 描边"),0)]
+                    + SWrapBox::Slot()[FeatureEntry(TEXT("Rim Light · 边缘光"),1)]]]
             + SVerticalBox::Slot().FillHeight(1)
             [SAssignNew(FeaturePages,SWidgetSwitcher)
                 + SWidgetSwitcher::Slot()[SAssignNew(Outline,SNPROutlineEditor)]
-                + SWidgetSwitcher::Slot()[SNew(SNPRRimEditor)]
+                + SWidgetSwitcher::Slot()[SAssignNew(Rim,SNPRRimEditor)]
+                + SWidgetSwitcher::Slot()[SAssignNew(Overview,SNPRActorEffects)]
             ]
         ];
     }
-    void ShowOutline() { ActiveFeature=0; FeaturePages->SetActiveWidgetIndex(0); }
+    void ShowOutline() {Show(0);}
+    void Show(int32 Feature)
+    {ActiveFeature=Feature;FeaturePages->SetActiveWidgetIndex(Feature);if(Feature==2){Overview->Reload();Overview->FilterEffect(TEXT("All"));}else if(Feature==1)Rim->SyncSelection();else Outline->SyncSelection();}
+    bool EditEffect(UMeshComponent* Mesh,int32 Slot,FName Effect)
+    {
+        if(!IsValid(Mesh)||Slot<0||Slot>=Mesh->GetNumMaterials())return false;
+        if(Effect==TEXT("RimLight")){Show(1);Rim->EditTarget(Mesh,Slot);return true;}
+        if(Effect==TEXT("HullOutline")||Effect==TEXT("ScreenOutline")){Show(0);return true;}
+        return false;
+    }
+    bool SelectFeature(FName Feature)
+    {
+        if(Feature==TEXT("Overview")){Show(2);return true;}
+        if(Feature==TEXT("Rim")){Show(1);return true;}
+        if(Feature==TEXT("Outline")){Show(0);return true;}
+        if(Feature==TEXT("Surface")||Feature==TEXT("HullOutline")||Feature==TEXT("ScreenOutline")){Show(2);Overview->FilterEffect(Feature);return true;}
+        return false;
+    }
+    TSharedPtr<FNPRCharacterPreview> CurrentPreview()const{return ActiveFeature==1?Rim->GetPreview():ActiveFeature==2?Overview->GetPreview():nullptr;}
     TSharedPtr<SNPROutlineEditor> GetOutline() const { return Outline; }
 private:
     TSharedRef<SWidget> FeatureEntry(const TCHAR* Label,int32 Feature)
     {
         return SNew(SCheckBox).Style(FAppStyle::Get(),"ToggleButtonCheckbox").Padding(FMargin(12,6))
             .IsChecked_Lambda([this,Feature]{return ActiveFeature==Feature?ECheckBoxState::Checked:ECheckBoxState::Unchecked;})
-            .OnCheckStateChanged_Lambda([this,Feature](ECheckBoxState Value){if(Value==ECheckBoxState::Checked){ActiveFeature=Feature;FeaturePages->SetActiveWidgetIndex(Feature);}})
-            [SNew(STextBlock).Text(FText::FromString(Label))];
+            .OnCheckStateChanged_Lambda([this,Feature](ECheckBoxState Value){if(Value==ECheckBoxState::Checked){Show(Feature);FSlateApplication::Get().DismissAllMenus();}})
+            [SNew(SBox).HeightOverride(28).VAlign(VAlign_Center)
+                [SNew(STextBlock).Text(FText::FromString(Label)).Font(FCoreStyle::GetDefaultFontStyle("Bold",Feature==2?16:12))]];
     }
     int32 ActiveFeature=0;
     TSharedPtr<SWidgetSwitcher> FeaturePages;
     TSharedPtr<SNPROutlineEditor> Outline;
+    TSharedPtr<SNPRRimEditor> Rim;
+    TSharedPtr<SNPRActorEffects> Overview;
 };
 TWeakPtr<SNPRModulationEditor> ActiveWorkspace;
 TWeakPtr<SNPROutlineEditor> ActiveEditor;
 }
+
+TSharedRef<FNPRCharacterPreview> MakeNPRCharacterPreview()
+{auto Preview=MakeShared<FCharacterPreview>();Preview->Construct();return Preview;}
 
 void FNPROutlineEditorUI::Register()
 {
@@ -864,7 +1170,11 @@ void FNPROutlineEditorUI::Register()
         FToolMenuOwnerScoped Owner(TEXT("PrincipledNPROutline"));
         UToolMenu* Menu=UToolMenus::Get()->ExtendMenu(TEXT("LevelEditor.MainMenu.Window"));
         Menu->FindOrAddSection(TEXT("NPR")).AddMenuEntry(TEXT("OpenNPROutline"),FText::FromString(TEXT("NPR 调制")),
-            FText::FromString(TEXT("打开 NPR 调制：Outline 描边与 Rim Light 边缘光")),FSlateIcon(),FUIAction(FExecuteAction::CreateStatic(&FNPROutlineEditorUI::Open)));
+            FText::FromString(TEXT("打开 NPR 效果工作区：分类、角色预览、Mesh 隔离与调参")),FSlateIcon(),FUIAction(FExecuteAction::CreateStatic(&FNPROutlineEditorUI::OpenWorkspace)));
+        UToolMenu* Toolbar=UToolMenus::Get()->ExtendMenu(TEXT("LevelEditor.LevelEditorToolBar.User"));
+        Toolbar->FindOrAddSection(TEXT("NPR")).AddEntry(FToolMenuEntry::InitToolBarButton(TEXT("NPRModulationWorkspace"),
+            FUIAction(FExecuteAction::CreateStatic(&FNPROutlineEditorUI::OpenWorkspace)),FText::FromString(TEXT("NPR 调制")),
+            FText::FromString(TEXT("NPR 效果工作区：角色预览、Mesh/材质槽隔离与效果分类")),FSlateIcon(FAppStyle::GetAppStyleSetName(),TEXT("LevelEditor.Tabs.Viewports"))));
     }));
 }
 void FNPROutlineEditorUI::Unregister()
@@ -874,6 +1184,17 @@ void FNPROutlineEditorUI::Unregister()
     FGlobalTabmanager::Get()->UnregisterNomadTabSpawner(OutlineTabId);
 }
 void FNPROutlineEditorUI::Open(){FGlobalTabmanager::Get()->TryInvokeTab(OutlineTabId);if(ActiveWorkspace.IsValid())ActiveWorkspace.Pin()->ShowOutline();if(ActiveEditor.IsValid())ActiveEditor.Pin()->ReloadSelection();}
+void FNPROutlineEditorUI::OpenWorkspace(){FGlobalTabmanager::Get()->TryInvokeTab(OutlineTabId);if(ActiveWorkspace.IsValid())ActiveWorkspace.Pin()->Show(2);}
+bool FNPROutlineEditorUI::SelectFeature(FName Feature){FGlobalTabmanager::Get()->TryInvokeTab(OutlineTabId);return ActiveWorkspace.IsValid()&&ActiveWorkspace.Pin()->SelectFeature(Feature);}
+bool FNPROutlineEditorUI::EditEffect(UMeshComponent* Mesh,int32 Slot,FName Effect)
+{
+    if(!IsValid(Mesh)||!IsValid(Mesh->GetOwner()))return false;
+    if(GEditor->GetSelectedActorCount()!=1||GEditor->GetSelectedActors()->GetSelectedObject(0)!=Mesh->GetOwner())
+    {GEditor->SelectNone(false,true,false);GEditor->SelectActor(Mesh->GetOwner(),true,true,true);}
+    FGlobalTabmanager::Get()->TryInvokeTab(OutlineTabId);
+    return ActiveWorkspace.IsValid()&&ActiveWorkspace.Pin()->EditEffect(Mesh,Slot,Effect);
+}
+TSharedPtr<FNPRCharacterPreview> FNPROutlineEditorUI::CurrentPreview(){return ActiveWorkspace.IsValid()?ActiveWorkspace.Pin()->CurrentPreview():nullptr;}
 bool FNPROutlineEditorUI::ExportComparison(const FString& Directory){return ActiveEditor.IsValid()&&ActiveEditor.Pin()->Export(Directory);}
 bool FNPROutlineEditorUI::SetComparisonCaptureSize(int32 Width,int32 Height){return ActiveEditor.IsValid()&&ActiveEditor.Pin()->SetCaptureSize(Width,Height);}
 int32 FNPROutlineEditorUI::GetComparisonMeshCount(bool bOutlined){return ActiveEditor.IsValid()?ActiveEditor.Pin()->MeshCount(bOutlined):0;}

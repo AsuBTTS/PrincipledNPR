@@ -21,7 +21,7 @@ export default withMermaid(defineConfig({
       section('开始使用', [['系统介绍','/guide/introduction'],['安装与环境','/guide/installation'],['快速开始','/guide/quick-start'],['NPR 调制插件使用说明','/guides/NPR调制插件使用说明']]),
       { text: 'Principled 参数', link: '/principled/overview' },
       section('功能', [['Outline 描边','/outline/outline_introduction'],['Surface 材质组合','/features/surface-material'],['Rim Light 边缘光','/rim/rim_light_introduction'],['基础颜色','/features/base-color'],['Toon 明暗','/features/toon-shading'],['MatCap','/features/matcap']]),
-      { text: '编辑器', link: '/guides/NPR调制插件使用说明' },
+      { text: '统一效果工作区', link: '/guides/npr-workspace' },
       section('开发者', [['项目架构设计','/architecture/项目架构设计'],['项目开发说明与约束','/developer/项目开发说明与约束'],['渲染管线','/developer/shader-pipeline'],['参数契约与校验','/developer/parameter-schema']]),
       section('参考资料', [['lilToon 源码对照','/reference/liltoon-comparison'],['既有技术资料','/reference/legacy'],['实现状态与证据','/reference/status'],['文档开发','/reference/documentation']])
     ],

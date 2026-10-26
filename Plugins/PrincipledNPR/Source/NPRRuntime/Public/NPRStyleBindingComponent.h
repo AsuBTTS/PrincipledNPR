@@ -71,6 +71,12 @@ public:
 
     bool IsRimBoundTo(const UMeshComponent* Mesh, int32 SlotIndex) const;
 
+    /** Read-only ownership queries for the editor's effect inventory and original comparison. */
+    bool OwnsBoundMaterials() const;
+    bool HasTrackedMaterials() const { return IsValid(BoundMesh) && !ActiveMaterials.IsEmpty(); }
+    UMaterialInstanceDynamic* GetOwnedMaterial(const UMeshComponent* Mesh, int32 SlotIndex) const;
+    UMaterialInterface* GetSourceMaterial(const UMeshComponent* Mesh, int32 SlotIndex) const;
+
     /** Saved actor configuration; preview changes stay transient until the editor saves the level. */
     UPROPERTY(EditInstanceOnly, BlueprintReadOnly, Category = "NPR|Rim")
     TObjectPtr<UMeshComponent> RimMesh = nullptr;

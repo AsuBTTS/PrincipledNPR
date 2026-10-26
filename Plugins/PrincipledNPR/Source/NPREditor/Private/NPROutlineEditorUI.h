@@ -8,6 +8,10 @@ public:
     static void Register();
     static void Unregister();
     static void Open();
+    static void OpenWorkspace();
+    static bool SelectFeature(FName Feature);
+    static bool EditEffect(class UMeshComponent* Mesh,int32 SlotIndex,FName Effect);
+    static TSharedPtr<class FNPRCharacterPreview> CurrentPreview();
     static bool ExportComparison(const FString& Directory);
     static bool SetComparisonCaptureSize(int32 Width, int32 Height);
     static int32 GetComparisonMeshCount(bool bOutlined);

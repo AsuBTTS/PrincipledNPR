@@ -67,4 +67,4 @@ const FName WidthName(NPRRimContract::WidthMaterialName);
 - 实际二进制：`Tools/audit_rim_light_contract.py` 在 UE 5.8.3 / Windows 的独立 NullRHI 进程中重载并读取现有三个资产，34 项通过，包含四个命名函数输入的接线检查，未保存资产，见 `ParameterExposureValidation.json`。这是参数暴露检查，不是新画面验收。
 - C++ 构建与执行范围见 `ImplementationValidation.json`。2026-10-22 在 UE 5.8.3 / Windows / DX12 SM6 完成三项自动化用例，其中 `NPR.Rim.MaterialContract` 覆盖默认值、单位转换、显式零值、HDR 和非法输入；双槽与真实图像范围见第③步记录。
 
-完整 Rim 工作流仍处于开发中。第②步不会让 Profile 自动驱动画面，也没有新增角色绑定或调制窗口控件；角色、多视角、阴影、时域和 Cook 验收仍须单独完成。
+本页记录第②步的参数交接范围：当时没有新增角色绑定或调制窗口控件。2026-10-26 的 Profile、显式槽位绑定与窗口预览已另行接通，操作与新验证见[工作区说明](../Editor/NPRWorkspace.md)。完整语义解析、角色动画、多视角、阴影、时域和 Cook 仍需分别验收；第②步的历史记录不覆盖这些后续能力。

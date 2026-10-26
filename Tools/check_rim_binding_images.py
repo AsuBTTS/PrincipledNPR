@@ -1,12 +1,18 @@
 """Measure real UE captures from NPR.Rim.RenderBinding; never synthesizes images."""
 import hashlib
 import json
+import argparse
 from pathlib import Path
 import numpy as np
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "Documentation/RimLight/BindingValidation"
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--captures', type=Path, default=ROOT / "Documentation/RimLight/BindingValidation")
+parser.add_argument('--automation-report', type=Path, default=ROOT / "Saved/Automation/RimBinding/index.json")
+parser.add_argument('--output', type=Path)
+args = parser.parse_args()
+OUT = args.captures
 names = ["Off", "Default8", "Wide25", "Hard25", "Soft25", "Red25", "Red25Double", "OffAgain"]
 images = {name: np.asarray(Image.open(OUT / (name + ".png")).convert("RGB"), dtype=np.float32) for name in names}
 checks = {"Eight512Captures": all(im.shape == (512, 512, 3) for im in images.values())}
@@ -28,9 +34,12 @@ red_gain = float((images["Red25Double"][..., 0] - images["Red25"][..., 0])[red_m
 checks["IntensityIncreasesRedContribution"] = red_gain > 3
 off_error = float(np.abs(images["OffAgain"] - off).max())
 checks["ZeroRestoresRenderedOff"] = off_error <= 2
-automation = json.loads((ROOT / "Saved/Automation/RimBinding/index.json").read_text(encoding="utf-8-sig"))
+automation = json.loads(args.automation_report.read_text(encoding="utf-8-sig"))
 tests = [t for t in automation["tests"] if t["fullTestPath"].startswith("NPR.Rim.")]
-checks["ThreeCppTestsSucceeded"] = len(tests) == 3 and all(t["state"] == "Success" and t["errors"] == 0 for t in tests)
+required_tests = {"NPR.Rim.LiveBinding", "NPR.Rim.MaterialContract", "NPR.Rim.RenderBinding",
+                  "NPR.Rim.StyleProfile", "NPR.Rim.ProfileBinding"}
+checks["RequiredRimCppTestsSucceeded"] = required_tests.issubset({t["fullTestPath"] for t in tests}) and all(
+    t["state"] == "Success" and t["errors"] == 0 for t in tests)
 report = {
     "status": "Passed" if all(checks.values()) else "Failed",
     "checks": {k: bool(v) for k, v in checks.items()},
@@ -46,6 +55,8 @@ report = {
     "scope": "One stable MID in an isolated preview world, eight parameter variants, DX12/SM6. Not character, shadow, animation, temporal stability, Cook or performance acceptance. PNGs are real render-target exports, not UI screenshots.",
     "image_review": "See ImageReview.json; review applies only to matching image hashes"
 }
-(OUT / "ImageMetrics.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+output = args.output or OUT / "ImageMetrics.json"
+output.parent.mkdir(parents=True, exist_ok=True)
+output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 print(report["status"], json.dumps(report["checks"]))
 assert all(checks.values()), "Real rendered Rim binding image gate failed; inspect ImageMetrics.json"

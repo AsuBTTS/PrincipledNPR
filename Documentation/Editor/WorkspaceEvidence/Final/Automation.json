@@ -1,0 +1,205 @@
+﻿{
+	"devices": [
+		{
+			"deviceName": "EVANGELION-AV01",
+			"instance": "12069FE644FC2DD825CE6AB81EF7E038",
+			"instanceName": "EVANGELION-AV01-12908",
+			"platform": "WindowsEditor",
+			"oSVersion": "Windows 11 (25H2) [10.0.26200.9711] ",
+			"model": "Default",
+			"gPU": "Intel(R) UHD Graphics",
+			"cPUModel": "Intel(R) Core(TM) i7-14650HX",
+			"rAMInGB": 32,
+			"renderMode": "D3D12_SM6",
+			"rHI": "D3D12 (SM6)",
+			"appInstanceLog": ""
+		}
+	],
+	"reportCreatedOn": "2026.10.26-04.27.39",
+	"succeeded": 10,
+	"succeededWithWarnings": 0,
+	"failed": 0,
+	"notRun": 0,
+	"inProcess": 0,
+	"totalDuration": 12.985933303833008,
+	"comparisonExported": false,
+	"comparisonExportDirectory": "",
+	"tests": [
+		{
+			"testDisplayName": "PreviewSlotParameters",
+			"fullTestPath": "NPR.Editor.PreviewSlotParameters",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"12069FE644FC2DD825CE6AB81EF7E038"
+			],
+			"duration": 0.25221729278564453,
+			"dateTime": "2026.10.26-04.27.26",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "RimPreviewPixels",
+			"fullTestPath": "NPR.Editor.RimPreviewPixels",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"12069FE644FC2DD825CE6AB81EF7E038"
+			],
+			"duration": 2.0799384117126465,
+			"dateTime": "2026.10.26-04.27.26",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "RimWorkflow",
+			"fullTestPath": "NPR.Editor.RimWorkflow",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"12069FE644FC2DD825CE6AB81EF7E038"
+			],
+			"duration": 0.99214589595794678,
+			"dateTime": "2026.10.26-04.27.28",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "LiveBinding",
+			"fullTestPath": "NPR.Rim.LiveBinding",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"12069FE644FC2DD825CE6AB81EF7E038"
+			],
+			"duration": 0.021403200924396515,
+			"dateTime": "2026.10.26-04.27.29",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "MaterialContract",
+			"fullTestPath": "NPR.Rim.MaterialContract",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"12069FE644FC2DD825CE6AB81EF7E038"
+			],
+			"duration": 0.01586420089006424,
+			"dateTime": "2026.10.26-04.27.29",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "ProfileBinding",
+			"fullTestPath": "NPR.Rim.ProfileBinding",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"12069FE644FC2DD825CE6AB81EF7E038"
+			],
+			"duration": 0.015726100653409958,
+			"dateTime": "2026.10.26-04.27.29",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "RenderBinding",
+			"fullTestPath": "NPR.Rim.RenderBinding",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"12069FE644FC2DD825CE6AB81EF7E038"
+			],
+			"duration": 2.710134744644165,
+			"dateTime": "2026.10.26-04.27.29",
+			"entries": [
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "Eight real GPU captures across frames: E:/unrealProjects/PrincipledNPR/Saved/IntegrationTests/HUA-20261026/Project/Documentation/RimLight/BindingValidation. Image measurements are a separate gate.",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2026.10.26-04.27.32"
+				}
+			],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "StyleProfile",
+			"fullTestPath": "NPR.Rim.StyleProfile",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"12069FE644FC2DD825CE6AB81EF7E038"
+			],
+			"duration": 0.019000697880983353,
+			"dateTime": "2026.10.26-04.27.32",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "Composer",
+			"fullTestPath": "NPR.Surface.Composer",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"12069FE644FC2DD825CE6AB81EF7E038"
+			],
+			"duration": 0.035517599433660507,
+			"dateTime": "2026.10.26-04.27.32",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "RenderComposition",
+			"fullTestPath": "NPR.Surface.RenderComposition",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"12069FE644FC2DD825CE6AB81EF7E038"
+			],
+			"duration": 6.8439850807189941,
+			"dateTime": "2026.10.26-04.27.32",
+			"entries": [
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "17 real GPU captures: E:/unrealProjects/PrincipledNPR/Saved/IntegrationTests/HUA-20261026/Project/Documentation/Surface/Validation; relative HDR composition error=0.00884666",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2026.10.26-04.27.39"
+				}
+			],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		}
+	]
+}

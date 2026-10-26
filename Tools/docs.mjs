@@ -50,6 +50,11 @@ const sourcePaths = [contractPath, headerPath, cppPath, builderPath,
   'Plugins/PrincipledNPR/Source/NPREditor/Private/NPRRimEditorOptions.h',
   'Plugins/PrincipledNPR/Source/NPREditor/Private/NPRRimEditorUI.h',
   'Plugins/PrincipledNPR/Source/NPREditor/Private/NPRRimEditorUI.cpp',
+  'Plugins/PrincipledNPR/Source/NPREditor/Private/NPRCharacterPreview.h',
+  'Plugins/PrincipledNPR/Source/NPREditor/Private/NPRModulationEditorLibrary.cpp',
+  'Plugins/PrincipledNPR/Source/NPREditor/Public/NPRModulationEditorLibrary.h',
+  'Plugins/PrincipledNPR/Source/NPREditor/Private/Tests/NPRRimPreviewRenderTests.cpp',
+  'Plugins/PrincipledNPR/Source/NPREditor/Private/NPROutlineEditorUI.h',
   'Plugins/PrincipledNPR/Source/NPRRuntime/Public/NPRMaterialProfile.h',
   'Plugins/PrincipledNPR/Source/NPRRuntime/Public/NPRBackendStylePackage.h',
   'Plugins/PrincipledNPR/Source/NPRRuntime/Private/NPRStyleBindingComponent.cpp',
@@ -159,7 +164,8 @@ const documentationPages = [
  ['Documentation/项目开发说明与约束.md', 'docs/developer/项目开发说明与约束.md'],
  ['Documentation/NPR调制插件使用说明.md', 'docs/guides/NPR调制插件使用说明.md'],
  ['Documentation/outline_introduction.md', 'docs/outline/outline_introduction.md'],
- ['Documentation/rim_light_introduction.md', 'docs/rim/rim_light_introduction.md']
+ ['Documentation/rim_light_introduction.md', 'docs/rim/rim_light_introduction.md'],
+ ['Documentation/Editor/NPRWorkspace.md', 'docs/guides/npr-workspace.md']
 ]
 const toPosix = p => p.split(path.sep).join('/')
 const localLinks = /\]\(([^\s)]+)(?:\s+"[^"]*")?\)/g
@@ -213,6 +219,11 @@ const resources=[...sourcePaths,
  'Documentation/RimLight/ParameterHandoff.md',
  'Documentation/RimLight/RuntimeBinding.md',
  'Documentation/RimLight/EditorWorkflow.md',
+ 'Documentation/Editor/NPRWorkspace.md',
+ 'Documentation/Editor/WorkspaceValidation.json',
+ 'Documentation/RimLight/Integration-2026-10-26.md',
+ ...files(path.join(root,'Documentation/RimLight/Integration-2026-10-26')).map(p=>toPosix(path.relative(root,p))),
+ ...(fs.existsSync(path.join(root,'Documentation/Editor/WorkspaceEvidence'))?files(path.join(root,'Documentation/Editor/WorkspaceEvidence')).map(p=>toPosix(path.relative(root,p))):[]),
  'Documentation/RimLight/ContractValidation.json',
  'Documentation/RimLight/ParameterExposureValidation.json',
  'Documentation/RimLight/ImplementationValidation.json',

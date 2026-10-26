@@ -51,6 +51,28 @@ bool UNPRStyleBindingComponent::IsRimBoundTo(const UMeshComponent* Mesh, int32 S
         Mesh->GetMaterial(SlotIndex) == Active->Get();
 }
 
+bool UNPRStyleBindingComponent::OwnsBoundMaterials() const
+{
+    if (!IsValid(BoundMesh) || ActiveMaterials.IsEmpty()) return false;
+    for (const auto& Entry : ActiveMaterials)
+        if (!IsValid(Entry.Value) || Entry.Key < 0 || Entry.Key >= BoundMesh->GetNumMaterials() ||
+            BoundMesh->GetMaterial(Entry.Key) != Entry.Value) return false;
+    return true;
+}
+
+UMaterialInstanceDynamic* UNPRStyleBindingComponent::GetOwnedMaterial(const UMeshComponent* Mesh, int32 SlotIndex) const
+{
+    UMaterialInstanceDynamic* MID = BoundMesh == Mesh ? ActiveMaterials.FindRef(SlotIndex).Get() : nullptr;
+    return IsValid(Mesh) && IsValid(MID) && SlotIndex >= 0 && SlotIndex < Mesh->GetNumMaterials() &&
+        Mesh->GetMaterial(SlotIndex) == MID ? MID : nullptr;
+}
+
+UMaterialInterface* UNPRStyleBindingComponent::GetSourceMaterial(const UMeshComponent* Mesh, int32 SlotIndex) const
+{
+    if (!IsValid(Mesh) || SlotIndex < 0 || SlotIndex >= Mesh->GetNumMaterials()) return nullptr;
+    return GetOwnedMaterial(Mesh, SlotIndex) ? OriginalMaterials.FindRef(SlotIndex).Get() : Mesh->GetMaterial(SlotIndex);
+}
+
 bool UNPRStyleBindingComponent::ApplyRimPreview(UMeshComponent* Mesh, int32 SlotIndex,
     UNPRSurfaceRecipe* Recipe, const FNPRRimSurfaceInputs& Inputs,
     const FNPRRimParameters& Parameters, FString& OutError)

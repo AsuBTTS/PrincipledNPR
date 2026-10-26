@@ -12,6 +12,13 @@ Config/*.ini filter=npr-config
 *.uproject text eol=lf filter=npr-config
 Documentation/**/*.json text eol=lf filter=npr-record
 Documentation/*.json text eol=lf filter=npr-record
+# Frozen UE acceptance records keep their original bytes so published SHA-256 checks remain valid.
+Documentation/Editor/WorkspaceEvidence/**/*.json -text -filter -whitespace
+Documentation/Editor/WorkspaceEvidence/**/*.log -text -whitespace
+Documentation/Editor/WorkspaceEvidence/**/*.txt -text -whitespace
+Documentation/RimLight/Integration-2026-10-26/**/*.json -text -filter -whitespace
+Documentation/RimLight/Integration-2026-10-26/**/*.log -text -whitespace
+Documentation/RimLight/Integration-2026-10-26/**/*.txt -text -whitespace
 SourceAssets/Wanderer/Original/*.txt -text -diff
 *.uasset filter=lfs diff=lfs merge=lfs -text
 *.umap filter=lfs diff=lfs merge=lfs -text

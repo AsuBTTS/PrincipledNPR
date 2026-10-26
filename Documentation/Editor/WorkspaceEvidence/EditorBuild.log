@@ -1,0 +1,36 @@
+Using bundled DotNet SDK version: 10.0 win-x64
+Running UnrealBuildTool: dotnet "..\..\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" PrincipledNPREditor Win64 Development -Project=E:\unrealProjects\PrincipledNPR\PrincipledNPR.uproject -WaitMutex
+Log file: C:\Users\12894\AppData\Local\UnrealBuildTool\Log.txt
+Determining max actions to execute in parallel (16 physical cores, 24 logical cores)
+  Executing up to 16 processes, one per physical core
+Using 'git status' to determine working set for adaptive non-unity build (E:\unrealProjects\PrincipledNPR).
+UbaServer - Listening on 0.0.0.0:1345
+Available x64 toolchains (1):
+ * D:\D\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.51.36231
+    (Family=14.51.36231, FamilyRank=2, Version=14.51.36260, HostArchitecture=x64, ReleaseChannel=Latest, Architecture=x64)
+Visual Studio compiler version 14.51.36260 is newer than latest preferred version 14.50.35717. Please use caution as this compiler has not been heavily tested
+Building PrincipledNPREditor...
+===== Toolchain Information =====
+Using ISPC compiler (E:\Unreal Engine\UE_5.8\Engine\Source\ThirdParty\Intel\ISPC\bin\Windows\ispc.exe)
+  Intel(r) Implicit SPMD Program Compiler (Intel(r) ISPC), 1.24.0 (build commit  @ 20250404, LLVM 18.1.2) 
+Using Visual Studio 14.51.36260 toolchain (D:\D\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.51.36231) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+Warning: Visual Studio compiler 14.51.36260 is not a preferred version
+[Adaptive Build] Excluded from NPRRuntime unity file: NPRStyleBindingComponent.cpp, NPRRimBindingTests.cpp, NPRRimProfileBindingTests.cpp
+[Adaptive Build] Excluded from NPREditor unity file: NPRModulationEditorLibrary.cpp, NPROutlineEditorUI.cpp, NPRRimEditorUI.cpp, NPRRimPreviewRenderTests.cpp
+=================================
+Using Unreal Build Accelerator local executor to run 4 action(s)
+  CPU 16 physical cores, 24 logical cores
+  Memory 31.71 GB physical, 35.51 GB/61.71 GB committed
+  UBA Storage capacity 40 GB
+[1/4] Compile [x64] NPRRimPreviewRenderTests.cpp
+[2/4] Link [x64] UnrealEditor-NPREditor.lib
+  正在创建库 E:/unrealProjects/PrincipledNPR/Plugins/PrincipledNPR/Intermediate/Build/Win64/x64/UnrealEditor/Development/NPREditor/UnrealEditor-NPREditor.lib 和对象 E:/unrealProjects/PrincipledNPR/Plugins/PrincipledNPR/Intermediate/Build/Win64/x64/UnrealEditor/Development/NPREditor/UnrealEditor-NPREditor.exp
+[3/4] Link [x64] UnrealEditor-NPREditor.dll
+[4/4] WriteMetadata PrincipledNPREditor.target [NoUba]
+
+Total time in Unreal Build Accelerator local executor: 11.06 seconds
+Output binary: E:\Unreal Engine\UE_5.8\Engine\Binaries\Win64\UnrealEditor.exe
+
+Result: Succeeded
+Total execution time: 15.02 seconds
+Trace written to file C:\Users\12894\AppData\Local\UnrealBuildTool\Trace.uba with size 6.6kb

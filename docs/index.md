@@ -23,7 +23,7 @@ hero:
 
 ## 我们做到哪一步了
 
-我们已经接通 Outline 的主要使用流程，可以对整角色和局部区域调整描边，并提供左右对比预览、预设保存和图片导出。[Surface Master](./features/surface-material.md) 已让基础颜色、法线、自发光与 Rim 在同一个材质槽中组合，并通过原生 Toon + Rim 的球体验证。完整 Principled 参数转换还在开发；Surface 和 Rim 的调制窗口与角色工作流仍待接入，MatCap 仍在规划中。每个功能页分别说明当前能力和验证范围。
+我们已经接通 Outline 的主要使用流程，可以对整角色和局部区域调整描边，并提供左右对比预览、预设保存和图片导出。[统一效果工作区](./guides/npr-workspace.md) 增加总览分类、各 Mesh/材质槽的效果清单，以及 Rim 的 Profile、实时角色预览、隔离和保存。[Surface Master](./features/surface-material.md) 保留基础颜色、法线和自发光，并通过同槽 Toon + Rim 的受控球体验证。完整 Principled 参数转换和任意角色自动转换仍在开发，MatCap 仍在规划；角色动画、Cook 与性能需要各自验收。
 
 [查看实现状态与验证记录](./reference/status.md) · [查看更新记录](./changelog.md)
 

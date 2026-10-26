@@ -138,4 +138,6 @@ Screen 的区域宽度还要换成当前内部渲染分辨率的采样半径：
 
 原始证据：[时间稳定性](Outline/Temporal/Acceptance.json)、[界面记录](Outline/MaterialSlotUI.md)、[Surface 共存验证](Surface/ImplementationValidation.json)。
 
+2026-10-26，Outline 的编辑入口保留在窗口顶部，以较小的 12 号字与 16 号字的 NPR 调制入口区分。统一总览内部按后处理/非后处理组织已登记效果；从分类查看 Screen/Hull 只改变预览过滤，进入 Outline 编辑页后才修改实际描边设置。旧脚本入口继续打开 Outline。最终导航实机检查与共享角色预览范围见[工作区说明](Editor/NPRWorkspace.md)和[验证记录](Editor/WorkspaceValidation.json)，不追溯扩大此前的时域、分层宽度或动画验收。
+
 源码主要位于 `NPROutlinePreset`、`NPROutlineActorComponent`、`NPROutlineComponent`、`NPROutlineEditorLibrary` 和 `NPROutlineEditorUI`。修改算法、参数或窗口后，同步本文、[开发约束](项目开发说明与约束.md)及[状态清单](../docs/reference/status.md)。

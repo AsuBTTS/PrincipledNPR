@@ -1,6 +1,6 @@
 # Rim Light 四项材质控制
 
-我们按数学报告第 4.5 节创建可复用的角度边缘光材质函数。这个实现先让四项控制在材质实例中生效，完整角色绑定、调制窗口和风格 Resolver 仍待接入。历史报告保留，正式使用入口见 `docs/features/rim-light.md`。
+我们按数学报告第 4.5 节创建可复用的角度边缘光材质函数。本页保留 2026-10-21/22 的材质构造与验证范围。2026-10-26 已补齐 RGB Profile、显式角色槽位绑定、实时窗口与隔离预览，当前操作见[统一效果工作区](../Editor/NPRWorkspace.md)；完整语义 Resolver 仍未完成。
 
 ## 资产与参数
 
@@ -8,7 +8,7 @@
 - `/PrincipledNPR/RimLight/M_RimLight`：普通 Opaque / Default Lit 表面材质，固定灰色基础表面，函数输出接 Emissive。没有引用 ToonProfile。
 - `/PrincipledNPR/RimLight/MI_RimLight_Preview`：默认 8° / 2° / 强度 1 / 白色，方便直接查看。基础材质和函数的强度默认值仍为 0。
 
-实例只有四项用户控制：亮边宽度、边缘柔和度、边缘光强度、边缘光颜色。完整单位、硬域、推荐范围和后端映射在 `MaterialParameters.v1.json`。前两项实例参数用度数，进入函数前乘 π/180，函数仍使用现有 canonical 弧度 ID。2026-10-22 将颜色正式定义为可选语义 ID `RimColor`，默认线性白色；旧标量 ID 保持不变，旧风格缺颜色时继承白色，现有只存标量的 C++ patch 尚未增加 RGB 存储。
+实例只有四项用户控制：亮边宽度、边缘柔和度、边缘光强度、边缘光颜色。完整单位、硬域、推荐范围和后端映射在 `MaterialParameters.v1.json`。前两项实例参数用度数，进入函数前乘 π/180，函数仍使用现有 canonical 弧度 ID。2026-10-22 将颜色正式定义为可选语义 ID `RimColor`，默认线性白色；旧标量 ID 保持不变，旧风格缺颜色时使用白色。后续 Profile 已增加独立 `Colors` 覆盖，原有标量 `Values` 结构继续保留。
 
 ## 计算与阶段
 
@@ -30,7 +30,7 @@ N、Ng、V 分别是世界空间 Rim 法线、几何法线和指向相机的方�
 
 构造来源是 `Tools/create_rim_light_assets.py`，仅创建自有目录下的三个资产；已有同名但无归属标记的资产会报错，已有自有资产保留人工调整。它不替换角色材质、不保存用户地图。
 
-运行时 `FNPRRimParameters` 提供四项强类型值、`Validate` 与弧度转材质度数的方法，交接规则见 [② 参数契约](ParameterHandoff.md)。第③步新增 `UNPRStyleBindingComponent::SetRimParameters`，检查全部绑定槽后整组写入三个 Scalar 和一个 Vector，支持颜色与实时更新，见 [③ 动态调参](RuntimeBinding.md)。旧 `SetScalarParameter` 继续直接按材质名写标量，不自动做 Rim 转换。Profile 存储与完整语义解析仍需后续接入。
+运行时 `FNPRRimParameters` 提供四项强类型值、`Validate` 与弧度转材质度数的方法，交接规则见 [② 参数契约](ParameterHandoff.md)。第③步新增 `UNPRStyleBindingComponent::SetRimParameters`，检查全部绑定槽后整组写入三个 Scalar 和一个 Vector，支持颜色与实时更新，见 [③ 动态调参](RuntimeBinding.md)。旧 `SetScalarParameter` 继续直接按材质名写标量，不自动做 Rim 转换。Profile 存储和角色绑定已在[编辑工作流](EditorWorkflow.md)接通；完整 Principled 语义解析仍未完成。
 
 ## 验证边界
 

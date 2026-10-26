@@ -1,0 +1,105 @@
+{
+  "status": "Failed",
+  "checks": {
+    "Eight512Captures": true,
+    "DefaultEnablesVisibleRim": true,
+    "WidthIncreasesCoverage": true,
+    "SoftnessBroadensTransition": true,
+    "RGBChangesHue": true,
+    "IntensityIncreasesRedContribution": true,
+    "ZeroRestoresRenderedOff": true,
+    "ThreeCppTestsSucceeded": false
+  },
+  "thresholds": {
+    "signal_channel_delta_8bit": 12,
+    "minimum_on_pixels": 500,
+    "wide_to_default_area_ratio_min": 1.5,
+    "soft_to_hard_transition_ratio_min": 1.2,
+    "minimum_red_channel_gain_8bit": 3,
+    "off_again_max_error_8bit": 2
+  },
+  "metrics": {
+    "signal_area_pixels": {
+      "Off": 0,
+      "Default8": 3238,
+      "Wide25": 18664,
+      "Hard25": 17582,
+      "Soft25": 25504,
+      "Red25": 18400,
+      "Red25Double": 19048,
+      "OffAgain": 0
+    },
+    "transition_pixels": {
+      "Hard25": 2433,
+      "Soft25": 13715
+    },
+    "red_mean_rgb_delta": [
+      186.51190185546875,
+      2.6069021224975586,
+      1.2892391681671143
+    ],
+    "double_intensity_red_gain": 48.74924087524414,
+    "off_again_max_error": 0.0
+  },
+  "captures_sha256": {
+    "Off.png": "c250e14413c1b8df095e5597cb74c89948b17faef5c5653a075871758a625292",
+    "Default8.png": "eae5cbd7b35850721157ad76c0d146d1a4129cfed19efa7cfb432d36bf0ab453",
+    "Wide25.png": "f6315a1a290091633f4e696b0dfce70f05e136e3a12302cb923889a29226fa40",
+    "Hard25.png": "f1314d2ce110cadd9d07280896e8ad275e7962b72c0ff3600c2dd267514b103f",
+    "Soft25.png": "70edac569bf341a48dbdb8f8fbed44a4e1861c3be8d925761fa920128fbc3de5",
+    "Red25.png": "d0e809219d1a1d5b643157420efba1d1346b9da2757429fee7f6b39618cf7a98",
+    "Red25Double.png": "830e6fdaba25aa58b217e9fb5e6c3d883536195fe8aa58b0dde9063f50a95129",
+    "OffAgain.png": "c250e14413c1b8df095e5597cb74c89948b17faef5c5653a075871758a625292"
+  },
+  "automation": {
+    "reportCreatedOn": "2026.10.25-16.55.04",
+    "devices": [
+      {
+        "platform": "WindowsEditor",
+        "oSVersion": "Windows 11 (25H2) [10.0.26200.9711] ",
+        "gPU": "Intel(R) UHD Graphics",
+        "renderMode": "D3D12_SM6",
+        "rHI": "D3D12 (SM6)"
+      }
+    ],
+    "tests": [
+      {
+        "fullTestPath": "NPR.Rim.LiveBinding",
+        "state": "Success",
+        "errors": 0,
+        "warnings": 0,
+        "duration": 0.04747310280799866
+      },
+      {
+        "fullTestPath": "NPR.Rim.MaterialContract",
+        "state": "Success",
+        "errors": 0,
+        "warnings": 0,
+        "duration": 0.023664098232984543
+      },
+      {
+        "fullTestPath": "NPR.Rim.ProfileBinding",
+        "state": "Success",
+        "errors": 0,
+        "warnings": 0,
+        "duration": 0.022054899483919144
+      },
+      {
+        "fullTestPath": "NPR.Rim.RenderBinding",
+        "state": "Success",
+        "errors": 0,
+        "warnings": 0,
+        "duration": 3.3749148845672607
+      },
+      {
+        "fullTestPath": "NPR.Rim.StyleProfile",
+        "state": "Success",
+        "errors": 0,
+        "warnings": 0,
+        "duration": 0.01336739957332611
+      }
+    ]
+  },
+  "scope": "One stable MID in an isolated preview world, eight parameter variants, DX12/SM6. Not character, shadow, animation, temporal stability, Cook or performance acceptance. PNGs are real render-target exports, not UI screenshots.",
+  "image_review": "See ImageReview.json; review applies only to matching image hashes"
+}

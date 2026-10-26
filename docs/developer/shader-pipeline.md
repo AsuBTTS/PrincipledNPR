@@ -20,7 +20,7 @@ Screen 放在景深之后、时间抗锯齿之前。TSR 是时间超分辨率，
 
 `MF_RimLight` 对世界法线与视线归一化，使用点积、Arcsine、像素导数和三次平滑过渡计算亮边；几何法线另外提供正面门控。整个网络使用材质节点，重复 Band 网络封装在同一函数内。计算不需要材质以外的资源或阶段，因此没有新增 Custom HLSL、`.ush` 或独立 Pass。这个函数可接到普通表面材质或 Substrate BSDF 的 Emissive，不引用 ToonProfile。
 
-构造来源是 `Tools/create_rim_light_assets.py`，实际资产位于 `Plugins/PrincipledNPR/Content/RimLight`。四项绑定来自 `Documentation/RimLight/MaterialParameters.v1.json`；`FNPRRimParameters` 提供校验与弧度转材质度数。颜色 `RimColor` 已成为可选线性 RGB 语义 ID，旧标量 Patch 的存储仍待第④步扩展。实例参数编辑、函数调用与完整 Runtime Resolver 是不同接入范围。
+构造来源是 `Tools/create_rim_light_assets.py`，实际资产位于 `Plugins/PrincipledNPR/Content/RimLight`。四项绑定来自 `Documentation/RimLight/MaterialParameters.v1.json`；`FNPRRimParameters` 提供校验与弧度转材质度数。颜色 `RimColor` 通过独立 RGB 覆盖表保存，旧标量表继续兼容。实例参数编辑、函数调用与完整 Runtime Resolver 是不同接入范围。
 
 第②步保留原节点算法和已有二进制资产，新增参数契约与交接工具。2026-10-22 在 UE 5.8.3 / Windows 独立 NullRHI 进程对实际保存资产完成 34 项参数检查，确认三个 Scalar、一个 Vector、默认值、滑杆、各自函数输入与 Emissive 连接；不保存资产，也不代表新画面验收。源码/JSON 校验与 C++ 执行范围见[参数交接](/generated/source/Documentation/RimLight/ParameterHandoff.md.txt)。
 
@@ -37,6 +37,8 @@ Screen 放在景深之后、时间抗锯齿之前。TSR 是时间超分辨率，
 `UNPRSurfaceRecipe` 描述预制材质的效果、依赖、全局参数类型和归属，Composer 只选兼容家族并生成旧绑定包，再由 `ApplyPackage` 与 `SetRimParameters` 执行。当前选择器不生成任意材质图，不替代统一 Style Resolver。Outline 的 Post Process 与 Geometry 控制器不接入 Surface Master。操作、算法与验证边界见 [Surface 材质组合](../features/surface-material.md)。
 
 ## 后续实现原则：材质节点优先
+
+2026-10-26 的工作区只增加编辑器侧共享视口与预览过滤。`NPROutlineEditorUI.cpp` 复制角色网格到临时世界；Rim/Surface 过滤通过独立预览 MID 的现有强度参数完成，几何/屏幕描边通过预览规则与原控制器完成。不新增材质图、HLSL 文件、渲染资源阶段或独立 Pass，也不改写关卡 MID 来实现隔离。构建、自动化和实际视口证据见[工作区验证](/generated/source/Documentation/Editor/WorkspaceValidation.json)。
 
 我们把 UE 材质节点图看作 Shader 的一种写法。UE 会把节点组合编译成 HLSL，再生成显卡可执行的程序；所以用材质节点实现，也是我们在写 Shader。[Epic 的材质说明](https://dev.epicgames.com/documentation/unreal-engine/essential-unreal-engine-material-concepts?lang=en-US)介绍了这个过程。
 

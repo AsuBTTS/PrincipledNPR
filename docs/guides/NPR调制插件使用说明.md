@@ -2,14 +2,15 @@
 
 # NPR调制插件使用说明
 
-更新日期：2026-10-25。我们用这个窗口选择角色、调整描边与 Rim Light 并预览。Rim 的使用步骤见 [配置与角色绑定](/generated/source/Documentation/RimLight/EditorWorkflow.md.txt)。
+更新日期：2026-10-26。我们用统一工作区选择角色、按后处理/非后处理分类查看效果，并调整描边与 Rim Light。总览、共享角色视口和隔离流程见[统一效果工作区](npr-workspace.md)，Rim 的资产配置见[配置与角色绑定](/generated/source/Documentation/RimLight/EditorWorkflow.md.txt)。
 
 ## 1. 先分清哪些入口能用
 
 | 想做的事 | 当前入口 | 当前状态 |
 | --- | --- | --- |
 | 给整角色或某个材质槽加描边 | 窗口 → NPR 调制 → Outline | 已有设置、预览、预设和保存流程 |
-| 在窗口中调整 Rim | Rim Light 页 | 已接入 Profile、单槽角色绑定和实时预览；角色视觉验收仍需进行 |
+| 查看每个 Mesh 已应用的效果 | NPR 调制 → 角色效果总览 | 按 Mesh/材质槽列出本插件登记的效果，支持单效果与网格隔离 |
+| 在窗口中调整 Rim | 顶部 Rim Light；或总览中的非后处理 → Rim Light | Profile、角色槽位、实时角色视口、原材质对比和隔离；完整角色观感仍需按资产验收 |
 | 实际观察 Rim | 内容浏览器中的预览材质实例 | 可用，见 [Rim 介绍](../rim/rim_light_introduction.md) |
 | 同时保留贴图、法线、自发光并加 Rim | Surface 母材质与预览实例 | 已有受控球体验证，角色接入要明确配置原有输入 |
 | 一键把任意角色变为完整 Toon 风格 | 尚无完整入口 | 仍在开发 |
@@ -27,16 +28,18 @@ Outline 的“转换”只建立描边所需绑定，不会自动把整个人物
 ## 3. 打开 NPR 调制并载入角色
 
 1. 在关卡大纲中选中一个角色 Actor，也就是关卡里的角色对象。
-2. 打开 **窗口 → NPR 调制**，进入 Outline 页。
+2. 点击工具栏或 **窗口 → NPR 调制**，先在角色效果总览查看绑定，再进入 **Outline · 描边编辑**。
 3. 点击 **使用关卡选中角色 / Use Selection**。
 4. 点击 **创建 / 打开角色级配置**。
 5. 确认预览和 `Meshes` 列表对应这个角色。
 
 `Meshes` 表示角色包含的网格组件；材质槽是其中一部分表面使用材质的位置。预览里点击模型不会自动替换关卡大纲的选中对象。
 
-![当前 NPR 调制窗口的历史实机截图](/generated/source/Documentation/Outline/MaterialSlotUI/NPRModulation-Outline-UE5.8.3.jpg)
+顶部只保留三个入口：NPR 调制为 16 号字，Outline、Rim Light 为较小的 12 号字，按钮等高、文字垂直居中。后处理/非后处理分类在 NPR 调制总览内容中，不放在顶部导航，也不作为左侧导航。
 
-来源：2026-10-20，UE 5.8.3 实机截图。它用于说明当时的 Outline 界面和材质槽操作；Rim 页面已于 2026-10-25 更新。
+![2026-10-20 Outline 材质槽操作的历史实机截图](/generated/source/Documentation/Outline/MaterialSlotUI/NPRModulation-Outline-UE5.8.3.jpg)
+
+来源：2026-10-20，UE 5.8.3 实机截图。它说明当时的 Outline 界面和材质槽操作；2026-10-26 的统一入口、Rim 角色预览与分类导航见[工作区说明](npr-workspace.md)。
 
 ## 4. 调整基础描边
 
@@ -56,6 +59,8 @@ Outline 的“转换”只建立描边所需绑定，不会自动把整个人物
 - **恢复继承**：删除本槽覆写，重新使用上一级设置。
 
 修改局部参数时先勾选对应覆写项，再修改值。只填写数值但不勾选，仍会继承父级。最深层勾选的值生效，区域倍率不会沿着各层反复相乘。
+
+这套父子级继承只描述 Outline。Rim 卡片使用“重置参数”，恢复所选 Profile 的默认参数；Rim 没有全局或角色级继承链。两种效果的重置名称和保存方式不要混用。
 
 检查完成后取消隔离，或点击“显示全部材质”，再看整个角色。隔离时看到的轮廓不等于全角色最终效果。
 
@@ -81,18 +86,18 @@ Outline 的“转换”只建立描边所需绑定，不会自动把整个人物
 
 在内容浏览器开启插件内容显示，打开 `Principled NPR Content / RimLight / MI_RimLight_Preview`，通过材质实例查看四项 Rim 控制。要保留原有表面并组合效果，优先阅读 [Surface 使用说明](../features/surface-material.md)，从 `Surface / MI_NPRSurface_Preview` 了解基础输入。
 
-角色原有的颜色、法线和自发光需要显式提供；不要把独立 Rim 演示材质直接套给角色后，期待自动保留全部贴图。新 Rim 页面可选角色网格与槽位、加载 Style Profile、实时调参并保存绑定，详见 [配置与角色绑定](/generated/source/Documentation/RimLight/EditorWorkflow.md.txt)。程序和蓝图调参继续使用既有绑定接口，见 [Rim 介绍](../rim/rim_light_introduction.md)。
+角色原有的颜色、法线和自发光需要显式提供；不要把独立 Rim 演示材质直接套给角色后，期待自动保留全部贴图。Rim 页面可选角色网格与槽位、加载 Style Profile、实时调参并保存绑定，也能在角色视口隔离 Mesh、材质槽或 Rim 效果，并打开原材质对比。详见[统一效果工作区](npr-workspace.md)与[配置与角色绑定](/generated/source/Documentation/RimLight/EditorWorkflow.md.txt)。程序和蓝图调参继续使用既有绑定接口，见 [Rim 介绍](../rim/rim_light_introduction.md)。
 
 ## 9. 没有变化时先检查什么
 
 | 现象 | 优先检查 |
 | --- | --- |
 | 看不到角色 | 大纲是否只选中一个角色；是否点击使用选择和聚焦；是否还在隔离某个槽 |
-| 改了局部数值但没变化 | 是否勾选本层覆写；是否有更深一层设置替换了它 |
+| Outline 改了局部数值但没变化 | 是否勾选本层覆写；是否有更深一层设置替换了它 |
 | Screen 没有描边 | 方法和总开关、区域开关、项目 CustomDepth/Stencil 配置及界面诊断 |
 | 线条过粗或很细 | 当前是厘米还是像素；基础宽度与区域倍率是否合适 |
 | 套用预设后局部仍不同 | 预设只更改基础值，关卡内局部覆写仍然生效 |
-| Rim 没有亮边 | 是否加载 Profile、选择了兼容 Recipe、明确配置 Source Surface；强度是否为 0 或颜色为黑；Shader 是否准备完成 |
+| Rim 没有亮边 | 查看页顶错误提示：是否加载 Profile、选择兼容 Recipe、明确配置 Source Surface；强度是否为 0、颜色是否为黑；Shader 是否准备完成；是否隔离到了另一个槽 |
 | 导出成功但重开设置丢失 | 是否真正保存了关卡，而不是只导出图片 |
 
 ## 10. 使用范围与维护

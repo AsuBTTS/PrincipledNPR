@@ -1,0 +1,160 @@
+{
+  "time": 1792947764.644038,
+  "selected": [
+    "SphereA"
+  ],
+  "actors": {
+    "SphereA": {
+      "materials": [
+        {
+          "slot": 0,
+          "material": "/Game/NPR/IntegrationTests/L_HUA_005930.L_HUA_005930:PersistentLevel.StaticMeshActor_0.NPRStyleBindingComponent_0.MID_M_NPRSurface_DefaultLit_2",
+          "original": false,
+          "rim": [
+            12.0,
+            2.0,
+            0.4000000059604645
+          ],
+          "color": [
+            0.10000000149011612,
+            0.5,
+            1.0,
+            1.0
+          ],
+          "base_color": [
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ]
+        }
+      ],
+      "bindings": [
+        {
+          "name": "/Game/NPR/IntegrationTests/L_HUA_005930.L_HUA_005930:PersistentLevel.StaticMeshActor_0.NPRStyleBindingComponent_0",
+          "mesh": "/Game/NPR/IntegrationTests/L_HUA_005930.L_HUA_005930:PersistentLevel.StaticMeshActor_0.StaticMeshComponent0",
+          "slot": 0,
+          "profile": "/Game/NPR/IntegrationTests/SP_Integration_A.SP_Integration_A",
+          "recipe": "/PrincipledNPR/Surface/SR_DefaultLit_Rim.SR_DefaultLit_Rim"
+        }
+      ]
+    },
+    "SphereB": {
+      "materials": [
+        {
+          "slot": 0,
+          "material": "/Engine/EngineMaterials/DefaultMaterial.DefaultMaterial",
+          "original": true
+        }
+      ],
+      "bindings": []
+    },
+    "Qianyu": {
+      "materials": [
+        {
+          "slot": 0,
+          "material": "/Game/EndfieldRender/Character/Qianyu/Materials/MI_Qianyu_Skin.MI_Qianyu_Skin",
+          "original": true
+        },
+        {
+          "slot": 1,
+          "material": "/Game/EndfieldRender/Character/Qianyu/Materials/MI_Chen_Face_Inst.MI_Chen_Face_Inst",
+          "original": true
+        },
+        {
+          "slot": 2,
+          "material": "/Game/EndfieldRender/Character/Qianyu/Materials/MI_Qianyu_Cloth_01.MI_Qianyu_Cloth_01",
+          "original": true
+        },
+        {
+          "slot": 3,
+          "material": "/Engine/EngineMaterials/WorldGridMaterial.WorldGridMaterial",
+          "original": true
+        },
+        {
+          "slot": 4,
+          "material": "/Engine/EngineMaterials/WorldGridMaterial.WorldGridMaterial",
+          "original": true
+        },
+        {
+          "slot": 5,
+          "material": "/Game/EndfieldRender/Character/Common/Materials/MI_Eye_Shadow.MI_Eye_Shadow",
+          "original": true
+        },
+        {
+          "slot": 6,
+          "material": "/Game/EndfieldRender/Character/Qianyu/Materials/MI_Chen_Face.MI_Chen_Face",
+          "original": true
+        },
+        {
+          "slot": 7,
+          "material": "/Game/EndfieldRender/Character/Qianyu/Materials/MI_Eyebrow.MI_Eyebrow",
+          "original": true
+        },
+        {
+          "slot": 8,
+          "material": "/Game/EndfieldRender/Character/Qianyu/Materials/MI_Chen_Eye.MI_Chen_Eye",
+          "original": true
+        },
+        {
+          "slot": 9,
+          "material": "/Game/EndfieldRender/Character/Qianyu/Materials/MI_Chen_Hair.MI_Chen_Hair",
+          "original": true
+        },
+        {
+          "slot": 10,
+          "material": "/Game/EndfieldRender/Character/Common/Materials/MI_Hair_Shadow.MI_Hair_Shadow",
+          "original": true
+        }
+      ],
+      "bindings": []
+    }
+  },
+  "options": {
+    "mesh": "/Game/NPR/IntegrationTests/L_HUA_005930.L_HUA_005930:PersistentLevel.StaticMeshActor_0.StaticMeshComponent0",
+    "slot": 0,
+    "profile": "/Game/NPR/IntegrationTests/SP_Integration_A.SP_Integration_A",
+    "recipe": "/PrincipledNPR/Surface/SR_DefaultLit_Rim.SR_DefaultLit_Rim",
+    "width": 12.000000000000002,
+    "softness": 2.0,
+    "intensity": 0.4000000059604645,
+    "color": [
+      0.10000000149011612,
+      0.5,
+      1.0,
+      1.0
+    ],
+    "configured": true
+  },
+  "profile": {
+    "defaults": {
+      "values": {
+        "RimGrazingAngleRad": {
+          "set": true,
+          "value": 0.20943951023931956
+        },
+        "RimPeakScale": {
+          "set": true,
+          "value": 0.4
+        }
+      },
+      "colors": {
+        "RimColor": {
+          "set": true,
+          "value": [
+            0.10000000149011612,
+            0.5,
+            1.0,
+            1.0
+          ]
+        }
+      }
+    },
+    "overrides": {
+      "<NPRMaterialKind.GENERIC: 0>": {
+        "values": {},
+        "colors": {}
+      }
+    }
+  }
+}

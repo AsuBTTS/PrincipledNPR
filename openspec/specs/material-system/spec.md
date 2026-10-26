@@ -2,7 +2,7 @@
 
 ## Purpose
 
-记录方案 B 已实现的 Surface 母材质家族、预制 Recipe 选择、Rim 参数和显式绑定行为。规范与易读说明分工：Documentation/项目架构设计.md 解释架构，Documentation/项目开发说明与约束.md 说明模块约束，Documentation/rim_light_introduction.md 解释算法和使用。本文不将完整风格解析、自动角色转换或 Rim 调制窗口列为已完成能力。
+记录方案 B 已实现的 Surface 母材质家族、预制 Recipe 选择、Rim 参数、显式绑定和统一效果工作区。规范与易读说明分工：Documentation/项目架构设计.md 解释架构，Documentation/项目开发说明与约束.md 说明模块约束，Documentation/rim_light_introduction.md 解释算法和使用。完整风格解析与任意角色自动转换仍未完成。
 
 ## Requirements
 
@@ -65,8 +65,31 @@ Surface 组合 MUST 保留 Screen Outline 的后处理和 Inverted Hull 的几�
 
 ### Requirement: Report current capability and evidence limits
 
-文档 MUST 明确 Rim 调制页为占位、完整风格解析与自动角色绑定未完成；Toon+Rim 证明限于已有未标定探针和受控球体。编译、二进制资产检查、图像、Cook 和性能分别记录，不相互代替。
+文档 MUST 说明统一工作区与显式槽位绑定的实际范围，保留完整风格解析与任意角色自动转换未完成的边界；Toon+Rim 的既有证明限于未标定探针和受控球体。编译、二进制资产检查、图像、Cook 和性能分别记录，不相互代替。
 
 #### Scenario: A runtime package is composed successfully
 - **WHEN** Recipe 检查和绑定包构造成功
 - **THEN** 包保持既有 NotRun 渲染验收状态，不因选择成功自动升级为画面通过
+
+### Requirement: Unified workspace and isolated character preview
+
+NPR 调制 MUST 作为统一入口，按后处理和非后处理分类现有效果，按 Mesh/材质槽列出实际登记的绑定。Rim 与总览 MUST 提供角色视口、原材质对比、Mesh/槽位隔离和单效果过滤，复用现有渲染路径；不得通过修改关卡可见性或关卡参数实现隔离。
+
+顶部导航 MUST 只保留 NPR 调制、Outline、Rim Light；NPR 调制使用 16 号字，Outline 和 Rim Light 使用较小的 12 号字，内容高度一致，文字垂直居中。后处理/非后处理分类 MUST 位于 NPR 调制总览的页面内容中，不占用顶部导航栏。
+
+#### Scenario: One slot or effect is isolated
+- **WHEN** 使用者选择隔离一个 Mesh、槽位或已登记效果
+- **THEN** 仅临时预览副本改变，源角色可见性和材质不变
+- **AND** 原材质与效果视口共享相机与灯光
+
+### Requirement: Editor transactions and ownership-safe cleanup
+
+Rim 编辑器 MUST 将显示值和稀疏覆盖意图一起撤销；已保存目标的连续未保存编辑不得通过重读 Profile 跳回保存值。释放预览和切换角色时 MUST 保留外部替换的材质。
+
+#### Scenario: Undo a second unsaved edit
+- **WHEN** 保存强度 0.4 后依次编辑为 0.8、1.6，再撤销一次
+- **THEN** 显示值和当前 MID 回到 0.8，并保留对应覆盖意图
+
+#### Scenario: Switch away after another system replaces the material
+- **WHEN** 外部替换当前槽后，使用者读取另一个角色
+- **THEN** 旧角色保留外部材质，清理不能重新应用保存配置覆盖它

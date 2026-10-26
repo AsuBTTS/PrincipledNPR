@@ -1,0 +1,24 @@
+
+> docs:build
+> npm run docs:check && vitepress build docs && node Tools/check_docs_build.mjs
+
+
+> docs:check
+> node Tools/docs.mjs check && node Tools/generate_principled_parameter_chart.mjs --check
+
+Docs check PASS: 5 Documentation originals / synchronized web views, 18 semantic parameters, 13 outline fields, 29 pages, 12 status entries; local file links checked. No UE rendering validation.
+Parameter chart check PASS: 18 contract parameters.
+
+  vitepress v1.6.4
+
+- building client + server bundles...
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ building client + server bundles...
+- rendering pages...
+✓ rendering pages...
+build complete in 55.01s.
+Static output PASS: 31 HTML pages; 2657 local links/assets/anchors.

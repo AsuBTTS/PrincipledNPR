@@ -2,7 +2,7 @@
 
 **[在线文档](https://asubtts.github.io/PrincipledNPR/)** · [文档首页](docs/index.md) · [使用说明](Documentation/NPR调制插件使用说明.md)
 
-我们在 UE 5.8.3 中开发角色风格化材质编辑工具。目前 Outline 已有窗口、局部设置、预设与关卡保存；Rim 已有独立材质与四项动态控制，并接入可扩展 Surface 母材质。同槽 Toon + Rim 已通过受控球体验证，完整风格解析、角色自动转换和 Rim 调制窗口仍在开发。
+我们在 UE 5.8.3 中开发角色风格化材质编辑工具。NPR 调制现在提供统一总览、效果分类和 Mesh/材质槽预览；Outline 保留局部设置、预设与关卡保存，Rim 支持 Profile、显式槽位绑定、实时调参、隔离和原材质对比。同槽 Toon + Rim 已通过受控球体验证；完整风格解析、任意角色自动转换、动画、Cook 与性能仍需各自实现或验收。操作与有界验证见[统一效果工作区](Documentation/Editor/NPRWorkspace.md)。
 
 ## 当前维护的五份说明
 

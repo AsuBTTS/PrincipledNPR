@@ -1,0 +1,35 @@
+{
+  "status": "Passed",
+  "checks": {
+    "SavedMapReloads": true,
+    "SavedComponentRestored": true,
+    "OnRegisterRebindsMID": true,
+    "PersistedIntensityRestored": true,
+    "PersistedProfileRecipeAndSlot": true,
+    "PersistedSourceInputConfigured": true,
+    "DiskMapStoredOriginalMaterial": true,
+    "ExplicitRebindAfterRestore": true,
+    "UnconfiguredInputsRejected": true,
+    "FailureKeepsLiveMID": true,
+    "InvalidNormalStrengthRejected": true,
+    "InvalidInputsKeepLiveMID": true,
+    "InvalidSlotRejected": true,
+    "WrongActorMeshRejected": true,
+    "WrongActorKeepsBothMeshes": true,
+    "ProfileBRebinds": true,
+    "ProfileBSemanticsReachMID": true,
+    "ProfileARebinds": true,
+    "ExplicitZeroBlackAccepted": true,
+    "ZeroBlackReadback": true,
+    "LiveParameterUpdateKeepsMID": true,
+    "RuntimeRestorePreservesExternalReplacement": true,
+    "SkeletalElevenSlotFixture": true,
+    "SkeletalOneSlotApplies": true,
+    "OtherTenSkeletalSlotsUnchanged": true,
+    "SkeletalParametersReadback": true,
+    "AllSkeletalMaterialsRestore": true
+  },
+  "details": {
+    "character": "SKM_Chen; explicit scalar/vector Surface inputs; material readback only, no full character visual acceptance"
+  }
+}

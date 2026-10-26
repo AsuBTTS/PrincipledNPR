@@ -17,6 +17,10 @@ class UNPRRimEditorOptions : public UObject
     GENERATED_BODY()
 
 public:
+    // Transactional sparse-override state follows the displayed values through Undo/Redo.
+    UPROPERTY(Transient)
+    uint8 OverrideMask = 0;
+
     UPROPERTY(EditAnywhere, Category="Rim|Target")
     TObjectPtr<UMeshComponent> Mesh = nullptr;
 

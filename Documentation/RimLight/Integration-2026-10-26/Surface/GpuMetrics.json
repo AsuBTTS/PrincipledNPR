@@ -1,0 +1,13 @@
+{
+  "captured_at_utc":"2026-10-25T16:55:04.247Z",
+  "base_color_rim_difference":0,
+  "normal_rim_difference":0,
+  "normal_texture_difference":0.30639526,
+  "base_emissive_difference":0.0728756141,
+  "rim_difference":0.062899068,
+  "second_effect_difference":0.0424118783,
+  "hdr_relative_addition_error":0.00884810877,
+  "screen_outline_difference":0.0124074686,
+  "hull_outline_difference":0.018471965,
+  "toon_rim_difference":0.0570434296
+}

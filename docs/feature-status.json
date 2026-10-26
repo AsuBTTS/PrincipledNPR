@@ -1,4 +1,5 @@
 [
+  {"id": "npr-workspace", "page": "guides/npr-workspace.md", "status": "已实现并验证", "evidence": ["Documentation/Editor/WorkspaceValidation.json", "Documentation/Editor/WorkspaceEvidence/Final/Summary.json", "Documentation/Editor/NPRWorkspace.md"]},
   {"id": "outline-core", "page": "outline/outline_introduction.md", "status": "已实现并验证", "evidence": ["Documentation/Outline/Temporal/Acceptance.json", "Documentation/Outline/Temporal/抖动修复报告.md"]},
   {"id": "outline-width-layers", "page": "outline/outline_introduction.md", "status": "已实现但待验证", "evidence": ["Documentation/Outline/WidthLayers/Implementation.json"]},
   {"id": "outline-material-ui", "page": "outline/outline_introduction.md", "status": "已实现并验证", "evidence": ["Documentation/Outline/MaterialSlotUI.md", "Documentation/Outline/MaterialSlotUI/Validation.json", "Documentation/Outline/MaterialSlotUI/Readbacks.json"]},
