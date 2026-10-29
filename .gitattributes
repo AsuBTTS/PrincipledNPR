@@ -12,6 +12,9 @@ Config/*.ini filter=npr-config
 *.uproject text eol=lf filter=npr-config
 Documentation/**/*.json text eol=lf filter=npr-record
 Documentation/*.json text eol=lf filter=npr-record
+# Schemas are source contracts, not regenerated host-specific records.
+# Keep their authored formatting so the documented source fingerprints survive staging.
+Documentation/Schemas/*.json -filter
 # Frozen UE acceptance records keep their original bytes so published SHA-256 checks remain valid.
 Documentation/Editor/WorkspaceEvidence/**/*.json -text -filter -whitespace
 Documentation/Editor/WorkspaceEvidence/**/*.log -text -whitespace

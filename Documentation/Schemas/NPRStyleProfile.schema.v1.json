@@ -37,11 +37,7 @@
     },
     "shadingModel": {
       "type": "string",
-      "enum": [
-        "Inherit",
-        "DefaultLit",
-        "SubstrateToon"
-      ],
+      "enum": ["Inherit", "DefaultLit", "SubstrateToon"],
       "default": "Inherit",
       "description": "Optional discrete model selection. Missing legacy data inherits the existing material model."
     },
@@ -49,56 +45,12 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "shape": {
-          "enum": [
-            "Linear",
-            "Hermite"
-          ],
-          "default": "Hermite"
-        },
-        "darkResponse": {
-          "type": "array",
-          "minItems": 3,
-          "maxItems": 3,
-          "items": {
-            "type": "number",
-            "minimum": 0
-          },
-          "default": [
-            0.1,
-            0.1,
-            0.1
-          ]
-        },
-        "lightResponse": {
-          "type": "array",
-          "minItems": 3,
-          "maxItems": 3,
-          "items": {
-            "type": "number",
-            "minimum": 0
-          },
-          "default": [
-            1,
-            1,
-            1
-          ]
-        },
-        "shadowMode": {
-          "enum": [
-            "OutsideRamp",
-            "InsideRamp"
-          ],
-          "default": "OutsideRamp"
-        },
-        "useArtisticDiffuse": {
-          "type": "boolean",
-          "default": true
-        },
-        "useArtisticSpecular": {
-          "type": "boolean",
-          "default": true
-        }
+        "shape": {"enum": ["Linear", "Hermite"], "default": "Hermite"},
+        "darkResponse": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "number", "minimum": 0}, "default": [0.1, 0.1, 0.1]},
+        "lightResponse": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "number", "minimum": 0}, "default": [1, 1, 1]},
+        "shadowMode": {"enum": ["OutsideRamp", "InsideRamp"], "default": "OutsideRamp"},
+        "useArtisticDiffuse": {"type": "boolean", "default": true},
+        "useArtisticSpecular": {"type": "boolean", "default": true}
       }
     },
     "status": {
