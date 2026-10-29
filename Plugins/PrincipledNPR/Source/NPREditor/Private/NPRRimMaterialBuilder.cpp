@@ -167,7 +167,7 @@ bool Extend(UMaterial* Material, ENPRRimShadingModel Model, bool AddRim, FString
     return true;
 }
 
-bool SaveAsset(UObject* Asset, FString& Error)
+bool SaveRimAsset(UObject* Asset, FString& Error)
 {
     auto* Package=Asset->GetOutermost();
     const FString Filename=FPackageName::LongPackageNameToFilename(Package->GetName(),FPackageName::GetAssetPackageExtension());
@@ -249,7 +249,7 @@ UMaterialInstanceConstant* NPRRimMaterialBuilder::Build(UMaterialInterface* Sour
 bool NPRRimMaterialBuilder::Save(UMaterialInstanceConstant* Material, FString& Error)
 {
     if (!Material) { Error=TEXT("没有可保存的 Rim 材质。"); return false; }
-    if (!SaveAsset(Material->GetMaterial(),Error) || !SaveAsset(Material,Error)) return false;
+    if (!SaveRimAsset(Material->GetMaterial(),Error) || !SaveRimAsset(Material,Error)) return false;
     FAssetRegistryModule::AssetCreated(Material->GetMaterial()); FAssetRegistryModule::AssetCreated(Material);
     return true;
 }

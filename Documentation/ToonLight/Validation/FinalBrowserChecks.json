@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-29 Asia/Shanghai",
+  "method": "Actual final built report in local browser after native screenshot extension correction.",
+  "report": {
+    "images": [
+      {
+        "alt": "真实 Toon 页面，参数曲线放在左侧",
+        "complete": true,
+        "naturalWidth": 1280,
+        "src": "/generated/source/Documentation/ToonLight/Validation/UI/Wide.png"
+      },
+      {
+        "alt": "真实窄窗口，曲线拖动后中心为 0.45",
+        "complete": true,
+        "naturalWidth": 1024,
+        "src": "/generated/source/Documentation/ToonLight/Validation/UI/Narrow.png"
+      },
+      {
+        "alt": "实机最终窗口：左侧小曲线、中央预览、右侧可视区域指定",
+        "complete": true,
+        "naturalWidth": 1707,
+        "src": "/generated/source/Documentation/ToonLight/Validation/UI/ManualWorkspace.jpg"
+      }
+    ],
+    "overflow": false,
+    "sidebarOnscreen": true,
+    "title": "Toon Light 本轮验证 | Principled NPR",
+    "width": 1280
+  },
+  "consoleErrors": [],
+  "limits": "This final report check is desktop only; earlier guide responsive checks are separately retained in BrowserChecks.json."
+}

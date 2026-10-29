@@ -1,0 +1,107 @@
+{
+  "status": "PassedWithinRecordedScope",
+  "utc": "2026-10-29T12:52:28.227007+00:00",
+  "environment": {
+    "engine": "UE 5.8.3 / CL 58210709",
+    "platform": "Windows 11 Win64",
+    "rhi": "DX12 SM6",
+    "adapter": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "profileResolution": 64
+  },
+  "builds": {
+    "editor": "Development Succeeded",
+    "game": "Development Succeeded",
+    "cookStageArchive": "Succeeded"
+  },
+  "automation": {
+    "Editor": {
+      "succeeded": 13,
+      "failed": 0,
+      "succeededWithWarnings": 0,
+      "warnings": [],
+      "tests": [
+        "NPR.Editor.RimWorkflow",
+        "NPR.Rim.LiveBinding",
+        "NPR.Rim.MaterialContract",
+        "NPR.Rim.ProfileBinding",
+        "NPR.Rim.StyleProfile",
+        "NPR.Surface.Composer",
+        "NPR.Toon.Adapter",
+        "NPR.Toon.Contract",
+        "NPR.Toon.EditorWorkflow",
+        "NPR.Toon.Persistence",
+        "NPR.Toon.Render",
+        "NPR.Toon.RuntimeBinding",
+        "NPR.Toon.WidgetRender"
+      ],
+      "evidence": "Validation/EditorAutomation.json"
+    },
+    "UI": {
+      "succeeded": 2,
+      "failed": 0,
+      "succeededWithWarnings": 0,
+      "warnings": [],
+      "tests": [
+        "NPR.Toon.EditorWorkflow",
+        "NPR.Toon.WidgetRender"
+      ],
+      "evidence": "Validation/UIAutomation.json"
+    },
+    "Game": {
+      "succeeded": 2,
+      "failed": 0,
+      "succeededWithWarnings": 0,
+      "warnings": [],
+      "tests": [
+        "NPR.Toon.Contract",
+        "NPR.Toon.RuntimeBinding"
+      ],
+      "evidence": "Validation/GameAutomation.json"
+    }
+  },
+  "gpu": {
+    "captureCount": 23,
+    "diffuseCount": 14,
+    "specularCount": 9,
+    "maxDiffuseIdealError": 0.043066406249999994,
+    "maxDiffuseNativeFilteredError": 0.007299804687500355,
+    "maxSpecularReferenceError": 0.02228913811329003,
+    "shaderJobsAssignedDelta": 0,
+    "materialTranslateCallsDelta": 0,
+    "evidence": "Validation/RenderMetrics.json",
+    "raw": "Validation/RenderData.zip",
+    "gate": "Diffuse native filtered residual <= 0.025; approximate specular reference residual <= 0.12. Ideal diffuse residual remains separately reported.",
+    "rawFormat": "256x256 little-endian float32 RGBA; original HDR target RGBA16f; PNG is sRGB display only."
+  },
+  "ui": {
+    "captureMethod": "Actual Slate window, RenderOffscreen, no generated or composited UI pixels",
+    "pickedMaterialSlots": [
+      "0",
+      "6",
+      "2"
+    ],
+    "curveDrag": "Actual Slate down/move/up routing changes center 0.20 to 0.45",
+    "captureDirectory": "Validation/UI",
+    "scope": "Native Toon page with real skeletal asset, active outline helpers and reference pose; actual Slate pointer routing. Desktop checks, if present, are recorded separately in Validation/ManualChecks.json.",
+    "desktopEvidence": "Validation/ManualChecks.json",
+    "desktopScreenshot": "Validation/UI/ManualWorkspace.jpg"
+  },
+  "persistence": {
+    "map": "/Game/NPR/ToonValidation/L_ToonRuntime3",
+    "toonPackage": "/Game/NPR/ToonValidation/BP_ToonStyle6.BP_ToonStyle6",
+    "litPackage": "/Game/NPR/ToonValidation/DefaultLit/BP_ToonStyle2.BP_ToonStyle2",
+    "runtime": "Independent cooked Development Game restores actual MID on registration, switches to prebuilt DefaultLit and back to Toon; each slot owns a MID and Profile remains shared immutable resource."
+  },
+  "performanceScope": "No additional shader jobs or material translations during the 23 warmed response captures. No production frame-time, GPU timestamp, cold PSO, animation or large-profile-count acceptance; first-run PSO misses were observed in Game.",
+  "limitations": [
+    "Isotropic GGX roughness=0.5 reference specular mapping is approximate; arbitrary views, light shapes and anisotropy are uncalibrated.",
+    "Generic Toon only; Face/Hair gates and whole S58 production acceptance remain unaccepted.",
+    "No arbitrary layered Substrate/translucent conversion; unsupported source graphs are diagnosed before material mutation.",
+    "Visual selection acts on a material slot; Sections sharing that slot change together across LODs. Multi-LOD interactive asset acceptance was not performed.",
+    "No full animation, shadows, Lumen, broad arbitrary-asset visual regression or shipping-target acceptance in this product test. Older isolated GPU studies retain their own scope."
+  ],
+  "history": [
+    "Attempts/R64Initial preserves initial ideal-endpoint gate failures; the native-filtered reference is source-derived and ideal error is not hidden.",
+    "Attempts/WidgetInitial preserves the initial empty fixture and Slate route assertion. Final native event routing passed after fixing the test fixture/path."
+  ]
+}

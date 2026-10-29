@@ -155,9 +155,23 @@ bool UNPRStyleBindingComponent::ApplyConfiguredRim(FString& OutError)
     {
         return false;
     }
+    // The generated Toon copy already contains the original Rim contribution. Updating Rim
+    // must keep this shared material rather than replacing it with the older Rim parent.
+    if(ToonPackage && ToonMesh==RimMesh && GetOwnedMaterial(RimMesh,RimSlotIndex))
+        return SetRimParameters(Parameters,OutError);
     return IsValid(RimGeneratedMaterial)
         ? ApplyRimMaterial(RimMesh, RimSlotIndex, RimGeneratedMaterial, Parameters, OutError)
         : ApplyRimPreview(RimMesh, RimSlotIndex, RimRecipe, RimSurfaceInputs, Parameters, OutError);
+}
+
+bool UNPRStyleBindingComponent::ApplyConfiguredToon(FString& OutError)
+{
+    OutError.Reset();
+    if(!IsValid(ToonMesh)||!IsValid(ToonPackage)||!ToonPackage->bHasToonParameters||
+        (GetOwner()&&ToonMesh->GetOwner()!=GetOwner()))
+    {OutError=TEXT("Saved Toon binding requires a mesh on this actor and a generated Toon style package.");return false;}
+    if(!ToonPackage->ToonParameters.Validate(OutError)||!ToonPackage->ToonResponse.Validate(OutError))return false;
+    return ApplyPackage(ToonMesh,ToonPackage,OutError);
 }
 
 bool UNPRStyleBindingComponent::ApplyRimMaterial(UMeshComponent* Mesh, int32 SlotIndex,
@@ -184,6 +198,12 @@ bool UNPRStyleBindingComponent::ApplyRimMaterial(UMeshComponent* Mesh, int32 Slo
 void UNPRStyleBindingComponent::OnRegister()
 {
     Super::OnRegister();
+    if(IsValid(ToonMesh)&&IsValid(ToonPackage))
+    {
+        FString Error;
+        if(!ApplyConfiguredToon(Error))
+            UE_LOG(LogTemp,Warning,TEXT("NPR Toon binding on '%s' was not restored: %s"),*GetNameSafe(GetOwner()),*Error);
+    }
     if (IsValid(RimMesh) && (bUseRimLocalParameters || IsValid(RimProfile)) && (IsValid(RimGeneratedMaterial) || IsValid(RimRecipe)) && RimSlotIndex >= 0)
     {
         FString Error;

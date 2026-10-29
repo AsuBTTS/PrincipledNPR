@@ -1,0 +1,162 @@
+﻿{
+	"devices": [
+		{
+			"deviceName": "EVANGELION-AV01",
+			"instance": "F315B2734BC1C2CE321CADBA3BA56932",
+			"instanceName": "EVANGELION-AV01-58444",
+			"platform": "WindowsEditor",
+			"oSVersion": "Windows 11 (25H2) [10.0.26200.9711] ",
+			"model": "Default",
+			"gPU": "Intel(R) UHD Graphics",
+			"cPUModel": "Intel(R) Core(TM) i7-14650HX",
+			"rAMInGB": 32,
+			"renderMode": "D3D12_SM6",
+			"rHI": "D3D12 (SM6)",
+			"appInstanceLog": ""
+		}
+	],
+	"reportCreatedOn": "2026.10.29-07.44.28",
+	"succeeded": 7,
+	"succeededWithWarnings": 1,
+	"failed": 0,
+	"notRun": 0,
+	"inProcess": 0,
+	"totalDuration": 8.1530799865722656,
+	"comparisonExported": false,
+	"comparisonExportDirectory": "",
+	"tests": [
+		{
+			"testDisplayName": "RimWorkflow",
+			"fullTestPath": "NPR.Editor.RimWorkflow",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"F315B2734BC1C2CE321CADBA3BA56932"
+			],
+			"duration": 1.6894696950912476,
+			"dateTime": "2026.10.29-07.44.20",
+			"entries": [
+				{
+					"event":
+					{
+						"type": "Warning",
+						"message": "LogHttp: HTTP request timed out after 3.00 seconds URL=https://www.google.com/generate_204",
+						"context": "log",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2026.10.29-07.44.21"
+				}
+			],
+			"warnings": 1,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "LiveBinding",
+			"fullTestPath": "NPR.Rim.LiveBinding",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"F315B2734BC1C2CE321CADBA3BA56932"
+			],
+			"duration": 0.021654799580574036,
+			"dateTime": "2026.10.29-07.44.21",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "MaterialContract",
+			"fullTestPath": "NPR.Rim.MaterialContract",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"F315B2734BC1C2CE321CADBA3BA56932"
+			],
+			"duration": 0.017227299511432648,
+			"dateTime": "2026.10.29-07.44.22",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "ProfileBinding",
+			"fullTestPath": "NPR.Rim.ProfileBinding",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"F315B2734BC1C2CE321CADBA3BA56932"
+			],
+			"duration": 0.016669299453496933,
+			"dateTime": "2026.10.29-07.44.22",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "StyleProfile",
+			"fullTestPath": "NPR.Rim.StyleProfile",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"F315B2734BC1C2CE321CADBA3BA56932"
+			],
+			"duration": 0.020481102168560028,
+			"dateTime": "2026.10.29-07.44.22",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "Composer",
+			"fullTestPath": "NPR.Surface.Composer",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"F315B2734BC1C2CE321CADBA3BA56932"
+			],
+			"duration": 0.10284610092639923,
+			"dateTime": "2026.10.29-07.44.22",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "EditorWorkflow",
+			"fullTestPath": "NPR.Toon.EditorWorkflow",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"F315B2734BC1C2CE321CADBA3BA56932"
+			],
+			"duration": 1.5644307136535645,
+			"dateTime": "2026.10.29-07.44.22",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "WidgetRender",
+			"fullTestPath": "NPR.Toon.WidgetRender",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"F315B2734BC1C2CE321CADBA3BA56932"
+			],
+			"duration": 4.7203011512756348,
+			"dateTime": "2026.10.29-07.44.23",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		}
+	]
+}

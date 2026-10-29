@@ -1,0 +1,24 @@
+{
+  "fixture_sha256": "3bd3b1eaa951507d1fc2f12b9ce64bffc6dbca96d690afcf006db6647b36030c",
+  "compiled_fixture_sha256": "3bd3b1eaa951507d1fc2f12b9ce64bffc6dbca96d690afcf006db6647b36030c",
+  "base_fixture_sha256": "bea40346a1f406b8f6ab84f83ddeb3ecbcd71e69104cbec2b45b9ffed14d777a",
+  "engine_files": {
+    "Build/Build.version": "eab58750e84719489f3ee0d42d05a533ceb357eb3ee511777e9408d27a85f43c",
+    "Source/Runtime/Engine/Classes/Engine/ToonProfile.h": "c98044a610fbba16cb263d50db96ac5f13e6901f22d519fd76c208f85fe6f4da",
+    "Source/Runtime/Engine/Private/Rendering/ToonProfile.cpp": "b555d817703c52beeb0b2d9a0c938eab7fd52fecb1f4eac99ae93d6fb8973885",
+    "Shaders/Private/ToonProfileCommon.ush": "a351b68b8fb1dc5094a9f6dcb5bc4f51bae7a804bfac967d1273fffa3e01eb0b",
+    "Shaders/Private/Substrate/SubstrateToonBSDF.ush": "c83c0b881a63c15c8a94f3ad674be729d444c214a6062faeab72a6fadeccf9cc",
+    "Source/Runtime/Engine/Public/ShaderCompiler.h": "7c7525d99b3fdaac6613e8b94b7024c7f8684e2817319e0a52fb3b041b886e58",
+    "Source/Runtime/Engine/Private/ShaderCompiler/ShaderCompilerStats.cpp": "5a81fa2ab0557fd936a568dcb5f0a30abc6f9fc8eb9df02130a89f965a639d64",
+    "Source/Runtime/Engine/Private/Materials/MaterialInterface.cpp": "6b4638ee9abb023941251584215584f5062490e9d8f1f3c5b029b65c6f3e4ad7",
+    "Source/Runtime/Renderer/Private/DeferredShadingRenderer.cpp": "24e4ed590246dfe7a928eef434e09e4d816edc6c2df1ec777874ab60d98935af",
+    "Source/Runtime/Renderer/Private/SceneRendering.cpp": "299e6510392477d201e1a3ef14a0e5c02f36d05751067198ddb0aa0f2ad357a1"
+  },
+  "inputs": {
+    "Brief.md": "5c9153858111548da13343012509c20f0cec7429705acf478818b0b923a31626",
+    "MathematicalModel.pdf": "e0739823de97c42177900a7701543b19f1c7457cf3fc87a57259c203a080851a",
+    "MathematicalModel.tex": "8ee4f05e09b899d1d120f0bb41fb7617a49262e9299574c4a5f7fb2187c15007"
+  },
+  "run_log_sha256": "a7c17e6275b8aecd1fe4341d6fc74c90b58bee907b7e49734a2ce3bcb11fda99",
+  "reopen_log_sha256": "d33aac1895faa96a0dfeff40b73186cdfd733300782106fbd296026ba6b62735"
+}

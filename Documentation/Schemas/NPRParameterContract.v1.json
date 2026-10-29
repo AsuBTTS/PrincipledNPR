@@ -4,8 +4,8 @@
   "responseModelVersion": 1,
   "status": "Draft",
   "calibrationStatus": "Uncalibrated",
-  "shaderConnectionStatus": "NotConnected",
-  "unrealAssetStatus": "PartialUDataAssetScaffold_NoResolverOrAdapter",
+  "shaderConnectionStatus": "Partial_GenericToonFiveParameters",
+  "unrealAssetStatus": "GenericToonResolverAdapterAndImmutablePackages_OtherSemanticsIncomplete",
   "source": {
     "reportFilename": "Principled_NPR_技术设计报告_V1.0.md",
     "sha256": "81be77fb2c15350af9804e487323d6dcc6442ee384a73647ec100cf06eadd516",
@@ -531,45 +531,45 @@
           "target": "UToonProfile DiffuseRamp center",
           "level": "Exact",
           "scope": "CoordinateOnly",
-          "implementation": "NotImplemented",
-          "renderValidation": "NotRun",
-          "condition": "Single zero-size directional light, include-shadow off, no offset: (tau+1)/2; final appearance uncalibrated."
+          "implementation": "Implemented",
+          "renderValidation": "Partial",
+          "condition": "Coordinate (tau+1)/2. UE5.8.3 DX12 SM6 planar directional-light fixture passed; native R64 FP16 filtering differs from the ideal curve. Final arbitrary-asset appearance remains uncalibrated; see ToonLight/Validation.json."
         },
         {
           "semanticId": "TerminatorDotHalfWidth",
           "target": "DiffuseRamp half-width",
           "level": "Approximate",
           "scope": "Appearance",
-          "implementation": "NotImplemented",
-          "renderValidation": "NotRun",
-          "condition": "w/2 is coordinate-exact; LUT/filter/AA calibration required."
+          "implementation": "Implemented",
+          "renderValidation": "Partial",
+          "condition": "Coordinate half-width w/2. Linear/Hermite, zero-width and clipped-boundary HDR cases passed against native sampled reference; arbitrary AA, lights and assets remain uncalibrated."
         },
         {
           "semanticId": "SpecHalfAngleRad",
           "target": "Roughness plus SpecularRamp",
           "level": "Approximate",
           "scope": "Appearance",
-          "implementation": "NotImplemented",
-          "renderValidation": "NotRun",
-          "condition": "Fit native D*energy lookup; never use size=1-roughness."
+          "implementation": "Implemented",
+          "renderValidation": "Partial",
+          "condition": "Reference inverse D(theta)/D(0) at isotropic roughness=0.5; measured 8/18 degree cases only. Native energy lookup/view/light coupling remains approximate; never use size=1-roughness."
         },
         {
           "semanticId": "SpecEdgeSoftness",
           "target": "SpecularRamp fit",
           "level": "Approximate",
           "scope": "Appearance",
-          "implementation": "NotImplemented",
-          "renderValidation": "NotRun",
-          "condition": "View/light/roughness coupling requires measurement."
+          "implementation": "Implemented",
+          "renderValidation": "Partial",
+          "condition": "delta=0.95*s*min(beta,pi/2-beta), measured in the bounded directional-light fixture. View/light/roughness coupling is not fully calibrated."
         },
         {
           "semanticId": "SpecPeakScale",
           "target": "SpecularRamp scale or calibrated multiplier",
           "level": "Approximate",
           "scope": "Appearance",
-          "implementation": "NotImplemented",
-          "renderValidation": "NotRun",
-          "condition": "Specular/F0 is not an independent peak knob."
+          "implementation": "Implemented",
+          "renderValidation": "Partial",
+          "condition": "Ramp multiplier 0/1/2 measured in the bounded fixture; original Specular/F0 still contributes, so this is not an independent final absolute peak."
         },
         {
           "semanticId": "MacroNormalBlend",
@@ -644,7 +644,7 @@
           "condition": "Separate geometry/screen module."
         }
       ],
-      "allRenderTests": "NotRun"
+      "allRenderTests": "Partial_GenericToonFixtureOnly"
     },
     "A0": {
       "role": "MathematicalReference",
@@ -664,6 +664,6 @@
     "styleIsToonProfile": false,
     "toonProfile": "Immutable prebuilt backend artifact",
     "runtimeStyleSwitch": "Prebuild/preload MIC or MID bundles; never edit ToonProfile settings at runtime",
-    "runtimeImplementation": "NotImplemented"
+    "runtimeImplementation": "Implemented_ImmutableMaterialBundles_GenericToon"
   }
 }

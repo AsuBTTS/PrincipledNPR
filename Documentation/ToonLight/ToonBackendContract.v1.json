@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "backendId": "S58.Toon.v1",
+  "engine": "UE 5.8.3 / CL 58210709",
+  "semanticIds": ["TerminatorDotCenter", "TerminatorDotHalfWidth", "SpecHalfAngleRad", "SpecEdgeSoftness", "SpecPeakScale"],
+  "canonicalContract": "../Schemas/NPRParameterContract.v1.json",
+  "shadingModels": {
+    "Inherit": "Preserve the supported legacy/direct Shading Models graph, its original model-specific inputs and instance model overrides. Only a direct Toon BSDF receives artistic ramps; do not silently convert inherited Subsurface to DefaultLit.",
+    "DefaultLit": "Prebuilt Substrate Shading Models root with MSM_DefaultLit.",
+    "SubstrateToon": "Native Substrate Toon BSDF and private/baked UToonProfile."
+  },
+  "diffuse": {
+    "center": "t=(TerminatorDotCenter+1)/2",
+    "halfWidth": "h=TerminatorDotHalfWidth/2",
+    "shapes": ["Linear", "Hermite"],
+    "shapeDefault": "Hermite",
+    "zeroWidth": "Canonical response 0 / 0.5 / 1; native float knots and LUT filtering give finite pixel transition.",
+    "boundary": "Restrict the original response to u in [0,1]; never clamp a full plateau onto an unreachable endpoint.",
+    "rgb": "Finite nonnegative linear response coefficients, multiplied by original BaseColor and lighting. Alpha ignored."
+  },
+  "specular": {
+    "level": "Approximate",
+    "referenceRoughness": 0.5,
+    "referenceCoordinate": "D_GGX(theta)/D_GGX(0), isotropic",
+    "softness": "delta=0.95*s*min(beta,pi/2-beta)",
+    "zeroSoftness": "Explicit hard-edge reference with half response at beta.",
+    "limitations": "Native NoV energy LUT, anisotropy, rect-light integration, outer NoL and visibility affect final result. Not a calibrated inverse for arbitrary lighting.",
+    "backendFloatOverflow": "Managed response RGB and peak must fit native FP16 (maximum 65504); reject at adapter boundary without changing canonical semantic hard domain.",
+    "originalRoughness": "Keep the source connection in NPR.Toon.OriginalRoughness.v1; restore it when artistic specular generation is disabled or DefaultLit is selected."
+  },
+  "scope": "Mesh component and material slot; every Section sharing a slot changes together, across LODs.",
+  "preview": "Editor-owned transient material, MID/MIC and Profile; coalesce input at 30Hz; no synchronous GPU readback during normal interaction.",
+  "persistence": "Unique UToonProfile + Material + MIC + NPRBackendStylePackage; never overwrite an existing source asset.",
+  "runtime": "Apply preloaded immutable material package atomically; do not mutate ToonProfile.",
+  "advanced": "Keep native Profile controls; disable artistic curve generation to author raw ramps.",
+  "sourceConversion": {
+    "supported": ["Opaque/Masked legacy pins", "Material Attributes", "direct Substrate Toon", "direct Substrate Shading Models"],
+    "unsupported": ["Translucent", "arbitrary layered Substrate roots"],
+    "failure": "Diagnostic before changing source materials."
+  },
+  "verification": "See ImplementationPlan.md; build is not rendering acceptance."
+}

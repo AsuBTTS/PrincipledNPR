@@ -1,0 +1,186 @@
+Original UE log excerpt; unabridged log SHA256 in Sources.json.
+[2026.10.28-06.52.51:726][  0]LogRHI: Using Forced RHI: D3D12
+[2026.10.28-06.52.51:726][  0]LogRHI: Using Highest Feature Level of D3D12: SM6
+[2026.10.28-06.52.51:726][  0]LogRHI: Loading RHI module D3D12RHI
+[2026.10.28-06.52.51:733][  0]LogD3D12RHI: Loading WinPixEventRuntime.dll for PIX profiling (from ../../../Engine/Binaries/ThirdParty/Windows/WinPixEventRuntime/x64).
+[2026.10.28-06.52.51:733][  0]LogRHI: Checking if RHI D3D12 with Feature Level SM6 is supported by your system.
+[2026.10.28-06.52.52:827][  0]LogD3D12RHI: Found D3D12 adapter 0: NVIDIA GeForce RTX 4060 Laptop GPU (VendorId: 10de, DeviceId: 28e0, SubSysId: 3e4517aa, Revision: 00a1
+[2026.10.28-06.52.52:827][  0]LogD3D12RHI:   Max supported Feature Level 12_2, shader model 6.7, binding tier 3, wave ops supported, atomic64 supported
+[2026.10.28-06.52.52:827][  0]LogD3D12RHI:   Adapter has 7956MB of dedicated video memory, 0MB of dedicated system memory, and 16237MB of shared system memory, 1 output[s], TileBased:false UMA:false CacheCoherentUMA:false GPU Upload Heaps:true
+[2026.10.28-06.52.52:828][  0]LogD3D12RHI:   Driver Version: 610.47 (internal:32.0.16.1047, unified:610.47)
+[2026.10.28-06.52.52:828][  0]LogD3D12RHI:      Driver Date: 5-19-2026
+[2026.10.28-06.52.52:837][  0]LogD3D12RHI: Intel Extensions Framework not supported by driver. Please check if a driver update is available.
+[2026.10.28-06.52.52:837][  0]LogD3D12RHI: Found D3D12 adapter 1: Intel(R) UHD Graphics (VendorId: 8086, DeviceId: a78b, SubSysId: 3e4517aa, Revision: 0004
+[2026.10.28-06.52.52:837][  0]LogD3D12RHI:   Max supported Feature Level 12_1, shader model 6.7, binding tier 3, wave ops supported, atomic64 unsupported
+[2026.10.28-06.52.52:837][  0]LogD3D12RHI:   Adapter has 128MB of dedicated video memory, 0MB of dedicated system memory, and 16237MB of shared system memory, 0 output[s], TileBased:false UMA:true CacheCoherentUMA:true GPU Upload Heaps:true
+[2026.10.28-06.52.52:837][  0]LogD3D12RHI:   Driver Version: 32.0.101.6790 (internal:32.0.101.6790, unified:101.6790)
+[2026.10.28-06.52.52:837][  0]LogD3D12RHI:      Driver Date: 4-28-2025
+[2026.10.28-06.52.52:837][  0]LogD3D12RHI: Found D3D12 adapter 2: Microsoft Basic Render Driver (VendorId: 1414, DeviceId: 008c, SubSysId: 0000, Revision: 0000
+[2026.10.28-06.52.52:837][  0]LogD3D12RHI:   Max supported Feature Level 12_1, shader model 6.7, binding tier 3, wave ops supported, atomic64 supported
+[2026.10.28-06.52.52:837][  0]LogD3D12RHI:   Adapter has 0MB of dedicated video memory, 0MB of dedicated system memory, and 16237MB of shared system memory, 0 output[s], TileBased:false UMA:true CacheCoherentUMA:true GPU Upload Heaps:true
+[2026.10.28-06.52.52:837][  0]LogD3D12RHI:   D3D10Warp Version: 10.0.26100.9711
+[2026.10.28-06.52.52:837][  0]LogD3D12RHI: DirectX Agility SDK runtime found.
+[2026.10.28-06.52.52:837][  0]LogD3D12RHI: Chosen D3D12 Adapter Id = 0
+[2026.10.28-06.52.52:837][  0]LogRHI: RHI D3D12 with Feature Level SM6 is supported and will be used.
+[2026.10.28-06.52.52:935][  0]LogD3D12RHI: Integrated GPU (iGPU): false
+[2026.10.28-06.52.52:935][  0]LogD3D12RHI: Display: Creating D3D12 RHI with Max Feature Level SM6
+[2026.10.28-06.52.52:959][  0]LogD3D12RHI: NVIDIA Architecture=400
+[2026.10.28-06.52.52:960][  0]LogRHI: Display: Timeout Detection and Recovery (TDR) summary: 
+[2026.10.28-06.52.52:960][  0]LogRHI: RHI Adapter Info:
+[2026.10.28-06.52.52:960][  0]LogRHI:             Name: NVIDIA GeForce RTX 4060 Laptop GPU
+[2026.10.28-06.52.52:960][  0]LogRHI:   Driver Version: 610.47 (internal:32.0.16.1047, unified:610.47)
+[2026.10.28-06.52.52:960][  0]LogRHI:      Driver Date: 5-19-2026
+[2026.10.28-06.52.52:960][  0]LogRHI: Performing driver check for denylisted drivers.
+[2026.10.28-06.52.52:961][  0]LogD3D12RHI:     GPU DeviceId: 0x28e0 (for the marketing name, search the web for "GPU Device Id")
+[2026.10.28-06.52.52:961][  0]LogD3D12RHI: InitD3DDevice: -D3DDebug = off -D3D12GPUValidation = off
+[2026.10.28-06.52.53:285][  0]LogD3D12RHI: Emitting draw events for PIX profiling.
+[2026.10.28-06.52.53:492][  0]LogD3D12RHI: ID3D12Device1 is supported.
+[2026.10.28-06.52.53:492][  0]LogD3D12RHI: ID3D12Device2 is supported.
+[2026.10.28-06.52.53:492][  0]LogD3D12RHI: ID3D12Device3 is supported.
+[2026.10.28-06.52.53:492][  0]LogD3D12RHI: ID3D12Device4 is supported.
+[2026.10.28-06.52.53:492][  0]LogD3D12RHI: ID3D12Device5 is supported.
+[2026.10.28-06.52.53:492][  0]LogD3D12RHI: ID3D12Device6 is supported.
+[2026.10.28-06.52.53:492][  0]LogD3D12RHI: ID3D12Device7 is supported.
+[2026.10.28-06.52.53:492][  0]LogD3D12RHI: ID3D12Device8 is supported.
+[2026.10.28-06.52.53:492][  0]LogD3D12RHI: ID3D12Device9 is supported.
+[2026.10.28-06.52.53:492][  0]LogD3D12RHI: ID3D12Device10 is supported.
+[2026.10.28-06.52.53:492][  0]LogD3D12RHI: ID3D12Device11 is supported.
+[2026.10.28-06.52.53:492][  0]LogD3D12RHI: ID3D12Device12 is supported.
+[2026.10.28-06.52.53:492][  0]LogD3D12RHI: Bindless is supported. MaxNonSamplerDescriptors: 1000000, MaxSamplerDescriptors: 2048
+[2026.10.28-06.52.53:492][  0]LogD3D12RHI: Stencil ref from pixel shader is not supported
+[2026.10.28-06.52.53:492][  0]LogD3D12RHI: Raster order views are supported
+[2026.10.28-06.52.53:493][  0]LogD3D12RHI: Wave Operations are supported (wave size: min=32 max=32).
+[2026.10.28-06.52.53:493][  0]LogD3D12RHI:      Legacy Barriers Present in Build: Yes
+[2026.10.28-06.52.53:493][  0]LogD3D12RHI:    Enhanced Barriers Present in Build: Yes
+[2026.10.28-06.52.53:493][  0]LogD3D12RHI:      Enhanced Barriers Driver Support: Yes
+[2026.10.28-06.52.53:493][  0]LogD3D12RHI: Preferred Barrier Implementation Type: Legacy
+[2026.10.28-06.52.53:493][  0]LogD3D12RHI:         Chosen Barrier Implementation: D3D12LegacyBarriers
+[2026.10.28-06.52.53:493][  0]LogD3D12RHI: D3D12 ray tracing tier 1.1 and bindless resources are supported.
+[2026.10.28-06.52.53:493][  0]LogD3D12RHI: Mesh shader tier 1.0 is supported
+[2026.10.28-06.52.53:493][  0]LogD3D12RHI: AtomicInt64OnTypedResource is supported
+[2026.10.28-06.52.53:493][  0]LogD3D12RHI: AtomicInt64OnGroupShared is supported
+[2026.10.28-06.52.53:493][  0]LogD3D12RHI: AtomicInt64OnDescriptorHeapResource is supported
+[2026.10.28-06.52.53:493][  0]LogD3D12RHI: Shader Model 6.6 atomic64 is supported
+[2026.10.28-06.52.53:493][  0]LogD3D12RHI: Work Graphs are supported
+[2026.10.28-06.52.53:493][  0]LogD3D12RHI: Bindless is enabled (Configuration=RayTracing). Initializing allocators with 32768 Resource and 2048 Sampler descriptors
+[2026.10.28-06.52.53:621][  0]LogD3D12RHI: [GPUBreadCrumb] Successfully setup breadcrumb resource for DiagnosticBuffer (Queue: 0x0000021482F29C00)
+[2026.10.28-06.52.53:622][  0]LogD3D12RHI: [GPUBreadCrumb] Successfully setup breadcrumb resource for DiagnosticBuffer (Queue: 0x0000021482F29EC0)
+[2026.10.28-06.52.53:623][  0]LogD3D12RHI: [GPUBreadCrumb] Successfully setup breadcrumb resource for DiagnosticBuffer (Queue: 0x0000021482F2A180)
+[2026.10.28-06.52.53:623][  0]LogD3D12RHI: Display: Not using pipeline state disk cache per r.D3D12.PSO.DiskCache=0
+[2026.10.28-06.52.53:623][  0]LogD3D12RHI: Display: Not using driver-optimized pipeline state disk cache per r.D3D12.PSO.DriverOptimizedDiskCache=0
+[2026.10.28-06.52.53:854][  0]LogD3D12RHI: NVIDIA Shader Execution Reordering interface supported!
+[2026.10.28-06.52.53:854][  0]LogD3D12RHI: NVIDIA Ray Tracing Cluster Operations supported and enabled
+[2026.10.28-06.52.53:854][  0]LogD3D12RHI: LSS not supported on this device.
+[2026.10.28-06.52.53:854][  0]LogD3D12RHI: NVIDIA Extended ray tracing pipeline state applied.
+[2026.10.28-06.52.53:854][  0]LogRHI: Texture pool is 4528 MB (70% of 6469 MB)
+[2026.10.28-06.52.53:854][  0]LogD3D12RHI: Async texture creation enabled
+[2026.10.28-06.52.53:854][  0]LogD3D12RHI: RHI has support for 64 bit atomics
+[2026.10.28-06.52.53:875][  0]LogRHI: Render tracing channels set: 'Submission' -> 0xf
+[2026.10.28-06.53.12:327][  0]LogNPRRuntime: Display: NPR runtime skeleton loaded. S58 rendering gates remain unaccepted.
+[2026.10.28-06.53.26:708][304]LogAutomationCommandLine: Display: Ready to start automation
+[2026.10.28-06.53.31:742][605]LogAutomationWorker: Received FindWorkersMessage from 48B53970474F5C19AB20DBB7BA0AC237
+[2026.10.28-06.53.31:753][606]LogAutomationController: Received FindWorkersResponseMessage from C0FF3FBB4311A1BA8B037BBA7A422D74
+[2026.10.28-06.53.31:753][606]LogAutomationController: Requesting test list from C0FF3FBB4311A1BA8B037BBA7A422D74
+[2026.10.28-06.53.31:766][606]LogAutomationWorker: Received RequestTestsMessage from 48B53970474F5C19AB20DBB7BA0AC237
+[2026.10.28-06.53.31:854][606]LogAutomationWorker: Set 6439 tests to 48B53970474F5C19AB20DBB7BA0AC237
+[2026.10.28-06.53.31:855][607]LogAutomationController: Received RequestTestsReplyCompleteMessage from C0FF3FBB4311A1BA8B037BBA7A422D74
+[2026.10.28-06.53.31:862][607]LogAutomationController: 6439 tests available on C0FF3FBB4311A1BA8B037BBA7A422D74
+[2026.10.28-06.53.31:941][607]LogAutomationCommandLine: Display: Found 1 automation tests based on 'NPR.Research.ToonGPU'
+[2026.10.28-06.53.31:941][607]LogAutomationCommandLine: Display: 	NPR.Research.ToonGPU
+[2026.10.28-06.53.31:942][607]LogAutomationController: Sending StopTests to C0FF3FBB4311A1BA8B037BBA7A422D74
+[2026.10.28-06.53.31:948][607]LogAutomationController: Display: Loading results html template...
+[2026.10.28-06.53.31:953][607]LogAutomationController: Display: Successfully wrote html results file!
+[2026.10.28-06.53.31:953][607]LogAutomationController: Sending StartTestSession to C0FF3FBB4311A1BA8B037BBA7A422D74
+[2026.10.28-06.53.31:953][607]LogAutomationController: Display: Clearing ../../../../../unrealProjects/PrincipledNPR/work/ToonGPUResearch/Saved/Automation/Logs/ and ../../../../../unrealProjects/PrincipledNPR/work/ToonGPUResearch/Saved/Automation/Tmp/
+[2026.10.28-06.53.31:968][607]LogAutomationController: Sending RunTest ToonGPU to C0FF3FBB4311A1BA8B037BBA7A422D74
+[2026.10.28-06.53.31:968][607]LogAutomationController: Display: Test Started. Name={ToonGPU} Path={NPR.Research.ToonGPU}
+[2026.10.28-06.53.31:968][607]LogAutomationWorker: Received StopTests from 48B53970474F5C19AB20DBB7BA0AC237
+[2026.10.28-06.53.31:968][607]LogAutomationWorker: Received StartTestSession from 48B53970474F5C19AB20DBB7BA0AC237
+[2026.10.28-06.53.31:970][607]LogAutomationWorker: Received RunTests ToonGPU from 48B53970474F5C19AB20DBB7BA0AC237
+[2026.10.28-06.54.12:531][870]LogAutomationController: Display: Test Completed. Result={Success} Name={ToonGPU} Path={NPR.Research.ToonGPU}
+[2026.10.28-06.54.12:531][870]LogAutomationController: BeginEvents: NPR.Research.ToonGPU
+[2026.10.28-06.54.12:531][870]LogAutomationController: Capture 1/73 Mask mean_rgb_sum=0.701172
+[2026.10.28-06.54.12:531][870]LogAutomationController: Capture 2/73 Normals mean_rgb_sum=-1.45048
+[2026.10.28-06.54.12:531][870]LogAutomationController: Capture 3/73 Dark mean_rgb_sum=0
+[2026.10.28-06.54.12:531][870]LogAutomationController: Capture 4/73 StepLow mean_rgb_sum=0.599435
+[2026.10.28-06.54.12:531][870]LogAutomationController: Capture 5/73 Step0 mean_rgb_sum=0.596436
+[2026.10.28-06.54.12:531][870]LogAutomationController: Capture 6/73 StepHigh mean_rgb_sum=0.370167
+[2026.10.28-06.54.12:531][870]LogAutomationController: Capture 7/73 Soft mean_rgb_sum=0.570814
+[2026.10.28-06.54.12:531][870]LogAutomationController: Capture 8/73 RGB mean_rgb_sum=0.199798
+[2026.10.28-06.54.12:531][870]LogAutomationController: Capture 9/73 Continuous mean_rgb_sum=0.464187
+[2026.10.28-06.54.12:531][870]LogAutomationController: Capture 10/73 SoftPositive mean_rgb_sum=0.369044
+[2026.10.28-06.54.12:531][870]LogAutomationController: Capture 11/73 Angle0 mean_rgb_sum=0.701172
+[2026.10.28-06.54.12:532][870]LogAutomationController: Capture 12/73 Angle1 mean_rgb_sum=0.68448
+[2026.10.28-06.54.12:532][870]LogAutomationController: Capture 13/73 Angle2 mean_rgb_sum=0.564166
+[2026.10.28-06.54.12:532][870]LogAutomationController: Capture 14/73 Angle3 mean_rgb_sum=0.348622
+[2026.10.28-06.54.12:532][870]LogAutomationController: Capture 15/73 Angle4 mean_rgb_sum=0.127813
+[2026.10.28-06.54.12:532][870]LogAutomationController: Capture 16/73 Angle5 mean_rgb_sum=0.0141631
+[2026.10.28-06.54.12:532][870]LogAutomationController: Capture 17/73 Angle6 mean_rgb_sum=0
+[2026.10.28-06.54.12:532][870]LogAutomationController: Capture 18/73 ShadowOutClear mean_rgb_sum=0.680389
+[2026.10.28-06.54.12:532][870]LogAutomationController: Capture 19/73 ShadowOutBlocked mean_rgb_sum=0.440359
+[2026.10.28-06.54.12:532][870]LogAutomationController: Capture 20/73 ShadowInClear mean_rgb_sum=0.679041
+[2026.10.28-06.54.12:532][870]LogAutomationController: Capture 21/73 ShadowInBlocked mean_rgb_sum=0.438442
+[2026.10.28-06.54.12:532][870]LogAutomationController: Capture 22/73 LitShadowClear mean_rgb_sum=0.474113
+[2026.10.28-06.54.12:532][870]LogAutomationController: Capture 23/73 LitShadowBlocked mean_rgb_sum=0.26575
+[2026.10.28-06.54.12:532][870]LogAutomationController: Capture 24/73 Point mean_rgb_sum=0.271024
+[2026.10.28-06.54.12:532][870]LogAutomationController: Capture 25/73 Spot mean_rgb_sum=0.308571
+[2026.10.28-06.54.12:532][870]LogAutomationController: Capture 26/73 PointSpot mean_rgb_sum=0.579626
+[2026.10.28-06.54.12:532][870]LogAutomationController: Capture 27/73 AllLights mean_rgb_sum=1.1759
+[2026.10.28-06.54.12:532][870]LogAutomationController: Capture 28/73 SkyScale0 mean_rgb_sum=0
+[2026.10.28-06.54.12:532][870]LogAutomationController: Capture 29/73 SkyScale1 mean_rgb_sum=0.535861
+[2026.10.28-06.54.12:532][870]LogAutomationController: Capture 30/73 SkyLit mean_rgb_sum=0.535861
+[2026.10.28-06.54.12:532][870]LogAutomationController: Capture 31/73 SpecR0 mean_rgb_sum=2.23015e-05
+[2026.10.28-06.54.12:532][870]LogAutomationController: Capture 32/73 SpecR1 mean_rgb_sum=0.000750552
+[2026.10.28-06.54.12:532][870]LogAutomationController: Capture 33/73 SpecR2 mean_rgb_sum=0.00484777
+[2026.10.28-06.54.12:532][870]LogAutomationController: Capture 34/73 SpecR3 mean_rgb_sum=0.0216069
+[2026.10.28-06.54.12:532][870]LogAutomationController: Capture 35/73 SpecBlue mean_rgb_sum=0.000750586
+[2026.10.28-06.54.12:532][870]LogAutomationController: Capture 36/73 NormalTilt mean_rgb_sum=0.384698
+[2026.10.28-06.54.12:532][870]LogAutomationController: Capture 37/73 BaseTint mean_rgb_sum=0.298189
+[2026.10.28-06.54.12:532][870]LogAutomationController: Capture 38/73 SurfaceBase mean_rgb_sum=0.596462
+[2026.10.28-06.54.12:532][870]LogAutomationController: Capture 39/73 SurfaceRim mean_rgb_sum=0.650008
+[2026.10.28-06.54.12:532][870]LogAutomationController: Capture 40/73 SurfaceRimFinal mean_rgb_sum=0.52841
+[2026.10.28-06.54.12:532][870]LogAutomationController: Capture 41/73 SurfaceScreen mean_rgb_sum=0.547246
+[2026.10.28-06.54.12:532][870]LogAutomationController: Capture 42/73 SurfaceHull mean_rgb_sum=0.668652
+[2026.10.28-06.54.12:532][870]LogAutomationController: Capture 43/73 PairBefore mean_rgb_sum=0.29747
+[2026.10.28-06.54.12:532][870]LogAutomationController: Capture 44/73 PairAfter mean_rgb_sum=0.186928
+[2026.10.28-06.54.12:532][870]LogAutomationController: Capture 45/73 SwitchLit mean_rgb_sum=0.330854
+[2026.10.28-06.54.12:532][870]LogAutomationController: Capture 46/73 SwitchToon mean_rgb_sum=0.596537
+[2026.10.28-06.54.12:532][870]LogAutomationController: Capture 47/73 RepeatStep0 mean_rgb_sum=0.596396
+[2026.10.28-06.54.12:532][870]LogAutomationController: Capture 48/73 SlotBefore mean_rgb_sum=0.569564
+[2026.10.28-06.54.12:533][870]LogAutomationController: Capture 49/73 SlotAfter mean_rgb_sum=0.34889
+[2026.10.28-06.54.12:533][870]LogAutomationController: Capture 50/73 SlotProfileSwitch mean_rgb_sum=0.569565
+[2026.10.28-06.54.12:533][870]LogAutomationController: Capture 51/73 StepLowNoSelfShadow mean_rgb_sum=0.69705
+[2026.10.28-06.54.12:533][870]LogAutomationController: Capture 52/73 Step0NoSelfShadow mean_rgb_sum=0.609306
+[2026.10.28-06.54.12:533][870]LogAutomationController: Capture 53/73 WhiteNoSelfShadow mean_rgb_sum=0.701172
+[2026.10.28-06.54.12:533][870]LogAutomationController: Capture 54/73 RGBNoSelfShadow mean_rgb_sum=0.233717
+[2026.10.28-06.54.12:533][870]LogAutomationController: Capture 55/73 Ext10Out mean_rgb_sum=0.441667
+[2026.10.28-06.54.12:533][870]LogAutomationController: Capture 56/73 Ext10In mean_rgb_sum=0.442556
+[2026.10.28-06.54.12:533][870]LogAutomationController: Capture 57/73 Ext0Out mean_rgb_sum=0.683338
+[2026.10.28-06.54.12:533][870]LogAutomationController: Capture 58/73 Ext0In mean_rgb_sum=0.683338
+[2026.10.28-06.54.12:533][870]LogAutomationController: Capture 59/73 SpecSoft mean_rgb_sum=0.000825239
+[2026.10.28-06.54.12:533][870]LogAutomationController: Capture 60/73 SpecColor mean_rgb_sum=0.000250184
+[2026.10.28-06.54.12:533][870]LogAutomationController: Capture 61/73 SpecIntensityLow mean_rgb_sum=0.000375479
+[2026.10.28-06.54.12:533][870]LogAutomationController: Capture 62/73 SpecIntensityHigh mean_rgb_sum=0.00150178
+[2026.10.28-06.54.12:533][870]LogAutomationController: Capture 63/73 LocalPointBlocked mean_rgb_sum=0.399026
+[2026.10.28-06.54.12:533][870]LogAutomationController: Capture 64/73 LocalSpotBlocked mean_rgb_sum=0.66545
+[2026.10.28-06.54.12:533][870]LogAutomationController: Capture 65/73 LocalBothBlocked mean_rgb_sum=1.06447
+[2026.10.28-06.54.12:533][870]LogAutomationController: Capture 66/73 GI0 mean_rgb_sum=0.924394
+[2026.10.28-06.54.12:533][870]LogAutomationController: Capture 67/73 GI1 mean_rgb_sum=0.975692
+[2026.10.28-06.54.12:533][870]LogAutomationController: Capture 68/73 GI2 mean_rgb_sum=0.884789
+[2026.10.28-06.54.12:533][870]LogAutomationController: Capture 69/73 GI3 mean_rgb_sum=0.817084
+[2026.10.28-06.54.12:533][870]LogAutomationController: Capture 70/73 GI4 mean_rgb_sum=0.73455
+[2026.10.28-06.54.12:533][870]LogAutomationController: Capture 71/73 GI5 mean_rgb_sum=0.575658
+[2026.10.28-06.54.12:533][870]LogAutomationController: Capture 72/73 GIRepeat mean_rgb_sum=0.976361
+[2026.10.28-06.54.12:533][870]LogAutomationController: Capture 73/73 GIRedRepeat mean_rgb_sum=0.817381
+[2026.10.28-06.54.12:533][870]LogAutomationController: Completed 73 real GPU captures in E:/unrealProjects/PrincipledNPR/work/ToonGPUResearch/EvidenceComplete
+[2026.10.28-06.54.12:533][870]LogAutomationController: EndEvents: NPR.Research.ToonGPU
+[2026.10.28-06.54.12:533][870]LogAutomationController: Display: Exporting Automation Report.
+[2026.10.28-06.54.12:533][870]LogAutomationController: Display: Converting results to json object...
+[2026.10.28-06.54.12:535][870]LogAutomationController: Writing reports to E:/unrealProjects/PrincipledNPR/work/ToonGPUResearch/AutomationComplete...
+[2026.10.28-06.54.12:538][870]LogAutomationController: Display: Successfully wrote json results file!
+[2026.10.28-06.54.12:538][870]LogAutomationController: Exported report to 'E:/unrealProjects/PrincipledNPR/work/ToonGPUResearch/AutomationComplete' in 0.00 Seconds
+[2026.10.28-06.54.12:538][871]LogAutomationController: Display: Report can be opened in the editor at 'E:/unrealProjects/PrincipledNPR/work/ToonGPUResearch/AutomationComplete'
+[2026.10.28-06.54.12:538][871]LogAutomationController: Sending StopTestSession to C0FF3FBB4311A1BA8B037BBA7A422D74
+[2026.10.28-06.54.12:538][871]LogAutomationCommandLine: Display: ...Automation Test Queue Empty 1 tests performed.
+[2026.10.28-06.54.12:552][871]LogAutomationWorker: Received StopTestSession from 48B53970474F5C19AB20DBB7BA0AC237
+[2026.10.28-06.54.12:552][872]LogExit: Display: **** TestExit: Automation Test Queue Empty ****

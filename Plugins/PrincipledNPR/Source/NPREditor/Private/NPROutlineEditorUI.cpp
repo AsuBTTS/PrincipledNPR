@@ -1,5 +1,6 @@
 #include "NPROutlineEditorUI.h"
 #include "NPRRimEditorUI.h"
+#include "NPRToonEditorUI.h"
 #include "NPRCharacterPreview.h"
 #include "NPRModulationEditorLibrary.h"
 #include "NPRStyleBindingComponent.h"
@@ -11,6 +12,7 @@
 #include "NPROutlineActorComponent.h"
 #include "AdvancedPreviewScene.h"
 #include "Editor.h"
+#include "EngineUtils.h"
 #include "EditorViewportClient.h"
 #include "SEditorViewport.h"
 #include "Engine/Selection.h"
@@ -31,10 +33,12 @@
 #include "Widgets/Layout/SWidgetSwitcher.h"
 #include "Widgets/Layout/SWrapBox.h"
 #include "Framework/Application/SlateApplication.h"
+#include "Layout/WidgetPath.h"
 #include "Widgets/Input/SButton.h"
 #include "Widgets/Input/SComboBox.h"
 #include "Widgets/Input/SEditableTextBox.h"
 #include "Widgets/Text/STextBlock.h"
+#include "Widgets/SViewport.h"
 #include "UObject/StrongObjectPtr.h"
 #include "ScopedTransaction.h"
 #include "ImageUtils.h"
@@ -46,11 +50,15 @@
 #include "Widgets/Notifications/SNotificationList.h"
 #include "HAL/PlatformProcess.h"
 #include "Misc/DateTime.h"
+#include "Misc/CommandLine.h"
+#include "Misc/Parse.h"
 
 namespace
 {
 const FName OutlineTabId(TEXT("PrincipledNPR.OutlineEditor"));
 FDelegateHandle MenuStartupHandle;
+bool IsNPRToonPickTraceEnabled()
+{static const bool Enabled=FParse::Param(FCommandLine::Get(),TEXT("ToonPickTrace"));return Enabled;}
 struct FSharedCamera
 {
     FVector Location = FVector(260, -260, 140);
@@ -93,6 +101,13 @@ public:
         OwnScene->GetWorld()->Tick(LEVELTICK_All, DeltaSeconds);
     }
     virtual FLinearColor GetBackgroundColor() const override { return FLinearColor(0.12f, 0.14f, 0.18f); }
+    TFunction<void(const UPrimitiveComponent*,int32,int32)> OnRegionPick;
+    virtual void ProcessClick(FSceneView& View,HHitProxy* Proxy,FKey Key,EInputEvent Event,uint32 X,uint32 Y) override
+    {
+        if(OnRegionPick&&Key==EKeys::LeftMouseButton&&Proxy&&Proxy->IsA(HActor::StaticGetType()))
+        {auto* Hit=static_cast<HActor*>(Proxy);OnRegionPick(Hit->PrimComponent,Hit->MaterialIndex,Hit->SectionIndex);return;}
+        FEditorViewportClient::ProcessClick(View,Proxy,Key,Event,X,Y);
+    }
     void ApplySharedCamera()
     {
         SetViewLocation(Camera->Location); SetViewRotation(Camera->Rotation);
@@ -135,6 +150,35 @@ public:
         Client = MakeShared<FOutlinePreviewClient>(Scene.Get(), SharedThis(this), Camera.ToSharedRef());
         return Client.ToSharedRef();
     }
+    virtual FReply OnPreviewMouseButtonDown(const FGeometry&,const FPointerEvent& E) override
+    {
+        if(IsNPRToonPickTraceEnabled())UE_LOG(LogTemp,Display,TEXT("ToonPick Down enabled=%d key=%s pos=%s"),!!RegionPicked,*E.GetEffectingButton().ToString(),*E.GetScreenSpacePosition().ToString());
+        if(RegionPicked&&E.GetEffectingButton()==EKeys::LeftMouseButton&&!E.IsAltDown()&&!E.IsControlDown()&&!E.IsShiftDown()&&
+            !E.IsMouseButtonDown(EKeys::RightMouseButton)&&!E.IsMouseButtonDown(EKeys::MiddleMouseButton))
+        {RegionPress=E.GetScreenSpacePosition();bRegionPressed=true;bRegionDragged=false;return FReply::Handled().CaptureMouse(SharedThis(this));}
+        return FReply::Unhandled();
+    }
+    virtual FReply OnMouseMove(const FGeometry&,const FPointerEvent& E) override
+    {
+        if(!bRegionPressed)return FReply::Unhandled();
+        bRegionDragged|=(E.GetScreenSpacePosition()-RegionPress).SizeSquared()>16;
+        return FReply::Handled();
+    }
+    virtual FReply OnMouseButtonUp(const FGeometry&,const FPointerEvent& E) override
+    {
+        if(IsNPRToonPickTraceEnabled())UE_LOG(LogTemp,Display,TEXT("ToonPick Up pressed=%d dragged=%d pos=%s delta2=%g"),bRegionPressed,bRegionDragged,*E.GetScreenSpacePosition().ToString(),(E.GetScreenSpacePosition()-RegionPress).SizeSquared());
+        if(!bRegionPressed||E.GetEffectingButton()!=EKeys::LeftMouseButton)return FReply::Unhandled();
+        bRegionPressed=false;
+        if(!bRegionDragged&&(E.GetScreenSpacePosition()-RegionPress).SizeSquared()<=16)
+        {
+            const auto Geometry=ViewportWidget->GetCachedGeometry();
+            const auto Local=Geometry.AbsoluteToLocal(E.GetScreenSpacePosition()),Size=Geometry.GetLocalSize();
+            if(Size.X>0&&Size.Y>0)PickAtNormalized(Local.X/Size.X,Local.Y/Size.Y);
+        }
+        return FReply::Handled().ReleaseMouseCapture();
+    }
+    virtual void OnMouseCaptureLost(const FCaptureLostEvent&) override
+    {if(IsNPRToonPickTraceEnabled())UE_LOG(LogTemp,Display,TEXT("ToonPick CaptureLost pressed=%d"),bRegionPressed);bRegionPressed=false;bRegionDragged=false;}
     void Load(USkeletalMeshComponent* Source, UNPROutlineComponent* Binding, int32 Slot, bool bNPR)
     {
         ClearGroup();
@@ -297,6 +341,57 @@ public:
     }
     int32 MeshCount() const { return GroupActor?Copies.Num():(PreviewActor->GetSkeletalMeshComponent()->GetSkeletalMeshAsset()?1:0); }
     UMeshComponent* CopyOf(UMeshComponent* Source) const { return Copies.FindRef(Source); }
+    void SetRegionPicked(TFunction<void(UMeshComponent*,int32,int32)> Callback)
+    {
+        RegionPicked=MoveTemp(Callback);
+        Client->OnRegionPick=RegionPicked?TFunction<void(const UPrimitiveComponent*,int32,int32)>([this](const UPrimitiveComponent* Hit,int32 Material,int32 Section)
+        {
+            // Outline render helpers are attached to their source preview copy.
+            // They can own the hit proxy even for a custom-depth-only mask.
+            if(IsNPRToonPickTraceEnabled())UE_LOG(LogTemp,Display,TEXT("ToonPick Hit component=%s material=%d section=%d"),*GetPathNameSafe(Hit),Material,Section);
+            for(const USceneComponent* Candidate=Hit;Candidate;Candidate=Candidate->GetAttachParent())
+            for(const auto& Entry:Copies)if(Entry.Value==Candidate)
+            {
+                if(const auto* Skel=Cast<USkeletalMeshComponent>(Entry.Value);Skel&&Section>=0)
+                {
+                    const int32 LOD=Skel->GetForcedLOD()>0?Skel->GetForcedLOD()-1:Skel->GetPredictedLODLevel();
+                    TArray<FNPROutlineSectionInfo> Mapping;FString Error;
+                    if(UNPROutlineActorComponent::GetSectionMapping(Entry.Key.Get(),Mapping,Error))
+                        for(const auto& Row:Mapping)if(Row.LODIndex==LOD&&Row.SectionIndex==Section){Material=Row.MaterialSlotIndex;break;}
+                }
+                if(IsNPRToonPickTraceEnabled())UE_LOG(LogTemp,Display,TEXT("ToonPick Mapped source=%s slot=%d"),*GetPathNameSafe(Entry.Key.Get()),Material);
+                RegionPicked(Entry.Key.Get(),Material,Section);return;
+            }
+        }):TFunction<void(const UPrimitiveComponent*,int32,int32)>();
+    }
+    void SelectRegion(UMeshComponent* Source,int32 Material)
+    {
+        Client->EngineShowFlags.SetSelectionOutline(true);
+        for(const auto& Entry:Copies)
+        {
+            const int32 Index=Entry.Key.Get()==Source?Material:INDEX_NONE;
+            if(auto* Skel=Cast<USkeletalMeshComponent>(Entry.Value))
+            {Skel->bCanHighlightSelectedSections=true;Skel->SetSelectedEditorMaterial(Index);}
+            if(auto* Mesh=Cast<UStaticMeshComponent>(Entry.Value))
+            {if(Mesh->SelectedEditorMaterial!=Index){Mesh->SelectedEditorMaterial=Index;Mesh->MarkRenderStateDirty();}}
+        }
+        Invalidate();
+    }
+    bool PickRegionAtNormalized(float X,float Y)
+    {
+        if(!SceneViewport||!Client->OnRegionPick||X<0||X>=1||Y<0||Y>=1)return false;
+        // Exercise the same Slate tunnel and captured release as native input.
+        FWidgetPath Path;
+        if(!FSlateApplication::Get().GeneratePathToWidgetUnchecked(SharedThis(this),Path)||!Path.IsValid())return false;
+        TArray<FWidgetAndPointer> Routed;for(int32 I=0;I<Path.Widgets.Num();++I)Routed.Emplace(Path.Widgets[I]);
+        Path=FWidgetPath(MakeArrayView(Routed));
+        const FGeometry Geometry=ViewportWidget->GetCachedGeometry();
+        const FVector2D Point=Geometry.LocalToAbsolute(FVector2D(X*Geometry.GetLocalSize().X,Y*Geometry.GetLocalSize().Y));
+        TSet<FKey> Down{EKeys::LeftMouseButton},Up;
+        const bool Pressed=FSlateApplication::Get().RoutePointerDownEvent(Path,FPointerEvent(0,Point,Point,Down,EKeys::LeftMouseButton,0,FModifierKeysState())).IsEventHandled();
+        const bool Released=FSlateApplication::Get().RoutePointerUpEvent(Path,FPointerEvent(0,Point,Point,Up,EKeys::LeftMouseButton,0,FModifierKeysState())).IsEventHandled();
+        return Pressed&&Released;
+    }
     void SetMethodFilter(TOptional<ENPROutlineMethod> Filter) { MethodFilter=Filter; }
     void ApplySharedCamera() { Client->ApplySharedCamera(); Invalidate(); }
     void SetScreenPercentage(int32 Percentage)
@@ -362,6 +457,21 @@ public:
         return true;
     }
 private:
+    bool PickAtNormalized(float X,float Y)
+    {
+        if(!SceneViewport||!Client->OnRegionPick||X<0||X>=1||Y<0||Y>=1)return false;
+        const auto Size=SceneViewport->GetSizeXY();if(Size.X<=0||Size.Y<=0)return false;
+        const int32 PX=FMath::Clamp(int32(X*Size.X),0,Size.X-1),PY=FMath::Clamp(int32(Y*Size.Y),0,Size.Y-1);
+        TRefCountPtr<HHitProxy> Hit=SceneViewport->GetHitProxy(PX,PY);
+        if(IsNPRToonPickTraceEnabled())UE_LOG(LogTemp,Display,TEXT("ToonPick Query uv=%g,%g size=%d,%d pixel=%d,%d actor=%d"),X,Y,Size.X,Size.Y,PX,PY,Hit&&Hit->IsA(HActor::StaticGetType()));
+        if(!Hit||!Hit->IsA(HActor::StaticGetType()))return false;
+        FSceneViewFamilyContext Family(FSceneViewFamily::ConstructionValues(SceneViewport.Get(),Scene->GetScene(),Client->EngineShowFlags).SetRealtimeUpdate(true));
+        if(FSceneView* View=Client->CalcSceneView(&Family))
+        {Client->ProcessClick(*View,Hit.GetReference(),EKeys::LeftMouseButton,IE_Released,PX,PY);return true;}
+        return false;
+    }
+    FVector2D RegionPress=FVector2D::ZeroVector;
+    bool bRegionPressed=false,bRegionDragged=false;
     void ClearGroup()
     {
         if(IsValid(PreviewGroup)) PreviewGroup->DestroyComponent();
@@ -382,6 +492,7 @@ private:
     int32 IsolatedSlot=INDEX_NONE;
     FBox GroupBounds=FBox(ForceInit);
     TOptional<ENPROutlineMethod> MethodFilter;
+    TFunction<void(UMeshComponent*,int32,int32)> RegionPicked;
 };
 
 class FCharacterPreview final : public FNPRCharacterPreview, public TSharedFromThis<FCharacterPreview>
@@ -433,13 +544,14 @@ public:
                         EffectFilter==TEXT("RimLight")?TEXT("只看 Rim Light / 当前参数"):
                         EffectFilter==TEXT("HullOutline")?TEXT("只看反向壳描边 / 非后处理"):
                         EffectFilter==TEXT("ScreenOutline")?TEXT("只看屏幕空间描边 / 后处理"):
-                        EffectFilter==TEXT("Surface")?TEXT("只看表面组合 / 不含 Rim 与描边"):TEXT("已应用效果组合 / 当前角色"));})]
+                        EffectFilter==TEXT("Surface")?TEXT("只看表面组合 / 不含 Rim 与描边"):
+                        EffectFilter==TEXT("Toon")?TEXT("Toon 表面 / 不含 Rim 与描边"):TEXT("已应用效果组合 / 当前角色"));})]
                     + SVerticalBox::Slot().FillHeight(1)[Current.ToSharedRef()]]];
     }
     virtual TSharedRef<SWidget> Widget() override { return Content.ToSharedRef(); }
     virtual void LoadActor(AActor* Actor) override
     {
-        Source=Actor; Proxy.Reset();EffectProxy.Reset(); SoloMaterials.Reset(); Isolated.Reset(); Slot=INDEX_NONE;
+        Source=Actor; Proxy.Reset();EffectProxy.Reset(); SoloMaterials.Reset();MaterialOverrides.Reset(); Isolated.Reset(); Slot=INDEX_NONE;
         if(IsValid(Actor))
         {
             Proxy.Reset(NewObject<UNPROutlineActorComponent>(Actor,NAME_None,RF_Transient));
@@ -476,10 +588,11 @@ public:
                 for(auto* Binding:TInlineComponentArray<UNPROutlineComponent*>(Source.Get()))
                     if(Binding->TargetMesh==Mesh && Binding->MaterialSlotIndex==I && Base==Binding->ConvertedMaterial) Base=Binding->OriginalMaterial;
                 A->SetMaterial(I,Base);
-                if(bSolo || EffectFilter==TEXT("Surface") || EffectFilter==TEXT("HullOutline") || EffectFilter==TEXT("ScreenOutline"))
+                if(bSolo || EffectFilter==TEXT("Surface") || EffectFilter==TEXT("Toon") || EffectFilter==TEXT("HullOutline") || EffectFilter==TEXT("ScreenOutline"))
                 {
                     const bool SelectedRim=bSolo && ((!RimTarget.IsValid()) || (Mesh==RimTarget.Get() && I==RimSlot));
-                    if(SelectedRim || EffectFilter==TEXT("Surface"))
+                    const bool SelectedToon=EffectFilter==TEXT("Toon")&&(!RimTarget.IsValid()||(Mesh==RimTarget.Get()&&I==RimSlot));
+                    if(SelectedRim || EffectFilter==TEXT("Surface") || SelectedToon)
                     {
                         // Clone the live parent. Disable only the independent second contribution in this preview.
                         auto& Stored=SoloMaterials.FindOrAdd(Mesh).FindOrAdd(I);
@@ -499,6 +612,8 @@ public:
                     else B->SetMaterial(I,Base);
                 }
                 else B->SetMaterial(I,Mesh->GetMaterial(I));
+                if(const auto* Slots=MaterialOverrides.Find(Mesh))
+                    if(const auto* Override=Slots->Find(I);Override&&Override->IsValid()) B->SetMaterial(I,Override->Get());
             }
         }
     }
@@ -525,6 +640,17 @@ public:
     {auto* Copy=(bOriginal?Original:Current)->CopyOf(Mesh);return Copy?Copy->GetMaterial(InSlot):nullptr;}
     virtual bool IsMeshVisible(bool bOriginal,UMeshComponent* Mesh)const override
     {auto* Copy=(bOriginal?Original:Current)->CopyOf(Mesh);return Copy && Copy->IsVisible();}
+    virtual void SetMaterialOverride(UMeshComponent* Mesh,int32 Index,UMaterialInterface* Material)override
+    {
+        if(Material)MaterialOverrides.FindOrAdd(Mesh).FindOrAdd(Index).Reset(Material);
+        else if(auto* Slots=MaterialOverrides.Find(Mesh))Slots->Remove(Index);
+        Refresh();
+    }
+    virtual void ClearMaterialOverrides()override{MaterialOverrides.Reset();Refresh();}
+    virtual void SetRegionPicked(TFunction<void(UMeshComponent*,int32,int32)> Callback)override
+    {Current->SetRegionPicked(MoveTemp(Callback));}
+    virtual void SelectRegion(UMeshComponent* Mesh,int32 Index)override{Current->SelectRegion(Mesh,Index);}
+    virtual bool PickRegionAtNormalized(float X,float Y)override{return Current->PickRegionAtNormalized(X,Y);}
 private:
     void Rebuild()
     {
@@ -574,6 +700,7 @@ private:
     TSharedPtr<SOutlineViewport> Original,Current;
     TSharedPtr<SVerticalBox> Content,OriginalPane;
     TMap<TWeakObjectPtr<UMeshComponent>,TMap<int32,FSlotMaterial>> SoloMaterials;
+    TMap<TWeakObjectPtr<UMeshComponent>,TMap<int32,TStrongObjectPtr<UMaterialInterface>>> MaterialOverrides;
     bool bPendingFocus=false;
     int32 StableSizeFrames=0;
     FIntPoint LastSize=FIntPoint::ZeroValue;
@@ -1060,7 +1187,7 @@ public:
 private:
     TSharedRef<SWidget> CategoryEntry(const TCHAR* Label,FName Effect)
     {return SNew(SButton).Text(FText::FromString(Label)).OnClicked_Lambda([this,Effect]
-        {if(Effect==TEXT("RimLight"))FNPROutlineEditorUI::SelectFeature(TEXT("Rim"));else FilterEffect(Effect);return FReply::Handled();});}
+        {if(Effect==TEXT("RimLight"))FNPROutlineEditorUI::SelectFeature(TEXT("Rim"));else if(Effect==TEXT("Toon"))FNPROutlineEditorUI::SelectFeature(TEXT("Toon"));else FilterEffect(Effect);return FReply::Handled();});}
     void BuildRows()
     {
         const auto Rows=UNPRModulationEditorLibrary::GetMeshEffects(Actor.Get());
@@ -1077,8 +1204,8 @@ private:
             {
                 Buttons->AddSlot()[SNew(SButton).Text(FText::FromString(TEXT("只看 ")+Effect.ToString()))
                     .OnClicked_Lambda([this,Mesh,Slot,Effect]{Filter=Effect;Preview->SetRimTarget(Mesh.Get(),Slot);Preview->SetEffectFilter(Effect);Preview->Isolate(Mesh.Get(),Slot);return FReply::Handled();})];
-                if(Effect==TEXT("RimLight")||Effect==TEXT("HullOutline")||Effect==TEXT("ScreenOutline"))
-                    Buttons->AddSlot()[SNew(SButton).Text(FText::FromString(Effect==TEXT("RimLight")?TEXT("编辑 Rim Light"):TEXT("编辑描边")))
+                if(Effect==TEXT("RimLight")||Effect==TEXT("Toon")||Effect==TEXT("HullOutline")||Effect==TEXT("ScreenOutline"))
+                    Buttons->AddSlot()[SNew(SButton).Text(FText::FromString(Effect==TEXT("RimLight")?TEXT("编辑 Rim Light"):Effect==TEXT("Toon")?TEXT("编辑 Toon"):TEXT("编辑描边")))
                         .OnClicked_Lambda([Mesh,Slot,Effect]{FNPROutlineEditorUI::EditEffect(Mesh.Get(),Slot,Effect);return FReply::Handled();})];
             }
             RowsBox->AddSlot().AutoHeight().Padding(0,4)[SNew(SBorder).Padding(8)[SNew(SVerticalBox)
@@ -1105,22 +1232,25 @@ public:
                 [SNew(SWrapBox).UseAllottedSize(true).InnerSlotPadding(FVector2D(8,6))
                     + SWrapBox::Slot()[FeatureEntry(TEXT("NPR 调制"),2)]
                     + SWrapBox::Slot()[FeatureEntry(TEXT("Outline · 描边"),0)]
-                    + SWrapBox::Slot()[FeatureEntry(TEXT("Rim Light · 边缘光"),1)]]]
+                    + SWrapBox::Slot()[FeatureEntry(TEXT("Rim Light · 边缘光"),1)]
+                    + SWrapBox::Slot()[FeatureEntry(TEXT("Toon · 光照"),3)]]]
             + SVerticalBox::Slot().FillHeight(1)
             [SAssignNew(FeaturePages,SWidgetSwitcher)
                 + SWidgetSwitcher::Slot()[SAssignNew(Outline,SNPROutlineEditor)]
                 + SWidgetSwitcher::Slot()[SAssignNew(Rim,SNPRRimEditor)]
                 + SWidgetSwitcher::Slot()[SAssignNew(Overview,SNPRActorEffects)]
+                + SWidgetSwitcher::Slot()[SAssignNew(Toon,SNPRToonEditor)]
             ]
         ];
     }
     void ShowOutline() {Show(0);}
     void Show(int32 Feature)
-    {ActiveFeature=Feature;FeaturePages->SetActiveWidgetIndex(Feature);if(Feature==2){Overview->Reload();Overview->FilterEffect(TEXT("All"));}else if(Feature==1)Rim->SyncSelection();else Outline->SyncSelection();}
+    {ActiveFeature=Feature;FeaturePages->SetActiveWidgetIndex(Feature);if(Feature==2){Overview->Reload();Overview->FilterEffect(TEXT("All"));}else if(Feature==1)Rim->SyncSelection();else if(Feature==3)Toon->SyncSelection();else Outline->SyncSelection();}
     bool EditEffect(UMeshComponent* Mesh,int32 Slot,FName Effect)
     {
         if(!IsValid(Mesh)||Slot<0||Slot>=Mesh->GetNumMaterials())return false;
         if(Effect==TEXT("RimLight")){Show(1);Rim->EditTarget(Mesh,Slot);return true;}
+        if(Effect==TEXT("Toon")){Show(3);Toon->EditTarget(Mesh,Slot);return true;}
         if(Effect==TEXT("HullOutline")||Effect==TEXT("ScreenOutline")){Show(0);return true;}
         return false;
     }
@@ -1128,11 +1258,12 @@ public:
     {
         if(Feature==TEXT("Overview")){Show(2);return true;}
         if(Feature==TEXT("Rim")){Show(1);return true;}
+        if(Feature==TEXT("Toon")){Show(3);return true;}
         if(Feature==TEXT("Outline")){Show(0);return true;}
         if(Feature==TEXT("Surface")||Feature==TEXT("HullOutline")||Feature==TEXT("ScreenOutline")){Show(2);Overview->FilterEffect(Feature);return true;}
         return false;
     }
-    TSharedPtr<FNPRCharacterPreview> CurrentPreview()const{return ActiveFeature==1?Rim->GetPreview():ActiveFeature==2?Overview->GetPreview():nullptr;}
+    TSharedPtr<FNPRCharacterPreview> CurrentPreview()const{return ActiveFeature==1?Rim->GetPreview():ActiveFeature==2?Overview->GetPreview():ActiveFeature==3?Toon->GetPreview():nullptr;}
     TSharedPtr<SNPROutlineEditor> GetOutline() const { return Outline; }
 private:
     TSharedRef<SWidget> FeatureEntry(const TCHAR* Label,int32 Feature)
@@ -1147,6 +1278,7 @@ private:
     TSharedPtr<SWidgetSwitcher> FeaturePages;
     TSharedPtr<SNPROutlineEditor> Outline;
     TSharedPtr<SNPRRimEditor> Rim;
+    TSharedPtr<SNPRToonEditor> Toon;
     TSharedPtr<SNPRActorEffects> Overview;
 };
 TWeakPtr<SNPRModulationEditor> ActiveWorkspace;

@@ -1,0 +1,105 @@
+Original log excerpt; full log SHA256 in Sources.json
+[2026.10.28-08.26.38:828][  0]LogRHI: Using Forced RHI: D3D12
+[2026.10.28-08.26.38:828][  0]LogRHI: Using Highest Feature Level of D3D12: SM6
+[2026.10.28-08.26.38:828][  0]LogRHI: Loading RHI module D3D12RHI
+[2026.10.28-08.26.38:834][  0]LogD3D12RHI: Loading WinPixEventRuntime.dll for PIX profiling (from ../../../Engine/Binaries/ThirdParty/Windows/WinPixEventRuntime/x64).
+[2026.10.28-08.26.38:834][  0]LogRHI: Checking if RHI D3D12 with Feature Level SM6 is supported by your system.
+[2026.10.28-08.26.39:879][  0]LogD3D12RHI: Found D3D12 adapter 0: NVIDIA GeForce RTX 4060 Laptop GPU (VendorId: 10de, DeviceId: 28e0, SubSysId: 3e4517aa, Revision: 00a1
+[2026.10.28-08.26.39:879][  0]LogD3D12RHI:   Max supported Feature Level 12_2, shader model 6.7, binding tier 3, wave ops supported, atomic64 supported
+[2026.10.28-08.26.39:879][  0]LogD3D12RHI:   Adapter has 7956MB of dedicated video memory, 0MB of dedicated system memory, and 16237MB of shared system memory, 1 output[s], TileBased:false UMA:false CacheCoherentUMA:false GPU Upload Heaps:true
+[2026.10.28-08.26.39:880][  0]LogD3D12RHI:   Driver Version: 610.47 (internal:32.0.16.1047, unified:610.47)
+[2026.10.28-08.26.39:880][  0]LogD3D12RHI:      Driver Date: 5-19-2026
+[2026.10.28-08.26.39:890][  0]LogD3D12RHI: Intel Extensions Framework not supported by driver. Please check if a driver update is available.
+[2026.10.28-08.26.39:891][  0]LogD3D12RHI: Found D3D12 adapter 1: Intel(R) UHD Graphics (VendorId: 8086, DeviceId: a78b, SubSysId: 3e4517aa, Revision: 0004
+[2026.10.28-08.26.39:891][  0]LogD3D12RHI:   Max supported Feature Level 12_1, shader model 6.7, binding tier 3, wave ops supported, atomic64 unsupported
+[2026.10.28-08.26.39:891][  0]LogD3D12RHI:   Adapter has 128MB of dedicated video memory, 0MB of dedicated system memory, and 16237MB of shared system memory, 0 output[s], TileBased:false UMA:true CacheCoherentUMA:true GPU Upload Heaps:true
+[2026.10.28-08.26.39:891][  0]LogD3D12RHI:   Driver Version: 32.0.101.6790 (internal:32.0.101.6790, unified:101.6790)
+[2026.10.28-08.26.39:891][  0]LogD3D12RHI:      Driver Date: 4-28-2025
+[2026.10.28-08.26.39:892][  0]LogD3D12RHI: Found D3D12 adapter 2: Microsoft Basic Render Driver (VendorId: 1414, DeviceId: 008c, SubSysId: 0000, Revision: 0000
+[2026.10.28-08.26.39:892][  0]LogD3D12RHI:   Max supported Feature Level 12_1, shader model 6.7, binding tier 3, wave ops supported, atomic64 supported
+[2026.10.28-08.26.39:892][  0]LogD3D12RHI:   Adapter has 0MB of dedicated video memory, 0MB of dedicated system memory, and 16237MB of shared system memory, 0 output[s], TileBased:false UMA:true CacheCoherentUMA:true GPU Upload Heaps:true
+[2026.10.28-08.26.39:892][  0]LogD3D12RHI:   D3D10Warp Version: 10.0.26100.9711
+[2026.10.28-08.26.39:892][  0]LogD3D12RHI: DirectX Agility SDK runtime found.
+[2026.10.28-08.26.39:892][  0]LogD3D12RHI: Chosen D3D12 Adapter Id = 0
+[2026.10.28-08.26.39:892][  0]LogRHI: RHI D3D12 with Feature Level SM6 is supported and will be used.
+[2026.10.28-08.26.39:966][  0]LogD3D12RHI: Integrated GPU (iGPU): false
+[2026.10.28-08.26.39:966][  0]LogD3D12RHI: Display: Creating D3D12 RHI with Max Feature Level SM6
+[2026.10.28-08.26.39:992][  0]LogD3D12RHI: NVIDIA Architecture=400
+[2026.10.28-08.26.39:992][  0]LogRHI: Display: Timeout Detection and Recovery (TDR) summary: 
+[2026.10.28-08.26.39:994][  0]LogRHI: RHI Adapter Info:
+[2026.10.28-08.26.39:995][  0]LogRHI:             Name: NVIDIA GeForce RTX 4060 Laptop GPU
+[2026.10.28-08.26.39:995][  0]LogRHI:   Driver Version: 610.47 (internal:32.0.16.1047, unified:610.47)
+[2026.10.28-08.26.39:995][  0]LogRHI:      Driver Date: 5-19-2026
+[2026.10.28-08.26.39:995][  0]LogRHI: Performing driver check for denylisted drivers.
+[2026.10.28-08.26.39:995][  0]LogD3D12RHI:     GPU DeviceId: 0x28e0 (for the marketing name, search the web for "GPU Device Id")
+[2026.10.28-08.26.39:995][  0]LogD3D12RHI: InitD3DDevice: -D3DDebug = off -D3D12GPUValidation = off
+[2026.10.28-08.26.40:311][  0]LogD3D12RHI: Emitting draw events for PIX profiling.
+[2026.10.28-08.26.40:507][  0]LogD3D12RHI: ID3D12Device1 is supported.
+[2026.10.28-08.26.40:507][  0]LogD3D12RHI: ID3D12Device2 is supported.
+[2026.10.28-08.26.40:507][  0]LogD3D12RHI: ID3D12Device3 is supported.
+[2026.10.28-08.26.40:507][  0]LogD3D12RHI: ID3D12Device4 is supported.
+[2026.10.28-08.26.40:507][  0]LogD3D12RHI: ID3D12Device5 is supported.
+[2026.10.28-08.26.40:507][  0]LogD3D12RHI: ID3D12Device6 is supported.
+[2026.10.28-08.26.40:507][  0]LogD3D12RHI: ID3D12Device7 is supported.
+[2026.10.28-08.26.40:507][  0]LogD3D12RHI: ID3D12Device8 is supported.
+[2026.10.28-08.26.40:507][  0]LogD3D12RHI: ID3D12Device9 is supported.
+[2026.10.28-08.26.40:507][  0]LogD3D12RHI: ID3D12Device10 is supported.
+[2026.10.28-08.26.40:507][  0]LogD3D12RHI: ID3D12Device11 is supported.
+[2026.10.28-08.26.40:507][  0]LogD3D12RHI: ID3D12Device12 is supported.
+[2026.10.28-08.26.40:507][  0]LogD3D12RHI: Bindless is supported. MaxNonSamplerDescriptors: 1000000, MaxSamplerDescriptors: 2048
+[2026.10.28-08.26.40:507][  0]LogD3D12RHI: Stencil ref from pixel shader is not supported
+[2026.10.28-08.26.40:507][  0]LogD3D12RHI: Raster order views are supported
+[2026.10.28-08.26.40:507][  0]LogD3D12RHI: Wave Operations are supported (wave size: min=32 max=32).
+[2026.10.28-08.26.40:507][  0]LogD3D12RHI:      Legacy Barriers Present in Build: Yes
+[2026.10.28-08.26.40:507][  0]LogD3D12RHI:    Enhanced Barriers Present in Build: Yes
+[2026.10.28-08.26.40:507][  0]LogD3D12RHI:      Enhanced Barriers Driver Support: Yes
+[2026.10.28-08.26.40:507][  0]LogD3D12RHI: Preferred Barrier Implementation Type: Legacy
+[2026.10.28-08.26.40:507][  0]LogD3D12RHI:         Chosen Barrier Implementation: D3D12LegacyBarriers
+[2026.10.28-08.26.40:507][  0]LogD3D12RHI: D3D12 ray tracing tier 1.1 and bindless resources are supported.
+[2026.10.28-08.26.40:507][  0]LogD3D12RHI: Mesh shader tier 1.0 is supported
+[2026.10.28-08.26.40:507][  0]LogD3D12RHI: AtomicInt64OnTypedResource is supported
+[2026.10.28-08.26.40:507][  0]LogD3D12RHI: AtomicInt64OnGroupShared is supported
+[2026.10.28-08.26.40:507][  0]LogD3D12RHI: AtomicInt64OnDescriptorHeapResource is supported
+[2026.10.28-08.26.40:507][  0]LogD3D12RHI: Shader Model 6.6 atomic64 is supported
+[2026.10.28-08.26.40:507][  0]LogD3D12RHI: Work Graphs are supported
+[2026.10.28-08.26.40:507][  0]LogD3D12RHI: Bindless is enabled (Configuration=RayTracing). Initializing allocators with 32768 Resource and 2048 Sampler descriptors
+[2026.10.28-08.26.40:650][  0]LogD3D12RHI: [GPUBreadCrumb] Successfully setup breadcrumb resource for DiagnosticBuffer (Queue: 0x0000022452729C00)
+[2026.10.28-08.26.40:650][  0]LogD3D12RHI: [GPUBreadCrumb] Successfully setup breadcrumb resource for DiagnosticBuffer (Queue: 0x0000022452729EC0)
+[2026.10.28-08.26.40:651][  0]LogD3D12RHI: [GPUBreadCrumb] Successfully setup breadcrumb resource for DiagnosticBuffer (Queue: 0x000002245272A180)
+[2026.10.28-08.26.40:652][  0]LogD3D12RHI: Display: Not using pipeline state disk cache per r.D3D12.PSO.DiskCache=0
+[2026.10.28-08.26.40:652][  0]LogD3D12RHI: Display: Not using driver-optimized pipeline state disk cache per r.D3D12.PSO.DriverOptimizedDiskCache=0
+[2026.10.28-08.26.40:881][  0]LogD3D12RHI: NVIDIA Shader Execution Reordering interface supported!
+[2026.10.28-08.26.40:881][  0]LogD3D12RHI: NVIDIA Ray Tracing Cluster Operations supported and enabled
+[2026.10.28-08.26.40:881][  0]LogD3D12RHI: LSS not supported on this device.
+[2026.10.28-08.26.40:881][  0]LogD3D12RHI: NVIDIA Extended ray tracing pipeline state applied.
+[2026.10.28-08.26.40:881][  0]LogRHI: Texture pool is 4528 MB (70% of 6469 MB)
+[2026.10.28-08.26.40:881][  0]LogD3D12RHI: Async texture creation enabled
+[2026.10.28-08.26.40:881][  0]LogD3D12RHI: RHI has support for 64 bit atomics
+[2026.10.28-08.26.40:901][  0]LogRHI: Render tracing channels set: 'Submission' -> 0xf
+[2026.10.28-08.27.13:298][303]LogAutomationCommandLine: Display: Ready to start automation
+[2026.10.28-08.27.18:348][605]LogAutomationController: Received FindWorkersResponseMessage from E7BA84924A19185BD262F5BC9FB7EED9
+[2026.10.28-08.27.18:348][605]LogAutomationController: Requesting test list from E7BA84924A19185BD262F5BC9FB7EED9
+[2026.10.28-08.27.18:440][606]LogAutomationController: Received RequestTestsReplyCompleteMessage from E7BA84924A19185BD262F5BC9FB7EED9
+[2026.10.28-08.27.18:447][606]LogAutomationController: 6440 tests available on E7BA84924A19185BD262F5BC9FB7EED9
+[2026.10.28-08.27.18:525][606]LogAutomationCommandLine: Display: Found 1 automation tests based on 'NPR.Research.ToonLive'
+[2026.10.28-08.27.18:525][606]LogAutomationCommandLine: Display: 	NPR.Research.ToonLive
+[2026.10.28-08.27.18:527][606]LogAutomationController: Sending StopTests to E7BA84924A19185BD262F5BC9FB7EED9
+[2026.10.28-08.27.18:533][606]LogAutomationController: Display: Loading results html template...
+[2026.10.28-08.27.18:538][606]LogAutomationController: Display: Successfully wrote html results file!
+[2026.10.28-08.27.18:538][606]LogAutomationController: Sending StartTestSession to E7BA84924A19185BD262F5BC9FB7EED9
+[2026.10.28-08.27.18:538][606]LogAutomationController: Display: Clearing ../../../../../unrealProjects/PrincipledNPR/work/ToonGPUResearch/Saved/Automation/Logs/ and ../../../../../unrealProjects/PrincipledNPR/work/ToonGPUResearch/Saved/Automation/Tmp/
+[2026.10.28-08.27.18:554][606]LogAutomationController: Sending RunTest ToonLive to E7BA84924A19185BD262F5BC9FB7EED9
+[2026.10.28-08.27.18:555][606]LogAutomationController: Display: Test Started. Name={ToonLive} Path={NPR.Research.ToonLive}
+[2026.10.28-08.27.27:641][717]LogAutomationController: Display: Test Completed. Result={Success} Name={ToonLive} Path={NPR.Research.ToonLive}
+[2026.10.28-08.27.27:641][717]LogAutomationController: BeginEvents: NPR.Research.ToonLive
+[2026.10.28-08.27.27:641][717]LogAutomationController: Toon live 109 steps; immutable production assets; outputs E:/unrealProjects/PrincipledNPR/work/ToonLive/Final3
+[2026.10.28-08.27.27:641][717]LogAutomationController: EndEvents: NPR.Research.ToonLive
+[2026.10.28-08.27.27:642][717]LogAutomationController: Display: Exporting Automation Report.
+[2026.10.28-08.27.27:642][717]LogAutomationController: Display: Converting results to json object...
+[2026.10.28-08.27.27:643][717]LogAutomationController: Writing reports to E:/unrealProjects/PrincipledNPR/work/ToonLive/AutomationFinal3...
+[2026.10.28-08.27.27:644][717]LogAutomationController: Display: Successfully wrote json results file!
+[2026.10.28-08.27.27:644][718]LogAutomationController: Exported report to 'E:/unrealProjects/PrincipledNPR/work/ToonLive/AutomationFinal3' in 0.00 Seconds
+[2026.10.28-08.27.27:644][718]LogAutomationController: Display: Report can be opened in the editor at 'E:/unrealProjects/PrincipledNPR/work/ToonLive/AutomationFinal3'
+[2026.10.28-08.27.27:644][718]LogAutomationController: Sending StopTestSession to E7BA84924A19185BD262F5BC9FB7EED9
+[2026.10.28-08.27.27:645][718]LogAutomationCommandLine: Display: ...Automation Test Queue Empty 1 tests performed.
+[2026.10.28-08.27.27:662][719]LogExit: Display: **** TestExit: Automation Test Queue Empty ****

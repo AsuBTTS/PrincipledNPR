@@ -4,6 +4,7 @@
 #include "Engine/DataAsset.h"
 #include "NPRSemanticTypes.h"
 #include "NPRRimParameters.h"
+#include "NPRToonParameters.h"
 #include "NPRStyleProfile.generated.h"
 
 class UCurveFloat;
@@ -36,6 +37,16 @@ public:
     /** Named semantic strategies; backend-specific pin names do not belong here. */
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Semantics")
     TMap<FName, FName> RenderingPolicies;
+
+    /** Inherit preserves old assets; an explicit choice selects a backend material family. */
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Semantics")
+    ENPRShadingModel ShadingModel = ENPRShadingModel::Inherit;
+
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Semantics")
+    FNPRToonResponseSettings ToonResponse;
+
+    UFUNCTION(BlueprintCallable, Category = "NPR|Toon")
+    bool ResolveToonParameters(ENPRMaterialKind Kind, FNPRToonParameters& OutParameters, FString& OutError) const;
 
     /** Resolve defaults then the selected material kind. Missing v1 RGB inherits white. */
     UFUNCTION(BlueprintCallable, Category = "NPR|Rim")

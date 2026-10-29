@@ -1,0 +1,61 @@
+{
+  "status": "PassedWithinRecordedScope",
+  "utc": "2026-10-29T12:52:25.053247+00:00",
+  "method": "Native desktop UE window via actual mouse/keyboard input; screenshots saved directly from window captures, no generated or composited pixels.",
+  "map": "/Game/NPR/ToonValidation/L_ToonWorkspace_20261029_204340",
+  "actor": "/Game/NPR/ToonValidation/L_ToonWorkspace_20261029_204340.L_ToonWorkspace_20261029_204340:PersistentLevel.SkeletalMeshActor_1",
+  "sourceMap": "/Game/NPR/Maps/L_Outline_MultiScope_v1",
+  "selection": {
+    "activeOutlineHelpers": true,
+    "pickedMaterialSlots": [
+      6,
+      2
+    ],
+    "finalSlot": 2,
+    "referencePoseOnly": true
+  },
+  "input": {
+    "terminatorCenter": 0.2,
+    "terminatorHalfWidth": 0.08,
+    "darkResponseSRGBHex": "285EAAFF",
+    "displayedLinearRGBApprox": [
+      0.021,
+      0.112,
+      0.402
+    ],
+    "nativeColorPickerAccepted": true
+  },
+  "saveStyle": {
+    "status": "SavedByNativeButton",
+    "style": "/Game/NPR/Styles/Style_Toon.Style_Toon",
+    "backendPreset": "/Game/NPR/Generated/Toon/Presets/BP_ToonStyle.BP_ToonStyle"
+  },
+  "apply": {
+    "status": "AppliedAndSavedByNativeButton",
+    "immutablePackage": "/Game/NPR/Generated/Toon/BP_ToonStyle.BP_ToonStyle"
+  },
+  "mapSavedAfterApply": true,
+  "finalMapSaveLog": "[2026.10.29-12.48.30:400][911]LogSavePackage: Moving output files for package: /Game/NPR/ToonValidation/L_ToonWorkspace_20261029_204340",
+  "createdAssetFiles": [
+    "Content/NPR/Styles/Style_Toon.uasset",
+    "Content/NPR/Generated/Toon/Presets/TP_Toon.uasset",
+    "Content/NPR/Generated/Toon/Presets/M_Toon.uasset",
+    "Content/NPR/Generated/Toon/Presets/MI_Toon.uasset",
+    "Content/NPR/Generated/Toon/Presets/BP_ToonStyle.uasset",
+    "Content/NPR/Generated/Toon/TP_Toon.uasset",
+    "Content/NPR/Generated/Toon/M_Toon.uasset",
+    "Content/NPR/Generated/Toon/MI_Toon.uasset",
+    "Content/NPR/Generated/Toon/BP_ToonStyle.uasset"
+  ],
+  "evidence": [
+    "UI/ManualWorkspace.jpg",
+    "UI/ManualColorPicker.jpg",
+    "ManualRunExcerpt.log",
+    "WorkspaceBoot.json"
+  ],
+  "limits": [
+    "Manual desktop save was verified by native status, cleared map dirty marker and save log; this map was not independently reopened in this check.",
+    "Cooked Game restoration was separately tested with L_ToonRuntime3; do not treat it as a reopen of this desktop map.",
+    "No animation, multi-LOD interaction or production art acceptance."
+  ]
+}

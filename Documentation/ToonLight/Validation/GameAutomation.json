@@ -1,0 +1,72 @@
+﻿{
+	"devices": [
+		{
+			"deviceName": "EVANGELION-AV01",
+			"instance": "B6DE3C0F4F67C34C799D7DAFC02CDB53",
+			"instanceName": "EVANGELION-AV01-56788",
+			"platform": "Windows",
+			"oSVersion": "Windows 11 (25H2) [10.0.26200.9711] ",
+			"model": "Default",
+			"gPU": "Intel(R) UHD Graphics",
+			"cPUModel": "Intel(R) Core(TM) i7-14650HX",
+			"rAMInGB": 32,
+			"renderMode": "D3D12_SM6",
+			"rHI": "D3D12 (SM6)",
+			"appInstanceLog": ""
+		}
+	],
+	"reportCreatedOn": "2026.10.29-12.36.52",
+	"succeeded": 2,
+	"succeededWithWarnings": 0,
+	"failed": 0,
+	"notRun": 0,
+	"inProcess": 0,
+	"totalDuration": 0.015363801270723343,
+	"comparisonExported": false,
+	"comparisonExportDirectory": "",
+	"tests": [
+		{
+			"testDisplayName": "Contract",
+			"fullTestPath": "NPR.Toon.Contract",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"B6DE3C0F4F67C34C799D7DAFC02CDB53"
+			],
+			"duration": 0.00757560133934021,
+			"dateTime": "2026.10.29-12.36.52",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "RuntimeBinding",
+			"fullTestPath": "NPR.Toon.RuntimeBinding",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"B6DE3C0F4F67C34C799D7DAFC02CDB53"
+			],
+			"duration": 0.0077881999313831329,
+			"dateTime": "2026.10.29-12.36.52",
+			"entries": [
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "Immutable runtime bundle /Game/NPR/ToonValidation/BP_ToonStyle6.BP_ToonStyle6; world=Game",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2026.10.29-12.36.52"
+				}
+			],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		}
+	]
+}

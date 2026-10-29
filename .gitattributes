@@ -20,6 +20,10 @@ Documentation/RimLight/Integration-2026-10-26/**/*.json -text -filter -whitespac
 Documentation/RimLight/Integration-2026-10-26/**/*.log -text -whitespace
 Documentation/RimLight/Integration-2026-10-26/**/*.txt -text -whitespace
 Documentation/RimLight/OriginalSurface-2026-10-26/**/*.json -text -filter -whitespace
+# Preserve raw research/acceptance records and supplied mathematical inputs.
+# Image patterns below still use LFS.
+Documentation/Research/** -text -filter -whitespace
+Documentation/ToonLight/** -text -filter -whitespace
 SourceAssets/Wanderer/Original/*.txt -text -diff
 *.uasset filter=lfs diff=lfs merge=lfs -text
 *.umap filter=lfs diff=lfs merge=lfs -text

@@ -82,10 +82,21 @@ public:
     UFUNCTION(BlueprintCallable, Category = "NPR|Rim")
     bool ApplyConfiguredRim(FString& OutError);
 
+    /** Bind a prebuilt Toon/Lit bundle. Never edits Profile resources at runtime. */
+    UFUNCTION(BlueprintCallable, Category = "NPR|Toon")
+    bool ApplyConfiguredToon(FString& OutError);
+
+    UPROPERTY(EditInstanceOnly, BlueprintReadOnly, Category = "NPR|Toon")
+    TObjectPtr<UMeshComponent> ToonMesh = nullptr;
+
+    UPROPERTY(EditInstanceOnly, BlueprintReadOnly, Category = "NPR|Toon")
+    TObjectPtr<UNPRBackendStylePackage> ToonPackage = nullptr;
+
     bool IsRimBoundTo(const UMeshComponent* Mesh, int32 SlotIndex) const;
 
     /** Read-only ownership queries for the editor's effect inventory and original comparison. */
     bool OwnsBoundMaterials() const;
+    int32 GetBoundSlotCount() const { return ActiveMaterials.Num(); }
     bool HasTrackedMaterials() const { return IsValid(BoundMesh) && !ActiveMaterials.IsEmpty(); }
     UMaterialInstanceDynamic* GetOwnedMaterial(const UMeshComponent* Mesh, int32 SlotIndex) const;
     UMaterialInterface* GetSourceMaterial(const UMeshComponent* Mesh, int32 SlotIndex) const;

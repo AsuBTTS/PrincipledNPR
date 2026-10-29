@@ -7,6 +7,6 @@ public class NPREditor : ModuleRules
         PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
         PublicDependencyModuleNames.AddRange(new[] { "Core", "CoreUObject", "Engine", "NPRRuntime" });
         PrivateDependencyModuleNames.AddRange(new[] { "UnrealEd", "Slate", "SlateCore", "ToolMenus", "LevelEditor",
-            "PropertyEditor", "ContentBrowser", "AssetTools", "AssetRegistry", "AdvancedPreviewScene", "InputCore", "RenderCore", "RHI" });
+            "PropertyEditor", "ContentBrowser", "AssetTools", "AssetRegistry", "AdvancedPreviewScene", "InputCore", "RenderCore", "RHI", "AppFramework", "Json" });
     }
 }

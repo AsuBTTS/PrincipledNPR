@@ -1,0 +1,35 @@
+
+> docs:build
+> npm run docs:check && vitepress build docs && node Tools/check_docs_build.mjs
+
+
+> docs:check
+> node Tools/docs.mjs check && node Tools/generate_principled_parameter_chart.mjs --check
+
+Docs check PASS: 13 Documentation originals / synchronized web views, 18 semantic parameters, 13 outline fields, 36 pages, 14 status entries; local file links checked. No UE rendering validation.
+Parameter chart check PASS: 18 contract parameters.
+
+  vitepress v1.6.4
+
+- building client + server bundles...
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ building client + server bundles...
+- rendering pages...
+✓ rendering pages...
+build complete in 112.51s.
+file:///E:/unrealProjects/PrincipledNPR/Tools/check_docs_build.mjs:32
+if(failures.length) throw Error(failures.join('\n'))
+                          ^
+
+Error: reference\toon-validation.html: invalid PNG asset /generated/source/Documentation/ToonLight/Validation/UI/ManualWorkspace.png
+reference\toon-validation.html: invalid PNG asset /generated/source/Documentation/ToonLight/Validation/UI/ManualColorPicker.png
+    at file:///E:/unrealProjects/PrincipledNPR/Tools/check_docs_build.mjs:32:27
+    at ModuleJob.run (node:internal/modules/esm/module_job:430:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:661:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v24.14.0

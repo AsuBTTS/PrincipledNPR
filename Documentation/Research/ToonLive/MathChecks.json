@@ -1,0 +1,45 @@
+{
+  "scope": "double precision numerical checks of supplied reference equations; not GPU or symbolic proof",
+  "eq_4_5_affine_identity_max_abs_error": 0.0,
+  "eq_9_2_linear_10_90_coefficient": 1.6,
+  "hermite_10_90_coefficient": 1.2167995773636333,
+  "using_linear_coefficient_on_Hermite_width_ratio": 0.7604997358522708,
+  "eq_3_12_overlap_counterexample": {
+    "q": 0.02,
+    "tau": [
+      -0.1,
+      0
+    ],
+    "w": [
+      0.5,
+      0.01
+    ],
+    "colors": [
+      0,
+      1,
+      0
+    ],
+    "response": -0.38
+  },
+  "eq_4_6_endpoint_restriction_example": {
+    "tau": 0.95,
+    "w": 0.2,
+    "low": 0.1,
+    "high": 1,
+    "true_response_at_q1": 0.6625000000000001,
+    "naive_clamped_key_response": 1.0
+  },
+  "eq_7_3_softness_zero": "delta=0; B_smooth(q;t,w) is only defined for w>0; explicit step-limit branch required",
+  "inputs": {
+    "Brief.md": "5c9153858111548da13343012509c20f0cec7429705acf478818b0b923a31626",
+    "MathematicalModel.pdf": "e0739823de97c42177900a7701543b19f1c7457cf3fc87a57259c203a080851a",
+    "MathematicalModel.tex": "8ee4f05e09b899d1d120f0bb41fb7617a49262e9299574c4a5f7fb2187c15007"
+  },
+  "existing_results_independently_recomputed": true,
+  "earlier_readback_recomputation": {
+    "Step0": 0.006810018331306289,
+    "StepHigh": 0.4981492995991733,
+    "SoftPositive_tau": 0.49994919552537426,
+    "SoftPositive_half_width": 0.15008886317842274
+  }
+}

@@ -4,7 +4,10 @@
 #include "Engine/DataAsset.h"
 #include "Materials/MaterialInterface.h"
 #include "NPRSemanticTypes.h"
+#include "NPRToonParameters.h"
 #include "NPRBackendStylePackage.generated.h"
+
+class UNPRStyleProfile;
 
 USTRUCT(BlueprintType)
 struct NPRRUNTIME_API FNPRBackendMaterialSlot
@@ -34,6 +37,22 @@ public:
 
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Identity")
     FName SemanticStyleId;
+
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Identity")
+    TSoftObjectPtr<UNPRStyleProfile> SemanticSource;
+
+    /** Optional provenance. Existing packages keep Inherit and do not acquire Toon semantics. */
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Toon")
+    ENPRShadingModel ShadingModel = ENPRShadingModel::Inherit;
+
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Toon")
+    bool bHasToonParameters = false;
+
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Toon")
+    FNPRToonParameters ToonParameters;
+
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Toon")
+    FNPRToonResponseSettings ToonResponse;
 
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Binding")
     TArray<FNPRBackendMaterialSlot> MaterialSlots;

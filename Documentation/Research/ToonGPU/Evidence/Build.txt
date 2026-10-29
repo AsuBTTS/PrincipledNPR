@@ -1,0 +1,249 @@
+Log started at 10/28/2026 14:51:49 (2026-10-28T06:51:49Z)
+Resolved project argument E:/unrealProjects/PrincipledNPR/work/ToonGPUResearch/PrincipledNPR.uproject to E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\PrincipledNPR.uproject
+No config file at C:\ProgramData\Unreal Engine\UnrealBuildTool\BuildConfiguration.xml
+No config file at C:\Users\12894\AppData\Local\Unreal Engine\UnrealBuildTool\BuildConfiguration.xml
+No config file at C:\Users\12894\Documents\Unreal Engine\UnrealBuildTool\BuildConfiguration.xml
+Configuration will be read from:
+  C:\Users\12894\AppData\Roaming\Unreal Engine\UnrealBuildTool\BuildConfiguration.xml
+Reading configuration file from cache (E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Intermediate\Build\XmlConfigCache.bin): C:\Users\12894\AppData\Roaming\Unreal Engine\UnrealBuildTool\BuildConfiguration.xml
+Reading configuration file from cache (E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Intermediate\Build\XmlConfigCache.bin): E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Saved\UnrealBuildTool\BuildConfiguration.xml
+Reading configuration file from cache (E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Intermediate\Build\XmlConfigCache.bin): C:\Users\12894\AppData\Local\UnrealEngine\Intermediate\Build\UnrealBuildTool.Env.BuildConfiguration.xml
+Setting temp directory to 'C:\Users\12894\AppData\Local\Temp\UnrealBuildTool\ec51dab1'
+    Registering build platform: UnrealBuildTool.AndroidPlatformFactory
+    Registering build platform: UnrealBuildTool.IOSPlatformFactory
+    Registering build platform: UnrealBuildTool.LinuxPlatformFactory
+    Registering build platform: UnrealBuildTool.MacPlatformFactory
+    Registering build platform: UnrealBuildTool.TVOSPlatformFactory
+    Registering build platform: UnrealBuildTool.WindowsPlatformFactory
+Found Windows 10 SDK root at C:\Program Files (x86)\Windows Kits\10 (1)
+Found Windows 10 SDK root at C:\Program Files (x86)\Windows Kits\10 (2)
+Found Windows 10 SDK version 10.0.22621.0 at C:\Program Files (x86)\Windows Kits\10
+Found Universal CRT version 10.0.22621.0 at C:\Program Files (x86)\Windows Kits\10
+Found Windows 10 SDK version 10.0.26100.0 at C:\Program Files (x86)\Windows Kits\10
+Found Universal CRT version 10.0.26100.0 at C:\Program Files (x86)\Windows Kits\10
+Win64 Installed SDK(s): MinVersion_Sdk=10.0.19041.0, MaxVersion_Sdk=10.9.99999.0, CurrentVersion_Sdk=10.0.22621.0, Version_AutoSdk=10.0.22621.0, CurrentVersion_AutoSdk=
+        Registering build platform: Win64 - buildable: True
+    Registering build platform: UnrealBuildTool.VisionOSPlatformFactory
+Command line: "E:\Unreal Engine\UE_5.8\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" PrincipledNPREditor Win64 Development -Project=E:/unrealProjects/PrincipledNPR/work/ToonGPUResearch/PrincipledNPR.uproject -WaitMutex -NoHotReloadFromIDE
+Log file: C:\Users\12894\AppData\Local\UnrealBuildTool\Log.txt
+Deleting old log file: C:\Users\12894\AppData\Local\UnrealBuildTool\Log-backup-2026.10.25-16.48.51.txt
+Deleting old log file: C:\Users\12894\AppData\Local\UnrealBuildTool\Log-backup-2026.10.25-16.48.51.json
+
+Determining max actions to execute in parallel (16 physical cores, 24 logical cores)
+  Executing up to 16 processes, one per physical core
+UbaStorageServer - Database loaded from C:\ProgramData\Epic\UnrealBuildAccelerator\cas\casdb (v32) in 2ms (contained 0 entries estimated to 0b)
+UbaServer - Listening on 0.0.0.0:1345
+Skipping E:\Unreal Engine\UE_5.8\Engine\Intermediate\Build\BuildRules\UE5Rules.dll: File is installed
+Skipping E:\Unreal Engine\UE_5.8\Engine\Intermediate\Build\BuildRules\UE5ProgramRules.dll: File is installed
+Available x64 toolchains (1):
+ * D:\D\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.51.36231
+    (Family=14.51.36231, FamilyRank=2, Version=14.51.36260, HostArchitecture=x64, ReleaseChannel=Latest, Architecture=x64)
+Visual Studio compiler version 14.51.36260 is newer than latest preferred version 14.50.35717. Please use caution as this compiler has not been heavily tested
+Building UnrealEditor - PrincipledNPREditor - Win64 - Development
+Generated code is up to date.
+Deleting outdated item: E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Binaries\Win64\UnrealEditor-NPREditor.pdb
+Deleting outdated item: E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Intermediate\Build\Win64\x64\UnrealEditor\Development\NPREditor\UnrealEditor-NPREditor.lib
+Building PrincipledNPREditor...
+===== Toolchain Information =====
+Using ISPC compiler (E:\Unreal Engine\UE_5.8\Engine\Source\ThirdParty\Intel\ISPC\bin\Windows\ispc.exe)
+  Intel(r) Implicit SPMD Program Compiler (Intel(r) ISPC), 1.24.0 (build commit  @ 20250404, LLVM 18.1.2) 
+Using Visual Studio 14.51.36260 toolchain (D:\D\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.51.36231) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+Warning: Visual Studio compiler 14.51.36260 is not a preferred version
+[Adaptive Build] Excluded from NPRRuntime unity file: NPROutlineActorComponent.cpp, NPROutlineComponent.cpp, NPROutlinePreset.cpp, NPRRimParameters.cpp, NPRRuntimeModule.cpp, NPRStyleBindingComponent.cpp, NPRStyleProfile.cpp, NPRSurfaceRecipe.cpp, NPRRimBindingTests.cpp, NPRRimContractTests.cpp, NPRRimProfileBindingTests.cpp, NPRStyleProfileTests.cpp, NPRSurfaceComposerTests.cpp
+[Adaptive Build] Excluded from NPREditor unity file: NPREditorModule.cpp, NPRModulationEditorLibrary.cpp, NPROutlineEditorLibrary.cpp, NPROutlineEditorUI.cpp, NPRRimEditorUI.cpp, NPRRimMaterialBuilder.cpp, NPRRimOriginalMaterialTests.cpp, NPRRimPreviewRenderTests.cpp, NPRRimRenderTests.cpp, NPRSurfaceRenderTests.cpp, ToonGPUProbe.cpp
+=================================
+Using Unreal Build Accelerator local executor to run 4 action(s)
+  CPU 16 physical cores, 24 logical cores
+  Memory 31.71 GB physical, 36.77 GB/61.71 GB committed
+  UBA Storage capacity 40 GB
+  UBA RootDir C:\ProgramData\Epic\UnrealBuildAccelerator
+Cache bucket 3652990848 used. Action: Compile [x64] ToonGPUProbe.cpp ()
+Cache bucket 416513229 used. Action: Link [x64] UnrealEditor-NPREditor.dll ()
+All processes queued
+[1/4] Compile [x64] ToonGPUProbe.cpp
+E:\Unreal Engine\UE_5.8\Engine\Source\Runtime\Engine\Classes\Engine\TextureCube.h(43,26): warning C4996: 'UTexture::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                        ^
+E:\Unreal Engine\UE_5.8\Engine\Source\Runtime\Engine\Classes\Curves\CurveLinearColor.h(38,53): warning C4996: 'UCurveBase::GetCurves': Use version taking a TAdderReserverRef - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual TArray<FRichCurveEditInfoConst> GetCurves() const override;
+	                                                   ^
+E:\Unreal Engine\UE_5.8\Engine\Source\Runtime\Engine\Public\Materials\MaterialExpressionTextureSample.h(120,51): warning C4996: 'UMaterialExpression::GetInputsView': Use FExpressionInputIterator instead or GetInput() directly. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual TArrayView<FExpressionInput*> GetInputsView() override;
+	                                                 ^
+E:\Unreal Engine\UE_5.8\Engine\Source\Runtime\Engine\Classes\VT\RuntimeVirtualTexture.h(208,26): warning C4996: 'UObject::GetAssetRegistryTags': Implement the version that takes FAssetRegistryTagsContext instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+	ENGINE_API virtual void GetAssetRegistryTags(TArray<FAssetRegistryTag>& OutTags) const override;
+	                        ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(87,116): warning C4305: “=”: 从“double”到“float”截断
+        auto* R=Node<UMaterialExpressionScalarParameter>(M);R->ParameterName=TEXT("NPR_Roughness");R->DefaultValue=.4;
+                                                                                                                   ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(170,134): warning C4305: “参数”: 从“double”到“float”截断
+            auto* WallMID=F->MIDs[TEXT("Wall")];WallMID->SetVectorParameterValue(TEXT("NPR_BaseColor"),V.RedWall?FLinearColor(.9,.01,.01,1):FLinearColor(.7,.7,.7,1));
+                                                                                                                                     ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(170,130): warning C4305: “参数”: 从“double”到“float”截断
+            auto* WallMID=F->MIDs[TEXT("Wall")];WallMID->SetVectorParameterValue(TEXT("NPR_BaseColor"),V.RedWall?FLinearColor(.9,.01,.01,1):FLinearColor(.7,.7,.7,1));
+                                                                                                                                 ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(170,127): warning C4305: “参数”: 从“double”到“float”截断
+            auto* WallMID=F->MIDs[TEXT("Wall")];WallMID->SetVectorParameterValue(TEXT("NPR_BaseColor"),V.RedWall?FLinearColor(.9,.01,.01,1):FLinearColor(.7,.7,.7,1));
+                                                                                                                              ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(170,160): warning C4305: “参数”: 从“double”到“float”截断
+            auto* WallMID=F->MIDs[TEXT("Wall")];WallMID->SetVectorParameterValue(TEXT("NPR_BaseColor"),V.RedWall?FLinearColor(.9,.01,.01,1):FLinearColor(.7,.7,.7,1));
+                                                                                                                                                               ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(170,157): warning C4305: “参数”: 从“double”到“float”截断
+            auto* WallMID=F->MIDs[TEXT("Wall")];WallMID->SetVectorParameterValue(TEXT("NPR_BaseColor"),V.RedWall?FLinearColor(.9,.01,.01,1):FLinearColor(.7,.7,.7,1));
+                                                                                                                                                            ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(170,154): warning C4305: “参数”: 从“double”到“float”截断
+            auto* WallMID=F->MIDs[TEXT("Wall")];WallMID->SetVectorParameterValue(TEXT("NPR_BaseColor"),V.RedWall?FLinearColor(.9,.01,.01,1):FLinearColor(.7,.7,.7,1));
+                                                                                                                                                         ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(214,36): warning C4305: “参数”: 从“double”到“float”截断
+    F->Profile(TEXT("StepLow"),-.5,.01);F->Profile(TEXT("Step0"),0,.01);F->Profile(TEXT("StepHigh"),.5,.01);
+                                   ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(214,68): warning C4305: “参数”: 从“double”到“float”截断
+    F->Profile(TEXT("StepLow"),-.5,.01);F->Profile(TEXT("Step0"),0,.01);F->Profile(TEXT("StepHigh"),.5,.01);
+                                                                   ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(214,104): warning C4305: “参数”: 从“double”到“float”截断
+    F->Profile(TEXT("StepLow"),-.5,.01);F->Profile(TEXT("Step0"),0,.01);F->Profile(TEXT("StepHigh"),.5,.01);
+                                                                                                       ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(215,31): warning C4305: “参数”: 从“double”到“float”截断
+    F->Profile(TEXT("Soft"),0,.3);F->Profile(TEXT("RGB"),0,.01,1);F->Profile(TEXT("Continuous"),0,.01,2);
+                              ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(215,60): warning C4305: “参数”: 从“double”到“float”截断
+    F->Profile(TEXT("Soft"),0,.3);F->Profile(TEXT("RGB"),0,.01,1);F->Profile(TEXT("Continuous"),0,.01,2);
+                                                           ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(215,99): warning C4305: “参数”: 从“double”到“float”截断
+    F->Profile(TEXT("Soft"),0,.3);F->Profile(TEXT("RGB"),0,.01,1);F->Profile(TEXT("Continuous"),0,.01,2);
+                                                                                                  ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(217,32): warning C4305: “参数”: 从“double”到“float”截断
+    F->Profile(TEXT("White"),0,.01,3);F->Profile(TEXT("ShadowIn"),0,.01,0,true);
+                               ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(217,69): warning C4305: “参数”: 从“double”到“float”截断
+    F->Profile(TEXT("White"),0,.01,3);F->Profile(TEXT("ShadowIn"),0,.01,0,true);
+                                                                    ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(218,31): warning C4305: “参数”: 从“double”到“float”截断
+    F->Profile(TEXT("Spec"),0,.01,4);F->Profile(TEXT("Indirect"),0,.01,0,false,1);
+                              ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(218,68): warning C4305: “参数”: 从“double”到“float”截断
+    F->Profile(TEXT("Spec"),0,.01,4);F->Profile(TEXT("Indirect"),0,.01,0,false,1);
+                                                                   ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(219,35): warning C4305: “参数”: 从“double”到“float”截断
+    F->Profile(TEXT("Ext10Out"),0,.01);F->Profiles[TEXT("Ext10Out")]->Settings.ShadowExtinctionCoefficient=10;
+                                  ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(220,34): warning C4305: “参数”: 从“double”到“float”截断
+    F->Profile(TEXT("Ext10In"),0,.01,0,true);F->Profiles[TEXT("Ext10In")]->Settings.ShadowExtinctionCoefficient=10;
+                                 ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(221,34): warning C4305: “参数”: 从“double”到“float”截断
+    F->Profile(TEXT("Ext0Out"),0,.01);F->Profiles[TEXT("Ext0Out")]->Settings.ShadowExtinctionCoefficient=0;
+                                 ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(222,33): warning C4305: “参数”: 从“double”到“float”截断
+    F->Profile(TEXT("Ext0In"),0,.01,0,true);F->Profiles[TEXT("Ext0In")]->Settings.ShadowExtinctionCoefficient=0;
+                                ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(223,35): warning C4305: “参数”: 从“double”到“float”截断
+    F->Profile(TEXT("SpecSoft"),0,.01,4);
+                                  ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(225,36): warning C4305: “参数”: 从“double”到“float”截断
+    F->Profile(TEXT("SpecColor"),0,.01,4);
+                                   ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(237,98): warning C4305: “参数”: 从“double”到“float”截断
+    F->MIDs[TEXT("PairRight")]->SetVectorParameterValue(TEXT("NPR_BaseColor"),FLinearColor(.2,.7,.3,1));
+                                                                                                 ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(237,95): warning C4305: “参数”: 从“double”到“float”截断
+    F->MIDs[TEXT("PairRight")]->SetVectorParameterValue(TEXT("NPR_BaseColor"),FLinearColor(.2,.7,.3,1));
+                                                                                              ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(237,92): warning C4305: “参数”: 从“double”到“float”截断
+    F->MIDs[TEXT("PairRight")]->SetVectorParameterValue(TEXT("NPR_BaseColor"),FLinearColor(.2,.7,.3,1));
+                                                                                           ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(273,48): warning C4305: “参数”: 从“double”到“float”截断
+    F->Point->SetLightColor(FLinearColor(1,.25,.1,1));F->Scene.AddComponent(F->Point,FTransform(FVector(-150,80,50)));
+                                               ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(275,106): warning C4305: “参数”: 从“double”到“float”截断
+    F->Spot->SetOuterConeAngle(40);F->Spot->SetInnerConeAngle(25);F->Spot->SetLightColor(FLinearColor(.1,.3,1,1));
+                                                                                                         ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(275,103): warning C4305: “参数”: 从“double”到“float”截断
+    F->Spot->SetOuterConeAngle(40);F->Spot->SetInnerConeAngle(25);F->Spot->SetLightColor(FLinearColor(.1,.3,1,1));
+                                                                                                      ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(313,69): warning C4305: “=”: 从“double”到“float”截断
+    auto& SB=Add(TEXT("SpecBlue"),TEXT("Spec"));SB.Spec=.5;SB.Rough=.35;SB.Base=FLinearColor(0,0,1,1);SB.Yaw=25;
+                                                                    ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(315,63): warning C4305: “参数”: 从“double”到“float”截断
+    auto& BC=Add(TEXT("BaseTint"));BC.Base=FLinearColor(.2,.7,.3,1);
+                                                              ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(315,60): warning C4305: “参数”: 从“double”到“float”截断
+    auto& BC=Add(TEXT("BaseTint"));BC.Base=FLinearColor(.2,.7,.3,1);
+                                                           ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(315,57): warning C4305: “参数”: 从“double”到“float”截断
+    auto& BC=Add(TEXT("BaseTint"));BC.Base=FLinearColor(.2,.7,.3,1);
+                                                        ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(321,86): warning C4305: “参数”: 从“double”到“float”截断
+    auto& Pair1=Add(TEXT("PairAfter"));Pair1.Pair=true;Pair1.Base=FLinearColor(.8,.1,.1,1);
+                                                                                     ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(321,83): warning C4305: “参数”: 从“double”到“float”截断
+    auto& Pair1=Add(TEXT("PairAfter"));Pair1.Pair=true;Pair1.Base=FLinearColor(.8,.1,.1,1);
+                                                                                  ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(321,80): warning C4305: “参数”: 从“double”到“float”截断
+    auto& Pair1=Add(TEXT("PairAfter"));Pair1.Pair=true;Pair1.Base=FLinearColor(.8,.1,.1,1);
+                                                                               ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(331,73): warning C4305: “=”: 从“double”到“float”截断
+    auto& SS=Add(TEXT("SpecSoft"),TEXT("SpecSoft"));SS.Spec=.5;SS.Rough=.35;SS.Yaw=25;
+                                                                        ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(332,75): warning C4305: “=”: 从“double”到“float”截断
+    auto& SC=Add(TEXT("SpecColor"),TEXT("SpecColor"));SC.Spec=.5;SC.Rough=.35;SC.Yaw=25;
+                                                                          ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(333,78): warning C4305: “=”: 从“double”到“float”截断
+    auto& SL=Add(TEXT("SpecIntensityLow"),TEXT("Spec"));SL.Spec=.25;SL.Rough=.35;SL.Yaw=25;
+                                                                             ^
+E:\unrealProjects\PrincipledNPR\work\ToonGPUResearch\Plugins\PrincipledNPR\Source\NPREditor\Private\Tests\ToonGPUProbe.cpp(334,77): warning C4305: “=”: 从“double”到“float”截断
+    auto& SH=Add(TEXT("SpecIntensityHigh"),TEXT("Spec"));SH.Spec=1;SH.Rough=.35;SH.Yaw=25;
+                                                                            ^
+[2/4] Link [x64] UnrealEditor-NPREditor.lib
+  正在创建库 E:/unrealProjects/PrincipledNPR/work/ToonGPUResearch/Plugins/PrincipledNPR/Intermediate/Build/Win64/x64/UnrealEditor/Development/NPREditor/UnrealEditor-NPREditor.lib 和对象 E:/unrealProjects/PrincipledNPR/work/ToonGPUResearch/Plugins/PrincipledNPR/Intermediate/Build/Win64/x64/UnrealEditor/Development/NPREditor/UnrealEditor-NPREditor.exp
+[3/4] Link [x64] UnrealEditor-NPREditor.dll
+[4/4] WriteMetadata PrincipledNPREditor.target [NoUba]
+
+Total time in Unreal Build Accelerator local executor: 16.17 seconds
+Output binary: E:\Unreal Engine\UE_5.8\Engine\Binaries\Win64\UnrealEditor.exe
+UbaStorageServer - Database saved in 5ms (0 file entries, 0 cas entries. deleted 0 dropped cas files)
+WriteFileIfChanged() wrote 0 changed files of 1 requested writes.
+
+Timeline:
+[  0.000]  +0.650 Main
+   0.043          [  0.043]  +0.224 Apply XmlConfig
+   0.274          [  0.273]  +0.113 AddTelemetry
+   0.417          [  0.417]  +0.233 RegisterPlatforms
+[  0.728]  +0.091 ParseCommandLine
+[  0.987]  +0.275 LoadMakefile
+[  1.279]  +0.946 FindPlugins
+[  2.242]  +0.358 EngineRulesPlugins
+   2.245          [  0.003]  +0.093 MakefileValid
+   2.338          [  0.096]  +0.261 <unknown>
+[  2.607]  +0.043 EngineRulesFetchDirs
+[  2.666]  +0.022 EngineRulesAssembly
+[  2.688]  +0.003 ProgramRulesAssembly
+[  2.692]  +0.017 ProjectRulesAssembly
+[  2.709]  +0.759 CreateTargetRules
+[  3.608]  +0.013 CppDependencyCache
+[  3.654]  +0.371 PrincipledNPREditor Win64 Development
+[  4.028]  +0.054 UHTWait
+   4.030          [  0.001]  +0.049 UHTManifest
+   4.081          [  0.052]  +0.049 UHTTimestamps
+[  4.138]  +0.007 CppDependencyCache
+[  4.146]  +0.165 Preparing ActionGraph
+   4.176          [  0.030]  +0.012 LinkActions
+   4.188             0.042          [  0.012]  +0.000 DetectActionGraphCycles
+   4.190          [  0.044]  +0.000 GatherPrerequisiteActions
+   4.194          [  0.048]  +0.000 CppDependencyCacheWait
+   4.196          [  0.050]  +0.076 GatherOutdatedActions
+   4.280          [  0.134]  +0.019 LinkActions
+   4.280             0.134          [  0.000]  +0.000 DetectActionGraphCycles
+   4.302          [  0.156]  +0.004 DeleteOutdatedProducedItems
+   4.306          [  0.160]  +0.002 SaveActionHistory
+   4.310          [  0.164]  +0.000 CreateDirectoriesForProducedItems
+[  4.344]  +0.224 GarbageCollect
+[  4.568] +15.946 <unknown>
+[ 20.514]  +0.000 Deploying targets
+[ 20.517]  +0.000 DisconnectCache
+[ 20.525]  +0.029 SaveCasTable
+[ 20.561]  +0.189 Saving caches
+[ 20.753]  +0.007 TelemetryService.FlushEvents
+[ 20.762]
+
+Result: Succeeded
+Total execution time: 20.76 seconds

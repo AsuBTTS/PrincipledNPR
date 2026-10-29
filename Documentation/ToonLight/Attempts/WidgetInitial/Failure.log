@@ -1,0 +1,35 @@
+[2026.10.28-16.22.54:090][603]LogStreaming: Display: FlushAsyncLoading(368): 1 QueuedPackages, 0 AsyncPackages
+[2026.10.28-16.22.54:691][603]LogChaosDD: Creating Chaos Debug Draw Scene for world L_Outline_MultiScope_v1
+[2026.10.28-16.22.54:713][603]LogSkinnedAsset: Display: 正在等待蒙皮资产就绪0/1（SKM_Chen）……
+[2026.10.28-16.22.56:401][643]LogOutputDevice: Warning: 
+
+Script Stack (0 frames) :
+
+[2026.10.28-16.22.56:404][643]LogWindows: Error: appError called: Assertion failed: (Index >= 0) & (Index < ArrayNum) [File:D:\build\++UE5\Sync\Engine\Source\Runtime\Core\Public\Containers\Array.h] [Line: 1339] 
+Array index out of bounds: 0 into an array of size 0
+
+[2026.10.28-16.22.56:404][643]LogWindows: Windows GetLastError: 操作成功完成。 (0)
+[2026.10.28-16.23.05:834][643]LogWindows: Error: === Critical error: ===
+[2026.10.28-16.23.05:834][643]LogWindows: Error: 
+[2026.10.28-16.23.05:834][643]LogWindows: Error: Assertion failed: (Index >= 0) & (Index < ArrayNum) [File:D:\build\++UE5\Sync\Engine\Source\Runtime\Core\Public\Containers\Array.h] [Line: 1339] 
+[2026.10.28-16.23.05:834][643]LogWindows: Error: Array index out of bounds: 0 into an array of size 0
+[2026.10.28-16.23.05:834][643]LogWindows: Error: 
+[2026.10.28-16.23.05:834][643]LogWindows: Error: 
+[2026.10.28-16.23.05:834][643]LogWindows: Error: [Callstack] 0x00007ff810c9bec8 UnrealEditor-Core.dll!UnknownFunction []
+[2026.10.28-16.23.05:834][643]LogWindows: Error: [Callstack] 0x00007ff81ee5af20 UnrealEditor-Slate.dll!UnknownFunction []
+[2026.10.28-16.23.05:834][643]LogWindows: Error: [Callstack] 0x00007ff81ee32b81 UnrealEditor-Slate.dll!UnknownFunction []
+[2026.10.28-16.23.05:834][643]LogWindows: Error: [Callstack] 0x00007ff81ee78eb8 UnrealEditor-Slate.dll!UnknownFunction []
+[2026.10.28-16.23.05:834][643]LogWindows: Error: [Callstack] 0x00007fff10d79847 UnrealEditor-NPREditor.dll!`FNPRToonWidgetRenderTest::RunTest'::`2'::<lambda_1>::operator()() [E:\unrealProjects\PrincipledNPR\Plugins\PrincipledNPR\Source\NPREditor\Private\NPRToonEditorUI.cpp:633]
+[2026.10.28-16.23.05:834][643]LogWindows: Error: [Callstack] 0x00007fff10d8e06d UnrealEditor-NPREditor.dll!NPRToonWidgetValidation::FFrames::Update() [E:\unrealProjects\PrincipledNPR\Plugins\PrincipledNPR\Source\NPREditor\Private\NPRToonEditorUI.cpp:569]
+[2026.10.28-16.23.05:834][643]LogWindows: Error: [Callstack] 0x00007ff810d0ef43 UnrealEditor-Core.dll!UnknownFunction []
+[2026.10.28-16.23.05:834][643]LogWindows: Error: [Callstack] 0x000002168040131c UnrealEditor-AutomationWorker.dll!UnknownFunction []
+[2026.10.28-16.23.05:834][643]LogWindows: Error: [Callstack] 0x00007ff68431325d UnrealEditor-Cmd.exe!UnknownFunction []
+[2026.10.28-16.23.05:834][643]LogWindows: Error: [Callstack] 0x00007ff6842fc4ac UnrealEditor-Cmd.exe!UnknownFunction []
+[2026.10.28-16.23.05:834][643]LogWindows: Error: [Callstack] 0x00007ff6842fc5ba UnrealEditor-Cmd.exe!UnknownFunction []
+[2026.10.28-16.23.05:834][643]LogWindows: Error: [Callstack] 0x00007ff684301256 UnrealEditor-Cmd.exe!UnknownFunction []
+[2026.10.28-16.23.05:834][643]LogWindows: Error: [Callstack] 0x00007ff684315c74 UnrealEditor-Cmd.exe!UnknownFunction []
+[2026.10.28-16.23.05:834][643]LogWindows: Error: [Callstack] 0x00007ff68431838a UnrealEditor-Cmd.exe!UnknownFunction []
+[2026.10.28-16.23.05:834][643]LogWindows: Error: [Callstack] 0x00007ff93eb7dda7 KERNEL32.DLL!UnknownFunction []
+[2026.10.28-16.23.05:834][643]LogWindows: Error: 
+[2026.10.28-16.23.05:843][643]LogExit: Executing StaticShutdownAfterError
+[2026.10.28-16.23.05:878][643]LogWindows: FPlatformMisc::RequestExit(1, LaunchWindowsStartup.ExceptionHandler)

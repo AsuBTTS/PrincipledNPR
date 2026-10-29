@@ -1,0 +1,16 @@
+{
+  "status": "PassedWithinRecordedScope",
+  "date": "2026-10-29 Asia/Shanghai",
+  "commands": {
+    "npm run docs:generate": "Passed; two initial transient Windows UNKNOWN file-open errors resolved on retry, without altering file permissions or source originals.",
+    "npm run docs:check": "Passed; 13 originals/web views, 18 semantic parameters, 13 Outline fields, 14 status entries.",
+    "npm run docs:build": "Passed on final HTML/resources: 38 HTML pages, 3577 local links/assets/anchors; 80.46 seconds on this machine, not a benchmark. Mermaid chunk-size warning is nonfatal.",
+    "python Tools/verify_toon_contract.py": "25 cross-source checks passed.",
+    "python Tools/verify_semantic_drafts.py": "Legacy draft IDs/domains/provenance passed; not full schema or render acceptance."
+  },
+  "browser": "Final built report: actual 1280px browser, all three screenshots loaded, sidebar onscreen, no horizontal overflow or console errors. See FinalBrowserChecks.json. Earlier guide 800px/420px checks remain separately scoped in BrowserChecks.json.",
+  "buildLog": "DocsBuild.log",
+  "scope": "Document synchronization, source freshness, links and static site build; not UE rendering acceptance.",
+  "attempts": "Attempts/DocsInitialBuild.log retains the screenshot extension mismatch failure. Native JPEG bytes were kept unchanged and extensions/references corrected; final build passed.",
+  "recordSynchronization": "After the successful full build, only final raw records (this JSON, build log, final browser JSON and the completed implementation checklist) are synchronized into static resources; HTML source is unchanged. docs:check and emitted-link validation are rerun."
+}

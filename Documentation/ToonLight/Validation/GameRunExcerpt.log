@@ -1,0 +1,170 @@
+LogConfig: Set CVar [[r.PSOPrecache.GlobalShaders:1]]
+[2026.10.29-12.36.39:524][  0]LogRHI: Using Forced RHI: D3D12
+[2026.10.29-12.36.40:914][  0]LogRHI: Using Highest Feature Level of D3D12: SM6
+[2026.10.29-12.36.40:915][  0]LogRHI: Loading RHI module D3D12RHI
+[2026.10.29-12.36.40:916][  0]LogD3D12RHI: Loading WinPixEventRuntime.dll for PIX profiling (from ../../../Engine/Binaries/ThirdParty/Windows/WinPixEventRuntime/x64).
+[2026.10.29-12.36.40:917][  0]LogRHI: Checking if RHI D3D12 with Feature Level SM6 is supported by your system.
+[2026.10.29-12.36.40:920][  0]LogD3D12RHI: Found D3D12 adapter 0: NVIDIA GeForce RTX 4060 Laptop GPU (VendorId: 10de, DeviceId: 28e0, SubSysId: 3e4517aa, Revision: 00a1
+[2026.10.29-12.36.40:920][  0]LogD3D12RHI:   Max supported Feature Level 12_2, shader model 6.7, binding tier 3, wave ops supported, atomic64 supported
+[2026.10.29-12.36.40:921][  0]LogD3D12RHI:   Adapter has 7956MB of dedicated video memory, 0MB of dedicated system memory, and 16237MB of shared system memory, 1 output[s], TileBased:false UMA:false CacheCoherentUMA:false GPU Upload Heaps:true
+[2026.10.29-12.36.40:923][  0]LogD3D12RHI:   Driver Version: 610.47 (internal:32.0.16.1047, unified:610.47)
+[2026.10.29-12.36.40:923][  0]LogD3D12RHI:      Driver Date: 5-19-2026
+[2026.10.29-12.36.40:941][  0]LogD3D12RHI: Intel Extensions Framework not supported by driver. Please check if a driver update is available.
+[2026.10.29-12.36.40:941][  0]LogD3D12RHI: Found D3D12 adapter 1: Intel(R) UHD Graphics (VendorId: 8086, DeviceId: a78b, SubSysId: 3e4517aa, Revision: 0004
+[2026.10.29-12.36.40:941][  0]LogD3D12RHI:   Max supported Feature Level 12_1, shader model 6.7, binding tier 3, wave ops supported, atomic64 unsupported
+[2026.10.29-12.36.40:941][  0]LogD3D12RHI:   Adapter has 128MB of dedicated video memory, 0MB of dedicated system memory, and 16237MB of shared system memory, 0 output[s], TileBased:false UMA:true CacheCoherentUMA:true GPU Upload Heaps:true
+[2026.10.29-12.36.40:942][  0]LogD3D12RHI:   Driver Version: 32.0.101.6790 (internal:32.0.101.6790, unified:101.6790)
+[2026.10.29-12.36.40:942][  0]LogD3D12RHI:      Driver Date: 4-28-2025
+[2026.10.29-12.36.40:942][  0]LogD3D12RHI: Found D3D12 adapter 2: Microsoft Basic Render Driver (VendorId: 1414, DeviceId: 008c, SubSysId: 0000, Revision: 0000
+[2026.10.29-12.36.40:942][  0]LogD3D12RHI:   Max supported Feature Level 12_1, shader model 6.7, binding tier 3, wave ops supported, atomic64 supported
+[2026.10.29-12.36.40:942][  0]LogD3D12RHI:   Adapter has 0MB of dedicated video memory, 0MB of dedicated system memory, and 16237MB of shared system memory, 0 output[s], TileBased:false UMA:true CacheCoherentUMA:true GPU Upload Heaps:true
+[2026.10.29-12.36.40:942][  0]LogD3D12RHI:   D3D10Warp Version: 10.0.26100.9711
+[2026.10.29-12.36.40:942][  0]LogD3D12RHI: DirectX Agility SDK runtime found.
+[2026.10.29-12.36.40:942][  0]LogD3D12RHI: Chosen D3D12 Adapter Id = 0
+[2026.10.29-12.36.40:943][  0]LogRHI: RHI D3D12 with Feature Level SM6 is supported and will be used.
+[2026.10.29-12.36.40:948][  0]LogConfig: Set CVar [[r.PSOPrecache.KeepInMemoryForActiveMaterials:1]]
+[2026.10.29-12.36.41:742][  0]LogRHI: Using Forced RHI: D3D12
+[2026.10.29-12.36.41:742][  0]LogRHI: Using Highest Feature Level of D3D12: SM6
+[2026.10.29-12.36.41:742][  0]LogRHI: Loading RHI module D3D12RHI
+[2026.10.29-12.36.41:742][  0]LogRHI: Checking if RHI D3D12 with Feature Level SM6 is supported by your system.
+[2026.10.29-12.36.41:742][  0]LogRHI: RHI D3D12 with Feature Level SM6 is supported and will be used.
+[2026.10.29-12.36.41:834][  0]LogD3D12RHI: Integrated GPU (iGPU): false
+[2026.10.29-12.36.41:834][  0]LogD3D12RHI: Display: Creating D3D12 RHI with Max Feature Level SM6
+[2026.10.29-12.36.41:871][  0]LogD3D12RHI: NVIDIA Architecture=400
+[2026.10.29-12.36.41:872][  0]LogRHI: Display: Timeout Detection and Recovery (TDR) summary: 
+[2026.10.29-12.36.41:873][  0]LogRHI: RHI Adapter Info:
+[2026.10.29-12.36.41:873][  0]LogRHI:             Name: NVIDIA GeForce RTX 4060 Laptop GPU
+[2026.10.29-12.36.41:873][  0]LogRHI:   Driver Version: 610.47 (internal:32.0.16.1047, unified:610.47)
+[2026.10.29-12.36.41:873][  0]LogRHI:      Driver Date: 5-19-2026
+[2026.10.29-12.36.41:873][  0]LogRHI: Performing driver check for denylisted drivers.
+[2026.10.29-12.36.41:877][  0]LogD3D12RHI:     GPU DeviceId: 0x28e0 (for the marketing name, search the web for "GPU Device Id")
+[2026.10.29-12.36.41:877][  0]LogD3D12RHI: InitD3DDevice: -D3DDebug = off -D3D12GPUValidation = off
+[2026.10.29-12.36.42:689][  0]LogD3D12RHI: Emitting draw events for PIX profiling.
+[2026.10.29-12.36.42:908][  0]LogD3D12RHI: ID3D12Device1 is supported.
+[2026.10.29-12.36.42:908][  0]LogD3D12RHI: ID3D12Device2 is supported.
+[2026.10.29-12.36.42:908][  0]LogD3D12RHI: ID3D12Device3 is supported.
+[2026.10.29-12.36.42:908][  0]LogD3D12RHI: ID3D12Device4 is supported.
+[2026.10.29-12.36.42:908][  0]LogD3D12RHI: ID3D12Device5 is supported.
+[2026.10.29-12.36.42:908][  0]LogD3D12RHI: ID3D12Device6 is supported.
+[2026.10.29-12.36.42:908][  0]LogD3D12RHI: ID3D12Device7 is supported.
+[2026.10.29-12.36.42:908][  0]LogD3D12RHI: ID3D12Device8 is supported.
+[2026.10.29-12.36.42:908][  0]LogD3D12RHI: ID3D12Device9 is supported.
+[2026.10.29-12.36.42:908][  0]LogD3D12RHI: ID3D12Device10 is supported.
+[2026.10.29-12.36.42:908][  0]LogD3D12RHI: ID3D12Device11 is supported.
+[2026.10.29-12.36.42:908][  0]LogD3D12RHI: ID3D12Device12 is supported.
+[2026.10.29-12.36.42:908][  0]LogD3D12RHI: Bindless is supported. MaxNonSamplerDescriptors: 1000000, MaxSamplerDescriptors: 2048
+[2026.10.29-12.36.42:908][  0]LogD3D12RHI: Stencil ref from pixel shader is not supported
+[2026.10.29-12.36.42:908][  0]LogD3D12RHI: Raster order views are supported
+[2026.10.29-12.36.42:908][  0]LogD3D12RHI: Wave Operations are supported (wave size: min=32 max=32).
+[2026.10.29-12.36.42:908][  0]LogD3D12RHI:      Legacy Barriers Present in Build: Yes
+[2026.10.29-12.36.42:908][  0]LogD3D12RHI:    Enhanced Barriers Present in Build: Yes
+[2026.10.29-12.36.42:908][  0]LogD3D12RHI:      Enhanced Barriers Driver Support: Yes
+[2026.10.29-12.36.42:908][  0]LogD3D12RHI: Preferred Barrier Implementation Type: Legacy
+[2026.10.29-12.36.42:909][  0]LogD3D12RHI:         Chosen Barrier Implementation: D3D12LegacyBarriers
+[2026.10.29-12.36.42:909][  0]LogD3D12RHI: D3D12 ray tracing tier 1.1 and bindless resources are supported.
+[2026.10.29-12.36.42:909][  0]LogD3D12RHI: Mesh shader tier 1.0 is supported
+[2026.10.29-12.36.42:909][  0]LogD3D12RHI: AtomicInt64OnTypedResource is supported
+[2026.10.29-12.36.42:909][  0]LogD3D12RHI: AtomicInt64OnGroupShared is supported
+[2026.10.29-12.36.42:909][  0]LogD3D12RHI: AtomicInt64OnDescriptorHeapResource is supported
+[2026.10.29-12.36.42:909][  0]LogD3D12RHI: Shader Model 6.6 atomic64 is supported
+[2026.10.29-12.36.42:909][  0]LogD3D12RHI: Work Graphs are supported
+[2026.10.29-12.36.42:910][  0]LogD3D12RHI: Bindless is enabled (Configuration=RayTracing). Initializing allocators with 32768 Resource and 2048 Sampler descriptors
+[2026.10.29-12.36.43:071][  0]LogD3D12RHI: [GPUBreadCrumb] Successfully setup breadcrumb resource for DiagnosticBuffer (Queue: 0x00007FF316834400)
+[2026.10.29-12.36.43:071][  0]LogD3D12RHI: [GPUBreadCrumb] Successfully setup breadcrumb resource for DiagnosticBuffer (Queue: 0x00007FF3168346C0)
+[2026.10.29-12.36.43:072][  0]LogD3D12RHI: [GPUBreadCrumb] Successfully setup breadcrumb resource for DiagnosticBuffer (Queue: 0x00007FF316834980)
+[2026.10.29-12.36.43:074][  0]LogD3D12RHI: Display: Not using pipeline state disk cache per r.D3D12.PSO.DiskCache=0
+[2026.10.29-12.36.43:074][  0]LogD3D12RHI: Display: Not using driver-optimized pipeline state disk cache per r.D3D12.PSO.DriverOptimizedDiskCache=0
+[2026.10.29-12.36.43:795][  0]LogD3D12RHI: NVIDIA Shader Execution Reordering interface supported!
+[2026.10.29-12.36.43:795][  0]LogD3D12RHI: NVIDIA Ray Tracing Cluster Operations supported and enabled
+[2026.10.29-12.36.43:795][  0]LogD3D12RHI: LSS not supported on this device.
+[2026.10.29-12.36.43:795][  0]LogD3D12RHI: NVIDIA Extended ray tracing pipeline state applied.
+[2026.10.29-12.36.43:795][  0]LogRHI: Texture pool is 4528 MB (70% of 6469 MB)
+[2026.10.29-12.36.43:795][  0]LogD3D12RHI: Async texture creation enabled
+[2026.10.29-12.36.43:795][  0]LogD3D12RHI: RHI has support for 64 bit atomics
+[2026.10.29-12.36.43:885][  0]LogRHI: Render tracing channels set: 'Submission' -> 0xf
+[2026.10.29-12.36.44:225][  0]LogRHI: Could not open FPipelineCacheFile: ../../../PrincipledNPR/Content/PipelineCaches/Windows/PrincipledNPR_PCD3D_SM6.stable.upipelinecache
+[2026.10.29-12.36.47:137][  0]LogRHI: Display: ShaderPipelineCache: Paused Batching. 1
+[2026.10.29-12.36.47:138][  0]LogRHI: Display: ShaderPipelineCache: Resumed Batching. 0
+[2026.10.29-12.36.47:138][  0]LogRHI: Display: ShaderPipelineCache: Batching Resumed.
+[2026.10.29-12.36.47:373][  1]LogRHI: Display: Encountered a new graphics PSO: 906350611 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:375][  1]LogRHI: Display: Encountered a new graphics PSO: 2110166719 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:376][  1]LogRHI: Display: Encountered a new graphics PSO: 1633530832 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:376][  1]LogRHI: Display: Encountered a new compute PSO: 4089058298 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:376][  1]LogRHI: Display: Encountered a new graphics PSO: 45228890 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:376][  1]LogRHI: Display: Encountered a new graphics PSO: 3350720278 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:377][  1]LogRHI: Display: Encountered a new graphics PSO: 3729233333 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:377][  1]LogRHI: Display: Encountered a new compute PSO: 3560773614 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:377][  1]LogRHI: Display: Encountered a new graphics PSO: 92315905 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:377][  1]LogRHI: Display: Encountered a new graphics PSO: 1695767551 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:377][  1]LogRHI: Display: Encountered a new graphics PSO: 612552170 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:378][  1]LogRHI: Display: Encountered a new graphics PSO: 2983643578 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:379][  1]LogRHI: Display: Encountered a new graphics PSO: 72865529 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:379][  1]LogRHI: Display: Encountered a new graphics PSO: 1452607166 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:381][  1]LogRHI: Display: Encountered a new graphics PSO: 3274039881 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:383][  1]LogRHI: Display: Encountered a new graphics PSO: 1174277617 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:383][  1]LogRHI: Display: Encountered a new graphics PSO: 3887415891 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:385][  1]LogRHI: Display: Encountered a new graphics PSO: 63124271 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:385][  1]LogRHI: Display: Encountered a new graphics PSO: 3319736850 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:385][  1]LogRHI: Display: Encountered a new graphics PSO: 3592284792 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:386][  1]LogRHI: Display: Encountered a new graphics PSO: 1364659250 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:387][  1]LogRHI: Display: Encountered a new graphics PSO: 1886310967 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:388][  1]LogRHI: Display: Encountered a new graphics PSO: 1994338724 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:388][  1]LogRHI: Display: Encountered a new graphics PSO: 2831403357 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:389][  1]LogRHI: Display: Encountered a new graphics PSO: 997019900 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:389][  1]LogRHI: Display: Encountered a new graphics PSO: 498360400 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:389][  1]LogRHI: Display: Encountered a new graphics PSO: 3263767055 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:389][  1]LogRHI: Display: Encountered a new graphics PSO: 1567633067 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:389][  1]LogRHI: Display: Encountered a new graphics PSO: 3769264551 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:390][  1]LogRHI: Display: Encountered a new graphics PSO: 2745440042 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:391][  1]LogRHI: Display: Encountered a new graphics PSO: 4293541735 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:507][  1]LogRHI: Display: Encountered a new graphics PSO: 2469921806 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:511][  1]LogAutomationCommandLine: Display: Ready to start automation
+[2026.10.29-12.36.47:545][  2]LogRHI: Display: Encountered a new graphics PSO: 3439575345 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:545][  2]LogRHI: Display: Encountered a new graphics PSO: 186636300 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:545][  2]LogRHI: Display: Encountered a new graphics PSO: 417142886 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:545][  2]LogRHI: Display: Encountered a new graphics PSO: 2677538348 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:545][  2]LogRHI: Display: Encountered a new graphics PSO: 3199082537 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:545][  2]LogRHI: Display: Encountered a new graphics PSO: 1711487811 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:546][  3]LogRHI: Display: Encountered a new graphics PSO: 2555770016 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:546][  3]LogRHI: Display: Encountered a new graphics PSO: 233115735 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:547][  3]LogRHI: Display: Encountered a new graphics PSO: 2336161775 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.47:547][  3]LogRHI: Display: Encountered a new graphics PSO: 695578701 (PSOPrecacheState: Missed)
+[2026.10.29-12.36.52:526][582]LogAutomationWorker: Received FindWorkersMessage from 9878C8FE4B8B71E6F0F6029FE348A4BD
+[2026.10.29-12.36.52:526][582]LogAutomationController: Received FindWorkersResponseMessage from 546C794647DF95D28F7A64A4FB06A5A7
+[2026.10.29-12.36.52:527][582]LogAutomationController: Requesting test list from 546C794647DF95D28F7A64A4FB06A5A7
+[2026.10.29-12.36.52:532][583]LogAutomationWorker: Received RequestTestsMessage from 9878C8FE4B8B71E6F0F6029FE348A4BD
+[2026.10.29-12.36.52:605][583]LogAutomationWorker: Set 1922 tests to 9878C8FE4B8B71E6F0F6029FE348A4BD
+[2026.10.29-12.36.52:605][584]LogAutomationController: Received RequestTestsReplyCompleteMessage from 546C794647DF95D28F7A64A4FB06A5A7
+[2026.10.29-12.36.52:611][584]LogAutomationController: 1922 tests available on 546C794647DF95D28F7A64A4FB06A5A7
+[2026.10.29-12.36.52:635][584]LogAutomationCommandLine: Display: Found 2 automation tests based on 'NPR.Toon'
+[2026.10.29-12.36.52:635][584]LogAutomationCommandLine: Display: 	NPR.Toon.Contract
+[2026.10.29-12.36.52:635][584]LogAutomationCommandLine: Display: 	NPR.Toon.RuntimeBinding
+[2026.10.29-12.36.52:635][584]LogAutomationController: Sending StopTests to 546C794647DF95D28F7A64A4FB06A5A7
+[2026.10.29-12.36.52:636][584]LogAutomationController: Display: Loading results html template...
+[2026.10.29-12.36.52:637][584]LogAutomationController: Error: Failed to load test report html template - No report will be generated.
+[2026.10.29-12.36.52:637][584]LogAutomationController: Sending StartTestSession to 546C794647DF95D28F7A64A4FB06A5A7
+[2026.10.29-12.36.52:637][584]LogAutomationController: Display: Clearing ../../../PrincipledNPR/Saved/Automation/Logs/ and ../../../PrincipledNPR/Saved/Automation/Tmp/
+[2026.10.29-12.36.52:643][584]LogAutomationWorker: Received StopTests from 9878C8FE4B8B71E6F0F6029FE348A4BD
+[2026.10.29-12.36.52:643][584]LogAutomationWorker: Received StartTestSession from 9878C8FE4B8B71E6F0F6029FE348A4BD
+[2026.10.29-12.36.52:644][584]LogAutomationController: Sending RunTest Contract to 546C794647DF95D28F7A64A4FB06A5A7
+[2026.10.29-12.36.52:644][585]LogAutomationController: Display: Test Started. Name={Contract} Path={NPR.Toon.Contract}
+[2026.10.29-12.36.52:646][585]LogAutomationWorker: Received RunTests Contract from 9878C8FE4B8B71E6F0F6029FE348A4BD
+[2026.10.29-12.36.52:654][586]LogAutomationController: Display: Test Completed. Result={Success} Name={Contract} Path={NPR.Toon.Contract}
+[2026.10.29-12.36.52:654][586]LogAutomationController: BeginEvents: NPR.Toon.Contract
+[2026.10.29-12.36.52:654][586]LogAutomationController: EndEvents: NPR.Toon.Contract
+[2026.10.29-12.36.52:660][586]LogAutomationController: Sending RunTest RuntimeBinding to 546C794647DF95D28F7A64A4FB06A5A7
+[2026.10.29-12.36.52:660][587]LogAutomationController: Display: Test Started. Name={RuntimeBinding} Path={NPR.Toon.RuntimeBinding}
+[2026.10.29-12.36.52:662][587]LogAutomationWorker: Received RunTests RuntimeBinding from 9878C8FE4B8B71E6F0F6029FE348A4BD
+[2026.10.29-12.36.52:671][588]LogAutomationController: Display: Test Completed. Result={Success} Name={RuntimeBinding} Path={NPR.Toon.RuntimeBinding}
+[2026.10.29-12.36.52:671][588]LogAutomationController: BeginEvents: NPR.Toon.RuntimeBinding
+[2026.10.29-12.36.52:671][588]LogAutomationController: Immutable runtime bundle /Game/NPR/ToonValidation/BP_ToonStyle6.BP_ToonStyle6; world=Game
+[2026.10.29-12.36.52:671][588]LogAutomationController: EndEvents: NPR.Toon.RuntimeBinding
+[2026.10.29-12.36.52:679][588]LogAutomationController: Display: Exporting Automation Report.
+[2026.10.29-12.36.52:679][588]LogAutomationController: Display: Converting results to json object...
+[2026.10.29-12.36.52:683][588]LogAutomationController: Writing reports to E:/unrealProjects/PrincipledNPR/Saved/ToonValidation/FinalGameAutomation...
+[2026.10.29-12.36.52:686][588]LogAutomationController: Display: Successfully wrote json results file!
+[2026.10.29-12.36.52:686][588]LogAutomationController: Exported report to 'E:/unrealProjects/PrincipledNPR/Saved/ToonValidation/FinalGameAutomation' in 0.00 Seconds
+[2026.10.29-12.36.52:686][588]LogAutomationController: Display: Report can be opened in the editor at 'E:/unrealProjects/PrincipledNPR/Saved/ToonValidation/FinalGameAutomation'
+[2026.10.29-12.36.52:686][588]LogAutomationController: Sending StopTestSession to 546C794647DF95D28F7A64A4FB06A5A7
+[2026.10.29-12.36.52:686][588]LogAutomationCommandLine: Display: ...Automation Test Queue Empty 2 tests performed.
+[2026.10.29-12.36.52:686][589]LogExit: Display: **** TestExit: Automation Test Queue Empty ****

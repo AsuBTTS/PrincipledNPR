@@ -2,7 +2,7 @@
 
 # NPR调制插件使用说明
 
-更新日期：2026-10-26。我们用统一工作区选择角色、按后处理/非后处理分类查看效果，并调整描边与 Rim Light。总览、共享角色视口和隔离流程见[统一效果工作区](npr-workspace.md)，Rim 的资产配置见[配置与角色绑定](/generated/source/Documentation/RimLight/EditorWorkflow.md.txt)。
+更新日期：2026-10-29。我们用统一工作区选择角色、按后处理/非后处理分类查看效果，并调整描边、Rim Light 与 Toon Light。总览、共享角色视口和隔离流程见[统一效果工作区](npr-workspace.md)，Toon 的模型、曲线与区域流程见 [Toon Light](../features/toon-shading.md)。
 
 ## 1. 先分清哪些入口能用
 
@@ -11,6 +11,7 @@
 | 给整角色或某个材质槽加描边 | 窗口 → NPR 调制 → Outline | 已有设置、预览、预设和保存流程 |
 | 查看每个 Mesh 已应用的效果 | NPR 调制 → 角色效果总览 | 按 Mesh/材质槽列出本插件登记的效果，支持单效果与网格隔离 |
 | 在窗口中调整 Rim | 顶部 Rim Light；或总览中的非后处理 → Rim Light | Profile、角色槽位、实时角色视口、原材质对比和隔离；完整角色观感仍需按资产验收 |
+| 按区域调整 Toon 光照 | 顶部 Toon · 光照 | 模型选择、五参数、小曲线/放大窗口、Section 点选、私有预览和不可变风格包；质量边界见 Toon 独立说明 |
 | 实际观察 Rim | 内容浏览器中的预览材质实例 | 可用，见 [Rim 介绍](../rim/rim_light_introduction.md) |
 | 同时保留贴图、法线、自发光并加 Rim | Surface 母材质与预览实例 | Surface 是底层组合能力；Rim 卡片默认保留原图和贴图 |
 | 一键把任意角色变为完整 Toon 风格 | 尚无完整入口 | 仍在开发 |
@@ -87,6 +88,10 @@ Outline 的“转换”只建立描边所需绑定，不会自动把整个人物
 在内容浏览器开启插件内容显示，打开 `Principled NPR Content / RimLight / MI_RimLight_Preview`，通过材质实例查看四项 Rim 控制。要保留原有表面并组合效果，优先阅读 [Surface 使用说明](../features/surface-material.md)，从 `Surface / MI_NPRSurface_Preview` 了解基础输入。
 
 Rim 页按 Mesh 分组显示具名材质槽，在卡片内启用和调整边缘光。工具默认复制原图并追加 Rim，保留贴图、法线和原有自发光；不要求输入 Index 或显式指定 Recipe。新槽柔和度默认 12°，可调至 90°。顶部只保留读取与保存；Style Profile 可选。也能在角色视口隔离 Mesh、材质槽或 Rim 效果，并打开原材质对比。详见[统一效果工作区](npr-workspace.md)与[配置与角色绑定](/generated/source/Documentation/RimLight/EditorWorkflow.md.txt)。程序和蓝图调参继续使用既有绑定接口，见 [Rim 介绍](../rim/rim_light_introduction.md)。
+
+### Toon Light 的操作
+
+打开顶部 Toon 页面，读取角色后在模型或右侧 Section 列表选择区域。左侧调整参数与曲线；保存风格保留艺术数据和后端高级设置，应用才写入角色材质槽，之后还需保存关卡。多个 Section 共用一个槽时一起变化。Shader 首次准备、模型切换和普通曲线更新的区别见 [Toon 操作说明](../features/toon-shading.md)。
 
 ## 9. 没有变化时先检查什么
 

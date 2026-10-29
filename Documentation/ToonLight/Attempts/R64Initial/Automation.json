@@ -1,0 +1,167 @@
+﻿{
+	"devices": [
+		{
+			"deviceName": "EVANGELION-AV01",
+			"instance": "87B998AC47DD99A5D778BE9B28948A74",
+			"instanceName": "EVANGELION-AV01-62392",
+			"platform": "WindowsEditor",
+			"oSVersion": "Windows 11 (25H2) [10.0.26200.9711] ",
+			"model": "Default",
+			"gPU": "Intel(R) UHD Graphics",
+			"cPUModel": "Intel(R) Core(TM) i7-14650HX",
+			"rAMInGB": 32,
+			"renderMode": "D3D12_SM6",
+			"rHI": "D3D12 (SM6)",
+			"appInstanceLog": ""
+		}
+	],
+	"reportCreatedOn": "2026.10.28-15.30.26",
+	"succeeded": 4,
+	"succeededWithWarnings": 0,
+	"failed": 1,
+	"notRun": 0,
+	"inProcess": 0,
+	"totalDuration": 3.8224294185638428,
+	"comparisonExported": false,
+	"comparisonExportDirectory": "",
+	"tests": [
+		{
+			"testDisplayName": "Adapter",
+			"fullTestPath": "NPR.Toon.Adapter",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"87B998AC47DD99A5D778BE9B28948A74"
+			],
+			"duration": 0.4720568060874939,
+			"dateTime": "2026.10.28-15.30.22",
+			"entries": [
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "Baked package /Game/NPR/ToonValidation/BP_ToonStyle1.BP_ToonStyle1",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2026.10.28-15.30.22"
+				}
+			],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "Contract",
+			"fullTestPath": "NPR.Toon.Contract",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"87B998AC47DD99A5D778BE9B28948A74"
+			],
+			"duration": 0.016743198037147522,
+			"dateTime": "2026.10.28-15.30.22",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "EditorWorkflow",
+			"fullTestPath": "NPR.Toon.EditorWorkflow",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"87B998AC47DD99A5D778BE9B28948A74"
+			],
+			"duration": 1.2086259126663208,
+			"dateTime": "2026.10.28-15.30.22",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "Render",
+			"fullTestPath": "NPR.Toon.Render",
+			"tags": [],
+			"state": "Fail",
+			"deviceInstance": [
+				"87B998AC47DD99A5D778BE9B28948A74"
+			],
+			"duration": 2.0951879024505615,
+			"dateTime": "2026.10.28-15.30.24",
+			"entries": [
+				{
+					"event":
+					{
+						"type": "Error",
+						"message": "Expected 'Bounded GPU response error Diffuse_0_0' to be true.",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "E:\\unrealProjects\\PrincipledNPR\\Plugins\\PrincipledNPR\\Source\\NPREditor\\Private\\Tests\\NPRToonRenderTests.cpp",
+					"lineNumber": 90,
+					"timestamp": "2026.10.28-15.30.25"
+				},
+				{
+					"event":
+					{
+						"type": "Error",
+						"message": "Expected 'Bounded GPU response error Diffuse_0_4' to be true.",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "E:\\unrealProjects\\PrincipledNPR\\Plugins\\PrincipledNPR\\Source\\NPREditor\\Private\\Tests\\NPRToonRenderTests.cpp",
+					"lineNumber": 90,
+					"timestamp": "2026.10.28-15.30.25"
+				},
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "23 real GPU plane captures, signed-dot and angular sweeps: ../../../../../unrealProjects/PrincipledNPR/Saved/ToonValidation/Render",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2026.10.28-15.30.26"
+				}
+			],
+			"warnings": 0,
+			"errors": 2,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "RuntimeBinding",
+			"fullTestPath": "NPR.Toon.RuntimeBinding",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"87B998AC47DD99A5D778BE9B28948A74"
+			],
+			"duration": 0.029815699905157089,
+			"dateTime": "2026.10.28-15.30.26",
+			"entries": [
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "Immutable runtime bundle /Game/NPR/ToonValidation/BP_ToonStyle1.BP_ToonStyle1; world=Editor",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2026.10.28-15.30.26"
+				}
+			],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		}
+	]
+}

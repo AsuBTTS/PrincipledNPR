@@ -1,0 +1,4 @@
+[2026.10.28-08.16.06:966][607]LogWindows: Error: appError called: Assertion failed: !EnumHasAnyFlags(Flags, ERDGPassFlags::Copy | ERDGPassFlags::Compute | ERDGPassFlags::AsyncCompute | ERDGPassFlags::Raster) [File:D:\build\++UE5\Sync\Engine\Source\Runtime\RenderCore\Private\RenderGraphValidation.cpp] [Line: 598] 
+Pass ToonLive.BeginDispatchInterval may not specify any of the (Copy, Compute, AsyncCompute, Raster) flags, because it has no parameters. Use None instead.
+[2026.10.28-08.16.16:891][607]LogWindows: Error: Assertion failed: !EnumHasAnyFlags(Flags, ERDGPassFlags::Copy | ERDGPassFlags::Compute | ERDGPassFlags::AsyncCompute | ERDGPassFlags::Raster) [File:D:\build\++UE5\Sync\Engine\Source\Runtime\RenderCore\Private\RenderGraphValidation.cpp] [Line: 598] 
+[2026.10.28-08.16.16:891][607]LogWindows: Error: Pass ToonLive.BeginDispatchInterval may not specify any of the (Copy, Compute, AsyncCompute, Raster) flags, because it has no parameters. Use None instead.

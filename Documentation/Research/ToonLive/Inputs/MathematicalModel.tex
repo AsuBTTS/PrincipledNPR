@@ -1,0 +1,398 @@
+% !TEX program = xelatex
+% PrincipledNPR -- Toon Lighting parameter semantics and S58 backend mapping
+% Research draft, 2026-10-28. Requires XeLaTeX with ctex, amsmath, fontspec.
+\documentclass[UTF8,11pt,a4paper]{ctexart}
+\usepackage[margin=22mm,headheight=13.6pt]{geometry}
+\usepackage{amsmath,amssymb,mathtools,amsthm}
+\usepackage{booktabs,longtable,array,tabularx}
+\usepackage{graphicx,xcolor,hyperref,fancyhdr,enumitem}
+\usepackage{setspace}
+\setCJKmainfont{Noto Serif CJK SC}
+\setCJKsansfont{Noto Sans CJK SC}
+\setCJKmonofont{Noto Sans Mono CJK SC}
+\hypersetup{colorlinks=true,linkcolor=blue!45!black,urlcolor=blue!45!black}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{3pt}
+\setstretch{1.16}
+\setlist[itemize]{leftmargin=2em,topsep=2pt,itemsep=1pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize PrincipledNPR / Toon Lighting 数学模型}
+\fancyhead[R]{\footnotesize 研究草案 · 2026-10-28}
+\fancyfoot[C]{\thepage}
+\newcommand{\sat}[1]{\operatorname{clamp}\!\left(#1,0,1\right)}
+\newcommand{\Had}{\mathbin{\odot}}
+\newcommand{\sref}{\mathrm{ref}}
+\newcommand{\sue}{\mathrm{UE}}
+\newcommand{\sart}{\mathrm{art}}
+\newcommand{\scap}{\mathrm{cap}}
+\numberwithin{equation}{section}
+\title{\textbf{PrincipledNPR：Toon Lighting 参数数学语义\\与 UE5.8.3 Toon BSDF 后端适配推导}}
+\author{NPR Core 技术研究草案}
+\date{2026年10月28日}
+\begin{document}
+\maketitle
+\begin{abstract}
+本稿从项目既有的 Principled 参数契约出发，推导\textbf{有符号受光坐标、明暗分界与半宽、多阶色阶、阴影策略、多光源、间接光照及高光角域语义}，随后推导其至 UE5.8.3 Substrate Toon BSDF / Toon Profile 的候选映射。研究坚持\textbf{艺术参数、参考着色数学、后端资源}三者分离：数学恒等式不自动等价于引擎最终画面，GPU 实验结果也不等于所有角色场景已经验收。
+\end{abstract}
+\tableofcontents
+\medskip
+
+\section{研究目标与模型边界}
+我们将系统的工作关系记作
+\begin{equation}
+\boxed{\quad
+\boldsymbol\theta_{\sart}\xrightarrow{\;\mathcal A_{m,\mathcal K}\;}
+\mathcal P_m\xrightarrow{\;\mathcal F^{\sue}_{m}\;}
+\mathbf C_{\mathrm{scene}}\xrightarrow{\;\mathcal T\;}
+\mathbf C_{\mathrm{display}}\quad}
+\label{eq:pipeline}
+\end{equation}
+其中 $\boldsymbol\theta_{\sart}$ 为统一艺术参数；$m$ 为离散的 Shading Model 选择；$\mathcal K$ 为引擎与平台能力条件；$\mathcal A$ 为待开发的 Backend Adapter；$\mathcal P_m$ 为后端材质、Toon Profile、MID 等资源；$\mathcal F^{\sue}_m$ 为 UE 实际渲染计算；$\mathcal T$ 为曝光及显示映射。
+
+本次重点是\textbf{Generic Toon Lighting 的漫反射明暗与色阶}。高光只推导可用的参考语义；Face SDF、Hair 专用角域瓣及非通用材料不在本次拟合范围内。Rim 为独立的 Appearance 贡献；Outline 仍独立于表面受光模型。模型选择可以作为 Style Profile 的\textbf{离散参数}，不预设它必须由 MID float 在单次 draw 内切换。
+
+\subsection{已有证据与未完成部分}
+2026-10-28 的隔离 GPU 实验基于 UE 5.8.3 / CL 58210709，验证了正受光区域的阈值和线性过渡、彩色／连续 Ramp、投影、方向／点／聚光、Sky／软件 Lumen 的可测贡献、静态双槽隔离，以及预编译 Lit／Toon 材质切换。实验\textbf{尚未证明}运行时可直接编辑 Profile 曲线且不重新编译 Shader，也未完成角色动画、复杂材质、Cook、性能与广泛阴影方法验收。
+
+\section{符号和现有参数契约}
+令表面位置为 $p$，定义输入
+\begin{equation}
+X(p)=\{\mathbf c_b(p),\,m_t(p),\,r(p),\,\mathbf n_t(p),\,e(p),\ldots\},
+\end{equation}
+其中 $\mathbf c_b$ 为线性 RGB BaseColor，$m_t$ 为金属度（下标避免与 Shading Model $m$ 混淆），$r$ 为粗糙度，$\mathbf n_t$ 为切线空间法线。定义单位世界空间着色法线 $\mathbf N_d(p)$、单位视向 $\mathbf V(p)$、第 $i$ 盏光的单位方向 $\mathbf L_i(p)$、线性入射光颜色尺度 $\mathbf E_i(p)$、阴影透射／可见性 $v_i(p)\in[0,1]$。$\mathbf E_i$ 在这里已包含所选灯型的距离和聚光衰减；它只是\textbf{参考式中的归一化光照尺度}，不宣称与 UE 内部每个中间量同名或单位完全一致。
+
+\begin{center}
+\small
+\begin{tabularx}{\linewidth}{@{}p{46mm}p{23mm}X@{}}
+\toprule
+现有语义 ID & 符号 / 范围 & 数学含义与现状 \\
+\midrule
+\texttt{TerminatorDotCenter} & $\tau\in[-1,1]$ & 有符号 $\mathbf N_d\cdot\mathbf L$ 坐标中的明暗中心；默认 $0$。\\
+\texttt{TerminatorDotHalfWidth} & $w\in[0,0.5]$ & 明暗过渡\emph{半宽}；默认 $0.05$；$w=0$ 不意味着关闭像素抗锯齿。\\
+\texttt{SpecHalfAngleRad} & $\beta\in[1^\circ,60^\circ]$ & 参考高光瓣半峰角；默认 $8^\circ$，与屏幕高光面积不同。\\
+\texttt{SpecEdgeSoftness} & $s\in[0,1]$ & 高光角域过渡柔度；默认 $0.15$。\\
+\texttt{SpecPeakScale} & $I_s\ge 0$ & 高光峰值强度；默认 $1$。\\
+Shading Model（架构配置） & $m\in\mathcal M$ & 离散选择：例如 Default Lit、Substrate Toon、Custom；完整模型选择器尚未交付。\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{注意：}下文的 RGB 色阶 $\mathbf c_j$ 与曲线资源属于待定义的风格数据。\texttt{bDiffuseRampIncludeShadow}、\texttt{ShadowExtinction}\allowbreak\texttt{Coefficient} 和 \texttt{DiffuseIndirectScale} 属于候选后端配置。\textbf{这些字段目前没有新增的全局 Principled 语义 ID。}
+
+\section{从连续受光到 Toon 漫反射响应}
+\subsection{第一步：保留有符号受光坐标}
+Lambert 的非负漫反射方向项为
+\begin{equation}
+D_{\mathrm{Lambert}}(p,i)=\max\!\bigl(0,\mathbf N_d(p)\cdot\mathbf L_i(p)\bigr).
+\end{equation}
+如果先执行 $\max(0,\cdot)$，所有背光朝向都会映射到零，丢失负阈值所需的方向信息。因此先定义
+\begin{equation}
+\boxed{q_i(p)=\mathbf N_d(p)\cdot\mathbf L_i(p)\in[-1,1].}
+\label{eq:q}
+\end{equation}
+$q_i$ 只是\textbf{表面方向响应坐标}，并不能回答光线是否被几何体挡住。
+
+\subsection{第二步：明暗中心和过渡半宽}
+先定义饱和线性过渡（本次隔离 GPU 测试使用分段线性曲线）
+\begin{equation}
+B_{\mathrm{lin}}(q;\tau,w)=
+\sat{\frac{q-\tau+w}{2w}},\qquad w>0.
+\label{eq:blin}
+\end{equation}
+由定义可直接得到
+\begin{align}
+B_{\mathrm{lin}}(\tau;\tau,w)&=\tfrac12,\\
+B_{\mathrm{lin}}(\tau-w;\tau,w)&=0,\\
+B_{\mathrm{lin}}(\tau+w;\tau,w)&=1.
+\end{align}
+因此 $\tau$ 确定\textbf{50\% 响应位置}，$2w$ 是完整线性过渡宽度。在未裁剪的过渡内部，
+\begin{equation}
+\frac{\partial B_{\mathrm{lin}}}{\partial q}=\frac{1}{2w},\qquad
+\frac{\partial B_{\mathrm{lin}}}{\partial\tau}=-\frac{1}{2w}.
+\end{equation}
+$\tau$ 向正方向移动会让相同法线位置的明度降低；减小 $w$ 会提高分界斜率。定义硬阶跃极限
+\begin{equation}
+B_0(q;\tau)=\lim_{w\to0^+}B_{\mathrm{lin}}(q;\tau,w)=
+\begin{cases}0,&q<\tau,\\1,&q>\tau.
+\end{cases}
+\end{equation}
+在 $q=\tau$ 的极限值为 $1/2$；实际采样／AA 需要另定边界策略。
+
+原始技术设计文档还定义了更平滑的 Hermite 版本：
+\begin{equation}
+S(z)=3z^2-2z^3,\quad z\in[0,1],\qquad
+B_{\mathrm{smooth}}(q;\tau,w)=S\bigl(B_{\mathrm{lin}}(q;\tau,w)\bigr).
+\label{eq:smooth}
+\end{equation}
+两种版本的\textbf{中心和支持区间相同，边缘斜率不同}。2026-10-28 的 GPU 验证针对的是 \texttt{RCIM\_Linear} 曲线；不能将其数值直接视为 $B_{\mathrm{smooth}}$ 已通过验证。
+
+像素抗锯齿的\textbf{参考设计}可以引入
+\begin{equation}
+w_{\mathrm{eff}}(p)=\max\!\left(w,\,\frac\kappa2\left|\operatorname{fwidth}(q(p))\right|,\,\varepsilon\right),
+\label{eq:aa}
+\end{equation}
+其中 $\kappa$ 是像素过滤标定系数，$\varepsilon>0$ 防止分母为零。式 \eqref{eq:aa} 是\textbf{可用的数学参考模型}，暂不表示 UE 原生 Toon Profile 已使用这条完全相同的抗锯齿规则。
+
+\subsection{第三步：二阶色彩响应}
+设两个 RGB 色阶响应系数为 $\mathbf c_0,\mathbf c_1\in\mathbb R_{\ge0}^3$，则
+\begin{equation}
+\boxed{\mathbf Q_2(q;\tau,w)=\mathbf c_0+(\mathbf c_1-\mathbf c_0)B_{\mathrm{lin}}(q;\tau,w).}
+\label{eq:2band}
+\end{equation}
+当 $q<\tau-w$ 时，$\mathbf Q_2=\mathbf c_0$；当 $q>\tau+w$ 时，$\mathbf Q_2=\mathbf c_1$。这里\textbf{约定} $\mathbf c_j$ 是与材料底色合成的 RGB 响应系数；若想直接用绝对颜色调色板，可令参考基础色系数为 $\mathbf1$，避免再次重复乘入已着色的 BaseColor。
+
+\subsection{第四步：推广到任意多阶 Ramp}
+令 $K\ge2$、严格递增的分界中心 $\tau_1<\cdots<\tau_{K-1}$，有
+\begin{equation}
+\boxed{\mathbf Q_K(q)=\mathbf c_0+\sum_{j=1}^{K-1}
+\bigl(\mathbf c_j-\mathbf c_{j-1}\bigr)B_{\mathrm{lin}}(q;\tau_j,w_j).}
+\label{eq:kband}
+\end{equation}
+当需要每一色阶都有完整平台、相邻过渡不重叠时，附加约束
+\begin{equation}
+\tau_j+w_j\le\tau_{j+1}-w_{j+1}.
+\label{eq:nonoverlap}
+\end{equation}
+三阶响应即 $K=3$ 的两个转折项。任意 RGB 色阶并不天然满足亮度单调；若预设声称「暗、中、亮」，还需对亮度 $Y(\mathbf c_j)$ 单独施加排序约束。
+
+\section{第五步：推导到 UE Toon Profile 的坐标变换}
+\subsection{严格的仿射映射}
+本次 S58 候选后端的曲线坐标使用
+\begin{equation}
+u=\frac{q+1}{2}\in[0,1].
+\label{eq:coord}
+\end{equation}
+为保留 $\tau,w$ 的几何意义，定义曲线中心 $t$ 和曲线半宽 $h$：
+\begin{equation}
+\boxed{t=\frac{\tau+1}{2},\qquad h=\frac{w}{2}.}
+\label{eq:map}
+\end{equation}
+将 $q=2u-1$、$\tau=2t-1$ 和 $w=2h$ 代入 \eqref{eq:blin}：
+\begin{align}
+\frac{q-\tau+w}{2w}
+&=\frac{(2u-1)-(2t-1)+2h}{4h}\\
+&=\frac{u-t+h}{2h},
+\end{align}
+从而得到\textbf{坐标层面的严格恒等式}
+\begin{equation}
+\boxed{B_{\mathrm{lin}}(q;\tau,w)=B_{\mathrm{lin}}(u;t,h).}
+\label{eq:exact}
+\end{equation}
+因此二阶曲线可由以下控制点生成（其中 $h>0$ 且端点未越界）：
+\begin{equation}
+(0,\mathbf c_0),\quad(t-h,\mathbf c_0),\quad
+(t+h,\mathbf c_1),\quad(1,\mathbf c_1).
+\label{eq:knots}
+\end{equation}
+多阶曲线将每个 $(\tau_j,w_j)$ 先转换为 $(t_j,h_j)$，然后按约束建立有序 Ramp 控制点。对于只使用线性插值的曲线，$\mathbf Q_K$ 的过渡形状与该组控制点一致；使用 Hermite 或其他插值时需重新处理切线和滤波。
+
+\subsection{边界与资源限制}
+数学上 $\tau\in[-1,1]$ 和 $w\in[0,0.5]$ 并\textbf{不能保证}曲线两端点都在 $[0,1]$：
+\begin{equation}
+0\le t-h\quad\land\quad t+h\le1
+\quad\Longleftrightarrow\quad
+-1\le\tau-w\quad\land\quad\tau+w\le1.
+\end{equation}
+当端点越界时，Ramp 的截断或延拓必须明确记录，不能声称完整亮暗平台依然存在。$w=0$ 时，两个重合控制点不宜作为普通线性插值键值直接传递；可采用经过测定的极小宽度与像素过滤策略。
+
+\textbf{关键区分：}式 \eqref{eq:exact} 只证明\textbf{参数坐标等价}。Shader 的纹理采样、Profile 内部 LUT、法线精度、阴影可见度、曝光与多灯累积仍可能产生最终图像差异。
+
+\section{第六步：真实阴影和 Toon 明暗为何需要两套参数}
+\subsection{光照朝向与几何遮挡是不同变量}
+$q_i$ 只由表面和光向决定；令 $v_i\in[0,1]$ 记录引擎计算得到的光线遮挡透射。即使 $q_i=0.8$，也可能因为墙面遮挡而有 $v_i\approx0$。因此不能只用 $q_i$ 决定最终受光颜色。
+
+隔离研究报告对原生 Toon 局部源码分支给出以下\textbf{近似表达}：
+\begin{align}
+\boldsymbol\Phi_{\mathrm{outside}}(u,v)
+&\simeq v\,\mathbf Q(u),\label{eq:shadowout}\\
+\boldsymbol\Phi_{\mathrm{inside}}(u,v)
+&\simeq\mathbf Q(uv).\label{eq:shadowin}
+\end{align}
+分别对应 \texttt{bDiffuseRampIncludeShadow} 关闭／开启时的局部 Ramp 计算。两者一般不相等：
+\begin{equation}
+v\,\mathbf Q(u)\ne\mathbf Q(uv).
+\end{equation}
+例如 $v=0$ 且 $\mathbf Q(0)\ne\mathbf0$ 时，左边为 $\mathbf0$，右边为 $\mathbf Q(0)$。但是这\textbf{并不意味着} UE 实际全遮挡区必然显示 $\mathbf Q(0)$，因为外层光照调度可能跳过这一贡献。
+
+更完整地，应将 Unreal 的后端实现写作未知但可测试的函数
+\begin{equation}
+\mathbf C^{\sue}_{\mathrm{dir}}=
+\mathcal F_{\mathrm{dir}}^{\sue}\bigl(X,\{q_i,v_i,\mathbf E_i\},\mathcal P_{\mathrm{Toon}},\mathcal K\bigr),
+\label{eq:uenative}
+\end{equation}
+因此，\eqref{eq:shadowout}--\eqref{eq:shadowin} 只表示局部 Ramp 处理，不能用作最终逐像素 Shader 的完整等式。
+
+引擎文件 \texttt{SubstrateDeferred}\allowbreak\texttt{Lighting.ush} 中，\texttt{bNeedLighting} 在表面／透射阴影项为零时可能跳过光照。\texttt{ShadowExtinction}\allowbreak\texttt{Coefficient} 会影响透射；其取值 \texttt{0} 表示无消光，并不等于关闭投射阴影。
+
+\subsection{负阈值反例}
+取 $\tau=-0.5$：参考模型 \eqref{eq:2band} 希望亮区延伸至 $q=-0.5$ 附近。但若几何自阴影在 $q<0$ 侧使 $v\to0$，真实画面中可见分界可能仍接近 $q=0$。因此
+\begin{equation}
+\boxed{\text{Ramp 坐标命中目标 }\tau\;\not\Rightarrow\;
+\text{最终阴影边界命中目标 }\tau.}
+\end{equation}
+这个反例已经在 2026-10-28 的 GPU 实验中出现。未来 Adapter 必须将\textbf{阈值适用条件、阴影策略、能力限制}单独声明；不应为了让单项实验通过就默认关闭角色自阴影。
+
+\section{第七步：多个光源、天空光和 Lumen}
+\subsection{逐灯响应的参考分解}
+设 $\mathbf A(p)=(1-m_t(p))\mathbf c_b(p)$ 为一种基础非金属漫反射色系数。\textbf{仅作为参考外观模型}，逐灯相加可以写为
+\begin{equation}
+\mathbf C_{\mathrm{dir}}^{\sref}(p)=
+\mathbf A(p)\Had\sum_{i=1}^{n}
+\left[\mathbf E_i(p)\Had \boldsymbol\Phi_\chi(u_i(p),v_i(p))\right],
+\label{eq:multilight}
+\end{equation}
+其中 $\chi$ 表示明确选择的 shadow/ramp 合成策略。式 \eqref{eq:multilight} 不保证等同于 UE 内部能量、遮挡或 BRDF 路径；几何门控和调度仍由实际后端负责。
+
+另一个候选是先聚合光照再进行量化，例如 $\mathbf Q(\sum_i a_iq_i)$。这与逐灯方法一般不同：
+\begin{equation}
+\mathbf Q\!\left(\sum_i a_iq_i\right)\ne
+\sum_i a_i\mathbf Q(q_i).
+\label{eq:nonlinear}
+\end{equation}
+所以多灯策略必须作为\textbf{有名称的后端响应约定}，不能在任何输入下默默假定色阶和求和可交换。
+
+\subsection{间接光的独立控制}
+为表达间接漫反射与直接色阶的不同含义，参考式可以写作
+\begin{equation}
+\mathbf C_{\mathrm{lit}}^{\sref}=
+\mathbf C_{\mathrm{dir}}^{\sref}
++\gamma_{\mathrm{ind}}\,\mathbf C_{\mathrm{ind}}^{\sue}
++\mathbf C_{\mathrm{spec}}^{\sref},
+\label{eq:indirect}
+\end{equation}
+其中 $\gamma_{\mathrm{ind}}$ 是候选后端的\texttt{DiffuseIndirectScale}，$\mathbf C_{\mathrm{ind}}^{\sue}$ 表示依赖 UE 环境与 GI 路径的间接贡献。\textbf{这是一种语义分解}，并不宣称我们可以在普通 Surface Material 中任意读取或者重组完整 GI 中间数据。
+
+隔离 GPU 实验分别验证了 Sky 间接尺度和软件 Lumen 的额外贡献，其中红墙的间接颜色信号较弱。不能由这一步推导得出 GPU 光照在所有场景、反射与硬件光追路径上都线性且稳定。
+
+\section{第八步：Toon Specular 的参考语义（暂不冻结后端公式）}
+现有 Principled 高光参数语义包括 $\beta$（\texttt{SpecHalfAngleRad}）、$s$（\texttt{SpecEdgeSoftness}）和 $I_s$（\texttt{SpecPeakScale}）。设
+\begin{equation}
+\mathbf H_i=\frac{\mathbf L_i+\mathbf V}{\|\mathbf L_i+\mathbf V\|},\qquad
+\theta_{h,i}=\arccos\bigl(\sat{\mathbf N_s\cdot\mathbf H_i}\bigr),
+\end{equation}
+其中当 $\|\mathbf L_i+\mathbf V\|$ 足够小时，定义该光源的参考高光为零，禁止归一化零向量。角域过渡半宽为
+\begin{equation}
+\delta=0.95\,s\,\min\!\left(\beta,\frac\pi2-\beta\right).
+\end{equation}
+由此得到设计报告中的\textbf{艺术参考高光瓣}
+\begin{equation}
+\boxed{S_{\sref}(\theta_{h,i};\beta,s)=
+1-B_{\mathrm{smooth}}(\theta_{h,i};\beta,\delta).}
+\label{eq:spec}
+\end{equation}
+在未被其他项遮挡时，$\theta_{h,i}=\beta$ 对应半峰；$I_s$ 作用于响应峰值，不自动保持积分能量。参考高光颜色还需考虑 Fresnel、几何门控、直接阴影和光色，这些因素不会让截图面积与 $\beta$ 严格一一对应。
+
+UE 原生 Toon 实验仅观察到 Roughness 改变高光面积、Specular 改变峰值、SpecularRamp 影响颜色和柔度。想实现统一的 $\beta$ 语义，需要拟合
+\begin{equation}
+\bigl(r,\mathrm{SpecularRamp},\mathrm{Specular}\bigr)
+=\mathcal A_{\mathrm{spec}}(\beta,s,I_s;\mathbf V,\mathbf L,\mathcal K),
+\label{eq:specfit}
+\end{equation}
+且需要声明适用视角／灯型／材质域。\textbf{当前不存在已经实测成立的全域解析逆映射}；尤其不能使用 $\mathrm{size}=1-r$ 冒充角域模型。
+
+\section{第九步：面向 PrincipledNPR 架构的适配算子}
+把本次 Generic Toon 语义写作
+\begin{equation}
+\boldsymbol\theta_{\mathrm{Toon}}=
+\left(\tau,w,\{\mathbf c_j,\tau_j,w_j\}_{j},
+\,\beta,s,I_s,\,\chi,\,\gamma_{\mathrm{ind}}\right).
+\end{equation}
+其中前两项及高光三项具有已存在的 Principled 语义 ID；色阶、阴影与间接策略在当前版本分别可以是\textbf{风格资源或后端限定参数}，并未宣称已实现统一 Schema。
+
+定义\textbf{后端翻译算子}
+\begin{equation}
+\boxed{\mathcal A_{\mathrm{S58}}:
+\bigl(\boldsymbol\theta_{\mathrm{Toon}},X,\mathcal K\bigr)
+\longmapsto
+\bigl(\mathrm{ToonProfile},\mathrm{MaterialFamily},\mathrm{MID},\mathrm{CapabilityReport}\bigr).}
+\label{eq:adapter}
+\end{equation}
+当前可候选实现的映射有
+\begin{align}
+(\tau,w)&\longmapsto(t,h)=((\tau+1)/2,w/2),\\
+\{\mathbf c_j,\tau_j,w_j\}&\longmapsto\texttt{DiffuseRamp 曲线资源},\\
+\chi&\longmapsto\texttt{bDiffuseRampIncludeShadow} \text{ 及相应阴影前提},\\
+\gamma_{\mathrm{ind}}&\longmapsto\texttt{DiffuseIndirectScale},\\
+(\beta,s,I_s)&\longmapsto\text{待标定 Specular 参数与曲线}.
+\end{align}
+参数变化还必须被划分为：
+\begin{itemize}
+\item \textbf{可直接 MID 更新的量}：实验已经验证了 BaseColor 等已编译参数的槽位隔离，但并未因此验证动态 DiffuseRamp 资产编辑。
+\item \textbf{Profile／材质资源型量}：Ramp 曲线、模型选择可先解析为已生成的 Profile 与预编译材质资源；实时更新机制仍待专门实验。
+\item \textbf{不可表达或尚未标定的量}：记录 \texttt{Unsupported} 或 \texttt{Approximate}，不可无提示忽略。
+\end{itemize}
+由于 $m$ 是离散选择，可写成
+\begin{equation}
+\mathcal A_{m}(\cdot)=
+\begin{cases}
+\mathcal A_{\mathrm{DefaultLit}}(\cdot),&m=\mathrm{DefaultLit},\\
+\mathcal A_{\mathrm{S58}}(\cdot),&m=\mathrm{Toon},\\
+\mathcal A_{\mathrm{Custom}}(\cdot),&m=\mathrm{Custom},
+\end{cases}
+\end{equation}
+其中只有已验证的分支可正式宣布受支持；此处结构是架构目标，不代表三个 Adapter 现均已实现。
+
+\section{第十步：如何使用 GPU 实验校准数学模型}
+\subsection{阈值与宽度的估计}
+在纯单方向光、固定曝光、固定表面且尽量排除阴影与轮廓像素的条件下，设测得线性 HDR 灰度响应为 $y(q)$。以两端基准值 $y_0,y_1$ 归一化：
+\begin{equation}
+\widehat B(q)=\sat{\frac{y(q)-y_0}{y_1-y_0}},\qquad y_1\ne y_0.
+\end{equation}
+对\textbf{线性过渡假设}，令 $q_{a}$ 表示 $\widehat B(q_a)=a$，则
+\begin{equation}
+\boxed{\widehat\tau=q_{0.5},\qquad
+\widehat w=\frac{q_{0.9}-q_{0.1}}{1.6}.}
+\label{eq:fitwidth}
+\end{equation}
+推导：在未裁剪区域，$q_a=\tau+(2a-1)w$，因此 $q_{0.9}-q_{0.1}=1.6w$。\textbf{如果 GPU 曲线使用 Hermite，则不能沿用这个 1.6 系数}；需改用对应过渡函数的反函数或直接优化拟合。
+
+\subsection{已报告测量与证据边界}
+\begin{center}
+\small
+\begin{tabular}{@{}lrrl@{}}
+\toprule
+实验 & 目标 & 已报告测值 & 解释 \\
+\midrule
+Step0 中心 & $0$ & $0.00681$ & 绝对偏差 $<0.02$\\
+StepHigh 中心 & $0.5$ & $0.49815$ & 绝对偏差 $<0.02$\\
+SoftPositive 中心 & $0.5$ & $0.49995$ & 单一线性条件\\
+SoftPositive 半宽 & $0.15$ & $0.15009$ & 单一线性条件\\
+StepLow（有自影）中心 & $-0.5$ & 约 $0$ & 明确反例，不满足期望\\
+\bottomrule
+\end{tabular}
+\end{center}
+这些值出自 2026-10-28 的\texttt{Report.md}。本稿尚未独立复读全部浮点读回和测量指标（原始文件名分别为 \texttt{readbacks.npz}、\texttt{measurements.json}）。因此它们属于\textbf{已报告测量}，不冒称独立重复实验。
+
+\subsection{可扩展的适配误差目标}
+后续在有效像素区域 $\Omega_{\mathrm{valid}}$ 上，可对候选后端配置 $\varphi$ 建立标定损失
+\begin{equation}
+\boxed{\widehat\varphi=\arg\min_{\varphi\in\mathcal D_{\mathcal K}}
+\sum_{p\in\Omega_{\mathrm{valid}}}
+\omega_p\left\|\mathbf C_{\mathrm{GPU}}(p;\varphi)-
+\mathbf C_{\sref}(p;\boldsymbol\theta_{\sart})\right\|_2^2
++\lambda\mathcal R(\varphi).}
+\label{eq:fit}
+\end{equation}
+其中 $\mathcal D_{\mathcal K}$ 为受平台能力约束的可行配置集合。要求 HDR 线性空间、同一曝光、已知光照与遮挡条件；不能把 sRGB PNG 截白后的差值直接用于能量标定。$\mathcal R$ 可用于抑制曲线过拟合，$\omega_p$ 用于排除轮廓、遮挡混杂与数值不稳定区域。
+
+\section{结论与下一阶段验证边界}
+\begin{enumerate}[leftmargin=2.5em]
+\item \textbf{已推导的数学事实：}有符号法线点积 $q$、参数 $\tau,w$ 的几何含义；线性／平滑响应的显式定义；多阶 Ramp 公式；$t=(\tau+1)/2$、$h=w/2$ 的严格坐标等价。
+\item \textbf{GPU 实验支持的有条件结论：}正受光、单光源、线性曲线下的阈值／半宽较准确；方向／点／聚光与间接光有可测响应；现有 Rim／Outline 可共存。
+\item \textbf{必须保留的反例：}负阈值下的几何自影；Include Shadow 的局部曲线表达与 UE 外层灯光调度不等价；高光角宽没有全域逆映射。
+\item \textbf{后续实现前需要的实验：}Toon Profile 是否能低成本刷新而无频繁 Shader 编译；真实角色、动画、LOD、复杂法线／多材质、Cook 和性能；高光角域拟合。
+\end{enumerate}
+
+\noindent\textbf{项目边界：}本稿是数学语义及后端适配\textbf{研究草案}，不新增 Runtime、Editor UI、Outline、Rim 或 Surface 的功能声明；现有参数、资产、断词、逻辑与 UI 不应因本数学模型被擅自修改。
+
+\section*{项目内参考依据}
+\addcontentsline{toc}{section}{项目内参考依据}
+\begin{itemize}
+\item \texttt{Documentation/Principled\_NPR\_技术设计报告\_V1.0.md}，第 3--4 节：参数语义、过渡、阴影、Specular 参考模型。
+\item \texttt{docs/principled/parameters.md}：\texttt{TerminatorDotCenter}、\texttt{TerminatorDotHalfWidth} 等现有参数契约。
+\item \texttt{Documentation/项目架构设计.md}：Principled 参数、Backend Adapter、Surface Composer、Rim／Outline 的责任边界。
+\item 用户提供的 \texttt{Report.md}（2026-10-28）：UE5.8.3 Toon BSDF 隔离 GPU 结果与已验证范围。
+\item 用户提供的 \texttt{ToonGPUProbe.cpp}：\texttt{UToonProfile}、\texttt{DiffuseRamp} 线性控制点及实验设置的程序证据。
+\end{itemize}
+\end{document}

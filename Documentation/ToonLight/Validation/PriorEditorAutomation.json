@@ -1,0 +1,276 @@
+﻿{
+	"devices": [
+		{
+			"deviceName": "EVANGELION-AV01",
+			"instance": "38DDBA474D498A71DAA4E8ADE8850E54",
+			"instanceName": "EVANGELION-AV01-40252",
+			"platform": "WindowsEditor",
+			"oSVersion": "Windows 11 (25H2) [10.0.26200.9711] ",
+			"model": "Default",
+			"gPU": "Intel(R) UHD Graphics",
+			"cPUModel": "Intel(R) Core(TM) i7-14650HX",
+			"rAMInGB": 32,
+			"renderMode": "D3D12_SM6",
+			"rHI": "D3D12 (SM6)",
+			"appInstanceLog": ""
+		}
+	],
+	"reportCreatedOn": "2026.10.28-16.35.20",
+	"succeeded": 13,
+	"succeededWithWarnings": 0,
+	"failed": 0,
+	"notRun": 0,
+	"inProcess": 0,
+	"totalDuration": 8.6904640197753906,
+	"comparisonExported": false,
+	"comparisonExportDirectory": "",
+	"tests": [
+		{
+			"testDisplayName": "RimWorkflow",
+			"fullTestPath": "NPR.Editor.RimWorkflow",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"38DDBA474D498A71DAA4E8ADE8850E54"
+			],
+			"duration": 1.0380702018737793,
+			"dateTime": "2026.10.28-16.35.11",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "LiveBinding",
+			"fullTestPath": "NPR.Rim.LiveBinding",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"38DDBA474D498A71DAA4E8ADE8850E54"
+			],
+			"duration": 0.017001401633024216,
+			"dateTime": "2026.10.28-16.35.12",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "MaterialContract",
+			"fullTestPath": "NPR.Rim.MaterialContract",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"38DDBA474D498A71DAA4E8ADE8850E54"
+			],
+			"duration": 0.016744699329137802,
+			"dateTime": "2026.10.28-16.35.12",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "ProfileBinding",
+			"fullTestPath": "NPR.Rim.ProfileBinding",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"38DDBA474D498A71DAA4E8ADE8850E54"
+			],
+			"duration": 0.015919599682092667,
+			"dateTime": "2026.10.28-16.35.12",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "StyleProfile",
+			"fullTestPath": "NPR.Rim.StyleProfile",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"38DDBA474D498A71DAA4E8ADE8850E54"
+			],
+			"duration": 0.016091801226139069,
+			"dateTime": "2026.10.28-16.35.12",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "Composer",
+			"fullTestPath": "NPR.Surface.Composer",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"38DDBA474D498A71DAA4E8ADE8850E54"
+			],
+			"duration": 0.046507500112056732,
+			"dateTime": "2026.10.28-16.35.12",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "Adapter",
+			"fullTestPath": "NPR.Toon.Adapter",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"38DDBA474D498A71DAA4E8ADE8850E54"
+			],
+			"duration": 1.1384458541870117,
+			"dateTime": "2026.10.28-16.35.12",
+			"entries": [
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "Baked package /Game/NPR/ToonValidation/BP_ToonStyle5.BP_ToonStyle5",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2026.10.28-16.35.13"
+				}
+			],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "Contract",
+			"fullTestPath": "NPR.Toon.Contract",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"38DDBA474D498A71DAA4E8ADE8850E54"
+			],
+			"duration": 0.022949300706386566,
+			"dateTime": "2026.10.28-16.35.14",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "EditorWorkflow",
+			"fullTestPath": "NPR.Toon.EditorWorkflow",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"38DDBA474D498A71DAA4E8ADE8850E54"
+			],
+			"duration": 1.3434759378433228,
+			"dateTime": "2026.10.28-16.35.14",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "Persistence",
+			"fullTestPath": "NPR.Toon.Persistence",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"38DDBA474D498A71DAA4E8ADE8850E54"
+			],
+			"duration": 0.067869000136852264,
+			"dateTime": "2026.10.28-16.35.15",
+			"entries": [
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "Saved runtime map /Game/NPR/ToonValidation/L_ToonRuntime2, immutable style /Game/NPR/ToonValidation/BP_ToonStyle5.BP_ToonStyle5",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2026.10.28-16.35.15"
+				}
+			],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "Render",
+			"fullTestPath": "NPR.Toon.Render",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"38DDBA474D498A71DAA4E8ADE8850E54"
+			],
+			"duration": 1.9795125722885132,
+			"dateTime": "2026.10.28-16.35.15",
+			"entries": [
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "23 real GPU plane captures, signed-dot and angular sweeps: ../../../../../unrealProjects/PrincipledNPR/Saved/ToonValidation/Render",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2026.10.28-16.35.17"
+				}
+			],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "RuntimeBinding",
+			"fullTestPath": "NPR.Toon.RuntimeBinding",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"38DDBA474D498A71DAA4E8ADE8850E54"
+			],
+			"duration": 0.023453902453184128,
+			"dateTime": "2026.10.28-16.35.17",
+			"entries": [
+				{
+					"event":
+					{
+						"type": "Info",
+						"message": "Immutable runtime bundle /Game/NPR/ToonValidation/BP_ToonStyle5.BP_ToonStyle5; world=Editor",
+						"context": "",
+						"artifact": "00000000000000000000000000000000"
+					},
+					"filename": "",
+					"lineNumber": -1,
+					"timestamp": "2026.10.28-16.35.17"
+				}
+			],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "WidgetRender",
+			"fullTestPath": "NPR.Toon.WidgetRender",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"38DDBA474D498A71DAA4E8ADE8850E54"
+			],
+			"duration": 2.9644222259521484,
+			"dateTime": "2026.10.28-16.35.17",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		}
+	]
+}

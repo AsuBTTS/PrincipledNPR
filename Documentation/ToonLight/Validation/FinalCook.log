@@ -1,0 +1,813 @@
+Running AutomationTool...
+Using bundled DotNet SDK version: 10.0 win-x64
+Starting AutomationTool...
+Parsing command line: BuildCookRun -project=E:/unrealProjects/PrincipledNPR/PrincipledNPR.uproject -noP4 -platform=Win64 -clientconfig=Development -target=PrincipledNPR -cook -map=/Game/NPR/ToonValidation/L_ToonRuntime3 -stage -pak -archive -archivedirectory=E:/unrealProjects/PrincipledNPR/outputs/ToonRuntime -skipbuild -nocompileeditor -skipbuildeditor -nocompile -unattended -utf8output
+Initializing script modules...
+Total script module initialization time: 1.99 s.
+Using D:\D\Microsoft Visual Studio\18\Community\MSBuild\Current\Bin\MSBuild.exe
+Executing commands...
+Setting up ProjectParams for E:\unrealProjects\PrincipledNPR\PrincipledNPR.uproject
+********** COOK COMMAND STARTED **********
+HasMapsToCook /Game/NPR/ToonValidation/L_ToonRuntime3
+Params.HasMapsToCook /Game/NPR/ToonValidation/L_ToonRuntime3
+Running UnrealEditor Cook for project E:\unrealProjects\PrincipledNPR\PrincipledNPR.uproject
+Commandlet log file is E:\Unreal Engine\UE_5.8\Engine\Programs\AutomationTool\Saved\Cook-2026.10.29-16.19.28.txt
+Running: E:\Unreal Engine\UE_5.8\Engine\Binaries\Win64\UnrealEditor-Cmd.exe "E:\unrealProjects\PrincipledNPR\PrincipledNPR.uproject" -run=Cook -Map=/Game/NPR/ToonValidation/L_ToonRuntime3 -TargetPlatform=Windows  -unversioned -fileopenlog -abslog="E:\Unreal Engine\UE_5.8\Engine\Programs\AutomationTool\Saved\Cook-2026.10.29-16.19.28.txt" -stdout -CrashForUAT -unattended -NoLogTimes
+LogInit: Display: Running engine for game: PrincipledNPR
+LogCore: Display: Requested channels: 'cpu,gpu,frame,log,bookmark,screenshot,region'
+LogTrace: Display: Control listening on port 35049
+LogCsvProfiler: Display: Metadata set : platform="Windows"
+LogCsvProfiler: Display: Metadata set : config="Development"
+LogCsvProfiler: Display: Metadata set : buildversion="++UE5+Release-5.8-CL-58210709"
+LogCsvProfiler: Display: Metadata set : engineversion="5.8.3-58210709+++UE5+Release-5.8"
+LogCsvProfiler: Display: Metadata set : enginereleaseversion="5.8.3"
+LogCsvProfiler: Display: Metadata set : os="Windows 11 (25H2) [10.0.26200.9711] "
+LogCsvProfiler: Display: Metadata set : cpu="GenuineIntel|Intel(R) Core(TM) i7-14650HX"
+LogCsvProfiler: Display: Metadata set : pgoenabled="0"
+LogCsvProfiler: Display: Metadata set : pgoprofilingenabled="0"
+LogCsvProfiler: Display: Metadata set : ltoenabled="0"
+LogCsvProfiler: Display: Metadata set : asan="0"
+LogCsvProfiler: Display: Metadata set : mergedmodules="0"
+LogCsvProfiler: Display: Metadata set : compacttset="0"
+LogCsvProfiler: Display: Metadata set : commandline="" E:\unrealProjects\PrincipledNPR\PrincipledNPR.uproject -run=Cook -Map=/Game/NPR/ToonValidation/L_ToonRuntime3 -TargetPlatform=Windows -unversioned -fileopenlog -abslog="E:\Unreal Engine\UE_5.8\Engine\Programs\AutomationTool\Saved\Cook-2026.10.29-16.19.28.txt" -stdout -CrashForUAT -unattended -NoLogTimes""
+LogCsvProfiler: Display: Metadata set : loginid="e14a465248659ba2b9e6a6b98618699d"
+LogCsvProfiler: Display: Metadata set : llm="0"
+LogCsvProfiler: Display: Metadata set : zenstreaming="0"
+LogCsvProfiler: Display: Metadata set : systemresolution.resx="1280"
+LogCsvProfiler: Display: Metadata set : systemresolution.resy="720"
+LogAudio: Display: Audio Device Manager not initializing due to all audio being disabled. If this is not intentional, please check command line arguments for "-nosound".
+LogAssetRegistry: Display: FindShardedCacheFiles: 1 via .ref, 0 via migration fallback, 1 total
+LogAssetRegistry: Display: CleanupOrphanedCacheFiles (PreLoad): 1 .ref files found, 1 referenced binaries
+LogAssetRegistry: Display: CleanupOrphanedCacheFiles: 1 total binaries, 1 referenced (kept), 0 old-style pre-migration (kept), 0 orphans deleted, 0 orphans locked (kept)
+LogAssetRegistry: Display: LoadCacheFiles: loading 1 cache files, memory-mapping=enabled
+LogConfig: Display: Loading Android ini files took 0.14 seconds
+LogConfig: Display: Loading VulkanPC ini files took 0.14 seconds
+LogConfig: Display: Loading Mac ini files took 0.14 seconds
+LogConfig: Display: Loading IOS ini files took 0.14 seconds
+LogConfig: Display: Loading Unix ini files took 0.15 seconds
+LogConfig: Display: Loading TVOS ini files took 0.15 seconds
+LogConfig: Display: Loading Windows ini files took 0.16 seconds
+LogConfig: Display: Loading Linux ini files took 0.16 seconds
+LogConfig: Display: Loading VisionOS ini files took 0.16 seconds
+Running UnrealBuildTool: dotnet "..\..\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" -Mode=ValidatePlatforms -OutputSDKs  -AllPlatforms  -project="E:/unrealProjects/PrincipledNPR/PrincipledNPR.uproject" -log="E:/unrealProjects/PrincipledNPR/Saved/Logs/AutoSDKInfo.txt" -verbose -timestamps
+LogAssetRegistry: Display: Asset registry cache read as 118.9 MiB from ../../../../../unrealProjects/PrincipledNPR/Intermediate/CachedAssetRegistry/CachedAssetRegistry_0_F6670EFA4950EF5A4331D59229F386AC.bin (memory-mapped=yes)
+Log file: E:\unrealProjects\PrincipledNPR\Saved\Logs\AutoSDKInfo.txt
+##PlatformValidate: Win64 VALID 10.0.22621.0
+##PlatformValidate: Mac INVALID 26.1.1
+##PlatformValidate: IOS INVALID 26.1.1
+##PlatformValidate: Android INVALID r27c
+##PlatformValidate: Linux INVALID v26_clang-20.1.8-rockylinux8
+##PlatformValidate: LinuxArm64 INVALID <UNKNOWN>
+##PlatformValidate: TVOS INVALID 26.1.1
+##PlatformValidate: VisionOS INVALID <UNKNOWN>
+Unable to find required SDK version 'MainVersion' for platform LinuxArm64. Check your SDK.json files
+Unable to find required SDK version 'MainVersion' for platform VisionOS. Check your SDK.json files
+Trace written to file C:\Users\12894\AppData\Local\UnrealBuildTool\Trace.uba with size 352b
+LogAsyncCompilation: Display: MemorySharingInfo: UsedMemory=370MiB, MaxMemoryAvailable=63195MiB
+RenderDocPlugin: Display: RenderDoc plugin will not be loaded. Use '-AttachRenderDoc' on the cmd line or enable 'renderdoc.AutoAttach' in the plugin settings.
+LogAnalytics: Display: Provider StudioTelemetry.Provider.Log is disabled for this application
+LogAnalytics: Display: Provider StudioTelemetry.Provider.CSV is disabled for this application
+LogAnalytics: Display: Provider StudioTelemetry.Provider.Horde is disabled for this application
+LogAnalytics: Display: Provider StudioTelemetry.Provider.Log is disabled for this application
+LogAnalytics: Display: Provider StudioTelemetry.Provider.CSV is disabled for this application
+LogAnalytics: Display: Provider StudioTelemetry.Provider.Horde is disabled for this application
+LogStreaming: Display: AsyncLoading2 - Created: Async Loading Thread: false, Async Post Load: false, Multithreaded: false
+LogHAL: Display: Platform has ~ 32 GB [34053414912 / 34359738368 / 32], which maps to Largest [LargestMinGB=32, LargerMinGB=12, DefaultMinGB=8, SmallerMinGB=6, SmallestMinGB=0)
+LogCsvProfiler: Display: Metadata set : extradevelopmentmemorymb="0"
+LogObj: Display: Attempting to load config data for Default__DownlinkBandwidthManagerConfig before the Class has been constructed/registered/linked (likely during module loading or early startup). This will result in the load silently failing and should be fixed.
+LogTextureFormatASTC: Display: ASTCEnc version 5.0.1 library loaded
+LogTextureFormatManager: Display: Loaded Base TextureFormat: TextureFormatASTC
+LogTextureFormatManager: Display: Loaded Base TextureFormat: TextureFormatDXT
+LogTextureFormatManager: Display: Loaded Base TextureFormat: TextureFormatETC2
+LogTextureFormatManager: Display: Loaded Base TextureFormat: TextureFormatIntelISPCTexComp
+LogTextureFormatOodle: Display: Oodle Texture TFO init; latest sdk version = 2.9.16
+LogTextureFormatOodle: Display: Oodle Texture loading DLL: oo2tex_win64_2.9.16.dll
+LogTextureFormatManager: Display: Loaded Base TextureFormat: TextureFormatOodle
+LogTextureFormatManager: Display: Loaded Base TextureFormat: TextureFormatUncompressed
+LogTargetPlatformManager: Display: Failed to SetupSDK for platform 'Android'
+LogTargetPlatformManager: Display: Failed to SetupSDK for platform 'IOS'
+LogTargetPlatformManager: Display: Failed to SetupSDK for platform 'Linux'
+LogTargetPlatformManager: Display: Failed to SetupSDK for platform 'Mac'
+LogTargetPlatformManager: Display: Failed to SetupSDK for platform 'TVOS'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'Windows'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsEditor'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsServer'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsClient'
+LogTargetPlatformManager: Display: Building Assets For Windows
+LogAudioDebug: Display: Lib vorbis DLL was dynamically loaded.
+LogObj: Display: Attempting to load config data for Default__SlateThemeManager before the Class has been constructed/registered/linked (likely during module loading or early startup). This will result in the load silently failing and should be fixed.
+LogCsvProfiler: Display: Metadata set : verbatimrhiname="Null"
+LogCsvProfiler: Display: Metadata set : rhiname="Null"
+LogCsvProfiler: Display: Metadata set : rhifeaturelevel="SM6"
+LogCsvProfiler: Display: Metadata set : shaderplatform="PCD3D_SM6"
+LogCsvProfiler: Display: Metadata set : gpu=""
+LogCsvProfiler: Display: Metadata set : gpudriver=""
+LogDerivedDataCache: Display: ../../../Engine/DerivedDataCache/Compressed.ddp: Opened pak cache for reading. (1670 MiB)
+LogZenServiceInstance: Display: Launching zen utility 'E:/Unreal Engine/UE_5.8/Engine/Binaries/Win64/zen.exe service status'.
+LogZenServiceInstance: Display: Writing plugin version info to 'C:/Users/12894/AppData/Local/UnrealEngine/Common/Zen/Install/zen_plugin_versions.json'
+LogZenServiceInstance: Display: Read zen version cache file from 'C:/Users/12894/AppData/Local/UnrealEngine/5.8/Saved/Zen/zen.version', version: '5.8.13-202605190912-windows-x64-release-094f62c2'
+LogZenServiceInstance: Display: Read zen version cache file from 'C:/Users/12894/AppData/Local/UnrealEngine/Common/Zen/Install/zen.version', version: '5.8.13-202605190912-windows-x64-release-094f62c2'
+LogZenServiceInstance: Display: Installed service at 'C:/Users/12894/AppData/Local/UnrealEngine/Common/Zen/Install/zenserver.exe' is up to date
+LogZenServiceInstance: Display: Unreal Zen Storage Server HTTP service at http://[::1]:8558 status: OK!.
+LogDerivedDataCache: Display: ZenLocal: Using ZenServer HTTP service at [::1] with namespace ue.ddc. Status: OK!.
+LogDerivedDataCache: Display: C:/Users/12894/AppData/Local/UnrealEngine/Common/DerivedDataCache: Performance: Latency=0.67ms. RandomReadSpeed=45.66MBs, RandomWriteSpeed=15.60MBs. Assigned SpeedClass 'Local'
+LogUbaHorde: Display: UBA/Horde Configuration [Uba.Provider.Horde]: Not Enabled
+LogShaderCompilers: Display: No distributed shader compiler controller found
+LogShaderCompilers: Display: Using 21 local workers for shader compilation
+LogShaderCompilers: Display: Compiling shader autogen file: ../../../../../unrealProjects/PrincipledNPR/Intermediate/ShaderAutogen/PCD3D_SM6/AutogenShaderHeaders.ush
+LogShaderCompilers: Display: Autogen file is unchanged, skipping write.
+LogEditorDomain: Display: EditorDomain is Disabled
+LogAssetRegistry: Display: AssetDataGatherer spent 0.001s loading caches from ../../../../../unrealProjects/PrincipledNPR/Intermediate/CachedAssetRegistry.
+LogDeviceProfileManager: Display: Deviceprofile LinuxArm64Editor not found.
+LogDeviceProfileManager: Display: Deviceprofile LinuxArm64 not found.
+LogCsvProfiler: Display: Metadata set : deviceprofile="WindowsEditor"
+LogStreaming: Display: FlushAsyncLoading(1): 1 QueuedPackages, 0 AsyncPackages
+LogTextureEncodingSettings: Display: Texture Encode Speed: Final (cook).
+LogTextureEncodingSettings: Display: Oodle Texture Encode Speed settings: Fast: RDO Off Lambda=0, Effort=Normal Final: RDO Off Lambda=0, Effort=Normal
+LogTextureEncodingSettings: Display: Shared linear texture encoding: Disabled
+LogMeshReduction: Display: Using QuadricMeshReduction for automatic static mesh reduction
+LogMeshReduction: Display: Using SkeletalMeshReduction for automatic skeletal mesh reduction
+LogMeshReduction: Display: Using ProxyLODMeshReduction for automatic mesh merging
+LogMeshReduction: Display: No distributed automatic mesh merging module available
+LogShaderCompilers: Display: Compiling shader autogen file: ../../../../../unrealProjects/PrincipledNPR/Intermediate/ShaderAutogen/PCD3D_SM5/AutogenShaderHeaders.ush
+LogShaderCompilers: Display: Autogen file is unchanged, skipping write.
+LogVirtualization: Display: VirtualizationSystem name found in ini file: None
+LogVirtualization: Display: FNullVirtualizationSystem mounted, virtualization will be disabled
+LogWorldPartition: Display: FWorldPartitionClassDescRegistry::Initialize started...
+LogWorldPartition: Display: FWorldPartitionClassDescRegistry::Initialize took 4.929 ms
+LogMetaSound: Display: MetaSound Page Target Initialized to 'Default'
+LogAudio: Display: Registering Engine Module Parameter Interfaces...
+LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
+LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
+LogNPRRuntime: Display: NPR runtime skeleton loaded. S58 rendering gates remain unaccepted.
+LogCsvProfiler: Display: Metadata set : largeworldcoordinates="1"
+LogCsvProfiler: Display: Metadata set : raytracing="0"
+LogNPREditor: Display: NPR editor loaded. Window > NPR Modulation opens Outline, Rim Light and Toon Light.
+LogCook: Display: CookProcessCount=1. CookMultiprocess is disabled and the cooker is running as a single process.
+LogCook: Display: CookSettings for Memory:
+	MemoryMaxUsedVirtual 0MiB
+	MemoryMaxUsedPhysical 0MiB
+	MemoryMinFreeVirtual 2048MiB
+	MemoryMinFreePhysical 2048MiB
+	MemoryTriggerGCAtPressureLevel None
+	SoftGCMemoryUseTrigger disabled
+	SoftGCTimeBudgetTrigger enabled (0.05 budget, 30s min period)
+LogCook: Display: SkipOnlyEditorOnly is enabled, unsolicited packages will not be cooked unless they are referenced from the cooked version of the instigator package.
+LogCook: Display: ---- Pre Content Initialisation: End ----
+LogCook: Display: ---- Post Content Initialisation: Start ----
+LogEditorDomain: Display: Cycle detected in parents of class /Script/RigVMDeveloper.RigVMUnitNode. Allow flags for editordomain and incremental cooking will be invalid.
+LogZenStore: Display: Establishing oplog 'PrincipledNPR.9f5aed46/EditorDomain'
+LogZenStore: Display: Zen project 'PrincipledNPR.9f5aed46' already exists
+LogZenStore: Display: Zen oplog 'PrincipledNPR.9f5aed46/EditorDomain' already exists
+LogCook: Display: Waiting for Asset Registry
+LogAssetRegistry: Display: Starting OnFilesLoaded.Broadcast
+LogAssetRegistry: Display: Completed OnFilesLoaded.Broadcast: 0.042s
+LogAssetRegistry: Display: Asset registry cache written as 118.9 MiB to ../../../../../unrealProjects/PrincipledNPR/Intermediate/CachedAssetRegistry/CachedAssetRegistry_*.ref
+LogAssetRegistry: Display: CleanupOrphanedCacheFiles (PostWrite): 1 .ref files found, 1 referenced binaries
+LogAssetRegistry: Display:   CachedAssetRegistry_0_F6670EFA4950EF5A4331D59229F386AC.bin: deleted (orphaned, unreferenced by any .ref)
+LogAssetRegistry: Display: CleanupOrphanedCacheFiles: 2 total binaries, 1 referenced (kept), 0 old-style pre-migration (kept), 1 orphans deleted, 0 orphans locked (kept)
+LogAssetRegistry: Display: CleanupOrphanedCacheFiles (PostWrite): 1 .ref files found, 1 referenced binaries
+LogAssetRegistry: Display: CleanupOrphanedCacheFiles: 1 total binaries, 1 referenced (kept), 0 old-style pre-migration (kept), 0 orphans deleted, 0 orphans locked (kept)
+LogCook: Display: INCREMENTAL COOK DEPENDENCIES: Enabled. Incremental Cook Dependencies are enabled in Editor.ini:[CookSettings]:LegacyIterative=false.
+LogZenStore: Display: Establishing oplog 'PrincipledNPR.9f5aed46/Windows'
+LogZenStore: Display: Zen project 'PrincipledNPR.9f5aed46' already exists
+LogStorageServerPlatformFile: Display: Found 'E:/unrealProjects/PrincipledNPR/Saved/Cooked/Windows/ue.projectstore'
+LogStorageServerPlatformFile: Display: Using connection settings from ue.projectstore: HostAddrs='[::1]+192.168.137.1+10.61.124.254' and HostPort='8558'
+LogStorageServerPlatformFile: Display: Found 'E:/unrealProjects/PrincipledNPR/Saved/Cooked/Windows/ue.projectstore'
+LogStorageServerPlatformFile: Display: Using password authentication from ue.projectstore
+LogStorageServerPlatformFile: Display: Using settings from ue.projectstore: ServerProject='PrincipledNPR.9f5aed46' and ServerPlatform='Windows'
+LogStorageServerConnection: Display: Creating zen store connection to [::1]:8558 ("::1").
+LogStorageServerConnection: Display: Zen store connection established to [::1]:8558.
+LogCook: Display: CalculateGlobalDependenciesHash(Windows):
+LogCook: Display: 	FGuid CookIncrementalVersion = ffa12fdc-c822-1fe2-7757-627a12f1d3a7
+LogCook: Display: 	[Editor]:CookSettings.ProjectCookIncrementalVersion = 00000000-0000-0000-0000-000000000000
+LogCook: Display: 	[Engine]:Core.System.CanStripEditorOnlyExportsAndImports = True
+LogCook: Display: 	[Engine]:Core.System.CanSkipEditorReferencedPackagesWhenCooking = False
+LogCook: Display: 	CanUseUnversionedPropertySerialization = True
+LogCook: Display: 	[Editor]:CookSettings.AutomaticOptionalInclusionAssetType = /Script/Niagara.NiagaraScript, /Script/Niagara.NiagaraEmitter, /Script/Niagara.NiagaraSystem, /Script/NiagaraEditor.NiagaraParameterDefinitions, /Script/Niagara.NiagaraEffectType, /Script/Niagara.NiagaraValidationRuleSet, /Script/OptimusCore.OptimusDeformer
+LogCook: Display: 	IsCookFlagSet(ECookInitializationFlags::Unversioned) = True
+LogCook: Display: 	FCoreRedirects::AppendHashOfGlobalRedirects = 02c9fd35aac3c00095df0219fc925d7070b41f449d3b97578d818a4016ee6805
+LogCook: Display: 	GlobalDependenciesHash(Windows) = 2de5b37f143f8e25d634acd39f60ca4c07ed1761ed763f60105e89ce30e27192
+LogCook: Display: FULL COOK: Incremental Cooks are disabled by default in Editor.ini:[CookSettings]:CookIncrementalDefaultIncremental=false, and commandline did not specify -forcerecook=false. Deleting previously cooked packages for platform Windows and recooking all packages discovered in the current cook.
+LogZenStore: Display: Deleting oplog 'PrincipledNPR.9f5aed46/Windows' if it exists
+LogZenStoreWriter: Display: Deleting E:/unrealProjects/PrincipledNPR/Saved/Cooked/Windows/...
+LogZenStore: Display: Zen oplog 'PrincipledNPR.9f5aed46/Windows' created
+LogCook: Display: Sandbox cleanup took 10.102 seconds for platforms Windows
+LogCook: Display: Compiling global changed shaders for platform 'Windows'
+LogShaderLibrary: Display:
+LogShaderLibrary: Display: Shader Library 'Global' (PCD3D_SM6-PCD3D_SM6) Stats:
+LogShaderLibrary: Display: =================
+LogShaderLibrary: Display: Assets: 1, Unique Shadermaps: 480 (48000.00%)
+LogShaderLibrary: Display: Total Shaders: 9512, Unique Shaders: 9510 (99.98%)
+LogShaderLibrary: Display: Total Shader Size: 116.62mb, Unique Shaders Size: 116.61mb (100.00%)
+LogShaderLibrary: Display: === Extended info:
+LogShaderLibrary: Display: Minimum number of shaders in shadermap: 1
+LogShaderLibrary: Display: Median number of shaders in shadermap: 3
+LogShaderLibrary: Display: Maximum number of shaders in shadermap: 530
+LogShaderLibrary: Display: Number of shadermaps referencing top 10 most shared shaders:
+LogShaderLibrary: Display:     2, 2, 1, 1, 1, 1, 1, 1, 1, 1
+LogShaderLibrary: Display: Unique shaders itemization (sorted by compressed size):
+LogShaderLibrary: Display: SF_Compute: 6923 shaders (72.80%), compressed size: 90.29 MB (13.36 KB avg per shader), uncompressed size: 118.54 MB (17.53 KB avg per shader)
+LogShaderLibrary: Display: SF_Pixel: 2439 shaders (25.65%), compressed size: 25.93 MB (10.88 KB avg per shader), uncompressed size: 33.15 MB (13.92 KB avg per shader)
+LogShaderLibrary: Display: SF_Vertex: 144 shaders (1.51%), compressed size: 0.39 MB (2.75 KB avg per shader), uncompressed size: 0.48 MB (3.42 KB avg per shader)
+LogShaderLibrary: Display: SF_Geometry: 3 shaders (0.03%), compressed size: 0.01 MB (2.15 KB avg per shader), uncompressed size: 0.01 MB (3.31 KB avg per shader)
+LogShaderLibrary: Display: SF_WorkGraphComputeNode: 1 shaders (0.01%), compressed size: 0.00 MB (2.75 KB avg per shader), uncompressed size: 0.00 MB (3.35 KB avg per shader)
+LogShaderLibrary: Display: Textual dump saved to '../../../../../unrealProjects/PrincipledNPR/Saved/Shaders/PCD3D_SM6-PCD3D_SM6/ShaderDebug-Global-PCD3D_SM6-PCD3D_SM6/Dump.txt'
+LogShaderLibrary: Display: =================
+LogShaderLibrary: Display:
+LogShaderLibrary: Display: Shader Library 'Global' (PCD3D_SM5-PCD3D_SM5) Stats:
+LogShaderLibrary: Display: =================
+LogShaderLibrary: Display: Assets: 1, Unique Shadermaps: 363 (36300.00%)
+LogShaderLibrary: Display: Total Shaders: 4652, Unique Shaders: 4637 (99.68%)
+LogShaderLibrary: Display: Total Shader Size: 14.22mb, Unique Shaders Size: 14.22mb (99.96%)
+LogShaderLibrary: Display: === Extended info:
+LogShaderLibrary: Display: Minimum number of shaders in shadermap: 1
+LogShaderLibrary: Display: Median number of shaders in shadermap: 3
+LogShaderLibrary: Display: Maximum number of shaders in shadermap: 384
+LogShaderLibrary: Display: Number of shadermaps referencing top 10 most shared shaders:
+LogShaderLibrary: Display:     3, 3, 3, 2, 2, 2, 2, 2, 2, 2
+LogShaderLibrary: Display: Unique shaders itemization (sorted by compressed size):
+LogShaderLibrary: Display: SF_Pixel: 2076 shaders (44.77%), compressed size: 8.19 MB (4.04 KB avg per shader), uncompressed size: 33.92 MB (16.73 KB avg per shader)
+LogShaderLibrary: Display: SF_Compute: 2440 shaders (52.62%), compressed size: 5.95 MB (2.50 KB avg per shader), uncompressed size: 23.07 MB (9.68 KB avg per shader)
+LogShaderLibrary: Display: SF_Vertex: 119 shaders (2.57%), compressed size: 0.07 MB (0.62 KB avg per shader), uncompressed size: 0.16 MB (1.34 KB avg per shader)
+LogShaderLibrary: Display: SF_Geometry: 2 shaders (0.04%), compressed size: 0.00 MB (0.49 KB avg per shader), uncompressed size: 0.00 MB (1.55 KB avg per shader)
+LogShaderLibrary: Display: Textual dump saved to '../../../../../unrealProjects/PrincipledNPR/Saved/Shaders/PCD3D_SM5-PCD3D_SM5/ShaderDebug-Global-PCD3D_SM5-PCD3D_SM5/Dump.txt'
+LogShaderLibrary: Display: =================
+LogCook: Display: Discovering localized assets for cultures: en
+LogCook: Display: Found 0 localized assets
+LogCook: Display: ---- Post Content Initialisation: End ----
+LogCook: Display: Cooked packages 0 Packages Remain 448 Total 448
+LogCook: Display: Cook Diagnostics: OpenFileHandles=275, VirtualMemory=1699MiB, VirtualMemoryAvailable=6334MiB
+LogCook: Display: Garbage collection triggered (Soft). Triggered by conditions:
+  CookSettings.SoftGCTimeTrigger: Periodic triggering of SoftGC: No duration data.
+LogCookCommandlet: Display: GarbageCollection... (Periodic GC)
+LogMaterial: Display: Missing cached shadermap for /Game/NPR/ToonValidation/DefaultLit/M_Toon2.M_Toon2 in PCD3D_SM6, Default, SM6, Game (DDC key hash: b530e30ed80ff4240f0fcfc549899ea901a77781), compiling.
+LogCook: Display: Cooked packages 69 Packages Remain 455 Total 524
+LogMaterial: Display: Missing cached shadermap for /Game/NPR/ToonValidation/DefaultLit/M_Toon2.M_Toon2 in PCD3D_SM5, Default, SM5, Game (DDC key hash: 8c4302baabbbba4a42444a34347b0a8457966b92), compiling.
+LogMaterial: Display: Missing cached shadermap for /Game/NPR/ToonValidation/M_Toon6.M_Toon6 in PCD3D_SM6, Default, SM6, Game (DDC key hash: aeb95940bfa17eff9c474a6d5165c5e4eb046c76), compiling.
+LogMaterial: Display: Missing cached shadermap for /Game/NPR/ToonValidation/M_Toon6.M_Toon6 in PCD3D_SM5, Default, SM5, Game (DDC key hash: c51f94fda77e2c1dc3cc8ed5e77dd7bf694f4647), compiling.
+LogCook: Display: Cooked packages 219 Packages Remain 305 Total 524
+LogTextureFormatOodle: Display: Oodle Texture loading DLL: oo2tex_win64_2.9.11.dll
+LogTextureFormatOodle: Display: Oodle Texture loading DLL: oo2tex_win64_2.9.12.dll
+LogTextureFormatOodle: Display: Oodle Texture loading DLL: oo2tex_win64_2.9.15.dll
+LogCook: Display: Cooked packages 435 Packages Remain 89 Total 524
+LogCook: Display: Cooked packages 443 Packages Remain 81 Total 524
+LogCook: Display: Cooked packages 450 Packages Remain 74 Total 524
+LogTextureFormatOodle: Display: Oodle Texture loading DLL: oo2tex_win64_2.9.13.dll
+LogCook: Display: Cooked packages 483 Packages Remain 41 Total 524
+LogCook: Display: Cooked packages 524 Packages Remain 0 Total 524
+LogCook: Display: Cook Diagnostics: OpenFileHandles=4658, VirtualMemory=2353MiB, VirtualMemoryAvailable=5311MiB
+LogCook: Display: ---- Finalisation: Start ----
+LogCook: Display: CookArtifact 'E:/unrealProjects/PrincipledNPR/Saved/Cooked/Windows/PrincipledNPR/Metadata/ValidationCookArtifact.json' saved.
+LogAssetRegistryGenerator: Display: Saving asset registry v24.
+LogAssetRegistryGenerator: Display: Generated development asset registry E:/unrealProjects/PrincipledNPR/Saved/Cooked/Windows/PrincipledNPR/Metadata/DevelopmentAssetRegistry.bin num assets 526, size is 414.32kb, XxHash64[LE] = 0xDDA3D1FA5DD1F05E, waited on hash 0.00 seconds
+LogAssetRegistryGenerator: Display: Generated asset registry num assets 519, size is 145.96kb
+LogShaderLibrary: Display:
+LogShaderLibrary: Display: Shader Library 'PrincipledNPR' (PCD3D_SM6-PCD3D_SM6) Stats:
+LogShaderLibrary: Display: =================
+LogShaderLibrary: Display: Assets: 108, Unique Shadermaps: 106 (98.15%)
+LogShaderLibrary: Display: Total Shaders: 2357, Unique Shaders: 1652 (70.09%)
+LogShaderLibrary: Display: Total Shader Size: 18.85mb, Unique Shaders Size: 14.44mb (76.57%)
+LogShaderLibrary: Display: === Extended info:
+LogShaderLibrary: Display: Minimum number of shaders in shadermap: 1
+LogShaderLibrary: Display: Median number of shaders in shadermap: 11
+LogShaderLibrary: Display: Maximum number of shaders in shadermap: 857
+LogShaderLibrary: Display: Number of shadermaps referencing top 10 most shared shaders:
+LogShaderLibrary: Display:     27, 26, 19, 18, 17, 17, 17, 17, 17, 16
+LogShaderLibrary: Display: Unique shaders itemization (sorted by compressed size):
+LogShaderLibrary: Display: SF_Compute: 389 shaders (23.55%), compressed size: 5.74 MB (15.12 KB avg per shader), uncompressed size: 7.70 MB (20.28 KB avg per shader)
+LogShaderLibrary: Display: SF_Pixel: 643 shaders (38.92%), compressed size: 4.03 MB (6.42 KB avg per shader), uncompressed size: 5.19 MB (8.26 KB avg per shader)
+LogShaderLibrary: Display: SF_Vertex: 497 shaders (30.08%), compressed size: 3.50 MB (7.22 KB avg per shader), uncompressed size: 4.60 MB (9.49 KB avg per shader)
+LogShaderLibrary: Display: SF_Mesh: 123 shaders (7.45%), compressed size: 1.15 MB (9.61 KB avg per shader), uncompressed size: 1.40 MB (11.61 KB avg per shader)
+LogShaderLibrary: Display: Textual dump saved to '../../../../../unrealProjects/PrincipledNPR/Saved/Shaders/PCD3D_SM6-PCD3D_SM6/ShaderDebug-PrincipledNPR-PCD3D_SM6-PCD3D_SM6/Dump.txt'
+LogShaderLibrary: Display: =================
+LogShaderLibrary: Display:
+LogShaderLibrary: Display: Shader Library 'PrincipledNPR' (PCD3D_SM5-PCD3D_SM5) Stats:
+LogShaderLibrary: Display: =================
+LogShaderLibrary: Display: Assets: 108, Unique Shadermaps: 105 (97.22%)
+LogShaderLibrary: Display: Total Shaders: 1446, Unique Shaders: 886 (61.27%)
+LogShaderLibrary: Display: Total Shader Size: 3.13mb, Unique Shaders Size: 1.91mb (61.24%)
+LogShaderLibrary: Display: === Extended info:
+LogShaderLibrary: Display: Minimum number of shaders in shadermap: 1
+LogShaderLibrary: Display: Median number of shaders in shadermap: 6
+LogShaderLibrary: Display: Maximum number of shaders in shadermap: 361
+LogShaderLibrary: Display: Number of shadermaps referencing top 10 most shared shaders:
+LogShaderLibrary: Display:     19, 18, 17, 17, 16, 16, 16, 15, 15, 10
+LogShaderLibrary: Display: Unique shaders itemization (sorted by compressed size):
+LogShaderLibrary: Display: SF_Vertex: 397 shaders (44.81%), compressed size: 0.99 MB (2.56 KB avg per shader), uncompressed size: 3.02 MB (7.80 KB avg per shader)
+LogShaderLibrary: Display: SF_Pixel: 440 shaders (49.66%), compressed size: 0.82 MB (1.92 KB avg per shader), uncompressed size: 2.93 MB (6.81 KB avg per shader)
+LogShaderLibrary: Display: SF_Compute: 49 shaders (5.53%), compressed size: 0.10 MB (2.06 KB avg per shader), uncompressed size: 0.36 MB (7.47 KB avg per shader)
+LogShaderLibrary: Display: Textual dump saved to '../../../../../unrealProjects/PrincipledNPR/Saved/Shaders/PCD3D_SM5-PCD3D_SM5/ShaderDebug-PrincipledNPR-PCD3D_SM5-PCD3D_SM5/Dump.txt'
+LogShaderLibrary: Display: =================
+LogCook: Display: Dependent plugin "UAF" referenced by "IK Rig" wasn't found in enabled plugins list when creating cook metadata file... skipping
+LogCook: Display: Dependent plugin "UAFAnimGraph" referenced by "IK Rig" wasn't found in enabled plugins list when creating cook metadata file... skipping
+LogCook: Display: Dependent plugin "SteamShared" referenced by "EOS Shared" wasn't found in enabled plugins list when creating cook metadata file... skipping
+LogCook: Display: Finalize package store(s)...
+LogZenStoreWriter: Display: Flushing...
+LogZenStoreWriter: Display: Saving Zen filesystem manifest 'E:/unrealProjects/PrincipledNPR/Saved/Cooked/Windows/PrincipledNPR/Metadata/zenfs.manifest'
+LogZenStoreWriter: Display: Output:	48810 Public runtime script objects
+LogCook: Display: Cook by the book total time in tick 16.168688s total time 85.933495
+LogCook: Display: Peak Used virtual 2451 MiB Peak Used physical 2565 MiB
+LogCook: Display: Packages Cooked: 517, Packages Incrementally Skipped: 0, Packages Skipped by Platform: 7, Total Packages: 524
+LogCookStats: Display: Hierarchy Timer Information:
+LogCookStats: Display:   Root: 0.000s (0)
+LogCookStats: Display:     CleanSandbox: 10.101s (1)
+LogCookStats: Display:     CollectFilesToCook: 0.018s (1)
+LogCookStats: Display:       CookModificationDelegate: 0.001s (1)
+LogCookStats: Display:     GenerateLongPackageName: 0.001s (1)
+LogCookStats: Display:     TickMainCookLoop: 16.168s (2)
+LogCookStats: Display:       PumpPollables: 0.007s (3)
+LogCookStats: Display:       PumpRequests: 0.055s (17)
+LogCookStats: Display:       LoadPackageForCooking: 4.519s (3623)
+LogCookStats: Display:       ValidateSourcePackage: 0.000s (524)
+LogCookStats: Display:       SavingPackages: 10.253s (125)
+LogCookStats: Display:         PollPendingCookedPlatformDatas: 0.730s (1645)
+LogCookStats: Display:         PrepareSave: 0.792s (1214)
+LogCookStats: Display:         PrecachePlatformDataForNextPackage: 1.816s (522)
+LogCookStats: Display:           PrepareSave: 1.815s (731)
+LogCookStats: Display:         SaveCookedPackage: 6.852s (524)
+LogCookStats: Display:           GEditorSavePackage: 6.474s (524)
+LogCookStats: Display:             VerifyCanCookPackage: 0.006s (517)
+LogCookStats: Display:           TargetDomainDependencies: 0.222s (524)
+LogCookStats: Display:         ClearAllCachedCookedPlatformData: 0.037s (524)
+LogCookStats: Display:       PostLoadPackageFixup: 0.000s (3)
+LogCookStats: Display:       WaitForAsync: 0.939s (1480)
+LogCookStats: Display:     CookByTheBookFinished: 26.943s (1)
+LogCookStats: Display:       SavingCurrentIniSettings: 0.142s (1)
+LogCookStats: Display:         ProcessingAccessedStrings: 0.009s (1)
+LogCookStats: Display:       ChunkGeneration: 0.048s (1)
+LogCookStats: Display:       FinishPopulateShaderLibrary: 0.009s (1)
+LogCookStats: Display:       CalculateReferencedSet: 0.000s (1)
+LogCookStats: Display:       CookArtifacts.UpdateOplogPackages: 0.015s (1)
+LogCookStats: Display:       PruneShaderLibrary: 0.002s (1)
+LogCookStats: Display:       GeneratorPreSave: 0.001s (1)
+LogCookStats: Display:       BuildChunkManifest: 0.044s (1)
+LogCookStats: Display:         FixupPackageDependenciesForChunks: 0.022s (1)
+LogCookStats: Display:       SaveManifests: 0.000s (1)
+LogCookStats: Display:       SaveAssetRegistry: 0.090s (1)
+LogCookStats: Display:       WriteCookerOpenOrder: 0.017s (1)
+LogCookStats: Display:       WriteCookMetadata: 0.010s (1)
+LogCookStats: Display:       WriteReferencedSet: 0.004s (1)
+LogCookStats: Display:       FinalizePackageStore: 2.563s (1)
+LogCookStats: Display: Misc Cook Stats
+LogCookStats: Display: ===============
+LogCookStats: Display: Niagara
+LogCookStats: Display:     NiagaraScriptTranslationCount=0
+LogCookStats: Display:     NiagaraCpuScriptCompileCount=0
+LogCookStats: Display:     NiagaraCpuScriptDdcCacheHitCount=0
+LogCookStats: Display:     NiagaraCpuScriptDdcCacheMissCount=0
+LogCookStats: Display:     NiagaraGpuScriptCompileCount=0
+LogCookStats: Display:     NiagaraGpuScriptDdcCacheHitCount=0
+LogCookStats: Display:     NiagaraGpuScriptDdcCacheMissCount=0
+LogCookStats: Display:     NiagaraSystemWaitForCompilationCompleteTime=0.000000
+LogCookStats: Display: Validation
+LogCookStats: Display:     Stats=[]
+LogCookStats: Display: ComputeKernelShader.Misc
+LogCookStats: Display:     ShadersCompiled=0
+LogCookStats: Display: NiagaraShader.Misc
+LogCookStats: Display:     ShadersCompiled=0
+LogCookStats: Display: ShaderCompiler
+LogCookStats: Display:     BlockingTimeSec=0.000189
+LogCookStats: Display:     AsyncCompileTimeSec=0.000000
+LogCookStats: Display:     GlobalBeginCompileShaderTimeSec=0.014086
+LogCookStats: Display:     GlobalBeginCompileShaderCalls=20
+LogCookStats: Display:     ProcessAsyncResultsTimeSec=0.014185
+LogCookStats: Display: GlobalShader.Misc
+LogCookStats: Display:     ShadersCompiled=0
+LogCookStats: Display: Material
+LogCookStats: Display:     FinishCacheShadersSec=0.715117
+LogCookStats: Display: Cook.Profile.Params
+LogCookStats: Display:     CookProject=PrincipledNPR
+LogCookStats: Display:     CookCultures=
+LogCookStats: Display:     CookLabel=
+LogCookStats: Display:     TargetPlatforms=Windows
+LogCookStats: Display:     IsCookAll=false
+LogCookStats: Display:     IsCookOnTheFly=false
+LogCookStats: Display:     IsIncrementalCook=false
+LogCookStats: Display:     IsIterativeCook=false
+LogCookStats: Display:     IsFastCook=false
+LogCookStats: Display:     IsUnversioned=true
+LogCookStats: Display: CookOnTheFlyServer.Package.Load
+LogCookStats: Display:     NumRequestedLoads=3260
+LogCookStats: Display:     NumPackagesLoaded=3338
+LogCookStats: Display:     NumInlineLoads=78
+LogCookStats: Display: CookOnTheFlyServer.Package.Save
+LogCookStats: Display:     NumPackagesIncrementallySkipped=0
+LogCookStats: Display: CookOnTheFlyServer.QueueSize
+LogCookStats: Display:     PeakRequest=523
+LogCookStats: Display:     PeakLoad=83
+LogCookStats: Display:     PeakSave=52
+LogCookStats: Display: Package.Load
+LogCookStats: Display:     LoadPackageTimeSec=5.300284
+LogCookStats: Display: Package.Save
+LogCookStats: Display:     NumPackagesSaved=524
+LogCookStats: Display:     SavePackageTimeSec=6.429277
+LogCookStats: Display:     TagPackageExportsPresaveTimeSec=0.000000
+LogCookStats: Display:     TagPackageExportsTimeSec=0.000000
+LogCookStats: Display:     FullyLoadLoadersTimeSec=0.000000
+LogCookStats: Display:     ResetLoadersTimeSec=0.000000
+LogCookStats: Display:     TagPackageExportsGetObjectsWithOuter=0.000000
+LogCookStats: Display:     TagPackageExportsGetObjectsWithMarks=0.000000
+LogCookStats: Display:     SerializeImportsTimeSec=0.000000
+LogCookStats: Display:     SortExportsSeekfreeInnerTimeSec=0.000000
+LogCookStats: Display:     SerializeExportsTimeSec=0.000000
+LogCookStats: Display:     SerializeBulkDataTimeSec=0.009046
+LogCookStats: Display:     AsyncWriteTimeSec=0.000000
+LogCookStats: Display:     MBWritten=0.000000
+LogCookStats: Display: Package.DifferentPackagesSizeMBPerAsset
+LogCookStats: Display: Package.NumberOfDifferencesInPackagesPerAsset
+LogCookStats: Display: Package.PackageDifferencesSizeMBPerAsset
+LogCookStats: Display: Package.DiffTotal
+LogCookStats: Display:     NumberOfDifferentPackages=0
+LogCookStats: Display:     DifferentPackagesSizeMB=0.000000
+LogCookStats: Display:     NumberOfDifferencesInPackages=0
+LogCookStats: Display:     PackageDifferencesSizeMB=0.000000
+LogCookStats: Display: UnversionedProperties
+LogCookStats: Display:     SavedStructs=0
+LogCookStats: Display:     SavedMB=0
+LogCookStats: Display:     EquivalentTaggedMB=0
+LogCookStats: Display:     CompressionRatio=-nan(ind)
+LogCookStats: Display:     BitfieldWasteKB=0
+LogCookStats: Display:
+LogCookStats: Display: Cook Profile
+LogCookStats: Display: ============
+LogCookStats: Display:  0.CookWallTimeSec=106.063805
+LogCookStats: Display:  0. 0.StartupWallTimeSec=18.416004
+LogCookStats: Display:  0. 1.CookProcessingTime=87.647801
+LogCookStats: Display:  0. 1. 1.StartCookByTheBookTimeSec=44.458379
+LogCookStats: Display:  0. 1. 1. 0.BlockOnAssetRegistryTimeSec=2.468606
+LogCookStats: Display:  0. 1. 1. 1.GameCookModificationDelegateTimeSec=0.000981
+LogCookStats: Display:  0. 1. 2.TickCookOnTheSideTimeSec=0.666835
+LogCookStats: Display:  0. 1. 2. 0.TickCookOnTheSideLoadPackagesTimeSec=4.521511
+LogCookStats: Display:  0. 1. 2. 1.TickCookOnTheSideSaveCookedPackageTimeSec=6.852033
+LogCookStats: Display:  0. 1. 2. 1. 0.TickCookOnTheSideResolveRedirectorsTimeSec=0.000000
+LogCookStats: Display:  0. 1. 2. 2.TickCookOnTheSidePrepareSaveTimeSec=2.608440
+LogCookStats: Display:  0. 1. 3.TickLoopGCTimeSec=0.051563
+LogCookStats: Display:  0. 1. 4.TickLoopRecompileShaderRequestsTimeSec=0.000000
+LogCookStats: Display:  0. 1. 5.TickLoopShaderProcessAsyncResultsTimeSec=0.000021
+LogCookStats: Display:  0. 1. 6.TickLoopProcessDeferredCommandsTimeSec=0.000006
+LogCookStats: Display:  0. 1. 7.TickLoopTickCommandletStatsTimeSec=0.000002
+LogCookStats: Display:  0. 1. 8.TickLoopFlushRenderingCommandsTimeSec=0.006268
+LogCookStats: Display:  0. 1. 9.ShaderFlushTimeSec=0.000000
+LogCookStats: Display:  0. 1. 10.ValidationTimeSec=0.000226
+LogCookStats: Display:
+LogCookStats: Display: DDC Summary Stats
+LogCookStats: Display: =================
+LogCookStats: Display: BackEnd         = Installed
+LogCookStats: Display: HasLocalCache   =      true
+LogCookStats: Display: HasSharedCache  =     false
+LogCookStats: Display: HasCloudCache   =     false
+LogCookStats: Display: HasZenCache     =      true
+LogCookStats: Display: TotalGetHits    =      4725
+LogCookStats: Display: TotalGetMisses  =         6
+LogCookStats: Display: TotalGets       =      4731
+LogCookStats: Display: TotalGetHitPct  =  0.998732
+LogCookStats: Display: GetMissPct      =  0.001268
+LogCookStats: Display: TotalPutHits    =         6
+LogCookStats: Display: TotalPutMisses  =         0
+LogCookStats: Display: TotalPuts       =         6
+LogCookStats: Display: TotalPutHitPct  =  1.000000
+LogCookStats: Display: PutMissPct      =  0.000000
+LogCookStats: Display: LocalGetHits    =      3820
+LogCookStats: Display: LocalGetMisses  =         5
+LogCookStats: Display: LocalGetTotal   =      3825
+LogCookStats: Display: LocalGetHitPct  =  0.998693
+LogCookStats: Display: SharedGetHits   =         0
+LogCookStats: Display: SharedGetTotal  =         0
+LogCookStats: Display: SharedGetHitPct =  0.000000
+LogCookStats: Display: ZenLocalGetHits =      3820
+LogCookStats: Display: ZenLocalGetTotal=      3825
+LogCookStats: Display: ZenLocalGetHitPct=  0.998693
+LogCookStats: Display: ZenRemoteGetHits=         0
+LogCookStats: Display: ZenRemoteGetTotal=         0
+LogCookStats: Display: ZenRemoteGetHitPct=  0.000000
+LogCookStats: Display: ZenRemoteReadSpeed=  0.000000
+LogCookStats: Display: ZenRemoteWriteSpeed=  0.000000
+LogCookStats: Display: ZenRemoteLatency=  0.000000
+LogCookStats: Display: CloudGetHits    =         0
+LogCookStats: Display: CloudGetTotal   =         0
+LogCookStats: Display: CloudGetHitPct  =  0.000000
+LogCookStats: Display: LocalLatency    = 26.638752
+LogCookStats: Display: LocalReadSpeed  = 36.385189
+LogCookStats: Display: LocalWriteSpeed =  2.161394
+LogCookStats: Display: SharedLatency   =  0.000000
+LogCookStats: Display: SharedReadSpeed =  0.000000
+LogCookStats: Display: SharedWriteSpeed=  0.000000
+LogCookStats: Display: CloudLatency    =  0.000000
+LogCookStats: Display: CloudReadSpeed  =  0.000000
+LogCookStats: Display: CloudWriteSpeed =  0.000000
+LogCookStats: Display:
+LogCookStats: Display: DDC Resource Stats
+LogCookStats: Display: =======================================================================================================
+LogCookStats: Display: Asset Type                          Total Time (Sec)  GameThread Time (Sec)  Assets Built  MB Processed
+LogCookStats: Display: ----------------------------------  ----------------  ---------------------  ------------  ------------
+LogCookStats: Display: BulkDataList                                   82.34                   0.00             0          0.57
+LogCookStats: Display: GlobalShader                                   49.40                   2.27             0        133.34
+LogCookStats: Display: MaterialShader                                 19.55                   1.08             4         23.68
+LogCookStats: Display: Shader                                          0.24                   0.00             0          0.11
+LogCookStats: Display: Texture                                         0.21                   0.00             0         10.07
+LogCookStats: Display: STREAMEDAUDIO                                   0.14                   0.00             0          0.09
+LogCookStats: Display: StaticMesh                                      0.08                   0.00             0          0.85
+LogCookStats: Display: CKERSM                                          0.07                   0.00             0          0.18
+LogCookStats: Display: DistanceField                                   0.06                   0.00             0          0.27
+LogCookStats: Display: MaterialTranslation                             0.06                   0.00             2          0.00
+LogCookStats: Display: CardRepresentation                              0.06                   0.00             0          0.02
+LogCookStats: Display: NavCollision                                    0.05                   0.00             0          0.03
+LogCookStats: Display: Audio                                           0.01                   0.01             0          0.08
+LogCookStats: Display: BodySetup                                       0.00                   0.00             0          0.31
+LogCookStats: Display:
+LogCookStats: Display: Accumulated DDC Resource Stats Per Asset Type
+LogCookStats: Display: =======================================================================================================
+LogCookStats: Display: AnimationSequence                               0.00                   0.00             0          0.00
+LogCookStats: Display: Audio                                           0.01                   0.01             0          0.08
+LogCookStats: Display: CardRepresentation                              0.06                   0.00             0          0.02
+LogCookStats: Display: DistanceField                                   0.06                   0.00             0          0.27
+LogCookStats: Display: MaterialShader                                 19.55                   1.08             4         23.68
+LogCookStats: Display: MaterialTranslation                             0.06                   0.00             2          0.00
+LogCookStats: Display: NiagaraScript                                   0.00                   0.00             0          0.00
+LogCookStats: Display: SkeletalMesh                                    0.00                   0.00             0          0.00
+LogCookStats: Display: StaticMesh                                      0.08                   0.00             0          0.85
+LogCookStats: Display: Texture                                         0.21                   0.00             0         10.07
+LogCookStats: Display: Other                                         132.24                   2.27             0        134.63
+LogPackageBuildDependencyTracker: Display: Package Accesses (238 referencing packages with a total of 1859 unique accesses)
+LogConfigBuildDependencyTracker: Display: Config Accesses (304 referencing packages with a total of 653 unique accesses). 1859 unique accesses that were not associated with a package.
+LogCook: Display: ---- Finalisation: End ----
+LogCook: Display: Done!
+LogSavePackage: Display: Took 0.001867s to verify the EDL loading graph.
+LogInit: Display:
+LogInit: Display: Success - 0 error(s), 0 warning(s)
+LogInit: Display:
+
+Execution of commandlet took:  1m 27s (87.66 seconds), PeakPhysMemoryMB=2565 MB, PeakVirtMemoryMB=2451 MB
+LogAssetRegistry: Display: CleanupOrphanedCacheFiles (PostWrite): 1 .ref files found, 1 referenced binaries
+LogAssetRegistry: Display: CleanupOrphanedCacheFiles: 1 total binaries, 1 referenced (kept), 0 old-style pre-migration (kept), 0 orphans deleted, 0 orphans locked (kept)
+LogStreaming: Display: ============ Loader Stats ============
+LogStreaming: Display: Unique Partial Flushes: 0
+LogStreaming: Display: ============ Loader Stats End ============
+LogShaderCompilers: Display: Exiting ShaderCompilingThread
+Took 113.41s to run UnrealEditor-Cmd.exe, ExitCode=0
+Cook command time: 113.62 s
+********** COOK COMMAND COMPLETED **********
+********** STAGE COMMAND STARTED **********
+Creating Staging Manifest...
+Patching bootstrap executable; E:\unrealProjects\PrincipledNPR\Intermediate\Staging\PrincipledNPR.exe
+Begin update resource 'E:\unrealProjects\PrincipledNPR\Intermediate\Staging\PrincipledNPR.exe' (0)
+Add resource 101, length 104 (True)
+Add resource 1, length 1996 (True)
+Add resource 2, length 2447 (True)
+Add resource 3, length 2535 (True)
+Add resource 4, length 3037 (True)
+Add resource 5, length 3244 (True)
+Add resource 6, length 3531 (True)
+Add resource 7, length 6931 (True)
+Add resource 201, length 94 (True)
+Add resource 202, length 28 (True)
+Add resource 205, length 2 (True)
+End update resource (True/0)
+Excluding config file E:\Unreal Engine\UE_5.8\Engine\Config\BaseEditor.ini
+Excluding config file E:\Unreal Engine\UE_5.8\Engine\Config\BaseEditorKeyBindings.ini
+Excluding config file E:\Unreal Engine\UE_5.8\Engine\Config\BaseEditorPerProjectUserSettings.ini
+Excluding config file E:\Unreal Engine\UE_5.8\Engine\Config\BaseLightmass.ini
+Excluding config file E:\Unreal Engine\UE_5.8\Engine\Config\BasePakFileRules.ini
+Excluding config file E:\Unreal Engine\UE_5.8\Engine\Config\BaseSourceControlSettings.ini
+Excluding config file E:\Unreal Engine\UE_5.8\Engine\Config\BaseUnrealInsightsSettings.ini
+Excluding config file E:\Unreal Engine\UE_5.8\Engine\Config\Localization\Category.ini
+Excluding config file E:\Unreal Engine\UE_5.8\Engine\Config\Localization\Editor.ini
+Excluding config file E:\Unreal Engine\UE_5.8\Engine\Config\Localization\Engine.ini
+Excluding config file E:\Unreal Engine\UE_5.8\Engine\Config\Localization\Keywords.ini
+Excluding config file E:\Unreal Engine\UE_5.8\Engine\Config\Localization\PortableObjectExport.ini
+Excluding config file E:\Unreal Engine\UE_5.8\Engine\Config\Localization\PortableObjectImport.ini
+Excluding config file E:\Unreal Engine\UE_5.8\Engine\Config\Localization\PropertyNames.ini
+Excluding config file E:\Unreal Engine\UE_5.8\Engine\Config\Localization\WordCount.ini
+Excluding config file E:\Unreal Engine\UE_5.8\Engine\Config\Windows\WindowsEditorPerProjectUserSettings.ini
+Excluding config file E:\Unreal Engine\UE_5.8\Engine\Config\Windows\WindowsEditorSettings.ini
+Excluding config file E:\Unreal Engine\UE_5.8\Engine\Config\Localization\RepairData.ini
+Excluding config file E:\Unreal Engine\UE_5.8\Engine\Config\Localization\ToolTips.ini
+Excluding config file E:\Unreal Engine\UE_5.8\Engine\Config\BaseEditorSettings.ini
+Including config file E:\Unreal Engine\UE_5.8\Engine\Config\Windows\WindowsGame.ini
+Including config file E:\Unreal Engine\UE_5.8\Engine\Config\Windows\DataDrivenPlatformInfo.ini
+Including config file E:\Unreal Engine\UE_5.8\Engine\Config\Windows\BaseWindowsInput.ini
+Including config file E:\Unreal Engine\UE_5.8\Engine\Config\Windows\BaseWindowsGame.ini
+Including config file E:\Unreal Engine\UE_5.8\Engine\Config\Windows\BaseWindowsEngine.ini
+Including config file E:\Unreal Engine\UE_5.8\Engine\Config\VulkanPC\DataDrivenPlatformInfo.ini
+Including config file E:\Unreal Engine\UE_5.8\Engine\Config\Layouts\UE4ClassicLayout.ini
+Including config file E:\Unreal Engine\UE_5.8\Engine\Config\Layouts\DefaultLayout.ini
+Including config file E:\Unreal Engine\UE_5.8\Engine\Config\PluginBase.ini
+Including config file E:\Unreal Engine\UE_5.8\Engine\Config\Windows\WindowsInput.ini
+Including config file E:\Unreal Engine\UE_5.8\Engine\Config\ConsoleVariables.ini
+Including config file E:\Unreal Engine\UE_5.8\Engine\Config\ConfigRedirects.ini
+Including config file E:\Unreal Engine\UE_5.8\Engine\Config\BaseScalability.ini
+Including config file E:\Unreal Engine\UE_5.8\Engine\Config\BaseRuntimeOptions.ini
+Including config file E:\Unreal Engine\UE_5.8\Engine\Config\BaseMaterialExpressions.ini
+Including config file E:\Unreal Engine\UE_5.8\Engine\Config\BaseInstallBundle.ini
+Including config file E:\Unreal Engine\UE_5.8\Engine\Config\BaseInput.ini
+Including config file E:\Unreal Engine\UE_5.8\Engine\Config\BaseHardware.ini
+Including config file E:\Unreal Engine\UE_5.8\Engine\Config\BaseGameUserSettings.ini
+Including config file E:\Unreal Engine\UE_5.8\Engine\Config\BaseGame.ini
+Including config file E:\Unreal Engine\UE_5.8\Engine\Config\BaseDeviceProfiles.ini
+Including config file E:\Unreal Engine\UE_5.8\Engine\Config\BaseEngine.ini
+Including config file E:\Unreal Engine\UE_5.8\Engine\Config\BaseCompat.ini
+Including config file E:\Unreal Engine\UE_5.8\Engine\Config\Base.ini
+Excluding config file E:\unrealProjects\PrincipledNPR\Config\DefaultEditor.ini
+Including config file E:\unrealProjects\PrincipledNPR\Config\DefaultEngine.ini
+Including config file E:\unrealProjects\PrincipledNPR\Config\DefaultInput.ini
+Including config file E:\unrealProjects\PrincipledNPR\Config\DefaultGame.ini
+Reading oplog from Zen...
+Reading oplog from http://[::1]:8558/prj/PrincipledNPR.9f5aed46/oplog/Windows/entries?trim_by_referencedset=true
+Parsed 519 package entries from oplog.
+Cleaning Stage Directory: E:\unrealProjects\PrincipledNPR\Saved\StagedBuilds\Windows
+Creating pak using staging manifest.
+DumpManifest: C:\Users\12894\AppData\Roaming\Unreal Engine\AutomationTool\Logs\E+Unreal+Engine+UE_5.8\PrePak_Windows_NonUFSFiles.txt, NumItems: 34
+DumpManifest: C:\Users\12894\AppData\Roaming\Unreal Engine\AutomationTool\Logs\E+Unreal+Engine+UE_5.8\PrePak_Windows_NonUFSFilesDebug.txt, NumItems: 6
+DumpManifest: C:\Users\12894\AppData\Roaming\Unreal Engine\AutomationTool\Logs\E+Unreal+Engine+UE_5.8\PrePak_Windows_UFSFiles.txt, NumItems: 2381
+No matching platform for PakFileRules for Section ExcludeContentForMobile : Windows
+Using 0 pak order files:
+Running UnrealPak with arguments: "E:\unrealProjects\PrincipledNPR\PrincipledNPR.uproject"  -cryptokeys="E:\unrealProjects\PrincipledNPR\Saved\Cooked\Windows\PrincipledNPR\Metadata\Crypto.json" -unattended -patchpaddingalign=2048 -compressionformats=Oodle -compresslevel=4 -compressmethod=Kraken  -ProjectStore="E:\unrealProjects\PrincipledNPR\Saved\Cooked\Windows\ue.projectstore" -platform=Windows  -CreateMultiple="C:\Users\12894\AppData\Roaming\Unreal Engine\AutomationTool\Logs\E+Unreal+Engine+UE_5.8\PakCommands.txt"
+Running: E:\Unreal Engine\UE_5.8\Engine\Binaries\Win64\UnrealPak.exe "E:\unrealProjects\PrincipledNPR\PrincipledNPR.uproject"  -cryptokeys="E:\unrealProjects\PrincipledNPR\Saved\Cooked\Windows\PrincipledNPR\Metadata\Crypto.json" -unattended -patchpaddingalign=2048 -compressionformats=Oodle -compresslevel=4 -compressmethod=Kraken  -ProjectStore="E:\unrealProjects\PrincipledNPR\Saved\Cooked\Windows\ue.projectstore" -platform=Windows  -CreateMultiple="C:\Users\12894\AppData\Roaming\Unreal Engine\AutomationTool\Logs\E+Unreal+Engine+UE_5.8\PakCommands.txt"
+OodleDataCompression: Display: Oodle v2.9.16 format for pak/iostore with method=Kraken, level=4=Normal
+LogStreaming: Display: AsyncLoading2 - Created: Async Loading Thread: false, Async Post Load: false, Multithreaded: false
+LogPakFile: Display: ProjectDir: ../../../../../unrealProjects/PrincipledNPR/
+LogPakFile: Display: Parsing crypto keys from a crypto key cache file
+LogPakFile: Display: CompressionFormats in priority order: Oodle, Zlib
+LogZenServiceInstance: Display: Launching zen utility 'E:/Unreal Engine/UE_5.8/Engine/Binaries/Win64/zen.exe service status'.
+LogZenServiceInstance: Display: Writing plugin version info to 'C:/Users/12894/AppData/Local/UnrealEngine/Common/Zen/Install/zen_plugin_versions.json'
+LogZenServiceInstance: Display: Read zen version cache file from 'C:/Users/12894/AppData/Local/UnrealEngine/5.8/Saved/Zen/zen.version', version: '5.8.13-202605190912-windows-x64-release-094f62c2'
+LogZenServiceInstance: Display: Read zen version cache file from 'C:/Users/12894/AppData/Local/UnrealEngine/Common/Zen/Install/zen.version', version: '5.8.13-202605190912-windows-x64-release-094f62c2'
+LogZenServiceInstance: Display: Installed service at 'C:/Users/12894/AppData/Local/UnrealEngine/Common/Zen/Install/zenserver.exe' is up to date
+LogZenServiceInstance: Display: Unreal Zen Storage Server HTTP service at http://[::1]:8558 status: OK!.
+LogZenStore: Display: Opening oplog PrincipledNPR.9f5aed46 / Windows
+LogIoStore: Display: Fetched 520 oplog items from Zen in 2.50 seconds
+LogIoStore: Display: Parsed 520 oplog items 0.01 seconds, 3502 chunks
+LogIoStore: Display: Loaded 636 chunk hashes from Zen in 0.17 seconds, 636 hashes updated in 0.00 seconds
+LogPakFile: Display: Oodle enabled on 'NoPluginCompression' files
+LogPakFile: Display: Loading response file E:\Unreal Engine\UE_5.8\Engine\Programs\AutomationTool\Saved\ResponseFiles\PakList_PrincipledNPR-Windows.txt
+LogPakFile: Display: Added 1741 entries to add to pak file.
+LogPakFile: Display: Collecting files to add to pak file...
+LogPakFile: Display: Collected 1741 files in 0.01s.
+LogPakFile: Display: Creating pak E:/unrealProjects/PrincipledNPR/Saved/StagedBuilds/Windows/PrincipledNPR/Content/Paks/PrincipledNPR-Windows.pak.
+LogPakFile: Display: Created pak file: E:/unrealProjects/PrincipledNPR/Saved/StagedBuilds/Windows/PrincipledNPR/Content/Paks/PrincipledNPR-Windows.pak
+LogPakFile: Display: CompressionFormat 0 [Oodle] : 401 files, 28550384 -> 9836835 bytes
+LogPakFile: Display: CompressionFormat 2 [None] : 1340 files, 786154 -> 786154 bytes
+LogPakFile: Display: Added 1741 files, 11294441 bytes total
+LogPakFile: Display: PrimaryIndex size: 24266 bytes
+LogPakFile: Display: PathHashIndex size: 54694 bytes
+LogPakFile: Display: FullDirectoryIndex size: 57922 bytes
+LogPakFile: Display: Compression summary: 34.45% of original size. Compressed Size 9836835 bytes, Original Size 28550384 bytes.
+LogPakFile: Display: Encryption - DISABLED
+LogPakFile: Display:
+LogPakFile: Display: Writer and Compression Threads exited.
+LogPakFile: Display: UnrealPak executed in 3.452993 seconds
+Took 7.17s to run UnrealPak.exe, ExitCode=0
+Running UnrealPak with arguments: "E:\unrealProjects\PrincipledNPR\PrincipledNPR.uproject" E:\unrealProjects\PrincipledNPR\PrincipledNPR.uproject -CreateGlobalContainer="E:\unrealProjects\PrincipledNPR\Saved\StagedBuilds\Windows\PrincipledNPR\Content\Paks\global.utoc" -ProjectStore="E:\unrealProjects\PrincipledNPR\Saved\Cooked\Windows\ue.projectstore" -CookedDirectory="E:\unrealProjects\PrincipledNPR\Saved\Cooked\Windows" -Commands="C:\Users\12894\AppData\Roaming\Unreal Engine\AutomationTool\Logs\E+Unreal+Engine+UE_5.8\IoStoreCommands.txt" -patchpaddingalign=2048 -compressionformats=Oodle -compresslevel=4 -compressmethod=Kraken   -cryptokeys="E:\unrealProjects\PrincipledNPR\Saved\Cooked\Windows\PrincipledNPR\Metadata\Crypto.json" -compressionMinBytesSaved=1024 -compressionMinPercentSaved=5 -WriteBackMetadataToAssetRegistry=Disabled -platform=Windows  -unattended
+Running: E:\Unreal Engine\UE_5.8\Engine\Binaries\Win64\UnrealPak.exe "E:\unrealProjects\PrincipledNPR\PrincipledNPR.uproject" E:\unrealProjects\PrincipledNPR\PrincipledNPR.uproject -CreateGlobalContainer="E:\unrealProjects\PrincipledNPR\Saved\StagedBuilds\Windows\PrincipledNPR\Content\Paks\global.utoc" -ProjectStore="E:\unrealProjects\PrincipledNPR\Saved\Cooked\Windows\ue.projectstore" -CookedDirectory="E:\unrealProjects\PrincipledNPR\Saved\Cooked\Windows" -Commands="C:\Users\12894\AppData\Roaming\Unreal Engine\AutomationTool\Logs\E+Unreal+Engine+UE_5.8\IoStoreCommands.txt" -patchpaddingalign=2048 -compressionformats=Oodle -compresslevel=4 -compressmethod=Kraken   -cryptokeys="E:\unrealProjects\PrincipledNPR\Saved\Cooked\Windows\PrincipledNPR\Metadata\Crypto.json" -compressionMinBytesSaved=1024 -compressionMinPercentSaved=5 -WriteBackMetadataToAssetRegistry=Disabled -platform=Windows  -unattended
+OodleDataCompression: Display: Oodle v2.9.16 format for pak/iostore with method=Kraken, level=4=Normal
+LogStreaming: Display: AsyncLoading2 - Created: Async Loading Thread: false, Async Post Load: false, Multithreaded: false
+LogPakFile: Display: ProjectDir: ../../../../../unrealProjects/PrincipledNPR/
+LogIoStore: Display: ==================== IoStore Utils ====================
+LogIoStore: Display: Parsing crypto keys from a crypto key cache file 'E:\unrealProjects\PrincipledNPR\Saved\Cooked\Windows\PrincipledNPR\Metadata\Crypto.json'
+LogIoStore: Display: Container signing - DISABLED
+LogIoStore: Display: Directory index - ENABLED
+LogIoStore: Display: Using compression format 'Oodle'
+LogConfig: Display: Read in platform Windows ini files took 0.08 seconds
+LogIoStore: Display: Using memory mapping alignment '16384'
+LogIoStore: Display: Using compression block size '65536'
+LogIoStore: Display: Using compression block alignment '2048'
+LogIoStore: Display: Using compression min bytes saved '1024'
+LogIoStore: Display: Using compression min percent saved '5'
+LogIoStore: Display: Using max partition size '0'
+LogIoStore: Display: Not using DDC for compression
+LogIoStore: Display: Container metadata disabled
+LogIoStore: Display: Using command list file: 'C:\Users\12894\AppData\Roaming\Unreal Engine\AutomationTool\Logs\E+Unreal+Engine+UE_5.8\IoStoreCommands.txt'
+LogIoStore: Display: Selected Oodle level 4 (Normal) from command line for shaders
+LogZenServiceInstance: Display: Launching zen utility 'E:/Unreal Engine/UE_5.8/Engine/Binaries/Win64/zen.exe service status'.
+LogZenServiceInstance: Display: Writing plugin version info to 'C:/Users/12894/AppData/Local/UnrealEngine/Common/Zen/Install/zen_plugin_versions.json'
+LogZenServiceInstance: Display: Read zen version cache file from 'C:/Users/12894/AppData/Local/UnrealEngine/5.8/Saved/Zen/zen.version', version: '5.8.13-202605190912-windows-x64-release-094f62c2'
+LogZenServiceInstance: Display: Read zen version cache file from 'C:/Users/12894/AppData/Local/UnrealEngine/Common/Zen/Install/zen.version', version: '5.8.13-202605190912-windows-x64-release-094f62c2'
+LogZenServiceInstance: Display: Installed service at 'C:/Users/12894/AppData/Local/UnrealEngine/Common/Zen/Install/zenserver.exe' is up to date
+LogZenServiceInstance: Display: Unreal Zen Storage Server HTTP service at http://[::1]:8558 status: OK!.
+LogZenStore: Display: Opening oplog PrincipledNPR.9f5aed46 / Windows
+LogIoStore: Display: Fetched 520 oplog items from Zen in 2.04 seconds
+LogIoStore: Display: Parsed 520 oplog items 0.01 seconds, 3502 chunks
+LogIoStore: Display: Loaded 636 chunk hashes from Zen in 0.03 seconds, 636 hashes updated in 0.00 seconds
+LogIoStore: Display: Searching for cooked assets in folder 'E:\unrealProjects\PrincipledNPR\Saved\Cooked\Windows'
+LogIoStore: Display: Found '8' files
+LogIoStore: Display: Creating container targets...
+LogIoStore: Display: Processing shader libraries, compressing with Oodle Mermaid, level 4 (Normal)
+LogIoStore: Display: Shader library chunk override is disabled
+LogShaderLibrary: Display: Created IoStoreShaderArchive header: shaders grouped in 199 groups (63 of them didn't need new indices), average uncompressed size 99542 bytes, min 2378 bytes, max 989585 bytes (r.ShaderCodeLibrary.MaxShaderGroupSize=1048576)
+LogIoStore: Display: PrincipledNPR-PCD3D_SM6(PCD3D_SM6): Recompressed 1652 shaders as 199 groups. Library size changed from 14782 KB (1.31 : 1 ratio) to 9729 KB (1.99 : 1 ratio), 65.82% of previous.
+LogIoStore: Display: Save IoStoreShaderCodeArchive 'PrincipledNPR-PCD3D_SM6-PCD3D_SM6' with ChunkId '5f2cd4b531fd4f2200000008' for target file 'E:/unrealProjects/PrincipledNPR/Saved/Cooked/Windows/PrincipledNPR/Content/ShaderArchive-PrincipledNPR-PCD3D_SM6-PCD3D_SM6.ushaderbytecode'
+LogShaderLibrary: Display: Created IoStoreShaderArchive header: shaders grouped in 593 groups (186 of them didn't need new indices), average uncompressed size 269093 bytes, min 1249 bytes, max 1052289 bytes (r.ShaderCodeLibrary.MaxShaderGroupSize=1048576)
+LogIoStore: Display: Global-PCD3D_SM6(PCD3D_SM6): Recompressed 9510 shaders as 593 groups. Library size changed from 119410 KB (1.31 : 1 ratio) to 71439 KB (2.18 : 1 ratio), 59.83% of previous.
+LogIoStore: Display: Save IoStoreShaderCodeArchive 'Global-PCD3D_SM6-PCD3D_SM6' with ChunkId '1680bae1ae38d5b900000008' for target file 'E:/unrealProjects/PrincipledNPR/Saved/Cooked/Windows/PrincipledNPR/Content/ShaderArchive-Global-PCD3D_SM6-PCD3D_SM6.ushaderbytecode'
+LogShaderLibrary: Display: Created IoStoreShaderArchive header: shaders grouped in 169 groups (106 of them didn't need new indices), average uncompressed size 39145 bytes, min 502 bytes, max 984567 bytes (r.ShaderCodeLibrary.MaxShaderGroupSize=1048576)
+LogIoStore: Display: PrincipledNPR-PCD3D_SM5(PCD3D_SM5): Recompressed 886 shaders as 169 groups. Library size changed from 1960 KB (3.30 : 1 ratio) to 1034 KB (6.25 : 1 ratio), 52.78% of previous.
+LogIoStore: Display: Save IoStoreShaderCodeArchive 'PrincipledNPR-PCD3D_SM5-PCD3D_SM5' with ChunkId 'f4c3c2165530991200000008' for target file 'E:/unrealProjects/PrincipledNPR/Saved/Cooked/Windows/PrincipledNPR/Content/ShaderArchive-PrincipledNPR-PCD3D_SM5-PCD3D_SM5.ushaderbytecode'
+LogShaderLibrary: Display: Created IoStoreShaderArchive header: shaders grouped in 406 groups (164 of them didn't need new indices), average uncompressed size 147578 bytes, min 249 bytes, max 1042761 bytes (r.ShaderCodeLibrary.MaxShaderGroupSize=1048576)
+LogIoStore: Display: Global-PCD3D_SM5(PCD3D_SM5): Recompressed 4637 shaders as 406 groups. Library size changed from 14558 KB (4.02 : 1 ratio) to 6062 KB (9.65 : 1 ratio), 41.64% of previous.
+LogIoStore: Display: Save IoStoreShaderCodeArchive 'Global-PCD3D_SM5-PCD3D_SM5' with ChunkId 'c3fad98e7ca0cc3100000008' for target file 'E:/unrealProjects/PrincipledNPR/Saved/Cooked/Windows/PrincipledNPR/Content/ShaderArchive-Global-PCD3D_SM5-PCD3D_SM5.ushaderbytecode'
+LogIoStore: Display: Shaders processed in 1.94 seconds
+LogIoStore: Display: Initialized WriteRequestManager with MaxConcurrentSourceReads=12 (24 cores), MaxSourceBufferMemory=3072MiB
+LogIoStore: Display: Processing redirects...
+LogIoStore: Display: Creating disk layout...
+LogIoStore: Display: Ordered 517 packages using fallback bundle order
+LogIoStore: Display: Disabled WriteRequestManager memory throttling, MaxConcurrentSourceReads=12 (24 cores)
+LogIoStore: Display: Writing container(s)...
+LogIoStore: Display: Writing and compressing took 1.56 seconds, writes to disk took 0.77 seconds for 213,224,896 bytes @ 278,281,522 bytes per second.
+LogIoStore: Display: PrincipledNPR-Windows: Found perfect hashmap for 2008 items.
+LogIoStore: Display: global: Found perfect hashmap for 1 items.
+LogIoStore: Display: Finalize took 0.0 seconds for 2 writers to write 196,504 bytes, 22,980,772 bytes per second
+LogIoStore: Display: Writing tocs... [Physical: 728 MiB, Virtual: 3469 MiB]
+LogIoStore: Display: 636 / 2,009 hashes were loaded from the hash database, by type:
+LogIoStore: Display:     ExportBundleData           517
+LogIoStore: Display:     BulkData                   119
+LogIoStore: Display: 636 / 2,009 chunks attempted to compress, by type:
+LogIoStore: Display:     ExportBundleData           517 / 517
+LogIoStore: Display:     BulkData                   119 / 119
+LogIoStore: Display:     ScriptObjects              0 / 1
+LogIoStore: Display:     ContainerHeader            0 / 1
+LogIoStore: Display:     ShaderCodeLibrary          0 / 4
+LogIoStore: Display:     ShaderCode                 0 / 1,367
+LogIoStore: Display: Source bytes read:
+LogIoStore: Display:     Zen:                        167,577,026
+LogIoStore: Display:         ExportBundleData        156,987,442 bytes over 517 reads
+LogIoStore: Display:         BulkData                 10,589,584 bytes over 119 reads
+LogIoStore: Display:     Loose File:                           0
+LogIoStore: Display:     Memory:                     181,685,886
+LogIoStore: Display:         ShaderCodeLibrary           916,520 bytes over 8 reads
+LogIoStore: Display:         ShaderCode              180,769,366 bytes over 2,734 reads
+LogIoStore: Display: Calculating stats...
+LogIoStore: Display:
+LogIoStore: Display: Container Summary
+LogIoStore: Display: ==================
+LogIoStore: Display:
+LogIoStore: Display:                      Container      Flags      Chunk(s) #       TOC (KiB)       Raw Size (MiB)           Size (MiB)
+LogIoStore: Display: -------------------------------------------------------------------------------------------------------------------
+LogIoStore: Display:                         global  -/-/-/-/-               1            0.78                 3.07                 3.07 -
+LogIoStore: Display:          PrincipledNPR-Windows  C/-/-/I/-            2008          191.12               247.89               200.28 (19.21% Oodle)
+LogIoStore: Display: -------------------------------------------------------------------------------------------------------------------
+LogIoStore: Display:                          Total                       2009          191.90               250.96               203.35
+LogIoStore: Display:
+LogIoStore: Display: ** Flags: (C)ompressed / (E)ncrypted / (S)igned) / (I)ndexed) / (O)nDemand **
+LogIoStore: Display:
+LogIoStore: Display: Compression block padding:     1.42 MiB
+LogIoStore: Display:
+LogIoStore: Display: Container Directory Index
+LogIoStore: Display: ==========================
+LogIoStore: Display:
+LogIoStore: Display:                      Container      Size (KiB)
+LogIoStore: Display: ----------------------------------------------
+LogIoStore: Display:                         global            0.00
+LogIoStore: Display:          PrincipledNPR-Windows           31.56
+LogIoStore: Display:
+LogIoStore: Display: Container Patch Report
+LogIoStore: Display: ========================
+LogIoStore: Display:
+LogIoStore: Display:                      Container          Total #       Modified #          Added #   Modified (MiB)      Added (MiB)
+LogIoStore: Display: -------------------------------------------------------------------------------------------------------------------
+LogIoStore: Display:                         global                1                0                0             0.00             0.00
+LogIoStore: Display:          PrincipledNPR-Windows             2008                0             2008             0.00           198.86
+LogIoStore: Display: -------------------------------------------------------------------------------------------------------------------
+LogIoStore: Display:
+LogIoStore: Display: PackageStore
+LogIoStore: Display: =============
+LogIoStore: Display:
+LogIoStore: Display:                      Container      Size (KiB)      Packages #     Localized #
+LogIoStore: Display: ------------------------------------------------------------------------------
+LogIoStore: Display:          PrincipledNPR-Windows              14             517               0
+LogIoStore: Display: ------------------------------------------------------------------------------
+LogIoStore: Display:                          Total              14             517               0
+LogIoStore: Display:
+LogIoStore: Display:
+LogIoStore: Display: Input:       517 Packages
+LogIoStore: Display: Input:         0   B UExp
+LogIoStore: Display: Input:    149.71 MiB UAsset
+LogIoStore: Display: Input:     10.10 MiB UBulk
+LogIoStore: Display: Input:     75.69 MiB for 999 Global shaders
+LogIoStore: Display: Input:      1.30 MiB for 165 Shared shaders
+LogIoStore: Display: Input:         0   B for 0 Unique shaders
+LogIoStore: Display: Input:      9.21 MiB for 203 Inline shaders
+LogIoStore: Display:
+LogIoStore: Display: Output:      539 Imported package entries
+LogIoStore: Display: Output:      324 Packages without imports
+LogIoStore: Display: Output:        0 Public runtime script objects
+LogIoStore: Display: Output:     3.07 MiB InitialLoadData
+LogIoStore: Display:
+LogIoStore: Display: Success
+LogPakFile: Display: UnrealPak executed in 5.958773 seconds
+Took 7.90s to run UnrealPak.exe, ExitCode=0
+DumpManifest: C:\Users\12894\AppData\Roaming\Unreal Engine\AutomationTool\Logs\E+Unreal+Engine+UE_5.8\FinalCopyWin64_UFSFiles.txt, NumItems: 2382
+DumpManifest: C:\Users\12894\AppData\Roaming\Unreal Engine\AutomationTool\Logs\E+Unreal+Engine+UE_5.8\FinalCopyWin64_NonUFSFiles.txt, NumItems: 34
+DumpManifest: C:\Users\12894\AppData\Roaming\Unreal Engine\AutomationTool\Logs\E+Unreal+Engine+UE_5.8\FinalCopyWin64_NonUFSFilesDebug.txt, NumItems: 6
+Copying NonUFSFiles to staging directory: E:\unrealProjects\PrincipledNPR\Saved\StagedBuilds\Windows
+Copying DebugFiles to staging directory: E:\unrealProjects\PrincipledNPR\Saved\StagedBuilds\Windows
+Stage command time: 21.53 s
+********** STAGE COMMAND COMPLETED **********
+********** ARCHIVE COMMAND STARTED **********
+Archiving to E:/unrealProjects/PrincipledNPR/outputs/ToonRuntime
+Archive command time: 0.97 s
+********** ARCHIVE COMMAND COMPLETED **********
+BuildCookRun time: 140.11 s
+BUILD SUCCESSFUL
+AutomationTool executed for 0h 2m 23s
+AutomationTool exiting with ExitCode=0 (Success)

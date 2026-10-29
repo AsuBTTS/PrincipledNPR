@@ -1,0 +1,11 @@
+{
+  "status": "PassedWithinRecordedScope",
+  "date": "2026-10-29 Asia/Shanghai",
+  "method": "Actual built pages in local browser; narrower viewports use same-origin frames from BrowserLayoutFixture.html. DOM geometry is displayed by the temporary test fixture, not emulated CSS estimates.",
+  "desktop": {"width":1280,"height":720,"overflow":false,"sidebarOnscreen":true,"imagesLoaded":true},
+  "medium": {"width":800,"bodyWidth":785,"overflow":false,"sidebarOnscreen":true,"imagesLoaded":true},
+  "narrow": {"width":420,"bodyWidth":405,"overflow":false,"sidebarOnscreen":false,"menuButtonVisible":true,"imagesLoaded":true},
+  "navigation": "Clicked 本轮验证 on Toon guide; actual destination title was Toon Light 本轮验证.",
+  "consoleErrors": [],
+  "limits": "Does not prove every page, all mobile interactions, website publishing or UE rendering. Temporary test fixture removed from built site after inspection."
+}

@@ -20,10 +20,10 @@ export default withMermaid(defineConfig({
     sidebar: [
       section('开始使用', [['系统介绍','/guide/introduction'],['安装与环境','/guide/installation'],['快速开始','/guide/quick-start'],['NPR 调制插件使用说明','/guides/NPR调制插件使用说明']]),
       { text: 'Principled 参数', link: '/principled/overview' },
-      section('功能', [['Outline 描边','/outline/outline_introduction'],['Surface 材质组合','/features/surface-material'],['Rim Light 边缘光','/rim/rim_light_introduction'],['基础颜色','/features/base-color'],['Toon 明暗','/features/toon-shading'],['MatCap','/features/matcap']]),
+      section('功能', [['Outline 描边','/outline/outline_introduction'],['Surface 材质组合','/features/surface-material'],['Rim Light 边缘光','/rim/rim_light_introduction'],['基础颜色','/features/base-color'],['Toon Light 明暗','/features/toon-shading'],['MatCap','/features/matcap']]),
       { text: '统一效果工作区', link: '/guides/npr-workspace' },
-      section('开发者', [['项目架构设计','/architecture/项目架构设计'],['项目开发说明与约束','/developer/项目开发说明与约束'],['渲染管线','/developer/shader-pipeline'],['参数契约与校验','/developer/parameter-schema']]),
-      section('参考资料', [['lilToon 源码对照','/reference/liltoon-comparison'],['既有技术资料','/reference/legacy'],['实现状态与证据','/reference/status'],['文档开发','/reference/documentation']])
+      section('开发者', [['项目架构设计','/architecture/项目架构设计'],['项目开发说明与约束','/developer/项目开发说明与约束'],['渲染管线','/developer/shader-pipeline'],['参数契约与校验','/developer/parameter-schema'],['Toon 后端 GPU 调研','/research/toon-bsdf-gpu'],['Toon 实时曲线调研','/research/toon-live'],['Toon 数学模型审阅','/research/toon-math-review']]),
+      section('参考资料', [['lilToon 源码对照','/reference/liltoon-comparison'],['既有技术资料','/reference/legacy'],['实现状态与证据','/reference/status'],['Toon Light 验证','/reference/toon-validation'],['文档开发','/reference/documentation']])
     ],
     search: { provider: 'local', options: { locales: { root: { translations: { button: { buttonText: '搜索文档', buttonAriaLabel: '搜索文档' }, modal: { noResultsText: '没有找到结果', resetButtonTitle: '清除搜索', footer: { selectText: '选择', navigateText: '切换', closeText: '关闭' } } } } } } },
     outline: { label: '本页目录', level: [2,3] }, docFooter: { prev: '上一页', next: '下一页' },

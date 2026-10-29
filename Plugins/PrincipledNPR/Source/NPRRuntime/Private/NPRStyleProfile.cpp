@@ -1,5 +1,28 @@
 #include "NPRStyleProfile.h"
 
+bool UNPRStyleProfile::ResolveToonParameters(ENPRMaterialKind Kind,FNPRToonParameters& OutParameters,FString& OutError) const
+{
+    OutError.Reset();
+    if(SchemaVersion!=1||ResponseModelVersion!=1)
+    {OutError=TEXT("Unsupported Toon semantic schema/response version; no values resolved.");return false;}
+    FNPRToonParameters Resolved;
+    const FNPRParameterPatch* KindPatch=MaterialOverrides.Find(Kind);
+    const auto Read=[&](const FName Id,double& Value)
+    {
+        const FNPRFloatOverride* Entry=KindPatch?KindPatch->Values.Find(Id):nullptr;
+        if(!Entry||!Entry->bIsSet) Entry=Defaults.Values.Find(Id);
+        if(Entry&&Entry->bIsSet) Value=Entry->Value;
+    };
+    Read(NPRToonContract::CenterId,Resolved.TerminatorDotCenter);
+    Read(NPRToonContract::HalfWidthId,Resolved.TerminatorDotHalfWidth);
+    Read(NPRToonContract::SpecAngleId,Resolved.SpecHalfAngleRad);
+    Read(NPRToonContract::SpecSoftnessId,Resolved.SpecEdgeSoftness);
+    Read(NPRToonContract::SpecPeakId,Resolved.SpecPeakScale);
+    if(!Resolved.Validate(OutError)) return false;
+    OutParameters=Resolved;
+    return true;
+}
+
 bool UNPRStyleProfile::ResolveRimParameters(ENPRMaterialKind Kind, FNPRRimParameters& OutParameters, FString& OutError) const
 {
     OutError.Reset();

@@ -2,6 +2,7 @@
 #include "NPROutlineEditorUI.h"
 #include "NPRCharacterPreview.h"
 #include "NPRStyleBindingComponent.h"
+#include "NPRBackendStylePackage.h"
 #include "NPRRimParameters.h"
 #include "NPRSurfaceRecipe.h"
 #include "NPROutlineActorComponent.h"
@@ -46,6 +47,8 @@ TArray<FNPRMeshEffectInfo> UNPRModulationEditorLibrary::GetMeshEffects(AActor* A
             for(auto* Binding:TInlineComponentArray<UNPRStyleBindingComponent*>(Actor))
                 if(auto* MID=Binding->GetOwnedMaterial(Mesh,Slot))
                 {
+                    if(Binding->ToonPackage&&Binding->ToonPackage->bHasToonParameters)
+                        Add(TEXT("Toon"),TEXT("NonPostProcess"),TEXT("Toon Light / 不可变后端风格包"));
                     float Intensity=0.f;
                     FLinearColor Color;
                     if(MID->GetScalarParameterValue(FHashedMaterialParameterInfo(FName(NPRRimContract::IntensityMaterialName)),Intensity) &&

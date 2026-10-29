@@ -1,5 +1,25 @@
 # 更新记录
 
+## 2026-10-28 至 29：Toon Light 参数、后端与编辑页
+
+- 接通既有五个 Generic Toon 语义参数、稀疏覆写、模型选择与 S58 Adapter。坐标、原生 LUT 过滤和高光参考近似分别说明；保留原始高级 Profile 控制与既有语义默认值，见 [Toon Light](features/toon-shading.md)。
+- 在原 NPR 调制窗口新增 Toon 页，采用左侧参数与可放大小曲线、中央角色预览和 Section/材质槽选择；私有预览与关卡应用分开，保存艺术风格及不可变后端预设。普通交互合并到 30Hz，仅更新变化的 Ramp，复用已准备的材质资源。
+- 实机检查修正描边辅助网格命中后无法回到源材质槽的问题；保留描边算法，按附着关系找到源网格。继承模式保留原着色模型专用输入及实例覆写；原生取色器、保存风格、应用与独立关卡保存均留有实机证据。
+- Editor/Game Development 构建、Cook/Stage/Archive 成功；13 项自动化、最后两项 UI 复测及独立打包 Game 两项测试通过，含实际 Toon/Default Lit 材质包切换。23 张 HDR 捕获中，漫反射对原生过滤参考最大残差 0.00730，高光参考最大误差 0.02229；热更新新增 Shader jobs/材质翻译均为 0，见[本轮验证](reference/toon-validation.md)。
+- 保留初轮 R64 理想端点门限失败及窗口夹具输入断言记录。高光、冷 PSO、动画、多 LOD 和完整 S58 生产门禁分别保留限制；真实窗口图与旧概念图分开标注。
+- 发布配置同步包含研究与 Toon 验收图的 LFS 下载、原始日志与数学输入的字节保留，避免线上缺图或 Git 转换改变原始证据。
+
+## 2026-10-28：Toon 数学模型与实时 Profile 更新研究
+
+- 审阅用户提供的完整 TeX/PDF，复算既有 HDR 数据，补充零宽、重叠色阶与越界生成条件；没有修改原始数学文件或统一参数契约。
+- 新增 109 次动态更新、221 张主进程捕获和新 Editor 进程重开对照，累计增量 Shader jobs/材质翻译为 0；比较 Profile 通知、MID 偏移、纹理上传及预制资源切换，记录共享联动、同尺寸上传不自动刷新、图集全层重建与计时边界，见[实时调研](research/toon-live.md)。
+- 给出[Generic Adapter 草案](research/toon-adapter-plan.md)：Editor 私有 Profile 连续预览、Runtime 不可变包切换。底层队列更新也只在 Editor 进程实验；Cook、正式 Runtime 与生产性能未验收，没有修改生产模块或旧 GPU 报告。
+
+## 2026-10-28：Toon 后端隔离 GPU 调研
+
+- 在 UE 5.8.3 / CL 58210709、RTX 4060 / DX12 SM6 完成 73 张受控 GPU 捕获和 12 项数值/图像检查；保存实际 Profile、HDR 读回、运行配置、测量、哈希和可复现夹具，见 [GPU 报告](research/toon-bsdf-gpu.md)。复核 315 个既有源码、配置和资产文件保持一致。
+- 测得正阈值、线性柔和度、RGB 色阶、投影、方向/点/聚光、指定 Sky/Lumen 路径、高光响应、MID/双槽隔离和组合显示；记录负阈值被自身投影截断的反例。模型选择仍作为配置，完整 Toon Adapter、角色动画、Cook、性能与全生产门禁未验收。
+
 ## 2026-10-26：Rim 聚焦材质槽
 
 - Rim 默认保留原材质图与贴图，在材质槽内启用，直接编辑颜色、宽度、柔和度和强度；不再必填 Recipe、Profile、Source Surface 或 Index。Surface/Recipe 继续作为底层能力，法线编辑留给未来独立入口。

@@ -1,0 +1,118 @@
+Log started at 10/29/2026 00:35:53 (2026-10-28T16:35:53Z)
+Resolved project argument E:/unrealProjects/PrincipledNPR/PrincipledNPR.uproject to E:\unrealProjects\PrincipledNPR\PrincipledNPR.uproject
+No config file at C:\ProgramData\Unreal Engine\UnrealBuildTool\BuildConfiguration.xml
+No config file at C:\Users\12894\AppData\Local\Unreal Engine\UnrealBuildTool\BuildConfiguration.xml
+No config file at C:\Users\12894\Documents\Unreal Engine\UnrealBuildTool\BuildConfiguration.xml
+Configuration will be read from:
+  C:\Users\12894\AppData\Roaming\Unreal Engine\UnrealBuildTool\BuildConfiguration.xml
+Reading configuration file from cache (E:\unrealProjects\PrincipledNPR\Intermediate\Build\XmlConfigCache.bin): C:\Users\12894\AppData\Roaming\Unreal Engine\UnrealBuildTool\BuildConfiguration.xml
+Reading configuration file from cache (E:\unrealProjects\PrincipledNPR\Intermediate\Build\XmlConfigCache.bin): E:\unrealProjects\PrincipledNPR\Saved\UnrealBuildTool\BuildConfiguration.xml
+Reading configuration file from cache (E:\unrealProjects\PrincipledNPR\Intermediate\Build\XmlConfigCache.bin): C:\Users\12894\AppData\Local\UnrealEngine\Intermediate\Build\UnrealBuildTool.Env.BuildConfiguration.xml
+Setting temp directory to 'C:\Users\12894\AppData\Local\Temp\UnrealBuildTool\ec51dab1'
+    Registering build platform: UnrealBuildTool.AndroidPlatformFactory
+    Registering build platform: UnrealBuildTool.IOSPlatformFactory
+    Registering build platform: UnrealBuildTool.LinuxPlatformFactory
+    Registering build platform: UnrealBuildTool.MacPlatformFactory
+    Registering build platform: UnrealBuildTool.TVOSPlatformFactory
+    Registering build platform: UnrealBuildTool.WindowsPlatformFactory
+Found Windows 10 SDK root at C:\Program Files (x86)\Windows Kits\10 (1)
+Found Windows 10 SDK root at C:\Program Files (x86)\Windows Kits\10 (2)
+Found Windows 10 SDK version 10.0.22621.0 at C:\Program Files (x86)\Windows Kits\10
+Found Universal CRT version 10.0.22621.0 at C:\Program Files (x86)\Windows Kits\10
+Found Windows 10 SDK version 10.0.26100.0 at C:\Program Files (x86)\Windows Kits\10
+Found Universal CRT version 10.0.26100.0 at C:\Program Files (x86)\Windows Kits\10
+Win64 Installed SDK(s): MinVersion_Sdk=10.0.19041.0, MaxVersion_Sdk=10.9.99999.0, CurrentVersion_Sdk=10.0.22621.0, Version_AutoSdk=10.0.22621.0, CurrentVersion_AutoSdk=
+        Registering build platform: Win64 - buildable: True
+    Registering build platform: UnrealBuildTool.VisionOSPlatformFactory
+Command line: "E:\Unreal Engine\UE_5.8\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" PrincipledNPR Win64 Development -Project=E:/unrealProjects/PrincipledNPR/PrincipledNPR.uproject -WaitMutex -NoHotReloadFromIDE
+Log file: C:\Users\12894\AppData\Local\UnrealBuildTool\Log.txt
+Deleting old log file: C:\Users\12894\AppData\Local\UnrealBuildTool\Log-backup-2026.10.25-16.48.51.txt
+Deleting old log file: C:\Users\12894\AppData\Local\UnrealBuildTool\Log-backup-2026.10.25-16.48.51.json
+
+Determining max actions to execute in parallel (16 physical cores, 24 logical cores)
+  Executing up to 16 processes, one per physical core
+Using 'git status' to determine working set for adaptive non-unity build (E:\unrealProjects\PrincipledNPR).
+UbaStorageServer - Database loaded from C:\ProgramData\Epic\UnrealBuildAccelerator\cas\casdb (v32) in 2ms (contained 0 entries estimated to 0b)
+UbaServer - Listening on 0.0.0.0:1345
+Skipping E:\Unreal Engine\UE_5.8\Engine\Intermediate\Build\BuildRules\UE5Rules.dll: File is installed
+Skipping E:\Unreal Engine\UE_5.8\Engine\Intermediate\Build\BuildRules\UE5ProgramRules.dll: File is installed
+Available x64 toolchains (1):
+ * D:\D\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.51.36231
+    (Family=14.51.36231, FamilyRank=2, Version=14.51.36260, HostArchitecture=x64, ReleaseChannel=Latest, Architecture=x64)
+Visual Studio compiler version 14.51.36260 is newer than latest preferred version 14.50.35717. Please use caution as this compiler has not been heavily tested
+Building UnrealGame - PrincipledNPR - Win64 - Development
+Generated code is up to date.
+Deleting outdated item: E:\unrealProjects\PrincipledNPR\Binaries\Win64\PrincipledNPR.pdb
+Building PrincipledNPR...
+===== Toolchain Information =====
+Using ISPC compiler (E:\Unreal Engine\UE_5.8\Engine\Source\ThirdParty\Intel\ISPC\bin\Windows\ispc.exe)
+  Intel(r) Implicit SPMD Program Compiler (Intel(r) ISPC), 1.24.0 (build commit  @ 20250404, LLVM 18.1.2) 
+Using Visual Studio 14.51.36260 toolchain (D:\D\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.51.36231) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+Warning: Visual Studio compiler 14.51.36260 is not a preferred version
+[Adaptive Build] Excluded from NPRRuntime unity file: NPRStyleBindingComponent.cpp, NPRStyleProfile.cpp, NPRToonParameters.cpp, NPRRimBindingTests.cpp, NPRRimProfileBindingTests.cpp, NPRStyleProfileTests.cpp, NPRToonBindingTests.cpp, NPRToonContractTests.cpp
+=================================
+Using Unreal Build Accelerator local executor to run 5 action(s)
+  CPU 16 physical cores, 24 logical cores
+  Memory 31.71 GB physical, 40.55 GB/61.71 GB committed
+  UBA Storage capacity 40 GB
+  UBA RootDir C:\ProgramData\Epic\UnrealBuildAccelerator
+Cache bucket 1107691214 used. Action: Compile [x64] NPRStyleProfile.cpp ()
+Cache bucket 136926991 used. Action: Link [x64] PrincipledNPR.exe ()
+All processes queued
+[1/5] Compile [x64] NPRStyleProfile.cpp
+[2/5] Compile [x64] NPRToonContractTests.cpp
+[3/5] Compile [x64] NPRToonBindingTests.cpp
+[4/5] Link [x64] PrincipledNPR.exe
+  正在创建库 E:\unrealProjects\PrincipledNPR\Binaries\Win64\PrincipledNPR.lib 和对象 E:\unrealProjects\PrincipledNPR\Binaries\Win64\PrincipledNPR.exp
+[5/5] WriteMetadata PrincipledNPR.target [NoUba]
+
+Total time in Unreal Build Accelerator local executor: 60.92 seconds
+Output binary: E:\unrealProjects\PrincipledNPR\Binaries\Win64\PrincipledNPR.exe
+UbaStorageServer - Database saved in 6ms (0 file entries, 0 cas entries. deleted 0 dropped cas files)
+WriteFileIfChanged() wrote 0 changed files of 1 requested writes.
+
+Timeline:
+[  0.000]  +0.682 Main
+   0.042          [  0.042]  +0.221 Apply XmlConfig
+   0.269          [  0.269]  +0.111 AddTelemetry
+   0.411          [  0.410]  +0.271 RegisterPlatforms
+[  0.796]  +0.063 ParseCommandLine
+[  0.860]  +0.662 <unknown>
+[  1.522]  +0.369 LoadMakefile
+[  1.913]  +0.606 FindPlugins
+[  2.522]  +0.096 EngineRulesPlugins
+   2.535          [  0.012]  +0.084 MakefileValid
+   2.618             0.095          [  0.082]  +0.000 GitWait
+[  2.625]  +0.042 EngineRulesFetchDirs
+[  2.683]  +0.021 EngineRulesAssembly
+[  2.704]  +0.003 ProgramRulesAssembly
+[  2.708]  +0.012 ProjectRulesAssembly
+[  2.721]  +0.609 CreateTargetRules
+[  3.472]  +0.033 CppDependencyCache
+[  3.534]  +0.214 PrincipledNPR Win64 Development
+[  3.751]  +0.075 UHTWait
+   3.753          [  0.001]  +0.071 UHTManifest
+   3.825          [  0.073]  +0.036 UHTTimestamps
+[  3.876]  +0.008 CppDependencyCache
+[  3.884]  +0.488 Preparing ActionGraph
+   3.913          [  0.028]  +0.012 LinkActions
+   3.925             0.040          [  0.012]  +0.000 DetectActionGraphCycles
+   3.927          [  0.043]  +0.000 GatherPrerequisiteActions
+   3.931          [  0.047]  +0.000 CppDependencyCacheWait
+   3.933          [  0.048]  +0.402 GatherOutdatedActions
+   4.343          [  0.458]  +0.019 LinkActions
+   4.343             0.458          [  0.000]  +0.000 DetectActionGraphCycles
+   4.364          [  0.479]  +0.004 DeleteOutdatedProducedItems
+   4.368          [  0.483]  +0.002 SaveActionHistory
+   4.372          [  0.487]  +0.000 CreateDirectoriesForProducedItems
+[  4.405]  +0.206 GarbageCollect
+[  4.612] +60.721 <unknown>
+[ 65.333]  +0.000 Deploying targets
+[ 65.337]  +0.000 DisconnectCache
+[ 65.346]  +0.055 SaveCasTable
+[ 65.408]  +0.018 Saving caches
+[ 65.429]  +0.007 TelemetryService.FlushEvents
+[ 65.439]
+
+Result: Succeeded
+Total execution time: 65.44 seconds

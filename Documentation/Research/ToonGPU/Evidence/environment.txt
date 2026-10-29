@@ -1,0 +1,16 @@
+engine=5.8.3-58210709+++UE5+Release-5.8
+gpu=NVIDIA GeForce RTX 4060 Laptop GPU
+rhi=D3D12
+size=256
+camera=(-230,0,0),FOV=40
+world=EditorPreview,LumenPrimitiveTracking=true
+capture=SceneColorHDR,FP16 target,float32 readback; PNG sRGB clipped 0..1
+r.Substrate=1
+r.Substrate.ProjectGBufferFormat=0
+r.Shadow.Virtual.Enable=1
+r.DynamicGlobalIlluminationMethod=1
+r.RayTracing=0
+r.Substrate.ToonProfile.Resolution=64
+r.Substrate.Experimental.ToonUnifiedDiffuse=0
+r.Substrate.Experimental.ToonReflectionQuantizationEnabled=0
+utc=2026-10-28T06:53:33.491Z

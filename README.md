@@ -2,7 +2,7 @@
 
 **[在线文档](https://asubtts.github.io/PrincipledNPR/)** · [文档首页](docs/index.md) · [使用说明](Documentation/NPR调制插件使用说明.md)
 
-我们在 UE 5.8.3 中开发角色风格化材质编辑工具。NPR 调制现在提供统一总览、效果分类和 Mesh/材质槽预览；Outline 保留局部设置、预设与关卡保存，Rim 支持 Profile、显式槽位绑定、实时调参、隔离和原材质对比。同槽 Toon + Rim 已通过受控球体验证；完整风格解析、任意角色自动转换、动画、Cook 与性能仍需各自实现或验收。操作与有界验证见[统一效果工作区](Documentation/Editor/NPRWorkspace.md)。
+我们在 UE 5.8.3 中开发角色风格化材质编辑工具。NPR 调制提供统一总览、效果分类和 Mesh/材质槽预览；Outline 保留局部设置、预设与关卡保存，Rim 支持 Profile、槽位绑定、实时调参、隔离和原材质对比。Toon Light 已接通五个 Generic 艺术参数、可配置着色模型、小曲线与角色区域点选，并验证私有预览、不可变包绑定和独立 Cook/Game 恢复；高光仍属参考近似。完整风格解析、任意角色自动转换、动画、多 LOD、冷启动性能与完整 S58 生产门禁仍需各自验收。操作见[统一效果工作区](Documentation/Editor/NPRWorkspace.md)，范围与证据见 [Toon Light 验证](Documentation/ToonLight/ValidationReport.md)。
 
 ## 当前维护的五份说明
 

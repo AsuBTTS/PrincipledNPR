@@ -49,9 +49,13 @@
   {
     "id": "toon-shading",
     "page": "features/toon-shading.md",
-    "status": "开发中",
+    "status": "已实现并验证",
     "evidence": [
-      "Documentation/Schemas/NPRParameterContract.v1.json"
+      "Documentation/ToonLight/使用说明与实现.md",
+      "Documentation/ToonLight/ToonBackendContract.v1.json",
+      "Documentation/ToonLight/ImplementationPlan.md",
+      "Documentation/ToonLight/Validation.json",
+      "Documentation/ToonLight/ValidationReport.md"
     ]
   },
   {

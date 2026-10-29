@@ -8,8 +8,8 @@
 | Outline 分层宽度、UV0 Mask | 已实现但待验证 | 已有 Editor/Game 构建及资产编译记录；新增图像回归 NotRun |
 | NPR 调制入口、材质槽隔离与参数展开 | 已实现并验证 | 2026-10-20 UE 5.8.3 / Windows；导航、隔离切换、参数展开、可选对比及窄窗口布局；未覆盖静态网格、多 LOD 和全部规则修改；见 [改进记录](/generated/source/Documentation/Outline/MaterialSlotUI.md.txt) |
 | NPR 统一工作区、Rim 槽位卡片与实时预览 | 已实现并验证 | 2026-10-26 UE 5.8.3 / DX12 SM6；最终源码 Editor/Game 构建、10 项自动化、30 张真实 GPU 导出（含预览 MID 的 5 张）；颜色、强度、归零、多槽实例隔离、Undo、外部材质保护及最终 16/12/12 字号和总览分类入口通过，具体范围见[工作区记录](/generated/source/Documentation/Editor/WorkspaceValidation.json) |
-| 完整 Principled 参数链路 | 开发中 | JSON 为 Draft / Uncalibrated / NotConnected；C++ 宿主已有，完整 Resolver/Adapter 缺失 |
-| Toon 语义后端 | 开发中 | S58 候选未验收；映射项 NotImplemented / NotRun |
+| 完整 Principled 参数链路 | 开发中 | 完整契约仍为 Draft / Uncalibrated；五个 Generic Toon 参数已有解析、Adapter 与不可变资源绑定，Face/Hair 等专用 Resolver/Adapter 未完成 |
+| Toon Light Generic 后端与编辑页 | 已实现并验证 | 2026-10-28 至 29，UE 5.8.3 / RTX 4060 / DX12 SM6；Editor/Game 构建、13 项自动化、最后 2 项 UI 复测、23 张 HDR 捕获、Cook 及独立 Game 两项绑定/模型切换通过。高光仍为参考近似，完整 S58、动画、多 LOD、冷 PSO 与生产性能未验收，见[本轮验证](toon-validation.md)；旧隔离实验另见[GPU 调研](../research/toon-bsdf-gpu.md) |
 | Surface Master Family / Recipe 组合 | 已实现并验证 | 2026-10-22 UE 5.8.3 / DX12 SM6；主工程两项新自动化、90 项实际资产检查、17 张真实球体捕获；BaseColor/Normal 保持、HDR 贡献相加、Toon+Rim 单槽及两种 Outline 共存通过；未覆盖角色、完整语义 Resolver、Cook 或性能，见 [Surface](../features/surface-material.md)与[执行记录](/generated/source/Documentation/Surface/ImplementationValidation.json) |
 | Rim Light 独立材质 | 已实现并验证 | 2026-10-22 Windows / UE 5.8.3 / DX12 SM6，静态球体四项变化的八张真实图像、八项门禁及人工查看；不覆盖角色、阴影、动画、时域或 Cook，见[图像记录](/generated/source/Documentation/RimLight/BindingValidation/ImageMetrics.json) |
 | Rim Light ② 参数暴露与契约 | 已实现并验证 | 2026-10-22 Windows / UE 5.8.3；27 项离线交叉检查、34 项实际资产只读检查及 C++ MaterialContract 用例通过；Game/Editor 构建通过；早期 Game 启动失败记录保留，最新 Editor 验证已补齐用例执行 |

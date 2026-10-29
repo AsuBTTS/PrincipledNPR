@@ -1,0 +1,59 @@
+﻿{
+	"devices": [
+		{
+			"deviceName": "EVANGELION-AV01",
+			"instance": "C371E1624998C351D440EBAEAEA6580E",
+			"instanceName": "EVANGELION-AV01-42932",
+			"platform": "WindowsEditor",
+			"oSVersion": "Windows 11 (25H2) [10.0.26200.9711] ",
+			"model": "Default",
+			"gPU": "Intel(R) UHD Graphics",
+			"cPUModel": "Intel(R) Core(TM) i7-14650HX",
+			"rAMInGB": 32,
+			"renderMode": "D3D12_SM6",
+			"rHI": "D3D12 (SM6)",
+			"appInstanceLog": ""
+		}
+	],
+	"reportCreatedOn": "2026.10.28-16.38.43",
+	"succeeded": 2,
+	"succeededWithWarnings": 0,
+	"failed": 0,
+	"notRun": 0,
+	"inProcess": 0,
+	"totalDuration": 4.3856339454650879,
+	"comparisonExported": false,
+	"comparisonExportDirectory": "",
+	"tests": [
+		{
+			"testDisplayName": "EditorWorkflow",
+			"fullTestPath": "NPR.Toon.EditorWorkflow",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"C371E1624998C351D440EBAEAEA6580E"
+			],
+			"duration": 1.4616489410400391,
+			"dateTime": "2026.10.28-16.38.38",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "WidgetRender",
+			"fullTestPath": "NPR.Toon.WidgetRender",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"C371E1624998C351D440EBAEAEA6580E"
+			],
+			"duration": 2.9239850044250488,
+			"dateTime": "2026.10.28-16.38.40",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		}
+	]
+}

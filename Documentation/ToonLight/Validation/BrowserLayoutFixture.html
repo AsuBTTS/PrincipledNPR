@@ -1,0 +1,15 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>Toon 文档响应式检查</title>
+<style>body{margin:16px;background:#eee;font:16px sans-serif}iframe{display:block;border:1px solid #888;margin-bottom:24px}h2{font-size:18px}</style>
+<pre id="results">等待两个实际文档窗口加载……</pre>
+<h2>800px 中等应用宽度</h2><iframe title="800px Toon 文档" width="800" height="840" src="/features/toon-shading.html"></iframe>
+<h2>420px 窄屏</h2><iframe title="420px Toon 文档" width="420" height="840" src="/features/toon-shading.html"></iframe>
+<script>
+const results=[];
+for(const frame of document.querySelectorAll('iframe'))frame.addEventListener('load',()=>{
+const d=frame.contentDocument,w=frame.contentWindow,s=d.querySelector('.VPSidebar'),r=s.getBoundingClientRect();
+results.push({width:w.innerWidth,bodyWidth:d.documentElement.scrollWidth,overflow:d.documentElement.scrollWidth>w.innerWidth,
+sidebarOnscreen:r.right>0&&r.left>=0,images:[...d.images].every(i=>i.complete&&i.naturalWidth>0),
+visibleButtons:[...d.querySelectorAll('button')].filter(b=>{const r=b.getBoundingClientRect();return r.width>0&&r.height>0&&r.right>0&&r.left<w.innerWidth}).map(b=>b.getAttribute('aria-label')||b.textContent.trim()).slice(0,8)});
+document.querySelector('#results').textContent=JSON.stringify(results,null,2);
+});
+</script></html>

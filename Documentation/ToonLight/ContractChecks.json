@@ -1,0 +1,31 @@
+{
+  "status": "PassedCrossSourceChecks",
+  "checks": {
+    "TerminatorDotCenter.default": true,
+    "TerminatorDotCenter.ClampMin": true,
+    "TerminatorDotCenter.ClampMax": true,
+    "TerminatorDotCenter.stable_id": true,
+    "TerminatorDotHalfWidth.default": true,
+    "TerminatorDotHalfWidth.ClampMin": true,
+    "TerminatorDotHalfWidth.ClampMax": true,
+    "TerminatorDotHalfWidth.stable_id": true,
+    "SpecHalfAngleRad.default": true,
+    "SpecHalfAngleRad.ClampMin": true,
+    "SpecHalfAngleRad.ClampMax": true,
+    "SpecHalfAngleRad.stable_id": true,
+    "SpecEdgeSoftness.default": true,
+    "SpecEdgeSoftness.ClampMin": true,
+    "SpecEdgeSoftness.ClampMax": true,
+    "SpecEdgeSoftness.stable_id": true,
+    "SpecPeakScale.default": true,
+    "SpecPeakScale.ClampMin": true,
+    "SpecPeakScale.ClampMax": true,
+    "SpecPeakScale.stable_id": true,
+    "legacy_model_inherits": true,
+    "shape_default": true,
+    "native_sampling_float16_guard": true,
+    "private_profile_guard": true,
+    "no_custom_shader_added": true
+  },
+  "scope": "JSON and C++ declarations/resource guards only; not a build or render test."
+}

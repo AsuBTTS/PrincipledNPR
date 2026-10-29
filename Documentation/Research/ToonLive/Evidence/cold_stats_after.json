@@ -1,0 +1,925 @@
+{
+	"Counters":
+	{
+		"AccumulatedLocalWorkerIdleTime": 0,
+		"TimesLocalWorkersWereIdle": 0,
+		"JobsAssigned": 0,
+		"JobsCompleted": 0,
+		"AccumulatedPendingTime": 0,
+		"MaxPendingTime": 0,
+		"AccumulatedJobExecutionTime": 0,
+		"MaxJobExecutionTime": 0,
+		"AccumulatedJobLifeTime": 0,
+		"MaxJobLifeTime": 0,
+		"LocalJobBatchesSeen": 0,
+		"TotalJobsReportedInLocalJobBatches": 0,
+		"DistributedJobBatchesSeen": 0,
+		"TotalJobsReportedInDistributedJobBatches": 0,
+		"MinShaderCodeSize": 0,
+		"MaxShaderCodeSize": 0,
+		"AccumulatedShaderCodeSize": 0,
+		"NumAccumulatedShaderCodes": 0,
+		"ShaderMapDDCMisses": 9,
+		"ShaderMapDDCHits": 488,
+		"TotalCacheSearchAttempts": 290,
+		"TotalCacheHits": 148,
+		"TotalCacheDuplicates": 10,
+		"TotalCacheDDCQueries": 132,
+		"TotalCacheDDCHits": 132,
+		"UniqueCacheInputHashes": 132,
+		"UniqueCacheOutputs": 69,
+		"CacheMemUsed": 580725,
+		"CacheMemBudget": 1717986918,
+		"MaxRemoteAgents": 0,
+		"MaxActiveAgentCores": 0,
+		"LargestViolationMemorySizeInBytes": 0,
+		"LargestViolationWorkerCount": 0
+	},
+	"MaterialCounters":
+	{
+		"MaterialTranslateCalls": 168,
+		"MaterialTranslateTotalTimeSec": 0.29695100709795952,
+		"MaterialTranslateTranslationOnlyTimeSec": 0.11080159991979599,
+		"MaterialTranslateSerializationOnlyTimeSec": 0.0017203018069267273,
+		"MaterialCacheHits": 15
+	},
+	"CompileStats": [
+		{
+			"/Engine/EditorLandscapeResources/LayerVisMaterial.LayerVisMaterial":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": 4.228414629985769e+18,
+						"Compiled": 16,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 16,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/EditorLandscapeResources/SelectBrushMaterial.SelectBrushMaterial":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": 6.9203597616517335e+18,
+						"Compiled": 20,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					},
+					{
+						"PermutationHash": -3.1275187627779195e+18,
+						"Compiled": 20,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 40,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/EditorLandscapeResources/MaskBrushMaterial.MaskBrushMaterial":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": -1.5372324974512348e+18,
+						"Compiled": 20,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 20,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/EditorLandscapeResources/ColorMaskBrushMaterial.ColorMaskBrushMaterial":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": -4.5216130068354156e+18,
+						"Compiled": 20,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 20,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/EditorLandscapeResources/LandscapeDirtyMaterial.LandscapeDirtyMaterial":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": -2.9967533928132961e+18,
+						"Compiled": 20,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 20,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/EditorLandscapeResources/LandscapeLayerUsageMaterial.LandscapeLayerUsageMaterial":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": 1.0415885761068147e+18,
+						"Compiled": 16,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 16,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/Transient":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": 4.228414629985769e+18,
+						"Compiled": 0,
+						"Cooked": 16,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					},
+					{
+						"PermutationHash": 6.9203597616517335e+18,
+						"Compiled": 0,
+						"Cooked": 20,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					},
+					{
+						"PermutationHash": -3.1275187627779195e+18,
+						"Compiled": 0,
+						"Cooked": 20,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					},
+					{
+						"PermutationHash": -1.5372324974512348e+18,
+						"Compiled": 0,
+						"Cooked": 20,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					},
+					{
+						"PermutationHash": -4.5216130068354156e+18,
+						"Compiled": 0,
+						"Cooked": 20,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					},
+					{
+						"PermutationHash": -2.9967533928132961e+18,
+						"Compiled": 0,
+						"Cooked": 20,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					},
+					{
+						"PermutationHash": 1.0415885761068147e+18,
+						"Compiled": 0,
+						"Cooked": 16,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					},
+					{
+						"PermutationHash": -3.3176679082820808e+18,
+						"Compiled": 0,
+						"Cooked": 7,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					},
+					{
+						"PermutationHash": 2.7928924532156032e+18,
+						"Compiled": 0,
+						"Cooked": 7,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					},
+					{
+						"PermutationHash": 3.630921224197674e+18,
+						"Compiled": 0,
+						"Cooked": 7,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					},
+					{
+						"PermutationHash": 3.3706825961967405e+17,
+						"Compiled": 0,
+						"Cooked": 7,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					},
+					{
+						"PermutationHash": 3.5619798821712097e+18,
+						"Compiled": 0,
+						"Cooked": 7,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					},
+					{
+						"PermutationHash": 1.0315265408221806e+18,
+						"Compiled": 0,
+						"Cooked": 7,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					},
+					{
+						"PermutationHash": 8.255401113066539e+18,
+						"Compiled": 0,
+						"Cooked": 7,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					},
+					{
+						"PermutationHash": 5.0417297278394819e+18,
+						"Compiled": 0,
+						"Cooked": 7,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					},
+					{
+						"PermutationHash": 5.2809462772647301e+18,
+						"Compiled": 0,
+						"Cooked": 7,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					},
+					{
+						"PermutationHash": 8.5116561411339203e+18,
+						"Compiled": 0,
+						"Cooked": 7,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					},
+					{
+						"PermutationHash": -6.0159103815931034e+18,
+						"Compiled": 0,
+						"Cooked": 7,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					},
+					{
+						"PermutationHash": -7.8077451442456883e+18,
+						"Compiled": 0,
+						"Cooked": 7,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					},
+					{
+						"PermutationHash": 7.1530619870415636e+18,
+						"Compiled": 0,
+						"Cooked": 7,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					},
+					{
+						"PermutationHash": 5.8468066235664742e+18,
+						"Compiled": 0,
+						"Cooked": 7,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					},
+					{
+						"PermutationHash": -8.0654206756000614e+18,
+						"Compiled": 0,
+						"Cooked": 7,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					},
+					{
+						"PermutationHash": -4.9648556163989371e+18,
+						"Compiled": 0,
+						"Cooked": 7,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					},
+					{
+						"PermutationHash": 8.718229651682818e+18,
+						"Compiled": 0,
+						"Cooked": 7,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					},
+					{
+						"PermutationHash": -2.0360749577645929e+18,
+						"Compiled": 0,
+						"Cooked": 7,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					},
+					{
+						"PermutationHash": -5.955687463328001e+18,
+						"Compiled": 0,
+						"Cooked": 7,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					},
+					{
+						"PermutationHash": 8.623301565730602e+18,
+						"Compiled": 0,
+						"Cooked": 7,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					},
+					{
+						"PermutationHash": -2.7471034602765804e+18,
+						"Compiled": 0,
+						"Cooked": 7,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					},
+					{
+						"PermutationHash": -9.2125042360770314e+18,
+						"Compiled": 0,
+						"Cooked": 7,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 0,
+				"Cooked": 286,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/EngineMaterials/GizmoMaterial.GizmoMaterial":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": 4.4717140038389023e+18,
+						"Compiled": 2,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 2,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/EditorMaterials/LevelGridMaterial2.LevelGridMaterial2":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": 3.8826444339614147e+18,
+						"Compiled": 2,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 2,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/EngineMaterials/GizmoMaterial":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": 4.4717140038389023e+18,
+						"Compiled": 0,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 0,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/EditorMaterials/LevelGridMaterial2":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": 3.8826444339614147e+18,
+						"Compiled": 0,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 0,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/Transient.Probe_LiveA":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": 3.630921224197674e+18,
+						"Compiled": 7,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 7,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/Transient.Probe_Control":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": 3.3706825961967405e+17,
+						"Compiled": 7,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 7,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/Transient.Probe_OffsetB":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": -3.3176679082820808e+18,
+						"Compiled": 7,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 7,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/Transient.Probe_OffsetC":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": 2.7928924532156032e+18,
+						"Compiled": 7,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 7,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/Transient.Probe_Cache00":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": 3.5619798821712097e+18,
+						"Compiled": 7,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 7,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/Transient.Probe_Cache01":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": 1.0315265408221806e+18,
+						"Compiled": 7,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 7,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/Transient.Probe_Cache02":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": 8.255401113066539e+18,
+						"Compiled": 7,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 7,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/Transient.Probe_Cache03":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": 5.0417297278394819e+18,
+						"Compiled": 7,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 7,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/Transient.Probe_Cache04":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": 5.2809462772647301e+18,
+						"Compiled": 7,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 7,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/Transient.Probe_Cache05":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": 8.5116561411339203e+18,
+						"Compiled": 7,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 7,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/Transient.Probe_Cache06":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": -6.0159103815931034e+18,
+						"Compiled": 7,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 7,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/Transient.Probe_Cache07":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": -7.8077451442456883e+18,
+						"Compiled": 7,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 7,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/Transient.Probe_Cache08":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": 7.1530619870415636e+18,
+						"Compiled": 7,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 7,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/Transient.Probe_Cache09":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": 5.8468066235664742e+18,
+						"Compiled": 7,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 7,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/Transient.Probe_Cache10":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": -8.0654206756000614e+18,
+						"Compiled": 7,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 7,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/Transient.Probe_Cache11":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": -4.9648556163989371e+18,
+						"Compiled": 7,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 7,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/Transient.Probe_Width00":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": 8.718229651682818e+18,
+						"Compiled": 7,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 7,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/Transient.Probe_Width01":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": -2.0360749577645929e+18,
+						"Compiled": 7,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 7,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/Transient.Probe_Width02":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": -5.955687463328001e+18,
+						"Compiled": 7,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 7,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/Transient.Probe_Width03":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": 8.623301565730602e+18,
+						"Compiled": 7,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 7,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/Transient.Probe_Width04":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": -2.7471034602765804e+18,
+						"Compiled": 7,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 7,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/Transient.Probe_Width05":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": -9.2125042360770314e+18,
+						"Compiled": 7,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 7,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			}
+		}
+	],
+	"ShaderTimings":
+	{
+		"FDebugViewModeVS":
+		{
+			"MinCompileTime": 0,
+			"MaxCompileTime": 0,
+			"TotalCompileTime": 0,
+			"TotalPreprocessTime": 1.2811788320541382,
+			"NumCompiled": 0,
+			"AverageCompileTime": 0
+		},
+		"TBasePassPSFNoLightMapPolicy":
+		{
+			"MinCompileTime": 0,
+			"MaxCompileTime": 0,
+			"TotalCompileTime": 0,
+			"TotalPreprocessTime": 2.9725039005279541,
+			"NumCompiled": 0,
+			"AverageCompileTime": 0
+		},
+		"FLandscapeGrassWeightVS":
+		{
+			"MinCompileTime": 0,
+			"MaxCompileTime": 0,
+			"TotalCompileTime": 0,
+			"TotalPreprocessTime": 0.26597058773040771,
+			"NumCompiled": 0,
+			"AverageCompileTime": 0
+		},
+		"FLumenCardVS":
+		{
+			"MinCompileTime": 0,
+			"MaxCompileTime": 0,
+			"TotalCompileTime": 0,
+			"TotalPreprocessTime": 1.011290431022644,
+			"NumCompiled": 0,
+			"AverageCompileTime": 0
+		},
+		"FLandscapePhysicalMaterialVS":
+		{
+			"MinCompileTime": 0,
+			"MaxCompileTime": 0,
+			"TotalCompileTime": 0,
+			"TotalPreprocessTime": 0.22407850623130798,
+			"NumCompiled": 0,
+			"AverageCompileTime": 0
+		},
+		"FLumenCardPS":
+		{
+			"MinCompileTime": 0,
+			"MaxCompileTime": 0,
+			"TotalCompileTime": 0,
+			"TotalPreprocessTime": 1.0152192115783691,
+			"NumCompiled": 0,
+			"AverageCompileTime": 0
+		},
+		"TBasePassVSFNoLightMapPolicy":
+		{
+			"MinCompileTime": 0,
+			"MaxCompileTime": 0,
+			"TotalCompileTime": 0,
+			"TotalPreprocessTime": 1.5201756954193115,
+			"NumCompiled": 0,
+			"AverageCompileTime": 0
+		},
+		"FDebugViewModePS":
+		{
+			"MinCompileTime": 0,
+			"MaxCompileTime": 0,
+			"TotalCompileTime": 0,
+			"TotalPreprocessTime": 1.2425854206085205,
+			"NumCompiled": 0,
+			"AverageCompileTime": 0
+		},
+		"FLandscapeGrassWeightPS":
+		{
+			"MinCompileTime": 0,
+			"MaxCompileTime": 0,
+			"TotalCompileTime": 0,
+			"TotalPreprocessTime": 0.24847789108753204,
+			"NumCompiled": 0,
+			"AverageCompileTime": 0
+		},
+		"FLandscapePhysicalMaterialPS":
+		{
+			"MinCompileTime": 0,
+			"MaxCompileTime": 0,
+			"TotalCompileTime": 0,
+			"TotalPreprocessTime": 0.21779099106788635,
+			"NumCompiled": 0,
+			"AverageCompileTime": 0
+		},
+		"FLumenTranslucencyRadianceCacheMarkVS":
+		{
+			"MinCompileTime": 0,
+			"MaxCompileTime": 0,
+			"TotalCompileTime": 0,
+			"TotalPreprocessTime": 0.32324191927909851,
+			"NumCompiled": 0,
+			"AverageCompileTime": 0
+		},
+		"FLumenTranslucencyRadianceCacheMarkPS":
+		{
+			"MinCompileTime": 0,
+			"MaxCompileTime": 0,
+			"TotalCompileTime": 0,
+			"TotalPreprocessTime": 0.34200564026832581,
+			"NumCompiled": 0,
+			"AverageCompileTime": 0
+		}
+	}
+}

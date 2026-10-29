@@ -1,0 +1,20 @@
+{
+  "first_completed_run": {
+    "source_sha256": "632c14468f26b09b37392ca667848cb54d8f7c261d4f2dcabd3afef02e4cb4d5",
+    "warmup_jobs_assigned": 6,
+    "final_jobs_assigned": 6,
+    "scope": "broader timestamp interval includes queue bubbles; original images, raw floats and JSON retained in work/ToonLive/Run1"
+  },
+  "invalid_dispatch_probe": {
+    "source_sha256": "d47fc5898c762cf616620d44b082073321c3e5162a8f4d5f72ba38b2669ce76b",
+    "full_log_sha256": "cc634c0c2120472fdb92903607c117eb8c1b979f31586e24824986c5bae79b4c",
+    "error_lines": [
+      "[2026.10.28-08.16.06:966][607]LogWindows: Error: appError called: Assertion failed: !EnumHasAnyFlags(Flags, ERDGPassFlags::Copy | ERDGPassFlags::Compute | ERDGPassFlags::AsyncCompute | ERDGPassFlags::Raster) [File:D:\\build\\++UE5\\Sync\\Engine\\Source\\Runtime\\RenderCore\\Private\\RenderGraphValidation.cpp] [Line: 598] ",
+      "Pass ToonLive.BeginDispatchInterval may not specify any of the (Copy, Compute, AsyncCompute, Raster) flags, because it has no parameters. Use None instead.",
+      "[2026.10.28-08.16.16:891][607]LogWindows: Error: Assertion failed: !EnumHasAnyFlags(Flags, ERDGPassFlags::Copy | ERDGPassFlags::Compute | ERDGPassFlags::AsyncCompute | ERDGPassFlags::Raster) [File:D:\\build\\++UE5\\Sync\\Engine\\Source\\Runtime\\RenderCore\\Private\\RenderGraphValidation.cpp] [Line: 598] ",
+      "[2026.10.28-08.16.16:891][607]LogWindows: Error: Pass ToonLive.BeginDispatchInterval may not specify any of the (Copy, Compute, AsyncCompute, Raster) flags, because it has no parameters. Use None instead."
+    ],
+    "verdict": "Failed before measurements; never used as a successful experiment"
+  },
+  "corrected_final_run": "Final3; no-parameter RDG pass uses None, binding CPU measured separately"
+}

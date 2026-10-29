@@ -1,0 +1,62 @@
+{
+  "map": "/Game/NPR/ToonValidation/L_ToonWorkspace_20261029_204340",
+  "actor": "/Game/NPR/ToonValidation/L_ToonWorkspace_20261029_204340.L_ToonWorkspace_20261029_204340:PersistentLevel.SkeletalMeshActor_1",
+  "source_map_unchanged": "/Game/NPR/Maps/L_Outline_MultiScope_v1",
+  "slots": [
+    {
+      "mesh": "SkeletalMeshComponent0",
+      "slot": 0,
+      "name": "M_actor_chen_body_01_001"
+    },
+    {
+      "mesh": "SkeletalMeshComponent0",
+      "slot": 1,
+      "name": "M_actor_chen_body_01_002"
+    },
+    {
+      "mesh": "SkeletalMeshComponent0",
+      "slot": 2,
+      "name": "M_actor_chen_cloth_01"
+    },
+    {
+      "mesh": "SkeletalMeshComponent0",
+      "slot": 3,
+      "name": "Chen_cloth_outline"
+    },
+    {
+      "mesh": "SkeletalMeshComponent0",
+      "slot": 4,
+      "name": "M_actor_chen_cloth_01_001"
+    },
+    {
+      "mesh": "SkeletalMeshComponent0",
+      "slot": 5,
+      "name": "M_eyeshadow_common_01"
+    },
+    {
+      "mesh": "SkeletalMeshComponent0",
+      "slot": 6,
+      "name": "M_actor_chen_face_01_002"
+    },
+    {
+      "mesh": "SkeletalMeshComponent0",
+      "slot": 7,
+      "name": "M_actor_chen_brow_01_002"
+    },
+    {
+      "mesh": "SkeletalMeshComponent0",
+      "slot": 8,
+      "name": "M_actor_chen_iris_01_002"
+    },
+    {
+      "mesh": "SkeletalMeshComponent0",
+      "slot": 9,
+      "name": "M_actor_chen_hair_01_001"
+    },
+    {
+      "mesh": "SkeletalMeshComponent0",
+      "slot": 10,
+      "name": "M_hairshadow_common_03_001"
+    }
+  ]
+}

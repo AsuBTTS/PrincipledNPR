@@ -1,0 +1,132 @@
+LogConfig: Set CVar [[r.PSOPrecache.GlobalShaders:1]]
+[2026.10.29-12.39.53:303][  0]LogConfig: Set CVar [[r.PSOPrecache.KeepInMemoryForActiveMaterials:1]]
+[2026.10.29-12.39.55:386][  0]LogRHI: Using Forced RHI: D3D12
+[2026.10.29-12.39.55:387][  0]LogRHI: Using Highest Feature Level of D3D12: SM6
+[2026.10.29-12.39.55:387][  0]LogRHI: Loading RHI module D3D12RHI
+[2026.10.29-12.39.55:393][  0]LogD3D12RHI: Loading WinPixEventRuntime.dll for PIX profiling (from ../../../Engine/Binaries/ThirdParty/Windows/WinPixEventRuntime/x64).
+[2026.10.29-12.39.55:393][  0]LogRHI: Checking if RHI D3D12 with Feature Level SM6 is supported by your system.
+[2026.10.29-12.39.56:534][  0]LogD3D12RHI: Found D3D12 adapter 0: NVIDIA GeForce RTX 4060 Laptop GPU (VendorId: 10de, DeviceId: 28e0, SubSysId: 3e4517aa, Revision: 00a1
+[2026.10.29-12.39.56:534][  0]LogD3D12RHI:   Max supported Feature Level 12_2, shader model 6.7, binding tier 3, wave ops supported, atomic64 supported
+[2026.10.29-12.39.56:534][  0]LogD3D12RHI:   Adapter has 7956MB of dedicated video memory, 0MB of dedicated system memory, and 16237MB of shared system memory, 1 output[s], TileBased:false UMA:false CacheCoherentUMA:false GPU Upload Heaps:true
+[2026.10.29-12.39.56:535][  0]LogD3D12RHI:   Driver Version: 610.47 (internal:32.0.16.1047, unified:610.47)
+[2026.10.29-12.39.56:535][  0]LogD3D12RHI:      Driver Date: 5-19-2026
+[2026.10.29-12.39.56:544][  0]LogD3D12RHI: Intel Extensions Framework not supported by driver. Please check if a driver update is available.
+[2026.10.29-12.39.56:544][  0]LogD3D12RHI: Found D3D12 adapter 1: Intel(R) UHD Graphics (VendorId: 8086, DeviceId: a78b, SubSysId: 3e4517aa, Revision: 0004
+[2026.10.29-12.39.56:544][  0]LogD3D12RHI:   Max supported Feature Level 12_1, shader model 6.7, binding tier 3, wave ops supported, atomic64 unsupported
+[2026.10.29-12.39.56:544][  0]LogD3D12RHI:   Adapter has 128MB of dedicated video memory, 0MB of dedicated system memory, and 16237MB of shared system memory, 0 output[s], TileBased:false UMA:true CacheCoherentUMA:true GPU Upload Heaps:true
+[2026.10.29-12.39.56:545][  0]LogD3D12RHI:   Driver Version: 32.0.101.6790 (internal:32.0.101.6790, unified:101.6790)
+[2026.10.29-12.39.56:545][  0]LogD3D12RHI:      Driver Date: 4-28-2025
+[2026.10.29-12.39.56:545][  0]LogD3D12RHI: Found D3D12 adapter 2: Microsoft Basic Render Driver (VendorId: 1414, DeviceId: 008c, SubSysId: 0000, Revision: 0000
+[2026.10.29-12.39.56:545][  0]LogD3D12RHI:   Max supported Feature Level 12_1, shader model 6.7, binding tier 3, wave ops supported, atomic64 supported
+[2026.10.29-12.39.56:545][  0]LogD3D12RHI:   Adapter has 0MB of dedicated video memory, 0MB of dedicated system memory, and 16237MB of shared system memory, 0 output[s], TileBased:false UMA:true CacheCoherentUMA:true GPU Upload Heaps:true
+[2026.10.29-12.39.56:545][  0]LogD3D12RHI:   D3D10Warp Version: 10.0.26100.9711
+[2026.10.29-12.39.56:545][  0]LogD3D12RHI: DirectX Agility SDK runtime found.
+[2026.10.29-12.39.56:545][  0]LogD3D12RHI: Chosen D3D12 Adapter Id = 0
+[2026.10.29-12.39.56:545][  0]LogRHI: RHI D3D12 with Feature Level SM6 is supported and will be used.
+[2026.10.29-12.39.56:625][  0]LogD3D12RHI: Integrated GPU (iGPU): false
+[2026.10.29-12.39.56:625][  0]LogD3D12RHI: Display: Creating D3D12 RHI with Max Feature Level SM6
+[2026.10.29-12.39.56:648][  0]LogD3D12RHI: NVIDIA Architecture=400
+[2026.10.29-12.39.56:649][  0]LogRHI: Display: Timeout Detection and Recovery (TDR) summary: 
+[2026.10.29-12.39.56:649][  0]LogRHI: RHI Adapter Info:
+[2026.10.29-12.39.56:649][  0]LogRHI:             Name: NVIDIA GeForce RTX 4060 Laptop GPU
+[2026.10.29-12.39.56:649][  0]LogRHI:   Driver Version: 610.47 (internal:32.0.16.1047, unified:610.47)
+[2026.10.29-12.39.56:649][  0]LogRHI:      Driver Date: 5-19-2026
+[2026.10.29-12.39.56:649][  0]LogRHI: Performing driver check for denylisted drivers.
+[2026.10.29-12.39.56:649][  0]LogD3D12RHI:     GPU DeviceId: 0x28e0 (for the marketing name, search the web for "GPU Device Id")
+[2026.10.29-12.39.56:649][  0]LogD3D12RHI: InitD3DDevice: -D3DDebug = off -D3D12GPUValidation = off
+[2026.10.29-12.39.56:977][  0]LogD3D12RHI: Emitting draw events for PIX profiling.
+[2026.10.29-12.39.57:178][  0]LogD3D12RHI: ID3D12Device1 is supported.
+[2026.10.29-12.39.57:178][  0]LogD3D12RHI: ID3D12Device2 is supported.
+[2026.10.29-12.39.57:178][  0]LogD3D12RHI: ID3D12Device3 is supported.
+[2026.10.29-12.39.57:178][  0]LogD3D12RHI: ID3D12Device4 is supported.
+[2026.10.29-12.39.57:178][  0]LogD3D12RHI: ID3D12Device5 is supported.
+[2026.10.29-12.39.57:178][  0]LogD3D12RHI: ID3D12Device6 is supported.
+[2026.10.29-12.39.57:178][  0]LogD3D12RHI: ID3D12Device7 is supported.
+[2026.10.29-12.39.57:178][  0]LogD3D12RHI: ID3D12Device8 is supported.
+[2026.10.29-12.39.57:178][  0]LogD3D12RHI: ID3D12Device9 is supported.
+[2026.10.29-12.39.57:178][  0]LogD3D12RHI: ID3D12Device10 is supported.
+[2026.10.29-12.39.57:178][  0]LogD3D12RHI: ID3D12Device11 is supported.
+[2026.10.29-12.39.57:178][  0]LogD3D12RHI: ID3D12Device12 is supported.
+[2026.10.29-12.39.57:178][  0]LogD3D12RHI: Bindless is supported. MaxNonSamplerDescriptors: 1000000, MaxSamplerDescriptors: 2048
+[2026.10.29-12.39.57:178][  0]LogD3D12RHI: Stencil ref from pixel shader is not supported
+[2026.10.29-12.39.57:178][  0]LogD3D12RHI: Raster order views are supported
+[2026.10.29-12.39.57:178][  0]LogD3D12RHI: Wave Operations are supported (wave size: min=32 max=32).
+[2026.10.29-12.39.57:178][  0]LogD3D12RHI:      Legacy Barriers Present in Build: Yes
+[2026.10.29-12.39.57:178][  0]LogD3D12RHI:    Enhanced Barriers Present in Build: Yes
+[2026.10.29-12.39.57:178][  0]LogD3D12RHI:      Enhanced Barriers Driver Support: Yes
+[2026.10.29-12.39.57:178][  0]LogD3D12RHI: Preferred Barrier Implementation Type: Legacy
+[2026.10.29-12.39.57:178][  0]LogD3D12RHI:         Chosen Barrier Implementation: D3D12LegacyBarriers
+[2026.10.29-12.39.57:178][  0]LogD3D12RHI: D3D12 ray tracing tier 1.1 and bindless resources are supported.
+[2026.10.29-12.39.57:178][  0]LogD3D12RHI: Mesh shader tier 1.0 is supported
+[2026.10.29-12.39.57:178][  0]LogD3D12RHI: AtomicInt64OnTypedResource is supported
+[2026.10.29-12.39.57:178][  0]LogD3D12RHI: AtomicInt64OnGroupShared is supported
+[2026.10.29-12.39.57:178][  0]LogD3D12RHI: AtomicInt64OnDescriptorHeapResource is supported
+[2026.10.29-12.39.57:178][  0]LogD3D12RHI: Shader Model 6.6 atomic64 is supported
+[2026.10.29-12.39.57:178][  0]LogD3D12RHI: Work Graphs are supported
+[2026.10.29-12.39.57:178][  0]LogD3D12RHI: Bindless is enabled (Configuration=RayTracing). Initializing allocators with 32768 Resource and 2048 Sampler descriptors
+[2026.10.29-12.39.57:316][  0]LogD3D12RHI: [GPUBreadCrumb] Successfully setup breadcrumb resource for DiagnosticBuffer (Queue: 0x000001E3D02D3C00)
+[2026.10.29-12.39.57:317][  0]LogD3D12RHI: [GPUBreadCrumb] Successfully setup breadcrumb resource for DiagnosticBuffer (Queue: 0x000001E3D02D3EC0)
+[2026.10.29-12.39.57:318][  0]LogD3D12RHI: [GPUBreadCrumb] Successfully setup breadcrumb resource for DiagnosticBuffer (Queue: 0x000001E3D02D4180)
+[2026.10.29-12.39.57:318][  0]LogD3D12RHI: Display: Not using pipeline state disk cache per r.D3D12.PSO.DiskCache=0
+[2026.10.29-12.39.57:318][  0]LogD3D12RHI: Display: Not using driver-optimized pipeline state disk cache per r.D3D12.PSO.DriverOptimizedDiskCache=0
+[2026.10.29-12.39.57:568][  0]LogD3D12RHI: NVIDIA Shader Execution Reordering interface supported!
+[2026.10.29-12.39.57:568][  0]LogD3D12RHI: NVIDIA Ray Tracing Cluster Operations supported and enabled
+[2026.10.29-12.39.57:568][  0]LogD3D12RHI: LSS not supported on this device.
+[2026.10.29-12.39.57:568][  0]LogD3D12RHI: NVIDIA Extended ray tracing pipeline state applied.
+[2026.10.29-12.39.57:568][  0]LogRHI: Texture pool is 4528 MB (70% of 6469 MB)
+[2026.10.29-12.39.57:568][  0]LogD3D12RHI: Async texture creation enabled
+[2026.10.29-12.39.57:568][  0]LogD3D12RHI: RHI has support for 64 bit atomics
+[2026.10.29-12.39.57:589][  0]LogRHI: Render tracing channels set: 'Submission' -> 0xf
+[2026.10.29-12.40.18:584][  0]LogAutomationTest: Error: Condition failed
+[2026.10.29-12.40.18:584][  0]LogAutomationTest: Error: Condition failed
+[2026.10.29-12.40.18:584][  0]LogAutomationTest: Error: Condition failed
+[2026.10.29-12.40.18:584][  0]LogAutomationTest: Error: Condition failed
+[2026.10.29-12.40.18:584][  0]LogAutomationTest: Error: Condition failed
+[2026.10.29-12.40.18:584][  0]LogAutomationTest: Error: Condition failed
+[2026.10.29-12.40.18:584][  0]LogAutomationTest: Error: Condition failed
+[2026.10.29-12.40.18:584][  0]LogAutomationTest: Error: Condition failed
+[2026.10.29-12.40.18:585][  0]LogAutomationTest: Error: Condition failed
+[2026.10.29-12.40.18:585][  0]LogAutomationTest: Error: Condition failed
+[2026.10.29-12.40.18:585][  0]LogAutomationTest: Error: Condition failed
+[2026.10.29-12.40.18:585][  0]LogAutomationTest: Error: Condition failed
+[2026.10.29-12.40.18:585][  0]LogAutomationTest: Error: Condition failed
+[2026.10.29-12.40.32:165][299]LogAutomationCommandLine: Display: Ready to start automation
+[2026.10.29-12.40.37:199][599]LogAutomationWorker: Received FindWorkersMessage from 7DBC5D9D42CFA822D060BA8147B3E1E9
+[2026.10.29-12.40.37:200][599]LogAutomationController: Received FindWorkersResponseMessage from 6D4119424FC45F10122EB0A02D8C6E7E
+[2026.10.29-12.40.37:201][599]LogAutomationController: Requesting test list from 6D4119424FC45F10122EB0A02D8C6E7E
+[2026.10.29-12.40.37:223][600]LogAutomationWorker: Received RequestTestsMessage from 7DBC5D9D42CFA822D060BA8147B3E1E9
+[2026.10.29-12.40.37:403][600]LogAutomationWorker: Set 6445 tests to 7DBC5D9D42CFA822D060BA8147B3E1E9
+[2026.10.29-12.40.37:404][601]LogAutomationController: Received RequestTestsReplyCompleteMessage from 6D4119424FC45F10122EB0A02D8C6E7E
+[2026.10.29-12.40.37:412][601]LogAutomationController: 6445 tests available on 6D4119424FC45F10122EB0A02D8C6E7E
+[2026.10.29-12.40.37:491][601]LogAutomationCommandLine: Display: Found 2 automation tests based on 'NPR.Toon.EditorWorkflow+NPR.Toon.WidgetRender'
+[2026.10.29-12.40.37:492][601]LogAutomationCommandLine: Display: 	NPR.Toon.EditorWorkflow
+[2026.10.29-12.40.37:492][601]LogAutomationCommandLine: Display: 	NPR.Toon.WidgetRender
+[2026.10.29-12.40.37:492][601]LogAutomationController: Sending StopTests to 6D4119424FC45F10122EB0A02D8C6E7E
+[2026.10.29-12.40.37:499][601]LogAutomationController: Display: Loading results html template...
+[2026.10.29-12.40.37:502][601]LogAutomationController: Display: Successfully wrote html results file!
+[2026.10.29-12.40.37:502][601]LogAutomationController: Sending StartTestSession to 6D4119424FC45F10122EB0A02D8C6E7E
+[2026.10.29-12.40.37:503][601]LogAutomationController: Display: Clearing ../../../../../unrealProjects/PrincipledNPR/Saved/Automation/Logs/ and ../../../../../unrealProjects/PrincipledNPR/Saved/Automation/Tmp/
+[2026.10.29-12.40.37:524][601]LogAutomationController: Sending RunTest EditorWorkflow to 6D4119424FC45F10122EB0A02D8C6E7E
+[2026.10.29-12.40.37:524][601]LogAutomationController: Display: Test Started. Name={EditorWorkflow} Path={NPR.Toon.EditorWorkflow}
+[2026.10.29-12.40.37:524][601]LogAutomationWorker: Received StopTests from 7DBC5D9D42CFA822D060BA8147B3E1E9
+[2026.10.29-12.40.37:524][601]LogAutomationWorker: Received StartTestSession from 7DBC5D9D42CFA822D060BA8147B3E1E9
+[2026.10.29-12.40.37:525][601]LogAutomationWorker: Received RunTests EditorWorkflow from 7DBC5D9D42CFA822D060BA8147B3E1E9
+[2026.10.29-12.40.39:071][602]LogAutomationController: Display: Test Completed. Result={Success} Name={EditorWorkflow} Path={NPR.Toon.EditorWorkflow}
+[2026.10.29-12.40.39:071][602]LogAutomationController: BeginEvents: NPR.Toon.EditorWorkflow
+[2026.10.29-12.40.39:071][602]LogAutomationController: EndEvents: NPR.Toon.EditorWorkflow
+[2026.10.29-12.40.39:072][602]LogAutomationController: Sending RunTest WidgetRender to 6D4119424FC45F10122EB0A02D8C6E7E
+[2026.10.29-12.40.39:073][603]LogAutomationController: Display: Test Started. Name={WidgetRender} Path={NPR.Toon.WidgetRender}
+[2026.10.29-12.40.39:111][603]LogAutomationWorker: Received RunTests WidgetRender from 7DBC5D9D42CFA822D060BA8147B3E1E9
+[2026.10.29-12.40.42:135][674]LogAutomationController: Display: Test Completed. Result={Success} Name={WidgetRender} Path={NPR.Toon.WidgetRender}
+[2026.10.29-12.40.42:135][674]LogAutomationController: BeginEvents: NPR.Toon.WidgetRender
+[2026.10.29-12.40.42:135][674]LogAutomationController: EndEvents: NPR.Toon.WidgetRender
+[2026.10.29-12.40.42:136][674]LogAutomationController: Display: Exporting Automation Report.
+[2026.10.29-12.40.42:137][674]LogAutomationController: Display: Converting results to json object...
+[2026.10.29-12.40.42:140][674]LogAutomationController: Writing reports to E:/unrealProjects/PrincipledNPR/Saved/ToonValidation/FinalUIAutomation...
+[2026.10.29-12.40.42:142][674]LogAutomationController: Display: Successfully wrote json results file!
+[2026.10.29-12.40.42:142][674]LogAutomationController: Exported report to 'E:/unrealProjects/PrincipledNPR/Saved/ToonValidation/FinalUIAutomation' in 0.00 Seconds
+[2026.10.29-12.40.42:142][675]LogAutomationController: Display: Report can be opened in the editor at 'E:/unrealProjects/PrincipledNPR/Saved/ToonValidation/FinalUIAutomation'
+[2026.10.29-12.40.42:142][675]LogAutomationController: Sending StopTestSession to 6D4119424FC45F10122EB0A02D8C6E7E
+[2026.10.29-12.40.42:142][675]LogAutomationCommandLine: Display: ...Automation Test Queue Empty 2 tests performed.
+[2026.10.29-12.40.42:154][675]LogAutomationWorker: Received StopTestSession from 7DBC5D9D42CFA822D060BA8147B3E1E9
+[2026.10.29-12.40.42:155][676]LogExit: Display: **** TestExit: Automation Test Queue Empty ****

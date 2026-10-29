@@ -56,7 +56,19 @@ Screen 放在景深之后、时间抗锯齿之前。TSR 是时间超分辨率，
 
 跨引擎版本升级时重点核对后处理插入位置、SceneTexture 编号/缓冲尺寸、预曝光和时间上采样顺序。预曝光是引擎为控制亮度数值采用的缩放，不应在材质已自动处理时再次手工乘。
 
-S58 语义后端的曲线生成、标定和包构造仍待实现；不可把这里的 Outline Pass 说明套到表面 Toon Lighting。
+S58 Toon Light 已实现五参数解析、曲线生成与材质包构造；角域高光仍为有条件参考近似，Face/Hair 专用能力与跨所有模块的统一 Resolver 仍待完成。不可把 Outline Pass 说明套到表面 Toon Lighting。
+
+## Toon Light：语义参数到原生材质
+
+`NPRStyleProfile::ResolveToonParameters → FNPRToonParameters → NPRToonBackend::BuildPreview / UpdateProfile → Substrate Toon BSDF` 是本轮新增链路。C++ 在 CPU 生成原生 RichCurve，材质仍使用 UE 节点；原 BaseColor、Normal、Emission、WPO、遮罩与支持的实例参数保留。选择 Default Lit 时改为原生 Shading Models 根节点；已有 Outline 和 Rim 函数继续执行各自阶段，没有新增项目 HLSL 文件或独立 Shader Pass。
+
+普通曲线调参只更新编辑器拥有的临时 Profile。输入按 30Hz 合并，仅重建实际变化的 Ramp；线性与 Hermite 通常每通道不超过 5 个键。原生引擎负责图集重建，其全局更新成本与首次材质编译分别记录。`Bake` 保存独立 Profile、材质、MIC 与后端包；`ApplyConfiguredToon` 在运行时只绑定不可变资源。
+
+CPU 参考、原生 FP16/双线性采样参考和真实 HDR GPU 输出分别检查；默认 64 分辨率不能保证转折点与数学函数逐点相同。参数、操作、原始高级入口与当前验证范围见 [Toon Light](../features/toon-shading.md)。
+
+2026-10-28 的 [Toon GPU 调研](../research/toon-bsdf-gpu.md)使用独立工程和临时材质节点，直接连接原生 Toon BSDF；Profile 曲线在测试开始前生成，运行中使用 MID 参数或预制材质切换。Rim/Outline 对照复用既有函数和控制器，没有新增 HLSL 文件或独立渲染 Pass。73 张捕获验证指定静态场景的原生响应与组合，记录了自影对负阈值的限制，不代替完整语义后端或生产验收。
+
+[实时 Profile 研究](../research/toon-profile-mechanism.md)追踪到 CPU 曲线 → FP16 缓冲 → native atlas compute → View 采样的路径。109 次动态更新没有新增 Shader 编译，但通知会使当前全局图集失效并重建所有层。夹具使用原生材质节点和资源更新入口，两段无参数 RDG 命令只用于 GPU 时间戳；没有新增着色算法、HLSL 或生产渲染阶段。Editor 和游戏 Runtime 能力边界分别记录，生产模块未接入该实验。
 
 
 ## Rim 的原表面派生

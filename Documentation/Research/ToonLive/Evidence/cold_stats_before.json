@@ -1,0 +1,397 @@
+{
+	"Counters":
+	{
+		"AccumulatedLocalWorkerIdleTime": 0,
+		"TimesLocalWorkersWereIdle": 0,
+		"JobsAssigned": 0,
+		"JobsCompleted": 0,
+		"AccumulatedPendingTime": 0,
+		"MaxPendingTime": 0,
+		"AccumulatedJobExecutionTime": 0,
+		"MaxJobExecutionTime": 0,
+		"AccumulatedJobLifeTime": 0,
+		"MaxJobLifeTime": 0,
+		"LocalJobBatchesSeen": 0,
+		"TotalJobsReportedInLocalJobBatches": 0,
+		"DistributedJobBatchesSeen": 0,
+		"TotalJobsReportedInDistributedJobBatches": 0,
+		"MinShaderCodeSize": 0,
+		"MaxShaderCodeSize": 0,
+		"AccumulatedShaderCodeSize": 0,
+		"NumAccumulatedShaderCodes": 0,
+		"ShaderMapDDCMisses": 9,
+		"ShaderMapDDCHits": 488,
+		"TotalCacheSearchAttempts": 136,
+		"TotalCacheHits": 6,
+		"TotalCacheDuplicates": 10,
+		"TotalCacheDDCQueries": 120,
+		"TotalCacheDDCHits": 120,
+		"UniqueCacheInputHashes": 120,
+		"UniqueCacheOutputs": 60,
+		"CacheMemUsed": 518432,
+		"CacheMemBudget": 1717986918,
+		"MaxRemoteAgents": 0,
+		"MaxActiveAgentCores": 0,
+		"LargestViolationMemorySizeInBytes": 0,
+		"LargestViolationWorkerCount": 0
+	},
+	"MaterialCounters":
+	{
+		"MaterialTranslateCalls": 144,
+		"MaterialTranslateTotalTimeSec": 0.25468380376696587,
+		"MaterialTranslateTranslationOnlyTimeSec": 0.098192699253559113,
+		"MaterialTranslateSerializationOnlyTimeSec": 0.0017203018069267273,
+		"MaterialCacheHits": 15
+	},
+	"CompileStats": [
+		{
+			"/Engine/EditorLandscapeResources/LayerVisMaterial.LayerVisMaterial":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": 4.228414629985769e+18,
+						"Compiled": 16,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 16,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/EditorLandscapeResources/SelectBrushMaterial.SelectBrushMaterial":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": 6.9203597616517335e+18,
+						"Compiled": 20,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					},
+					{
+						"PermutationHash": -3.1275187627779195e+18,
+						"Compiled": 20,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 40,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/EditorLandscapeResources/MaskBrushMaterial.MaskBrushMaterial":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": -1.5372324974512348e+18,
+						"Compiled": 20,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 20,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/EditorLandscapeResources/ColorMaskBrushMaterial.ColorMaskBrushMaterial":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": -4.5216130068354156e+18,
+						"Compiled": 20,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 20,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/EditorLandscapeResources/LandscapeDirtyMaterial.LandscapeDirtyMaterial":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": -2.9967533928132961e+18,
+						"Compiled": 20,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 20,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/EditorLandscapeResources/LandscapeLayerUsageMaterial.LandscapeLayerUsageMaterial":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": 1.0415885761068147e+18,
+						"Compiled": 16,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 16,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/Transient":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": 4.228414629985769e+18,
+						"Compiled": 0,
+						"Cooked": 16,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					},
+					{
+						"PermutationHash": 6.9203597616517335e+18,
+						"Compiled": 0,
+						"Cooked": 20,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					},
+					{
+						"PermutationHash": -3.1275187627779195e+18,
+						"Compiled": 0,
+						"Cooked": 20,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					},
+					{
+						"PermutationHash": -1.5372324974512348e+18,
+						"Compiled": 0,
+						"Cooked": 20,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					},
+					{
+						"PermutationHash": -4.5216130068354156e+18,
+						"Compiled": 0,
+						"Cooked": 20,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					},
+					{
+						"PermutationHash": -2.9967533928132961e+18,
+						"Compiled": 0,
+						"Cooked": 20,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					},
+					{
+						"PermutationHash": 1.0415885761068147e+18,
+						"Compiled": 0,
+						"Cooked": 16,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 0,
+				"Cooked": 132,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/EngineMaterials/GizmoMaterial.GizmoMaterial":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": 4.4717140038389023e+18,
+						"Compiled": 2,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 2,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/EditorMaterials/LevelGridMaterial2.LevelGridMaterial2":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": 3.8826444339614147e+18,
+						"Compiled": 2,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 2,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/EngineMaterials/GizmoMaterial":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": 4.4717140038389023e+18,
+						"Compiled": 0,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 0,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			},
+			"/Engine/EditorMaterials/LevelGridMaterial2":
+			{
+				"PermutationCompilations": [
+					{
+						"PermutationHash": 3.8826444339614147e+18,
+						"Compiled": 0,
+						"Cooked": 0,
+						"CompiledDouble": 0,
+						"CookedDouble": 0
+					}
+				],
+				"Compiled": 0,
+				"Cooked": 0,
+				"CompiledDouble": 0,
+				"CookedDouble": 0,
+				"CompileTime": 0
+			}
+		}
+	],
+	"ShaderTimings":
+	{
+		"FDebugViewModeVS":
+		{
+			"MinCompileTime": 0,
+			"MaxCompileTime": 0,
+			"TotalCompileTime": 0,
+			"TotalPreprocessTime": 0.5087619423866272,
+			"NumCompiled": 0,
+			"AverageCompileTime": 0
+		},
+		"TBasePassPSFNoLightMapPolicy":
+		{
+			"MinCompileTime": 0,
+			"MaxCompileTime": 0,
+			"TotalCompileTime": 0,
+			"TotalPreprocessTime": 1.0959188938140869,
+			"NumCompiled": 0,
+			"AverageCompileTime": 0
+		},
+		"FLandscapeGrassWeightVS":
+		{
+			"MinCompileTime": 0,
+			"MaxCompileTime": 0,
+			"TotalCompileTime": 0,
+			"TotalPreprocessTime": 0.26597058773040771,
+			"NumCompiled": 0,
+			"AverageCompileTime": 0
+		},
+		"FLumenCardVS":
+		{
+			"MinCompileTime": 0,
+			"MaxCompileTime": 0,
+			"TotalCompileTime": 0,
+			"TotalPreprocessTime": 0.23520468175411224,
+			"NumCompiled": 0,
+			"AverageCompileTime": 0
+		},
+		"FLandscapePhysicalMaterialVS":
+		{
+			"MinCompileTime": 0,
+			"MaxCompileTime": 0,
+			"TotalCompileTime": 0,
+			"TotalPreprocessTime": 0.22407850623130798,
+			"NumCompiled": 0,
+			"AverageCompileTime": 0
+		},
+		"FLumenCardPS":
+		{
+			"MinCompileTime": 0,
+			"MaxCompileTime": 0,
+			"TotalCompileTime": 0,
+			"TotalPreprocessTime": 0.21279360353946686,
+			"NumCompiled": 0,
+			"AverageCompileTime": 0
+		},
+		"TBasePassVSFNoLightMapPolicy":
+		{
+			"MinCompileTime": 0,
+			"MaxCompileTime": 0,
+			"TotalCompileTime": 0,
+			"TotalPreprocessTime": 0.69123440980911255,
+			"NumCompiled": 0,
+			"AverageCompileTime": 0
+		},
+		"FDebugViewModePS":
+		{
+			"MinCompileTime": 0,
+			"MaxCompileTime": 0,
+			"TotalCompileTime": 0,
+			"TotalPreprocessTime": 0.48005580902099609,
+			"NumCompiled": 0,
+			"AverageCompileTime": 0
+		},
+		"FLandscapeGrassWeightPS":
+		{
+			"MinCompileTime": 0,
+			"MaxCompileTime": 0,
+			"TotalCompileTime": 0,
+			"TotalPreprocessTime": 0.24847789108753204,
+			"NumCompiled": 0,
+			"AverageCompileTime": 0
+		},
+		"FLandscapePhysicalMaterialPS":
+		{
+			"MinCompileTime": 0,
+			"MaxCompileTime": 0,
+			"TotalCompileTime": 0,
+			"TotalPreprocessTime": 0.21779099106788635,
+			"NumCompiled": 0,
+			"AverageCompileTime": 0
+		},
+		"FLumenTranslucencyRadianceCacheMarkVS":
+		{
+			"MinCompileTime": 0,
+			"MaxCompileTime": 0,
+			"TotalCompileTime": 0,
+			"TotalPreprocessTime": 0.32324191927909851,
+			"NumCompiled": 0,
+			"AverageCompileTime": 0
+		},
+		"FLumenTranslucencyRadianceCacheMarkPS":
+		{
+			"MinCompileTime": 0,
+			"MaxCompileTime": 0,
+			"TotalCompileTime": 0,
+			"TotalPreprocessTime": 0.34200564026832581,
+			"NumCompiled": 0,
+			"AverageCompileTime": 0
+		}
+	}
+}

@@ -1,0 +1,18 @@
+{
+  "engine": {
+    "Engine/Build/Build.version": "eab58750e84719489f3ee0d42d05a533ceb357eb3ee511777e9408d27a85f43c",
+    "Engine/Source/Runtime/Engine/Classes/Engine/ToonProfile.h": "c98044a610fbba16cb263d50db96ac5f13e6901f22d519fd76c208f85fe6f4da",
+    "Engine/Source/Runtime/Engine/Public/Materials/MaterialExpressionSubstrate.h": "7be6c073ed4874e3c023f82861199d2081156c0c6436aed31bc5a1ff82e7a244",
+    "Engine/Source/Runtime/Engine/Private/Rendering/ToonProfile.cpp": "b555d817703c52beeb0b2d9a0c938eab7fd52fecb1f4eac99ae93d6fb8973885",
+    "Engine/Shaders/Private/Substrate/SubstrateToonBSDF.ush": "c83c0b881a63c15c8a94f3ad674be729d444c214a6062faeab72a6fadeccf9cc",
+    "Engine/Shaders/Private/ToonProfileCommon.ush": "a351b68b8fb1dc5094a9f6dcb5bc4f51bae7a804bfac967d1273fffa3e01eb0b",
+    "Engine/Shaders/Private/Substrate/SubstrateDeferredLighting.ush": "97b160a35f7d977952245c41fdbe728b4ed523d13f866501b70c8fbfa4bac9c0",
+    "Engine/Shaders/Private/Substrate/SubstrateEvaluation.ush": "3a114cc1521cffb6653a31ffc0c9f867ac8c3d011867d1010984abcd0d3dc825",
+    "Engine/Source/Runtime/StaticMeshDescription/Private/StaticMeshDescription.cpp": "1baeaa3ab04bf21b4ff0ba5746ef9fd4b0debbb2b69ec40ffff4995c605c4870"
+  },
+  "fixture_sha256": "bea40346a1f406b8f6ab84f83ddeb3ecbcd71e69104cbec2b45b9ffed14d777a",
+  "compiled_fixture_source_sha256": "bea40346a1f406b8f6ab84f83ddeb3ecbcd71e69104cbec2b45b9ffed14d777a",
+  "research_dll_sha256": "bf80a3f6d9ea3043aea3f4dfb072bfb48b03ba8681a223fccd9a7583daa9be37",
+  "full_log_sha256": "9f25467634c9dfa930016516385cd2a4ec3e3a4e617c3fd59aa208a1b16aacc8",
+  "request_document_sha256": "ef6ee700686d1fc29c9a8596ae6c33e078b4421895a2297ea37f978b7d138cb0"
+}

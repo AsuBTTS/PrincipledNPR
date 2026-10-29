@@ -24,6 +24,13 @@ public:
     virtual bool Export(const FString& Directory) = 0;
     virtual UMaterialInterface* PreviewMaterial(bool bOriginal, UMeshComponent* Mesh, int32 SlotIndex) const = 0;
     virtual bool IsMeshVisible(bool bOriginal, UMeshComponent* Mesh) const = 0;
+    /** Optional Toon authoring hooks. Overrides only affect preview-world copies. */
+    virtual void SetMaterialOverride(UMeshComponent* Mesh,int32 SlotIndex,UMaterialInterface* Material) {}
+    virtual void ClearMaterialOverrides() {}
+    virtual void SetRegionPicked(TFunction<void(UMeshComponent*,int32,int32)> Callback) {}
+    virtual void SelectRegion(UMeshComponent* Mesh,int32 SlotIndex) {}
+    /** Native viewport hit-proxy query; also used by isolated UI integration tests. */
+    virtual bool PickRegionAtNormalized(float X,float Y) { return false; }
 };
 
 TSharedRef<FNPRCharacterPreview> MakeNPRCharacterPreview();

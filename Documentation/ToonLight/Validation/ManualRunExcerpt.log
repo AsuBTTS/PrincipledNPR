@@ -1,0 +1,25 @@
+[2026.10.29-12.43.41:316][  0]LogSavePackage: Moving output files for package: /Game/NPR/ToonValidation/L_ToonWorkspace_20261029_204340
+[2026.10.29-12.45.46:664][644]LogTemp: Display: ToonPick Down enabled=1 key=LeftMouseButton pos=X=1374.000 Y=928.000
+[2026.10.29-12.45.46:668][644]LogTemp: Display: ToonPick Up pressed=1 dragged=0 pos=X=1374.000 Y=928.000 delta2=0
+[2026.10.29-12.45.46:668][644]LogTemp: Display: ToonPick Query uv=0.494276,0.256016 size=767,703 pixel=379,179 actor=1
+[2026.10.29-12.45.46:668][644]LogTemp: Display: ToonPick Hit component=/Engine/Transient.World_7:PersistentLevel.Actor_0.SkeletalMeshComponent_1 material=6 section=6
+[2026.10.29-12.45.46:668][644]LogTemp: Display: ToonPick Mapped source=/Game/NPR/ToonValidation/L_ToonWorkspace_20261029_204340.L_ToonWorkspace_20261029_204340:PersistentLevel.SkeletalMeshActor_1.SkeletalMeshComponent0 slot=6
+[2026.10.29-12.45.46:669][644]LogTemp: Display: ToonPick CaptureLost pressed=0
+[2026.10.29-12.45.46:788][649]LogTemp: Display: ToonPick Down enabled=1 key=LeftMouseButton pos=X=1389.000 Y=1098.000
+[2026.10.29-12.45.46:810][650]LogTemp: Display: ToonPick Up pressed=1 dragged=0 pos=X=1389.000 Y=1098.000 delta2=0
+[2026.10.29-12.45.46:810][650]LogTemp: Display: ToonPick Query uv=0.513812,0.498078 size=767,703 pixel=394,350 actor=1
+[2026.10.29-12.45.46:810][650]LogTemp: Display: ToonPick Hit component=/Engine/Transient.World_7:PersistentLevel.Actor_0.SkeletalMeshComponent_1 material=2 section=2
+[2026.10.29-12.45.46:810][650]LogTemp: Display: ToonPick Mapped source=/Game/NPR/ToonValidation/L_ToonWorkspace_20261029_204340.L_ToonWorkspace_20261029_204340:PersistentLevel.SkeletalMeshActor_1.SkeletalMeshComponent0 slot=2
+[2026.10.29-12.45.46:812][650]LogTemp: Display: ToonPick CaptureLost pressed=0
+[2026.10.29-12.47.36:616][234]LogSavePackage: Moving output files for package: /Game/NPR/Styles/Style_Toon
+[2026.10.29-12.47.36:745][234]LogSavePackage: Moving output files for package: /Game/NPR/Generated/Toon/Presets/TP_Toon
+[2026.10.29-12.47.36:792][234]LogSavePackage: Moving output files for package: /Game/NPR/Generated/Toon/Presets/M_Toon
+[2026.10.29-12.47.36:824][234]LogSavePackage: Moving output files for package: /Game/NPR/Generated/Toon/Presets/MI_Toon
+[2026.10.29-12.47.36:850][234]LogSavePackage: Moving output files for package: /Game/NPR/Generated/Toon/Presets/BP_ToonStyle
+[2026.10.29-12.47.36:876][234]LogSavePackage: Moving output files for package: /Game/NPR/Generated/Toon/Presets/BP_ToonStyle
+[2026.10.29-12.47.45:355][635]LogSavePackage: Moving output files for package: /Game/NPR/Generated/Toon/TP_Toon
+[2026.10.29-12.47.45:386][635]LogSavePackage: Moving output files for package: /Game/NPR/Generated/Toon/M_Toon
+[2026.10.29-12.47.45:415][635]LogSavePackage: Moving output files for package: /Game/NPR/Generated/Toon/MI_Toon
+[2026.10.29-12.47.45:442][635]LogSavePackage: Moving output files for package: /Game/NPR/Generated/Toon/BP_ToonStyle
+[2026.10.29-12.48.30:183][911]LogFileHelpers: Saving Map: /Game/NPR/ToonValidation/L_ToonWorkspace_20261029_204340
+[2026.10.29-12.48.30:400][911]LogSavePackage: Moving output files for package: /Game/NPR/ToonValidation/L_ToonWorkspace_20261029_204340
