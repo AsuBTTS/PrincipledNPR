@@ -1,4 +1,5 @@
 #include "NPRRimMaterialBuilder.h"
+#include "NPRMatCapGraph.h"
 
 #include "AssetRegistry/AssetRegistryModule.h"
 #include "AssetToolsModule.h"
@@ -79,7 +80,7 @@ void Append(UMaterial* Material, FExpressionInput& Emission, UMaterialExpression
     else Emission.Connect(0, Contribution);
 }
 
-bool Extend(UMaterial* Material, ENPRRimShadingModel Model, bool AddRim, FString& Error)
+bool Extend(UMaterial* Material, ENPRRimShadingModel Model, UMaterialExpression* Contribution, FString& Error)
 {
     auto* Data = Material->GetEditorOnlyData();
     auto* Root = Data->FrontMaterial.Expression;
@@ -124,9 +125,7 @@ bool Extend(UMaterial* Material, ENPRRimShadingModel Model, bool AddRim, FString
         Error=TEXT("当前 Substrate 根节点尚不支持安全添加 Rim（支持直接 Toon、Slab 和 Shading Models）。原材质保持不变。");
         return false;
     }
-    if (!AddRim && Model==ENPRRimShadingModel::KeepOriginal) return true;
-    auto* Contribution=AddRim ? Rim(Material,Error) : nullptr;
-    if (!AddRim && Emission) return true;
+    if (!Contribution && (Emission || Model==ENPRRimShadingModel::KeepOriginal)) return true;
     if (!Contribution) return false;
     if (Emission) { Append(Material,*Emission,Contribution); return true; }
     if (Model == ENPRRimShadingModel::Subsurface)
@@ -167,13 +166,13 @@ bool Extend(UMaterial* Material, ENPRRimShadingModel Model, bool AddRim, FString
     return true;
 }
 
-bool SaveRimAsset(UObject* Asset, FString& Error)
+bool SaveDerivedSurfaceAsset(UObject* Asset, FString& Error)
 {
     auto* Package=Asset->GetOutermost();
     const FString Filename=FPackageName::LongPackageNameToFilename(Package->GetName(),FPackageName::GetAssetPackageExtension());
     IFileManager::Get().MakeDirectory(*FPaths::GetPath(Filename),true);
     FSavePackageArgs Args; Args.TopLevelFlags=RF_Public|RF_Standalone; Args.SaveFlags=SAVE_NoError;
-    if (!UPackage::SavePackage(Package,Asset,*Filename,Args)) { Error=TEXT("保存生成的 Rim 材质失败。"); return false; }
+    if (!UPackage::SavePackage(Package,Asset,*Filename,Args)) { Error=TEXT("无法保存派生材质：") + Filename; return false; }
     return true;
 }
 
@@ -202,6 +201,34 @@ void CopyInheritedBaseOverrides(UMaterialInterface* Source, UMaterialInstanceCon
         if(Chain[I]->bOverrideToonProfile){Target->bOverrideToonProfile=true;Target->ToonProfileOverride=Chain[I]->ToonProfileOverride;}
     }
 }
+
+void CopySurfaceParameters(UMaterialInterface* Source, UMaterialInstanceConstant* Target)
+{
+    CopyNPRSurfaceParameters(*Source, *Target, true);
+    CopyInheritedBaseOverrides(Source,Target);
+}
+}
+
+void CopyNPRSurfaceParameters(UMaterialInterface& Source, UMaterialInstanceConstant& Target, bool bIncludeStatic)
+{
+    FMaterialInstanceParameterUpdateContext Update(&Target, EMaterialInstanceClearParameterFlag::AllNonStatic);
+    TArray<FMaterialParameterInfo> Infos;
+    TArray<FGuid> Ids;
+    for (int32 Index = 0; Index < NumMaterialParameterTypes; ++Index)
+    {
+        const auto Type = static_cast<EMaterialParameterType>(Index);
+        if (!bIncludeStatic && IsStaticMaterialParameter(Type)) continue;
+        Source.GetAllParameterInfoOfType(Type, Infos, Ids);
+        for (const auto& Info : Infos)
+        {
+            FMaterialParameterMetadata Value;
+            if (Source.GetParameterValue(Type, FMemoryImageMaterialParameterInfo(Info), Value))
+            {
+                Value.bOverride = true;
+                Update.SetParameterValueEditorOnly(Info, Value);
+            }
+        }
+    }
 }
 
 UMaterialInstanceConstant* NPRRimMaterialBuilder::Build(UMaterialInterface* Source, ENPRRimShadingModel Model, FString& Error)
@@ -218,21 +245,14 @@ UMaterialInstanceConstant* NPRRimMaterialBuilder::Build(UMaterialInterface* Sour
     bool HasRim=Source->GetVectorParameterValue(FHashedMaterialParameterInfo(FName(NPRRimContract::ColorMaterialName)),Color);
     for(const FName Parameter : {FName(NPRRimContract::WidthMaterialName),FName(NPRRimContract::SoftnessMaterialName),FName(NPRRimContract::IntensityMaterialName)})
         HasRim &= Source->GetScalarParameterValue(FHashedMaterialParameterInfo(Parameter),Scalar);
-    if (!Extend(Material,Model,!HasRim,Error)) return nullptr;
+    auto* Contribution = HasRim ? nullptr : Rim(Material, Error);
+    if ((!HasRim && !Contribution) || !Extend(Material,Model,Contribution,Error)) return nullptr;
+    NPRMatCapGraph::UpgradeSubstrateNormal(*Material);
     Material->PostEditChange();
     FAssetToolsModule::GetModule().Get().CreateUniqueAssetName(PackageName+TEXT("_Instance"),TEXT(""),PackageName,Name);
     auto* Instance=NewObject<UMaterialInstanceConstant>(CreatePackage(*PackageName),*Name,RF_Public|RF_Standalone);
     Instance->SetParentEditorOnly(Material);
-    Instance->CopyMaterialUniformParametersEditorOnly(Source,true);
-    // UE's uniform-copy helper explicitly excludes fonts.
-    TArray<FMaterialParameterInfo> FontInfos;TArray<FGuid> FontIds;
-    Source->GetAllFontParameterInfo(FontInfos,FontIds);
-    for(const auto& Info:FontInfos)
-    {
-        UFont* Font=nullptr;int32 Page=0;
-        if(Source->GetFontParameterValue(Info,Font,Page)) Instance->SetFontParameterValueEditorOnly(Info,Font,Page);
-    }
-    CopyInheritedBaseOverrides(Source,Instance);
+    CopySurfaceParameters(Source,Instance);
     if (Model==ENPRRimShadingModel::Subsurface)
     { Instance->BasePropertyOverrides.bOverride_ShadingModel=false; }
     Instance->PostEditChange();
@@ -249,7 +269,94 @@ UMaterialInstanceConstant* NPRRimMaterialBuilder::Build(UMaterialInterface* Sour
 bool NPRRimMaterialBuilder::Save(UMaterialInstanceConstant* Material, FString& Error)
 {
     if (!Material) { Error=TEXT("没有可保存的 Rim 材质。"); return false; }
-    if (!SaveRimAsset(Material->GetMaterial(),Error) || !SaveRimAsset(Material,Error)) return false;
+    if (!SaveDerivedSurfaceAsset(Material->GetMaterial(),Error) || !SaveDerivedSurfaceAsset(Material,Error)) return false;
     FAssetRegistryModule::AssetCreated(Material->GetMaterial()); FAssetRegistryModule::AssetCreated(Material);
     return true;
+}
+
+UMaterialInstanceConstant* NPRMatCapMaterialBuilder::Build(UMaterialInterface* Source, FString& Error)
+{
+    Error.Reset();
+    if (!IsValid(Source) || !Source->GetMaterial() || Source->GetMaterial()->MaterialDomain != MD_Surface ||
+        (Source->GetBlendMode() != BLEND_Opaque && Source->GetBlendMode() != BLEND_Masked))
+    {
+        Error = TEXT("MatCap 支持不透明和 Masked 表面材质。");
+        return nullptr;
+    }
+    const auto* Root = Source->GetMaterial()->GetEditorOnlyData()->FrontMaterial.Expression;
+    if (Root && !Root->IsA<UMaterialExpressionSubstrateToonBSDF>() &&
+        !Root->IsA<UMaterialExpressionSubstrateShadingModels>() && !Root->IsA<UMaterialExpressionSubstrateSlabBSDF>())
+    {
+        Error = TEXT("MatCap 暂不支持从复杂 Substrate 分层派生材质。");
+        return nullptr;
+    }
+
+    auto* Material = DuplicateObject<UMaterial>(Source->GetMaterial(), GetTransientPackage());
+    Material->ClearFlags(RF_Public | RF_Standalone);
+    Material->SetFlags(RF_Transient);
+    if (!FNPRMatCapParameters::IsSupported(Source))
+    {
+        auto* Contribution = NPRMatCapGraph::Add(*Material);
+        if (!Contribution)
+        {
+            Error = TEXT("无法加载 MatCap 的默认贴图。");
+            return nullptr;
+        }
+        if (!Extend(Material, ENPRRimShadingModel::KeepOriginal, Contribution, Error)) return nullptr;
+    }
+    else
+    {
+        NPRMatCapGraph::UpgradeSubstrateNormal(*Material);
+    }
+    Material->PostEditChange();
+    auto* Instance = NewObject<UMaterialInstanceConstant>(GetTransientPackage(), NAME_None, RF_Transient);
+    Instance->SetParentEditorOnly(Material);
+    CopySurfaceParameters(Source, Instance);
+    Instance->PostEditChange();
+    Instance->EnsureIsComplete();
+    const FMaterialResource* Resource = Instance->GetMaterialResource(GMaxRHIShaderPlatform);
+    if (!Resource || !Resource->GetCompileErrors().IsEmpty())
+    {
+        Error = TEXT("MatCap 材质编译失败：") + (Resource ? FString::Join(Resource->GetCompileErrors(), TEXT("\n")) : FString(TEXT("没有材质资源")));
+        return nullptr;
+    }
+    return Instance;
+}
+
+UMaterialInstanceConstant* NPRMatCapMaterialBuilder::Bake(UMaterialInstanceConstant* Preview, const FString& Root, FString& Error)
+{
+    Error.Reset();
+    if (!IsValid(Preview) || !Root.StartsWith(TEXT("/Game/")) || !FPackageName::IsValidLongPackageName(Root))
+    {
+        Error = TEXT("保存 MatCap 需要有效预览和 /Game 下的目录。");
+        return nullptr;
+    }
+    auto& AssetTools = FAssetToolsModule::GetModule().Get();
+    FString Package, Name;
+    AssetTools.CreateUniqueAssetName(Root / TEXT("M_MatCap"), TEXT(""), Package, Name);
+    auto* Material = DuplicateObject<UMaterial>(Preview->GetMaterial(), CreatePackage(*Package), *Name);
+    Material->ClearFlags(RF_Transient);
+    Material->SetFlags(RF_Public | RF_Standalone);
+    Material->PostEditChange();
+    AssetTools.CreateUniqueAssetName(Root / TEXT("MI_MatCap"), TEXT(""), Package, Name);
+    auto* Instance = DuplicateObject<UMaterialInstanceConstant>(Preview, CreatePackage(*Package), *Name);
+    Instance->ClearFlags(RF_Transient);
+    Instance->SetFlags(RF_Public | RF_Standalone);
+    Instance->SetParentEditorOnly(Material);
+    Instance->PostEditChange();
+    Instance->EnsureIsComplete();
+    const FMaterialResource* Resource = Instance->GetMaterialResource(GMaxRHIShaderPlatform);
+    if (!Resource || !Resource->GetCompileErrors().IsEmpty())
+    {
+        Error = TEXT("已生成的 MatCap 材质无法编译。");
+        return nullptr;
+    }
+    if (!SaveDerivedSurfaceAsset(Material, Error) || !SaveDerivedSurfaceAsset(Instance, Error))
+    {
+        Error = TEXT("无法保存生成的 MatCap 资产。");
+        return nullptr;
+    }
+    FAssetRegistryModule::AssetCreated(Material);
+    FAssetRegistryModule::AssetCreated(Instance);
+    return Instance;
 }

@@ -179,7 +179,7 @@ struct SNPRRimEditor::FImpl : FNotifyHook
             const bool Owned=Component->OwnsBoundMaterials();
             Component->RestoreMaterials();
             if (Draft.Temporary) Component->DestroyComponent();
-            else if (Owned) { FString Error;Component->ApplyConfiguredRim(Error); }
+            else if (Owned) Component->ApplySavedEffects();
         }
         Drafts.Reset();Detach();
     }
@@ -310,6 +310,10 @@ struct SNPRRimEditor::FImpl : FNotifyHook
         for (UNPRStyleBindingComponent* Existing : TInlineComponentArray<UNPRStyleBindingComponent*>(Selected))
             if (Existing->RimMesh == Options->Mesh && Existing->RimSlotIndex == Options->SlotIndex)
             { Binding = Existing; return Existing; }
+        for (UNPRStyleBindingComponent* Existing : TInlineComponentArray<UNPRStyleBindingComponent*>(Selected))
+            if (Existing->FindMatCap(Options->Mesh, Options->SlotIndex) &&
+                (Existing->RimSlotIndex == INDEX_NONE || Existing->RimSlotIndex == Options->SlotIndex))
+            { Binding = Existing; return Existing; }
         UNPRStyleBindingComponent* Created = NewObject<UNPRStyleBindingComponent>(Selected,NAME_None,RF_Transient|RF_Transactional);
         Created->RegisterComponent();
         Binding = Created;
@@ -362,17 +366,20 @@ struct SNPRRimEditor::FImpl : FNotifyHook
         if(!ExplicitApply && Component->HasTrackedMaterials() && !Component->OwnsBoundMaterials())
         { return Fail(TEXT("目标材质已被其他系统替换；已保留外部材质。需要覆盖时请在该槽重新勾选启用 Rim。")); }
         if (ExplicitApply && Component->HasTrackedMaterials() && !Component->OwnsBoundMaterials()) Options->GeneratedMaterial=nullptr;
+        auto* Owned = Component->GetOwnedMaterial(Options->Mesh,Options->SlotIndex);
+        const bool bCombined = Owned && Component->FindMatCap(Options->Mesh, Options->SlotIndex);
         const bool Rebind=Recompose || !IsValid(Options->GeneratedMaterial) ||
             !Component->IsRimBoundTo(Options->Mesh,Options->SlotIndex) ||
-            Component->GetOwnedMaterial(Options->Mesh,Options->SlotIndex)->Parent!=Options->GeneratedMaterial;
+            (!bCombined && Owned->Parent!=Options->GeneratedMaterial);
         if (Recompose || !IsValid(Options->GeneratedMaterial))
         {
-            auto* Generated=NPRRimMaterialBuilder::Build(SourceMaterial(Options->Mesh,Options->SlotIndex),Options->ShadingModel,Error);
+            auto* Source = Component->FindMatCap(Options->Mesh, Options->SlotIndex) ? Options->Mesh->GetMaterial(Options->SlotIndex) : SourceMaterial(Options->Mesh, Options->SlotIndex);
+            auto* Generated=NPRRimMaterialBuilder::Build(Source,Options->ShadingModel,Error);
             if (!Generated) { Message(Error,true); return false; }
             Options->GeneratedMaterial=Generated;
         }
         const bool OK = !Rebind && Component->IsRimBoundTo(Options->Mesh,Options->SlotIndex)
-            ? Component->SetRimParameters(Parameters,Error)
+            ? Component->SetRimParametersForSlot(Options->SlotIndex,Parameters,Error)
             : Component->ApplyRimMaterial(Options->Mesh,Options->SlotIndex,Options->GeneratedMaterial,Parameters,Error);
         if (!OK) { return Fail(Error); }
         bPreview = true;
@@ -467,7 +474,7 @@ struct SNPRRimEditor::FImpl : FNotifyHook
         }
         bTemporary=false;Selected->MarkPackageDirty();
         const bool Saved=FEditorFileUtils::SaveLevel(Selected->GetLevel());
-        for(auto& Draft:Drafts) {FString RestoreError;Draft.Component->ApplyConfiguredRim(RestoreError);}
+        for(auto& Draft:Drafts) Draft.Component->ApplySavedEffects();
         bPreview=Binding.IsValid()&&Binding->OwnsBoundMaterials();BuildTargets();
         Message(Saved?TEXT("角色各材质槽的 Rim 已保存。原材质和贴图未改写。"):
             TEXT("关卡未保存；Rim 仍在预览，请重新保存。"),!Saved);

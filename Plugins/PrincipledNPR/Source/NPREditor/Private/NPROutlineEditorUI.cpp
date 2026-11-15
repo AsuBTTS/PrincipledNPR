@@ -1,6 +1,7 @@
 #include "NPROutlineEditorUI.h"
 #include "NPRRimEditorUI.h"
 #include "NPRToonEditorUI.h"
+#include "NPRMatCapEditorUI.h"
 #include "NPRCharacterPreview.h"
 #include "NPRModulationEditorLibrary.h"
 #include "NPRStyleBindingComponent.h"
@@ -545,7 +546,8 @@ public:
                         EffectFilter==TEXT("HullOutline")?TEXT("只看反向壳描边 / 非后处理"):
                         EffectFilter==TEXT("ScreenOutline")?TEXT("只看屏幕空间描边 / 后处理"):
                         EffectFilter==TEXT("Surface")?TEXT("只看表面组合 / 不含 Rim 与描边"):
-                        EffectFilter==TEXT("Toon")?TEXT("Toon 表面 / 不含 Rim 与描边"):TEXT("已应用效果组合 / 当前角色"));})]
+                        EffectFilter==TEXT("Toon")?TEXT("Toon 表面 / 不含 Rim 与描边"):
+                        EffectFilter==TEXT("MatCap")?TEXT("MatCap / 当前材质槽"):TEXT("已应用效果组合 / 当前角色"));})]
                     + SVerticalBox::Slot().FillHeight(1)[Current.ToSharedRef()]]];
     }
     virtual TSharedRef<SWidget> Widget() override { return Content.ToSharedRef(); }
@@ -588,11 +590,12 @@ public:
                 for(auto* Binding:TInlineComponentArray<UNPROutlineComponent*>(Source.Get()))
                     if(Binding->TargetMesh==Mesh && Binding->MaterialSlotIndex==I && Base==Binding->ConvertedMaterial) Base=Binding->OriginalMaterial;
                 A->SetMaterial(I,Base);
-                if(bSolo || EffectFilter==TEXT("Surface") || EffectFilter==TEXT("Toon") || EffectFilter==TEXT("HullOutline") || EffectFilter==TEXT("ScreenOutline"))
+                if(bSolo || EffectFilter==TEXT("Surface") || EffectFilter==TEXT("Toon") || EffectFilter==TEXT("MatCap") || EffectFilter==TEXT("HullOutline") || EffectFilter==TEXT("ScreenOutline"))
                 {
                     const bool SelectedRim=bSolo && ((!RimTarget.IsValid()) || (Mesh==RimTarget.Get() && I==RimSlot));
                     const bool SelectedToon=EffectFilter==TEXT("Toon")&&(!RimTarget.IsValid()||(Mesh==RimTarget.Get()&&I==RimSlot));
-                    if(SelectedRim || EffectFilter==TEXT("Surface") || SelectedToon)
+                    const bool SelectedMatCap=EffectFilter==TEXT("MatCap")&&(!RimTarget.IsValid()||(Mesh==RimTarget.Get()&&I==RimSlot));
+                    if(SelectedRim || EffectFilter==TEXT("Surface") || SelectedToon || SelectedMatCap)
                     {
                         // Clone the live parent. Disable only the independent second contribution in this preview.
                         auto& Stored=SoloMaterials.FindOrAdd(Mesh).FindOrAdd(I);
@@ -607,6 +610,8 @@ public:
                         Stored.SourceHash=Hash;Stored.bInitialized=true;
                         if(bSolo) MID->SetScalarParameterValue(TEXT("NPR_AdditionalEmissiveScale"),0.f);
                         else MID->SetScalarParameterValue(FName(NPRRimContract::IntensityMaterialName),0.f);
+                        if (!SelectedMatCap) MID->SetScalarParameterValue(NPRMatCapContract::Weight,0.f);
+                        if (SelectedMatCap) MID->SetScalarParameterValue(TEXT("NPR_AdditionalEmissiveScale"),0.f);
                         B->SetMaterial(I,MID);
                     }
                     else B->SetMaterial(I,Base);
@@ -1159,6 +1164,7 @@ public:
                     + SVerticalBox::Slot().AutoHeight().Padding(0,0,0,6)[SNew(STextBlock).Text(FText::FromString(TEXT("非后处理"))).Font(FCoreStyle::GetDefaultFontStyle("Bold",12))]
                     + SVerticalBox::Slot().AutoHeight()[SNew(SWrapBox).UseAllottedSize(true).InnerSlotPadding(FVector2D(6,6))
                         + SWrapBox::Slot()[CategoryEntry(TEXT("Rim Light · 边缘光"),TEXT("RimLight"))]
+                        + SWrapBox::Slot()[CategoryEntry(TEXT("MatCap · 材质光泽"),TEXT("MatCap"))]
                         + SWrapBox::Slot()[CategoryEntry(TEXT("反向壳 · 几何描边"),TEXT("HullOutline"))]
                         + SWrapBox::Slot()[CategoryEntry(TEXT("Surface · 表面组合"),TEXT("Surface"))]]]]
                 + SWrapBox::Slot()[SNew(SBorder).Padding(10)[SNew(SVerticalBox)
@@ -1187,7 +1193,7 @@ public:
 private:
     TSharedRef<SWidget> CategoryEntry(const TCHAR* Label,FName Effect)
     {return SNew(SButton).Text(FText::FromString(Label)).OnClicked_Lambda([this,Effect]
-        {if(Effect==TEXT("RimLight"))FNPROutlineEditorUI::SelectFeature(TEXT("Rim"));else if(Effect==TEXT("Toon"))FNPROutlineEditorUI::SelectFeature(TEXT("Toon"));else FilterEffect(Effect);return FReply::Handled();});}
+        {if(Effect==TEXT("RimLight"))FNPROutlineEditorUI::SelectFeature(TEXT("Rim"));else if(Effect==TEXT("Toon")||Effect==TEXT("MatCap"))FNPROutlineEditorUI::SelectFeature(Effect);else FilterEffect(Effect);return FReply::Handled();});}
     void BuildRows()
     {
         const auto Rows=UNPRModulationEditorLibrary::GetMeshEffects(Actor.Get());
@@ -1204,8 +1210,8 @@ private:
             {
                 Buttons->AddSlot()[SNew(SButton).Text(FText::FromString(TEXT("只看 ")+Effect.ToString()))
                     .OnClicked_Lambda([this,Mesh,Slot,Effect]{Filter=Effect;Preview->SetRimTarget(Mesh.Get(),Slot);Preview->SetEffectFilter(Effect);Preview->Isolate(Mesh.Get(),Slot);return FReply::Handled();})];
-                if(Effect==TEXT("RimLight")||Effect==TEXT("Toon")||Effect==TEXT("HullOutline")||Effect==TEXT("ScreenOutline"))
-                    Buttons->AddSlot()[SNew(SButton).Text(FText::FromString(Effect==TEXT("RimLight")?TEXT("编辑 Rim Light"):Effect==TEXT("Toon")?TEXT("编辑 Toon"):TEXT("编辑描边")))
+                if(Effect==TEXT("RimLight")||Effect==TEXT("Toon")||Effect==TEXT("MatCap")||Effect==TEXT("HullOutline")||Effect==TEXT("ScreenOutline"))
+                    Buttons->AddSlot()[SNew(SButton).Text(FText::FromString(Effect==TEXT("RimLight")?TEXT("编辑 Rim Light"):Effect==TEXT("Toon")?TEXT("编辑 Toon"):Effect==TEXT("MatCap")?TEXT("编辑 MatCap"):TEXT("编辑描边")))
                         .OnClicked_Lambda([Mesh,Slot,Effect]{FNPROutlineEditorUI::EditEffect(Mesh.Get(),Slot,Effect);return FReply::Handled();})];
             }
             RowsBox->AddSlot().AutoHeight().Padding(0,4)[SNew(SBorder).Padding(8)[SNew(SVerticalBox)
@@ -1233,24 +1239,27 @@ public:
                     + SWrapBox::Slot()[FeatureEntry(TEXT("NPR 调制"),2)]
                     + SWrapBox::Slot()[FeatureEntry(TEXT("Outline · 描边"),0)]
                     + SWrapBox::Slot()[FeatureEntry(TEXT("Rim Light · 边缘光"),1)]
-                    + SWrapBox::Slot()[FeatureEntry(TEXT("Toon · 光照"),3)]]]
+                    + SWrapBox::Slot()[FeatureEntry(TEXT("Toon · 光照"),3)]
+                    + SWrapBox::Slot()[FeatureEntry(TEXT("MatCap · 材质光泽"),4)]]]
             + SVerticalBox::Slot().FillHeight(1)
             [SAssignNew(FeaturePages,SWidgetSwitcher)
                 + SWidgetSwitcher::Slot()[SAssignNew(Outline,SNPROutlineEditor)]
                 + SWidgetSwitcher::Slot()[SAssignNew(Rim,SNPRRimEditor)]
                 + SWidgetSwitcher::Slot()[SAssignNew(Overview,SNPRActorEffects)]
                 + SWidgetSwitcher::Slot()[SAssignNew(Toon,SNPRToonEditor)]
+                + SWidgetSwitcher::Slot()[SAssignNew(MatCap,SNPRMatCapEditor)]
             ]
         ];
     }
     void ShowOutline() {Show(0);}
     void Show(int32 Feature)
-    {ActiveFeature=Feature;FeaturePages->SetActiveWidgetIndex(Feature);if(Feature==2){Overview->Reload();Overview->FilterEffect(TEXT("All"));}else if(Feature==1)Rim->SyncSelection();else if(Feature==3)Toon->SyncSelection();else Outline->SyncSelection();}
+    {ActiveFeature=Feature;FeaturePages->SetActiveWidgetIndex(Feature);if(Feature==2){Overview->Reload();Overview->FilterEffect(TEXT("All"));}else if(Feature==1)Rim->SyncSelection();else if(Feature==3)Toon->SyncSelection();else if(Feature==4)MatCap->SyncSelection();else Outline->SyncSelection();}
     bool EditEffect(UMeshComponent* Mesh,int32 Slot,FName Effect)
     {
         if(!IsValid(Mesh)||Slot<0||Slot>=Mesh->GetNumMaterials())return false;
         if(Effect==TEXT("RimLight")){Show(1);Rim->EditTarget(Mesh,Slot);return true;}
         if(Effect==TEXT("Toon")){Show(3);Toon->EditTarget(Mesh,Slot);return true;}
+        if(Effect==TEXT("MatCap")){Show(4);MatCap->EditTarget(Mesh,Slot);return true;}
         if(Effect==TEXT("HullOutline")||Effect==TEXT("ScreenOutline")){Show(0);return true;}
         return false;
     }
@@ -1259,11 +1268,12 @@ public:
         if(Feature==TEXT("Overview")){Show(2);return true;}
         if(Feature==TEXT("Rim")){Show(1);return true;}
         if(Feature==TEXT("Toon")){Show(3);return true;}
+        if(Feature==TEXT("MatCap")){Show(4);return true;}
         if(Feature==TEXT("Outline")){Show(0);return true;}
         if(Feature==TEXT("Surface")||Feature==TEXT("HullOutline")||Feature==TEXT("ScreenOutline")){Show(2);Overview->FilterEffect(Feature);return true;}
         return false;
     }
-    TSharedPtr<FNPRCharacterPreview> CurrentPreview()const{return ActiveFeature==1?Rim->GetPreview():ActiveFeature==2?Overview->GetPreview():ActiveFeature==3?Toon->GetPreview():nullptr;}
+    TSharedPtr<FNPRCharacterPreview> CurrentPreview()const{return ActiveFeature==1?Rim->GetPreview():ActiveFeature==2?Overview->GetPreview():ActiveFeature==3?Toon->GetPreview():ActiveFeature==4?MatCap->GetPreview():nullptr;}
     TSharedPtr<SNPROutlineEditor> GetOutline() const { return Outline; }
 private:
     TSharedRef<SWidget> FeatureEntry(const TCHAR* Label,int32 Feature)
@@ -1279,6 +1289,7 @@ private:
     TSharedPtr<SNPROutlineEditor> Outline;
     TSharedPtr<SNPRRimEditor> Rim;
     TSharedPtr<SNPRToonEditor> Toon;
+    TSharedPtr<SNPRMatCapEditor> MatCap;
     TSharedPtr<SNPRActorEffects> Overview;
 };
 TWeakPtr<SNPRModulationEditor> ActiveWorkspace;

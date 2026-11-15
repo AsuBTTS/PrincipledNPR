@@ -108,7 +108,7 @@ const parameterNotes = {
   HairShiftAngleRad: ['发丝高光偏转角', '在发束切线与法线组成的平面内转动高光方向；正负方向取决于资产记录的发根到发梢方向。'],
   StrandAnisotropy: ['发束高光拉伸', '让高光沿发丝方向变成长条；这是统一参数的视觉控制，不等同于 UE 原生各向异性设置。'],
   OutlineWidthPx: ['描边宽度（像素）', '描述最终输出画面中的描边像素宽度，需要独立描边实现；目前尚未自动连接到现有 Outline 控制。'],
-  MatCapWeight: ['MatCap 混合权重', '控制 MatCap（用贴图模拟环境反光）占最终材质颜色的比例；还需要指定贴图和混合方式。'],
+  MatCapWeight: ['MatCap 混合权重', '缩放线性叠加的 MatCap 光泽贡献；按槽启用并选贴图后生效。'],
   ChromaScale: ['颜色饱和度倍率', '控制颜色鲜艳程度的倍率；完整实现前还要确定颜色计算方式和如何保持亮度，这项草案目前关闭。'],
 }
 const unitNames = {
@@ -188,7 +188,9 @@ const documentationPages = [
  ['Documentation/Research/ToonLive/SourceMechanism.md', 'docs/research/toon-profile-mechanism.md'],
  ['Documentation/Research/ToonLive/AdapterPlan.md', 'docs/research/toon-adapter-plan.md'],
  ['Documentation/ToonLight/使用说明与实现.md', 'docs/features/toon-shading.md'],
- ['Documentation/ToonLight/ValidationReport.md', 'docs/reference/toon-validation.md']
+ ['Documentation/ToonLight/ValidationReport.md', 'docs/reference/toon-validation.md'],
+ ['Documentation/MatCap/使用说明与实现.md', 'docs/features/matcap.md'],
+ ['Documentation/MatCap/Validation.md', 'docs/reference/matcap-validation.md']
 ]
 const toPosix = p => p.split(path.sep).join('/')
 const localLinks = /\]\(([^\s)]+)(?:\s+"[^"]*")?\)/g
@@ -225,6 +227,7 @@ else if(!fs.existsSync(path.join(root,target)) || read(target)!==generated) thro
 // Recreate a small set of original evidence/source files for offline static hosting.
 const resources=[...sourcePaths,
  ...files(path.join(root,'Documentation/ToonLight')).map(p=>toPosix(path.relative(root,p))),
+ ...files(path.join(root,'Documentation/MatCap')).map(p=>toPosix(path.relative(root,p))),
  ...files(path.join(root,'Documentation/Research')).map(p=>toPosix(path.relative(root,p))),
  'Documentation/HistoryArchive.json',
  'Documentation/Surface/Implementation.md',

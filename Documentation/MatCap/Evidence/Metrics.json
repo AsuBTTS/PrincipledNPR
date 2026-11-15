@@ -1,0 +1,15 @@
+{
+  "center": [0.50293, 0.50293, 0.25],
+  "half": [0.251465, 0.251465, 0.125],
+  "half_error": 0,
+  "horizontal": [0.253418, 0.751465],
+  "vertical": [0.258057, 0.756348],
+  "off_axis_fixed": 0.35376,
+  "off_axis_corrected": 0.510742,
+  "camera_yaw_u_minus30_0_plus30": [0.25, 0.5, 0.753906],
+  "normal_flat_uv": [0.50293, 0.50293],
+  "normal_mapped_uv": [0.806152, 0.504395],
+  "normal_excluded_uv": [0.50293, 0.50293],
+  "exposure_minus1_ev": [0.273682, 0.27417, 0.136597],
+  "exposure_plus1_ev": [1.09277, 1.10352, 0.534668]
+}

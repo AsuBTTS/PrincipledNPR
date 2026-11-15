@@ -3,6 +3,7 @@
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
 #include "NPRRimParameters.h"
+#include "NPRMatCapParameters.h"
 #include "NPRSemanticTypes.h"
 #include "NPRStyleBindingComponent.generated.h"
 
@@ -86,6 +87,15 @@ public:
     UFUNCTION(BlueprintCallable, Category = "NPR|Toon")
     bool ApplyConfiguredToon(FString& OutError);
 
+    /** Save/use an editor-prepared MatCap graph on this component's effective material slot. */
+    bool ConfigureMatCap(const FNPRMatCapSlot& Settings, FString& OutError);
+
+    const FNPRMatCapSlot* FindMatCap(const UMeshComponent* Mesh, int32 Slot) const;
+    bool ApplyConfiguredMatCap(FString& OutError);
+
+    UFUNCTION(BlueprintCallable, Category="NPR|MatCap")
+    bool SetMatCapParameters(UMeshComponent* Mesh, int32 SlotIndex, const FNPRMatCapParameters& Parameters, FString& OutError);
+
     UPROPERTY(EditInstanceOnly, BlueprintReadOnly, Category = "NPR|Toon")
     TObjectPtr<UMeshComponent> ToonMesh = nullptr;
 
@@ -141,6 +151,14 @@ public:
     /** Validates the four canonical Rim values and every active slot before any MID write. */
     UFUNCTION(BlueprintCallable, Category = "NPR|Binding")
     bool SetRimParameters(const FNPRRimParameters& Parameters, FString& OutError);
+    bool SetRimParametersForSlot(int32 SlotIndex, const FNPRRimParameters& Parameters, FString& OutError);
+
+    bool HasMatCapSettings() const { return !MatCapSlots.IsEmpty(); }
+    void ApplySavedEffects();
+#if WITH_EDITOR
+    void SuspendMatCapForSave();
+    void ResumeMatCapAfterSave();
+#endif
 
     UFUNCTION(BlueprintCallable, Category = "NPR|Binding")
     void RestoreMaterials();
@@ -149,8 +167,17 @@ protected:
     virtual void OnRegister() override;
     virtual void OnUnregister() override;
     virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
+#if WITH_EDITOR
+    virtual void PostEditUndo() override;
+#endif
 
 private:
+    bool ApplyMatCapSlot(const FNPRMatCapSlot& Settings, FString& OutError, bool bConfigure = false);
+    bool WriteRimParameters(const FNPRRimParameters& Parameters, FString& OutError, TOptional<int32> SlotFilter);
+
+    UPROPERTY()
+    TArray<FNPRMatCapSlot> MatCapSlots;
+
     UPROPERTY(Transient)
     TObjectPtr<UMeshComponent> BoundMesh;
 
@@ -159,4 +186,8 @@ private:
 
     UPROPERTY(Transient)
     TMap<int32, TObjectPtr<UMaterialInstanceDynamic>> ActiveMaterials;
+#if WITH_EDITOR
+    TSet<int32> SuspendedSaveSlots;
+    bool bHadMatCapConfiguration = false;
+#endif
 };

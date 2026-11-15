@@ -121,9 +121,10 @@
   {
     "id": "matcap",
     "page": "features/matcap.md",
-    "status": "规划中",
+    "status": "已实现并验证",
     "evidence": [
-      "Documentation/Architecture.md"
+      "Documentation/MatCap/Validation.md",
+      "Documentation/MatCap/Evidence/Metrics.json"
     ]
   },
   {

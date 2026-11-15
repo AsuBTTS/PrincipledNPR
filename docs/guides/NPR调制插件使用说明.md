@@ -2,7 +2,7 @@
 
 # NPR调制插件使用说明
 
-更新日期：2026-10-29。我们用统一工作区选择角色、按后处理/非后处理分类查看效果，并调整描边、Rim Light 与 Toon Light。总览、共享角色视口和隔离流程见[统一效果工作区](npr-workspace.md)，Toon 的模型、曲线与区域流程见 [Toon Light](../features/toon-shading.md)。
+更新日期：2026-11-14。我们用统一工作区选择角色、按后处理/非后处理分类查看效果，并调整描边、Rim Light、Toon Light 和 MatCap。操作入口见[统一效果工作区](npr-workspace.md)。
 
 ## 1. 先分清哪些入口能用
 
@@ -12,6 +12,7 @@
 | 查看每个 Mesh 已应用的效果 | NPR 调制 → 角色效果总览 | 按 Mesh/材质槽列出本插件登记的效果，支持单效果与网格隔离 |
 | 在窗口中调整 Rim | 顶部 Rim Light；或总览中的非后处理 → Rim Light | Profile、角色槽位、实时角色视口、原材质对比和隔离；完整角色观感仍需按资产验收 |
 | 按区域调整 Toon 光照 | 顶部 Toon · 光照 | 模型选择、五参数、小曲线/放大窗口、Section 点选、私有预览和不可变风格包；质量边界见 Toon 独立说明 |
+| 按材质槽调整光泽 | 顶部 MatCap · 材质光泽 | 选择贴图、调权重、隔离、比较并应用，最后保存关卡。见 [MatCap](../features/matcap.md) |
 | 实际观察 Rim | 内容浏览器中的预览材质实例 | 可用，见 [Rim 介绍](../rim/rim_light_introduction.md) |
 | 同时保留贴图、法线、自发光并加 Rim | Surface 母材质与预览实例 | Surface 是底层组合能力；Rim 卡片默认保留原图和贴图 |
 | 一键把任意角色变为完整 Toon 风格 | 尚无完整入口 | 仍在开发 |
@@ -36,7 +37,7 @@ Outline 的“转换”只建立描边所需绑定，不会自动把整个人物
 
 `Meshes` 表示角色包含的网格组件；材质槽是其中一部分表面使用材质的位置。预览里点击模型不会自动替换关卡大纲的选中对象。
 
-顶部只保留三个入口：NPR 调制为 16 号字，Outline、Rim Light 为较小的 12 号字，按钮等高、文字垂直居中。后处理/非后处理分类在 NPR 调制总览内容中，不放在顶部导航，也不作为左侧导航。
+顶部有 NPR 调制、Outline、Rim Light、Toon 和 MatCap。NPR 调制为 16 号字，各效果为 12 号字，按钮等高、文字垂直居中。后处理和非后处理分类在 NPR 调制总览中显示。
 
 ![2026-10-20 Outline 材质槽操作的历史实机截图](/generated/source/Documentation/Outline/MaterialSlotUI/NPRModulation-Outline-UE5.8.3.jpg)
 

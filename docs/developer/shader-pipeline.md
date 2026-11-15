@@ -1,5 +1,9 @@
 # 渲染管线
 
+## MatCap
+
+`NPREditor/Private/NPRMatCapGraph.cpp` 使用 UE 原生法线、相机向量、变换、数学和纹理节点构造材质图。直接连接的 Substrate 根节点从各自的 BSDF 法线输入取样，再转为世界空间。`NPRMatCapMaterialBuilder` 复用 Rim 的原表面派生入口，将 MatCap 的线性贡献添加到传统 Emissive 或兼容的 Substrate 根节点，并在重新派生旧图时修正原有的法线接线。`NPRRuntime` 只加载和校验已保存的材质与槽配置。着色图直接在表面材质中执行，无独立渲染阶段。公式、限制及 GPU 验证见 [MatCap](../features/matcap.md)。
+
 本插件当前没有独立的 `Shaders/` 源码目录。Outline 通过 UE 材质资产实现；`Tools/create_outline_backend_assets.py` 是其可读构造来源，Screen HLSL 写在材质 Custom 节点中。HLSL 是 GPU 执行的着色程序语言；Custom 节点允许把一段 HLSL 放入材质图。
 
 ## Outline 数据流

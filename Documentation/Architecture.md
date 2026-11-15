@@ -1,5 +1,7 @@
 # Principled NPR 初步语义骨架
 
+2026-11-14 增量：逐槽 MatCap 已接入兼容表面、编辑器和保存后的运行时绑定，见 [MatCap](MatCap/使用说明与实现.md)。下文保留早期语义骨架的开发记录。
+
 2026-10-22 方案 B 增量：已增加 Surface Master Family / Recipe、共享表面函数、预制选择与绑定包链路，见 [Surface 实施记录](Surface/Implementation.md)。这不替代完整语义 Resolver；原有 Rim 与 Outline 保留。实际验收范围以新增执行记录为准。
 
 2026-10-17 补充：独立的 Outline 模块已接入角色绑定、双视口、预设与关卡保存链路，见 [Outline 技术模块报告](Outline/技术模块报告.md)。下面的 Draft 状态指完整语义解析和表面模型后端，不代表 Outline 仍为空壳。

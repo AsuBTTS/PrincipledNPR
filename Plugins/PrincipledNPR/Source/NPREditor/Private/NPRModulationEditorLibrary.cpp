@@ -49,6 +49,12 @@ TArray<FNPRMeshEffectInfo> UNPRModulationEditorLibrary::GetMeshEffects(AActor* A
                 {
                     if(Binding->ToonPackage&&Binding->ToonPackage->bHasToonParameters)
                         Add(TEXT("Toon"),TEXT("NonPostProcess"),TEXT("Toon Light / 不可变后端风格包"));
+                    if (Binding->FindMatCap(Mesh, Slot))
+                    {
+                        float Weight = 0.f;
+                        if (MID->GetScalarParameterValue(FHashedMaterialParameterInfo(NPRMatCapContract::Weight), Weight))
+                            Add(TEXT("MatCap"), TEXT("NonPostProcess"), FString::Printf(TEXT("MatCap（权重 %.3g）"), Weight));
+                    }
                     float Intensity=0.f;
                     FLinearColor Color;
                     if(MID->GetScalarParameterValue(FHashedMaterialParameterInfo(FName(NPRRimContract::IntensityMaterialName)),Intensity) &&

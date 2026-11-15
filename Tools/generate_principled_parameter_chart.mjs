@@ -36,7 +36,7 @@ const presentation = {
   HairShiftAngleRad: { name: '发丝高光偏转', kind: 'hair-shift', color: '#5298ac' },
   StrandAnisotropy: { name: '发束高光拉伸', kind: 'hair-stretch', color: '#54a8c0' },
   OutlineWidthPx: { name: '描边宽度', kind: 'outline', color: '#4aaabd', note: '全局映射尚未接通' },
-  MatCapWeight: { name: 'MatCap 混合权重', kind: 'matcap', color: '#c65b86', note: '需要贴图与混合规则' },
+  MatCapWeight: { name: 'MatCap 混合权重', kind: 'matcap', color: '#c65b86', note: '缩放线性加法光泽' },
   ChromaScale: { name: '颜色饱和度倍率', kind: 'chroma', color: '#bd7845', note: '颜色处理规则尚未定' },
 };
 

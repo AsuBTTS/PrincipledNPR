@@ -33,6 +33,10 @@ S58 中交界坐标候选 `u=(tau+1)/2` 仅在限定条件下坐标精确，不�
 
 `RimColor` 是可选增量，旧风格缺字段时继承白色；黑色和强度 0 都是有效覆写。旧 C++ 标量 Patch 仍不能保存 RGB，第④步需增加类型明确的颜色存储。第③步的 `UNPRStyleBindingComponent::SetRimParameters` 已执行四项检查和 MID 写入；先用 `ApplyPackage` 显式绑定网格，再调用此方法。它不依赖 S58 或 ToonProfile，也不代替完整的语义 Resolver。
 
+## MatCap 逐槽映射
+
+`MatCapWeight` 映射到 `NPR_MatCapWeight` 标量，直接传递 `0–1`，关闭时写 `0`。纹理、染色和遮罩是逐槽独立输入，由 `FNPRMatCapParameters` 验证。[MatCap 参数与用法](../features/matcap.md)
+
 ## Surface 预制组合（已有实现）
 
 Surface 目前多了一条已实现的局部链路：`UNPRSurfaceRecipe → ComposePackage → UNPRBackendStylePackage → ApplyPackage → 同槽 MID`。Composer 只选择指定家族中的兼容预制材质并校验参数归属和类型；Rim 仍使用上述固定 Mapping，其他技术输入使用原生 MID 参数接口。它没有实现上面的稀疏 Resolve、Profile 存储或跨后端 Execution Plan，见 [Surface 组合](../features/surface-material.md)。

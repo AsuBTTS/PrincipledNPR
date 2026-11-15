@@ -27,6 +27,7 @@ Documentation/RimLight/OriginalSurface-2026-10-26/**/*.json -text -filter -white
 # Image patterns below still use LFS.
 Documentation/Research/** -text -filter -whitespace
 Documentation/ToonLight/** -text -filter -whitespace
+Documentation/MatCap/Evidence/** -text -filter -whitespace
 SourceAssets/Wanderer/Original/*.txt -text -diff
 *.uasset filter=lfs diff=lfs merge=lfs -text
 *.umap filter=lfs diff=lfs merge=lfs -text

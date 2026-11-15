@@ -15,6 +15,7 @@
 #include "Editor.h"
 #include "IDetailsView.h"
 #include "Materials/MaterialInstanceConstant.h"
+#include "NPRRimMaterialBuilder.h"
 #include "Materials/Material.h"
 #include "Materials/MaterialExpressionSubstrate.h"
 #include "PropertyEditorModule.h"
@@ -180,7 +181,7 @@ struct SNPRToonEditor::FImpl
         if(!Options->SourceMaterial||Options->SourceMaterial->GetMaterial()!=Current->GetMaterial())
         {Options->SourceMaterial=Current;Options->PreviewMaterial=nullptr;Schedule();return;}
         // Other pages may update the same MID. Refresh uniforms without rebuilding its graph.
-        Options->PreviewMaterial->CopyMaterialUniformParametersEditorOnly(Current,false);
+        CopyNPRSurfaceParameters(*Current, *Options->PreviewMaterial, false);
         if(Options->Response.bUseArtisticSpecular&&Cast<UMaterialExpressionSubstrateToonBSDF>(Options->PreviewMaterial->GetMaterial()->GetEditorOnlyData()->FrontMaterial.Expression))
             Options->PreviewMaterial->SetScalarParameterValueEditorOnly(FMaterialParameterInfo(TEXT("NPR_ToonReferenceRoughness")),NPRToonBackend::SpecularReferenceRoughness);
         Options->SourceMaterial=Current;Options->PreviewSource=Current;

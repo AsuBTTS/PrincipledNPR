@@ -1,4 +1,6 @@
 #include "NPRToonBackend.h"
+#include "NPRMatCapGraph.h"
+#include "NPRRimMaterialBuilder.h"
 
 #include "AssetRegistry/AssetRegistryModule.h"
 #include "AssetToolsModule.h"
@@ -245,9 +247,11 @@ UMaterialInstanceConstant* NPRToonBackend::BuildPreview(UMaterialInterface* Sour
     auto* Profile=Template?DuplicateObject<UToonProfile>(Template,GetTransientPackage()):NewObject<UToonProfile>();
     Profile->ClearFlags(RF_Public|RF_Standalone);Profile->SetFlags(RF_Transient|RF_Transactional);Profile->Guid=FGuid::NewGuid();
     if(!UpdateProfile(Profile,V,S,Error)||!Convert(Parent,Model,Profile,S.bUseArtisticSpecular,Error))return nullptr;
+    NPRMatCapGraph::UpgradeSubstrateNormal(*Parent);
     Parent->PostEditChange();
     auto* Result=NewObject<UMaterialInstanceConstant>(GetTransientPackage(),NAME_None,RF_Transient|RF_Transactional);
-    Result->SetParentEditorOnly(Parent);Result->CopyMaterialUniformParametersEditorOnly(Source,true);
+    Result->SetParentEditorOnly(Parent);
+    CopyNPRSurfaceParameters(*Source, *Result, true);
     // Preserve inherited base overrides, but bind the private profile rather than a shared source override.
     TArray<UMaterialInstance*> Chain;for(auto* I=Cast<UMaterialInstance>(Source);I;I=Cast<UMaterialInstance>(I->Parent))Chain.Add(I);
     for(int32 Index=Chain.Num()-1;Index>=0;--Index)

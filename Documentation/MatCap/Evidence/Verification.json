@@ -1,0 +1,88 @@
+{
+  "engine": "5.8.4-58902052",
+  "rhi": "D3D12 SM6",
+  "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+  "date_beijing": "2026-11-14",
+  "editor": [
+    {
+      "name": "NPR.Editor.RimOriginalMaterial",
+      "result": "Success"
+    },
+    {
+      "name": "NPR.Editor.RimWorkflow",
+      "result": "Success"
+    },
+    {
+      "name": "NPR.MatCap.CreateDemoMap",
+      "result": "Success"
+    },
+    {
+      "name": "NPR.MatCap.EditorWorkflow",
+      "result": "Success"
+    },
+    {
+      "name": "NPR.MatCap.ProjectionGPU",
+      "result": "Success"
+    },
+    {
+      "name": "NPR.MatCap.Window",
+      "result": "Success"
+    },
+    {
+      "name": "NPR.Rim.LiveBinding",
+      "result": "Success"
+    },
+    {
+      "name": "NPR.Rim.ProfileBinding",
+      "result": "Success"
+    },
+    {
+      "name": "NPR.Surface.Composer",
+      "result": "Success"
+    },
+    {
+      "name": "NPR.Toon.Contract",
+      "result": "Success"
+    }
+  ],
+  "game": "NPR.MatCap.RestoredMap: Success",
+  "editor_saved_map": "Both actual MIDs restored their saved textures and weight 0.65",
+  "cook": "Win64 Development: Cook, Stage and Archive succeeded with -SkipZenStore",
+  "extended_validation": {
+    "date_beijing": "2026-11-15",
+    "editor_success_count": 10,
+    "editor_failed_count": 0,
+    "render_test": "NPR.MatCap.ProjectionGPU: Success (camera yaw, perspective, Toon normal map, legacy graph upgrade and manual exposure)",
+    "cook": "Win64 Development: Cook, Stage and Archive succeeded with -SkipZenStore",
+    "game": "NPR.MatCap.RestoredMap: Success"
+  },
+  "full_regression": {
+    "date_beijing": "2026-11-15",
+    "editor_filter": "NPR.",
+    "editor_success_count": 24,
+    "editor_failed_count": 0,
+    "combined_material": "Cold MatCap-to-Toon conversion, reapplying MatCap to a revised Toon parent, and clearing a baked mask passed",
+    "editor_saved_map": "Saved a copy of the demo and reopened it after loading a blank map. Both MIDs retained their textures and weight 0.65.",
+    "cook": "Win64 Development: Build, Cook, Stage and Archive succeeded",
+    "game": "NPR.MatCap.RestoredMap: Success (both demo meshes, invalid input, mask reset and live zero weight)"
+  },
+  "guide_capture": {
+    "date_beijing": "2026-11-15",
+    "map": "/Game/NPR/MatCapDemo/L_MatCapDemo",
+    "test": "NPR.MatCap.GuideCapture",
+    "editor_filter": "NPR.",
+    "editor_success_count": 25,
+    "editor_failed_count": 0,
+    "method": "Native UE Slate window capture of the MatCap editor preview",
+    "width_px": 1506,
+    "height_px": 880,
+    "slot": 0,
+    "weight": 0.65,
+    "preview_lighting": "Studio",
+    "sha256": {
+      "GuideSphereComparison.png": "8339b459a8d7764b509d580f3bb1dc45c3380dd6276002e99238107ccdac36b0",
+      "GuideBeveledCool.png": "6ac57964caba30555a19a287f2be4a3c020dc4bd560c98b831ca4fbf1703287e",
+      "GuideBeveledWarm.png": "d6a01c71d5604d116886222196c4c87b7d4b3de3ba8f40e8a0dd281c539dfdff"
+    }
+  }
+}

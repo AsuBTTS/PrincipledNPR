@@ -1,5 +1,16 @@
 # 更新记录
 
+## 2026-11-15 MatCap 法线与 GPU 验证
+
+- 修正直接连接的 Substrate 材质读取 BSDF 法线的方式。此前生成的资产可在 MatCap 面板重新应用并保存。GPU 回归覆盖镜头旋转、法线贴图、透视、手动曝光和旧图升级。见 [MatCap](features/matcap.md)。
+- 修复 Toon 与 MatCap 组合后清空遮罩仍沿用旧值的问题，以及编辑器转换刚加载的 MatCap 材质时复制参数可能发生的崩溃。转换到直接 Substrate 根节点时同步更新 MatCap 的法线连接。
+- 对齐演示关卡的大纲名称和文档步骤，补充 UE 原生窗口的原材质对比、同一倒角模型的冷暖贴图对比，以及可复现的 GPU 判定条件。见 [MatCap 验证](reference/matcap-validation.md)。
+
+## 2026-11-14：MatCap 材质光泽
+
+- 将 `MatCapWeight` 接到相机投影的加法光泽层，提供光泽贴图、染色、UV0 遮罩、法线影响和透视修正。使用 UE 材质节点追加到兼容的原表面。
+- 在 NPR 调制中加入按槽预览、隔离、对比和应用。关卡保存每槽参数，运行时从已生成材质恢复。新增示例关卡、两张原创纹理与倒角测试网格。见 [MatCap](features/matcap.md)。
+
 ## 2026-10-28 至 29：Toon Light 参数、后端与编辑页
 
 - 接通既有五个 Generic Toon 语义参数、稀疏覆写、模型选择与 S58 Adapter。坐标、原生 LUT 过滤和高光参考近似分别说明；保留原始高级 Profile 控制与既有语义默认值，见 [Toon Light](features/toon-shading.md)。

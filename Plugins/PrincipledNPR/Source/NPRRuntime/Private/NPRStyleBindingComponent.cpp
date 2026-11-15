@@ -46,9 +46,10 @@ bool FNPRRimSurfaceInputs::Validate(FString& OutError) const
 bool UNPRStyleBindingComponent::IsRimBoundTo(const UMeshComponent* Mesh, int32 SlotIndex) const
 {
     const auto* Active = ActiveMaterials.Find(SlotIndex);
-    return IsValid(Mesh) && BoundMesh == Mesh && ActiveMaterials.Num() == 1 && Active &&
+    return IsValid(Mesh) && BoundMesh == Mesh && Active &&
         IsValid(Active->Get()) && SlotIndex >= 0 && SlotIndex < Mesh->GetNumMaterials() &&
-        Mesh->GetMaterial(SlotIndex) == Active->Get();
+        Mesh->GetMaterial(SlotIndex) == Active->Get() &&
+        (ActiveMaterials.Num() == 1 || FindMatCap(Mesh, SlotIndex) || (RimMesh == Mesh && RimSlotIndex == SlotIndex));
 }
 
 bool UNPRStyleBindingComponent::OwnsBoundMaterials() const
@@ -134,7 +135,7 @@ bool UNPRStyleBindingComponent::ApplyRimPreview(UMeshComponent* Mesh, int32 Slot
         MID->SetTextureParameterValue(TEXT("NPR_EmissiveTexture"), Inputs.EmissiveTexture);
     }
     MID->SetScalarParameterValue(TEXT("NPR_EmissiveScale"), Inputs.EmissiveScale);
-    if (!SetRimParameters(Parameters, OutError))
+    if (!SetRimParametersForSlot(SlotIndex, Parameters, OutError))
     {
         RestoreMaterials();
         return false;
@@ -157,8 +158,8 @@ bool UNPRStyleBindingComponent::ApplyConfiguredRim(FString& OutError)
     }
     // The generated Toon copy already contains the original Rim contribution. Updating Rim
     // must keep this shared material rather than replacing it with the older Rim parent.
-    if(ToonPackage && ToonMesh==RimMesh && GetOwnedMaterial(RimMesh,RimSlotIndex))
-        return SetRimParameters(Parameters,OutError);
+    if (ToonPackage && ToonMesh == RimMesh && GetOwnedMaterial(RimMesh, RimSlotIndex))
+        return SetRimParametersForSlot(RimSlotIndex, Parameters, OutError);
     return IsValid(RimGeneratedMaterial)
         ? ApplyRimMaterial(RimMesh, RimSlotIndex, RimGeneratedMaterial, Parameters, OutError)
         : ApplyRimPreview(RimMesh, RimSlotIndex, RimRecipe, RimSurfaceInputs, Parameters, OutError);
@@ -192,12 +193,20 @@ bool UNPRStyleBindingComponent::ApplyRimMaterial(UMeshComponent* Mesh, int32 Slo
     FNPRBackendMaterialSlot& Slot=Package->MaterialSlots.AddDefaulted_GetRef();
     Slot.SlotIndex=SlotIndex; Slot.Material=Material;
     if (IsValid(BoundMesh) && BoundMesh!=Mesh) RestoreMaterials();
-    return ApplyPackage(Mesh,Package,OutError) && SetRimParameters(Parameters,OutError);
+    return ApplyPackage(Mesh,Package,OutError) && SetRimParametersForSlot(SlotIndex,Parameters,OutError);
 }
 
 void UNPRStyleBindingComponent::OnRegister()
 {
     Super::OnRegister();
+    ApplySavedEffects();
+}
+
+void UNPRStyleBindingComponent::ApplySavedEffects()
+{
+#if WITH_EDITOR
+    bHadMatCapConfiguration = HasMatCapSettings();
+#endif
     if(IsValid(ToonMesh)&&IsValid(ToonPackage))
     {
         FString Error;
@@ -212,6 +221,9 @@ void UNPRStyleBindingComponent::OnRegister()
             UE_LOG(LogTemp, Warning, TEXT("NPR Rim binding on '%s' was not restored: %s"), *GetNameSafe(GetOwner()), *Error);
         }
     }
+    FString MatCapError;
+    if (!ApplyConfiguredMatCap(MatCapError))
+        UE_LOG(LogTemp, Warning, TEXT("NPR MatCap binding on '%s' was not restored: %s"), *GetNameSafe(GetOwner()), *MatCapError);
 }
 
 void UNPRStyleBindingComponent::OnUnregister()
@@ -249,13 +261,30 @@ bool UNPRStyleBindingComponent::ApplyPackage(UMeshComponent* Mesh, const UNPRBac
     TMap<int32, TObjectPtr<UMaterialInstanceDynamic>> NewMaterials;
     for (const FNPRBackendMaterialSlot& Slot : Package->MaterialSlots)
     {
-        UMaterialInstanceDynamic* MID = UMaterialInstanceDynamic::Create(Slot.Material, this);
+        const auto* MatCap = FindMatCap(Mesh, Slot.SlotIndex);
+        const bool bMatchingMatCap = MatCap && MatCap->Source == Slot.Material;
+        UMaterialInterface* Parent = bMatchingMatCap ? MatCap->Material.Get() : Slot.Material.Get();
+        UMaterialInstanceDynamic* MID = UMaterialInstanceDynamic::Create(Parent, this);
         if (!IsValid(MID))
         {
             OutError = TEXT("Unable to create the MID bundle; mesh was not changed.");
             return false;
         }
+        if (MatCap && !MatCap->Parameters.Apply(*MID, OutError)) return false;
         NewMaterials.Add(Slot.SlotIndex, MID);
+    }
+
+    // A package replacing one effect must not drop separately configured MatCap slots.
+    TMap<int32, TObjectPtr<UMaterialInstanceDynamic>> RetainedMatCaps;
+    if (BoundMesh == Mesh)
+    {
+        for (const auto& Settings : MatCapSlots)
+        {
+            if (Settings.Mesh == Mesh && !NewMaterials.Contains(Settings.Slot))
+            {
+                if (auto* Existing = GetOwnedMaterial(Mesh, Settings.Slot)) RetainedMatCaps.Add(Settings.Slot, Existing);
+            }
+        }
     }
 
     RestoreMaterials();
@@ -265,8 +294,104 @@ bool UNPRStyleBindingComponent::ApplyPackage(UMeshComponent* Mesh, const UNPRBac
         OriginalMaterials.Add(Entry.Key, Mesh->GetMaterial(Entry.Key));
         Mesh->SetMaterial(Entry.Key, Entry.Value);
     }
+    for (const auto& Entry : RetainedMatCaps)
+    {
+        OriginalMaterials.Add(Entry.Key, Mesh->GetMaterial(Entry.Key));
+        Mesh->SetMaterial(Entry.Key, Entry.Value);
+        NewMaterials.Add(Entry.Key, Entry.Value);
+    }
     ActiveMaterials = MoveTemp(NewMaterials);
     return true;
+}
+
+const FNPRMatCapSlot* UNPRStyleBindingComponent::FindMatCap(const UMeshComponent* Mesh, int32 Slot) const
+{
+    return MatCapSlots.FindByPredicate([Mesh, Slot](const FNPRMatCapSlot& Entry) { return Entry.Mesh == Mesh && Entry.Slot == Slot; });
+}
+
+bool UNPRStyleBindingComponent::ApplyConfiguredMatCap(FString& OutError)
+{
+    OutError.Reset();
+    for (const auto& Settings : MatCapSlots)
+    {
+        if (!Settings.Parameters.Validate(OutError)) return false;
+        if (!IsValid(Settings.Mesh) || Settings.Slot < 0 || Settings.Slot >= Settings.Mesh->GetNumMaterials() ||
+            !IsValid(Settings.Source) || !FNPRMatCapParameters::IsSupported(Settings.Material))
+        {
+            OutError = TEXT("有 MatCap 槽位引用无效的网格或材质。");
+            return false;
+        }
+    }
+    for (const auto& Settings : MatCapSlots)
+        if (!ApplyMatCapSlot(Settings, OutError)) return false;
+    return true;
+}
+
+bool UNPRStyleBindingComponent::ApplyMatCapSlot(const FNPRMatCapSlot& Settings, FString& OutError, bool bConfigure)
+{
+    OutError.Reset();
+    auto* Mesh = Settings.Mesh.Get();
+    const int32 Slot = Settings.Slot;
+    if (!IsValid(Mesh) || Mesh->GetOwner() != GetOwner() || Slot < 0 || Slot >= Mesh->GetNumMaterials() ||
+        (IsValid(BoundMesh) && BoundMesh != Mesh) || !IsValid(Settings.Source) || !FNPRMatCapParameters::IsSupported(Settings.Material))
+    {
+        OutError = TEXT("MatCap 绑定需要当前角色的有效材质槽和已生成的材质。");
+        return false;
+    }
+    auto* Owned = GetOwnedMaterial(Mesh, Slot);
+    // A later saved Toon or Rim graph can already contain the MatCap expressions.
+    if (!bConfigure && Owned && FNPRMatCapParameters::IsSupported(Owned)) return Settings.Parameters.Apply(*Owned, OutError);
+    const auto* Previous = FindMatCap(Mesh, Slot);
+    if ((!Owned && BoundMesh == Mesh && ActiveMaterials.Contains(Slot)) ||
+        (bConfigure && !Owned && Mesh->GetMaterial(Slot) != Settings.Source) ||
+        (Owned && Owned->Parent != Settings.Source && Owned->Parent != Settings.Material &&
+            (!Previous || Owned->Parent != Previous->Material)))
+    {
+        OutError = TEXT("材质槽已被替换。请重新读取角色和材质槽。");
+        return false;
+    }
+    if (Owned && Owned->Parent == Settings.Material) return Settings.Parameters.Apply(*Owned, OutError);
+    auto* Instance = UMaterialInstanceDynamic::Create(Settings.Material, this);
+    if (!Instance)
+    {
+        OutError = TEXT("无法为 MatCap 创建运行时材质实例。");
+        return false;
+    }
+    if (Owned) Instance->CopyParameterOverrides(Owned);
+    if (!Settings.Parameters.Apply(*Instance, OutError)) return false;
+    if (!Owned) OriginalMaterials.Add(Slot, Mesh->GetMaterial(Slot));
+    BoundMesh = Mesh;
+    Mesh->SetMaterial(Slot, Instance);
+    ActiveMaterials.Add(Slot, Instance);
+    return true;
+}
+
+bool UNPRStyleBindingComponent::ConfigureMatCap(const FNPRMatCapSlot& Settings, FString& OutError)
+{
+    if (!ApplyMatCapSlot(Settings, OutError, true)) return false;
+    if (auto* Entry = MatCapSlots.FindByPredicate([&](const FNPRMatCapSlot& Value) { return Value.Mesh == Settings.Mesh && Value.Slot == Settings.Slot; }))
+    {
+        *Entry = Settings;
+    }
+    else
+    {
+        MatCapSlots.Add(Settings);
+    }
+#if WITH_EDITOR
+    bHadMatCapConfiguration = true;
+#endif
+    return true;
+}
+
+bool UNPRStyleBindingComponent::SetMatCapParameters(UMeshComponent* Mesh, int32 SlotIndex, const FNPRMatCapParameters& Parameters, FString& OutError)
+{
+    auto* Instance = GetOwnedMaterial(Mesh, SlotIndex);
+    if (!Instance || !FindMatCap(Mesh, SlotIndex))
+    {
+        OutError = TEXT("请先应用 MatCap。当前槽位没有可更新的 MatCap 绑定。");
+        return false;
+    }
+    return Parameters.Apply(*Instance, OutError);
 }
 
 bool UNPRStyleBindingComponent::SetScalarParameter(FName ParameterName, float Value, FString& OutError)
@@ -298,11 +423,21 @@ bool UNPRStyleBindingComponent::SetScalarParameter(FName ParameterName, float Va
 
 bool UNPRStyleBindingComponent::SetRimParameters(const FNPRRimParameters& Parameters, FString& OutError)
 {
+    return WriteRimParameters(Parameters, OutError, {});
+}
+
+bool UNPRStyleBindingComponent::SetRimParametersForSlot(int32 SlotIndex, const FNPRRimParameters& Parameters, FString& OutError)
+{
+    return WriteRimParameters(Parameters, OutError, SlotIndex);
+}
+
+bool UNPRStyleBindingComponent::WriteRimParameters(const FNPRRimParameters& Parameters, FString& OutError, TOptional<int32> SlotFilter)
+{
     if (!Parameters.Validate(OutError))
     {
         return false;
     }
-    if (!IsValid(BoundMesh) || ActiveMaterials.IsEmpty())
+    if (!IsValid(BoundMesh) || ActiveMaterials.IsEmpty() || (SlotFilter.IsSet() && !ActiveMaterials.Contains(SlotFilter.GetValue())))
     {
         OutError = TEXT("An active mesh/material binding is required for Rim parameters.");
         return false;
@@ -314,6 +449,7 @@ bool UNPRStyleBindingComponent::SetRimParameters(const FNPRRimParameters& Parame
     const FName ColorName(NPRRimContract::ColorMaterialName);
     for (const auto& Entry : ActiveMaterials)
     {
+        if (SlotFilter.IsSet() && Entry.Key != SlotFilter.GetValue()) continue;
         if (!IsValid(Entry.Value) || Entry.Key < 0 || Entry.Key >= BoundMesh->GetNumMaterials() ||
             BoundMesh->GetMaterial(Entry.Key) != Entry.Value)
         {
@@ -343,6 +479,7 @@ bool UNPRStyleBindingComponent::SetRimParameters(const FNPRRimParameters& Parame
     const FLinearColor RGB(Parameters.RimColor.R, Parameters.RimColor.G, Parameters.RimColor.B, 1.f);
     for (const auto& Entry : ActiveMaterials)
     {
+        if (SlotFilter.IsSet() && Entry.Key != SlotFilter.GetValue()) continue;
         Entry.Value->SetScalarParameterValue(WidthName, WidthDegrees);
         Entry.Value->SetScalarParameterValue(SoftnessName, SoftnessDegrees);
         Entry.Value->SetScalarParameterValue(IntensityName, Parameters.RimPeakScale);
@@ -368,6 +505,9 @@ void UNPRStyleBindingComponent::RestoreMaterials()
     ActiveMaterials.Reset();
     OriginalMaterials.Reset();
     BoundMesh = nullptr;
+#if WITH_EDITOR
+    SuspendedSaveSlots.Reset();
+#endif
 }
 
 void UNPRStyleBindingComponent::EndPlay(const EEndPlayReason::Type EndPlayReason)
@@ -375,3 +515,43 @@ void UNPRStyleBindingComponent::EndPlay(const EEndPlayReason::Type EndPlayReason
     RestoreMaterials();
     Super::EndPlay(EndPlayReason);
 }
+
+#if WITH_EDITOR
+void UNPRStyleBindingComponent::SuspendMatCapForSave()
+{
+    if (!HasMatCapSettings() || !IsValid(BoundMesh)) return;
+    for (const auto& Entry : OriginalMaterials)
+    {
+        if (GetOwnedMaterial(BoundMesh, Entry.Key))
+        {
+            SuspendedSaveSlots.Add(Entry.Key);
+            BoundMesh->SetMaterial(Entry.Key, Entry.Value);
+        }
+    }
+}
+
+void UNPRStyleBindingComponent::ResumeMatCapAfterSave()
+{
+    if (IsValid(BoundMesh))
+    {
+        for (int32 Slot : SuspendedSaveSlots)
+        {
+            if (Slot < BoundMesh->GetNumMaterials() && BoundMesh->GetMaterial(Slot) == OriginalMaterials.FindRef(Slot))
+                BoundMesh->SetMaterial(Slot, ActiveMaterials.FindRef(Slot));
+        }
+    }
+    SuspendedSaveSlots.Reset();
+}
+
+void UNPRStyleBindingComponent::PostEditUndo()
+{
+    if (!HasMatCapSettings() && !bHadMatCapConfiguration)
+    {
+        Super::PostEditUndo();
+        return;
+    }
+    RestoreMaterials();
+    Super::PostEditUndo();
+    if (IsRegistered()) ApplySavedEffects();
+}
+#endif

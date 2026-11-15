@@ -31,6 +31,19 @@ Recipe MUST 声明效果标识、输出契约、组合规则、依赖和参数�
 - **WHEN** 两个效果声明相同实际材质参数
 - **THEN** Recipe 校验拒绝冲突
 
+### Requirement: Per-slot additive MatCap
+
+兼容表面的 MatCap 必须按相机空间法线查询光泽贴图，把线性 RGB 贡献加到原自发光。`MatCapWeight` 使用 `0–1` 并在关闭时写 `0`。逐槽编辑器预览放在预览世界，应用后保存已生成材质和独立槽位配置。运行时只加载已生成材质和贴图引用。
+
+#### Scenario: MatCap is added to an already edited slot
+- **WHEN** 在已有 Toon 与 Rim 的兼容材质槽预览并应用 MatCap
+- **THEN** 同一槽位保留先前的 Toon Profile 与 Rim 参数，并允许独立改变 MatCap
+- **AND** 保存后的关卡在新进程加载时恢复 MatCap 的贴图和数值
+
+#### Scenario: MatCap settings are invalid or a live slot has been replaced
+- **WHEN** 尝试写入非法权重、缺少必需贴图或已被外部替换的槽位
+- **THEN** 返回诊断并保留当前网格材质
+
 ### Requirement: Frozen rim parameter contract
 
 Rim MUST 保留 MF_RimLight、FNPRRimParameters、SetRimParameters 与既有映射。材质控制为亮边宽度 8°、边缘柔和度 2°、边缘光强度 0、边缘光颜色白色；两个程序角度为弧度，写入中文材质参数前转为度。0、黑色和有限非负 HDR 颜色是有效值。
