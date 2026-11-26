@@ -1,15 +1,15 @@
 # NPR调制插件使用说明
 
-更新日期：2026-10-29。我们用统一工作区选择角色、按后处理/非后处理分类查看效果，并调整描边、Rim Light 与 Toon Light。总览、共享角色视口和隔离流程见[统一效果工作区](Editor/NPRWorkspace.md)，Toon 的模型、曲线与区域流程见 [Toon Light](ToonLight/使用说明与实现.md)。
+更新日期：2026-11-26。我们用统一工作区选择角色、按后处理/非后处理分类查看效果，并调整描边、Rim Light 与 Toon Light。总览、共享角色视口和隔离流程见[统一效果工作区](Editor/NPRWorkspace.md)，Toon 的模型、曲线与区域流程见 [Toon Light](ToonLight/使用说明与实现.md)。
 
 ## 1. 先分清哪些入口能用
 
 | 想做的事 | 当前入口 | 当前状态 |
 | --- | --- | --- |
-| 给整角色或某个材质槽加描边 | 窗口 → NPR 调制 → Outline | 已有设置、预览、预设和保存流程 |
+| 给整角色或某个材质槽加描边 | 窗口 → NPR 调制 → General NPR → Outline | 已有设置、预览、预设和保存流程 |
 | 查看每个 Mesh 已应用的效果 | NPR 调制 → 角色效果总览 | 按 Mesh/材质槽列出本插件登记的效果，支持单效果与网格隔离 |
-| 在窗口中调整 Rim | 顶部 Rim Light；或总览中的非后处理 → Rim Light | Profile、角色槽位、实时角色视口、原材质对比和隔离；完整角色观感仍需按资产验收 |
-| 按区域调整 Toon 光照 | 顶部 Toon · 光照 | 模型选择、五参数、小曲线/放大窗口、Section 点选、私有预览和不可变风格包；质量边界见 Toon 独立说明 |
+| 在窗口中调整 Rim | General NPR → Rim Light，或总览中的非后处理 → Rim Light | Profile、角色槽位、实时角色视口、原材质对比和隔离；完整角色观感仍需按资产验收 |
+| 按区域调整 Toon 光照 | General NPR → Toon Shading | 模型选择、五参数、小曲线/放大窗口、Section 点选、私有预览和不可变风格包；质量边界见 Toon 独立说明 |
 | 实际观察 Rim | 内容浏览器中的预览材质实例 | 可用，见 [Rim 介绍](rim_light_introduction.md) |
 | 同时保留贴图、法线、自发光并加 Rim | Surface 母材质与预览实例 | Surface 是底层组合能力；Rim 卡片默认保留原图和贴图 |
 | 一键把任意角色变为完整 Toon 风格 | 尚无完整入口 | 仍在开发 |
@@ -27,14 +27,14 @@ Outline 的“转换”只建立描边所需绑定，不会自动把整个人物
 ## 3. 打开 NPR 调制并载入角色
 
 1. 在关卡大纲中选中一个角色 Actor，也就是关卡里的角色对象。
-2. 点击工具栏或 **窗口 → NPR 调制**，先在角色效果总览查看绑定，再进入 **Outline · 描边编辑**。
+2. 点击工具栏或 **窗口 → NPR 调制**，先在角色效果总览查看绑定，再进入 **General NPR → Outline · 描边**。
 3. 点击 **使用关卡选中角色 / Use Selection**。
 4. 点击 **创建 / 打开角色级配置**。
 5. 确认预览和 `Meshes` 列表对应这个角色。
 
 `Meshes` 表示角色包含的网格组件；材质槽是其中一部分表面使用材质的位置。预览里点击模型不会自动替换关卡大纲的选中对象。
 
-顶部只保留三个入口：NPR 调制为 16 号字，Outline、Rim Light 为较小的 12 号字，按钮等高、文字垂直居中。后处理/非后处理分类在 NPR 调制总览内容中，不放在顶部导航，也不作为左侧导航。
+顶栏的 **NPR 调制** 回到角色效果总览。**General NPR · NPR 通用** 包含 Toon Shading、Outline、Rim Light、MatCap。**Specialized NPR · NPR 特化** 包含 Face、Hair、Eye、Skin、Cloth、Metal。MatCap 与六个特化页面目前只展示名称。总览内的后处理/非后处理分类用于查看已有绑定。
 
 ![2026-10-20 Outline 材质槽操作的历史实机截图](Outline/MaterialSlotUI/NPRModulation-Outline-UE5.8.3.jpg)
 
@@ -89,7 +89,7 @@ Rim 页按 Mesh 分组显示具名材质槽，在卡片内启用和调整边缘�
 
 ### Toon Light 的操作
 
-打开顶部 Toon 页面，读取角色后在模型或右侧 Section 列表选择区域。左侧调整参数与曲线；保存风格保留艺术数据和后端高级设置，应用才写入角色材质槽，之后还需保存关卡。多个 Section 共用一个槽时一起变化。Shader 首次准备、模型切换和普通曲线更新的区别见 [Toon 操作说明](ToonLight/使用说明与实现.md)。
+打开 **General NPR → Toon Shading**，读取角色后在模型或右侧 Section 列表选择区域。左侧调整参数与曲线；保存风格保留艺术数据和后端高级设置，应用才写入角色材质槽，之后还需保存关卡。多个 Section 共用一个槽时一起变化。Shader 首次准备、模型切换和普通曲线更新的区别见 [Toon 操作说明](ToonLight/使用说明与实现.md)。
 
 ## 9. 没有变化时先检查什么
 
