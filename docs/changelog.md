@@ -1,5 +1,10 @@
 # 更新记录
 
+## 2026-11-26：NPR 通用与特化编辑器入口
+
+- NPR 调制工作区增加 General NPR 和 Specialized NPR 两组导航。通用组复用 Toon Shading、Outline、Rim Light 编辑页，MatCap 和六个特化页暂时只显示名称。
+- 角色效果总览保留原有筛选、隔离和材质槽编辑跳转。入口与操作见[统一效果工作区](guides/npr-workspace.md)。
+
 ## 2026-10-28 至 29：Toon Light 参数、后端与编辑页
 
 - 接通既有五个 Generic Toon 语义参数、稀疏覆写、模型选择与 S58 Adapter。坐标、原生 LUT 过滤和高光参考近似分别说明；保留原始高级 Profile 控制与既有语义默认值，见 [Toon Light](features/toon-shading.md)。

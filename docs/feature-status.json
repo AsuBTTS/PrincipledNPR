@@ -1,5 +1,11 @@
 [
   {
+    "id": "npr-feature-navigation",
+    "page": "guides/npr-workspace.md",
+    "status": "已实现并验证",
+    "evidence": ["Documentation/Editor/NPRWorkspace.md"]
+  },
+  {
     "id": "npr-workspace",
     "page": "guides/npr-workspace.md",
     "status": "已实现并验证",

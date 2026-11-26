@@ -2,19 +2,20 @@
 
 # NPR 调制：统一效果工作区
 
-更新日期：2026-10-29。我们从同一个入口选择角色、查看各个 Mesh 已应用的效果，再进入对应效果调参。Mesh 是角色的网格组件；材质槽是这个组件上使用一份材质的位置。Toon 新增流程与验证范围见 [Toon Light](../features/toon-shading.md)。
+更新日期：2026-11-26。我们从同一个入口选择角色、查看各个 Mesh 已应用的效果，再进入对应效果调参。Mesh 是角色的网格组件；材质槽是这个组件上使用一份材质的位置。Toon 新增流程与验证范围见 [Toon Light](../features/toon-shading.md)。
 
 状态：已实现并验证，限于本页记录的编译、受控自动化与真实 GPU 捕获；不同角色资产仍需单独检查。
 
 ## 1. 先看角色，再选择效果
 
-工具栏和 **窗口 → NPR 调制** 打开角色效果总览。窗口最上方保留 **NPR 调制**、**Outline**、**Rim Light**，并新增 **Toon · 光照**；NPR 调制用 16 号字，效果入口用较小的 12 号字。按钮的内容高度一致，文字垂直居中对齐；**NPR 调制** 本身是可点击的总入口。进入总览后，在页面内容中的分类区域按执行方式选择效果：
+工具栏和 **窗口 → NPR 调制** 打开角色效果总览。顶栏可回到 **NPR 调制**，也可切换到下面两个分类。
 
-- **非后处理**：Rim Light、反向壳几何描边和 Surface 表面组合。
-- **后处理**：Screen 屏幕空间描边。
-- **Outline · 描边编辑**：保留原有的整角色、单槽、预设与高级参数编辑。分类中的描边入口先隔离查看已有结果；进入描边编辑器后才按需要修改方法。
+- **General NPR · NPR 通用**：Toon Shading、Outline、Rim Light 和 MatCap。进入时打开 Outline，MatCap 页暂时只显示名称。
+- **Specialized NPR · NPR 特化**：Face、Hair、Eye、Skin、Cloth 和 Metal。进入时打开 Face，六个页面暂时只显示名称。
 
-总览按 Mesh 和材质槽列出实际登记的绑定，可以直接跳转对应的 Rim 或描边编辑器；Rim 跳转会定位到该 Mesh 的该槽。切换顶部页面不会清空同一角色尚未保存的 Rim 编辑。Rim 强度为 0 时仍会列出这份绑定，并显示强度 0；这不表示亮边正在发光。没有登记的第三方材质功能显示为未登记，不推断它已经被转换或支持独立开关。
+总览内仍可按执行方式查看已登记的效果。非后处理包括 Rim Light、反向壳几何描边和 Surface 表面组合。后处理包括 Screen 屏幕空间描边。需要修改描边方式时，进入 General NPR 的 Outline 编辑页。
+
+总览按 Mesh 和材质槽列出实际登记的绑定，可以直接跳转到 General NPR 中对应的 Rim、Toon 或描边编辑器；Rim 和 Toon 跳转会定位到该 Mesh 的该槽。切换顶部页面不会清空同一角色尚未保存的 Rim 编辑。Rim 强度为 0 时仍会列出这份绑定，并显示强度 0；这不表示亮边正在发光。没有登记的第三方材质功能显示为未登记，不推断它已经被转换或支持独立开关。
 
 ![UE 5.8.3 最终总览：顶部三个入口，分类位于页面内](/generated/source/Documentation/Editor/WorkspaceEvidence/Final/Overview.jpg)
 
@@ -108,3 +109,10 @@ Undo / Redo 恢复当前槽的显示值并更新 MID。外部系统换掉材质�
 来源：2026-10-26，隔离测试工程、Qianyu 11 槽骨骼网格。本图尚未给当前槽应用 Rim，用于展示实际布局与构图。同日早些时候的[脸部槽实时改色与隔离截图](/generated/source/Documentation/Editor/WorkspaceEvidence/RimCardsIsolatedGreen.jpg)显示绿色 Rim、强度 1.8；该图的分类位置属于导航修改前的版本，只作为隔离与颜色变化证据。
 
 参考姿势、静态球体和受控绑定不代表动画、阴影、多 LOD、透明裁切、任意原材质迁移、Cook 或性能已经验收。完整语义 Resolver 和自动角色转换仍未完成。
+
+## 7. 通用与特化导航验证
+
+2026-11-26 在 Windows、UE 5.8.3 和 DX12 SM6 上完成 Editor 构建并打开 `L_Outline_MultiScope_v1`。使用已有角色 `Outline_TexturedCharacter`，总览读出 11 个材质槽。
+
+- 在原生窗口检查两组入口、General NPR 的三个既有编辑面板、MatCap 占位、Specialized NPR 的六个入口和 Face/Hair 页面切换。回到总览后，从已登记的材质槽点击“编辑描边”，进入 General NPR 的 Outline 面板，读出已有角色配置。
+- 使用编辑器脚本检查原有页面、Surface/Hull/Screen 筛选和 Rim/Toon/Outline 的材质槽编辑跳转。既有槽位预览参数、Rim Profile 绑定、Surface Composer 以及 Toon Adapter、保存和运行时绑定共六项自动化通过。Toon 保存和运行时绑定用例使用 Adapter 本轮生成的测试资产，测试产物不随本次变更交付。

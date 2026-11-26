@@ -1222,6 +1222,24 @@ private:
 
 class SNPRModulationEditor final : public SCompoundWidget
 {
+    // The order matches the slots in FeaturePages.
+    enum class EPage : uint8
+    {
+        Overview,
+        Toon,
+        Outline,
+        Rim,
+        MatCap,
+        Face,
+        Hair,
+        Eye,
+        Skin,
+        Cloth,
+        Metal,
+    };
+
+    enum class ESection : uint8 { Overview, General, Specialized };
+
 public:
     SLATE_BEGIN_ARGS(SNPRModulationEditor) {} SLATE_END_ARGS()
     void Construct(const FArguments&)
@@ -1230,51 +1248,132 @@ public:
         [SNew(SVerticalBox)
             + SVerticalBox::Slot().AutoHeight()[SNew(SBorder).BorderImage(FAppStyle::GetBrush("ToolPanel.GroupBorder")).Padding(FMargin(14,10))
                 [SNew(SWrapBox).UseAllottedSize(true).InnerSlotPadding(FVector2D(8,6))
-                    + SWrapBox::Slot()[FeatureEntry(TEXT("NPR 调制"),2)]
-                    + SWrapBox::Slot()[FeatureEntry(TEXT("Outline · 描边"),0)]
-                    + SWrapBox::Slot()[FeatureEntry(TEXT("Rim Light · 边缘光"),1)]
-                    + SWrapBox::Slot()[FeatureEntry(TEXT("Toon · 光照"),3)]]]
+                    + SWrapBox::Slot()[NavigationEntry(TEXT("NPR 调制"), EPage::Overview, 16)]
+                    + SWrapBox::Slot()[NavigationEntry(TEXT("General NPR · NPR 通用"), EPage::Outline, 12, true)]
+                    + SWrapBox::Slot()[NavigationEntry(TEXT("Specialized NPR · NPR 特化"), EPage::Face, 12, true)]]]
+            + SVerticalBox::Slot().AutoHeight().Padding(14, 6)
+            [SNew(SWrapBox).UseAllottedSize(true).InnerSlotPadding(FVector2D(8, 6))
+                .Visibility_Lambda([this] { return NavigationVisibility(ESection::General); })
+                + SWrapBox::Slot()[NavigationEntry(TEXT("Toon Shading · 光照"), EPage::Toon)]
+                + SWrapBox::Slot()[NavigationEntry(TEXT("Outline · 描边"), EPage::Outline)]
+                + SWrapBox::Slot()[NavigationEntry(TEXT("Rim Light · 边缘光"), EPage::Rim)]
+                + SWrapBox::Slot()[NavigationEntry(TEXT("MatCap"), EPage::MatCap)]]
+            + SVerticalBox::Slot().AutoHeight().Padding(14, 6)
+            [SNew(SWrapBox).UseAllottedSize(true).InnerSlotPadding(FVector2D(8, 6))
+                .Visibility_Lambda([this] { return NavigationVisibility(ESection::Specialized); })
+                + SWrapBox::Slot()[NavigationEntry(TEXT("Face"), EPage::Face)]
+                + SWrapBox::Slot()[NavigationEntry(TEXT("Hair"), EPage::Hair)]
+                + SWrapBox::Slot()[NavigationEntry(TEXT("Eye"), EPage::Eye)]
+                + SWrapBox::Slot()[NavigationEntry(TEXT("Skin"), EPage::Skin)]
+                + SWrapBox::Slot()[NavigationEntry(TEXT("Cloth"), EPage::Cloth)]
+                + SWrapBox::Slot()[NavigationEntry(TEXT("Metal"), EPage::Metal)]]
             + SVerticalBox::Slot().FillHeight(1)
-            [SAssignNew(FeaturePages,SWidgetSwitcher)
-                + SWidgetSwitcher::Slot()[SAssignNew(Outline,SNPROutlineEditor)]
-                + SWidgetSwitcher::Slot()[SAssignNew(Rim,SNPRRimEditor)]
-                + SWidgetSwitcher::Slot()[SAssignNew(Overview,SNPRActorEffects)]
-                + SWidgetSwitcher::Slot()[SAssignNew(Toon,SNPRToonEditor)]
+            [SAssignNew(FeaturePages, SWidgetSwitcher).WidgetIndex(static_cast<int32>(ActivePage))
+                + SWidgetSwitcher::Slot()[SAssignNew(Overview, SNPRActorEffects)]
+                + SWidgetSwitcher::Slot()[SAssignNew(Toon, SNPRToonEditor)]
+                + SWidgetSwitcher::Slot()[SAssignNew(Outline, SNPROutlineEditor)]
+                + SWidgetSwitcher::Slot()[SAssignNew(Rim, SNPRRimEditor)]
+                + SWidgetSwitcher::Slot()[Placeholder(TEXT("MatCap"))]
+                + SWidgetSwitcher::Slot()[Placeholder(TEXT("Face"))]
+                + SWidgetSwitcher::Slot()[Placeholder(TEXT("Hair"))]
+                + SWidgetSwitcher::Slot()[Placeholder(TEXT("Eye"))]
+                + SWidgetSwitcher::Slot()[Placeholder(TEXT("Skin"))]
+                + SWidgetSwitcher::Slot()[Placeholder(TEXT("Cloth"))]
+                + SWidgetSwitcher::Slot()[Placeholder(TEXT("Metal"))]
             ]
         ];
     }
-    void ShowOutline() {Show(0);}
-    void Show(int32 Feature)
-    {ActiveFeature=Feature;FeaturePages->SetActiveWidgetIndex(Feature);if(Feature==2){Overview->Reload();Overview->FilterEffect(TEXT("All"));}else if(Feature==1)Rim->SyncSelection();else if(Feature==3)Toon->SyncSelection();else Outline->SyncSelection();}
+    void ShowOutline() { Show(EPage::Outline); }
+    void ShowOverview() { Show(EPage::Overview); }
+
     bool EditEffect(UMeshComponent* Mesh,int32 Slot,FName Effect)
     {
         if(!IsValid(Mesh)||Slot<0||Slot>=Mesh->GetNumMaterials())return false;
-        if(Effect==TEXT("RimLight")){Show(1);Rim->EditTarget(Mesh,Slot);return true;}
-        if(Effect==TEXT("Toon")){Show(3);Toon->EditTarget(Mesh,Slot);return true;}
-        if(Effect==TEXT("HullOutline")||Effect==TEXT("ScreenOutline")){Show(0);return true;}
+        if(Effect==TEXT("RimLight")){Show(EPage::Rim);Rim->EditTarget(Mesh,Slot);return true;}
+        if(Effect==TEXT("Toon")){Show(EPage::Toon);Toon->EditTarget(Mesh,Slot);return true;}
+        if(Effect==TEXT("HullOutline")||Effect==TEXT("ScreenOutline")){ShowOutline();return true;}
         return false;
     }
     bool SelectFeature(FName Feature)
     {
-        if(Feature==TEXT("Overview")){Show(2);return true;}
-        if(Feature==TEXT("Rim")){Show(1);return true;}
-        if(Feature==TEXT("Toon")){Show(3);return true;}
-        if(Feature==TEXT("Outline")){Show(0);return true;}
-        if(Feature==TEXT("Surface")||Feature==TEXT("HullOutline")||Feature==TEXT("ScreenOutline")){Show(2);Overview->FilterEffect(Feature);return true;}
+        if(Feature==TEXT("Overview")){ShowOverview();return true;}
+        if(Feature==TEXT("Rim")){Show(EPage::Rim);return true;}
+        if(Feature==TEXT("Toon")){Show(EPage::Toon);return true;}
+        if(Feature==TEXT("Outline")){ShowOutline();return true;}
+        if(Feature==TEXT("Surface")||Feature==TEXT("HullOutline")||Feature==TEXT("ScreenOutline")){ShowOverview();Overview->FilterEffect(Feature);return true;}
         return false;
     }
-    TSharedPtr<FNPRCharacterPreview> CurrentPreview()const{return ActiveFeature==1?Rim->GetPreview():ActiveFeature==2?Overview->GetPreview():ActiveFeature==3?Toon->GetPreview():nullptr;}
+    TSharedPtr<FNPRCharacterPreview> CurrentPreview() const
+    {
+        switch (ActivePage)
+        {
+        case EPage::Overview: return Overview->GetPreview();
+        case EPage::Toon: return Toon->GetPreview();
+        case EPage::Rim: return Rim->GetPreview();
+        default: return nullptr;
+        }
+    }
     TSharedPtr<SNPROutlineEditor> GetOutline() const { return Outline; }
 private:
-    TSharedRef<SWidget> FeatureEntry(const TCHAR* Label,int32 Feature)
+    void Show(EPage Page)
+    {
+        ActivePage = Page;
+        FeaturePages->SetActiveWidgetIndex(static_cast<int32>(Page));
+        switch (Page)
+        {
+        case EPage::Overview:
+            Overview->Reload();
+            Overview->FilterEffect(TEXT("All"));
+            break;
+        case EPage::Toon: Toon->SyncSelection(); break;
+        case EPage::Outline: Outline->SyncSelection(); break;
+        case EPage::Rim: Rim->SyncSelection(); break;
+        default: break;
+        }
+    }
+
+    static ESection GetSection(EPage Page)
+    {
+        if (Page == EPage::Overview)
+        {
+            return ESection::Overview;
+        }
+        return Page < EPage::Face ? ESection::General : ESection::Specialized;
+    }
+
+    EVisibility NavigationVisibility(ESection Section) const
+    {
+        return GetSection(ActivePage) == Section ? EVisibility::Visible : EVisibility::Collapsed;
+    }
+
+    TSharedRef<SWidget> NavigationEntry(const TCHAR* Label, EPage Page, int32 FontSize = 12, bool bSectionEntry = false)
     {
         return SNew(SCheckBox).Style(FAppStyle::Get(),"ToggleButtonCheckbox").Padding(FMargin(12,6))
-            .IsChecked_Lambda([this,Feature]{return ActiveFeature==Feature?ECheckBoxState::Checked:ECheckBoxState::Unchecked;})
-            .OnCheckStateChanged_Lambda([this,Feature](ECheckBoxState Value){if(Value==ECheckBoxState::Checked){Show(Feature);FSlateApplication::Get().DismissAllMenus();}})
+            .IsChecked_Lambda([this, Page, bSectionEntry]
+            {
+                const bool bSelected = bSectionEntry ? GetSection(ActivePage) == GetSection(Page) : ActivePage == Page;
+                return bSelected ? ECheckBoxState::Checked : ECheckBoxState::Unchecked;
+            })
+            .OnCheckStateChanged_Lambda([this, Page](ECheckBoxState Value)
+            {
+                if (Value == ECheckBoxState::Checked)
+                {
+                    Show(Page);
+                    FSlateApplication::Get().DismissAllMenus();
+                }
+            })
             [SNew(SBox).HeightOverride(28).VAlign(VAlign_Center)
-                [SNew(STextBlock).Text(FText::FromString(Label)).Font(FCoreStyle::GetDefaultFontStyle("Bold",Feature==2?16:12))]];
+                [SNew(STextBlock).Text(FText::FromString(Label)).Font(FCoreStyle::GetDefaultFontStyle("Bold", FontSize))]];
     }
-    int32 ActiveFeature=0;
+
+    static TSharedRef<SWidget> Placeholder(const TCHAR* Label)
+    {
+        return SNew(SBorder).BorderImage(FAppStyle::GetBrush("ToolPanel.GroupBorder"))
+            .Padding(16).HAlign(HAlign_Left).VAlign(VAlign_Top)
+            [SNew(STextBlock).Text(FText::FromString(Label)).Font(FCoreStyle::GetDefaultFontStyle("Bold", 16))];
+    }
+
+    EPage ActivePage = EPage::Outline;
     TSharedPtr<SWidgetSwitcher> FeaturePages;
     TSharedPtr<SNPROutlineEditor> Outline;
     TSharedPtr<SNPRRimEditor> Rim;
@@ -1316,7 +1415,7 @@ void FNPROutlineEditorUI::Unregister()
     FGlobalTabmanager::Get()->UnregisterNomadTabSpawner(OutlineTabId);
 }
 void FNPROutlineEditorUI::Open(){FGlobalTabmanager::Get()->TryInvokeTab(OutlineTabId);if(ActiveWorkspace.IsValid())ActiveWorkspace.Pin()->ShowOutline();if(ActiveEditor.IsValid())ActiveEditor.Pin()->ReloadSelection();}
-void FNPROutlineEditorUI::OpenWorkspace(){FGlobalTabmanager::Get()->TryInvokeTab(OutlineTabId);if(ActiveWorkspace.IsValid())ActiveWorkspace.Pin()->Show(2);}
+void FNPROutlineEditorUI::OpenWorkspace(){FGlobalTabmanager::Get()->TryInvokeTab(OutlineTabId);if(ActiveWorkspace.IsValid())ActiveWorkspace.Pin()->ShowOverview();}
 bool FNPROutlineEditorUI::SelectFeature(FName Feature){FGlobalTabmanager::Get()->TryInvokeTab(OutlineTabId);return ActiveWorkspace.IsValid()&&ActiveWorkspace.Pin()->SelectFeature(Feature);}
 bool FNPROutlineEditorUI::EditEffect(UMeshComponent* Mesh,int32 Slot,FName Effect)
 {
